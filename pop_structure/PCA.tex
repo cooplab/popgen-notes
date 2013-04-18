@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\title{PBGG Notes 2011: Principal components analysis of population genetic data}
+\author{Graham Coop$^{1}$ \\
+\small $^1$ Department of Evolution and Ecology \& Center for Population Biology,\\
+}
+\date{}
+\maketitle
+
+The use of principal component analysis in population genetics pioneered by
+Luigi Luca Cavalli-Sforza. With large genotyping datasets PCA has made
+a come back particularly in human population genetics. See McVean, G. 2010
+PLoS Genetics and Patterson et al 2006, PLoS Genetics for recent discussion.
+ 
+
+We have a dataset consisting of N individuals at S sites (single nuc. polymorphisms, SNPs). At each SNP an individual's data takes 0,1, or 2 (corresponding to the number of copies of an allele an individual carrys at this SNP). We can think of this as a N x S matrix (where usually $N \ll S$).
+
+We usually in population genetics standardize the columns of this
+matrix (the info. from each SNP) in the following way:  Denoting the mean allele freq at SNP $j$ by $\epsilon_j$, at each SNP we take the minus off the mean ($2\epsilon$) and divide through by the expected variance assuming that alleles are sampled binomial from the mean frequency ($\epsilon (1-\epsilon)$). Call this data matrix X, it is an N x S matrix (where usually $N \ll S$).
+
+To do principal components we'd usually do the eigenvalue decomposition
+\begin{equation}
+X^TX = P \Lambda P^T \label{PCA_1}
+\end{equation}
+$P$ is an $S \times S$ matrix, $\Lambda$ is an $N\times N$ matrix. Then we can calculate the genome-wide projection of an individual $i$ on the $j^\mathrm{th}$ principal component as
+\begin{equation}
+Z_{i,j} = \sum_{s=1}^S P_{j s}X_{is} \label{proj_1}
+\end{equation}
+However, our matrices are usually so big that we generally can not do the eigen-decomp (eqn. \ref{PCA_1}) as $X^TX$ is too big, so we do instead
+\begin{equation}
+XX^T = Q \Lambda Q^T \label{PCA_2}
+\end{equation}
+where $Q$ is a $S \times S$ matrix, $\Lambda$ is an $NxN$ matrix, this is the
+eigen-decomposition of the individual by individual covariance
+matrix. The $k$ column of this matrix is the position of each
+individual on the $k$ eigen-vector (this is the projection given by \ref{proj_1}). We often plot individuals against
+each other on the first few principal components to visualize the
+major axes of variation and explore population structure.
+
+
+\paragraph{some further notes}
+The two eigen-value decompositions are closely related to each other as
+\begin{equation}
+X = Q \Lambda^{1/2} P^T \label{SVD}
+\end{equation}
+which is the singular value decomposition of $X$ (if X is symmetric and square then eqn. \ref{PCA_1} and eqn. \ref{PCA_2} are the same and are the square of the SVD \eqref{SVD}).
+Helpfully we can move between these projections. To obtain the $j^{th}$ 
+\begin{equation}
+Q_j^T X = (Q_k^T Q) \Lambda^{1/2} P^T = \sqrt(\lambda_j) P_j
+\end{equation}
+and
+\begin{equation}
+(XP)_{j} = (Q\Lambda^{1/2} P^T P)_{j} = Q_{j} \sqrt(\lambda_j)
+\end{equation}
+
+\end{document}
