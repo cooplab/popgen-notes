@@ -209,7 +209,7 @@ and expected heterozygosity ($H_E=2pq$)
 \hat{F} = \frac{H_E-H_O}{H_E}. \label{eqn:FhatHO}
 \end{equation}
 If we have multiple loci we can replace $H_O$ and $H_E$ by their means
-over loci $\bar{H_O}$ and $\bar{H_E}$. \\
+over loci $\bar{H}_O$ and $\bar{H}_E$. \\
 
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
@@ -244,7 +244,7 @@ coefficient between an individual ($I$) and the subpopulation
 are heterozygotes. In this sub-population ($S$) the frequency of
 allele $1$ is $p_S$ and the expected heterozygosity is $H_S$. We will write $F_{IS}$ as
 \begin{equation}
-F_{IS} =1-\frac{H_T}{H_S}= 1-\frac{f_{12}}{2p_Sq_S} \label{eqn:FIS}
+F_{IS} =1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S} \label{eqn:FIS}
 \end{equation}
 the direct analog of eqn. \ref{eqn:Fhat}, which compares the observed
 heterozygosity to that expected under random mating within the sub-population. We could also compare our
@@ -255,9 +255,9 @@ population is $p_T$, then we can write $F_{IT}$ as
 F_{IT} =1-\frac{H_I}{H_T}= 1-\frac{f_{12}}{2p_Tq_T} \label{eqn:FIT}
 \end{equation}
 which compares heterozygosity in individuals to that expected in the
-total population. Well as a simple extension of this we could imagine
+total population. As a simple extension of this we could imagine
 comparing the expected heterozygosity in the subpopulation ($H_S$) to
-the expected our total population ($H_T$), via $F_{ST}$
+that expected our total population ($H_T$), via $F_{ST}$
 \begin{equation}
 F_{ST} = 1-\frac{H_S}{H_T}=1-\frac{2p_Sq_S}{2p_Tq_T} \label{eqn:FST}
 \end{equation}
@@ -289,7 +289,7 @@ individuals ($f_{11}$ and $f_{22}$) we find
 F_{IS} = \frac{2p_Sq_S - f_{12}}{2p_Sq_S} = \frac{f_{11}+f_{22} -
 p_S^2 - q_S^2}{2p_Sq_S} \label{eqn:Fascorr}
 \end{equation}
-using the fact that $p^2+2pq+q^2=1$. Well the form of this
+using the fact that $p^2+2pq+q^2=1$. The form of this
 (eqn. \ref{eqn:Fascorr}) is the covariance between pairs of alleles
 found in an individual, divided by the
 expected variance under binomial sampling. Thus $F$ statistics can be
@@ -322,9 +322,9 @@ evolutionary change in quantitative phenotypes in response to selection. \\
 
 Let's imagine that the genetic component of the variation in our trait
 is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of
-allele $1$ a this locus increasing your trait value by $a_l$.
+allele $1$ at this locus increasing your trait value by $a_l$.
 The phenotype of an individual, let's call her $i$, is $Y_i$.
-Her genotype of an individual, at SNP $l$, is
+Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
 has at this SNP. Her expected phenotype, given her genotype, is then
 \begin{equation}
@@ -345,7 +345,7 @@ our individual finds herself in and all of the noise during
 development, growth, and the various random insults that life throws
 at our individual. If a reasonable number of loci contribute to
 variation in our trait then we can approximate the distribution of
-$X_{A,i}$ by a normal distribution due to the central limit theory (see R exercise). Thus if we can
+$X_{A,i}$ by a normal distribution due to the central limit theorem (see R exercise). Thus if we can
 approximate the distribution of the effect of environmental variation
 on our trait ($X_{E,i}$) also by a normal distribution, which is
 reasonable as there are many small environmental effects, then the
@@ -660,7 +660,7 @@ selection is
 The probability that an organism with a phenotype $X$ survives to
 reproduce is $w(X)$, and we'll think about this as the fitness of
 our organism. The probability distribution of phenotypes in those who
-to reproduce is
+do reproduce is
 \begin{equation}
 \P(X | \textrm{survive}) =  \frac{p(x) w(x)}{
 \int_{-\infty}^{\infty} p(x) w(x) dx}.
@@ -716,11 +716,11 @@ consider an individual heterozygous for a $AB$ and $ab$
 haplotype. If no recombination occurs between our two loci in this
 individual, then these two haplotypes will be transmitted intact to
 the next generation. While if a recombination (or more generally an
-odd number of recombinations occurs between our two loci) on the
+odd number of recombinations) occurs between our two loci on the
 haplotype transmitted to the child then $\tfrac{1}{2}$ the time the
 child receives a $Ab$ haplotype and $\tfrac{1}{2}$ the time the child
 receives a $aB$ haplotype. So recombination is breaking up the
-association between loci. We'll define the recombination fraction ($r$) to
+association between loci. We'll define the recombination fraction ($r$) to be
 the probability of an odd number of recombinations between our loci.
 In practice we'll often be interested in relatively short regions
 where recombination is relatively rare, and so we might think that
