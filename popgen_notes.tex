@@ -1463,7 +1463,7 @@ such that the frequency of our allele at $x$ in the next generation is
 q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta x)q(x+\Delta x,t) d \Delta x.
 \end{equation}
 To obtain
-$q(x+\Delta x,t)$ lets take a taylor series expansion of $p(x,t)$
+$q(x+\Delta x,t)$ lets take a taylor series expansion of $q(x,t)$
 \begin{equation}
 q(x+\Delta x,t) = q(x,t) + \Delta x \frac{dq(x,t)}{dx}+ \tfrac{1}{2}(\Delta x)^2 \frac{d^2q(x,t)}{dx^2}+\cdots
 \end{equation}
@@ -2186,7 +2186,7 @@ we'll see that it is safe to ingnore such unlikely events. \\
 
 The
 probability that a specific pair of alleles find a common ancestor in
-the preceding generation is still $1(2N)$. There are three possible
+the preceding generation is still $1/(2N)$. There are three possible
 pairs of alleles so the probability that no pair finds a common
 ancestor is
 \begin{equation}
