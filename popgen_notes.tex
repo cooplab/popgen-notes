@@ -36,7 +36,7 @@
 \section{Allele and Genotype frequencies}
 
 \subsection{Allele frequencies}
-Consider a diploid autosomal locus segregating two alleles ($1$ and $2$). Let's say that the $f_{11}$ is the frequency of $11$ homozygotes and $f_{12}$ is the frequency of $12$ heterozygotes. The frequency of allele $1$ in the population is
+Consider a diploid autosomal locus segregating two alleles ($1$ and $2$). Let's say that $f_{11}$ is the frequency of $11$ homozygotes and $f_{12}$ is the frequency of $12$ heterozygotes. The frequency of allele $1$ in the population is
 \begin{equation}
 p = f_{11} + f_{12}/2
 \end{equation}
@@ -99,7 +99,7 @@ one allele identical by descent at a locus (assuming that the two
 parents of the child are randomly mated individuals from the population).\\
 
 A key quantity is the probability that our pair of individuals share
-0, 1, or 2 alleles identical by descent, we denote these probabilities
+0, 1, or 2 alleles identical by descent. We denote these probabilities
 by $r_0$, $r_1$, and $r_2$ respectively. See Table \ref{table:IBDprobs} for
 some examples. \\
 
@@ -1597,7 +1597,7 @@ such that the frequency of our allele at $x$ in the next generation is
 q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta x)q(x+\Delta x,t) d \Delta x.
 \end{equation}
 To obtain
-$q(x+\Delta x,t)$ lets take a taylor series expansion of $p(x,t)$
+$q(x+\Delta x,t)$ lets take a taylor series expansion of $q(x,t)$
 \begin{equation}
 q(x+\Delta x,t) = q(x,t) + \Delta x \frac{dq(x,t)}{dx}+ \tfrac{1}{2}(\Delta x)^2 \frac{d^2q(x,t)}{dx^2}+\cdots
 \end{equation}
@@ -2320,7 +2320,7 @@ we'll see that it is safe to ingnore such unlikely events. \\
 
 The
 probability that a specific pair of alleles find a common ancestor in
-the preceding generation is still $1(2N)$. There are three possible
+the preceding generation is still $1/(2N)$. There are three possible
 pairs of alleles so the probability that no pair finds a common
 ancestor is
 \begin{equation}
