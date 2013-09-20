@@ -1,0 +1,48 @@
+
+\subsubsection{Hamiliton's Rule and the evolution of altruistic and
+  selfish behaviours}
+So lets imagine that individuals interact in pairs, with our focal
+individual $i$ being paired with an individual $j$.  
+Imagine that individuals have two possible phenotypes $X=1$ or $0$,
+corresponding to providing or withholding some small act of `Altruism'
+(we could just as easily flip these labels and call them a unselfish
+act and a selfish act respectively). 
+
+
+We will assume that our focal $i$ individual's relative fitness can be written as 
+\begin{equation}
+W(X_i,X_j)= W_0 + W_i +W_j
+\end{equation}
+where $W_i$ is the contribution of the fitness of the individual $i$ due
+to this phenotype, and $W_j$ is the contribution to our
+individual $i$'s fitness due to the $j$'s behaviour (i.e. phenotype).
+
+Providing the altruistic act has a cost $C$ to the fitness of our
+individual, with failing to provide this act has no cost. Receiving this
+altruistic act confers a fitness benefit $B$ (not receiving it has no benefit).
+With these benefits and costs our $W(X_i,X_j)$ are depicted in 
+
+Now we can write our fitness component for our individual's fitness
+as 
+\begin{equation}
+W_i = \alpha_i + \beta_{W_i P_i} X_i + \epsilon_{W_i}
+\end{equation}
+and
+\begin{equation}
+W_j = \alpha_j + \beta_{W_j P_j} P_j + \epsilon_{W_j}
+\end{equation}
+our slopes $\beta_{W_i P_i} = Cov(W_i,P_i)/Var(P_i)$ and $\beta_{W_j
+  P_j} = Cov(W_j,P_j)/Var(P_j)$ i.e. the regression our our individual
+$i$s fitness components on his and his neighbour's phenotype. From 
+Figure XXX these slopes are just our cost and benefit.
+
+
+Using the price equation, assuming that the residuals are not
+correlated with 
+\begin{equation}
+\delta \bar{G}_X = \beta_{W_i P_i} Cov(G_i,P_i) +  \beta_{W_j P_j} Cov(G_i,P_j) 
+\end{equation}
+
+where $\beta_{W_i P_i} =Cov(W_i,P_i)/Var(P_i)$ and $\beta_{W_j P_j}
+=Cov(W_j,P_j)/Var(P_j)$ are the slopes of the components of our individual $i$'s fitness 
+against the phenotypes of individual $i$ and $j$
