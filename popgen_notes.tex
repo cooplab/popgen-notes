@@ -316,6 +316,8 @@ subpopulation labels.
 \newpage
 
 \section{The phenotypic resemblance between relatives}
+\gc{added $\mu$, mean to traits below}
+
 We can use our understanding the sharing of alleles between relatives
 to understand the phenotypic resemblance between relatives in
 quantitative phenotypes. We can then use this to understand the
@@ -329,16 +331,16 @@ Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
 has at this SNP. Her expected phenotype, given her genotype, is then
 \begin{equation}
-X_{A,i} = \E (X_i | G_{i,1},\cdots,G_{i,L}) =  \sum_{l=1}^L G_{i,l} a_{l}
+X_{A,i} = \mu + \E (X_i | G_{i,1},\cdots,G_{i,L}) = \mu+ \sum_{l=1}^L G_{i,l} a_{l}
 \end{equation}
-Now in reality the genetic phenotype is a function of the
+where $\mu$ is the mean phenotype in our population. Now in reality the genetic phenotype is a function of the
 expression of those alleles in a particular environment. Therefore, we
 can think of this expected phenotype as being an average across a set
 of environments that occur in the population. \\
 
 When we measure our individual's phenotype we see
 \begin{equation}
-X_i =   X_{A,i} + X_{E,i} \label{pheno_geno_environ}
+X_i =   \mu+X_{A,i} + X_{E,i} \label{pheno_geno_environ}
 \end{equation}
 where $X_E$ is the deviation from the mean phenotype due to the
 environment. This $X_E$ included the systematic effects of the environment
@@ -360,12 +362,11 @@ normally distributed (see Figure \ref{fig:QT1}).\\
 \caption{The convergence of the phenotypic distribution to a normal distribution.} \label{fig:QT1}
 \end{figure}
 
-
 Note that as this is an additive model we can decompose eqn. \ref{pheno_geno_environ} into the
 effects of the two alleles at each locus, in particular we can rewrite
 it as
 \begin{equation}
-X_i = X_{iM}+X_{iP} +X_{iE}
+X_i = \mu + X_{iM}+X_{iP} +X_{iE}
 \end{equation}
 where $X_{iM}$ and $X_{iP}$ are the contribution to the phenotype of
 the allele that our individual received from her mother (maternal
@@ -376,8 +377,9 @@ Now obviously this model seems silly at first sight as alleles don't
 only act in an additive manner, as they interact with alleles at the
 same loci (dominance) and at different loci (epistasis). Later we'll
 relax this assumption, 
-however, we'll find that for our interests in evolutionary change actually it is only the ``additive
-component'' of genetic variation that will concern us. 
+however, we'll find that if we are interested in evolutionary change
+over short time-scales it is actually only the ``additive
+component'' of genetic variation that will (usually) concern us. 
 We will define this more formally later on, but for the moment 
 we can offer the intuition that parents only get to pass on a single
 allele at each locus on to the next generation. As such, it is the
@@ -583,7 +585,54 @@ on the difference between our parental mid-point multiplied by our
 narrow sense heritability. \\
 
 
+\paragraph{Estimating additive genetic variance across a variety of
+  different relationships.}
+\gc{New material}
+In many natural populations we may have access to individuals of a
+range of different relationships to each other (through monitoring
+of the paternity of individuals), but relatively few individuals of a
+given relationship (e.g. sibs). We can try and use this information as
+fully as possible in a mixed model framework. Considering equation
+\ref{pheno_geno_environ} we can write an individual's phenotype $X_i$
+ as 
+\begin{equation}
+X_i =  \mu  + X_{A,i} + e_i 
+\end{equation}
+where $e_i \sim N(0,V_E)$ and $X_{A,i}$ is normally distributed across
+individuals with covariance matrix $V_A A$ where the the entries of
+$A_{ij}=F_{i,j}$. Given the matrix $A$ we can estimate $V_A$.
 
+\paragraph{Multiple traits.}
+\gc{New material}
+Traits often covary with each other, due to both environmentally
+induced effects (e.g. due to the effects of diet on multiple traits)
+and due to the expression of underlying genetic covariance between
+traits. In turn this genetic covariance can reflect pleiotropy, a
+mechanistic effect of an allele on multiple traits (e.g. variants that
+effect skin pigmentation often effect hair color) or the genetic
+linkage of loci independently affecting multiple traits. If we are
+interested in evolution over short time-scales we can (often) ignore
+the genetic basis of this correlation. 
+
+Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
+say the indivdual's leg length and nose length. As before we can write
+these as 
+\begin{eqnarray}
+X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i} \\
+X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \\
+\end{eqnarray}
+As before we can talk about the total phenotypic variance ($V_1,V_2$),
+environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive variance and in trait one and two
+and ($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
+total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
+,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
+=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
+
+In a similar way to before we can estimate these quantities by
+studying the covariance in different traits between relatives: 
+\begin{equation}
+Cov(X_{1,i},X_{2,j}) = F_{i,j} V){A,1,2}
+\end{equation}
 
 \subsubsection{The response to selection}
 Evolution by natural selection requires:
