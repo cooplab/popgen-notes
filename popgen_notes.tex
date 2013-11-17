@@ -587,6 +587,7 @@ narrow sense heritability. \\
 
 \paragraph{Estimating additive genetic variance across a variety of
   different relationships.}
+
 \gc{New material}
 In many natural populations we may have access to individuals of a
 range of different relationships to each other (through monitoring
@@ -600,9 +601,13 @@ X_i =  \mu  + X_{A,i} + e_i
 \end{equation}
 where $e_i \sim N(0,V_E)$ and $X_{A,i}$ is normally distributed across
 individuals with covariance matrix $V_A A$ where the the entries of
-$A_{ij}=F_{i,j}$. Given the matrix $A$ we can estimate $V_A$.
+$A_{ij}=F_{i,j}$. Given the matrix $A$ we can estimate $V_A$. We can
+also add fixed effects into this model to account for generation
+effects, additional mixed effects could also be included to account
+for shared environments between particular individuals (e.g. a shared nest).
 
 \paragraph{Multiple traits.}
+
 \gc{New material}
 Traits often covary with each other, due to both environmentally
 induced effects (e.g. due to the effects of diet on multiple traits)
@@ -628,11 +633,29 @@ total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covaria
 ,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
 =Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
 
-In a similar way to before we can estimate these quantities by
+We can store these values in a matrices 
+\begin{equation}
+\bf{V}= \left( \begin{array}{cc} 
+V_{1} & V_{1,2} \\
+V_{1,2} & V_{2} \\
+\end{array} \right)
+\end{equation}
+and
+\begin{equation}
+\bf{G}= \left( \begin{array}{cc} 
+V_{1,A} & V_{A,1,2} \\
+V_{A,1,2} & V_{2,A} \\
+\end{array} \right)
+\end{equation}
+we can generalize this to an abitrary number of traits.
+
+We can estimate these quantities, in a similar way to before, by
 studying the covariance in different traits between relatives: 
 \begin{equation}
-Cov(X_{1,i},X_{2,j}) = F_{i,j} V){A,1,2}
+Cov(X_{1,i},X_{2,j}) = F_{i,j} V_{A,1,2}
 \end{equation}
+
+
 
 \subsubsection{The response to selection}
 Evolution by natural selection requires:
@@ -707,6 +730,10 @@ i.e. our response to selection is the additive genetic variance of our
 trait ($V_A$) multiplied by the change within a generation as a
 fraction of the total phenotypic variance ($S/V$).\\
 
+
+
+
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Figs/QT3.eps}
@@ -770,7 +797,6 @@ help to define one more quantity, the breeding value.
 The breeding value of an individual is the mean phenotype of the
 offspring of this individual averaged over all possible matings in the
 population. This is $X_{Ai}$
-
 
 For an individual $i$ we can write the the breeding value of an individual $G_X$ as
 \begin{equation}
@@ -880,8 +906,6 @@ the benefit weighted by a factor $\frac{Cov(G_i,P_j)}{Cov(G_i,P_i)}$. The term $
 is the ratio of the ratio of covariance between our focal
 individual's genotype and their phenotype and that of their
 interacting neighbour. 
-
-Our altuistic 
 
 \newpage
 
