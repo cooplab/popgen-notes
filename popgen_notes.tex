@@ -638,14 +638,14 @@ We can store these values in a matrices
 \bf{V}= \left( \begin{array}{cc} 
 V_{1} & V_{1,2} \\
 V_{1,2} & V_{2} \\
-\end{array} \right)
+\end{array} \right) \label{P_matrix}
 \end{equation}
 and
 \begin{equation}
 \bf{G}= \left( \begin{array}{cc} 
 V_{1,A} & V_{A,1,2} \\
 V_{A,1,2} & V_{2,A} \\
-\end{array} \right)
+\end{array} \right)  \label{G_matrix}
 \end{equation}
 we can generalize this to an abitrary number of traits.
 
@@ -728,10 +728,8 @@ R= V_A \frac{S}{V}
 \end{equation}
 i.e. our response to selection is the additive genetic variance of our
 trait ($V_A$) multiplied by the change within a generation as a
-fraction of the total phenotypic variance ($S/V$).\\
-
-
-
+fraction of the total phenotypic variance ($S/V$, \gc{sometimes called the
+the selection gradient $\beta$}).\\
 
 
 \begin{figure}
@@ -767,7 +765,6 @@ which we'll call $\wbar$, i.e.
 \int_{-\infty}^{\infty} p(x) w(x) dx.
 \end{equation}
 
-
 Therefore, we can write the mean phenotype in those who survive to
 reproduce as
 \begin{equation}
@@ -791,7 +788,37 @@ we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with the parent phenotype.
 
+\paragraph{The response of multiple traits to selection, the
+  multivariate breeder's equation.}
+\gc{New material}
+We can generalize these results for multiple traits, to ask how selection on
+multiple phenotypes plays out over short time intervals. We'll write
+our change in the mean our multiple phenotypes within a generation as
+the vector $\bf{S}$ and our response across multiple generations as
+the vector $\bf{R}$. These two quantities are related by 
+\begin{equation}
+\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \bf{\beta}
+\end{equation}
+ where $\bf{V}$ and $\bf{G}$ are our matrices of the
+ variance-covariance of phenotypes and additive genetic values
+ (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
+ $\bf{\beta}$ is a vector of selection gradients (i.e. the change
+ within a generation as a fraction of the total phenotypic variance).
+To make this a bit more intuitive, consider two traits we are writing 
+\begin{eqnarray}
+R_1 & = V_{A,1} \beta_1 + V_{A,1,2} \beta_2 \nonumber \\
+R_2 & = V_{A,2} \beta_2 + V_{A,1,2} \beta_1  \nonumber \\
+\end{eqnarray}
+where the $1$ and $2$ index our two different traits. This is a
+statement that our response in any one phenotype is modified by
+selection on other traits that covary with that trait.
+This offers a good way to think about how genetic trade offs play out
+over evolution over short time-scales.
+
+
 \paragraph{Breeding values}
+
+\gc{Here be dragons, this section has not be worked through}
 Before we turn to our discussion of the response to selection it will
 help to define one more quantity, the breeding value. 
 The breeding value of an individual is the mean phenotype of the
@@ -839,6 +866,7 @@ where $\beta_{WP} = Cov(W,P)/Var(P)$. If $\epsilon_W$ and $G$ are uncorrelated
 \subsubsection{Hamiliton's Rule and the evolution of altruistic and
   selfish behaviours}
 
+\gc{Here be dragons, this section has not be worked through}
 We can use our quantitative genetics framework to gain some simple
 intuition for when altruistic behaviours should evolve through kin selection. To do this we
 can follow Queller's (1992) treatment, to rederive Hamiliton's rule in
