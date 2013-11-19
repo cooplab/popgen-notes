@@ -318,7 +318,7 @@ subpopulation labels.
 \section{The phenotypic resemblance between relatives}
 \gc{added $\mu$, mean to traits below}
 
-We can use our understanding the sharing of alleles between relatives
+We can use our understanding of the sharing of alleles between relatives
 to understand the phenotypic resemblance between relatives in
 quantitative phenotypes. We can then use this to understand the
 evolutionary change in quantitative phenotypes in response to selection. \\
@@ -398,7 +398,7 @@ The variance of our phenotype across individuals ($V$) can write this as
 \begin{equation}
 V = Var(X_A) + Var(X_E) = V_A+V_E
 \end{equation}
-in doing writing this we are assuming that there is no covariance between $X_{G,i}$
+in writing this we are assuming that there is no covariance between $X_{G,i}$
 and $X_{E,i}$ i.e. there is no covariance between genotype and
 environment. \\
 
@@ -508,10 +508,10 @@ If the mother and father are unrelated individuals (i.e. are two
 random draws from the population) then the mother and a child share
 one allele IBD at each locus (i.e. $r_1=1$ and $r_0=r_2=0$). Half the
 time our mother transmits her paternal allele to the child, in which
-case $X_{P1}=X_{M1}$ and so $Cov(X_{P1},X_{M2})=Var(X_{P1})$ and all
+case $X_{P1}=X_{M2}$ and so $Cov(X_{P1},X_{M2})=Var(X_{P1})$ and all
 the other covariances in eqn. \ref{cov_rels_1} zero, and half
 the time she transmits her maternal allele to the child
-$Cov(X_{M1},X_{M2})=Var(X_{P1})$ and all the other terms zero. By this
+$Cov(X_{M1},X_{M2})=Var(X_{M1})$ and all the other terms zero. By this
 argument $Cov(X_1,X_2) = \half Var(X_{M1}) + \half Var(X_{P1}) = \half
 V_A$. \\
 
@@ -561,7 +561,7 @@ need to control for environmental correlations between relatives. \\
 
 Our regression allows us to attempt to predict the phenotype of the
 child given the child; how well we can do this depends on the
-slope. If the slope close to zero then the parental phenotypes hold no
+slope. If the slope is close to zero then the parental phenotypes hold no
 information about the phenotype of the child, while if the slope is
 close to one then the parental mid-point is a good guess at the child's
 phenotype.\\
