@@ -519,19 +519,21 @@ V_A$. \\
 additive model}
 The two examples make clear that to understand the covariance between
 phenotypes of relatives we simply need to think about the alleles they
-share IBD. Consider a pair of relatives ($x$ and $y$) with a probability $r_0$,
+share IBD. Consider a pair of relatives ($1$ and $1$) with a probability $r_0$,
 $r_1$, and $r_2$ of sharing zero, one, or two alleles IBD
 respectively. When they share zero alleles
 $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=0$, when they share one allele
-$Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=\half
-Var(X_{1M})=\frac{1}{4}V_A$, and when they share two alleles $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
-Var(X_{1M})=\half V_A$. Therefore, the general covariance between two
+\gc{$Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
+Var(X_{1M})=\frac{1}{2}V_A$, and when they share two alleles $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
+V_A$. Therefore, the general covariance between two
 relatives is
 \begin{equation}
-Cov(X_1,X_2) = r_0 \times 0 + r_1 \frac{1}{4}V_A + r_2 \half V_A =
-F_{x,y} V_A
+Cov(X_1,X_2) = r_0 \times 0 + r_1 \frac{1}{2}V_A + r_2  V_A =
+2 F_{1,2} V_A
 \end{equation}\\
-
+}
+\gc{I seem to have been missing a factor of two in the above equations. I apologize
+  for the confusion caused.}
 So under a simple additive model of the genetic basis of a phenotype
 to measure the narrow sense heritability we need to measure the
 covariance between a set of pairs of relatives (assuming that we can remove the effect of
@@ -600,8 +602,9 @@ fully as possible in a mixed model framework. Considering equation
 X_i =  \mu  + X_{A,i} + e_i 
 \end{equation}
 where $e_i \sim N(0,V_E)$ and $X_{A,i}$ is normally distributed across
-individuals with covariance matrix $V_A A$ where the the entries of
-$A_{ij}=F_{i,j}$. Given the matrix $A$ we can estimate $V_A$. We can
+individuals with covariance matrix $V_A A$ where the the entries for
+an pair of individuals i and i are 
+\gc{$A_{ij}= 2 F_{i,j}$}. Given the matrix $A$ we can estimate $V_A$. We can
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
@@ -653,10 +656,11 @@ we can generalize this to an abitrary number of traits.
 
 We can estimate these quantities, in a similar way to before, by
 studying the covariance in different traits between relatives: 
+\gc{
 \begin{equation}
-Cov(X_{1,i},X_{2,j}) = F_{i,j} V_{A,1,2}
+Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
 \end{equation}
-
+}
 
 
 \subsubsection{The response to selection}
