@@ -337,6 +337,8 @@ where $\mu$ is the mean phenotype in our population. Now in reality the genetic 
 expression of those alleles in a particular environment. Therefore, we
 can think of this expected phenotype as being an average across a set
 of environments that occur in the population. \\
+\gc{NEED to resolve $\mu$ in above equation}
+
 
 When we measure our individual's phenotype we see
 \begin{equation}
@@ -604,7 +606,7 @@ X_i =  \mu  + X_{A,i} + e_i
 where $e_i \sim N(0,V_E)$ and $X_{A,i}$ is normally distributed across
 individuals with covariance matrix $V_A A$ where the the entries for
 an pair of individuals i and i are 
-\gc{$A_{ij}= 2 F_{i,j}$}. Given the matrix $A$ we can estimate $V_A$. We can
+\gc{$A_{ij}= 2 F_{i,j}$ and $A_{ii} 1$}. Given the matrix $A$ we can estimate $V_A$. We can
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
@@ -628,8 +630,8 @@ Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
 say the indivdual's leg length and nose length. As before we can write
 these as 
 \begin{eqnarray}
-X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i} \\
-X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \\
+X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
+X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
 \end{eqnarray}
 As before we can talk about the total phenotypic variance ($V_1,V_2$),
 environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive variance and in trait one and two
@@ -829,7 +831,7 @@ Before we turn to our discussion of the response to selection it will
 help to define one more quantity, the breeding value. 
 The breeding value of an individual is the mean phenotype of the
 offspring of this individual averaged over all possible matings in the
-population. This is $X_{Ai}$
+population. This is $X_{Ai}$.
 
 For an individual $i$ we can write the the breeding value of an individual $G_X$ as
 \begin{equation}
@@ -977,7 +979,7 @@ pairs separating our two loci.\\
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have a allele
+alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
@@ -1035,7 +1037,7 @@ Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
 
 
 \paragraph{The decay of LD due to recombination}
-We've now think about what happens to LD over the generations if we
+We will now examine what happens to LD over the generations if we
 only allow recombination to occur in a very large population (i.e. no
 genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
 $p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
@@ -1114,20 +1116,20 @@ point during the life cycle. \\
 
 \subsection{Haploid selection model}
 
-The numbers individuals carrying allele 1 and allele 2 in generation
+The number of individuals carrying allele 1 and allele 2 in generation
 $t$ are $P_t$ and $Q_t$
 respectively. The current frequency of allele 1 is $p=P_t/(P_t+Q_t)$.\\
 
-In the next generation the number of of type 1 and 2 individual is
+In the next generation the number of type 1 and 2 individual is
 $P_{t+1} = w_1 P_t$ and $Q_{t+1}=w_2 Q_t$
-The mean fitness of our population is  $w_1 p_t+w_2 q_t$, i.e. the
+The mean fitness of our population is  $w_1 p_t+w_2 q_t = \wbar$, i.e. the
 fitness of the two alleles weighted by their frequencies within the population.\\
 
 The frequency of allele $1$ in the next generation
 \begin{equation}
 p_{t+1} = \frac{ w_1 P_t}{ w_1 P_t+ w_2 Q_t} =  \frac{ w_1 p_t}{ \wbar}
 \end{equation}
-The change in frequency form one generation to the next is
+The change in frequency from one generation to the next is
 \begin{equation}
 \Delta p = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t =
 \frac{pq(w_1-w_2)}{\wbar} \label{eq:deltap_haploid}
