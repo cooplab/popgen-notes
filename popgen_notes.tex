@@ -35,6 +35,7 @@
 
 \tableofcontents
 
+\newpage
 \section{Allele and Genotype frequencies}
 
 \subsection{Allele frequencies}
@@ -315,8 +316,166 @@ subpopulation labels.
 
 \newpage
 
+\section{Correlations between loci, linkage disequilibrium, and recombination.}
+
+%</source-file>
+
+Up to now we've been interested in correlations between alleles at the
+same locus, e.g. correlations within individuals (inbreeding) or between
+individuals (relatedness). We turn our attention now to think about
+correlations between alleles at different loci. To start to understand
+correlations between loci we need to first understand a bit about recombination.\\
+
+
+\paragraph{Recombination}  Lets
+consider an individual heterozygous for a $AB$ and $ab$
+haplotype. If no recombination occurs between our two loci in this
+individual, then these two haplotypes will be transmitted intact to
+the next generation. While if a recombination (or more generally an
+odd number of recombinations) occurs between our two loci on the
+haplotype transmitted to the child then $\tfrac{1}{2}$ the time the
+child receives a $Ab$ haplotype and $\tfrac{1}{2}$ the time the child
+receives a $aB$ haplotype. So recombination is breaking up the
+association between loci. We'll define the recombination fraction ($r$) to be
+the probability of an odd number of recombinations between our loci.
+In practice we'll often be interested in relatively short regions
+where recombination is relatively rare, and so we might think that
+$r=r_{BP}L \ll 1$, where $r_{BP}$ is the average recombination rate
+per base pair (typically $\sim 10^{-8}$) and L is the number of base
+pairs separating our two loci.\\
+
+
+
+\paragraph{Linkage disequilibrium}
+The (horrible) phrase linkage
+disequilibrium (LD) refers to the statistical non-independence
+(i.e. a correlation)  of
+alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have allele
+frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
+and likewise for our other three combinations. If our loci were
+statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
+We can define a covariance between the $A$ and $B$ alleles at our two loci as
+\begin{equation}
+D_{AB} = p_{AB} - p_Ap_B
+\end{equation}
+and likewise for our other combinations at our two loci
+($D_{Ab},~D_{aB},~D_{ab}$). These $D$ statistics are all closely
+related to each other as $D_{AB} = - D_{Ab}$ and so on. Thus we only
+need to specify one $D_{AB}$ to know them all, so we'll drop the
+subscript and just refer to $D$. Also a handy result is that we can rewrite our haplotype
+frequency $p_{AB}$ as
+\begin{equation}
+p_{AB} = p_Ap_B+D. \label{eqn:ABviaD}
+\end{equation}
+If $D=0$ we'll say the two loci are in linkage equilibrium, while if
+$D>0$ or $D<0$ we'll say that the loci are in linkage
+disequilibrium (we'll perhaps want to test whether $D$ is
+statistically different from $0$ before making this choice). You should be careful to keep the concepts of linkage
+and linkage disequilibrium separate in your mind. Genetic linkage refers to the
+linkage of multiple loci due to the fact that they
+are transmitted through meiosis together (most often because the
+loci are on the same chromosome). Linkage disequilibrium merely refers
+to the correlation between the alleles at different loci, this may in
+part be due to the genetic linkage of these loci but does not
+necessarily imply this (e.g. genetically unlinked loci can be in LD
+due to population structure). \\
+
+Another common statistic for summarizing LD is $r^2$ which we write as
+\begin{equation}
+r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
+\end{equation}
+as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
+drawn at random from locus $A$, $r^2$ is the squared correlation
+coefficient.    \\
+
+
+{\bf Question.} You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
+\begin{center}
+\begin{tabular}{|c|cccc|}
+\hline
+Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
+\hline
+1 &    .02    & .18 &     .08 &    .72\\
+2&    .72 &    .18 &    .08 &    .02\\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf A)} How much LD is there within populations, i.e. estimate D?\\
+
+{\bf B)} If we mixed the two populations together in equal proportions what value would D take before any mating has had the chance to occur? \\
+
+
+
+\paragraph{The decay of LD due to recombination}
+We will now examine what happens to LD over the generations if we
+only allow recombination to occur in a very large population (i.e. no
+genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
+$p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
+recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
+haplotypes recombining together to form $AB$ haplotypes. Thus in the
+next generation
+\begin{equation}
+p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B
+\end{equation}
+this last term here is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$, which
+multiplying this out is the
+probability of recombination in the different diploid genotypes that
+could generate a $p_{AB}$ haplotype. \\
+
+We can then write the change in the frequency of the $p_{AB}$
+haplotype as
+\begin{equation}
+\Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -r p_{AB} + rp_Ap_B = - r D
+\end{equation}
+so recombination will cause a decrease in the frequency of $p_{AB}$ if
+there is an excess of $AB$ haplotypes within the population ($D>0$), and an
+increase if there is a deficit of $AB$ haplotypes within the
+population ($D<0$). Our LD in the next generation is $D^{\prime} =
+p_{AB}^{\prime}$, so we can rewrite the above eqn. in terms of the
+$D^{\prime} $
+\begin{equation}
+D^{\prime}= (1-r) D
+\end{equation}
+so if the level of LD in generation $0$ is $D_0$ the level $t$
+generations later ($D_t$) is
+\begin{equation}
+D_t=  (1-r)^t D_0
+\end{equation}
+so recombination is acting to decrease LD, and it does so
+geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
+approximate this by an exponential and say that   
+\begin{equation}
+D_t \approx  D_0 e^{-rt}
+\end{equation}\\
+
+
+
+{\bf Q C)} You find a hybrid population between the two mouse subspecies
+described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
+
+%\subsection{Testing for departures from HWE.}
+%Note the form of $\hat{F}$ \eqref{eqn:FhatHO} is the same as the $X^2$
+%statistic, and so we can test for a deviation from hardy-weinberg  $X^2$
+
+
+%\subsection{Population structure}
+%The question naturally arises at this point: what reference population
+%(i.e. what allele frequency) do we use to calculate $\hat{F}$? If we are %calculating the inbreeding coefficient
+%of an English person do we use the frequencies of the town of that
+%person, of England, of the United Kingdom, or of the World?
+
+
+
+%\gc{Include the HapMap exercise here?}
+
+
+%==One locus models of selection==
+%<source-file filename="one_loc_sel_models.tex" display="one_loc_sel_models.wrapped.latexml.xhtml">
+
+\newpage
+
 \section{The phenotypic resemblance between relatives}
-\gc{added $\mu$, mean to traits below}
 
 We can use our understanding of the sharing of alleles between relatives
 to understand the phenotypic resemblance between relatives in
@@ -325,7 +484,8 @@ evolutionary change in quantitative phenotypes in response to selection. \\
 
 Let's imagine that the genetic component of the variation in our trait
 is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of
-allele $1$ at this locus increasing your trait value by $a_l$.
+allele $1$ at this locus increasing your trait value by $a_l$ above
+the population mean.
 The phenotype of an individual, let's call her $i$, is $X_i$.
 Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
@@ -337,7 +497,8 @@ where $\mu$ is the mean phenotype in our population. Now in reality the genetic 
 expression of those alleles in a particular environment. Therefore, we
 can think of this expected phenotype as being an average across a set
 of environments that occur in the population. \\
-\gc{NEED to resolve $\mu$ in above equation}
+
+%\gc{NEED to resolve $\mu$ in above equation}
 
 
 When we measure our individual's phenotype we see
@@ -525,7 +686,7 @@ share IBD. Consider a pair of relatives ($1$ and $1$) with a probability $r_0$,
 $r_1$, and $r_2$ of sharing zero, one, or two alleles IBD
 respectively. When they share zero alleles
 $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=0$, when they share one allele
-\gc{$Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
+$Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
 Var(X_{1M})=\frac{1}{2}V_A$, and when they share two alleles $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=
 V_A$. Therefore, the general covariance between two
 relatives is
@@ -533,9 +694,6 @@ relatives is
 Cov(X_1,X_2) = r_0 \times 0 + r_1 \frac{1}{2}V_A + r_2  V_A =
 2 F_{1,2} V_A
 \end{equation}\\
-}
-\gc{I seem to have been missing a factor of two in the above equations. I apologize
-  for the confusion caused.}
 So under a simple additive model of the genetic basis of a phenotype
 to measure the narrow sense heritability we need to measure the
 covariance between a set of pairs of relatives (assuming that we can remove the effect of
@@ -592,7 +750,6 @@ narrow sense heritability. \\
 \paragraph{Estimating additive genetic variance across a variety of
   different relationships.}
 
-\gc{New material}
 In many natural populations we may have access to individuals of a
 range of different relationships to each other (through monitoring
 of the paternity of individuals), but relatively few individuals of a
@@ -606,7 +763,7 @@ X_i =  \mu  + X_{A,i} + e_i
 where $e_i \sim N(0,V_E)$ and $X_{A,i}$ is normally distributed across
 individuals with covariance matrix $V_A A$ where the the entries for
 an pair of individuals i and i are 
-\gc{$A_{ij}= 2 F_{i,j}$ and $A_{ii} 1$}. Given the matrix $A$ we can estimate $V_A$. We can
+$A_{ij}= 2 F_{i,j}$ and $A_{ii} 1$. Given the matrix $A$ we can estimate $V_A$. We can
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
@@ -615,7 +772,6 @@ name of variance components analysis.
 
 \paragraph{Multiple traits.}
 
-\gc{New material}
 Traits often covary with each other, due to both environmentally
 induced effects (e.g. due to the effects of diet on multiple traits)
 and due to the expression of underlying genetic covariance between
@@ -658,11 +814,11 @@ we can generalize this to an abitrary number of traits.
 
 We can estimate these quantities, in a similar way to before, by
 studying the covariance in different traits between relatives: 
-\gc{
+
 \begin{equation}
 Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
 \end{equation}
-}
+
 
 
 \subsubsection{The response to selection}
@@ -736,8 +892,8 @@ R= V_A \frac{S}{V}
 \end{equation}
 i.e. our response to selection is the additive genetic variance of our
 trait ($V_A$) multiplied by the change within a generation as a
-fraction of the total phenotypic variance ($S/V$, \gc{sometimes called the
-the selection gradient $\beta$}).\\
+fraction of the total phenotypic variance ($S/V$, sometimes called the
+the selection gradient $\beta$).\\
 
 
 \begin{figure}
@@ -798,7 +954,6 @@ that our child's phenotype is correlated with the parent phenotype.
 
 \paragraph{The response of multiple traits to selection, the
   multivariate breeder's equation.}
-\gc{New material}
 We can generalize these results for multiple traits, to ask how selection on
 multiple phenotypes plays out over short time intervals. We'll write
 our change in the mean our multiple phenotypes within a generation as
@@ -824,283 +979,6 @@ This offers a good way to think about how genetic trade offs play out
 over evolution over short time-scales.
 
 
-\paragraph{Breeding values}
-
-\gc{Here be dragons, this section has not be worked through}
-Before we turn to our discussion of the response to selection it will
-help to define one more quantity, the breeding value. 
-The breeding value of an individual is the mean phenotype of the
-offspring of this individual averaged over all possible matings in the
-population. This is $X_{Ai}$.
-
-For an individual $i$ we can write the the breeding value of an individual $G_X$ as
-\begin{equation}
-G_i = \alpha_G + \beta_{GP} X_i   +\epsilon_G %equation 10.4 Falconer
-\end{equation}
-where $\beta_{GX}  Cov(X,G)/Var(X) =h^2$ 
-
-
-The breeder's equation is in fact a statement of the change in the mean
-breeding value of the population. To see this consider the fact that
-we can write the change in mean breeding value within a generation due
-to selection as 
-\begin{equation}
-R=\E[G_i] = \beta_{GP} \bar{X_{}}-\bar{P_X}
-\end{equation}
-
-We can also write the breeder's equation as 
-\begin{equation} 
-R =\delta \bar{G} = Cov(G,W)
-\end{equation}
-i.e. the mean change in phenotypes over the generations is due to the
-fact that our breeding values covaries with fitness 
-this is the Price equation. 
-
-If  $\epsilon_G$ and G are uncorrelated then
-\begin{equation}
-\delta \bar{G} = Cov(G,W) = \beta_{GP} Cov(P,W) = h^2 S
-\end{equation}
-we can also write
-\begin{equation}
-W = \alpha_W + \beta_{WP} P +\epsilon_W
-\end{equation}
-where $\beta_{WP} = Cov(W,P)/Var(P)$. If $\epsilon_W$ and $G$ are uncorrelated
-
-\begin{equation}
-\delta \bar{G} = Cov(G,W) = \beta_{WP} Cov(G,P) 
-\end{equation}
-
-
-\subsubsection{Hamiliton's Rule and the evolution of altruistic and
-  selfish behaviours}
-
-\gc{Here be dragons, this section has not be worked through}
-We can use our quantitative genetics framework to gain some simple
-intuition for when altruistic behaviours should evolve through kin selection. To do this we
-can follow Queller's (1992) treatment, to rederive Hamiliton's rule in
-a quantitative genetics framework (Hamilition original work did this in a
-population genetics framework).
-
-So lets imagine that individuals interact in pairs, with our focal
-individual $i$ being paired with an individual $j$.  
-Imagine that individuals have two possible phenotypes $X=1$ or $0$,
-corresponding to providing or withholding some small act of `Altruism'
-(we could just as easily flip these labels and call them a unselfish
-act and a selfish act respectively). Providing the altruistic act has a cost $C$ to the fitness of our
-individual, with failing to provide this act has no cost. Receiving this
-altruistic act confers a fitness benefit $B$ (not receiving it has no benefit).
-Hamiliton's Rule is that such a trait will spread through the
-population if the average coefficient of relatedness between two
-individuals is $r$, i.e. the probability that a gene picked randomly 
-from each at the same locus is identical by descent, such that $C<rB$.
-The intuition here is that while our focal individual $i$ is losing
-out of some reproductive output, the alleles underlying the behavior
-are still spreading as this cost is outweighed by the transmission of these 
-alleles through a related individual (note that this means that the
-allele is not acting in an self sacrificing manner, even though
-individuals may as a result). 
-  
-
-We will assume that our focal $i$ individual's relative fitness can be written as 
-\begin{equation}
-W(X_i,X_j)= W_0 + W_i +W_j
-\end{equation}
-where $W_i$ is the contribution of the fitness of the individual $i$ due
-to this phenotype, and $W_j$ is the contribution to our
-individual $i$'s fitness due to the $j$'s behaviour (i.e. phenotype).
-With the benefit $B$ and cost $C$ our $W(X_i,X_j)$ are depicted in
-Figure XXX. We can write our fitness component for our individual's fitness
-as 
-\begin{equation}
-W_i = \alpha_i + \beta_{W_i P_i} X_i + \epsilon_{W_i}
-\end{equation}
-and
-\begin{equation}
-W_j = \alpha_j + \beta_{W_j P_j} P_j + \epsilon_{W_j}
-\end{equation}
-our slopes $\beta_{W_i P_i} = Cov(W_i,P_i)/Var(P_i)$ and $\beta_{W_j
-  P_j} = Cov(W_j,P_j)/Var(P_j)$ i.e. the regression our our individual
-$i$s fitness components on his and his neighbour's phenotype. From 
-Figure XXX these slopes are just our cost and benefit.
-
-Using the price equation, assuming that the residuals are not
-correlated with our genotype we arrive at
-\begin{equation}
-\delta \bar{G}_X = \beta_{W_i P_i} Cov(G_i,P_i) +  \beta_{W_j P_j} Cov(G_i,P_j) 
-\end{equation}
-so our  altruistic trait will increase in frequency in the
-population only if $\delta \bar{G}_X >0$, i.e. that 
-\begin{equation}
-0<\beta_{W_i P_i}  + \beta_{W_j P_j} \frac{Cov(G_i,P_j)}{Cov(G_i,P_i)} 
-\end{equation}
-substituting in our slopes we arrive at 
-\begin{equation}
-C<  B \frac{Cov(G_i,P_j)}{Cov(G_i,P_i)} 
-\end{equation}
-i.e. our altruistic trait will increase if the cost is outweighed by
-the benefit weighted by a factor $\frac{Cov(G_i,P_j)}{Cov(G_i,P_i)}$. The term $\frac{Cov(G_i,P_j)}{Cov(G_i,P_i)}$ 
-is the ratio of the ratio of covariance between our focal
-individual's genotype and their phenotype and that of their
-interacting neighbour. 
-
-\newpage
-
-\section{Correlations between loci, linkage disequilibrium, and recombination.}
-
-%</source-file>
-
-Up to now we've been interested in correlations between alleles at the
-same locus, e.g. correlations within individuals (inbreeding) or between
-individuals (relatedness). We turn our attention now to think about
-correlations between alleles at different loci. To start to understand
-correlations between loci we need to first understand a bit about recombination.\\
-
-
-\paragraph{Recombination}  Lets
-consider an individual heterozygous for a $AB$ and $ab$
-haplotype. If no recombination occurs between our two loci in this
-individual, then these two haplotypes will be transmitted intact to
-the next generation. While if a recombination (or more generally an
-odd number of recombinations) occurs between our two loci on the
-haplotype transmitted to the child then $\tfrac{1}{2}$ the time the
-child receives a $Ab$ haplotype and $\tfrac{1}{2}$ the time the child
-receives a $aB$ haplotype. So recombination is breaking up the
-association between loci. We'll define the recombination fraction ($r$) to be
-the probability of an odd number of recombinations between our loci.
-In practice we'll often be interested in relatively short regions
-where recombination is relatively rare, and so we might think that
-$r=r_{BP}L \ll 1$, where $r_{BP}$ is the average recombination rate
-per base pair (typically $\sim 10^{-8}$) and L is the number of base
-pairs separating our two loci.\\
-
-
-
-\paragraph{Linkage disequilibrium}
-The (horrible) phrase linkage
-disequilibrium (LD) refers to the statistical non-independence
-(i.e. a correlation)  of
-alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have allele
-frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
-and likewise for our other three combinations. If our loci were
-statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
-We can define a covariance between the $A$ and $B$ alleles at our two loci as
-\begin{equation}
-D_{AB} = p_{AB} - p_Ap_B
-\end{equation}
-and likewise for our other combinations at our two loci
-($D_{Ab},~D_{aB},~D_{ab}$). These $D$ statistics are all closely
-related to each other as $D_{AB} = - D_{Ab}$ and so on. Thus we only
-need to specify one $D_{AB}$ to know them all, so we'll drop the
-subscript and just refer to $D$. Also a handy result is that we can rewrite our haplotype
-frequency $p_{AB}$ as
-\begin{equation}
-p_{AB} = p_Ap_B+D. \label{eqn:ABviaD}
-\end{equation}
-If $D=0$ we'll say the two loci are in linkage equilibrium, while if
-$D>0$ or $D<0$ we'll say that the loci are in linkage
-disequilibrium (we'll perhaps want to test whether $D$ is
-statistically different from $0$ before making this choice). You should be careful to keep the concepts of linkage
-and linkage disequilibrium separate in your mind. Genetic linkage refers to the
-linkage of multiple loci due to the fact that they
-are transmitted through meiosis together (most often because the
-loci are on the same chromosome). Linkage disequilibrium merely refers
-to the correlation between the alleles at different loci, this may in
-part be due to the genetic linkage of these loci but does not
-necessarily imply this (e.g. genetically unlinked loci can be in LD
-due to population structure). \\
-
-Another common statistic for summarizing LD is $r^2$ which we write as
-\begin{equation}
-r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
-\end{equation}
-as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
-drawn at random from locus $A$, $r^2$ is the squared correlation
-coefficient.    \\
-
-
-{\bf Question.} You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
-\begin{center}
-\begin{tabular}{|c|cccc|}
-\hline
-Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
-\hline
-1 &    .02    & .18 &     .08 &    .72\\
-2&    .72 &    .18 &    .08 &    .02\\
-\hline
-\end{tabular}
-\end{center}
-
-{\bf A)} How much LD is there within populations, i.e. estimate D?\\
-
-{\bf B)} If we mixed the two populations together in equal proportions what value would D take before any mating has had the chance to occur? \\
-
-
-
-\paragraph{The decay of LD due to recombination}
-We will now examine what happens to LD over the generations if we
-only allow recombination to occur in a very large population (i.e. no
-genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
-$p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
-recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
-haplotypes recombining together to form $AB$ haplotypes. Thus in the
-next generation
-\begin{equation}
-p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B
-\end{equation}
-this last term here is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$, which
-multiplying this out is the
-probability of recombination in the different diploid genotypes that
-could generate a $p_{AB}$ haplotype. \\
-
-We can then write the change in the frequency of the $p_{AB}$
-haplotype as
-\begin{equation}
-\Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -r p_{AB} + rp_Ap_B = - r D
-\end{equation}
-so recombination will cause a decrease in the frequency of $p_{AB}$ if
-there is an excess of $AB$ haplotypes within the population ($D>0$), and an
-increase if there is a deficit of $AB$ haplotypes within the
-population ($D<0$). Our LD in the next generation is $D^{\prime} =
-p_{AB}^{\prime}$, so we can rewrite the above eqn. in terms of the
-$D^{\prime} $
-\begin{equation}
-D^{\prime}= (1-r) D
-\end{equation}
-so if the level of LD in generation $0$ is $D_0$ the level $t$
-generations later ($D_t$) is
-\begin{equation}
-D_t=  (1-r)^t D_0
-\end{equation}
-so recombination is acting to decrease LD, and it does so
-geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
-approximate this by an exponential and say that   
-\begin{equation}
-D_t \approx  D_0 e^{-rt}
-\end{equation}\\
-
-
-
-{\bf Q C)} You find a hybrid population between the two mouse subspecies
-described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
-
-%\subsection{Testing for departures from HWE.}
-%Note the form of $\hat{F}$ \eqref{eqn:FhatHO} is the same as the $X^2$
-%statistic, and so we can test for a deviation from hardy-weinberg  $X^2$
-
-
-%\subsection{Population structure}
-%The question naturally arises at this point: what reference population
-%(i.e. what allele frequency) do we use to calculate $\hat{F}$? If we are %calculating the inbreeding coefficient
-%of an English person do we use the frequencies of the town of that
-%person, of England, of the United Kingdom, or of the World?
-
-
-
-%\gc{Include the HapMap exercise here?}
-
-
-%==One locus models of selection==
-%<source-file filename="one_loc_sel_models.tex" display="one_loc_sel_models.wrapped.latexml.xhtml">
 
 \newpage
 \section{One locus models of selection}
