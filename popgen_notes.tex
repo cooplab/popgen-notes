@@ -10,6 +10,9 @@
 \usepackage{color}
 \usepackage{fullpage}
 
+% Added by Simon:
+\usepackage[normalem]{ulem}
+
 \newcommand{\gc}[1]{{\em \color{green} #1}}
 \newcommand{\sa}[1]{{\color{rev1} #1}}
 \newcommand{\plr}[1]{{\em \color{green} (#1)}}
@@ -18,6 +21,10 @@
 \newcommand{\half}{\tfrac{1}{2}}
 
 \newcommand{\wbar}{\overline{w}}
+% New commands added by Simon:
+\newcommand{\fis}{F_{\mathrm{IS}}}
+\newcommand{\fit}{F_{\mathrm{IT}}}
+\newcommand{\fst}{F_{\mathrm{ST}}}
 
 \definecolor{rev1}{rgb}{1, 0, 0}
 
@@ -39,16 +46,16 @@
 \tableofcontents
 
 \newpage
-\section{Allele and Genotype frequencies}
+\section{Allele and \sa{g}enotype frequencies}
 
 \subsection{Allele frequencies}
 Consider a diploid autosomal locus segregating \sa{at} two alleles \sa{($A_1$ and $A_2$)}. \sa{Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of diploid individuals in the population. We can then define the relative frequencies of $A_1A_1$ and $A_1A_2$ genotypes as $f_{11} = N_{11}/N$ and $f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the population is then given by}
 \begin{equation}
 p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. % Modified by Simon
 \end{equation}
-\sa{N}ote that this makes no assumption of Hardy-Weinberg [see below]. The frequency of the alternate allele \sa{($A_2$)} is then just $q=1-p$.
+\sa{N}ote that this holds independently of Hardy\sa{--}Weinberg proportions and equilibrium [see below]. The frequency of the alternate allele \sa{($A_2$)} is then just $q=1-p$.
 
-\subsection{Hardy-Weinberg}
+\subsection{Hardy\sa{--}Weinberg \sa{proportions}}
 
 Imagine a population mating at random with respect to genotypes, i.e.\
 no inbreeding, no population structure, no sex differences in allele frequencies. The frequency of allele \sa{$A_1$} in the population at the time of reproduction is $p$. \sa{An $A_1A_1$} genotype is made by reaching out into our population and \sa{independently drawing} two \sa{$A_1$} alelle gametes to form a zygote. Therefore, the probability that \sa{an} individual is \sa{an $A_1A_1$} homozygote is $p^2$. This probability is also the expected frequency of the \sa{$A_1A_1$} homozygote in the population. The expected frequency of \sa{the three possible} genotypes is
@@ -90,7 +97,7 @@ the time when gametes fuse.
 %Figs/QT1.eps
 
 
-\subsection{Relatedness coefficients}
+\subsection{\sa{Coefficient of kinship}}
 We will define two alleles to be identical by descent if they are
 identical due to a common ancestor in the past few generations. \sa{For the moment, we ignore mutation, and we will be more precise about what we mean by `past few generations' later on.} For example, parent and child share exactly
 one allele identical by descent at a locus\sa{, assuming that the two
@@ -116,7 +123,7 @@ inbreeding and \sa{in the context of} phenotypic resemblance between relatives.\
 \hline
 Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
 \hline
-parent-child & 0 & 1 & 0 & 1/4\\
+parent--child & 0 & 1 & 0 & 1/4\\
 full siblings & 1/4 & 1/2 & 1/4 & 1/4\\
 identical (monzygotic) twins  & 0 & 0 & 1  & 1/2 \\
 $1^{st}$ cousins & 3/4 & 1/4 & 0 & 1/16\\
@@ -156,13 +163,13 @@ locus are not IBD (otherwise \sa{they would} necessarily be homozygous). Therefo
 heterozygous is
 \begin{equation}
 (1-F) 2p q,
+\label{eq:hetGenHW}
 \end{equation}
 \sa{where we have dropped the indices $i$ and $j$ for simplicity.}
 \sa{The} offspring can \sa{be} homozygous for the $A_1$ allele \sa{in} two different ways\sa{. 
-T}hey can have two non-IBD alleles which happen to be the $A_1$ allele,
-or their two alleles can be IBD, such that they inherited the $A_1$ by
-two different routes from the same ancestor. Thus\sa{,} the probability they
-are homozygous is
+T}hey can have two non-IBD alleles \sa{that are not IBD but} happen to be \sa{of the allelic type $A_1$},
+or their two alleles can be IBD, such that they inherited \sa{allele} $A_1$ by
+two different routes from the same ancestor. Thus\sa{,} the probability \sa{that an offspring is} homozygous is
 \begin{equation}
 (1-F) p^2 + F p.
 \end{equation}
@@ -180,30 +187,32 @@ $(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
 \hline
 \end{tabular}
 \end{center}
-\caption{\textbf{Generalized Hardy Weinberg}} \label{table:GeneralizedHWE}
+\caption{\textbf{Generalized Hardy\sa{--}Weinberg}} \label{table:GeneralizedHWE}
 \end{table}
 
-Note that the generalized Hardy Weinberg proportions completely
-specify our genotype probabilities, as there are two parameters ($p$ and $F$)
-and two degrees of freedom (as our frequencies have to sum to one).
+Note that the generalized Hardy\sa{--}Weinberg proportions completely
+specify \sa{the} genotype probabilities, as there are two parameters ($p$ and $F$)
+and two degrees of freedom (as \sa{$p$ and $q$} have to sum to one).
 Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
 
 
 \subsection{Calculating inbreeding coefficients from data}
-If the observed heterozygosity is $f_{12}$ then an estimate of
-our inbreeding coefficient is
+\sa{If the observed heterozygosity in a population is $H_O$, and we assume that the generalized Hardy--Weinberg proportions hold, we can set $H_O$ equal to $f_{12}$, and solve Eq.\ \eqref{eq:hetGenHW} for $F$ to obtain an estimate of the inbreeding coefficient as}
 \begin{equation}
-\hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq} \label{eqn:Fhat}
+\hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq}.
+\label{eqn:Fhat}
 \end{equation}
-where $p$ is the frequency of the allele in our reference
-population. This can be rewritten in terms of the observed heterozygosity ($H_O=f_{12}$)
-and expected heterozygosity ($H_E=2pq$)
+\sa{As before,} $p$ is the frequency of \sa{allele $A_{1}$ in the}
+population. This can be rewritten in terms of the observed heterozygosity ($H_O$)
+and \sa{the heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as}
 \begin{equation}
-\hat{F} = \frac{H_E-H_O}{H_E}. \label{eqn:FhatHO}
+\hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
+\label{eqn:FhatHO}
 \end{equation}
-If we have multiple loci we can replace $H_O$ and $H_E$ by their means
-over loci $\bar{H}_O$ and $\bar{H}_E$. \\
+\sa{Hence, $F$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.}
+If we have multiple loci\sa{,} we can replace $H_O$ and $H_E$ by their means
+over loci\sa{, $\bar{H}_O$ and $\bar{H}_E$, respectively}. \sa{Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.}\\
 
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
@@ -212,98 +221,102 @@ over loci $\bar{H}_O$ and $\bar{H}_E$. \\
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
 
-\subsection{Summarizing Population structure}
-Our estimated inbreeding coefficient gives us a nice way to take a
-first look at population structure. \\
-
+\subsection{Summarizing \sa{p}opulation structure}
+\sa{\sout{Our estimated inbreeding coefficient gives us a nice way to take a
+first look at population structure.\\}}
+%
 We defined inbreeding as having parents that are
-more closely related to each other than two random individuals drawn
-from some reference population. So the question naturally arises,
-which reference population should we use? While I might not look inbred in
-comparison to allele frequencies in the UK (where I'm from), my
-parents certainly aren't too random individuals drawn from across the
-world-wide population. If we calculated $F$ using allele frequencies
-within the UK, the inbreeding coefficient for me $F$ would (hopefully)
+more closely related to each other than \sa{two individuals drawn at random} from some reference population. \sa{T}he question \sa{that naturally arises is: W}hich reference population should we use? While I might not look inbred in
+comparison to allele frequencies in the \sa{United Kingdom (UK), where I am from,} my
+parents certainly \sa{are not two individuals drawn at random from} the
+world-wide population. If we \sa{estimated my inbreeding coefficient $F$} using allele frequencies
+within the UK, \sa{it would} (hopefully)
 be close to zero, but would likely be larger if we used world-wide
-frequencies. That's because there's a somewhat lower level of
-heterozygosity within the UK than in the human population across the world as a whole.  \\
+frequencies. \sa{This is} because \sa{there is} a somewhat lower level of
+\sa{expected} heterozygosity within the UK than in the human population across the world as a whole.\\
 
-Wright (1943, 1951) developed a set of `F-statistics' (fixation statistics) that formalized these ideas
-about inbreeding. Wright defined $F_{XY}$ as:
-the correlation between random gametes, drawn from the same $X$,
-relative to $Y$. We'll return to why $F$ statistics are statements
-about correlations between alleles in just a moment. One commonly use $F_{IS}$ for the inbreeding
+Wright (1943, 1951) developed a set of `F-statistics' (\sa{also called `fixation indices'}) that \sa{formalize the idea
+of inbreeding with respect to different levels of population structure}. \sa{He} defined \sa{$F_{\mathrm{XY}}$} as
+the correlation between random gametes, drawn from the same \sa{level} $X$,
+relative to \sa{level} $Y$. We \sa{will} return to why $F$\sa{-}statistics are statements
+about correlations between alleles in just a moment. One commonly use\sa{s} $\fis$ for the inbreeding
 coefficient between an individual ($I$) and the subpopulation
-($S$). Consider a single locus, where in a sub-population ($S$) a fraction $H_I=f_{12}$ of our individuals
-are heterozygotes. In this sub-population ($S$) the frequency of
-allele $1$ is $p_S$ and the expected heterozygosity is $H_S$. We will write $F_{IS}$ as
+($S$). Consider a single locus, where in a \sa{subpopulation} ($S$) a fraction $H_I=f_{12}$ of \sa{\sout{our}} individuals
+are heterozyg\sa{ous}. In this \sa{subpopulation, let} the frequency of
+allele \sa{$A_1$ be} $p_S$\sa{,} \sa{such that} the expected heterozygosity \sa{under random mating} is \sa{$H_S = 2 p_S (1 - p_S)$}. We will write $\fis$ as
 \begin{equation}
-F_{IS} =1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S} \label{eqn:FIS}
+\fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
+\label{eqn:FIS}
 \end{equation}
-the direct analog of eqn. \ref{eqn:Fhat}, which compares the observed
-heterozygosity to that expected under random mating within the sub-population. We could also compare our
+\sa{a} direct analog of eqn. \ref{eqn:Fhat}\sa{. Hence, $\fis$ is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation.} We could also compare \sa{the observed}
 heterozygosity in individuals ($H_I$) to that expected in the total
-population ($H_T$). If the frequency of our allele in our total
-population is $p_T$, then we can write $F_{IT}$ as
+population\sa{, $H_T$}. If the frequency of \sa{allele $A_1$ in the} total
+population is $p_T$, then we can write $\fit$ as
 \begin{equation}
-F_{IT} =1-\frac{H_I}{H_T}= 1-\frac{f_{12}}{2p_Tq_T} \label{eqn:FIT}
+\fit =1-\frac{H_I}{H_T}= 1-\frac{f_{12}}{2p_Tq_T},
+\label{eqn:FIT}
 \end{equation}
 which compares heterozygosity in individuals to that expected in the
-total population. As a simple extension of this we could imagine
+total population. As a simple extension of this\sa{, }we could imagine
 comparing the expected heterozygosity in the subpopulation ($H_S$) to
-that expected our total population ($H_T$), via $F_{ST}$
+that expected \sa{in the} total population ($H_T$), via $\fst$\sa{:}
 \begin{equation}
-F_{ST} = 1-\frac{H_S}{H_T}=1-\frac{2p_Sq_S}{2p_Tq_T} \label{eqn:FST}
+\fst = 1-\frac{H_S}{H_T}=1-\frac{2p_Sq_S}{2p_Tq_T} \label{eqn:FST}.
 \end{equation}
-If our total population contains our sub-population then, as we'll see
-below due to the Wahlund effect (to be added)
+If \sa{the} total population contains \sa{the subpopulation} then, as \sa{we will} see
+below\sa{,} due to the Wahlund effect (to be added)
  $2p_Sq_S \leq
-2p_Tq_T$ and so $F_{IS} \leq F_{IT}$ and $F_{ST} \geq 0$. We can
-relate our three $F$ statistics together as
+2p_Tq_T$\sa{,} and so $\fis \leq \fit$ and $\fst \geq 0$. We can
+relate \sa{the} three $F$\sa{-}statistics \sa{to each other} as
 \begin{equation}
-(1-\hat{F_{IT}}) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-F_{IS})(1-F_{ST}) \label{eqn:F_relationships}
+(1-\hat{\fit}) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-\fis)(1-\fst).
+\label{eqn:F_relationships}
 \end{equation}
-i.e. the reduction in heterozygosity in our individuals compared to that expected
+\sa{Hence,} the reduction in heterozygosity \sa{within} individuals compared to that expected
 in the total population can be decomposed to the reduction in
-heterozygosity of individuals compared to the sub-population, and the reduction in
-heterozygosity from the total population to that in the sub-population.\\
+heterozygosity of individuals compared to the \sa{subpopulation}, and the reduction in
+heterozygosity from the total population to that in the \sa{subpopulation}.\\
 
 If we want a summary of
-population structure across multiple sub-populations we can average $H_I$
+population structure across multiple \sa{subpopulations,} we can average $H_I$
 and/or $H_S$ across populations, and use a $p_T$ calculated by
-averaging $p_S$ across sub-populations. Furthermore, if we have multiple sites we can replace $H_I$, $H_S$, and $H_T$ with
-their averages across loci (as above). \\
-
-Lets now return to Wright's definition of the $F_{XY}$ statistic as correlation between random gametes, drawn from the same $X$,
-relative to $Y$. With out loss of generality lets think about $X$ as
-individuals and $S$ as the sub-population.
-Rewriting $F_{ST}$ in terms of our homozygote frequencies observed in
-individuals ($f_{11}$ and $f_{22}$) we find
+averaging $p_S$ across \sa{subpopulation}s. For example, the average $\fst$ across $K$ subpopulations \sa{(sampled with equal effort)} is
 \begin{equation}
-F_{IS} = \frac{2p_Sq_S - f_{12}}{2p_Sq_S} = \frac{f_{11}+f_{22} -
-p_S^2 - q_S^2}{2p_Sq_S} \label{eqn:Fascorr}
+	\fst = 1 - \frac{\bar{H}_{S}}{H_T},
 \end{equation}
-using the fact that $p^2+2pq+q^2=1$. The form of this
-(eqn. \ref{eqn:Fascorr}) is the covariance between pairs of alleles
-found in an individual, divided by the
-expected variance under binomial sampling. Thus $F$ statistics can be
-understood as the correlation between alleles drawn from a population
-(or an individual) above that expected by chance (i.e. drawing alleles
-sampled at random from some broader population). \\
+where $\bar{H}_S = 1/K \sum_{i = 1}^{K} H_{S}^{(i)}$, and $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation $i$.
+Furthermore, if we have multiple sites\sa{,} we can replace $H_I$, $H_S$, and $H_T$ with their averages across loci (as above). \\
 
-We can also see $F$ statistics as proportions of variance explained by
-substructure. To see this lets think about $F_{ST}$ averaged over $K$
+\sa{Let us} now return to Wright's definition of the \sa{$F$-statistics as correlations} between random gametes, drawn from the same \sa{level} $X$,
+relative to \sa{level} $Y$. \sa{Without} loss of generality\sa{, we may} think about $X$ as
+individuals and $S$ as the \sa{subpopulation}.
+Rewriting $\fis$ in terms of \sa{the observed} homozygote frequencies \sa{($f_{11}$, $f_{22}$) and expected homozygosities ($p_{S}^2$, $q_{S}^2$)} we find
+\begin{equation}
+\fis = \frac{2p_Sq_S - f_{12}}{2p_Sq_S} = \frac{f_{11}+f_{22} -
+p_S^2 - q_S^2}{2p_Sq_S},
+\label{eqn:Fascorr}
+\end{equation}
+using the fact that $p^2+2pq+q^2=1$\sa{, and $f_{12} = 1 - f_{11} - f_{12}$. The form of eqn.\ (\ref{eqn:Fascorr}) reveals that $\fis$} is the covariance between pairs of alleles
+found in an individual, divided by the
+expected variance under binomial sampling. Thus\sa{,} $F$\sa{-}statistics can be
+understood as the correlation between alleles drawn from a population
+(or an individual) above that expected by chance (i.e.\ drawing alleles
+sampled at random from some broader population).\\
+
+We can also \sa{interpret} $F$\sa{-}statistics as proportions of variance explained by
+\sa{different levels of population structure}. To see this\sa{, let us} think about $\fst$ averaged over $K$
 subpopulations, whose frequencies are $p_1,~\cdots,~p_K$. The
-frequency in the total population is $p_T=\bar{p} = \frac{1}{K} \sum_{i=1}^K p_i$.
-Then we can
+frequency in the total population is $p_T=\bar{p} = 1/K \sum_{i=1}^K p_i$.
+Then\sa{,} we can
 write
 \begin{equation}
-F_{ST} = \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
+\fst = \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
 \bar{p}\bar{q}} = \frac{ \left(\frac{1}{K} \sum_{i=1}^K p_i^2 +
 \frac{1}{K} \sum_{i=1}^K q_i^2 \right) -  \bar{p}^2-\bar{q}^2 }{2
-\bar{p}\bar{q}} = \frac{Var(p_i)}{Var(\bar{p})} \label{eqn:F_as_propvar}
+\bar{p}\bar{q}} = \frac{\mathrm{Var}(p_i)}{\mathrm{Var}(\bar{p})},
+\label{eqn:F_as_propvar}
 \end{equation}
-i.e. $F_{ST}$ is the proportion of the variance explained by the
+\sa{which shows that} $\fst$ is the proportion of the variance explained by the
 subpopulation labels.
 
 
@@ -2519,16 +2532,16 @@ other. However, when there is population structure this assumption is
 violated. \\
 
 We have previously written the measure of population structure
-$F_{ST}$ as
+$\fst$ as
 \begin{equation}
-F_{ST} = \frac{H_T-H_S}{H_T}
+\fst = \frac{H_T-H_S}{H_T}
 \end{equation}
 where $H_S$ is the probability that two alleles sampled at random from a
 subpopulation differ, and $H_T$ is the probability that two alleles sampled at random from a
 subpopulation differ. We can relate these to our pairwise coalescent
 process, as $H_S$ is simply the probability that two alleles sampled
 from our subpopulation mutate before they coalesce. If our pair of
-alleles drawn from our sub-population coalesce at time $T_S$ then the
+alleles drawn from our \sa{subpopulation} coalesce at time $T_S$ then the
 probability that they are different is
 \begin{equation}
 1-e^{-2 \mu T_S} \approx 2 \mu T_S
@@ -2540,11 +2553,11 @@ H_S \approx 2\mu \E(T_S)
 \end{equation}
 and similarly $H_T \approx 2 \mu \E(T_T)$. So we can write
 \begin{equation}
-F_{ST}  \approx \frac{\E(T_T) - \E(T_S)}{\E(T_T)}
+\fst  \approx \frac{\E(T_T) - \E(T_S)}{\E(T_T)}
 \end{equation}
-so $F_{ST}$ is an expression of the decrease in pairwise coalescent
+so $\fst$ is an expression of the decrease in pairwise coalescent
 times with a subpopulation compared to the total population. This also
-gives us a way to work out analytical expression for $F_{ST}$ under
+gives us a way to work out analytical expression for $\fst$ under
 simple models of population structure.\\
 
 
@@ -2570,15 +2583,15 @@ subpopulations so
 
 so that under this simple population split model
 \begin{equation}
-F_{ST}  \approx \frac{\tau/2}{\tau/2 + 2N_e} =\frac{\tau/(4N_e)}{\tau/(4N_e) +1}
+\fst  \approx \frac{\tau/2}{\tau/2 + 2N_e} =\frac{\tau/(4N_e)}{\tau/(4N_e) +1}
 \end{equation}
-i.e. $F_{ST}$ at first linearly increases with the divergence time
+i.e. $\fst$ at first linearly increases with the divergence time
 rescaled by the population size, such that the same divergence time
 causes less differentiation in larger populations. \\
 
 Assuming that $\approx \frac{\tau}{2N_e} \ll 1$ then
 \begin{equation}
-F_{ST}  \approx \frac{\tau}{4N_e}
+\fst  \approx \frac{\tau}{4N_e}
 \end{equation}
 
 
@@ -2647,12 +2660,12 @@ island roughly in proportion to their population sizes such that
 $\E(T_T) \approx \E(T_M)$, i.e. our heterozygosity in our total
 population is dominant, such that
 \begin{equation}
-F_{ST} \approx \frac{\E(T_M)-\E(T_I)}{\E(T_M)}
+\fst \approx \frac{\E(T_M)-\E(T_I)}{\E(T_M)}
 \end{equation}
 We can then substitute our expressions for
-$\E(T_T)$ and $\E(T_S)=\E(T_I)$ into $F_{ST}$. Doing so we arrive at
+$\E(T_T)$ and $\E(T_S)=\E(T_I)$ into $\fst$. Doing so we arrive at
 \begin{equation}
-F_{ST} \approx \frac{1}{1+4N_Im}
+\fst \approx \frac{1}{1+4N_Im}
 \end{equation}
 
 \newpage
