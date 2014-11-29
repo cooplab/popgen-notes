@@ -550,6 +550,291 @@ Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
 N/2$) our effective population size will be much reduced as a result.\\
 
 
+\subsection{Neutral diversity and population structure}
+%%this section was moved from the coalescent chapter
+Upto now we have assumed that our alleles that we have modelled in the
+coalescent setting are drawn from a randomly mating population such
+that any pair of lineages is equally likely to coalesce with each
+other. However, when there is population structure this assumption is
+violated. \\
+
+We have previously written the measure of population structure
+$\fst$ as
+\begin{equation}
+\fst = \frac{H_T-H_S}{H_T}
+\end{equation}
+where $H_S$ is the probability that two alleles sampled at random from a
+subpopulation differ, and $H_T$ is the probability that two alleles
+sampled at random from the total population differ. 
+
+\paragraph{A simple population split model}
+Imagine a population of constant size of $N_e$ diploid individuals that
+$\tau$ generations in the past split into two daughter populations (sub-populations)
+each of size $N_e$ individuals, who do not subsequently exchange
+migrants. In the current day we sample an equal number of alleles
+from both subpopulations.
+
+Consider a pair of alleles sampled within one of our
+sub-populations, they have experienced a population of size $N_e$
+and so the probability that they differ is $H_S = \theta/(1+\theta)$
+(whether $\theta=4N_e\mu$).
+The heterozygosity in our total population is a little more tricky to
+calculate. Assuming that we equally sample both sub-populations, when we draw two alleles from our total
+sample, $50\%$ of the time they are drawn from the same
+subpopulation and $50\%$ of the time they are drawn from different
+subpopulations. Therefore, our total heterozygosity is given by
+\begin{equation}
+H_T = \half H_S + \half H_B
+\end{equation}
+where $H_B$ is the probability that a pair of alleles drawn from our
+two different sub-populations differ from each other. Our pair of
+alleles can not find a common ancestor with each other for at least $\tau$
+generations into he past as they are in distinct populations (not
+connected by migration). The probability that one or other of them
+mutates in this time is $1-(1-\mu)^{2T}$. With probability
+$(1-\mu)^{2T} $ neither of our alleles mutate in the $T$ generations
+back in time before they find themselves back in the combined ancestral 
+population. Conditional on failing to mutating before the combined ancestral
+population, the probability that they do manage to mutate before
+coalescing in that population of size $N_e$ is
+$\theta/(\theta+1)$. Putting these components together
+\begin{equation}
+H_B = \left( 1-(1-\mu)^{2T} \right) + (1-\mu)^{2T}
+  \frac{\theta}{\theta+1} 
+\end{equation}
+We can plug this into our expression for $H_T$, and then that in turn
+into $\fst$.
+
+To understand this better we can make a simple
+approximation based on our mutation rate being very low, such that
+$N_e \mu \ll 1$ ao $H_S \approx
+4N_e\mu$, and that $\mu \ll 1$ and $\mu T \ll 1$. Assuming this, then  
+\begin{equation}
+H_B \approx 2 \mu T + 4N_e\mu. 
+\end{equation}
+So that 
+\begin{equation}
+\fst \approx \frac{ \mu T}{\mu T +  4N_e\mu }  %= \frac{ T}{ T +  4N_e }
+\end{equation}
+note that $\mu$ cancels out of this. In this simple toy model $\fst$
+is increasing because the amount of between population diversity is
+increases (initially linearly with $T$) and does so at a rate
+give by $T/(4N_e)$ so that differentiation will be higher
+between populations seperated by long divergence times or with small
+effective population sizes.
+
+\paragraph{A simple model of migration between an island and the mainland.}
+We can also use the coalescent to think about patterns of
+differentiation under a simple model of migration drift
+equilibrium. Lets consider a small island population that is relatively isolated
+from a large mainland population, and that both of these populations
+are constant in size. We'll assume that the expected heterozygosity
+for a pair of alleles sampled on the mainland is $H_M$.
+
+Our island has a population size
+$N_{I}$ that is very small compared to our mainland population.
+Each generation some low fraction $m$ of our individuals on the
+island have migrant parents from the mainland the generation
+before. Our island may also send migrants back to the mainland, but
+these are a drop in the ocean compared to the large population size on
+the mainland and their effect can be ignored. 
+
+
+If we sample an allele on the island back and trace its ancestral
+lineage backward in time, each generation our ancestral allele have a low
+probability $m$ of being descended from the mainland in the proceeding
+generation (if we go far enough the allele eventually has to be
+descended from an allele on the mainland). The probability that a pair of alleles sampled on the
+island are descended from a shared recent common ancestral allele on the island, is the
+probability that our pair of alleles coalesce before either lineage
+migrates. For example, the probability that our pair of alleles
+coalesce $t+1$ generations back is 
+\begin{equation}
+\frac{1}{2N_I}(1-m)^{2t} \left(1-\frac{1}{2N_I} \right)^{t} \approx
+\frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
+\end{equation}
+with the approximation following from assuming that $m \ll 1$ \& $1/(2N_I)
+\ll 1$ (note that this is very similar to our derivation of
+heterozygosity above). The probability that our alleles coalescence before either one
+of them migrates off the island, irrespective of the time, is
+\begin{equation}
+\int_0^{\infty} \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} +
+    2m\right) \right) dt = \frac{1(2N_I) }{1/(2N_I) +
+    2m}.
+\end{equation}
+
+Lets assume that the mutation rate is very low such as it is very
+unlikely that the pair of alleles mutate before they coalesce on the
+island. Therefore, the only way that the alleles can be different from
+each other is if one or other of them migrates to the mainland, which
+happens with probability  
+\begin{equation}
+\frac{1/(2N_I) }{1/(2N_I) + 2m}
+\end{equation}
+Conditional on one or other of our alleles migrating to the mainland,
+both of our alleles represent independent draws from the mainland and
+so differ from each other with probability $H_M$. Therefore, the level of
+heterozygosity on the island is given by
+\begin{equation}
+H_I = \frac{1/(2N_I) }{1/(2N_I) + 2m} H_M
+\end{equation}
+So the reduction of heterozygosity on the island compared to the
+mainland is
+\begin{equation}
+F_{IM} = 1- \frac{H_I}{H_M} = \frac{ 1 }{1/(2N_I) + 2m} = \frac{ 1 }{1 + 4N_Im}.
+\end{equation}
+The level of inbreeding on the island compared to the mainland will
+be low in the migration rate is low and the effective population size
+of the island is low, as allele frequencies on the island are drifting
+and diversity is not being replenished on the island by migration. The
+key parameter here is the number individuals on the island replaced by
+immigrants from the mainland each generation ($N_I m$).
+
+We have framed this as being about the reduction in genetic diversity on the
+island compared to the mainland. However, if we consider collecting a
+individuals on the island and mainland in proportion to population
+sizes the total level of heterozygosity would be $H_T=H_M$, as samples
+from our mainland would greatly outnumber those from our
+island. Therefore, considering our island our sub-population we have
+derived another simple model of $F_{ST}$ .
+
+\subsection{Other approaches to population structure}
+There is a broad spectrum of methods to describe patterns of
+population structure in populaion genetic datasets. We'll briefly
+discuss two broad-classes of methods, assigment methods and principal
+components analysis,that appear often in the literature.
+
+\subsubsection{Assignment Methods}
+
+Here we'll describe a simple probabilistic assignment to find the
+probability that an individual of unknown population comes from one of
+$K$ predefined populations. We'll then briefly explain how to extend this
+to cluster individuals into $K$ initially unknown populations. This
+method is a simplified version of what Bayesian population genetics
+clustering algorithms such as STRUCTURE and ADMIXTURE do (Pritchard et al. Genetics 2000). 
+
+\paragraph{A simple assignment method}
+
+We have genotype data from unlinked S bi-allelic loci for $K$ populations. The allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
+
+You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus $g_l=0,1,2$). 
+
+The probability of this individual's genotype at locus $l$ conditional on coming from population $k$ (i.e. their alleles being a random HW draw from population $k$) is 
+\begin{equation}
+P(g_l | \textrm{pop k}) = I(g_l=0) (1-p_{k,l})^2 +  I(g_l=1) 2 p_{k,l} (1-p_{k,l}) + I(g_l=2) p_{k,l}^2
+\end{equation}
+where $I(g_l=0)$ is an indicator function which is $1$ if $g_l=0$ and
+zero otherwise, and likewise for the other indicator functions. This
+follows simply from HWE.
+
+Assuming that the loci are independent, the probability of individual's genotypes conditional on them coming from population $k$ is 
+\begin{equation}
+P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}
+\end{equation}
+
+
+We wish to know the probability that this new individual comes from population $k$, i.e. $P(\textrm{pop k} | \textrm{new ind.})$. We can obtain this through Bayes rule 
+\begin{equation}
+ P(\textrm{pop k} | \textrm{ind.})  = \frac{P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})}{P(\textrm{ind.})}
+\end{equation}
+where 
+\begin{equation}
+P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})
+\end{equation}
+is the normalizing constant. We interpret $P(\textrm{pop k})$ as the
+prior probability of the individual coming from population $k$, unless
+we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=1/K$.  
+
+We intepret 
+\begin{equation}
+ P(\textrm{pop k} | \textrm{ind.})
+\end{equation}
+as the posterior probability that our new individual comes from each of our $1,\cdots, K$ populations.
+
+More sophisticated versions of this are now used to allow for hybrids,
+e.g, we can have a proportion $q_k$ of our individual's genome come
+from population $k$ and estimate the set of $q_k$'s.
+
+{\bf Question.} We have two populations where the frequency of allele
+$A_1$ at two SNPs ($A_1/A_2$)  is given by
+\begin{center}
+\begin{tabular}{|ccc|}
+\hline
+Population & locus 1 & locus 2 \\
+\hline
+A & $0.1$ & $0.85$ \\
+B  & $0.95$ & $0.2$ \\
+\hline
+\end{tabular}
+\end{center}
+We sample an individual whose genotype is $A_1A_1$ at the first locus
+and $A_2A_2$ at the second. What
+is the probability that our indvidual comes from population 1 vs
+population 2?
+Lets assume that with probability $q_1$ our individual draws an allele
+from population $1$ and that with probability $q_2=1-q_1$ they draw an allele from
+population $2$. What is the probability of our individual's genotype
+given $q_1$? Plot this probability as a function of $q_1$. How does 
+your plot change if our individual is heterozygote at both loci?
+ 
+
+\paragraph{Clustering based on assignment methods}
+While it is great to be able to assign our individuals to particular
+population, these ideas can be pushed to learn about how best to
+describe our genotype data in terms of discrete populations without
+assigning any of our individuals to populations {\it a priori}. 
+We wish to cluster our individuals into $K$ unknown populations. We begin by assigning our individuals at random to these $K$ populations. 
+\begin{itemize}
+\item Given these assignments we estimate the allele frequencies at all of our loci in each population. 
+\item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
+\end{itemize}
+We iterate steps 1 and 2 for many iterations. If the data is sufficiently informative the assignments and allele frequencies will quickly converge. 
+
+To do this in a full bayesian scheme we need to place priors on the
+allele frequencies (e.g. a beta distribution).Technically we are using
+this is the joint posterior of our allele frequencies and assignments. 
+
+\subsubsection{Principal components analysis}
+The use of principal component analysis in population genetics was
+pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
+a come back. See Patterson et al 2006, PLoS Genetics and McVean,
+G. 2010 PLoS Genetics and for recent discussion.
+ 
+Consider a dataset consisting of N individuals at S bi-allelic
+SNPs. The $i^{th}$ individual's genotype data at locus $\ell$ takes
+value $g_{i,\ell}$=0,1, or 2 (corresponding to the number of copies of
+allele $A_1$ an individual carrys at this SNP). We can think of this
+as a N x S matrix (where usually $N \ll S$). 
+
+ Denoting the sample mean allele freq at SNP $\ell$ by $p_{\ell}$ we usually standardize the genotype in the following way
+\begin{equation}
+\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}}
+\end{equation}
+i.e. at each SNP we center the genotypes by minusing of the mean
+genotype ($2\epsilon_{\ell}$) and divide through by the expected
+variance assuming that alleles are sampled binomially from the mean
+frequency ($\sqrt{p_{\ell} (1-p_{\ell})}$). Doing this to
+all of our genotypes we form a data matrix (of dimension N x S). We
+can then perform principal components analysis of this data matrix to
+cover the major axes of genotype variance in our sample.
+
+It is worth taking a moment to delve further into what we are doing
+here. There's a number of equivalent ways to thinking about what PCA
+is doing, one of these is to think that when we do PCA we are building the individual by individual
+covariance matrix and performing eigen-value decomposition of this
+matrix (with the eigen-vectors giving the PC).  This individual by individual covariance matrix has entries
+the $(i,~j)^{th}$ entry given by
+\begin{equation}
+\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{i,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
+\end{equation}
+note that this is the covariance, is very similar to those we
+encountered in discussing $F$-statistics as correlations (equation
+\eqref{eqn:Fascorr}), expect now we are asking about the allelic covariance
+between two individuals above that expected if they were both drawn
+from the total sample at random (rather than the covariance of alleles
+within a single individual). So by performing PCA on the data we are
+learning about the major (orthogonal) axes of the kinship matrix.    
+
 \newpage
 
 \section{Correlations between loci, linkage disequilibrium, and recombination.}
@@ -2521,149 +2806,6 @@ neutral constant population model.
 
 
 
-\subsection{The coalescent and population structure}
-Upto now we have assumed that our alleles that we have modelled in the
-coalescent setting are drawn from a randomly mating population such
-that any pair of lineages is equally likely to coalesce with each
-other. However, when there is population structure this assumption is
-violated. \\
-
-We have previously written the measure of population structure
-$\fst$ as
-\begin{equation}
-\fst = \frac{H_T-H_S}{H_T}
-\end{equation}
-where $H_S$ is the probability that two alleles sampled at random from a
-subpopulation differ, and $H_T$ is the probability that two alleles sampled at random from a
-subpopulation differ. We can relate these to our pairwise coalescent
-process, as $H_S$ is simply the probability that two alleles sampled
-from our subpopulation mutate before they coalesce. If our pair of
-alleles drawn from our \sa{subpopulation} coalesce at time $T_S$ then the
-probability that they are different is
-\begin{equation}
-1-e^{-2 \mu T_S} \approx 2 \mu T_S
-\end{equation}
-where this last approximation assumes that $\mu T_S \ll 1$. Thus
-averaging over the coalescent time of our pair of alleles
-\begin{equation}
-H_S \approx 2\mu \E(T_S)
-\end{equation}
-and similarly $H_T \approx 2 \mu \E(T_T)$. So we can write
-\begin{equation}
-\fst  \approx \frac{\E(T_T) - \E(T_S)}{\E(T_T)}
-\end{equation}
-so $\fst$ is an expression of the decrease in pairwise coalescent
-times with a subpopulation compared to the total population. This also
-gives us a way to work out analytical expression for $\fst$ under
-simple models of population structure.\\
-
-
-\paragraph{A simple population split model}
-Imagine a population of constant size of $N$ diploid individuals that
-$\tau$ generations in the past split into two daughter populations
-each of size $N_e$ individuals, who do not subsequently exchange
-migrants. The in the current day we sample an equal number of alleles
-from both subpopulations.
-
-The expected coalescent time of a pair of lineages sampled from the same
-subpopulation is simple $\E(T_S) = 2N_e$. The expected coalescent time
-when our alleles are sampled from different subpopulations is $\tau +
-2N_e$, as our pair of lineages can not coalesce untill $\tau$
-generations in the past. When we sample two alleles from our total
-population, $50\%$ of the time they are drawn from the same
-subpopulation and $50\%$ of the time they are drawn from different
-subpopulations so
-\begin{equation}
-\E(T_T) = \tfrac{1}{2} (\tau +
-2N_e) + \tfrac{1}{2}2N_e = \frac{\tau}{2} +2N_e
-\end{equation}
-
-so that under this simple population split model
-\begin{equation}
-\fst  \approx \frac{\tau/2}{\tau/2 + 2N_e} =\frac{\tau/(4N_e)}{\tau/(4N_e) +1}
-\end{equation}
-i.e. $\fst$ at first linearly increases with the divergence time
-rescaled by the population size, such that the same divergence time
-causes less differentiation in larger populations. \\
-
-Assuming that $\approx \frac{\tau}{2N_e} \ll 1$ then
-\begin{equation}
-\fst  \approx \frac{\tau}{4N_e}
-\end{equation}
-
-
-\paragraph{A simple model of migration between an island and the mainland}
-We can also use the coalescent to think about patterns of
-differentiation under a simple model of migration drift
-equilibrium. Lets consider a small island population that is isolated
-from a large mainland population, and that both of these populations
-are constant in size. Our island has a population size
-$N_{I}$ that is very small compared to our mainland population.
-
-Each generation some low fraction $m$ of our individuals on the
-island have migrant parents from the mainland the generation
-before. Our island may also send migrants back to the mainland, but
-these are a drop in the ocean compared to the large population size on
-the mainland and their effect can be ignored. The expected coalescent
-time for a pair of alleles sampled on the mainland is $\E(T_{M})$
-
-If we sample an allele on the island back and trace its ancestral
-lineage backward in time, each generation our ancestral allele have a low
-probability $m$ of being descended from the mainland in the proceeding
-generation. So the probability that a pair of alleles sampled on the
-island are descended from a recent common ancestral allele on the island, is simply the
-probability that our pair of alleles coalesce before either lineage
-migrates. The probability that neither lineage migrates to the mainland
-in the preceding generation is $(1-m)^2 \approx e^{-2m}$, so the
-probability that neither of migrates to the mainland moving backwards
-in time, before the pair coalesce is
-\begin{equation}
-\int_0^{\infty} e^{-2mt} \frac{1}{2N_{I}} e^{t/(2N_{I})} =
-\frac{1/(2N_{I})}{1/(2N_{I})+2m} = \frac{1}{4N_{I}m+1} \label{eqn:coal_before_mig}
-\end{equation}
-note the similarity of this argument to that by which we derived the
-expected heterozygosity (see work leading to eqn. \eqref{eqn:hetero}).
-
-For a pair of alleles sampled on the island the time to either a coalescent event on
-the island or a migration event off the island is an exponential random variable
-$\sim Exp(1/(2N_{I})+2m)$, so our expected time back to our first
-event is
-\begin{equation}
-\frac{1}{1/(2N_{I})+2m} =\frac{2N_{I}}{1+4N_{I}m}
-\end{equation}
-If this is a coalescent event, which it is with probability
-eqn. \eqref{eqn:coal_before_mig}, then we are done. If this first event is a
-migration event of one of our lineages in the island (which it is with probability
-1- eqn. \eqref{eqn:coal_before_mig}) we then have to
-wait on average $1/m$ generations to the other allele migrates to the
-mainland. Once both of our alleles are on the mainland they take a
-further $\E(T_M)$ generations on average until the coalesce.  The expected coalescent time of a pair of alleles sampled on the
-island is
-\begin{equation}
-\E(T_{I}) = \frac{2N_{I}}{1+4N_{I}m} + \frac{1}{1+4N_{I}m}
-\times 0 + \frac{4N_{I}m}{1+4N_{I}m} \left( \frac{1}{m} + \E(T_{M})\right)
-\end{equation}
-This is a somewhat ugly
-expression, but if we assume that that the times $2N_I$
-and $1/m$ are small compared to $\E(T_M)$ then
-\begin{equation}
-\E(T_{I}) \approx \frac{4N_{I}m}{1+4N_{I}m} \E(T_{M})
-\end{equation}
-this assumption is equivalent to assuming that the vast proportion of polymorphism on
-the island is due to the migration of different alleles from the mainland.\\
-
-We'll assume that we have sampled alleles from the mainland and
-island roughly in proportion to their population sizes such that
-$\E(T_T) \approx \E(T_M)$, i.e. our heterozygosity in our total
-population is dominant, such that
-\begin{equation}
-\fst \approx \frac{\E(T_M)-\E(T_I)}{\E(T_M)}
-\end{equation}
-We can then substitute our expressions for
-$\E(T_T)$ and $\E(T_S)=\E(T_I)$ into $\fst$. Doing so we arrive at
-\begin{equation}
-\fst \approx \frac{1}{1+4N_Im}
-\end{equation}
 
 \newpage
 \section{The effect of linked selection on patterns of neutral diversity}
