@@ -9,3 +9,4 @@ HT= (HB+HS)/2
 plot(Time,1-HS/HT,type="l",lwd=2,xlab="Split time, generations",ylab="FST = 1-HS/HT")
 
 lines(Time,Time/(4*N),col="red",lwd=2,lty=2)
+lines(T,T/(T+4*N))
