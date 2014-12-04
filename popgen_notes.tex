@@ -25,6 +25,7 @@
 \newcommand{\fis}{F_{\mathrm{IS}}}
 \newcommand{\fit}{F_{\mathrm{IT}}}
 \newcommand{\fst}{F_{\mathrm{ST}}}
+\newcommand{\Wbar}{\overline{W}}
 
 \definecolor{rev1}{rgb}{1, 0, 0}
 
@@ -838,15 +839,15 @@ learning about the major (orthogonal) axes of the kinship matrix.
 
 \newpage
 
-\section{Correlations between loci, linkage disequilibrium, and recombination.}
+\section{Correlations between loci, linkage disequilibrium, and recombination}
 
 %</source-file>
 
-Up to now we've been interested in correlations between alleles at the
+Up to now \sa{we have} been interested in correlations between alleles at the
 same locus, e.g. correlations within individuals (inbreeding) or between
-individuals (relatedness). We turn our attention now to think about
-correlations between alleles at different loci. To start to understand
-correlations between loci we need to first understand a bit about recombination.\\
+individuals (relatedness). \sa{We have seen how relatedness between parents affects the extent to which their offspring is inbred.} We \sa{now} turn \sa{\sout{our attention}} to \sa{\sout{think about}}
+correlations between alleles at different loci. To \sa{\sout{start to}} understand
+correlations between loci we need to \sa{\sout{first}} understand \sa{\sout{a bit about}} recombination.\\
 
 
 \paragraph{Recombination}  Lets
@@ -1503,117 +1504,135 @@ over evolution over short time-scales.
 
 
 \newpage
-\section{One locus models of selection}
+\section{One\sa{-}locus models of selection}
 
-\subsection{fitness}
+\subsection{\sa{F}itness}
 
-
-We will define the absolute fitness of a genotype to be the
-expected number of offspring of an individual of that
-genotype. Natural selection occurs when there are differences between
-our genotypes in their fitness. This difference could occur at any
-point during the life cycle. \\
+\sa{As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
+Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype.} \\
 
 \subsection{Haploid selection model}
+\sa{We start out by modelling selection in a haploid model, as this is mathematically relatively simple. Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.}\\
 
-The number of individuals carrying allele 1 and allele 2 in generation
-$t$ are $P_t$ and $Q_t$
-respectively. The current frequency of allele 1 is $p=P_t/(P_t+Q_t)$.\\
-
-In the next generation the number of type 1 and 2 individual is
-$P_{t+1} = w_1 P_t$ and $Q_{t+1}=w_2 Q_t$
-The mean fitness of our population is  $w_1 p_t+w_2 q_t = \wbar$, i.e. the
-fitness of the two alleles weighted by their frequencies within the population.\\
-
-The frequency of allele $1$ in the next generation
+\sa{Therefore, in the next generation, the absolute number of carriers of $A_1$ and $A_2$ are $P_{t+1} = W_1 P_t$ and $Q_{t+1} = W_2 Q_t$, respectively. The mean absolute fitness of the population at time $t$ is
 \begin{equation}
-p_{t+1} = \frac{ w_1 P_t}{ w_1 P_t+ w_2 Q_t} =  \frac{ w_1 p_t}{ \wbar}
+	\label{eq:meanAbsFit}
+	\Wbar_t = W_1 \frac{P_t}{P_t + Q_t} + W_2 \frac{Q_t}{P_t + Q_t} = W_1 p_t + W_2 q_t,	
 \end{equation}
-The change in frequency from one generation to the next is
+i.e.\ the sum of the fitness of the two types weighted by their relative frequencies. Note that the mean fitness depends on time, as it is a function of the allele frequencies, which are themselves time dependent.}\\
+
+\sa{The frequency of allele $A_1$ in the next generation is then given by
 \begin{equation}
-\Delta p = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t =
-\frac{pq(w_1-w_2)}{\wbar} \label{eq:deltap_haploid}
+	\label{eq:eq:recHaplMod1}
+	p_{t+1} = \frac{P_{t+1}}{P_{t+1} + Q_{t+1}} = \frac{W_1 P_t}{W_1 P_t + W_2 Q_t}
+	%= \frac{W_1 (P_t + Q_t)p_t}{W_1 (P_t + Q_t)p_t + W_2 (P_t + Q_t)q_t}
+	= \frac{W_1 p_t}{W_1 p_t + W_2 q_t} = \frac{W_1}{\Wbar_t} p_t.
 \end{equation}
-As this fraction represents a ratio of fitnesses, we only need to
-specify our fitness up to an arbitrary constant. I.e. we can use
-relative fitnesses in this equation \eqref{eq:deltap_haploid} as we are free to use $w_1/w_1=1$
-and $w_2/w_1$ in place of $w_1$ and $w_2$ because as long as we use them
-consistently in the numerator and denominator of
-\eqref{eq:deltap_haploid} the arbitrary constant $1/w_1$ will cancel
-out. Intuitively this makes sense, you can produce a huge number of children but you are out of luck as far as natural selection is concerned
-if others in the population are having more. What matters is your fitness relative to others in the
-population. By convention we do this by dividing through all our absolute fitnesses by
-that of the most fit individual, so that the fittest type in our population has
-a relative fitness of one.\\
+}
 
-Assuming that $w_1>w_2$ our relative fitnesses are $1$ and $w_2/w_1<1$
-respectively, we will sometimes replace $w_2/w_1=1-s$. Our $s$ here is
-a selection coefficient the difference in relative fitnesses between
-our haploid alleles.\\
-
-
-Assuming that the fitnesses of our two alleles are constant over time,
-the number of the 2 allelic types $\tau$ generations later is
-$P_{t+\tau} = (w_1)^{\tau} P_t$ and $Q_{t+\tau}=  (w_2)^{\tau} Q_t$
-and so
+\sa{Importantly, eqn.\ (\ref{eq:eq:recHaplMod1}) tells us that the change in $p$ only depends on a ratio of fitnesses. Therefore, we need to specify fitness only up to an arbitrary constant. As long as we multiply all fitnesses by the same value, that constant will cancel out and eqn.\ (\ref{eq:eq:recHaplMod1}) will hold. Based on this argument, it is very common to scale absolute fitnesses by the absolute fitness of one of the genotypes, e.g.\ the most or the least fit genotype, to obtain relative fitnesses. Here, we will use $w_i$ for the relative fitness of genotype $i$. If we choose to scale by the absolute fitness of genotype $A_1$, we obtain the relative fitnesses $w_1 = W_1/W_1 = 1$ and $w_2 = W_2/W_1$.}\\
+\sa{Without loss of generality, we can therefore rewrite eqn.\ (\ref{eq:eq:recHaplMod1}) as
 \begin{equation}
-p_{t+\tau} = \frac{ (w_1)^{\tau} P_t}{ (w_1)^{\tau} P_t+
-(w_2)^{\tau} Q_t} = \frac{p_t}{p_t+q_t(1-s)^{\tau}}   \label{eq:haploid_tau_gen}
+	\label{eq:recHaplMod2}
+	p_{t+1} = \frac{w_1}{\wbar} p_t,
 \end{equation}
-as $(w_2/w_1) = 1-s$ then if $s \ll 1$
+dropping the dependence of the mean fitness on time in our notation, but remembering it.}
+\sa{The change in frequency from one generation to the next is then given by
 \begin{equation}
-p_{t+\tau} \approx
-\frac{p_t}{p_t+q_te^{-s\tau}} \label{eq:haploid_logistic growth}
+\Delta p = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{(w_1 - w_2)}{\wbar} p_t q_t,
+\label{eq:deltap_haploid}
 \end{equation}
-This form is logistic growth, and follows from the fact that we are
-looking at the relative frequencies of two populations (allele $1$ and
-$2$) that are growing (or declining) exponentially.\\
+recalling that $q_t = 1 - p_t$.}\\
 
-Rearranging \eqref{eq:haploid_tau_gen} we can work out the time for our frequency to
-change from a frequency $p_0$ to $p^{\prime}$ as follows
+Assuming that the fitnesses of the two alleles are constant over time,
+the number of the two allelic types $\tau$ generations \sa{after time $t$ are}
+$P_{t+\tau} = (W_1)^{\tau} P_t$ and $Q_{t+\tau}=  (W_2)^{\tau} Q_t$, respectively. \sa{Therefore, the relative frequency of allele $A_1$ after $\tau$ generations past $t$ is
 \begin{equation}
-\frac{p^{\prime}}{q^{\prime}} = \frac{p_0}{q_0} \left( \frac{w_1}{w_2}\right)^t
+	p_{t+\tau} = \frac{ (W_1)^{\tau} P_t}{ (W_1)^{\tau} P_t+(W_2)^{\tau} Q_t} = \frac{ (w_1)^{\tau} P_t}{ (w_1)^{\tau} P_t+(w_2)^{\tau} Q_t} = \frac{p_t}{p_t + (w_2/w_1)^{\tau} q_t},
+	\label{eq:haploid_tau_gen}
 \end{equation}
-therefore, using the fact that $w_1/w_2=1/(1-s)$
+where the last step includes dividing the whole term by $w_1$ and switching from absolute to relative allele frequencies.}\\
+
+\sa{Rearranging eqn.\ \eqref{eq:haploid_tau_gen} and setting $t = 0$, we can work out the time $\tau$ for the frequency of $A_1$ to change from $p_0$ to $p_{\tau}$. First, we write
 \begin{equation}
--t \log(1-s) = \log \left( \frac{p^{\prime}}{q^{\prime}}
-\frac{q_0}{p_0}  \right)
+	p_{\tau} = \frac{p_0}{p_0 + (w_2/w_1)^{\tau} q_0}
 \end{equation}
-assuming that $s \ll 1$ we can replace the left hand side by $ts$.\\
+and rearrange this to obtain
+\begin{equation}
+	\label{eq:estTau}
+	\frac{p_{\tau}}{q_{\tau}} = \frac{p_0}{q_0} \left(\frac{w_1}{w_2}\right)^{\tau}.
+\end{equation}
+Solving this for $\tau$ yields
+\begin{equation}
+	\label{eq:solTau}
+	\tau = \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(  \frac{w_1}{w_2} \right).
+\end{equation}
+}\\
 
+\sa{In practice, it is often helpful to parametrize the relative fitnesses $w_i$ in a specific way. For example, we may set $w_1 = 1$ and $w_2 = 1 - s$, where $s$ is called the selection coefficient. Using this parametrization, $s$ is simply the difference in relative fitnesses between the two alleles. Equation \eqref{eq:haploid_tau_gen} becomes
+\begin{equation}
+	\label{eq:haploid_tau_gen_expl}
+	p_{t+\tau} = \frac{p_{\tau}}{p_{\tau} + q_{\tau} (1 - s)^{\tau}},
+\end{equation}
+as $w_2 / w_1 = 1 - s$. Then, if $s \ll 1$, we can approximate $(1-s)^{\tau}$ in the denominator by $\exp(-s\tau)$ to obtain
+\begin{equation}
+	p_{t+\tau} \approx \frac{p_t}{p_t + q_t e^{-s\tau}}.
+\end{equation}
+This equation takes the form of a logistic function. That is because we are looking at the relative frequencies of two `populations' (of alleles $A_1$ and $A_2$) that are growing (or declining) exponentially, under the constraint that $p$ and $q$ always sum to 1.
+}\\
 
-One particular case of interest is the time it takes to go through
-introduction to near fixation in a population of size $N$ (e.g. $p=1/N$ to
-$p^{\prime} = 1-1/N$) this takes time  $t \approx
-\log(N)/s$ (assuming $s \ll 1$).\\
+\sa{Moreover, eqn.\ \eqref{eq:estTau} for the time $\tau$ it takes for a certain change in frequency to occur becomes
+\begin{equation}
+	\label{eq:estTauExpl}
+	\tau = - \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(1-s\right).
+\end{equation}
+Assuming again that $s \ll 1$, this simplifies to
+\begin{equation}
+	\label{eq:estTauExplSimpl}
+	\tau \approx \frac{1}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right).
+\end{equation}
+}
+
+One particular case of interest is the time it takes to go \sa{from an absolute frequency of 1} to near fixation in a population of size $N$. \sa{In this case, we have $p_0 = 1/N$, and we may set $p_{\tau} = 1 - 1/N$, which is very close to fixation. Of course, we then have $q_0 = 1 - 1/N$ and $q_{\tau} = 1 - 1/N$. If $N$ is sufficiently large, we may for mathematical convenience approximate $q_0$ by $q_0 = 1$. Plugging these values into eqn.\ \eqref{eq:estTauExplSimpl}, we obtain
+\begin{equation}
+	\label{eq:fixTimeSimpl}
+	\tau \approx \frac{1}{s} \log\left( \frac{1 - 1/N}{(1 - 1/N)\ 1/N}  \right) = \frac{1}{s} \log(N)
+\end{equation}
+as an approximation for the time to fixation.}
+
 
 \paragraph{Haploid model with fluctuating selection}
-We can now consider the case where our fitnesses depend on time, and
+We can now consider the case where the fitnesses depend on time, and
 say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
-generation $t$. The frequency of allele 1 in generation $t+1$ is
+generation $t$. The frequency of allele $A_1$ in generation $t+1$ is
 \begin{equation}
-p_{t+1} = \frac{w_{1,t}p_{t}}{\wbar_t}
+p_{t+1} = \frac{w_{1,t}}{\wbar_t} p_t,
 \end{equation}
-The ratio of the frequency of allele 1 to allele 2 in generation $t+1$
-is
+\sa{which simply follows from eqn.\ \eqref{eq:recHaplMod2}.}
+The ratio of the frequency of allele $A_1$ to that of allele $A_2$ in generation $t+1$ is
 \begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}
+\frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}.
 \end{equation}
-Therefore if we think of our alleles starting in generation $0$ at
-frequencies $p_0$ and $q_0$, then $t+1$ generations later
+Therefore, if we think of the two alleles starting in generation \sa{$t$} at
+frequencies \sa{$p_t$} and \sa{$q_t$}, then \sa{$\tau$} generations later,
+\sa{
 \begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \left(\prod_{i=0}^{t} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}
+\frac{p_{t+\tau}}{q_{t+\tau}} = \left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}.
 \end{equation}
-So the question of which allele is increasing or decreasing in frequency comes down
-to whether $\left(\prod_{i=0}^{t} \frac{w_{1,i}}{w_{2,i}}  \right)$ is
+}\\
+
+The question of which allele is increasing or decreasing in frequency comes down
+to whether \sa{$\left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)$} is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
-instead take the $t^{th}$ root of this and instead consider
+instead take the \sa{$\tau^{\mathrm{th}}$} root of it and consider
+\sa{
 \begin{equation}
-\sqrt[t]{\left(\prod_{i=0}^{t} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[t]{\prod_{i=0}^{t}w_{1,i}}}{\sqrt[t]{\prod_{i=0}^{t}w_{2,i}}}
+\sqrt[\tau]{\left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau}w_{1,i}}}{\sqrt[t]{\prod_{i=t}^{\tau}w_{2,i}}}.
 \end{equation}
-$\sqrt[t]{\prod_{i=0}^{t}w_{1,i}}$ is the geometric mean fitness of allele
-1 over our $t$ generations. Therefore our allele 1 will only increase
-in frequency if it has a higher geometric mean fitness than allele 2
+}
+\sa{The term} $\sqrt[t]{\prod_{i=t}^{\tau}w_{1,i}}$ is the geometric mean fitness of allele
+ \sa{$A_1$ over the $\tau$ generations past generation $t$}. Therefore, allele $A_1$ will only increase
+in frequency if it has a higher geometric mean fitness than allele $A_2$
 (at least in our simple deterministic model). \\
 
 
