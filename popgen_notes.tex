@@ -1542,7 +1542,7 @@ Without loss of generality, we can therefore rewrite eqn.\ (\ref{eq:eq:recHaplMo
 dropping the dependence of the mean fitness on time in our notation, but remembering it.
 The change in frequency from one generation to the next is then given by
 \begin{equation}
-\Delta p = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{(w_1 - w_2)}{\wbar} p_t q_t,
+\Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{(w_1 - w_2)}{\wbar} p_t q_t,
 \label{eq:deltap_haploid}
 \end{equation}
 recalling that $q_t = 1 - p_t$.\\
@@ -1639,290 +1639,305 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 
 
 \subsection{Diploid model}
-We'll move now to a diploid model of a single locus segregating $2$ alleles.
-We'll assume that our difference in fitness between our three
-genotypes comes from differences in viability, i.e. differential
-survival of individuals of our three genotypes to reproduction.  
-The fitnesses of three genotypes will be denoted by $w_{11}$, $w_{12}$, and $w_{22}$.
-On our individuals mate at random, so the number of our three
-genotypes at birth are:
+We will now move on to a diploid model of a single locus segregating two alleles.
+We will assume that the difference in fitness between the three
+genotypes comes from differences in viability, i.e.\ differential
+survival of individuals from the formation of zygotes to reproduction.  
+We denote the absolute fitnesses of genotypes $A_1A_1$, $A_1A_2$, and $A_2A_2$ by $W_{11}$, $W_{12}$, and $W_{22}$. Specifically, $W_{ij}$ is the probability that a zygote of genotype $A_iA_j$ survives to reproduction.
+Assuming that individuals mate at random, the number of zygotes that are of the three genotypes and form the next generation are
 \begin{equation}
-Np_t^2, ~~~  N2p_tq_t, ~~~ Nq_t^2
+Np_t^2, ~~~  N2p_tq_t, ~~~ Nq_t^2.
 \end{equation}
-The mean fitness of the population is then
-\begin{equation}
-w_{11} p_t^2+w_{12} 2p_tq_t  +  w_{22} q_t^2
-\end{equation}\\
 
-We can now ask how many of each of our three genotypes survive to reproduce.
-Well an individual of genotype $11$ has a probability of $w_{11}$ of
-surviving to reproduce, and similarly for other genotypes. So that
-the number of our three genotypes who survive to reproduce is
+The mean fitness of the population of zygotes is then
 \begin{equation}
-Nw_{11} p_t^2, ~~~ Nw_{12} 2p_tq_t , ~~~ N w_{22} q_t^2
+	\Wbar_t = W_{11} p_t^2+W_{12} 2p_tq_t  +  W_{22} q_t^2.
 \end{equation}
-it then follows that the total number of individuals who survive to
+Again, this is simply the weighted mean of the genotypic fitnesses.
+\\
+
+How many zygotes of each of the three genotypes survive to reproduce?
+An individual of genotype $A_1A_1$ has a probability of $W_{11}$ of
+surviving to reproduce, and similarly for other genotypes. Therefore, the expected number of $A_1A_1$, $A_1A_2$, and $A_2A_2$ individuals who survive to reproduce is
+\begin{equation}
+	NW_{11} p_t^2, ~~~ NW_{12} 2p_tq_t , ~~~ N W_{22} q_t^2.
+\end{equation}
+It then follows that the total number of individuals who survive to
 reproduce is
 \begin{equation}
-N \left(w_{11} p_t^2+w_{12} 2p_tq_t  +  w_{22} q_t^2 \right)
+	N \left(W_{11} p_t^2+W_{12} 2p_tq_t  +  W_{22} q_t^2 \right).
 \end{equation}
-this is simply our mean fitness of the population multiplied by the
-population size (i.e. $N \wbar$).\\
+This is simply the mean fitness of the population multiplied by the
+population size (i.e.\ $N \wbar$).\\
 
-The frequency of our $11$ genotype individuals at reproduction
-is simply the number of $11$ genotype individuals at reproduction ($Nw_{11} p_t^2$)
+The relative frequency of $A_1A_1$ individuals at reproduction
+is simply the number of $A_1A_1$ genotype individuals at reproduction ($NW_{11} p_t^2$)
 divided by the total number of individuals who survive to reproduce
-($N \wbar$),
-and likewise for our other two genotypes.
-Therefore, the frequency of individuals with the three different genotypes at reproduction is
+($N \Wbar$), and likewise for the other two genotypes.
+Therefore, the relative frequency of individuals with the three different genotypes at reproduction is
 \begin{equation}
-\frac{Nw_{11} p_t^2}{N\wbar}, ~~~ \frac{Nw_{12} 2p_tq_t}{N\wbar} , ~~~ \frac{N w_{22} q_t^2}{N\wbar}
+	\frac{NW_{11} p_t^2}{N\Wbar}, ~~~ \frac{NW_{12} 2p_tq_t}{N\Wbar} , ~~~ \frac{N W_{22} q_t^2}{N\Wbar}
 \end{equation}
-see Table \ref{dip_fitness_table}.\\
+(see Table \ref{dip_fitness_table}).\\
 
 \begin{table}
 \begin{center}
 \begin{tabular}{lccc}
 \hline
-& 11 & 12& 22\\
+& $A_1A_1$ & $A_1A_2$ & $A_2A_2$\\
 \hline
-Num. at birth & $Np_t^2$ & $N2p_tq_t$ & $Nq_t^2$\\
-Fitnesses & $w_{11}$ & $w_{12}$& $w_{22}$\\
-Num. at repro. & $Nw_{11} p_t^2$ & $Nw_{12} 2p_tq_t$& $N w_{22} q_t^2$\\
-freq. at repro. & $\frac{Nw_{11} p_t^2}{N \wbar}$ & $\frac{Nw_{12} 2p_tq_t}{N
-\wbar}$& $\frac{N w_{22} q_t^2}{N\wbar}$\\
+Absolute no. at birth & $Np_t^2$ & $N2p_tq_t$ & $Nq_t^2$\\
+Fitnesses & $W_{11}$ & $W_{12}$& $W_{22}$\\
+Absolute no.\ at reproduction & $NW_{11} p_t^2$ & $NW_{12} 2p_tq_t$& $N W_{22} q_t^2$\\
+Relative freq.\ at reproduction & $\frac{NW_{11} p_t^2}{N \Wbar} = \frac{W_{11}}{\Wbar} p_{t}^2$ & $\frac{NW_{12} 2p_tq_t}{N
+\Wbar} = \frac{W_{12}}{\Wbar} 2 p_{t} q_{t}$ & $\frac{N W_{22} q_t^2}{N\Wbar} = \frac{W_{22}}{\Wbar} q_{t}^2$\\
 \end{tabular}
 \end{center}
-\caption{} \label{dip_fitness_table}
+\caption{Relative genotype frequencies after one episode of viability selection.} \label{dip_fitness_table}
 \end{table}
 
-As there is no difference in the fecundity of our three genotypes, the
-allele frequency in the offspring in the next generation is simply the
-allele frequency in the individuals. The frequency in the next generation is
+As there is no difference in the fecundity of the three genotypes, the
+allele frequencies in the zygotes forming the next generation are simply the
+allele frequency among the reproducing individuals of the previous generation. Hence, the frequency of $A_1$ in generation $t+1$ is
 \begin{equation}
-p_{t+1} = \frac{w_{11} p_t^2 + w_{12} p_tq_t}{\wbar} \label{pgen_dip}
+	p_{t+1} = \frac{W_{11} p_t^2 + W_{12} p_tq_t}{\Wbar}
+	\label{pgen_dip}.
 \end{equation}
 
-note that again the absolute value of our fitnesses is irrelevant to
+Note that, again, the absolute value of the fitnesses is irrelevant to
 the frequency of the allele. Therefore, we can just as easily replace
-our absolute fitnesses with our relative fitnesses.\\
+the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{ij}$ by $w_{ij} = W_{ij}/W_{11}$, for instance. \\
 
 The change in frequency from generation $t$ to $t+1$ is
 \begin{equation}
-\Delta p = p_{t+1} -p_{t}= \frac{w_{11} p_t + w_{12} p_tq_t}{\wbar} - p_t. \label{deltap_dip1}
+\Delta p_t = p_{t+1} -p_{t}= \frac{w_{11} p_t^2 + w_{12} p_tq_t}{\wbar} - p_t. \label{deltap_dip1}
 \end{equation}
-To simplify this equation
-we will first define two variables $\wbar_1$ and $\wbar_2$ as
+To simplify this equation, we will first define two variables $\wbar_1$ and $\wbar_2$ as
 \begin{eqnarray}
-\wbar_1 & = w_{11} p_t + w_{12} q_t, \\
-\wbar_2 & =  w_{12} p_t+ w_{22} q_t.
+	\wbar_1 & = w_{11} p_t + w_{12} q_t, \\
+	\wbar_2 & =  w_{12} p_t+ w_{22} q_t.
 \end{eqnarray}
-Our variables $\wbar_1$ and $\wbar_2$ are called the marginal fitnesses of allele 1
-and allele 2 respectively. They are called this as $\wbar_1$ is the
-average fitness of an allele 1, i.e. the fitness of the 1 allele in a
+These are called the marginal fitnesses of allele $A_1$
+and $A_2$, respectively. They are so called as $\wbar_1$ is the
+average fitness of an allele $A_1$, i.e.\ the fitness of $A_1$ in a
 homozygote weighted by the probability it is in a homozygote ($p_t$)
-plus the fitness of the 1 allele in a
+plus the fitness of $A_1$ in a
 heterozygote weighted by the probability it is in a heterozygote ($q_t$).
-We can then rewrite \eqref{deltap_dip1} usng $\wbar_1$ and $\wbar_2$ as
+We further note that the mean relative fitness can be expressed in terms of the marginal fitnesses as
 \begin{equation}
-\Delta p = \frac{p_tq_t (\wbar_1-\wbar_2)}{\wbar}.  \label{deltap_dip2}
+	\label{eq:meanFitInTermsOfMargFit}
+	\wbar = \wbar_1 p_t + \wbar_2 q_t,
 \end{equation}
-The sign of $\Delta p$, i.e. whether allele 1 increases of decreases
+where, for notational simplicity, we have omitted the dependence of mean and marginal fitnesses on time.\\
+
+We can then rewrite eqn.\ \eqref{deltap_dip1} using $\wbar_1$ and $\wbar_2$ as
+\begin{equation}
+	\Delta p_t = \frac{ (\wbar_1-\wbar_2)}{\wbar} p_t q_t.
+	\label{deltap_dip2}
+\end{equation}
+The sign of $\Delta p_t$, i.e. whether allele $A_1$ increases of decreases
 in frequency, depends only on the sign of $(\wbar_1-\wbar_2)$.
-The frequency of allele 1 will keep increasing over the generations so
-long as its marginal fitness is higher than that of allele 2,
-i.e. $\wbar_1 > \wbar_2$, while if $\wbar_1 < \wbar_2$ then the
-frequency  of allele 1 will decrease. (We will return to the
+The frequency of $A_1$ will keep increasing over the generations so
+long as its marginal fitness is higher than that of $A_2$,
+i.e.\ $\wbar_1 > \wbar_2$, while if $\wbar_1 < \wbar_2$, the
+frequency of $A_1$ will decrease. Note the similarity between eqn.\ \eqref{deltap_dip2} and the respective expression for the haploid model in eqn.\ \eqref{eq:eq:recHaplMod1}. (We will return to the
 special case where $\wbar_1 = \wbar_2$ shortly).\\
 
 
 We can also rewrite \eqref{deltap_dip1} as
+\sa{
 \begin{equation}
-\Delta p_t = \frac{p_tq_t}{\wbar}\frac{d \wbar}{dp}.  \label{deltap_dip3}
+\Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp},
+\label{deltap_dip3}
 \end{equation}
-the demonstration of this we leave to the reader. This form shows that
-$\Delta p$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
-frequency of $1$ increases the mean fitness, while the frequency of
-the allele with decrease if this increases the mean fitness of the
-population ($\frac{d \wbar}{dp}>1$). Thus although selection acts on
-individuals, under this simple model selection is acting to increase
-the mean fitness of the population, and it does so at a rate given by
-the variance in allele frequencies within the population ($pq$).\\
+}
+the demonstration of this we leave to the reader.
+\sa{This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).}
+%This form shows that
+%$\Delta p_t$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
+%frequency of $1$ increases the mean fitness, while the frequency of
+%the allele with decrease if this increases the mean fitness of the
+%population ($\frac{d \wbar}{dp}>1$).
+Thus, although selection acts on
+individuals, under this simple model, selection is acting to increase
+the mean fitness of the population. \sa{The rate of this increase is proportional to
+the variance in allele frequencies within the population ($p_tq_t$).}\\
 
-{\bf Question)} Show that  \eqref{deltap_dip3} and \eqref{deltap_dip1} are equivalent.\\
+{\bf Question} Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip1} are equivalent.\\
+
+\sa{So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.}
 
 %%Selection coeffs in diploid model
 \subsubsection{Diploid directional selection}
-Our diploid model is going to reveal a number of insights. We'll
-start with a simple model of directional selection, i.e.
-one our our alleles is always has higher marginal fitness than the other. Let's assign
-allele 1 to be the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$.
-As we are interested in changes in allele frequencies we are only
-interested in relative fitnesses. To parameterize our reduction in
-relative fitness in terms of a selection coefficient, similar to the
-one we met in the haploid selection section, as follows\\
+\sa{Directional selection means that} one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, \sa{and hence $\wbar_1 > \wbar_2$}.
+As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
+one we met in the haploid selection section, as follows:\\
 \begin{center}
 \begin{tabular}{lccc}
-& 11 & 12 & 22 \\
-abs. fitness & $w_{11}$ & $ \leq w_{12} \leq$ & $w_{22}$ \\
-rel. fitness & $w_{11}/w_{11}$ & $w_{12}/w_{11}$ & $w_{22}/w_{11}$ \\
-rel. fitness  & $1$ & $1-sh$ & $1-s$ \\
+genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+absolute fitness & $W_{11}$ & $ \geq W_{12} \geq$ & $W_{22}$ \\
+relative fitness (generic) & $w_{11} = W_{11}/W_{11}$ & $w_{12} = W_{12}/W_{11}$ & $w_{22} = W_{22}/W_{11}$ \\
+relative fitness  (specific) & $1$ & $1-sh$ & $1-s$. \\
 \end{tabular}\\
 \end{center}
-here our selection coefficient $s$ is the difference in relative
-fitness between our two homozygotes, while we will call $h$ our
-dominance coefficient. Our dominance coefficient allows us to move
-from the situation where allele $1$ has a fully dominant effect on fitness (and $2$ is
-totally recessive) when $h=0$, such that the heterozygote exactly
-resembles the $1$ homozygotes, to the converse case where the allele $1$ is fully
-recessive ($h=1$, and allele $2$ is dominant).
+Here, the selection coefficient $s$ is the difference in relative
+fitness between the two homozygotes, and $h$ is the
+dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozogote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
 
 %, of the $12$ and
 %$22$ genotypes we will use selection coefficients $s_{12} \leq 0$ and
 %$s_{22} \leq s_{12}$
 
-We can then rewrite \eqref{deltap_dip2} as
+We can then rewrite eqn.\ \eqref{deltap_dip2} as
 \begin{equation}
-\Delta p = \frac{p_tq_t (p_ths + qs(1-h))}{\wbar}.  \label{deltap_direct}
+\Delta p_t = \frac{p_tq_t (p_ths + qs(1-h))}{\wbar},
+\label{deltap_direct}
 \end{equation}
 where
 \begin{equation}
-\wbar = 1-2p_tq_t sh-q_t^2s
+\wbar_t = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
-One special case is when $s_{12}=s_{22}/2$
+\sa{A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to}
 \begin{equation}
-\Delta p = \frac{p_tq_t s/2}{\wbar}.  \label{deltap_add}
+	\Delta p_t = \frac{p_tq_t s/2}{\wbar}.
+	\label{deltap_add}
 \end{equation}
-for values of $s \ll 1$ then the denominator is close to $1$ and this
-is of exactly the same form as our haploid model and so if $s$ is
-constant our trajectory follows a logistic growth curve of the form
-\eqref{eq:haploid_logistic growth}. \gc{ADD NOTE HERE}
-Thus we can show that it takes
+
+If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and \sa{we have}
 \begin{equation}
-\approx 2 log(2N)/s
+	\Delta p_t = \frac{1}{2}p_t q_t.
+	\label{deltap_add_simpl}
 \end{equation}
-generations for our selected
-allele to transit from its entry into the population ($p_0 =1/(2N)$)
-to close to fixation ($p^{\prime} =1-1/(2N)$).\\
+\sa{It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in dipliod model instead, in which case the agreement with the haploid model would be perfect.\\
+
+From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \eqref{eq:estTauExplSimpl} for the haploid model suggests that in the diploid model without dominance it takes}
+
+\begin{equation}
+	\tau \approx \frac{2}{s} \log(2N)
+\end{equation}
+generations for the favourable allele ($A_1$)
+ to transit from its entry into the population ($p_0 =1/(2N)$)
+to close to fixation ($p_{\tau} =1-1/(2N)$). \sa{Note again the difference by a factor of 2 due to the choice of parametrization. Also, the total number of alleles is $2N$ in the diploid model, rather than $N$, which explains another factor of 2 in the argument of the logarithm.}\\
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Figs/simple_diploid_trajs.eps}
 \end{center}
-\caption{The trajectory of Allele 1 through the population starting
-  from $p=0.01$ for a selection coefficient $s=0.01$ and three
-  different dominance coefficients.} \label{fig:diploid_traj}
+\caption{The trajectory of the frequency of allele $A_1$, starting
+  from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
+  different dominance coefficients.}
+  \label{fig:diploid_traj}
 \end{figure}
 
-\subsubsection{heterozygote advantage}
-What about the case where our heterozygotes are fitter than either
-of the homozygotes. We parameterize the relative fitnesses as follows\\
-\begin{tabular}{lccc}
-& 11 & 12 & 22 \\
-abs. fitness & $w_{11}$ & $<w_{12}>$ & $w_{22}$ \\
-rel. fitness & $w_{11}/w_{12}$ & $w_{12}/w_{12}$ & $w_{22}/w_{12}$ \\
-rel. fitness  & $1-s_1$ & $1$ & $1-s_2$ \\
-\end{tabular}\\
-so $s_1$ and $s_2$ are the differences between the relative fitnesses
-of the two homozygotes and the heterozygote. Note that to obtain
-relative fitnesses we've divided
-through our fitnesses by the heterozygote fitness. We could use the
-same parameterization as in our directional selection model, but this
-slight reparameterization makes the math prettier.\\
+\sa{{\bf Question} Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.}\\
 
-In this case, when our allele $1$ is rare it is often found in a
-heterozygous state and so it increases in frequency. However, when
-allele $1$ is common it is often found in the homozygote state, while
-the allele $2$ is often found in the heterozygote state, and so it is
-now $2$ that increases in frequency at the expense of allele
-$1$. Thus, at least in our deterministic model, neither allele can
-reach fixation and our allele will be maintained as a balanced
-polymorphism in the population at an equilibrium frequency.\\
-
-We can solve for this equilibrium frequency by setting $\Delta p=0$ in
-\eqref{deltap_dip2},
-i.e. $p_tq_t (\wbar_1-\wbar_2)=0$ which permits three stable equilibrium, two
-uninteresting ($p=0$ or $q=0$) and one polymorphic where
-$\wbar_1-\wbar_2$ at equilibrium frequency $p_e$.
-In this case the marginal fitnesses of our two alleles are exactly
-equal ($\wbar_1-\wbar_2$), substituting in our selection coefficients
-this implies
-\begin{equation}
-p_e = \frac{s_2}{s_1+s_2}
-\end{equation}
-This is also that the mean fitness of the population is maximised.\\
-
-\paragraph{Under-dominance.} Another case that is of potential interest is the case of fitness
-underdominance where the heterozygote is less fit than either of the
-homozygotes. \\
+\subsubsection{Heterozygote advantage}
+What if the heterozygotes are fitter than either
+of the homozygotes? In this case, it is useful to parameterize the relative fitnesses as follows:\\
 \begin{center}
 \begin{tabular}{lccc}
-& 11 & 12 & 22 \\
-abs. fitness & $w_{11}$ & $>w_{12}<$ & $w_{22}$ \\
-rel. fitness  & $1+s_1$ & $1$ & $1+s_2$ \\
+	genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+	absolute fitness & $w_{11}$ & $<w_{12}>$ & $w_{22}$ \\
+	relative fitness (generic) & $w_{11}=W_{11}/W_{12}$ & $w_{12} = W_{12}/W_{12}$ & $w_{22} = W_{22}/W_{12}$ \\
+	relative fitness (specific)  & $1-s_1$ & $1$ & $1-s_2$ \\
 \end{tabular}\\
 \end{center}
-this case also permits three equilibria $p=0$, $p=1$, and a
-polymorphic equilibrium $p=p_U$ however
+
+Here, $s_1$ and $s_2$ are the differences between the relative fitnesses
+of the two homozygotes and the heterozygote. Note that to obtain
+relative fitnesses we have divided
+absolute fitness by the heterozygote fitness. We could use the
+same parameterization as in the model of directional selection, but the reparameterization we have choisen here makes the math prettier.\\
+
+In this case, when allele $A_1$ is rare, it is often found in a
+heterozygous state and so it increases in frequency. However, when
+allele $A_1$ is common, it is often found in the homozygote state, while
+the allele $A_2$ is often found in the heterozygote state; it is
+now $A_2$ that increases in frequency at the expense of allele
+$1$. Thus, at least in the deterministic model, neither allele can
+reach fixation and both alleles will be maintained as a balanced
+polymorphism in the population at an equilibrium frequency.\\
+
+We can solve for this equilibrium frequency by setting $\Delta p_t = 0$ in  eqn.\ \eqref{deltap_dip2}, 
+i.e.\ $p_tq_t (\wbar_1-\wbar_2)=0$. Doing so, we find that there are three equilibria, all of which are stable. Two of them are not very interesting ($p=0$ or $q=0$), but the third one is the polymorphic equilibrium,  where
+$\wbar_1-\wbar_2$ holds.
+Using the parametrization above, we see that the marginal fitnesses of the two alleles are formally equivalent. Insertion of the selection coefficients $s_1$ and $s_2$ yields
+\begin{equation}
+	p_e = \frac{s_2}{s_1+s_2}
+\end{equation}
+for the equilibrium frequency of interest. This is also the frequency of $A_1$ at which the mean fitness of the population is maximised.\\
+
+\paragraph{Underdominance.} Another case that is of potential interest is the case of fitness
+underdominance, where the heterozygote is less fit than either of the
+homozygotes. This can be parametrized as follows: \\
+\begin{center}
+\begin{tabular}{lccc}
+	genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+	absolute fitness & $w_{11}$ & $<w_{12}>$ & $w_{22}$ \\
+	relative fitness (generic) & $w_{11}=W_{11}/W_{12}$ & $w_{12} = W_{12}/W_{12}$ & $w_{22} = W_{22}/W_{12}$ \\
+	relative fitness (specific)  & $1+s_1$ & $1$ & $1+s_2$ \\
+\end{tabular}\\
+\end{center}
+
+This case also permits three equilibria, $p=0$, $p=1$, and a
+polymorphic equilibrium $p=p_U$. However,
 now only the first two equilibria are stable, while the polymorphic
-equilibrium is now unstable. If $p<p_U$ then $\Delta p $ is negative
-and the allele $1$ proceeds to loss, while if $p>p_U$ then the allele
-$1$ will proceed to fixation.   \\
+equilibrium is unstable. If $p<p_U$ then $\Delta p_t $ is negative
+and allele $A_1$ will be lost, while if $p>p_U$, allele
+$A_1$ will become fixed.\\
 
 While such alleles might not spread within populations (if $p_U \gg
 0$ and selection is reasonably strong), they are of interest in the study of speciation and hybrid
-zones. That's because our allele $1$ and $2$ may have arisen in a
-stepwise fashion, i.e. not by a single mutation, in separate
-subpopulations and our heterozygote disadvantage will now play a
-potential role in species maintenance. \\
+zones. That is because alleles $A_1$ and $A_2$ may have arisen in a
+stepwise fashion, i.e.\ not by a single mutation, in separate
+subpopulations. Now, heterozygote disadvantage will play a
+potential role in species maintenance, \sa{if isolation of the subpopulations is not complete}.\\
 
-\paragraph{Diploid Fluctuating fitness}
+\paragraph{Diploid fluctuating fitness}
 We would like to think about the case where the diploid absolute fitnesses
-are time-dependent with our three genotypes having fitnesses
+are time-dependent. The three genotypes then have fitnesses
 $w_{11,t}$, $w_{12,t}$, and $w_{22,t}$ in generation $t$. However,
 this case is much less tractable than the haploid case, as segregation
 makes it tricky to keep track of the genotype frequencies.  
 We can make some progress and gain some intuition by thinking about
-how the frequency of allele 1 changes when it is rare. (This argument
-is originally due to Haldane and J. )\\
+how the frequency of allele $A_1$ changes when it is rare.\\
+% (This argument is originally due to Haldane and J. )\\
 
-When allele 1 is rare, i.e. $p \ll 1$ our frequency in the next
+When $A_1$ is rare, i.e.\ $p \ll 1$, its frequency in the next
 generation \eqref{pgen_dip} can be approximated as
 \begin{equation}
-p_{t+1} \approx \frac{w_{12}p_t}{\wbar}
+p_{t+1} \approx \frac{w_{12}p_t}{\wbar}.
 \end{equation}
-by ignoring the $p_{t}^2$ term and assuming $q_t \approx 1$ in the numerator.
+To obtain this, we have ignored the $p_{t}^2$ term and assumed that $q_t \approx 1$ in the numerator.
 Following a similar argument to approximate $q_{t+1}$, we can write
 \begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \frac{w_{12,t}}{w_{22,t}}  \frac{p_{t}}{q_{t}}
+	\frac{p_{t+1}}{q_{t+1}} = \frac{w_{12,t}}{w_{22,t}}  \frac{p_{t}}{q_{t}}.
 \end{equation}
-Then starting from out from $p_0$ and $q_0$ in generation $0$, $t+1$
-generations later
+Then, starting from out from $p_0$ and $q_0$ in generation $0$, $t+1$
+generations later, we have
 \begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=1}^t \frac{w_{12,i}}{w_{22,i}}  \right) \frac{p_{0}}{q_{0}}.
+	\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=0}^{t-1} \frac{w_{12,i}}{w_{22,i}}  \right) \frac{p_{0}}{q_{0}}.
 \end{equation}
-From this we can see, following our haploid argument from above, that
-the frequency of our allele 1 will increase when rare only if
+From this, we can see, following our haploid argument from above, that
+the frequency of allele $A_1$ will increase when rare only if
 \begin{equation}
-\frac{\sqrt[t]{\prod_{i=0}^{t}w_{12,i}}}{\sqrt[t]{\prod_{i=0}^{t}w_{22,i}}}>1 \label{geometric_1wins}
+	\frac{\sqrt[t]{\prod_{i=0}^{t-1}w_{12,i}}}{\sqrt[t]{\prod_{i=0}^{t-1}w_{22,i}}}>1 \label{geometric_1wins},
 \end{equation}
-i.e. if the $12$ heterozygote has higher geometric mean fitness than the $22$ homozygote.\\
+i.e. if the heterozygote has higher geometric mean fitness than the $A_2A_2$ homozygote.\\
 
-The question now is, will allele 1 approach fixation in the population,
-or are there cases where our allele can become a balanced
-polymorphism? To investigate that we can simply repeat our analysis
-for $q \ll 1$, and see that in that case
+The question now is, whether allele $A_1$ will approach fixation in the population,
+or whether there are cases in which we can obtain a balanced polymorphism. To investigate that, we can simply repeat our analysis for $q \ll 1$, and see that in that case
 \begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=1}^t \frac{w_{11,i}}{w_{12,i}}  \right) \frac{p_{0}}{q_{0}}.
+	\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=0}^{t-1} \frac{w_{11,i}}{w_{12,i}}  \right) \frac{p_{0}}{q_{0}}.
 \end{equation}
-i.e. now for our allele 1 to carry on increasing in frequency and to
-approach fixation in our population our $11$ genotype has to be
-out-completing our $12$ heterozygotes. For our allele 1 to approach
-fixation we need the geometric mean of $w_{11,i}$ to be greater than the
-geometric mean fitness of heterozygotes ($w_{12,i}$)
-While if heterozygotes have higher geometric mean fitness than
-our $1$ homozygotes than the $2$ allele will increase in frequency when it is rare.
+Now, for allele $A_1$ to carry on increasing in frequency and to
+approach fixation, the $A_1A_1$ genotype has to be
+out-compeeting the heterozygotes. For allele $A_1$ to approach
+fixation, we need the geometric mean of $w_{11,i}$ to be greater than the
+geometric mean fitness of heterozygotes ($w_{12,i}$).
+At the same time, if heterozygotes have higher geometric mean fitness than
+the $A_1A_1$ homozygotes, then the $A_2$ allele will increase in frequency when it is rare.
 Therefore, a balanced polymorphism can result when the heterozygote
 has higher geometric fitness than either of the homozygotes.\\
 
@@ -1937,17 +1952,18 @@ has higher geometric fitness than either of the homozygotes.\\
 %(satisfying both \eqref{geometric_1wins} and
 %\eqref{geometric_2wins}).
 
-Intriguingly we can have a balanced polymorphism even if the
+Intriguingly, we can have a balanced polymorphism even if the
 heterozygote is never the fittest genotype in any generation. To see
-this consider the simple example, where there are two environments
-alternate generation to generations\\
+this, consider the simple example, where there are two environments
+alternate from generation to generation:\\
 \begin{tabular}{lccc}
-& 11 & 12 & 22 \\
-Environ. A abs. fitness & $w_{11,A}$ & $>w_{12,A}>$ & $w_{22,A}$ \\
-Environ. B abs. fitness & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
+genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+relative fitness in environment A & $w_{11,A}$ & $>w_{12,A}>$ & $w_{22,A}$ \\
+relative fitness in environment A  & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
 Geometric mean fitness & $w_{11,B}$ & $<w_{12,B}>$ & $w_{22}$ \\
 \end{tabular}\\
-so that the polymorphism will remain balanced in the population,
+
+In this case, the polymorphism will remain balanced in the population,
 despite the fact that the heterozygote is never the fitest genotype.
 
 
