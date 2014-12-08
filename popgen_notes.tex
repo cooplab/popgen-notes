@@ -1644,7 +1644,7 @@ We will assume that the difference in fitness between the three
 genotypes comes from differences in viability, i.e.\ differential
 survival of individuals from the formation of zygotes to reproduction.  
 We denote the absolute fitnesses of genotypes $A_1A_1$, $A_1A_2$, and $A_2A_2$ by $W_{11}$, $W_{12}$, and $W_{22}$. Specifically, $W_{ij}$ is the probability that a zygote of genotype $A_iA_j$ survives to reproduction.
-Assuming that individuals mate at random, the number of zygotes that are of the three genotypes and form the next generation are
+Assuming that individuals mate at random, the number of zygotes that are of the three genotypes and form generation $t$ are
 \begin{equation}
 Np_t^2, ~~~  N2p_tq_t, ~~~ Nq_t^2.
 \end{equation}
@@ -1970,20 +1970,19 @@ despite the fact that the heterozygote is never the fitest genotype.
 \subsection{Mutation Selection Balance}
 %</source-file>
 Mutation is constantly introducing new alleles into the
-population. Therefore, variation can be maintained within our
-population even if it is deleterious through a balance between
-mutation introducing alleles and selection acting to purge these alleles.
-To see this we'll return to our directional selection model, where the
-allele $1$ is advantageous i.e.
+population. Therefore, variation can be maintained within a
+population \sa{not only if selection is balancing (e.g.\ through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to} a balance between
+mutation \sa{and selection. A case of particular interest is when mutation introduces deleterious} alleles and selection acts against these alleles. To study this balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
 \begin{center}
 \begin{tabular}{lccc}
-& 11 & 12 & 22 \\
-abs. fitness & $w_{11}$ & $ \geq w_{12} \geq$ & $w_{22}$ \\
-rel. fitness  & $1$ & $1-sh$ & $1-s$ \\
+genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+absolute fitness & $W_{11}$ & $ \geq W_{12} \geq$ & $W_{22}$ \\
+relative fitness  (specific) & $1$ & $1-sh$ & $1-s$. \\
 \end{tabular}\\
 \end{center}
-and for the moment we'll consider the case where the allele $2$ is not
-completely recessive $h>0$. We'll be interested in the case where our allele $2$ is rare within
+
+\sa{For a start, we consider the case where allele $A_2$ is not
+completely recessive ($h>0$), so that the heterozygotes suffer some disadvantage, too. We denote by $\mu = \mu_{12}$ the  mutation rate per generation from $A_1$ to the deleterious allele $A_2$, and assume that there is no reverse mutation ($\mu_{21} = 0$).  Let us assume that selection against $A_2$ is relatively strong compared to the mutation rate, so that it is justified to assume that $A_2$ is always rare, i.e.\ $q_t \ll 1$. Compared to previous sections, for mathematical clarity, we also switch from following the frequency $p_t$ of $A_1$ to following the frequency $q_t$ of $A_2$. Of course, this is without loss of generality.} We are interested in the case where  allele $2$ is rare within
 the population i.e. $q \ll 1$, which means that the change in
 frequency of allele $2$, due to selection ($\Delta_S q$) can be written as
 \begin{equation}
