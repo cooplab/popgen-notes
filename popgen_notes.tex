@@ -1639,7 +1639,7 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 
 
 \subsection{Diploid model}
-We will now move on to a diploid model of a single locus segregating two alleles.
+We will now move on to a diploid model of a single locus with two segregating alleles.
 We will assume that the difference in fitness between the three
 genotypes comes from differences in viability, i.e.\ differential
 survival of individuals from the formation of zygotes to reproduction.  
@@ -1806,7 +1806,7 @@ where
 
 If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and \sa{we have}
 \begin{equation}
-	\Delta p_t = \frac{1}{2}p_t q_t.
+	\Delta p_t = \frac{1}{2} s p_t q_t .
 	\label{deltap_add_simpl}
 \end{equation}
 \sa{It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in dipliod model instead, in which case the agreement with the haploid model would be perfect.\\
@@ -1904,10 +1904,10 @@ We can make some progress and gain some intuition by thinking about
 how the frequency of allele $A_1$ changes when it is rare.\\
 % (This argument is originally due to Haldane and J. )\\
 
-When $A_1$ is rare, i.e.\ $p \ll 1$, its frequency in the next
+When $A_1$ is rare, i.e.\ $p_t \ll 1$, its frequency in the next
 generation \eqref{pgen_dip} can be approximated as
 \begin{equation}
-p_{t+1} \approx \frac{w_{12}p_t}{\wbar}.
+p_{t+1} \approx \frac{w_{12}}{\wbar} p_t.
 \end{equation}
 To obtain this, we have ignored the $p_{t}^2$ term and assumed that $q_t \approx 1$ in the numerator.
 Following a similar argument to approximate $q_{t+1}$, we can write
