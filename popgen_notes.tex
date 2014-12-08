@@ -1621,18 +1621,18 @@ The ratio of the frequency of allele $A_1$ to that of allele $A_2$ in generation
 Therefore, if we think of the two alleles starting in generation $t$ at
 frequencies $p_t$ and $q_t$, then $\tau$ generations later,
 \begin{equation}
-\frac{p_{t+\tau}}{q_{t+\tau}} = \left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}.
+\frac{p_{t+\tau}}{q_{t+\tau}} = \left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}.
 \end{equation}
 \\
 
 The question of which allele is increasing or decreasing in frequency comes down
-to whether $\left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)$ is
+to whether $\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)$ is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
 instead take the $\tau^{\mathrm{th}}$ root of it and consider
 \begin{equation}
-\sqrt[\tau]{\left(\prod_{i=t}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau}w_{1,i}}}{\sqrt[t]{\prod_{i=t}^{\tau}w_{2,i}}}.
+\sqrt[\tau]{\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}}{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{2,i}}}.
 \end{equation}
-The term $\sqrt[t]{\prod_{i=t}^{\tau}w_{1,i}}$ is the geometric mean fitness of allele
+The term $\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}$ is the geometric mean fitness of allele
  $A_1$ over the $\tau$ generations past generation $t$. Therefore, allele $A_1$ will only increase
 in frequency if it has a higher geometric mean fitness than allele $A_2$
 (at least in our simple deterministic model). \\
