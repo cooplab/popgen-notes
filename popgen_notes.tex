@@ -1575,7 +1575,7 @@ Solving this for $\tau$ yields
 In practice, it is often helpful to parametrize the relative fitnesses $w_i$ in a specific way. For example, we may set $w_1 = 1$ and $w_2 = 1 - s$, where $s$ is called the selection coefficient. Using this parametrization, $s$ is simply the difference in relative fitnesses between the two alleles. Equation \eqref{eq:haploid_tau_gen} becomes
 \begin{equation}
 	\label{eq:haploid_tau_gen_expl}
-	p_{t+\tau} = \frac{p_{\tau}}{p_{\tau} + q_{\tau} (1 - s)^{\tau}},
+	p_{t+\tau} = \frac{p_{t}}{p_{t} + q_{t} (1 - s)^{\tau}},
 \end{equation}
 as $w_2 / w_1 = 1 - s$. Then, if $s \ll 1$, we can approximate $(1-s)^{\tau}$ in the denominator by $\exp(-s\tau)$ to obtain
 \begin{equation} \label{eq:haploid_logistic growth}
