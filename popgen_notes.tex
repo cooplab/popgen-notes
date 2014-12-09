@@ -1542,7 +1542,7 @@ Without loss of generality, we can therefore rewrite eqn.\ (\ref{eq:eq:recHaplMo
 dropping the dependence of the mean fitness on time in our notation, but remembering it.
 The change in frequency from one generation to the next is then given by
 \begin{equation}
-\Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{(w_1 - w_2)}{\wbar} p_t q_t,
+\Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{w_1 - w_2}{\wbar} p_t q_t,
 \label{eq:deltap_haploid}
 \end{equation}
 recalling that $q_t = 1 - p_t$.\\
@@ -1790,7 +1790,7 @@ dominance coefficient. \sa{For selection to be directional, we require that $0 \
 
 We can then rewrite eqn.\ \eqref{deltap_dip2} as
 \begin{equation}
-\Delta p_t = \frac{p_tq_t (p_ths + qs(1-h))}{\wbar},
+\Delta p_t = \frac{p_ths + q_t s(1-h)}{\wbar}p_tq_t ,
 \label{deltap_direct}
 \end{equation}
 where
@@ -1800,7 +1800,7 @@ where
 
 \sa{A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to}
 \begin{equation}
-	\Delta p_t = \frac{p_tq_t s/2}{\wbar}.
+	\Delta p_t = \frac{1}{2}\frac{s}{\wbar}p_tq_t .
 	\label{deltap_add}
 \end{equation}
 
@@ -1959,7 +1959,7 @@ alternate from generation to generation:\\
 \begin{tabular}{lccc}
 genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
 relative fitness in environment A & $w_{11,A}$ & $>w_{12,A}>$ & $w_{22,A}$ \\
-relative fitness in environment A  & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
+relative fitness in environment B  & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
 Geometric mean fitness & $w_{11,B}$ & $<w_{12,B}>$ & $w_{22}$ \\
 \end{tabular}\\
 
@@ -1967,7 +1967,7 @@ In this case, the polymorphism will remain balanced in the population,
 despite the fact that the heterozygote is never the fitest genotype.
 
 
-\subsection{Mutation Selection Balance}
+\subsection{Mutation--selection balance}
 %</source-file>
 Mutation is constantly introducing new alleles into the
 population. Therefore, variation can be maintained within a
@@ -1977,110 +1977,106 @@ mutation \sa{and selection. A case of particular interest is when mutation intro
 \begin{tabular}{lccc}
 genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
 absolute fitness & $W_{11}$ & $ \geq W_{12} \geq$ & $W_{22}$ \\
-relative fitness  (specific) & $1$ & $1-sh$ & $1-s$. \\
+relative fitness & $w_{11}=1$ & $w_{12}=1-sh$ & $w_{22}=1-s$. \\
 \end{tabular}\\
 \end{center}
 
 \sa{For a start, we consider the case where allele $A_2$ is not
-completely recessive ($h>0$), so that the heterozygotes suffer some disadvantage, too. We denote by $\mu = \mu_{12}$ the  mutation rate per generation from $A_1$ to the deleterious allele $A_2$, and assume that there is no reverse mutation ($\mu_{21} = 0$).  Let us assume that selection against $A_2$ is relatively strong compared to the mutation rate, so that it is justified to assume that $A_2$ is always rare, i.e.\ $q_t \ll 1$. Compared to previous sections, for mathematical clarity, we also switch from following the frequency $p_t$ of $A_1$ to following the frequency $q_t$ of $A_2$. Of course, this is without loss of generality.} We are interested in the case where  allele $2$ is rare within
-the population i.e. $q \ll 1$, which means that the change in
-frequency of allele $2$, due to selection ($\Delta_S q$) can be written as
+completely recessive ($h>0$), so that the heterozygotes suffer at least some disadvantage. We denote by $\mu = \mu_{1\rightarrow2}$ the  mutation rate per generation from $A_1$ to the deleterious allele $A_2$, and assume that there is no reverse mutation ($\mu_{2\rightarrow1} = 0$).  Let us assume that selection against $A_2$ is relatively strong compared to the mutation rate, so that it is justified to assume that $A_2$ is always rare, i.e.\ $q_t = 1-q_t \ll 1$. Compared to previous sections, for mathematical clarity, we also switch from following the frequency $p_t$ of $A_1$ to following the frequency $q_t$ of $A_2$. Of course, this is without loss of generality. The change in frequency of $A_2$ due to selection can be written as}
 \begin{equation}
-\Delta_S q = \frac{pq(\wbar_2 - \wbar_1)}{\wbar}  \approx  -hs q
+	\Delta_S q_t = \frac{\wbar_2 - \wbar_1}{\wbar} p_t q_t  \approx  -hs q_t.
+	\label{eq:dirSelApprox}
 \end{equation}
-which can be found by assuming that $q^2 \approx 0$, $p \approx 1$,
-and that $\wbar \approx w_1$. So selection is acting to reduce the
-frequency of our allele $2$ and does so geometrically across the
-generations. \\
+This approximation can be found by assuming that $q^2 \approx 0$, $p \approx 1$,
+and that $\wbar \approx w_1$. \sa{All of these assumptions make sense if $q \ll 1$. From eqn.\ \eqref{eq:dirSelApprox} we see that selection acts to reduce the frequency of $A_2$ (as both $h$ and $s$ are positive), and it does so geometrically across the
+generations. That is, if the initial frequency of $A_2$ is $q_0$, then its frequency at time $t$ is approximately 
+\begin{equation}
+	q_t = q_0 (1 - hs)^t.
+	\label{eq:dirSelExplApprox}
+\end{equation}
 
-We'll now consider the change in frequency induced by mutation. Lets
-assume that our mutation rate from allele $1$ to allele $2$ is $\mu$
-per generation (mutation also could occur from allele $2$ to $1$
-however this is a small effect as long as the reverse mutation rate
-isn't too large). The frequency of $q$ in the next generation is
+We will now consider the change in frequency induced by mutation. Recalling that $\mu$ is
+the mutation rate from $A_1$ to $A_2$ per generation, the frequency of $A_2$ after mutation
 \begin{equation}
-q^{\prime} =  \mu(1-q)
+	q^{\prime} =  \mu p_t = \mu(1 - q_t).
 \end{equation}
-assuming that $\mu \ll 1$ and that $q \ll 1$ then the change in the
-frequency of allele $2$ due to mutation ($\Delta_M q$) is
+Assuming that $\mu \ll 1$ and that $q \ll 1$, the change in the
+frequency of allele $A_2$ due to mutation ($\Delta_M q_t$) can be approximated by
 \begin{equation}
-\Delta_M q = \mu
+	\Delta_M q_t = q^{\prime} - q_t =  \mu.
+	\label{eq:mutApprox}
 \end{equation}
-i.e. mutation is, when allele $2$ is rare, is acting to linearly
-increase the frequency of the deleterious allele.\\
+Hence, when $A_2$ is rare and the mutation rate is low, mutation acts to linearly increase the frequency of the deleterious allele $A_2$.\\
 
-We'll obtain a balance between mutation acting to increase the
-frequency of our allele and selection acting to decrease the frequency
-of our allele when these two forces are at equilibrium i.e.
+If selection is to balance deleterious mutation, there combined effect over one generation has to be zero. Therefore, to find the mutation--selection equilibrium, we set
 \begin{equation}
-\Delta_M q + \Delta_S q = 0
+	\Delta_M q_t + \Delta_S q_t = 0,
 \end{equation}
-this equilibrium occurs when
+insert eqns. \eqref{eq:dirSelApprox} and \eqref{eq:mutApprox}, and solve for $q$ to obtain
 \begin{equation}
-q_e = \frac{\mu}{hs} \label{eqn:mut_sel_bal}
+	q_e = q_t = \frac{\mu}{hs}.
+	\label{eqn:mut_sel_bal}
 \end{equation}
-i.e. our allele frequency is balanced at our mutation rate divided by
-the reduction in relative fitness in the heterozygote ($hs$).\\
+We see that the frequency of the deleterious allele $A_2$ is balanced at the mutation rate ($\mu$) divided by
+the reduction in relative fitness in the heterozygote ($hs$).}\\
 
-Note that in this calculation the fitness of the $22$ homozygote
-hasn't entered into this, as our allele is rare and so rarely in a
-homozygous state. Therefore, if our allele has any deleterious effect
-in a heterozygous state it is this effect that determines the
-frequency it is maintained at within the population. Note that in
-writing our total allele frequency change as $\Delta_M q + \Delta_S q
+\sa{It is worth pointing out that the fitness of the $A_2A_2$ homozygote
+has not entered this calculation, as $A_2$ is so rare that it is hardly ever found in the 
+homozygous state. Therefore, if $A_2$ has any deleterious effect
+in a heterozygous state (i.e.\ if $h>0$) it is this effect that determines the
+frequency at which $A_2$ is maintained in the population. Also, note that by
+writing the total change in allele frequency as $\Delta_M q_t + \Delta_S q_t
 $ we have implicitly assumed that we can ignore terms of order $\mu
-\times s$ as they are small (this allows us to separate the change in
-allele frequencies from mutation and selection).\\
+\times s$. That is, we have assumed that there is no interaction between mutation and selection. We can do so as we assumed that both $\mu$ and $s$ are small.\\
 
 
-So what effect do such mutations have on the population? Consider the
-effect a single site segregating at $q_E = \mu/(hs)$) has on mean relative fitness
+What effect do such deleterious mutations at mutation--selection balance have on the population? It is common to express this effect in terms of a reduction of the mean relative fitness of the population. For a single site at which a deleterious mutation is segregating at $q_e = \mu/(hs)$, the mean relative fitness is reduced to
 \begin{equation}
-\wbar = 1- 2p_Eq_Ehs-q_E^2s \approx 1-2u
+	\wbar = 1- 2p_e q_e hs - q_e^2s \approx 1-2\mu.
 \end{equation}
-somewhat remarkably the drop in mean fitness due to a site segregating
-at mutation selection balance is (unless the site is totally
-recessive) independent of the selection coefficient against the
-heterozygote and depends only the mutation rate.
+Somewhat remarkably, the drop in mean fitness due to a site segregating
+at mutation--selection balance is independent of the selection coefficient against the
+heterozygote; it depends only the mutation rate. Note that this applies only if the mutation is not totally recessive, i.e.\ if $h > 0$.
 
-While this reduction is very small at an individual site (e.g. the
-mutation rate of a gene is likely $<1^{-5}$) there are many loci
-segregating at mutation selection balance. This can be a big source of
-genetic load and a major cause of variation in fitness related traits among individuals.
+A reduction of $1 - 2\mu$ is very small, given that the
+mutation rate of a gene is likely $<10^{-5}$. However, if there are many loci
+segregating at mutation--selection balance, this can accumulate to a substantial so-called
+genetic load, and a major cause of variation in fitness-related traits among individuals.
 
-As an aside, if an allele was truly recessive (although few likely are) $h=0$ and
-so \eqref{eqn:mut_sel_bal} is not valid, however, we can proceed
-through a similar line of reasoning, to that outlined above, to show
-that for truly recessive alleles $q_e = \sqrt{\mu/s}$.
+As an aside, if an allele was truly recessive (although few likely are), we have $h=0$, and
+so eqn.\ \eqref{eqn:mut_sel_bal} is not valid. However, we can make an argument similar to the one above to show
+that, for truly recessive alleles,
+\begin{equation}
+	q_e = \sqrt{\frac{\mu}{s}}.
+\end{equation}
+}
 
 
 \subsubsection{Inbreeding depression}
-All else being equal, mutations that have a smaller effect in the
-heterozygote can segregate at higher frequency under mutation
-selection balance. As a consequence of this, alleles that have
+All else being equal, eqn.\ \eqref{eqn:mut_sel_bal} suggests that mutations that have a smaller effect in the
+heterozygote can segregate at higher frequency under mutation--selection balance. As a consequence, alleles that have
 strongly deleterious effects in the homozygous state can segregate at
 low frequencies in the population, as long as they do not have a
-strong effect in heterozygotes. Thus outbred populations may have many
+strong effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
 
 On consequence of this is that inbred individuals from usually outbred
 populations may have dramatically lower fitnesses than outbred
-individuals as a consequence of being homozygous at many loci for
-alleles with recessive deleterious effects. Indeed this seems to be
-the case a common observation (dating back to systematic surveys by
-Darwin) in that in typically outbred populations the mean fitness of individuals
-decreases with the inbreeding coefficient, i.e. inbreeding depression
+individuals. This is a consequence of being homozygous at many loci for
+alleles with recessive deleterious effects. Indeed, this seems to be a common observation, dating back to systematic surveys by
+Darwin. In typically outbred populations, the mean fitness of individuals
+decreases with the inbreeding coefficient, i.e.\ this so-called inbreeding depression
 is a common observation.
 
-\paragraph{Purging the inbreeding load}
-That said, populations who regularly inbreed over sustained time
-periods are expected to partially purge this load of deleterious
-alleles. This is because these populations have exposed many of these alleles
-in a homozygous state and so selection can more readily remove these alleles
+\paragraph{Purging the inbreeding load.}
+That said, populations that regularly inbreed over sustained periods of time
+are expected to partially purge this load of deleterious
+alleles. This is because such populations have exposed many of these alleles
+in a homozygous state, and so selection can more readily remove these alleles
 from the population.
 
 \newpage
-\subsection{Migration-Selection Balance}
+\subsection{Migration--selection balance}
 Another reason for the persistence of deleterious alleles in a
 population is that there is a constant influx of maladaptive alleles
 from other populations where these alleles are locally adapted.
