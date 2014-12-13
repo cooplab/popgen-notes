@@ -2578,7 +2578,8 @@ back. \\
 
 As such it will often be helpful to consider the time to the common
 ancestor of a pair of sequences, and then think of the impact of that
-on patterns of diversity. The probability that a pair of alleles
+on patterns of diversity. See Figure \ref{fig:Coalescent_simulation}
+for an example of this. The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
 $t+1$ generation back is
 \begin{equation}
@@ -2588,6 +2589,22 @@ thus the coalescent time of a pair of sequences ($T_2$) is
 approximately exponentially distributed with a rate $1/(2N)$. We'll denote that by
 saying that $T_2 \sim Exp \left( 1/(2N) \right)$. The mean coalescent
 time of a pair of a pair of alleles is $2N$ generations\\
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/Coalescent.png}
+\end{center}
+\caption{A simple simulation of the coalescent process. The simulation
+  consists of a diploid population of 10 individuals (20 alleles). In
+  each generation, each individual is equally likely to be the parent
+  of an offspring (and the allele transmitted is indicated by a light
+  grey line).  We track a
+  pair of alleles, chosen in the present day, back 14 generations
+  untill they find a common ancestor.} \label{fig:Coalescent_simulation}
+\end{figure}
+
+
 
 Conditional on a pair of alleles coalescing $t$ generations ago
 there are $2t$ generations in which a mutation could occur. Thus the
@@ -2657,7 +2674,22 @@ ancestor is
 \left(1-\frac{1}{(2N)} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
 \end{equation}
 in making this approximation we are multiplying out the right hand-side
-and ignoring terms of $1/N^2$ and higher. \\
+and ignoring terms of $1/N^2$ and higher. See
+Figure \ref{fig:Coalescent_simulation_3} for a random realization of this process. \\
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = \textwidth]{Figs/Coalescent_3}
+\end{center}
+\caption{A simple simulation of the coalescent process for three
+  lineages. We track the ancestry of 
+  three modern-day alleles, the first pair (blue and purple) coalesce four generations back 
+  their are then two independent lineages we are tracking, this pair
+  then coalesces twelve generations in the past. Note that different
+  random realizations of this process will differ from each other a lot.} \label{fig:Coalescent_simulation_3}
+\end{figure}
+
 
 More generally when we sample $i$ alleles there are ${i \choose
  2}$ pairs, i.e. $i(i-1)2$ pairs, thus the probability that no pair

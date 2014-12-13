@@ -4,13 +4,13 @@ offset<-0.2
 num.gens<-20
 plot(c(1,num.gens),c(1,N),type="n",axes=FALSE,xlab="",ylab="")
 mtext(side=1,line=1,"Generations")
-num.tracked<-2
+num.tracked<-3
 track.this.allele<-vector("list", 2*N)
 
 track.this.allele[sample(1:(2*N),num.tracked)]<-1:num.tracked
 
 track.this.allele.next.gen<-vector("list", 2*N)
-col.allele<-c("red","blue")  #rainbow(num.tracked)
+col.allele<-  c("red","blue","purple") #c("red","blue")  
 for(i in num.gens:1){
 	
 for(ind in 1:N){
