@@ -338,7 +338,7 @@ the fitness (we'll make clear what we mean by discernable later, for
 the moment think of this as “no effect” on fitness). 
 
 
-\subsection{Loss of heterozygosity due to to drift.}
+\subsection{Loss of heterozygosity due to to drift.} \label{LossofHet} 
 
 Genetic drift will, in the absence of new mutations, slowly purge our
 population of neutral genetic diversity as alleles slowly drift to high or low
@@ -391,7 +391,7 @@ H_{t+1} =H_0 \exp \left(-\frac{t}{2N} \right)
 i.e. heterozygosity decays exponentially at a rate $1/(2N)$.
 
 \subsection{Levels of diversity maintained by a balance between
- mutation and drift}
+ mutation and drift} \label{DriftMutationBalance}
 
 Looking backwards in time from one generation to the next, we are going
 to say that two alleles which have the same parental allele (i.e. find
@@ -2564,11 +2564,12 @@ transmissions. Thus the average number of neutral mutational
 differences separating our pair of species is simply $2\mu (1-C) T$.\\
 
 
-
+\subsection{The Coalescent and patterns of neutral diversity}
 
 \paragraph{Pairwise Coalescent time distribution and the number of
  pairwise differences.}
-In the preceding calculation you'll note that we could first specify
+Thinking back to our calculations we made about the loss of neutral heterozygosity
+and equilibrium levels of diversity (in Sections \ref{LossofHet} and \ref{DriftMutationBalance}), you'll note that we could first specify
 what generation a pair of sequences coalesce in, and then calculate
 some properties of heterozygosity based on that. That's because neutral
 mutations do not affect the probability that an individual transmits
