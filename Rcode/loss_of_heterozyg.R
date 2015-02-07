@@ -6,8 +6,8 @@ plot(c(1,num.gens),c(1,N)+c(-offset,offset),type="n",axes=FALSE,xlab="",ylab="")
 mtext(side=1,line=1,"Generations")
  my.cols<-sample(rainbow(2*N))
  
-	points(rep(1,N),1:N+offset, pch=19,cex=1,col=my.cols[(1:N)*2])
- points(rep(1,N),1:N-offset, pch=19,cex=1,col=my.cols[(1:N)*2-1])
+	points(rep(1,N),1:N+offset, pch=19,cex=1.2,col=my.cols[(1:N)*2])
+ points(rep(1,N),1:N-offset, pch=19,cex=1.2,col=my.cols[(1:N)*2-1])
 
 for(i in 1:num.gens){
  new.cols<-rep("black",2*N)
@@ -26,8 +26,8 @@ for(i in 1:num.gens){
 	}
 	
  
- points(rep(i,N),1:N+offset, pch=19,cex=1,col=my.cols[(1:N)*2])
- points(rep(i,N),1:N-offset, pch=19,cex=1,col=my.cols[(1:N)*2-1])
+ points(rep(i,N),1:N+offset, pch=19,cex=1.2,col=my.cols[(1:N)*2])
+ points(rep(i,N),1:N-offset, pch=19,cex=1.2,col=my.cols[(1:N)*2-1])
  my.cols<-new.cols
 
 }
