@@ -2,11 +2,11 @@
 #install.packages("plotrix")
 #library("plotrix")
 
-simulate.pop<-function(N.vec=rep(5,30), const.RS=TRUE,  mutation= TRUE, mut.rate=  0.1, for.class= TRUE, initial.state="all.black"){
+simulate.pop<-function(N.vec=rep(5,30), const.RS=TRUE,  mutation= TRUE, mut.rate=  0.1, for.class= TRUE, initial.state="all.black",plot.freqs=FALSE){
    #  c(rep(10,5),rep(3,2),rep(10,5),rep(3,2),rep(10,5))  #
 	stopifnot(initial.state %in% c("all.black","all.diff","two.alleles") )
 
-	
+	if(plot.freqs){ layout(c(1,2)); par(mar=c(1,2,0,1))}
 	if(for.class){
 		line.lwd<-1
 		line.col<-"black"
@@ -23,16 +23,17 @@ simulate.pop<-function(N.vec=rep(5,30), const.RS=TRUE,  mutation= TRUE, mut.rate
 	num.gens<- length(N.vec)-1
 	offset<-0.1
 	plot(c(1,num.gens),c(0.5,max(N.vec))+c(-offset,offset),type="n",axes=FALSE,xlab="",ylab="")
-	mtext(side=1,line=1,"Generations")
+	mtext(side=1,line=0,"Generations")
 	 text(1,0.5,"Past")
-	 text(num.gens,0.5,"Present")
+	 text(num.gens-1,0.5,"Present")
 	 
-	 
+	 track.cols<- list()
 	N <-N.vec[1]
 	 if(initial.state=="all.black") my.cols<-rep("black",2*N)  #sample(rainbow(2*N))
 	 if(initial.state=="all.diff") my.cols<-sample(rainbow(2*N))
 	 if(initial.state=="two.alleles")  my.cols<-  rep(c("blue","red"),N)
 
+	 track.cols[[1]]<-my.cols
 	points(rep(1,N),1:N+offset, pch=19,cex=1.3,col=my.cols[(1:N)*2])
 	 points(rep(1,N),1:N-offset, pch=19,cex=1.3,col=my.cols[(1:N)*2-1])
 	
@@ -78,10 +79,19 @@ simulate.pop<-function(N.vec=rep(5,30), const.RS=TRUE,  mutation= TRUE, mut.rate
 		 
 		 points(rep(i,N.old),1:N.old+offset, pch=19,cex=1.3,col=my.cols[(1:N)*2])
 		 points(rep(i,N.old),1:N.old-offset, pch=19,cex=1.3,col=my.cols[(1:N)*2-1])
+
 		 my.cols<-new.cols
+		 track.cols[[i+1]]<-my.cols
 		if(!const.RS) sapply(which(repro.success>1/N.old), function(ind){ draw.circle(x=i,y=ind,radius=0.2,nv=100,border=NULL,col=NA,lty=1,lwd=1)})
 	}
-	
+#	recover()
+	if(plot.freqs){
+		plot(c(1,num.gens),c(0,1),type="n",axes=FALSE,xlab="",ylab="")
+		all.my.cols<-unique(unlist(track.cols))
+		my.col.freqs<-sapply(track.cols,function(my.gen){sapply(all.my.cols,function(my.col){sum(my.gen==my.col)})})
+		sapply(all.my.cols,function(col.name){lines(my.col.freqs[col.name,]/(2*N.vec),col=col.name)});
+		axis(2)
+	}
 }
 
 
