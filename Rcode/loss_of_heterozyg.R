@@ -4,6 +4,8 @@ num.gens<-15
 offset<-0.1
 plot(c(1,num.gens),c(1,N)+c(-offset,offset),type="n",axes=FALSE,xlab="",ylab="")
 mtext(side=1,line=1,"Generations")
+
+
  my.cols<-sample(rainbow(2*N))
  
 	points(rep(1,N),1:N+offset, pch=19,cex=1.2,col=my.cols[(1:N)*2])
