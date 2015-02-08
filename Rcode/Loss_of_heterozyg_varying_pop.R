@@ -176,11 +176,10 @@ make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teac
 	N.vec<-apply(ind.pop.par,2,function(x){sum(x!=0)})
 	ind.pop<-sapply(1:10,function(i){c(rep(1,5),rep(2,5))})
 
-   	pdf(file=paste(my.dir,"drift_two_pop_figs.pdf",sep=""),width=15,height=8) #,width = 800, height = 400	
+   	pdf(file=paste(my.dir,"drift_two_pop_figs.pdf",sep=""),width=10,height=8) #,width = 800, height = 400	
 	replicate(10,{
 		simulate.pop(N.vec=N.vec, const.RS=TRUE,  mutation= FALSE, for.class= TRUE, initial.state="two.alleles",mult.pop=TRUE,pops=pops)
 		lines(x=c(6.5,100),y=c(5.5,5.5),lwd=4,col="darkgrey")	##show barrier to migration
-		lines(x=c(11.5,100),y=c(10.5,10.5),lwd=4,col="darkgrey")
 	})
     dev.off() 			
 
