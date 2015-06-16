@@ -1,0 +1,64 @@
+\contentsline {section}{\numberline {1}Allele and genotype frequencies}{3}
+\contentsline {subsection}{\numberline {1.1}Allele frequencies}{3}
+\contentsline {subsection}{\numberline {1.2}Hardy--Weinberg proportions}{3}
+\contentsline {subsection}{\numberline {1.3}Coefficient of kinship}{3}
+\contentsline {subsection}{\numberline {1.4}Inbreeding}{5}
+\contentsline {subsection}{\numberline {1.5}Calculating inbreeding coefficients from data}{6}
+\contentsline {subsection}{\numberline {1.6}Summarizing population structure}{7}
+\contentsline {section}{\numberline {2}Genetic Drift and Neutral Diversity}{9}
+\contentsline {subsection}{\numberline {2.1}Loss of heterozygosity due to drift.}{9}
+\contentsline {subsection}{\numberline {2.2}Levels of diversity maintained by a balance between mutation and drift}{10}
+\contentsline {subsection}{\numberline {2.3}The effective population size.}{11}
+\contentsline {subsection}{\numberline {2.4}Neutral diversity and population structure}{13}
+\contentsline {paragraph}{A simple population split model}{13}
+\contentsline {paragraph}{A simple model of migration between an island and the mainland.}{14}
+\contentsline {subsection}{\numberline {2.5}Other approaches to population structure}{15}
+\contentsline {subsubsection}{\numberline {2.5.1}Assignment Methods}{15}
+\contentsline {paragraph}{A simple assignment method}{16}
+\contentsline {paragraph}{Clustering based on assignment methods}{17}
+\contentsline {subsubsection}{\numberline {2.5.2}Principal components analysis}{17}
+\contentsline {section}{\numberline {3}Correlations between loci, linkage disequilibrium, and recombination}{19}
+\contentsline {paragraph}{Recombination}{19}
+\contentsline {paragraph}{Linkage disequilibrium}{19}
+\contentsline {paragraph}{The decay of LD due to recombination}{20}
+\contentsline {section}{\numberline {4}The phenotypic resemblance between relatives}{22}
+\contentsline {subsubsection}{\numberline {4.0.3}Additive genetic variance and heritability}{23}
+\contentsline {paragraph}{The narrow sense heritability}{24}
+\contentsline {subsubsection}{\numberline {4.0.4}The covariance between relatives}{24}
+\contentsline {paragraph}{The covariance between Identical Twins}{25}
+\contentsline {paragraph}{The covariance in phenotype between mother and child}{25}
+\contentsline {paragraph}{The covariance between general pairs of relatives under an additive model}{26}
+\contentsline {paragraph}{Estimating additive genetic variance across a variety of different relationships.}{27}
+\contentsline {paragraph}{Multiple traits.}{27}
+\contentsline {subsubsection}{\numberline {4.0.5}The response to selection}{28}
+\contentsline {paragraph}{The response of multiple traits to selection, the multivariate breeder's equation.}{31}
+\contentsline {section}{\numberline {5}One-locus models of selection}{32}
+\contentsline {subsection}{\numberline {5.1}Fitness}{32}
+\contentsline {subsection}{\numberline {5.2}Haploid selection model}{32}
+\contentsline {paragraph}{Haploid model with fluctuating selection}{34}
+\contentsline {subsection}{\numberline {5.3}Diploid model}{35}
+\contentsline {subsubsection}{\numberline {5.3.1}Diploid directional selection}{37}
+\contentsline {subsubsection}{\numberline {5.3.2}Heterozygote advantage}{39}
+\contentsline {paragraph}{Underdominance.}{40}
+\contentsline {paragraph}{Diploid fluctuating fitness}{40}
+\contentsline {subsection}{\numberline {5.4}Mutation--selection balance}{42}
+\contentsline {subsubsection}{\numberline {5.4.1}Inbreeding depression}{44}
+\contentsline {paragraph}{Purging the inbreeding load.}{44}
+\contentsline {subsection}{\numberline {5.5}Migration--selection balance}{45}
+\contentsline {subsubsection}{\numberline {5.5.1}Some theory of the spatial distribution of allele frequencies under deterministic models of selection}{45}
+\contentsline {section}{\numberline {6}Stochasticity and Genetic Drift in allele frequencies}{49}
+\contentsline {subsection}{\numberline {6.1}Stochastic loss of strongly selected alleles}{49}
+\contentsline {subsection}{\numberline {6.2}The interaction between genetic drift and weak selection.}{50}
+\contentsline {subsubsection}{\numberline {6.2.1}The fixation of slightly deleterious alleles.}{52}
+\contentsline {subsubsection}{\numberline {6.2.2}A Sketch Proof of the probability of fixation of weakly selected alleles}{52}
+\contentsline {section}{\numberline {7}Genetic drift and Neutral alleles}{53}
+\contentsline {subsection}{\numberline {7.1}The fixation of neutral alleles}{53}
+\contentsline {paragraph}{Probability of the eventual fixation of a neutral allele.}{53}
+\contentsline {paragraph}{Rate of substitution of neutral alleles.}{53}
+\contentsline {subsection}{\numberline {7.2}The Coalescent and patterns of neutral diversity}{54}
+\contentsline {paragraph}{Pairwise Coalescent time distribution and the number of pairwise differences.}{54}
+\contentsline {subsection}{\numberline {7.3}The coalescent process of a sample of alleles.}{56}
+\contentsline {subsection}{\numberline {7.4}Comparing polymorphism and divergence}{60}
+\contentsline {subsection}{\numberline {7.5}Deviations from the constant population model.}{60}
+\contentsline {section}{\numberline {8}The effect of linked selection on patterns of neutral diversity}{62}
+\contentsline {subsection}{\numberline {8.1}A simple recurrent model of selective sweeps}{63}
