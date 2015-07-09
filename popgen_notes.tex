@@ -338,7 +338,7 @@ the fitness (we'll make clear what we mean by discernable later, for
 the moment think of this as “no effect” on fitness). 
 
 
-\subsection{Loss of heterozygosity due to to drift.} \label{LossofHet} 
+\subsection{Loss of heterozygosity due to drift.} \label{LossofHet} 
 
 Genetic drift will, in the absence of new mutations, slowly purge our
 population of neutral genetic diversity as alleles slowly drift to high or low
@@ -379,14 +379,14 @@ H_{t+1} = \frac{1}{2N} \times 0 + \left(1-\frac{1}{2N} \right)H_t
 By this argument if the heterzygosity in generation $0$ is $H_0$ our
 expected heterozygosity in generation $t$ is
 \begin{equation}
-H_{t+1} = \left(1-\frac{1}{2N} \right)^tH_0
+H_t = \left(1-\frac{1}{2N} \right)^tH_0
 \end{equation}
 i.e. the expected heterozygosity with our population is decaying
 geometrically with each passing generation. If we assume that $1/(2N)
 \ll 1$ then we can approximate this geometric decay by an exponential
 decay, such that
 \begin{equation}
-H_{t+1} =H_0 \exp \left(-\frac{t}{2N} \right)  
+H_t =H_0 \exp \left(-\frac{t}{2N} \right)  
 \end{equation}
 i.e. heterozygosity decays exponentially at a rate $1/(2N)$.
 
@@ -539,7 +539,7 @@ coalescence.  Therefore, our probability of coalescence in the preceding
 generation is
 \begin{equation}
 \frac{1}{4}\frac{1}{2N_M}+\frac{1}{4}\frac{1}{2N_F} =
-\frac{1}{8}\frac{N_F+M_M}{N_FN_M} 
+\frac{1}{8}\frac{N_F+N_M}{N_FN_M} 
 \end{equation}
 i.e. the rate of coalescence is the harmonic mean of the two
 sexes population sizes, 
@@ -578,7 +578,7 @@ from both subpopulations.
 Consider a pair of alleles sampled within one of our
 sub-populations, they have experienced a population of size $N_e$
 and so the probability that they differ is $H_S = \theta/(1+\theta)$
-(whether $\theta=4N_e\mu$).
+(where $\theta=4N_e\mu$).
 The heterozygosity in our total population is a little more tricky to
 calculate. Assuming that we equally sample both sub-populations, when we draw two alleles from our total
 sample, $50\%$ of the time they are drawn from the same
@@ -652,7 +652,7 @@ probability that our pair of alleles coalesce before either lineage
 migrates. For example, the probability that our pair of alleles
 coalesce $t+1$ generations back is 
 \begin{equation}
-\frac{1}{2N_I}(1-m)^{2t} \left(1-\frac{1}{2N_I} \right)^{t} \approx
+\frac{1}{2N_I}(1-m)^{2(t+1)} \left(1-\frac{1}{2N_I} \right)^{t} \approx
 \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
 \end{equation}
 with the approximation following from assuming that $m \ll 1$ \& $1/(2N_I)
@@ -678,15 +678,15 @@ both of our alleles represent independent draws from the mainland and
 so differ from each other with probability $H_M$. Therefore, the level of
 heterozygosity on the island is given by
 \begin{equation}
-H_I = \frac{1/(2N_I) }{1/(2N_I) + 2m} H_M
+H_I = (1 - \frac{1/(2N_I) }{1/(2N_I) + 2m})H_M
 \end{equation}
 So the reduction of heterozygosity on the island compared to the
 mainland is
 \begin{equation}
-F_{IM} = 1- \frac{H_I}{H_M} = \frac{ 1 }{1/(2N_I) + 2m} = \frac{ 1 }{1 + 4N_Im}.
+F_{IM} = 1- \frac{H_I}{H_M} = \frac{ 1/(2N_I) }{1/(2N_I) + 2m} = \frac{ 1 }{1 + 4N_Im}.
 \end{equation}
 The level of inbreeding on the island compared to the mainland will
-be low in the migration rate is low and the effective population size
+be high in the migration rate is low and the effective population size
 of the island is low, as allele frequencies on the island are drifting
 and diversity is not being replenished on the island by migration. The
 key parameter here is the number individuals on the island replaced by
@@ -719,7 +719,7 @@ clustering algorithms such as STRUCTURE and ADMIXTURE do (Pritchard et al. Genet
 
 We have genotype data from unlinked S bi-allelic loci for $K$ populations. The allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
 
-You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus $g_l=0,1,2$). 
+You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$ (i.e. their alleles being a random HW draw from population $k$) is 
 \begin{equation}
@@ -827,7 +827,7 @@ covariance matrix and performing eigen-value decomposition of this
 matrix (with the eigen-vectors giving the PC).  This individual by individual covariance matrix has entries
 the $(i,~j)^{th}$ entry given by
 \begin{equation}
-\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{i,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
+\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
 \end{equation}
 note that this is the covariance, is very similar to those we
 encountered in discussing $F$-statistics as correlations (equation
@@ -1740,7 +1740,7 @@ in frequency, depends only on the sign of $(\wbar_1-\wbar_2)$.
 The frequency of $A_1$ will keep increasing over the generations so
 long as its marginal fitness is higher than that of $A_2$,
 i.e.\ $\wbar_1 > \wbar_2$, while if $\wbar_1 < \wbar_2$, the
-frequency of $A_1$ will decrease. Note the similarity between eqn.\ \eqref{deltap_dip2} and the respective expression for the haploid model in eqn.\ \eqref{eq:eq:recHaplMod1}. (We will return to the
+frequency of $A_1$ will decrease. Note the similarity between eqn.\ \eqref{deltap_dip2} and the respective expression for the haploid model in eqn.\ \eqref{eq:deltap_haploid}. (We will return to the
 special case where $\wbar_1 = \wbar_2$ shortly).\\
 
 
@@ -1811,7 +1811,7 @@ If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close t
 \end{equation}
 \sa{It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in dipliod model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \eqref{eq:estTauExplSimpl} for the haploid model suggests that in the diploid model without dominance it takes}
+From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \eqref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes}
 
 \begin{equation}
 	\tau \approx \frac{2}{s} \log(2N)
@@ -1982,7 +1982,7 @@ relative fitness & $w_{11}=1$ & $w_{12}=1-sh$ & $w_{22}=1-s$. \\
 \end{center}
 
 \sa{For a start, we consider the case where allele $A_2$ is not
-completely recessive ($h>0$), so that the heterozygotes suffer at least some disadvantage. We denote by $\mu = \mu_{1\rightarrow2}$ the  mutation rate per generation from $A_1$ to the deleterious allele $A_2$, and assume that there is no reverse mutation ($\mu_{2\rightarrow1} = 0$).  Let us assume that selection against $A_2$ is relatively strong compared to the mutation rate, so that it is justified to assume that $A_2$ is always rare, i.e.\ $q_t = 1-q_t \ll 1$. Compared to previous sections, for mathematical clarity, we also switch from following the frequency $p_t$ of $A_1$ to following the frequency $q_t$ of $A_2$. Of course, this is without loss of generality. The change in frequency of $A_2$ due to selection can be written as}
+completely recessive ($h>0$), so that the heterozygotes suffer at least some disadvantage. We denote by $\mu = \mu_{1\rightarrow2}$ the  mutation rate per generation from $A_1$ to the deleterious allele $A_2$, and assume that there is no reverse mutation ($\mu_{2\rightarrow1} = 0$).  Let us assume that selection against $A_2$ is relatively strong compared to the mutation rate, so that it is justified to assume that $A_2$ is always rare, i.e.\ $q_t = 1-p_t \ll 1$. Compared to previous sections, for mathematical clarity, we also switch from following the frequency $p_t$ of $A_1$ to following the frequency $q_t$ of $A_2$. Of course, this is without loss of generality. The change in frequency of $A_2$ due to selection can be written as}
 \begin{equation}
 	\Delta_S q_t = \frac{\wbar_2 - \wbar_1}{\wbar} p_t q_t  \approx  -hs q_t.
 	\label{eq:dirSelApprox}
@@ -2155,7 +2155,7 @@ $g(~)$ has a mean of zero so $ \int_{-\infty}^{\infty} \Delta x g(\Delta x)
   d \Delta x =0$ and has variance $\sigma^2$ so $\int_{-\infty}^{\infty}(\Delta x)^2 g(\Delta x) 
   d \Delta x = \sigma^2$ and all higher terms are zero (as all high
   moments of the normal are zero). Looking at the change in frequency $\Delta
-  q(x,t) = q(x,t+1)-q(x,t+1)$ then 
+  q(x,t) = q(x,t+1)-q(x,t)$ then 
 \begin{equation}
 \Delta q(x,t) = \frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2}
 \end{equation} 
@@ -2170,7 +2170,7 @@ motion (blurring our eyes and seeing time as continuous). \\
 We will now introduce fitness differences into our model and set the
 relative fitnesses of allele $1$ and $2$ at location $x $ to be $1$ and
 $1+s\gamma(x)$. To make progress in this model we'll have to assume that selection
-isn't too strong i.e. $s \gamma(x) \ll 1$ for all $x$. The the change in
+isn't too strong i.e. $s \gamma(x) \ll 1$ for all $x$. The change in
 frequency of allele $2$ obtained within a generation due to selection is
 \begin{equation}
 q^{\prime}(x,t) - q(x,t) \approx s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)
@@ -2181,7 +2181,7 @@ Putting our selection and migration terms together we find
 q(x,t+1) - q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t)
 \big)+\frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP}
 \end{equation}
-in derving this we have essentially assumed that migration acted upon our original
+in deriving this we have essentially assumed that migration acted upon our original
 frequencies before selection and in doing so have ignored terms of the
 order of $\sigma s$. 
 
@@ -2199,8 +2199,8 @@ the environmental change at $x=0$.} \label{fig:cline}
 
 To make progress lets consider a simple model of location adaptation
 where the environment abruptly changes. Specifically we assume that
-$\gamma(x)= -1$
-for $x<0$ and $\gamma(x)= 1$ for $x \geq 0$, i.e. our allele $2$ has a
+$\gamma(x)= 1$
+for $x<0$ and $\gamma(x)= -1$ for $x \geq 0$, i.e. our allele $2$ has a
 selective advantage at locations to the left of zero, while this
 allele is at a disadvantage to the right of zero. In this case we can
 get an equilibrium distribution of our two alleles were to the left
@@ -2226,7 +2226,7 @@ smooth cline.\\
 Our equilibrium spatial distribution of allele frequencies can be found by
 setting the LHS of eqn. \eqref{eqn:fisherKPP} to zero to arrive at
 \begin{equation}
-s\gamma(x) q(x) \left( 1 - q(x) \right) = \frac{\sigma^2}{2} \frac{d^2q(x)}{dx^2}
+s\gamma(x) q(x) \left( 1 - q(x) \right) = - \frac{\sigma^2}{2} \frac{d^2q(x)}{dx^2}
 \end{equation}
 We then could solve this differential equation with appropriate boundary
 conditions ($q(-\infty)=1$ and $q(\infty) = 0$) to arrive at the
@@ -2459,7 +2459,7 @@ eqn. \ref{eqn:prob_fix_diff_step1}, we obtain
 \frac{d^2\pi(p)}{dp^2}
 \end{equation}
 
-Well $\E(\Delta p) = \frac{s}{2}p(1-p)$ and $Var(\Delta p)= \E(\Delta
+Well $\E(\Delta p) = \frac{s}{2}p(1-p)$ and $Var(\Delta p)= \E((\Delta
 p)^2)-\E^2(\Delta p)$, so if $s \ll 1$ then $\E^2(\Delta p) \approx
 0$, and $\E(\Delta p)^2 = \frac{p(1-p)}{2N}$. This leaves us with
 \begin{equation}
@@ -2481,7 +2481,7 @@ doing so we find that
 \subsection{The fixation of neutral alleles}
 It is very unlikely that a rare neutral allele accidentally drifts up
 to fixation, it is much more likely that such an allele is eventually
-is lost from the population. However, there is a large and constant influx of
+lost from the population. However, there is a large and constant influx of
 rare alleles into the population due to mutation, so even if it is very
 unlikely that an individual allele fixes within the population, some
 neutral alleles will fix.  \\
@@ -2496,7 +2496,7 @@ neutral alleles will fix.  \\
 
 \paragraph{Probability of the eventual fixation of a neutral allele.} An allele which reaches fixation within a population, is an ancestor to
 the entire population. In a particular generation there can be only single
-allele that all other alleles at the locus in  later generation can claim as a
+allele that all other alleles at the locus in  later generation can claim as an
 ancestor. As at a neutral locus all of our alleles are exchangeable, as
 they have no effect on the number of descendents an individual
 leaves, so any allele is equally likely to be the ancestor of the
@@ -2715,7 +2715,7 @@ any pair of alleles coalesce is
 \begin{equation}
  \frac{{i \choose
  2}}{2N}\left( 1- \frac{{i \choose
- 2}}{2N}\right)^{t-1} \approx  \frac{{i \choose
+ 2}}{2N}\right)^{t} \approx  \frac{{i \choose
  2}}{2N} \exp \left( - \frac{{i \choose
  2}}{2N} t \right)
 \end{equation}
@@ -2822,7 +2822,7 @@ amount of time in the tree. \\
 We saw above that the number of mutational differences between a pair
 of alleles that coalescence $T_2$ generations ago was Poisson with a
 mean of $2 \mu T_2$. A mutation that occurs on any branch of our
-genealogy will be cause a segregating polymorphism in the sample
+genealogy will cause a segregating polymorphism in the sample
 (making our infinitely-many-sites assumption). Thus if the total time
 in the genealogy is $T_{tot}$ there is $T_{tot}$
 generations for mutations. So the total number of mutations
@@ -2880,7 +2880,7 @@ neutral constant population model.
 \section{The effect of linked selection on patterns of neutral diversity}
 
 A newly derived allele with an additive selection coefficient $s$ will
-take a time $\tau= \approx 2\log(2N)/s$ generations to reach to fixation
+take a time $\tau \approx 2\log(2N)/s$ generations to reach to fixation
 within our population. This short time window offers very little time
 for recombination between the the selected site and linked neutral
 sites.  \\
@@ -2971,7 +2971,7 @@ given by eqn. \eqref{eqn:pi_HH}, for two different selection coefficients.\\
 For our expected diversity levels to recover to $50\%$ of
 its neutral expectation $\E(\pi_r)/\theta=0.5$, requires a physical
 distance $\ell^{*}$ such that $\log(0.5) = -r_{BP} \ell ^*\tau$ as using our
-expression for $\tau$ then $ \ell^* = \frac{s}{r_{BP} \log(4N)}$. The width of our trough of reduced diversity depends on $s/r_{BP}$,
+expression for $\tau$ then $ \ell^* = \frac{s}{r_{BP} \log_N 4}$. The width of our trough of reduced diversity depends on $s/r_{BP}$,
 so  else being equal we expect stronger sweeps or sweeps in regions of low
 recombination to have a larger hitchhiking effect. So that a selection coefficient of $s=0.1\%$ would reduce
 diversity over 10's of kb, while a sweep of $s=1\%$ would affect
@@ -3021,7 +3021,7 @@ middle of a chromosome that stretches $L$ basepairs in either direction
 the total rate of sweeps per generation that force our pair of lineages to coalesce is
 \begin{equation}
 2\int_0^{L} \nu_{BP} e^{-r_{BP} \ell \tau} d \ell =
-\frac{\nu_{BP}}{r_{BP} \tau} \left(1-e^{-r_{BP} \tau L} \right)
+\frac{2\nu_{BP}}{r_{BP} \tau} \left(1-e^{-r_{BP} \tau L} \right)
 \end{equation}
 so that if $L$ is very large ($r_{BP} \tau L \gg 1$) the rate of coalesce per
 generation due to sweeps is $\frac{2\nu_{BP}}{r_{BP} \tau}$. The total rate
