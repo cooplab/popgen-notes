@@ -18,3 +18,5 @@ ibd/ibd-writeup.xhtml : ibd/ibd-writeup.tex
 
 %.png : %.pdf
 	convert -density 300 $< -flatten $@
+
+popgen_notes.pdf: popgen_notes.tex 
