@@ -2121,69 +2121,72 @@ analogous to mutation selection balance.\\
 
 \subsubsection{Some theory of the spatial distribution of allele
 frequencies under deterministic models of selection}
-Imagine a continuous haploid population spread out along a line. 
-individual dispersals a random distance $\Delta x$ from its birthplace to the
-location where it reproduces, where $\Delta x$ is drawn from the probability
-density $g(~)$. To make life simple we will assume that $g(\Delta x)$
-is normally distributed with mean zero and standard deviation
-$\sigma$, i.e. migration is unbiased an individuals migrate an average
-distance of $\sigma$. \\
 
-Our frequency of allele $2$ at time $t$ in the population at spatial
-location $x$ is $q(x,t)$. Assuming that only dispersal occurs, how
-does our allele frequency change in the next generation. Our allele
-frequency in the next generation at location $x$ reflects
-the migration from different locations in the proceeding
-generation. Our population at location $x$ receives a contribution
-$g(\Delta x)q(x+\Delta x,t)$ of allele $2$ from the population at location $x+\Delta x$,
-such that the frequency of our allele at $x$ in the next generation is
-\begin{equation}
-q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta x)q(x+\Delta x,t) d \Delta x.
-\end{equation}
-To obtain
-$q(x+\Delta x,t)$ lets take a taylor series expansion of $q(x,t)$
+Imagine a continuous haploid population spread out along a line. Individuals
+disperse a random distance $\Delta x$ from its birthplace to the location where
+it reproduces, where $\Delta x$ is drawn from the probability density $g(~)$.
+To make life simple we will assume that $g(\Delta x)$ is normally distributed
+with mean zero and standard deviation $\sigma$, i.e. migration is unbiased an
+individuals migrate an average distance of $\sigma$. \\
+
+Our frequency of allele $2$ at time $t$ in the population at spatial location
+$x$ is $q(x,t)$. Assuming that only dispersal occurs, how does our allele
+frequency change in the next generation? Our allele frequency in the next
+generation at location $x$ reflects the migration from different locations in
+the proceeding generation. Our population at location $x$ receives a
+contribution $g(\Delta x)q(x+\Delta x,t)$ of allele $2$ from the population at
+location $x+\Delta x$, such that the frequency of our allele at $x$ in the next
+generation is \begin{equation} q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta
+x)q(x+\Delta x,t) d \Delta x.  \end{equation}
+
+To obtain $q(x+\Delta x,t)$, lets take a Taylor series expansion of $q(x, t)$
+
 \begin{equation}
 q(x+\Delta x,t) = q(x,t) + \Delta x \frac{dq(x,t)}{dx}+ \tfrac{1}{2}(\Delta x)^2 \frac{d^2q(x,t)}{dx^2}+\cdots
 \end{equation}
+
 then
+
 \begin{equation}
 q(x,t+1) = q(x,t) +\left( \int_{-\infty}^{\infty} \Delta x g(\Delta x) 
   d \Delta x \right) \frac{dq(x,t)}{dx} + \tfrac{1}{2}\left( \int_{-\infty}^{\infty}(\Delta x)^2 g(\Delta x) 
   d \Delta x \right)  \frac{d^2q(x,t)}{dx^2}+\cdots
 \end{equation} 
-$g(~)$ has a mean of zero so $ \int_{-\infty}^{\infty} \Delta x g(\Delta x) 
-  d \Delta x =0$ and has variance $\sigma^2$ so $\int_{-\infty}^{\infty}(\Delta x)^2 g(\Delta x) 
-  d \Delta x = \sigma^2$ and all higher terms are zero (as all high
-  moments of the normal are zero). Looking at the change in frequency $\Delta
-  q(x,t) = q(x,t+1)-q(x,t)$ then 
+
+$g(~)$ has a mean of zero so $ \int_{-\infty}^{\infty} \Delta x g(\Delta x) d
+\Delta x =0$ and has variance $\sigma^2$ so $\int_{-\infty}^{\infty}(\Delta
+x)^2 g(\Delta x) d \Delta x = \sigma^2$ and all higher terms are zero (as all
+high moments of the normal are zero). Looking at the change in frequency
+$\Delta q(x,t) = q(x,t+1)-q(x,t)$ then 
+
 \begin{equation}
 \Delta q(x,t) = \frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2}
 \end{equation} 
-this is a diffusion equation, so that migration is acting to smooth
+
+This is a diffusion equation, so that migration is acting to smooth
 out allele frequency differences with a diffusion constant
 of $\tfrac{\sigma^2}{2}$. This is exactly analogous to the equation
 describing how a gas diffuses out to equal density, as both particles
-in a gas and our individuals of type $2$ are performing brownian
+in a gas and our individuals of type $2$ are performing Brownian
 motion (blurring our eyes and seeing time as continuous). \\
 
 
-We will now introduce fitness differences into our model and set the
-relative fitnesses of allele $1$ and $2$ at location $x $ to be $1$ and
-$1+s\gamma(x)$. To make progress in this model we'll have to assume that selection
-isn't too strong i.e. $s \gamma(x) \ll 1$ for all $x$. The change in
+We will now introduce fitness differences into our model and set the relative
+fitnesses of allele $1$ and $2$ at location $x $ to be $1$ and $1+s\gamma(x)$.
+To make progress in this model we'll have to assume that selection isn't too
+strong i.e. $ s \gamma(x) \ll 1$ for all $x$. The change in
 frequency of allele $2$ obtained within a generation due to selection is
+
 \begin{equation}
 q^{\prime}(x,t) - q(x,t) \approx s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)
 \end{equation}
-i.e. logistic growth of our favoured allele at location $x$. 
-Putting our selection and migration terms together we find 
-\begin{equation}
-q(x,t+1) - q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t)
-\big)+\frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP}
-\end{equation}
-in deriving this we have essentially assumed that migration acted upon our original
-frequencies before selection and in doing so have ignored terms of the
-order of $\sigma s$. 
+
+i.e. logistic growth of our favoured allele at location $x$.  Putting our
+selection and migration terms together we find \begin{equation} q(x,t+1) -
+q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)+\frac{\sigma^2}{2}
+\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP} \end{equation} in deriving this we
+have essentially assumed that migration acted upon our original frequencies
+before selection and in doing so have ignored terms of the order of $\sigma s$. 
 
 
 \begin{figure}
@@ -2197,17 +2200,15 @@ the environmental change at $x=0$.} \label{fig:cline}
 \end{figure}
 
 
-To make progress lets consider a simple model of location adaptation
-where the environment abruptly changes. Specifically we assume that
-$\gamma(x)= 1$
-for $x<0$ and $\gamma(x)= -1$ for $x \geq 0$, i.e. our allele $2$ has a
-selective advantage at locations to the left of zero, while this
-allele is at a disadvantage to the right of zero. In this case we can
-get an equilibrium distribution of our two alleles were to the left
-of $zero$ our allele $2$ is at higher frequency, while to the right of
-zero allele $1$ predominates. As we cross from the left to the right
-side of our range the frequency of our allele $2$ decreases in a
-smooth cline.\\
+To make progress lets consider a simple model of location adaptation where the
+environment abruptly changes. Specifically we assume that $\gamma(x)= 1$ for
+$x<0$ and $\gamma(x)= -1$ for $x \geq 0$, i.e. our allele $2$ has a selective
+advantage at locations to the left of zero, while this allele is at a
+disadvantage to the right of zero. In this case we can get an equilibrium
+distribution of our two alleles were to the left of $zero$ our allele $2$ is at
+higher frequency, while to the right of zero allele $1$ predominates. As we
+cross from the left to the right side of our range the frequency of our allele
+$2$ decreases in a smooth cline.\\
 
 
 
@@ -2277,7 +2278,7 @@ about the probability of eventual loss of our selected allele starting
 from this single copy ($p_L$). To derive this we'll make use of a
 simple argument (derived from branching processes). Our selected
 allele will be eventually lost from the population if every individual
-with the allele fails to leave descendents.
+with the allele fails to leave descendants.
 \begin{enumerate}
 \item In our first generation
 with probability $P_0$ our individual leaves no copies of itself to
