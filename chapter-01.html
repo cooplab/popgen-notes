@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="allele-and-genotype-frequencies">Allele and genotype frequencies</h1>
+<h2 id="allele-frequencies">Allele frequencies</h2>
+<p>Consider a diploid autosomal locus segregating at two alleles (<span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>). Let <span class="math inline">\(N_{11}\)</span> and <span class="math inline">\(N_{12}\)</span> be the number of <span class="math inline">\(A_1A_1\)</span> homozygotes and <span class="math inline">\(A_1A_2\)</span> heterozygotes, respectively. Moreover, let <span class="math inline">\(N\)</span> be the total number of diploid individuals in the population. We can then define the relative frequencies of <span class="math inline">\(A_1A_1\)</span> and <span class="math inline">\(A_1A_2\)</span> genotypes as <span class="math inline">\(f_{11} = N_{11}/N\)</span> and <span class="math inline">\(f_{12} = N_{12}/N\)</span>, respectively. The frequency of allele <span class="math inline">\(A_1\)</span> in the population is then given by <span class="math display">\[p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. \]</span> Note that this holds independently of Hardy–Weinberg proportions and equilibrium [see below]. The frequency of the alternate allele (<span class="math inline">\(A_2\)</span>) is then just <span class="math inline">\(q=1-p\)</span>.</p>
+<h2 id="hardyweinberg-proportions">Hardy–Weinberg proportions</h2>
+<p>Imagine a population mating at random with respect to genotypes, i.e.no inbreeding, no population structure, no sex differences in allele frequencies. The frequency of allele <span class="math inline">\(A_1\)</span> in the population at the time of reproduction is <span class="math inline">\(p\)</span>. An <span class="math inline">\(A_1A_1\)</span> genotype is made by reaching out into our population and independently drawing two <span class="math inline">\(A_1\)</span> alelle gametes to form a zygote. Therefore, the probability that an individual is an <span class="math inline">\(A_1A_1\)</span> homozygote is <span class="math inline">\(p^2\)</span>. This probability is also the expected frequency of the <span class="math inline">\(A_1A_1\)</span> homozygote in the population. The expected frequency of the three possible genotypes is</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(f_{11}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_{12}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_{22}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(p^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2pq\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>.</p>
+<p>Note that we only need to assume random mating with respect to our alleles in order for these expected frequencies to hold, as long at <span class="math inline">\(p\)</span> is the frequency of the <span class="math inline">\(A_1\)</span> allele in the population at the time when gametes fuse.</p>
+<p><embed src="figures/CEU_YRI_separately_HWE.eps" /></p>
+<p><embed src="figures/CEU_YRI_together_HWE.eps" /></p>
+<h2 id="coefficient-of-kinship">Coefficient of kinship</h2>
+<p>We will define two alleles to be identical by descent if they are identical due to a common ancestor in the past few generations. For the moment, we ignore mutation, and we will be more precise about what we mean by ‘past few generations’ later on. For example, parent and child share exactly one allele identical by descent at a locus, assuming that the two parents of the child are randomly mated individuals from the population.<br />
+A key quantity is the probability that our pair of individuals share 0, 1, or 2 alleles identical by descent. We denote these probabilities by <span class="math inline">\(r_0\)</span>, <span class="math inline">\(r_1\)</span>, and <span class="math inline">\(r_2\)</span> respectively. See Table [table:IBDprobs] for some examples.<br />
+One summary of relatedness that will be important is the probability that two alleles picked at random, one from each of the two different individuals <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, are identical by descent. We call this quantity the coefficient of kinship of individuals <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, and denote it by <span class="math inline">\(F_{ij}\)</span>. It is calculated as <span class="math display">\[F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2. 
+\label{eqn:coeffkinship}\]</span></p>
+<p>The coefficient of kinship will appear multiple times, in both our discussion of inbreeding and in the context of phenotypic resemblance between relatives.<br />
+</p>
+<table>
+<caption>Probability that two individuals of a given relationship share 0, 1, or 2 alleles identical by descent. <span class="math inline">\(^{*}\)</span> assuming this is the only relationship the pair of individuals share (above that expected from randomly sampling individuals from the population). <span data-label="table:IBDprobs"></span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Relationship (i,j)<span class="math inline">\(^{*}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(r_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(r_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(r_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(F_{ij}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">parent–child</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1/4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">full siblings</td>
+<td style="text-align: center;">1/4</td>
+<td style="text-align: center;">1/2</td>
+<td style="text-align: center;">1/4</td>
+<td style="text-align: center;">1/4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">identical (monzygotic) twins</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(1^{st}\)</span> cousins</td>
+<td style="text-align: center;">3/4</td>
+<td style="text-align: center;">1/4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1/16</td>
+</tr>
+</tbody>
+</table>
+<h2 id="inbreeding">Inbreeding</h2>
+<p>We can define an inbred individual as an individual whose parents are more closely related to each other than two random individuals drawn from some reference population.<br />
+When two related individuals produce an offspring, that individual can receive two alleles that are identical by descent, i.e. they can be homozygous by descent (sometimes termed autozygous), due to the fact that they have two copies of an allele through different paths through the pedigree. This increased likelihood of being homozygous relative to an outbred individual is the most obvious effect of inbreeding. It is also the one that will be of most interest to us, as it underlies a lot of our ideas about inbreeding depression and population structure.<br />
+As the offspring receives a random allele from each parent (<span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>), the probability that those two alleles are identical by descent is equal to the kinship coefficient <span class="math inline">\(F_{ij}\)</span> of the two parents (Eqn. [eqn:coeffkinship]). This follows from the fact that the genotype of the offspring is made by sampling an allele at random from each of our parents. We will use IBD for identical by descent.<br />
+The only way the offspring can be heterozygous (<span class="math inline">\(A_1 A_2\)</span>) is if their two alleles at a locus are not IBD (otherwise they would necessarily be homozygous). Therefore, the probability that they are heterozygous is <span class="math display">\[(1-F) 2p q,
+\label{eq:hetGenHW}\]</span> where we have dropped the indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> for simplicity. The offspring can be homozygous for the <span class="math inline">\(A_1\)</span> allele in two different ways. They can have two non-IBD alleles that are not IBD but happen to be of the allelic type <span class="math inline">\(A_1\)</span>, or their two alleles can be IBD, such that they inherited allele <span class="math inline">\(A_1\)</span> by two different routes from the same ancestor. Thus, the probability that an offspring is homozygous is <span class="math display">\[(1-F) p^2 + F p.\]</span> Therefore, the frequencies of the three possible genotypes can be written as given in Table [table:GeneralizedHWE], which provides a generalization of the Hardy–Weinberg proportions.<br />
+</p>
+<table>
+<caption><strong>Generalized Hardy–Weinberg</strong><span data-label="table:GeneralizedHWE"></span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(f_{11}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_{12}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_{22}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\((1-F) p^2 + F p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((1-F) 2pq\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((1-F) q^2 + F q\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the generalized Hardy–Weinberg proportions completely specify the genotype probabilities, as there are two parameters (<span class="math inline">\(p\)</span> and <span class="math inline">\(F\)</span>) and two degrees of freedom (as <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have to sum to one). Therefore, any combination of genotype frequencies at a biallelic site can be specified by a combination of <span class="math inline">\(p\)</span> and <span class="math inline">\(F\)</span>.<br />
+</p>
+<h2 id="calculating-inbreeding-coefficients-from-data">Calculating inbreeding coefficients from data</h2>
+<p>If the observed heterozygosity in a population is <span class="math inline">\(H_O\)</span>, and we assume that the generalized Hardy–Weinberg proportions hold, we can set <span class="math inline">\(H_O\)</span> equal to <span class="math inline">\(f_{12}\)</span>, and solve Eq.  for <span class="math inline">\(F\)</span> to obtain an estimate of the inbreeding coefficient as <span class="math display">\[\hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq}.
+\label{eqn:Fhat}\]</span> As before, <span class="math inline">\(p\)</span> is the frequency of allele <span class="math inline">\(A_{1}\)</span> in the population. This can be rewritten in terms of the observed heterozygosity (<span class="math inline">\(H_O\)</span>) and the heterozygosity expected in the absence of inbreeding, <span class="math inline">\(H_E=2pq\)</span>, as <span class="math display">\[\hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
+\label{eqn:FhatHO}\]</span> Hence, <span class="math inline">\(F\)</span> quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter. If we have multiple loci, we can replace <span class="math inline">\(H_O\)</span> and <span class="math inline">\(H_E\)</span> by their means over loci, <span class="math inline">\(\bar{H}_O\)</span> and <span class="math inline">\(\bar{H}_E\)</span>, respectively. Note that, in principle, we could also calculate <span class="math inline">\(F\)</span> for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.<br />
+</p>
+<h2 id="summarizing-population-structure">Summarizing population structure</h2>
+<p>We defined inbreeding as having parents that are more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in comparison to allele frequencies in the United Kingdom (UK), where I am from, my parents certainly are not two individuals drawn at random from the world-wide population. If we estimated my inbreeding coefficient <span class="math inline">\(F\)</span> using allele frequencies within the UK, it would be close to zero, but would likely be larger if we used world-wide frequencies. This is because there is a somewhat lower level of expected heterozygosity within the UK than in the human population across the world as a whole.<br />
+Wright (1943, 1951) developed a set of ‘F-statistics’ (also called ‘fixation indices’) that formalize the idea of inbreeding with respect to different levels of population structure. He defined <span class="math inline">\(F_{\mathrm{XY}}\)</span> as the correlation between random gametes, drawn from the same level <span class="math inline">\(X\)</span>, relative to level <span class="math inline">\(Y\)</span>. We will return to why <span class="math inline">\(F\)</span>-statistics are statements about correlations between alleles in just a moment. One commonly uses <span class="math inline">\({F_{\mathrm{IS}}}\)</span> for the inbreeding coefficient between an individual (<span class="math inline">\(I\)</span>) and the subpopulation (<span class="math inline">\(S\)</span>). Consider a single locus, where in a subpopulation (<span class="math inline">\(S\)</span>) a fraction <span class="math inline">\(H_I=f_{12}\)</span> of individuals are heterozygous. In this subpopulation, let the frequency of allele <span class="math inline">\(A_1\)</span> be <span class="math inline">\(p_S\)</span>, such that the expected heterozygosity under random mating is <span class="math inline">\(H_S = 2 p_S (1 - p_S)\)</span>. We will write <span class="math inline">\({F_{\mathrm{IS}}}\)</span> as <span class="math display">\[{F_{\mathrm{IS}}}= 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
+\label{eqn:FIS}\]</span> a direct analog of eqn. [eqn:Fhat]. Hence, <span class="math inline">\({F_{\mathrm{IS}}}\)</span> is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation. We could also compare the observed heterozygosity in individuals (<span class="math inline">\(H_I\)</span>) to that expected in the total population, <span class="math inline">\(H_T\)</span>. If the frequency of allele <span class="math inline">\(A_1\)</span> in the total population is <span class="math inline">\(p_T\)</span>, then we can write <span class="math inline">\({F_{\mathrm{IT}}}\)</span> as <span class="math display">\[{F_{\mathrm{IT}}}=1-\frac{H_I}{H_T}= 1-\frac{f_{12}}{2p_Tq_T},
+\label{eqn:FIT}\]</span> which compares heterozygosity in individuals to that expected in the total population. As a simple extension of this, we could imagine comparing the expected heterozygosity in the subpopulation (<span class="math inline">\(H_S\)</span>) to that expected in the total population <span class="math inline">\(H_T\)</span>, via <span class="math inline">\({F_{\mathrm{ST}}}\)</span>: <span class="math display">\[{F_{\mathrm{ST}}}= 1-\frac{H_S}{H_T}=1-\frac{2p_Sq_S}{2p_Tq_T} \label{eqn:FST}.\]</span> If the total population contains the subpopulation then, as we will see below, due to the Wahlund effect (to be added) <span class="math inline">\(2p_Sq_S \leq
+2p_Tq_T\)</span>, and so <span class="math inline">\({F_{\mathrm{IS}}}\leq {F_{\mathrm{IT}}}\)</span> and <span class="math inline">\({F_{\mathrm{ST}}}\geq 0\)</span>. We can relate the three <span class="math inline">\(F\)</span>-statistics to each other as <span class="math display">\[(1-\hat{{F_{\mathrm{IT}}}}) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-{F_{\mathrm{IS}}})(1-{F_{\mathrm{ST}}}).
+\label{eqn:F_relationships}\]</span> Hence, the reduction in heterozygosity within individuals compared to that expected in the total population can be decomposed to the reduction in heterozygosity of individuals compared to the subpopulation, and the reduction in heterozygosity from the total population to that in the subpopulation.<br />
+If we want a summary of population structure across multiple subpopulations, we can average <span class="math inline">\(H_I\)</span> and/or <span class="math inline">\(H_S\)</span> across populations, and use a <span class="math inline">\(p_T\)</span> calculated by averaging <span class="math inline">\(p_S\)</span> across subpopulations (or our samples from sub-populations). For example, the average <span class="math inline">\({F_{\mathrm{ST}}}\)</span> across <span class="math inline">\(K\)</span> subpopulations (sampled with equal effort) is <span class="math display">\[{F_{\mathrm{ST}}}= 1 - \frac{\bar{H}_{S}}{H_T},\]</span> where <span class="math inline">\(\bar{H}_S = 1/K \sum_{i = 1}^{K} H_{S}^{(i)}\)</span>, and <span class="math inline">\(H_{S}^{(i)} = 2 p_{i} q_{i}\)</span> is the expected heterozygosity in subpopulation <span class="math inline">\(i\)</span>. Furthermore, if we have multiple sites, we can replace <span class="math inline">\(H_I\)</span>, <span class="math inline">\(H_S\)</span>, and <span class="math inline">\(H_T\)</span> with their averages across loci (as above).<br />
+Let us now return to Wright’s definition of the <span class="math inline">\(F\)</span>-statistics as correlations between random gametes, drawn from the same level <span class="math inline">\(X\)</span>, relative to level <span class="math inline">\(Y\)</span>. Without loss of generality, we may think about <span class="math inline">\(X\)</span> as individuals and <span class="math inline">\(S\)</span> as the subpopulation. Rewriting <span class="math inline">\({F_{\mathrm{IS}}}\)</span> in terms of the observed homozygote frequencies (<span class="math inline">\(f_{11}\)</span>, <span class="math inline">\(f_{22}\)</span>) and expected homozygosities (<span class="math inline">\(p_{S}^2\)</span>, <span class="math inline">\(q_{S}^2\)</span>) we find <span class="math display">\[{F_{\mathrm{IS}}}= \frac{2p_Sq_S - f_{12}}{2p_Sq_S} = \frac{f_{11}+f_{22} -
+p_S^2 - q_S^2}{2p_Sq_S},
+\label{eqn:Fascorr}\]</span> using the fact that <span class="math inline">\(p^2+2pq+q^2=1\)</span>, and <span class="math inline">\(f_{12} = 1 - f_{11} - f_{12}\)</span>. The form of eqn. ([eqn:Fascorr]) reveals that <span class="math inline">\({F_{\mathrm{IS}}}\)</span> is the covariance between pairs of alleles found in an individual, divided by the expected variance under binomial sampling. Thus, <span class="math inline">\(F\)</span>-statistics can be understood as the correlation between alleles drawn from a population (or an individual) above that expected by chance (i.e. drawing alleles sampled at random from some broader population).<br />
+We can also interpret <span class="math inline">\(F\)</span>-statistics as proportions of variance explained by different levels of population structure. To see this, let us think about <span class="math inline">\({F_{\mathrm{ST}}}\)</span> averaged over <span class="math inline">\(K\)</span> subpopulations, whose frequencies are <span class="math inline">\(p_1,\dots,p_K\)</span>. The frequency in the total population is <span class="math inline">\(p_T=\bar{p} = 1/K \sum_{i=1}^K p_i\)</span>. Then, we can write <span class="math display">\[{F_{\mathrm{ST}}}= \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
+\bar{p}\bar{q}} = \frac{ \left(\frac{1}{K} \sum_{i=1}^K p_i^2 +
+\frac{1}{K} \sum_{i=1}^K q_i^2 \right) -  \bar{p}^2-\bar{q}^2 }{2
+\bar{p}\bar{q}} = \frac{\mathrm{Var}(p_i)}{\mathrm{Var}(\bar{p})},
+\label{eqn:F_as_propvar}\]</span> which shows that <span class="math inline">\({F_{\mathrm{ST}}}\)</span> is the proportion of the variance explained by the subpopulation labels.</p>
+</body>
+</html>
