@@ -9,9 +9,19 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#the-phenotypic-resemblance-between-relatives">The phenotypic resemblance between relatives</a><ul>
+<li><a href="#additive-genetic-variance-and-heritability">Additive genetic variance and heritability</a></li>
+<li><a href="#the-covariance-between-relatives">The covariance between relatives</a></li>
+<li><a href="#the-response-to-selection">The response to selection</a></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="the-phenotypic-resemblance-between-relatives">The phenotypic resemblance between relatives</h1>
 <p>We can use our understanding of the sharing of alleles between relatives to understand the phenotypic resemblance between relatives in quantitative phenotypes. We can then use this to understand the evolutionary change in quantitative phenotypes in response to selection.<br />
 Let’s imagine that the genetic component of the variation in our trait is controlled by <span class="math inline">\(L\)</span> autosomal loci that act in an additive manner. The frequency of allele <span class="math inline">\(1\)</span> at locus <span class="math inline">\(l\)</span> is <span class="math inline">\(p_l\)</span>, with each copy of allele <span class="math inline">\(1\)</span> at this locus increasing your trait value by <span class="math inline">\(a_l\)</span> above the population mean. The phenotype of an individual, let’s call her <span class="math inline">\(i\)</span>, is <span class="math inline">\(X_i\)</span>. Her genotype at SNP <span class="math inline">\(l\)</span>, is <span class="math inline">\(G_{i,l}\)</span>. Here <span class="math inline">\(G_{i,l}=0,~1,\)</span> or <span class="math inline">\(2\)</span> represents the number of copies of allele <span class="math inline">\(1\)</span> she has at this SNP. Her expected phenotype, given her genotype, is then <span class="math display">\[X_{A,i} = \mu + {\mathbb{E}}(X_i | G_{i,1},\cdots,G_{i,L}) = \mu+ \sum_{l=1}^L G_{i,l} a_{l}\]</span> where <span class="math inline">\(\mu\)</span> is the mean phenotype in our population. Now in reality the genetic phenotype is a function of the expression of those alleles in a particular environment. Therefore, we can think of this expected phenotype as being an average across a set of environments that occur in the population.<br />

@@ -18,4 +18,4 @@ popgen_notes.pdf: popgen_notes.tex
 	latexmk $<
 
 html/%.html: %.tex
-	(cat template.tex; cat $<; echo "\\\\end{document}") | pandoc -s --mathjax --smart --to html5 --from latex > $@
+	(cat template.tex; cat $<; echo "\\\\end{document}") | pandoc -s --mathjax --toc --css css/style.css --smart --to html5 --from latex > $@

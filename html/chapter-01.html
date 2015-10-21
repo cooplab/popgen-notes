@@ -9,9 +9,22 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#allele-and-genotype-frequencies">Allele and genotype frequencies</a><ul>
+<li><a href="#allele-frequencies">Allele frequencies</a></li>
+<li><a href="#hardyweinberg-proportions">Hardy–Weinberg proportions</a></li>
+<li><a href="#coefficient-of-kinship">Coefficient of kinship</a></li>
+<li><a href="#inbreeding">Inbreeding</a></li>
+<li><a href="#calculating-inbreeding-coefficients-from-data">Calculating inbreeding coefficients from data</a></li>
+<li><a href="#summarizing-population-structure">Summarizing population structure</a></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="allele-and-genotype-frequencies">Allele and genotype frequencies</h1>
 <h2 id="allele-frequencies">Allele frequencies</h2>
 <p>Consider a diploid autosomal locus segregating at two alleles (<span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>). Let <span class="math inline">\(N_{11}\)</span> and <span class="math inline">\(N_{12}\)</span> be the number of <span class="math inline">\(A_1A_1\)</span> homozygotes and <span class="math inline">\(A_1A_2\)</span> heterozygotes, respectively. Moreover, let <span class="math inline">\(N\)</span> be the total number of diploid individuals in the population. We can then define the relative frequencies of <span class="math inline">\(A_1A_1\)</span> and <span class="math inline">\(A_1A_2\)</span> genotypes as <span class="math inline">\(f_{11} = N_{11}/N\)</span> and <span class="math inline">\(f_{12} = N_{12}/N\)</span>, respectively. The frequency of allele <span class="math inline">\(A_1\)</span> in the population is then given by <span class="math display">\[p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. \]</span> Note that this holds independently of Hardy–Weinberg proportions and equilibrium [see below]. The frequency of the alternate allele (<span class="math inline">\(A_2\)</span>) is then just <span class="math inline">\(q=1-p\)</span>.</p>

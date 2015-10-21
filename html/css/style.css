@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300);
+
+body {
+  font-family: "Alegreya Sans", Helvatica, sans-serif;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+caption {
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 1em;
+}
+
+table {
+  text-align: center;
+  margin-left:auto; 
+  margin-right:auto;
+  padding: 1.2em;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+tr {
+  border: 1px solid #ccc;
+}
+
+td {
+  padding: 0.8em;
+}
+
+th {
+  padding: 0.5em;
+}
