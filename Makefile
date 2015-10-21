@@ -11,9 +11,11 @@ PHONY: clean all site
 clean:
 	rm -f popgen_notes.pdf
 	rm -f html/*html
+	latexmk -c
 
-site: $(html_files)
-
+site: $(html_files) figures
+	cp -r figures/*png html/figures
+ 
 popgen_notes.pdf: popgen_notes.tex
 	latexmk $<
 

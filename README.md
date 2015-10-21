@@ -18,3 +18,14 @@ I hope to develop these notes into a fuller resource over the coming years,
 to create an up to date open source population genetics textbook.
 
 Graham
+
+## Notes on Building the Site
+
+You need latexmk and pandoc. Then use:
+
+    $ make clean site
+
+`.eps` images will not work — be sure to convert all `.eps` files to `.png` and
+use the `.png` versions in LaTeX files.
+
+    $ find  . -name '*.eps' -type f | xargs -n1 -I{} basename {} .eps | xargs -n1 -I{} convert {}.eps {}.png
