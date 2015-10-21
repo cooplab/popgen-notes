@@ -21,3 +21,7 @@ popgen_notes.pdf: popgen_notes.tex
 
 html/%.html: %.tex
 	(cat template.tex; cat $<; echo "\\\\end{document}") | pandoc -s --mathjax --toc --css css/style.css --smart --to html5 --from latex > $@
+
+deploy: html/
+	# this is from http://stevenclontz.com/blog/2014/05/08/git-subtree-push-for-deployment/
+	git subtree push --prefix html upstream gh-pages
