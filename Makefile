@@ -10,7 +10,7 @@ PHONY: clean all site
 
 clean:
 	rm -f popgen_notes.pdf
-	rm -f html/*html
+	rm -f html/chapter-*html
 	latexmk -c
 
 site: $(html_files) figures
@@ -24,4 +24,4 @@ html/%.html: %.tex
 
 deploy: html/
 	# this is from http://stevenclontz.com/blog/2014/05/08/git-subtree-push-for-deployment/
-	git subtree push --prefix html upstream gh-pages
+	git subtree push --prefix html origin gh-pages
