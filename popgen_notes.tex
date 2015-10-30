@@ -26,6 +26,14 @@
 \newcommand{\fst}{F_{\mathrm{ST}}}
 \newcommand{\Wbar}{\overline{W}}
 
+%\newcounter{Question}[section]
+%\setcounter{Question}{1}
+
+\newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
+ 
+
 \definecolor{rev1}{rgb}{1, 0, 0}
 
 \begin{document}
@@ -49,7 +57,7 @@
 
 \include{chapter-01}
 \include{chapter-02}
-\include{chapter-03}
+%\include{chapter-03}
 \include{chapter-04}
 \include{chapter-05}
 \include{chapter-06}
