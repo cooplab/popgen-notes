@@ -37,6 +37,7 @@ This pushes `html/` with `git subtree`, e.g. like
 
     $ git subtree push --prefix html upstream gh-pages
 
-For reference, this clever way of pushing a single subdirectory to a branch is
-from [this blog
-post](http://stevenclontz.com/blog/2014/05/08/git-subtree-push-for-deployment/).
+For reference, [this](https://github.com/X1011/git-directory-deploy)
+`deploy.sh` is used to deploy to the `gh-pages` branch. I've modified this
+version accordingly (e.g. works with BSD `ls`, by using `-A` instead of
+`--almost-all`)
