@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <nav id="TOC">
@@ -20,10 +20,6 @@
 <li><a href="#DriftMutationBalance">Levels of diversity maintained by a balance between mutation and drift</a></li>
 <li><a href="#the-effective-population-size.">The effective population size.</a></li>
 <li><a href="#neutral-diversity-and-population-structure">Neutral diversity and population structure</a></li>
-<li><a href="#other-approaches-to-population-structure">Other approaches to population structure</a><ul>
-<li><a href="#assignment-methods">Assignment Methods</a></li>
-<li><a href="#principal-components-analysis">Principal components analysis</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -79,53 +75,5 @@ We have previously written the measure of population structure <span class="math
     2m}.\]</span></p>
 <p>Lets assume that the mutation rate is very low such as it is very unlikely that the pair of alleles mutate before they coalesce on the island. Therefore, the only way that the alleles can be different from each other is if one or other of them migrates to the mainland, which happens with probability <span class="math display">\[1 - \frac{1/(2N_I) }{1/(2N_I) + 2m}\]</span> Conditional on one or other of our alleles migrating to the mainland, both of our alleles represent independent draws from the mainland and so differ from each other with probability <span class="math inline">\(H_M\)</span>. Therefore, the level of heterozygosity on the island is given by <span class="math display">\[H_I = (1 - \frac{1/(2N_I) }{1/(2N_I) + 2m})H_M\]</span> So the reduction of heterozygosity on the island compared to the mainland is <span class="math display">\[F_{IM} = 1- \frac{H_I}{H_M} = \frac{ 1/(2N_I) }{1/(2N_I) + 2m} = \frac{ 1 }{1 + 4N_Im}.\]</span> The level of inbreeding on the island compared to the mainland will be high in the migration rate is low and the effective population size of the island is low, as allele frequencies on the island are drifting and diversity is not being replenished on the island by migration. The key parameter here is the number individuals on the island replaced by immigrants from the mainland each generation (<span class="math inline">\(N_I m\)</span>).</p>
 <p>We have framed this as being about the reduction in genetic diversity on the island compared to the mainland. However, if we consider collecting a individuals on the island and mainland in proportion to population sizes the total level of heterozygosity would be <span class="math inline">\(H_T=H_M\)</span>, as samples from our mainland would greatly outnumber those from our island. Therefore, considering our island our sub-population we have derived another simple model of <span class="math inline">\(F_{ST}\)</span> .</p>
-<h2 id="other-approaches-to-population-structure">Other approaches to population structure</h2>
-<p>There is a broad spectrum of methods to describe patterns of population structure in populaion genetic datasets. We’ll briefly discuss two broad-classes of methods, assigment methods and principal components analysis,that appear often in the literature.</p>
-<h3 id="assignment-methods">Assignment Methods</h3>
-<p>Here we’ll describe a simple probabilistic assignment to find the probability that an individual of unknown population comes from one of <span class="math inline">\(K\)</span> predefined populations. We’ll then briefly explain how to extend this to cluster individuals into <span class="math inline">\(K\)</span> initially unknown populations. This method is a simplified version of what Bayesian population genetics clustering algorithms such as STRUCTURE and ADMIXTURE do (Pritchard et al. Genetics 2000).</p>
-<h4 id="a-simple-assignment-method">A simple assignment method</h4>
-<p>We have genotype data from unlinked S bi-allelic loci for <span class="math inline">\(K\)</span> populations. The allele frequency of allele <span class="math inline">\(A_1\)</span> at locus <span class="math inline">\(l\)</span> in population <span class="math inline">\(k\)</span> is denoted by <span class="math inline">\(p_{k,l}\)</span>, so that the allele frequencies in population 1 are <span class="math inline">\(p_{1,1},\cdots p_{1,L}\)</span> and population 2 are <span class="math inline">\(p_{2,1},\cdots p_{2,L}\)</span> and so on.</p>
-<p>You type a new individual from an unknown population at these <span class="math inline">\(L\)</span> loci. This individual’s genotype at locus <span class="math inline">\(l\)</span> is <span class="math inline">\(g_l\)</span>, where <span class="math inline">\(g_l\)</span> denotes the number of copies of allele <span class="math inline">\(A_1\)</span> this individual carries at this locus (<span class="math inline">\(g_l=0,1,2\)</span>).</p>
-<p>The probability of this individual’s genotype at locus <span class="math inline">\(l\)</span> conditional on coming from population <span class="math inline">\(k\)</span> (i.e. their alleles being a random HW draw from population <span class="math inline">\(k\)</span>) is <span class="math display">\[P(g_l | \textrm{pop k}) = I(g_l=0) (1-p_{k,l})^2 +  I(g_l=1) 2 p_{k,l} (1-p_{k,l}) + I(g_l=2) p_{k,l}^2\]</span> where <span class="math inline">\(I(g_l=0)\)</span> is an indicator function which is <span class="math inline">\(1\)</span> if <span class="math inline">\(g_l=0\)</span> and zero otherwise, and likewise for the other indicator functions. This follows simply from HWE.</p>
-<p>Assuming that the loci are independent, the probability of individual’s genotypes conditional on them coming from population <span class="math inline">\(k\)</span> is <span class="math display">\[P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}\]</span></p>
-<p>We wish to know the probability that this new individual comes from population <span class="math inline">\(k\)</span>, i.e. <span class="math inline">\(P(\textrm{pop k} | \textrm{new ind.})\)</span>. We can obtain this through Bayes rule <span class="math display">\[P(\textrm{pop k} | \textrm{ind.})  = \frac{P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})}{P(\textrm{ind.})}\]</span> where <span class="math display">\[P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})\]</span> is the normalizing constant. We interpret <span class="math inline">\(P(\textrm{pop k})\)</span> as the prior probability of the individual coming from population <span class="math inline">\(k\)</span>, unless we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population <span class="math inline">\(P(\textrm{pop k})=1/K\)</span>.</p>
-<p>We intepret <span class="math display">\[P(\textrm{pop k} | \textrm{ind.})\]</span> as the posterior probability that our new individual comes from each of our <span class="math inline">\(1,\cdots, K\)</span> populations.</p>
-<p>More sophisticated versions of this are now used to allow for hybrids, e.g, we can have a proportion <span class="math inline">\(q_k\)</span> of our individual’s genome come from population <span class="math inline">\(k\)</span> and estimate the set of <span class="math inline">\(q_k\)</span>’s.</p>
-<p><span><strong>Question.</strong></span> We have two populations where the frequency of allele <span class="math inline">\(A_1\)</span> at two SNPs (<span class="math inline">\(A_1/A_2\)</span>) is given by</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Population</th>
-<th style="text-align: center;">locus 1</th>
-<th style="text-align: center;">locus 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;"><span class="math inline">\(0.1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0.85\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">B</td>
-<td style="text-align: center;"><span class="math inline">\(0.95\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0.2\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>We sample an individual whose genotype is <span class="math inline">\(A_1A_1\)</span> at the first locus and <span class="math inline">\(A_2A_2\)</span> at the second. What is the probability that our indvidual comes from population 1 vs population 2? Lets assume that with probability <span class="math inline">\(q_1\)</span> our individual draws an allele from population <span class="math inline">\(1\)</span> and that with probability <span class="math inline">\(q_2=1-q_1\)</span> they draw an allele from population <span class="math inline">\(2\)</span>. What is the probability of our individual’s genotype given <span class="math inline">\(q_1\)</span>? Plot this probability as a function of <span class="math inline">\(q_1\)</span>. How does your plot change if our individual is heterozygote at both loci?</p>
-<h4 id="clustering-based-on-assignment-methods">Clustering based on assignment methods</h4>
-<p>While it is great to be able to assign our individuals to particular population, these ideas can be pushed to learn about how best to describe our genotype data in terms of discrete populations without assigning any of our individuals to populations <span><em>a priori</em></span>. We wish to cluster our individuals into <span class="math inline">\(K\)</span> unknown populations. We begin by assigning our individuals at random to these <span class="math inline">\(K\)</span> populations.</p>
-<ul>
-<li><p>Given these assignments we estimate the allele frequencies at all of our loci in each population.</p></li>
-<li><p>Given these allele frequencies we chose to reassign each individual to a population <span class="math inline">\(k\)</span> with a probability given by eqn. (<span class="math inline">\(\ref{eqn_assignment}\)</span>).</p></li>
-</ul>
-<p>We iterate steps 1 and 2 for many iterations. If the data is sufficiently informative the assignments and allele frequencies will quickly converge.</p>
-<p>To do this in a full bayesian scheme we need to place priors on the allele frequencies (e.g. a beta distribution).Technically we are using this is the joint posterior of our allele frequencies and assignments.</p>
-<h3 id="principal-components-analysis">Principal components analysis</h3>
-<p>The use of principal component analysis in population genetics was pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made a come back. See Patterson et al 2006, PLoS Genetics and McVean, G. 2010 PLoS Genetics and for recent discussion.</p>
-<p>Consider a dataset consisting of N individuals at S bi-allelic SNPs. The <span class="math inline">\(i^{th}\)</span> individual’s genotype data at locus <span class="math inline">\(\ell\)</span> takes value <span class="math inline">\(g_{i,\ell}\)</span>=0,1, or 2 (corresponding to the number of copies of allele <span class="math inline">\(A_1\)</span> an individual carrys at this SNP). We can think of this as a N x S matrix (where usually <span class="math inline">\(N \ll S\)</span>).</p>
-<p>Denoting the sample mean allele freq at SNP <span class="math inline">\(\ell\)</span> by <span class="math inline">\(p_{\ell}\)</span> we usually standardize the genotype in the following way <span class="math display">\[\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}}\]</span> i.e. at each SNP we center the genotypes by minusing of the mean genotype (<span class="math inline">\(2\epsilon_{\ell}\)</span>) and divide through by the expected variance assuming that alleles are sampled binomially from the mean frequency (<span class="math inline">\(\sqrt{p_{\ell} (1-p_{\ell})}\)</span>). Doing this to all of our genotypes we form a data matrix (of dimension N x S). We can then perform principal components analysis of this data matrix to cover the major axes of genotype variance in our sample.</p>
-<p>It is worth taking a moment to delve further into what we are doing here. There’s a number of equivalent ways to thinking about what PCA is doing, one of these is to think that when we do PCA we are building the individual by individual covariance matrix and performing eigen-value decomposition of this matrix (with the eigen-vectors giving the PC). This individual by individual covariance matrix has entries the <span class="math inline">\((i,~j)^{th}\)</span> entry given by <span class="math display">\[\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}\]</span> note that this is the covariance, is very similar to those we encountered in discussing <span class="math inline">\(F\)</span>-statistics as correlations (equation ), expect now we are asking about the allelic covariance between two individuals above that expected if they were both drawn from the total sample at random (rather than the covariance of alleles within a single individual). So by performing PCA on the data we are learning about the major (orthogonal) axes of the kinship matrix.</p>
 </body>
 </html>
