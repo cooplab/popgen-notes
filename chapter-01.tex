@@ -27,7 +27,8 @@ $p^2$ & $2pq$ & $q^2$ \\
 Note that we only need to assume random mating with
 respect to our alleles in order for these expected frequencies to hold,
 as long at $p$ is the frequency of the $A_1$ allele in the population at
-the time when gametes fuse.
+the time when gametes fuse. See Figure \ref{fig:HWE_CEU_YRI} for a nice
+empirical demonstration of Hardy-Weinberg proportions. 
 
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
@@ -43,6 +44,14 @@ AA &	AB &	BB\\
 What genotype frequencies would you expect under Hardy Weinberg expectations?
 \end{question}
 
+
+
+\begin{question} 
+You are investigating a locus with three alleles, A, B, and C, with
+allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
+population is expected to be homozygotes under Hardy-Weinberg? 
+\end{question}
+
 %%%ADD A comment about WF sampling here!
 %% Also add a question about Poisson offspring number.
 
@@ -50,7 +59,15 @@ What genotype frequencies would you expect under Hardy Weinberg expectations?
 \begin{center}
 \includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
 \end{center}
-\caption{Demonstrating Hardy-Weinberg proportions using 10,000 SNPs from the HapMap CEU European and YRI African populations. Within each of these populations I plot the allele frequency against the frequency of the 3 genotypes. Each SNP is represented by 3 different coloured points. The solid lines show the mean genotype frequency (calculated using a loess smoothing). The dashed line shows the predicted genotype frequency from Hardy Weinberg equilibrium. I find it really pretty that the analytical predictions work as well as they do. }
+\caption{Demonstrating Hardy-Weinberg proportions using 10,000 SNPs
+  from the HapMap CEU European and YRI African populations. Within
+  each of these populations I plot the allele frequency against the
+  frequency of the 3 genotypes. Each SNP is represented by 3 different
+  coloured points. The solid lines show the mean genotype frequency
+  (calculated using a loess smoothing). The dashed line shows the
+  predicted genotype frequency from Hardy Weinberg equilibrium. I find
+  it really pretty that the analytical predictions work as well as
+  they do. } \label{fig:HWE_CEU_YRI}
 \end{figure}
 
 
@@ -67,14 +84,25 @@ What genotype frequencies would you expect under Hardy Weinberg expectations?
 
 \subsection{Coefficient of kinship}
 We will define two alleles to be identical by descent if they are
-identical due to a common ancestor in the past few generations. For the moment, we ignore mutation, and we will be more precise about what we mean by `past few generations' later on. For example, parent and child share exactly
+identical due to a common ancestor in the past few generations. For
+the moment, we ignore mutation, 
+and we will be more precise about what we mean by `past few generations' later on. For example, parent and child share exactly
 one allele identical by descent at a locus, assuming that the two
 parents of the child are randomly mated individuals from the population.\\
 
 A key quantity is the probability that our pair of individuals share
-0, 1, or 2 alleles identical by descent. We denote these probabilities
+0, 1, or 2 alleles identical by descent (see Figure \ref{fig:IBD_0_1_2}). We denote these probabilities
 by $r_0$, $r_1$, and $r_2$ respectively. See Table \ref{table:IBDprobs} for
 some examples. \\
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/IBD_0_1_2.png}
+\end{center}
+\caption{ Diploid individuals sharing alleles identical by descent,
+  where lines show the sharing of alleles by descent (e.g. from a
+  shared ancestor). } \label{fig:IBD_0_1_2}
+\end{figure}
 
 One summary of relatedness that will be important is the probability that two alleles picked at random, one from each of the two different individuals $i$ and $j$, are identical by descent. We call this quantity the coefficient of kinship of individuals $i$ and $j$, and denote it by $F_{ij}$. It is calculated as
 \begin{equation}
@@ -99,10 +127,15 @@ $1^{st}$ cousins & 3/4 & 1/4 & 0 & 1/16\\
 \end{tabular}
 \end{center}
 \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
-identical by descent. $^{*}$ assuming this is the only relationship
+identical by descent on the autosomes. $^{*}$ assuming this is the only relationship
 the pair of individuals share (above that expected from randomly
 sampling individuals from the population). } \label{table:IBDprobs}
 \end{table}
+
+\begin{question}
+What are $r_0$, $r_1$, and $r_2$ for 1/2 sibs? (1/2 sibs share one
+parent but not the other)
+\end{question}
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 \begin{question} 
