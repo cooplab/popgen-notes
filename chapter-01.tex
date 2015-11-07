@@ -287,7 +287,8 @@ frequencies. This is because there is a somewhat lower level of
 expected heterozygosity within the UK than in the human population across the world as a whole.\\
 
 Wright (1943, 1951) developed a set of `F-statistics' (also called `fixation indices') that formalize the idea
-of inbreeding with respect to different levels of population structure. He defined $F_{\mathrm{XY}}$ as
+of inbreeding with respect to different levels of population
+structure. See figure \ref{fig:FST_pig} for a schematic diagram. He defined $F_{\mathrm{XY}}$ as
 the correlation between random gametes, drawn from the same level $X$,
 relative to level $Y$. We will return to why $F$-statistics are statements
 about correlations between alleles in just a moment. One commonly uses $\fis$ for the inbreeding
@@ -319,7 +320,7 @@ If the total population contains the subpopulation then
 2p_Tq_T$, and so $\fis \leq \fit$ and $\fst \geq 0$. We can
 relate the three $F$-statistics to each other as
 \begin{equation}
-(1-\hat{\fit}) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-\fis)(1-\fst).
+(1-\fit) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-\fis)(1-\fst).
 \label{eqn:F_relationships}
 \end{equation}
 Hence, the reduction in heterozygosity within individuals compared to that expected
@@ -334,7 +335,7 @@ heterozygosity from the total population to that in the subpopulation.\\
 \caption{A diagram showing the heirachical nature of F statistics. We
   can compare the heterozygosity on individuals ($H_i$), to that found
 by randomly drawing alleles from the sub-population ($H_S=2p_Sq_S$),
-to that found in the total population ($H_T=2p_Tq_T$). } \label{fig:IBD_cousins_chr_cartoon}  
+to that found in the total population ($H_T=2p_Tq_T$). } \label{fig:FST_pig}  
 \end{figure}
 
 If we want a summary of
