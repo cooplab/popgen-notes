@@ -35,6 +35,16 @@ $t$ are non-identical is $H_t$. Assuming that the mutation rate is
 zero (or vanishing small), what is our level of heterozygosity in
 generation $t+1$?\\
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Loss_of_het_2_many_alleles.png}
+\end{center}
+\caption{Loss of heterozygosity over time, in the absence of new
+  mutations. A diploid population of 5 individuals. In the first generation I colour every allele a different
+colour so we can track their descendants.} \label{fig:LossHet_many_alleles}
+\end{figure} 
+
 In the next generation ($t+1$) we are looking at the alleles in the
 offspring of generation $t$. If we randomly sample two alleles in generation
 $t+1$ which had different parental alleles in generation $t$ then it
@@ -56,7 +66,7 @@ argument the expected heterozygosity in generation $t+1$ is
 \begin{equation}
 H_{t+1} = \frac{1}{2N} \times 0 + \left(1-\frac{1}{2N} \right)H_t
 \end{equation}
-By this argument if the heterzygosity in generation $0$ is $H_0$ our
+By this argument if the heterozygosity in generation $0$ is $H_0$ our
 expected heterozygosity in generation $t$ is
 \begin{equation}
 H_t = \left(1-\frac{1}{2N} \right)^tH_0
@@ -120,9 +130,20 @@ to make this slightly easier on ourselves lets further assume that $t
 \approx \frac{1}{2N} e^{-t(2\mu+1/(2N))}
 \end{equation}
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{figures/Mut_drift_balance}
+\end{center}
+\caption{Mutation-drift balance. A diploid population of 5
+  individuals. In the first generation everyone has the same
+  allele. Each generation the transmitted allele can mutate and we
+  generate a new colour. In the bottom plot I trace the frequency of
+  alleles in our population over time.} \label{fig:Mut_Sel_balance}
+\end{figure} 
+
 If we sample two alleles at random from the population we will not in
 general know when they share a common ancestor. In which case we will
-need to integrate out over when this coalescent event occured. Doing
+need to integrate out over when this coalescent event occurred. Doing
 this we find the probability that our two alleles are identical due to
 no mutation on either ancestral lineage since the pair shared a common
 ancestor to be
@@ -130,7 +151,7 @@ ancestor to be
 \frac{1}{2N} \int_0^{\infty} e^{-t(2\mu+1/(2N))} dt =
 \frac{1/(2N)}{1/(2N)+2\mu} = \frac{1}{1+4N\mu}
 \end{equation}
-The probability that our our pair of alleles are non-identical is
+The probability that our pair of alleles are non-identical is
 simply one minus this, i.e.
 \begin{equation}
 \frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
@@ -143,6 +164,8 @@ will come up a number of times so we'll give it its own name
 
 So all else being equal, species with larger population sizes should
 have proportionally higher levels of neutral polymorphism. 
+
+
 
 
 \subsection{The effective population size.}
@@ -195,10 +218,19 @@ this is the harmonic mean of the varying population size. Thus our
 effective population size, the size of an idealized constant
 population which matches the rate of genetic drift, is the harmonic
 mean true population size over time. The harmonic mean is very
-storngly affected by small values, such that if our population size is
+strongly affected by small values, such that if our population size is
 one million $99\%$ of the time but drops to a $1000$ every hundred or
 so generations, $N_e$ will be much closer to $1000$ than a million.\\
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_pop_dark.png}
+\end{center}
+\caption{Loss of heterozygosity over time in a bottlenecking population. A diploid population of 10 individuals, that bottlenecks
+  down to three individuals repeatedly. In the first generation I colour every allele a different
+colour so we can track their descendants, there are no new
+  mutations.} \label{fig:LossHet_varying_pop}  
+\end{figure} 
 
 %would result in the same rate of drift
 %Luckily, in many (not all) situations, departures from model assumptions can be captured by substituting Ne for N, i.e., by plugging in a fictitious N that leads to the same level of genetic drift as observed.
@@ -230,6 +262,17 @@ N_e = \frac{4N_FN_M}{N_F+N_M}
 Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
 N/2$) our effective population size will be much reduced as a result.\\
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_RS.png}
+
+\end{center}
+\caption{High variance on reproductive success increases the rate of genetic drift. A diploid population of 10 individuals, where the circled
+  individuals have much higher reproductive success. In the first generation I colour every allele a different
+colour so we can track their descendants, there are no new
+  mutations.} \label{fig:LossHet_varying_RS}
+\end{figure} 
 
 \subsection{Neutral diversity and population structure}
 %%this section was moved from the coalescent chapter
@@ -286,6 +329,13 @@ H_B = \left( 1-(1-\mu)^{2T} \right) + (1-\mu)^{2T}
 We can plug this into our expression for $H_T$, and then that in turn
 into $\fst$.
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{figures/drift_split.png}
+\end{center}
+\caption{Change in allele frequencies following a population split.} \label{fig:drift_split}  
+\end{figure} 
+
 To understand this better we can make a simple
 approximation based on our mutation rate being very low, such that
 $N_e \mu \ll 1$ ao $H_S \approx
@@ -302,7 +352,7 @@ is increasing because the amount of between population diversity
 increases with the divergence time of the two populations (initially
 linearly with $T$). It does so at a rate
 give by $T/(4N_e)$ so that differentiation will be higher
-between populations seperated by long divergence times or with small
+between populations separated by long divergence times or with small
 effective population sizes.
 
 \paragraph{A simple model of migration between an island and the mainland.}
