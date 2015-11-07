@@ -27,7 +27,9 @@ frequencies and are lost or fixed over time. \\
 Imagine a population of a constant size $N$ diploid individuals, and
 that we are examining a locus segregating for two alleles that are
 neutral with respect to each other.  This population is randomly
-mating with respect to the alleles at this locus.\\
+mating with respect to the alleles at this locus. See figures
+\ref{fig:LossHet_two_alleles} and \ref{fig:LossHet_many_alleles} to
+see how genetic drift proceeds, by tracking alleles within a small population. \\
 
 In generation $t$ our current level of heterozygosity is $H_t$,
 i.e. the probability that two randomly sampled alleles in generation
@@ -108,7 +110,9 @@ transmitted allele is $\mu$ per generation. So the probability of no
 mutation occurring is $(1-\mu)$. We'll assume that when a mutation
 occurs it creates some new allelic type which is not present in the
 population. This assumption (commonly called the infinitely-many-alleles model) makes the math slightly cleaner, and also
-is not too bad an assumption biologically.
+is not too bad an assumption biologically. See figure
+\ref{fig:Mut_Sel_balance} for a depiction of mutation-drift balance in
+this model over the generations.
 
 This model lets us calculate when our two alleles last shared a common
 ancestor and whether these alleles are identical as a result of
@@ -231,7 +235,9 @@ population which matches the rate of genetic drift, is the harmonic
 mean true population size over time. The harmonic mean is very
 strongly affected by small values, such that if our population size is
 one million $99\%$ of the time but drops to a $1000$ every hundred or
-so generations, $N_e$ will be much closer to $1000$ than a million.\\
+so generations, $N_e$ will be much closer to $1000$ than a
+million. See figure \ref{fig:LossHet_varying_pop}  for a depiction of
+a repeatedly bottlenecked population losing diversity at a fast rate.\\
 
 \begin{figure}
 \begin{center}
@@ -250,7 +256,10 @@ Variance in reproductive success will also affect our effective
 population size. Even if our population has a large constant size of $N$
 individuals, if only small proportion of them get to reproduce then
 the rate of drift will reflect this much small number of reproducing
-individuals. If only $N_M$ males get to contribute to the next
+individuals. See figure \ref{fig:LossHet_varying_RS} for a depiction of the higher rate of drift
+in a population where there is high variance in reproductive success.
+
+ If only $N_M$ males get to contribute to the next
 generation and $N_F$ females get to contribute to the next
 generation. When our two alleles pick an ancestor, $25\%$ of the time
 our alleles were both in a female ancestor in which case they coalesce
