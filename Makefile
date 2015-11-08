@@ -13,14 +13,16 @@ clean:
 	rm -f html/chapter-*html
 	latexmk -c
 
-site: $(html_files) figures
+site: html/index.html figures
 	cp -r figures/*png html/figures
+	pandoc -s --mathjax --toc --css css/style.css --smart --to html5 --from latex popgen_notes.tex > html/index.html
+
+browse: site
+	open html/index.html
  
 popgen_notes.pdf: popgen_notes.tex
 	latexmk $<
 
-html/%.html: %.tex
-	(cat template.tex; cat $<; echo "\\\\end{document}") | pandoc -s --mathjax --toc --css css/style.css --smart --to html5 --from latex > $@
 
 deploy: html/
 	# using https://github.com/X1011/git-directory-deploy
