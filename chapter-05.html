@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#one-locus-models-of-selection">One-locus models of selection</a><ul>
+<li><a href="#fitness">Fitness</a></li>
+<li><a href="#haploid-selection-model">Haploid selection model</a></li>
+<li><a href="#diploid-model">Diploid model</a><ul>
+<li><a href="#diploid-directional-selection">Diploid directional selection</a></li>
+<li><a href="#heterozygote-advantage">Heterozygote advantage</a></li>
+</ul></li>
+<li><a href="#mutationselection-balance">Mutation–selection balance</a><ul>
+<li><a href="#inbreeding-depression">Inbreeding depression</a></li>
+</ul></li>
+<li><a href="#migrationselection-balance">Migration–selection balance</a><ul>
+<li><a href="#some-theory-of-the-spatial-distribution-of-allele-frequencies-under-deterministic-models-of-selection">Some theory of the spatial distribution of allele frequencies under deterministic models of selection</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="one-locus-models-of-selection">One-locus models of selection</h1>
+<h2 id="fitness">Fitness</h2>
+<p>As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype.<br />
+</p>
+<h2 id="haploid-selection-model">Haploid selection model</h2>
+<p>We start out by modelling selection in a haploid model, as this is mathematically relatively simple. Let the number of individuals carrying alleles <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> in generation <span class="math inline">\(t\)</span> be <span class="math inline">\(P_t\)</span> and <span class="math inline">\(Q_t\)</span>. Then, the relative frequencies at time <span class="math inline">\(t\)</span> of alleles <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are <span class="math inline">\(p_t = P_t / (P_t + Q_t)\)</span> and <span class="math inline">\(q_t = Q_t / (P_t + Q_t) = 1 - p_t\)</span>. Further, assume that individuals of type <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> on average produce <span class="math inline">\(W_1\)</span> and <span class="math inline">\(W_2\)</span> offspring individuals, respectively. We call <span class="math inline">\(W_i\)</span> the absolute fitness.<br />
+Therefore, in the next generation, the absolute number of carriers of <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are <span class="math inline">\(P_{t+1} = W_1 P_t\)</span> and <span class="math inline">\(Q_{t+1} = W_2 Q_t\)</span>, respectively. The mean absolute fitness of the population at time <span class="math inline">\(t\)</span> is <span class="math display">\[\label{eq:meanAbsFit}
+    {\overline{W}}_t = W_1 \frac{P_t}{P_t + Q_t} + W_2 \frac{Q_t}{P_t + Q_t} = W_1 p_t + W_2 q_t,\]</span> i.e. the sum of the fitness of the two types weighted by their relative frequencies. Note that the mean fitness depends on time, as it is a function of the allele frequencies, which are themselves time dependent.<br />
+The frequency of allele <span class="math inline">\(A_1\)</span> in the next generation is then given by <span class="math display">\[\label{eq:eq:recHaplMod1}
+    p_{t+1} = \frac{P_{t+1}}{P_{t+1} + Q_{t+1}} = \frac{W_1 P_t}{W_1 P_t + W_2 Q_t}
+        = \frac{W_1 p_t}{W_1 p_t + W_2 q_t} = \frac{W_1}{{\overline{W}}_t} p_t.\]</span></p>
+<p>Importantly, eqn. ([eq:eq:recHaplMod1]) tells us that the change in <span class="math inline">\(p\)</span> only depends on a ratio of fitnesses. Therefore, we need to specify fitness only up to an arbitrary constant. As long as we multiply all fitnesses by the same value, that constant will cancel out and eqn. ([eq:eq:recHaplMod1]) will hold. Based on this argument, it is very common to scale absolute fitnesses by the absolute fitness of one of the genotypes, e.g. the most or the least fit genotype, to obtain relative fitnesses. Here, we will use <span class="math inline">\(w_i\)</span> for the relative fitness of genotype <span class="math inline">\(i\)</span>. If we choose to scale by the absolute fitness of genotype <span class="math inline">\(A_1\)</span>, we obtain the relative fitnesses <span class="math inline">\(w_1 = W_1/W_1 = 1\)</span> and <span class="math inline">\(w_2 = W_2/W_1\)</span>.<br />
+Without loss of generality, we can therefore rewrite eqn. ([eq:eq:recHaplMod1]) as <span class="math display">\[\label{eq:recHaplMod2}
+    p_{t+1} = \frac{w_1}{{\overline{w}}} p_t,\]</span> dropping the dependence of the mean fitness on time in our notation, but remembering it. The change in frequency from one generation to the next is then given by <span class="math display">\[\Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ {\overline{w}}} - p_t = \frac{w_1 p_t - {\overline{w}}p_t}{{\overline{w}}} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{{\overline{w}}} = \frac{w_1 - w_2}{{\overline{w}}} p_t q_t,
+\label{eq:deltap_haploid}\]</span> recalling that <span class="math inline">\(q_t = 1 - p_t\)</span>.<br />
+Assuming that the fitnesses of the two alleles are constant over time, the number of the two allelic types <span class="math inline">\(\tau\)</span> generations after time <span class="math inline">\(t\)</span> are <span class="math inline">\(P_{t+\tau} = (W_1)^{\tau} P_t\)</span> and <span class="math inline">\(Q_{t+\tau}=  (W_2)^{\tau} Q_t\)</span>, respectively. Therefore, the relative frequency of allele <span class="math inline">\(A_1\)</span> after <span class="math inline">\(\tau\)</span> generations past <span class="math inline">\(t\)</span> is <span class="math display">\[p_{t+\tau} = \frac{ (W_1)^{\tau} P_t}{ (W_1)^{\tau} P_t+(W_2)^{\tau} Q_t} = \frac{ (w_1)^{\tau} P_t}{ (w_1)^{\tau} P_t+(w_2)^{\tau} Q_t} = \frac{p_t}{p_t + (w_2/w_1)^{\tau} q_t},
+    \label{eq:haploid_tau_gen}\]</span> where the last step includes dividing the whole term by <span class="math inline">\(w_1\)</span> and switching from absolute to relative allele frequencies.<br />
+Rearranging eqn.  and setting <span class="math inline">\(t = 0\)</span>, we can work out the time <span class="math inline">\(\tau\)</span> for the frequency of <span class="math inline">\(A_1\)</span> to change from <span class="math inline">\(p_0\)</span> to <span class="math inline">\(p_{\tau}\)</span>. First, we write <span class="math display">\[p_{\tau} = \frac{p_0}{p_0 + (w_2/w_1)^{\tau} q_0}\]</span> and rearrange this to obtain <span class="math display">\[\label{eq:estTau}
+    \frac{p_{\tau}}{q_{\tau}} = \frac{p_0}{q_0} \left(\frac{w_1}{w_2}\right)^{\tau}.\]</span> Solving this for <span class="math inline">\(\tau\)</span> yields <span class="math display">\[\label{eq:solTau}
+    \tau = \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(  \frac{w_1}{w_2} \right).\]</span><br />
+In practice, it is often helpful to parametrize the relative fitnesses <span class="math inline">\(w_i\)</span> in a specific way. For example, we may set <span class="math inline">\(w_1 = 1\)</span> and <span class="math inline">\(w_2 = 1 - s\)</span>, where <span class="math inline">\(s\)</span> is called the selection coefficient. Using this parametrization, <span class="math inline">\(s\)</span> is simply the difference in relative fitnesses between the two alleles. Equation becomes <span class="math display">\[\label{eq:haploid_tau_gen_expl}
+    p_{t+\tau} = \frac{p_{t}}{p_{t} + q_{t} (1 - s)^{\tau}},\]</span> as <span class="math inline">\(w_2 / w_1 = 1 - s\)</span>. Then, if <span class="math inline">\(s \ll 1\)</span>, we can approximate <span class="math inline">\((1-s)^{\tau}\)</span> in the denominator by <span class="math inline">\(\exp(-s\tau)\)</span> to obtain <span class="math display">\[\label{eq:haploid_logistic growth}
+    p_{t+\tau} \approx \frac{p_t}{p_t + q_t e^{-s\tau}}.\]</span> This equation takes the form of a logistic function. That is because we are looking at the relative frequencies of two ‘populations’ (of alleles <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>) that are growing (or declining) exponentially, under the constraint that <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> always sum to 1.<br />
+Moreover, eqn.  for the time <span class="math inline">\(\tau\)</span> it takes for a certain change in frequency to occur becomes <span class="math display">\[\label{eq:estTauExpl}
+    \tau = - \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(1-s\right).\]</span> Assuming again that <span class="math inline">\(s \ll 1\)</span>, this simplifies to <span class="math display">\[\label{eq:estTauExplSimpl}
+    \tau \approx \frac{1}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right).\]</span></p>
+<p>One particular case of interest is the time it takes to go from an absolute frequency of 1 to near fixation in a population of size <span class="math inline">\(N\)</span>. In this case, we have <span class="math inline">\(p_0 = 1/N\)</span>, and we may set <span class="math inline">\(p_{\tau} = 1 - 1/N\)</span>, which is very close to fixation. Of course, we then have <span class="math inline">\(q_0 = 1 - 1/N\)</span> and <span class="math inline">\(q_{\tau} = 1 - 1/N\)</span>. If <span class="math inline">\(N\)</span> is sufficiently large, we may for mathematical convenience approximate <span class="math inline">\(q_0\)</span> by <span class="math inline">\(q_0 = 1\)</span>. Plugging these values into eqn. , we obtain <span class="math display">\[\label{eq:fixTimeSimpl}
+    \tau \approx \frac{1}{s} \log\left( \frac{1 - 1/N}{(1 - 1/N)\ 1/N}  \right) = \frac{1}{s} \log(N)\]</span> as an approximation for the time to fixation.</p>
+<h4 id="haploid-model-with-fluctuating-selection">Haploid model with fluctuating selection</h4>
+<p>We can now consider the case where the fitnesses depend on time, and say that <span class="math inline">\(w_{1,t}\)</span> and <span class="math inline">\(w_{2,t}\)</span> are the fitnesses of the two types in generation <span class="math inline">\(t\)</span>. The frequency of allele <span class="math inline">\(A_1\)</span> in generation <span class="math inline">\(t+1\)</span> is <span class="math display">\[p_{t+1} = \frac{w_{1,t}}{{\overline{w}}_t} p_t,\]</span> which simply follows from eqn. . The ratio of the frequency of allele <span class="math inline">\(A_1\)</span> to that of allele <span class="math inline">\(A_2\)</span> in generation <span class="math inline">\(t+1\)</span> is <span class="math display">\[\frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}.\]</span> Therefore, if we think of the two alleles starting in generation <span class="math inline">\(t\)</span> at frequencies <span class="math inline">\(p_t\)</span> and <span class="math inline">\(q_t\)</span>, then <span class="math inline">\(\tau\)</span> generations later, <span class="math display">\[\frac{p_{t+\tau}}{q_{t+\tau}} = \left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}.\]</span><br />
+The question of which allele is increasing or decreasing in frequency comes down to whether <span class="math inline">\(\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)\)</span> is <span class="math inline">\(&gt;1\)</span> or <span class="math inline">\(&lt;1\)</span>. As it is a little hard to think about this ratio, we can instead take the <span class="math inline">\(\tau^{\mathrm{th}}\)</span> root of it and consider <span class="math display">\[\sqrt[\tau]{\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}}{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{2,i}}}.\]</span> The term <span class="math inline">\(\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}\)</span> is the geometric mean fitness of allele <span class="math inline">\(A_1\)</span> over the <span class="math inline">\(\tau\)</span> generations past generation <span class="math inline">\(t\)</span>. Therefore, allele <span class="math inline">\(A_1\)</span> will only increase in frequency if it has a higher geometric mean fitness than allele <span class="math inline">\(A_2\)</span> (at least in our simple deterministic model).<br />
+</p>
+<h2 id="diploid-model">Diploid model</h2>
+<p>We will now move on to a diploid model of a single locus with two segregating alleles. We will assume that the difference in fitness between the three genotypes comes from differences in viability, i.e. differential survival of individuals from the formation of zygotes to reproduction. We denote the absolute fitnesses of genotypes <span class="math inline">\(A_1A_1\)</span>, <span class="math inline">\(A_1A_2\)</span>, and <span class="math inline">\(A_2A_2\)</span> by <span class="math inline">\(W_{11}\)</span>, <span class="math inline">\(W_{12}\)</span>, and <span class="math inline">\(W_{22}\)</span>. Specifically, <span class="math inline">\(W_{ij}\)</span> is the probability that a zygote of genotype <span class="math inline">\(A_iA_j\)</span> survives to reproduction. Assuming that individuals mate at random, the number of zygotes that are of the three genotypes and form generation <span class="math inline">\(t\)</span> are <span class="math display">\[Np_t^2, ~~~  N2p_tq_t, ~~~ Nq_t^2.\]</span></p>
+<p>The mean fitness of the population of zygotes is then <span class="math display">\[{\overline{W}}_t = W_{11} p_t^2+W_{12} 2p_tq_t  +  W_{22} q_t^2.\]</span> Again, this is simply the weighted mean of the genotypic fitnesses.<br />
+How many zygotes of each of the three genotypes survive to reproduce? An individual of genotype <span class="math inline">\(A_1A_1\)</span> has a probability of <span class="math inline">\(W_{11}\)</span> of surviving to reproduce, and similarly for other genotypes. Therefore, the expected number of <span class="math inline">\(A_1A_1\)</span>, <span class="math inline">\(A_1A_2\)</span>, and <span class="math inline">\(A_2A_2\)</span> individuals who survive to reproduce is <span class="math display">\[NW_{11} p_t^2, ~~~ NW_{12} 2p_tq_t , ~~~ N W_{22} q_t^2.\]</span> It then follows that the total number of individuals who survive to reproduce is <span class="math display">\[N \left(W_{11} p_t^2+W_{12} 2p_tq_t  +  W_{22} q_t^2 \right).\]</span> This is simply the mean fitness of the population multiplied by the population size (i.e. <span class="math inline">\(N {\overline{w}}\)</span>).<br />
+The relative frequency of <span class="math inline">\(A_1A_1\)</span> individuals at reproduction is simply the number of <span class="math inline">\(A_1A_1\)</span> genotype individuals at reproduction (<span class="math inline">\(NW_{11} p_t^2\)</span>) divided by the total number of individuals who survive to reproduce (<span class="math inline">\(N {\overline{W}}\)</span>), and likewise for the other two genotypes. Therefore, the relative frequency of individuals with the three different genotypes at reproduction is <span class="math display">\[\frac{NW_{11} p_t^2}{N{\overline{W}}}, ~~~ \frac{NW_{12} 2p_tq_t}{N{\overline{W}}} , ~~~ \frac{N W_{22} q_t^2}{N{\overline{W}}}\]</span> (see Table [dip_fitness_table]).<br />
+</p>
+<table>
+<caption>Relative genotype frequencies after one episode of viability selection.<span data-label="dip_fitness_table"></span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Absolute no. at birth</td>
+<td style="text-align: center;"><span class="math inline">\(Np_t^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N2p_tq_t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(Nq_t^2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fitnesses</td>
+<td style="text-align: center;"><span class="math inline">\(W_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Absolute no. at reproduction</td>
+<td style="text-align: center;"><span class="math inline">\(NW_{11} p_t^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(NW_{12} 2p_tq_t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N W_{22} q_t^2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Relative freq. at reproduction</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{NW_{11} p_t^2}{N {\overline{W}}} = \frac{W_{11}}{{\overline{W}}} p_{t}^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{NW_{12} 2p_tq_t}{N
+{\overline{W}}} = \frac{W_{12}}{{\overline{W}}} 2 p_{t} q_{t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{N W_{22} q_t^2}{N{\overline{W}}} = \frac{W_{22}}{{\overline{W}}} q_{t}^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>As there is no difference in the fecundity of the three genotypes, the allele frequencies in the zygotes forming the next generation are simply the allele frequency among the reproducing individuals of the previous generation. Hence, the frequency of <span class="math inline">\(A_1\)</span> in generation <span class="math inline">\(t+1\)</span> is <span class="math display">\[p_{t+1} = \frac{W_{11} p_t^2 + W_{12} p_tq_t}{{\overline{W}}}
+    \label{pgen_dip}.\]</span></p>
+<p>Note that, again, the absolute value of the fitnesses is irrelevant to the frequency of the allele. Therefore, we can just as easily replace the absolute fitnesses with the relative fitnesses. That is, we may replace <span class="math inline">\(W_{ij}\)</span> by <span class="math inline">\(w_{ij} = W_{ij}/W_{11}\)</span>, for instance.<br />
+The change in frequency from generation <span class="math inline">\(t\)</span> to <span class="math inline">\(t+1\)</span> is <span class="math display">\[\Delta p_t = p_{t+1} -p_{t}= \frac{w_{11} p_t^2 + w_{12} p_tq_t}{{\overline{w}}} - p_t. \label{deltap_dip1}\]</span> To simplify this equation, we will first define two variables <span class="math inline">\({\overline{w}}_1\)</span> and <span class="math inline">\({\overline{w}}_2\)</span> as <span class="math display">\[\begin{aligned}
+    {\overline{w}}_1 &amp; = w_{11} p_t + w_{12} q_t, \\
+    {\overline{w}}_2 &amp; =  w_{12} p_t+ w_{22} q_t.\end{aligned}\]</span> These are called the marginal fitnesses of allele <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, respectively. They are so called as <span class="math inline">\({\overline{w}}_1\)</span> is the average fitness of an allele <span class="math inline">\(A_1\)</span>, i.e. the fitness of <span class="math inline">\(A_1\)</span> in a homozygote weighted by the probability it is in a homozygote (<span class="math inline">\(p_t\)</span>) plus the fitness of <span class="math inline">\(A_1\)</span> in a heterozygote weighted by the probability it is in a heterozygote (<span class="math inline">\(q_t\)</span>). We further note that the mean relative fitness can be expressed in terms of the marginal fitnesses as <span class="math display">\[\label{eq:meanFitInTermsOfMargFit}
+    {\overline{w}}= {\overline{w}}_1 p_t + {\overline{w}}_2 q_t,\]</span> where, for notational simplicity, we have omitted the dependence of mean and marginal fitnesses on time.<br />
+We can then rewrite eqn.  using <span class="math inline">\({\overline{w}}_1\)</span> and <span class="math inline">\({\overline{w}}_2\)</span> as <span class="math display">\[\Delta p_t = \frac{ ({\overline{w}}_1-{\overline{w}}_2)}{{\overline{w}}} p_t q_t.
+    \label{deltap_dip2}\]</span> The sign of <span class="math inline">\(\Delta p_t\)</span>, i.e. whether allele <span class="math inline">\(A_1\)</span> increases of decreases in frequency, depends only on the sign of <span class="math inline">\(({\overline{w}}_1-{\overline{w}}_2)\)</span>. The frequency of <span class="math inline">\(A_1\)</span> will keep increasing over the generations so long as its marginal fitness is higher than that of <span class="math inline">\(A_2\)</span>, i.e. <span class="math inline">\({\overline{w}}_1 &gt; {\overline{w}}_2\)</span>, while if <span class="math inline">\({\overline{w}}_1 &lt; {\overline{w}}_2\)</span>, the frequency of <span class="math inline">\(A_1\)</span> will decrease. Note the similarity between eqn.  and the respective expression for the haploid model in eqn. . (We will return to the special case where <span class="math inline">\({\overline{w}}_1 = {\overline{w}}_2\)</span> shortly).<br />
+We can also rewrite as <span><span> <span class="math display">\[\Delta p_t =\frac{1}{2} \frac{p_tq_t}{{\overline{w}}} \frac{d {\overline{w}}}{dp},
+\label{deltap_dip3}\]</span> </span></span> the demonstration of this we leave to the reader. <span><span> This form shows that the frequency of <span class="math inline">\(A_1\)</span> will increase (<span class="math inline">\(\Delta p_t &gt; 0\)</span>) if the mean fitness is an increasing function of the frequency of <span class="math inline">\(A_1\)</span> (i.e. if <span class="math inline">\(\frac{d {\overline{w}}}{dp}&gt;0\)</span>). On the other hand, the frequency of <span class="math inline">\(A_1\)</span> will decrease (<span class="math inline">\(\Delta p_t &lt; 0\)</span>) if the mean fitness is a decreasing function of the frequency of <span class="math inline">\(A_1\)</span> (i.e. if <span class="math inline">\(\frac{d {\overline{w}}}{dp}&lt;0\)</span>).</span></span> Thus, although selection acts on individuals, under this simple model, selection is acting to increase the mean fitness of the population. <span><span> The rate of this increase is proportional to the variance in allele frequencies within the population (<span class="math inline">\(p_tq_t\)</span>).</span></span><br />
+<span><strong>Question</strong></span> Show that eqns.  and are equivalent.<br />
+<span><span> So far, our treatment of the diploid model of selection has been in terms of generic fitnesses <span class="math inline">\(w_{ij}\)</span>. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.</span></span></p>
+<h3 id="diploid-directional-selection">Diploid directional selection</h3>
+<p><span><span> Directional selection means that</span></span> one of the two alleles always has higher marginal fitness than the other one. Let us assume that <span class="math inline">\(A_1\)</span> is the fitter allele, so that <span class="math inline">\(w_{11} \geq w_{12} \geq w_{22}\)</span>, <span><span> and hence <span class="math inline">\({\overline{w}}_1 &gt; {\overline{w}}_2\)</span></span></span>. As we are interested in changes in allele frequencies, we <span><span> may use</span></span> relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the one we met in the haploid selection section, as follows:<br />
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">genotype</td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">absolute fitness</td>
+<td style="text-align: center;"><span class="math inline">\(W_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\( \geq W_{12} \geq\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative fitness (generic)</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11} = W_{11}/W_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{12} = W_{12}/W_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22} = W_{22}/W_{11}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">relative fitness (specific)</td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1-sh\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1-s\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Here, the selection coefficient <span class="math inline">\(s\)</span> is the difference in relative fitness between the two homozygotes, and <span class="math inline">\(h\)</span> is the dominance coefficient. <span><span> For selection to be directional, we require that <span class="math inline">\(0 \leq h \leq 1\)</span> holds. The dominance coefficient allows us to move between two extremes. One is when <span class="math inline">\(h = 0\)</span>, such that allele <span class="math inline">\(A_1\)</span> is fully dominant and <span class="math inline">\(A_2\)</span> fully recessive. In this case, the heterozygote <span class="math inline">\(A_1A_2\)</span> is as fit as the <span class="math inline">\(A_1A_1\)</span> homozogote genotype. The inverse holds when <span class="math inline">\(h = 1\)</span>, such that allele <span class="math inline">\(A_1\)</span> is fully recessive and <span class="math inline">\(A_2\)</span> fully dominant.</span></span><br />
+We can then rewrite eqn.  as <span class="math display">\[\Delta p_t = \frac{p_ths + q_t s(1-h)}{{\overline{w}}}p_tq_t ,
+\label{deltap_direct}\]</span> where <span class="math display">\[{\overline{w}}_t = 1-2p_tq_t sh-q_t^2s.\]</span><br />
+<span><span> A special case is when <span class="math inline">\(h = 0.5\)</span>. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.  simplifies to</span></span> <span class="math display">\[\Delta p_t = \frac{1}{2}\frac{s}{{\overline{w}}}p_tq_t .
+    \label{deltap_add}\]</span></p>
+<p>If selection is very weak, i.e. <span class="math inline">\(s \ll 1\)</span>, the denominator (<span class="math inline">\({\overline{w}}\)</span>) is close to <span class="math inline">\(1\)</span> and <span><span> we have</span></span> <span class="math display">\[\Delta p_t = \frac{1}{2} s p_t q_t .
+    \label{deltap_add_simpl}\]</span> <span><span> It is instructive to compare eqn.  to the respective expression under the haploid model. To this purpose, start from the generic term for <span class="math inline">\(\Delta p_t\)</span> under the haploid model in eqn.  and set <span class="math inline">\(w_1 = 1\)</span> and <span class="math inline">\(w_2 = 1-s\)</span>. Again, assume that <span class="math inline">\(s\)</span> is small, so that eqn.  becomes <span class="math inline">\(\Delta p_t = s p_t q_t\)</span>. Hence, if <span class="math inline">\(s\)</span> is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of <span class="math inline">\(1/2\)</span>. That factor is due to the choice of the parametrisation; we could have set <span class="math inline">\(w_{11} = 1\)</span>, <span class="math inline">\(w_{12} = 1-s\)</span>, and <span class="math inline">\(w_{22} = 1-2s\)</span> in dipliod model instead, in which case the agreement with the haploid model would be perfect.<br />
+From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele <span class="math inline">\(A_1\)</span> in the diploid model without dominance follows a logistic growth curve similar to . Similarly, eqn.  for the haploid model suggests that in the diploid model without dominance it takes</span></span></p>
+<p><span class="math display">\[\tau \approx \frac{2}{s} \log(2N)\]</span></p>
+<p>generations for the favourable allele (<span class="math inline">\(A_1\)</span>) to transit from its entry into the population (<span class="math inline">\(p_0 =1/(2N)\)</span>) to close to fixation (<span class="math inline">\(p_{\tau} =1-1/(2N)\)</span>). <span><span> Note again the difference by a factor of 2 due to the choice of parametrization. Also, the total number of alleles is <span class="math inline">\(2N\)</span> in the diploid model, rather than <span class="math inline">\(N\)</span>, which explains another factor of 2 in the argument of the logarithm.</span></span><br />
+</p>
+<figure>
+<img src="figures/simple_diploid_trajs.png" alt="The trajectory of the frequency of allele A_1, starting from p_{0}=0.01, for a selection coefficient s=0.01 and three different dominance coefficients." /><figcaption>The trajectory of the frequency of allele <span class="math inline">\(A_1\)</span>, starting from <span class="math inline">\(p_{0}=0.01\)</span>, for a selection coefficient <span class="math inline">\(s=0.01\)</span> and three different dominance coefficients.<span data-label="fig:diploid_traj"></span></figcaption>
+</figure>
+<p><span><span> <span><strong>Question</strong></span> Comparing the red (<span class="math inline">\(h=0\)</span>) and black (<span class="math inline">\(h=0.5\)</span>) trajectories in Figure [fig:diploid_traj], provide an explanation for why <span class="math inline">\(A_1\)</span> increases faster initially if <span class="math inline">\(h=0\)</span>, but then approaches fixation more slowly compared to the case of <span class="math inline">\(h=0.5\)</span>.</span></span><br />
+</p>
+<h3 id="heterozygote-advantage">Heterozygote advantage</h3>
+<p>What if the heterozygotes are fitter than either of the homozygotes? In this case, it is useful to parameterize the relative fitnesses as follows:<br />
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">genotype</td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">absolute fitness</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt;w_{12}&gt;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative fitness (generic)</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11}=W_{11}/W_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{12} = W_{12}/W_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22} = W_{22}/W_{12}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">relative fitness (specific)</td>
+<td style="text-align: center;"><span class="math inline">\(1-s_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1-s_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Here, <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> are the differences between the relative fitnesses of the two homozygotes and the heterozygote. Note that to obtain relative fitnesses we have divided absolute fitness by the heterozygote fitness. We could use the same parameterization as in the model of directional selection, but the reparameterization we have choisen here makes the math prettier.<br />
+In this case, when allele <span class="math inline">\(A_1\)</span> is rare, it is often found in a heterozygous state and so it increases in frequency. However, when allele <span class="math inline">\(A_1\)</span> is common, it is often found in the homozygote state, while the allele <span class="math inline">\(A_2\)</span> is often found in the heterozygote state; it is now <span class="math inline">\(A_2\)</span> that increases in frequency at the expense of allele <span class="math inline">\(1\)</span>. Thus, at least in the deterministic model, neither allele can reach fixation and both alleles will be maintained as a balanced polymorphism in the population at an equilibrium frequency.<br />
+We can solve for this equilibrium frequency by setting <span class="math inline">\(\Delta p_t = 0\)</span> in eqn. , i.e. <span class="math inline">\(p_tq_t ({\overline{w}}_1-{\overline{w}}_2)=0\)</span>. Doing so, we find that there are three equilibria, all of which are stable. Two of them are not very interesting (<span class="math inline">\(p=0\)</span> or <span class="math inline">\(q=0\)</span>), but the third one is the polymorphic equilibrium, where <span class="math inline">\({\overline{w}}_1-{\overline{w}}_2\)</span> holds. Using the parametrization above, we see that the marginal fitnesses of the two alleles are formally equivalent. Insertion of the selection coefficients <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> yields <span class="math display">\[p_e = \frac{s_2}{s_1+s_2}\]</span> for the equilibrium frequency of interest. This is also the frequency of <span class="math inline">\(A_1\)</span> at which the mean fitness of the population is maximised.<br />
+</p>
+<h4 id="underdominance.">Underdominance.</h4>
+<p>Another case that is of potential interest is the case of fitness underdominance, where the heterozygote is less fit than either of the homozygotes. This can be parametrized as follows:<br />
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">genotype</td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">absolute fitness</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt;w_{12}&gt;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative fitness (generic)</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11}=W_{11}/W_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{12} = W_{12}/W_{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22} = W_{22}/W_{12}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">relative fitness (specific)</td>
+<td style="text-align: center;"><span class="math inline">\(1+s_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1+s_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>This case also permits three equilibria, <span class="math inline">\(p=0\)</span>, <span class="math inline">\(p=1\)</span>, and a polymorphic equilibrium <span class="math inline">\(p=p_U\)</span>. However, now only the first two equilibria are stable, while the polymorphic equilibrium is unstable. If <span class="math inline">\(p&lt;p_U\)</span> then <span class="math inline">\(\Delta p_t \)</span> is negative and allele <span class="math inline">\(A_1\)</span> will be lost, while if <span class="math inline">\(p&gt;p_U\)</span>, allele <span class="math inline">\(A_1\)</span> will become fixed.<br />
+While such alleles might not spread within populations (if <span class="math inline">\(p_U \gg
+0\)</span> and selection is reasonably strong), they are of interest in the study of speciation and hybrid zones. That is because alleles <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> may have arisen in a stepwise fashion, i.e. not by a single mutation, in separate subpopulations. Now, heterozygote disadvantage will play a potential role in species maintenance, <span><span> if isolation of the subpopulations is not complete</span></span>.<br />
+</p>
+<h4 id="diploid-fluctuating-fitness">Diploid fluctuating fitness</h4>
+<p>We would like to think about the case where the diploid absolute fitnesses are time-dependent. The three genotypes then have fitnesses <span class="math inline">\(w_{11,t}\)</span>, <span class="math inline">\(w_{12,t}\)</span>, and <span class="math inline">\(w_{22,t}\)</span> in generation <span class="math inline">\(t\)</span>. However, this case is much less tractable than the haploid case, as segregation makes it tricky to keep track of the genotype frequencies. We can make some progress and gain some intuition by thinking about how the frequency of allele <span class="math inline">\(A_1\)</span> changes when it is rare.<br />
+When <span class="math inline">\(A_1\)</span> is rare, i.e. <span class="math inline">\(p_t \ll 1\)</span>, its frequency in the next generation can be approximated as <span class="math display">\[p_{t+1} \approx \frac{w_{12}}{{\overline{w}}} p_t.\]</span> To obtain this, we have ignored the <span class="math inline">\(p_{t}^2\)</span> term and assumed that <span class="math inline">\(q_t \approx 1\)</span> in the numerator. Following a similar argument to approximate <span class="math inline">\(q_{t+1}\)</span>, we can write <span class="math display">\[\frac{p_{t+1}}{q_{t+1}} = \frac{w_{12,t}}{w_{22,t}}  \frac{p_{t}}{q_{t}}.\]</span> Then, starting from out from <span class="math inline">\(p_0\)</span> and <span class="math inline">\(q_0\)</span> in generation <span class="math inline">\(0\)</span>, <span class="math inline">\(t+1\)</span> generations later, we have <span class="math display">\[\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=0}^{t-1} \frac{w_{12,i}}{w_{22,i}}  \right) \frac{p_{0}}{q_{0}}.\]</span> From this, we can see, following our haploid argument from above, that the frequency of allele <span class="math inline">\(A_1\)</span> will increase when rare only if <span class="math display">\[\frac{\sqrt[t]{\prod_{i=0}^{t-1}w_{12,i}}}{\sqrt[t]{\prod_{i=0}^{t-1}w_{22,i}}}&gt;1 \label{geometric_1wins},\]</span> i.e. if the heterozygote has higher geometric mean fitness than the <span class="math inline">\(A_2A_2\)</span> homozygote.<br />
+The question now is, whether allele <span class="math inline">\(A_1\)</span> will approach fixation in the population, or whether there are cases in which we can obtain a balanced polymorphism. To investigate that, we can simply repeat our analysis for <span class="math inline">\(q \ll 1\)</span>, and see that in that case <span class="math display">\[\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=0}^{t-1} \frac{w_{11,i}}{w_{12,i}}  \right) \frac{p_{0}}{q_{0}}.\]</span> Now, for allele <span class="math inline">\(A_1\)</span> to carry on increasing in frequency and to approach fixation, the <span class="math inline">\(A_1A_1\)</span> genotype has to be out-compeeting the heterozygotes. For allele <span class="math inline">\(A_1\)</span> to approach fixation, we need the geometric mean of <span class="math inline">\(w_{11,i}\)</span> to be greater than the geometric mean fitness of heterozygotes (<span class="math inline">\(w_{12,i}\)</span>). At the same time, if heterozygotes have higher geometric mean fitness than the <span class="math inline">\(A_1A_1\)</span> homozygotes, then the <span class="math inline">\(A_2\)</span> allele will increase in frequency when it is rare. Therefore, a balanced polymorphism can result when the heterozygote has higher geometric fitness than either of the homozygotes.<br />
+Intriguingly, we can have a balanced polymorphism even if the heterozygote is never the fittest genotype in any generation. To see this, consider the simple example, where there are two environments alternate from generation to generation:<br />
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">genotype</td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">relative fitness in environment A</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11,A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;w_{12,A}&gt;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22,A}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative fitness in environment B</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11,B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt;w_{12,B}&lt;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22,B}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Geometric mean fitness</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11,B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt;w_{12,B}&gt;\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+In this case, the polymorphism will remain balanced in the population, despite the fact that the heterozygote is never the fitest genotype.</p>
+<h2 id="mutationselection-balance">Mutation–selection balance</h2>
+<p>Mutation is constantly introducing new alleles into the population. Therefore, variation can be maintained within a population <span><span> not only if selection is balancing (e.g. through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to</span></span> a balance between mutation <span><span> and selection. A case of particular interest is when mutation introduces deleterious</span></span> alleles and selection acts against these alleles. To study this balance, we return to the model of directional selection, where allele <span class="math inline">\(A_1\)</span> is advantageous, i.e.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">genotype</td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_1A_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A_2A_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">absolute fitness</td>
+<td style="text-align: center;"><span class="math inline">\(W_{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\( \geq W_{12} \geq\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative fitness</td>
+<td style="text-align: center;"><span class="math inline">\(w_{11}=1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{12}=1-sh\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(w_{22}=1-s\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p><span><span> For a start, we consider the case where allele <span class="math inline">\(A_2\)</span> is not completely recessive (<span class="math inline">\(h&gt;0\)</span>), so that the heterozygotes suffer at least some disadvantage. We denote by <span class="math inline">\(\mu = \mu_{1\rightarrow2}\)</span> the mutation rate per generation from <span class="math inline">\(A_1\)</span> to the deleterious allele <span class="math inline">\(A_2\)</span>, and assume that there is no reverse mutation (<span class="math inline">\(\mu_{2\rightarrow1} = 0\)</span>). Let us assume that selection against <span class="math inline">\(A_2\)</span> is relatively strong compared to the mutation rate, so that it is justified to assume that <span class="math inline">\(A_2\)</span> is always rare, i.e. <span class="math inline">\(q_t = 1-p_t \ll 1\)</span>. Compared to previous sections, for mathematical clarity, we also switch from following the frequency <span class="math inline">\(p_t\)</span> of <span class="math inline">\(A_1\)</span> to following the frequency <span class="math inline">\(q_t\)</span> of <span class="math inline">\(A_2\)</span>. Of course, this is without loss of generality. The change in frequency of <span class="math inline">\(A_2\)</span> due to selection can be written as</span></span> <span class="math display">\[\Delta_S q_t = \frac{{\overline{w}}_2 - {\overline{w}}_1}{{\overline{w}}} p_t q_t  \approx  -hs q_t.
+    \label{eq:dirSelApprox}\]</span> This approximation can be found by assuming that <span class="math inline">\(q^2 \approx 0\)</span>, <span class="math inline">\(p \approx 1\)</span>, and that <span class="math inline">\({\overline{w}}\approx w_1\)</span>.</p>
+<p>All of these assumptions make sense if <span class="math inline">\(q \ll 1\)</span>. From eqn.  we see that selection acts to reduce the frequency of <span class="math inline">\(A_2\)</span> (as both <span class="math inline">\(h\)</span> and <span class="math inline">\(s\)</span> are positive), and it does so geometrically across the generations. That is, if the initial frequency of <span class="math inline">\(A_2\)</span> is <span class="math inline">\(q_0\)</span>, then its frequency at time <span class="math inline">\(t\)</span> is approximately <span class="math display">\[q_t = q_0 (1 - hs)^t.
+    \label{eq:dirSelExplApprox}\]</span></p>
+<p>We will now consider the change in frequency induced by mutation. Recalling that <span class="math inline">\(\mu\)</span> is the mutation rate from <span class="math inline">\(A_1\)</span> to <span class="math inline">\(A_2\)</span> per generation, the frequency of <span class="math inline">\(A_2\)</span> after mutation <span class="math display">\[q^{\prime} =  \mu p_t = \mu(1 - q_t).\]</span> Assuming that <span class="math inline">\(\mu \ll 1\)</span> and that <span class="math inline">\(q \ll 1\)</span>, the change in the frequency of allele <span class="math inline">\(A_2\)</span> due to mutation (<span class="math inline">\(\Delta_M q_t\)</span>) can be approximated by <span class="math display">\[\Delta_M q_t = q^{\prime} - q_t =  \mu.
+    \label{eq:mutApprox}\]</span> Hence, when <span class="math inline">\(A_2\)</span> is rare and the mutation rate is low, mutation acts to linearly increase the frequency of the deleterious allele <span class="math inline">\(A_2\)</span>.<br />
+If selection is to balance deleterious mutation, there combined effect over one generation has to be zero. Therefore, to find the mutation–selection equilibrium, we set <span class="math display">\[\Delta_M q_t + \Delta_S q_t = 0,\]</span> insert eqns. and , and solve for <span class="math inline">\(q\)</span> to obtain <span class="math display">\[q_e = q_t = \frac{\mu}{hs}.
+    \label{eqn:mut_sel_bal}\]</span> We see that the frequency of the deleterious allele <span class="math inline">\(A_2\)</span> is balanced at the mutation rate (<span class="math inline">\(\mu\)</span>) divided by the reduction in relative fitness in the heterozygote (<span class="math inline">\(hs\)</span>).</p>
+<p><br />
+</p>
+<p>It is worth pointing out that the fitness of the <span class="math inline">\(A_2A_2\)</span> homozygote has not entered this calculation, as <span class="math inline">\(A_2\)</span> is so rare that it is hardly ever found in the homozygous state. Therefore, if <span class="math inline">\(A_2\)</span> has any deleterious effect in a heterozygous state (i.e. if <span class="math inline">\(h&gt;0\)</span>) it is this effect that determines the frequency at which <span class="math inline">\(A_2\)</span> is maintained in the population. Also, note that by writing the total change in allele frequency as <span class="math inline">\(\Delta_M q_t + \Delta_S q_t
+\)</span> we have implicitly assumed that we can ignore terms of order <span class="math inline">\(\mu
+\times s\)</span>. That is, we have assumed that there is no interaction between mutation and selection. We can do so as we assumed that both <span class="math inline">\(\mu\)</span> and <span class="math inline">\(s\)</span> are small.<br />
+What effect do such deleterious mutations at mutation–selection balance have on the population? It is common to express this effect in terms of a reduction of the mean relative fitness of the population. For a single site at which a deleterious mutation is segregating at <span class="math inline">\(q_e = \mu/(hs)\)</span>, the mean relative fitness is reduced to <span class="math display">\[{\overline{w}}= 1- 2p_e q_e hs - q_e^2s \approx 1-2\mu.\]</span> Somewhat remarkably, the drop in mean fitness due to a site segregating at mutation–selection balance is independent of the selection coefficient against the heterozygote; it depends only the mutation rate. Note that this applies only if the mutation is not totally recessive, i.e. if <span class="math inline">\(h &gt; 0\)</span>.</p>
+<p>A reduction of <span class="math inline">\(1 - 2\mu\)</span> is very small, given that the mutation rate of a gene is likely <span class="math inline">\(&lt;10^{-5}\)</span>. However, if there are many loci segregating at mutation–selection balance, this can accumulate to a substantial so-called genetic load, and a major cause of variation in fitness-related traits among individuals.</p>
+<p>As an aside, if an allele was truly recessive (although few likely are), we have <span class="math inline">\(h=0\)</span>, and so eqn.  is not valid. However, we can make an argument similar to the one above to show that, for truly recessive alleles, <span class="math display">\[q_e = \sqrt{\frac{\mu}{s}}.\]</span></p>
+<h3 id="inbreeding-depression">Inbreeding depression</h3>
+<p>All else being equal, eqn.  suggests that mutations that have a smaller effect in the heterozygote can segregate at higher frequency under mutation–selection balance. As a consequence, alleles that have strongly deleterious effects in the homozygous state can segregate at low frequencies in the population, as long as they do not have a strong effect in heterozygotes. Thus, outbred populations may have many alleles with recessive deleterious effects segregating within them.</p>
+<p>On consequence of this is that inbred individuals from usually outbred populations may have dramatically lower fitnesses than outbred individuals. This is a consequence of being homozygous at many loci for alleles with recessive deleterious effects. Indeed, this seems to be a common observation, dating back to systematic surveys by Darwin. In typically outbred populations, the mean fitness of individuals decreases with the inbreeding coefficient, i.e. this so-called inbreeding depression is a common observation.</p>
+<h4 id="purging-the-inbreeding-load.">Purging the inbreeding load.</h4>
+<p>That said, populations that regularly inbreed over sustained periods of time are expected to partially purge this load of deleterious alleles. This is because such populations have exposed many of these alleles in a homozygous state, and so selection can more readily remove these alleles from the population.</p>
+<h2 id="migrationselection-balance">Migration–selection balance</h2>
+<p>Another reason for the persistence of deleterious alleles in a population is that there is a constant influx of maladaptive alleles from other populations where these alleles are locally adapted. This seems unlikely to be as broad an explanation for the persistence of deleterious alleles genome-wide as mutation-selection balance. However, a brief discussion of such alleles is worthwhile as it helps to inform our ideas about local adaptation.<br />
+As a first pass at this lets consider a haploid two allele model with two different populations, where the relative fitnesses of our alleles are as follows</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">allele</th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">population 1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1-s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">population 2</td>
+<td style="text-align: center;">1-s</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>As a simple model of migration lets suppose within a population a fraction of <span class="math inline">\(m\)</span> individuals are migrants from the other population, and <span class="math inline">\(1-m\)</span> individuals are from the same deme.<br />
+To quickly sketch a solution to this well set up a situation analogous to our mutation-selection balance model. to do this lets assume that selection is strong compared to migration (<span class="math inline">\(s \gg m\)</span>) then allele <span class="math inline">\(1\)</span> will be almost fixed in population <span class="math inline">\(1\)</span> and allele <span class="math inline">\(2\)</span> will be almost fixed in population <span class="math inline">\(2\)</span>. If that is the case, migration changes the frequency of allele <span class="math inline">\(2\)</span> in population <span class="math inline">\(1\)</span> (<span class="math inline">\(q_1\)</span>) by <span class="math display">\[\Delta_{Mig.} q_1 \approx m\]</span> while as noted above <span class="math inline">\(\Delta_{S} q_1= -sq_1\)</span>, so that migration and selection are at an equilibrium when <span class="math inline">\(\Delta_{S} q_1+
+\Delta_{Mig.}q_1\)</span>, i.e. an equilibrium frequency of allele <span class="math inline">\(2\)</span> in population <span class="math inline">\(1\)</span> of <span class="math display">\[q_{e,1} = \frac{m}{s}\]</span> so that migration is playing to role of mutation and so migration-selection balance (at least under strong selection) is analogous to mutation selection balance.<br />
+</p>
+<h3 id="some-theory-of-the-spatial-distribution-of-allele-frequencies-under-deterministic-models-of-selection">Some theory of the spatial distribution of allele frequencies under deterministic models of selection</h3>
+<p>Imagine a continuous haploid population spread out along a line. Individuals disperse a random distance <span class="math inline">\(\Delta x\)</span> from its birthplace to the location where it reproduces, where <span class="math inline">\(\Delta x\)</span> is drawn from the probability density <span class="math inline">\(g(~)\)</span>. To make life simple we will assume that <span class="math inline">\(g(\Delta x)\)</span> is normally distributed with mean zero and standard deviation <span class="math inline">\(\sigma\)</span>, i.e. migration is unbiased an individuals migrate an average distance of <span class="math inline">\(\sigma\)</span>.<br />
+Our frequency of allele <span class="math inline">\(2\)</span> at time <span class="math inline">\(t\)</span> in the population at spatial location <span class="math inline">\(x\)</span> is <span class="math inline">\(q(x,t)\)</span>. Assuming that only dispersal occurs, how does our allele frequency change in the next generation? Our allele frequency in the next generation at location <span class="math inline">\(x\)</span> reflects the migration from different locations in the proceeding generation. Our population at location <span class="math inline">\(x\)</span> receives a contribution <span class="math inline">\(g(\Delta x)q(x+\Delta x,t)\)</span> of allele <span class="math inline">\(2\)</span> from the population at location <span class="math inline">\(x+\Delta x\)</span>, such that the frequency of our allele at <span class="math inline">\(x\)</span> in the next generation is <span class="math display">\[q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta
+x)q(x+\Delta x,t) d \Delta x.\]</span></p>
+<p>To obtain <span class="math inline">\(q(x+\Delta x,t)\)</span>, lets take a Taylor series expansion of <span class="math inline">\(q(x, t)\)</span></p>
+<p><span class="math display">\[q(x+\Delta x,t) = q(x,t) + \Delta x \frac{dq(x,t)}{dx}+ \tfrac{1}{2}(\Delta x)^2 \frac{d^2q(x,t)}{dx^2}+\cdots\]</span></p>
+<p>then</p>
+<p><span class="math display">\[q(x,t+1) = q(x,t) +\left( \int_{-\infty}^{\infty} \Delta x g(\Delta x) 
+  d \Delta x \right) \frac{dq(x,t)}{dx} + \tfrac{1}{2}\left( \int_{-\infty}^{\infty}(\Delta x)^2 g(\Delta x) 
+  d \Delta x \right)  \frac{d^2q(x,t)}{dx^2}+\cdots\]</span></p>
+<p><span class="math inline">\(g(~)\)</span> has a mean of zero so <span class="math inline">\( \int_{-\infty}^{\infty} \Delta x g(\Delta x) d
+\Delta x =0\)</span> and has variance <span class="math inline">\(\sigma^2\)</span> so <span class="math inline">\(\int_{-\infty}^{\infty}(\Delta
+x)^2 g(\Delta x) d \Delta x = \sigma^2\)</span> and all higher terms are zero (as all high moments of the normal are zero). Looking at the change in frequency <span class="math inline">\(\Delta q(x,t) = q(x,t+1)-q(x,t)\)</span> then</p>
+<p><span class="math display">\[\Delta q(x,t) = \frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2}\]</span></p>
+<p>This is a diffusion equation, so that migration is acting to smooth out allele frequency differences with a diffusion constant of <span class="math inline">\(\tfrac{\sigma^2}{2}\)</span>. This is exactly analogous to the equation describing how a gas diffuses out to equal density, as both particles in a gas and our individuals of type <span class="math inline">\(2\)</span> are performing Brownian motion (blurring our eyes and seeing time as continuous).<br />
+We will now introduce fitness differences into our model and set the relative fitnesses of allele <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> at location <span class="math inline">\(x \)</span> to be <span class="math inline">\(1\)</span> and <span class="math inline">\(1+s\gamma(x)\)</span>. To make progress in this model we’ll have to assume that selection isn’t too strong i.e. <span class="math inline">\( s \gamma(x) \ll 1\)</span> for all <span class="math inline">\(x\)</span>. The change in frequency of allele <span class="math inline">\(2\)</span> obtained within a generation due to selection is</p>
+<p><span class="math display">\[q^{\prime}(x,t) - q(x,t) \approx s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)\]</span></p>
+<p>i.e. logistic growth of our favoured allele at location <span class="math inline">\(x\)</span>. Putting our selection and migration terms together we find <span class="math display">\[q(x,t+1) -
+q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)+\frac{\sigma^2}{2}
+\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP}\]</span> in deriving this we have essentially assumed that migration acted upon our original frequencies before selection and in doing so have ignored terms of the order of <span class="math inline">\(\sigma s\)</span>.</p>
+<figure>
+<img src="figures/equilib_cline.png" alt="An equilibrium cline in allele frequency. Our individuals dispersal an average distance of \sigma=1km per generation, and our allele 2 has a relative fitness of 1+s and 1-s on either side of the environmental change at x=0." /><figcaption>An equilibrium cline in allele frequency. Our individuals dispersal an average distance of <span class="math inline">\(\sigma=1\)</span>km per generation, and our allele <span class="math inline">\(2\)</span> has a relative fitness of <span class="math inline">\(1+s\)</span> and <span class="math inline">\(1-s\)</span> on either side of the environmental change at <span class="math inline">\(x=0\)</span>.<span data-label="fig:cline"></span></figcaption>
+</figure>
+<p>To make progress lets consider a simple model of location adaptation where the environment abruptly changes. Specifically we assume that <span class="math inline">\(\gamma(x)= 1\)</span> for <span class="math inline">\(x&lt;0\)</span> and <span class="math inline">\(\gamma(x)= -1\)</span> for <span class="math inline">\(x \geq 0\)</span>, i.e. our allele <span class="math inline">\(2\)</span> has a selective advantage at locations to the left of zero, while this allele is at a disadvantage to the right of zero. In this case we can get an equilibrium distribution of our two alleles were to the left of <span class="math inline">\(zero\)</span> our allele <span class="math inline">\(2\)</span> is at higher frequency, while to the right of zero allele <span class="math inline">\(1\)</span> predominates. As we cross from the left to the right side of our range the frequency of our allele <span class="math inline">\(2\)</span> decreases in a smooth cline.<br />
+Our equilibrium spatial distribution of allele frequencies can be found by setting the LHS of eqn. to zero to arrive at <span class="math display">\[s\gamma(x) q(x) \left( 1 - q(x) \right) = - \frac{\sigma^2}{2} \frac{d^2q(x)}{dx^2}\]</span> We then could solve this differential equation with appropriate boundary conditions (<span class="math inline">\(q(-\infty)=1\)</span> and <span class="math inline">\(q(\infty) = 0\)</span>) to arrive at the appropriate functional form to our cline. While we won’t go into the solution of this equation here, we can note that by dividing our distance <span class="math inline">\(x\)</span> by <span class="math inline">\(\ell=\sigma/\sqrt{s}\)</span> we can remove the effect of our parameters from the above equation. This compound parameter <span class="math inline">\(\ell\)</span> is the characteristic length of our cline, and it is this parameter which determines over what geographic scale we change from allele <span class="math inline">\(2\)</span> predominating to allele <span class="math inline">\(1\)</span> predominating as we move across our environmental shift.<br />
+The width of our cline, i.e. over what distance do we make this shift from allele <span class="math inline">\(2\)</span> predominating to allele <span class="math inline">\(1\)</span>, can be defined in a number of different ways. One simple way to define the cline width, which is easy to define but perhaps hard to measure accurately, is the slope (i.e. the tangent) of <span class="math inline">\(q(x)\)</span> at <span class="math inline">\(x=0\)</span>. Under this definition the cline width is approximately <span class="math inline">\(0.6
+\sigma/\sqrt{s}\)</span>.<br />
+</p>
+</body>
+</html>
