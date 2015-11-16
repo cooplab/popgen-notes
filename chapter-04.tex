@@ -14,7 +14,8 @@ Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
 has at this SNP. Her expected phenotype, given her genotype, is then
 \begin{equation}
-X_{A,i} = \mu + \E (X_i | G_{i,1},\cdots,G_{i,L}) = \mu+ \sum_{l=1}^L G_{i,l} a_{l}
+X_{A,i} = \mu + \E (X_i | G_{i,1},\cdots,G_{i,L}) = \mu+ \sum_{l=1}^L \label{pheno_geno}
+G_{i,l} a_{l} 
 \end{equation}
 where $\mu$ is the mean phenotype in our population. Now in reality the genetic phenotype is a function of the
 expression of those alleles in a particular environment. Therefore, we
@@ -34,7 +35,7 @@ our individual finds herself in and all of the noise during
 development, growth, and the various random insults that life throws
 at our individual. If a reasonable number of loci contribute to
 variation in our trait then we can approximate the distribution of
-$X_{A,i}$ by a normal distribution due to the central limit theorem (see R exercise). Thus if we can
+$X_{A,i}$ by a normal distribution due to the central limit theorem (see Figure \ref{fig:QT1}). Thus if we can
 approximate the distribution of the effect of environmental variation
 on our trait ($X_{E,i}$) also by a normal distribution, which is
 reasonable as there are many small environmental effects, then the
@@ -43,9 +44,18 @@ normally distributed (see Figure \ref{fig:QT1}).\\
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{figures/QT1.png}
+\includegraphics[width=\textwidth]{figures/QT1.png}
 \end{center}
-\caption{The convergence of the phenotypic distribution to a normal distribution.} \label{fig:QT1}
+\caption{The convergence of the phenotypic distribution to a normal
+  distribution. Each of the three histograms shows the distribution of
+the phenotype in a large sample, for increasing large numbers of loci ($L$). I have simulated each individual's
+phenotype following equation \ref{pheno_geno} and \ref{pheno_geno_environ}. Specifically I simulate each
+individuals biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
+and that the allele is at 50\% frequency. I assume that all of the
+alleles have equal effects and combine them additively together. I then
+add an environmental contribution, which is normally distributed with
+variance $0.05$. Note that in the left two pictures you can see peaks
+corresponding to different genotypes.} \label{fig:QT1}
 \end{figure}
 
 Note that as this is an additive model we can decompose eqn. \ref{pheno_geno_environ} into the
@@ -226,6 +236,10 @@ variance to get $h^2$. \\
 %One way potentially to get somewhat around the
 %shared environmental effect is to use paternal half-sibs as they share a
 
+\begin{question}
+In polygynous blackbird populations (i.e. males mate with several females), paternal half-sibs can be identified.  Suppose that the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and that the total phenotypic variance is 4 $cm^2$.  Use these data to estimate $h^2$ for tarsus length in this population. 
+\end{question}
+
 Another way that we can estimate the narrow sense heritability is
 through the regression of child's phenotype on the parental mid-point
 phenotype. The parental mid-point phenotype is simple the average of
@@ -252,10 +266,16 @@ close to one then the parental mid-point is a good guess at the child's
 phenotype.\\
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{figures/QT2.png}
+\includegraphics[width=\textwidth]{figures/QT2.png}
 \end{center}
 \caption{Regression of parental mid-point phenotype on child's
-  phenotype.}
+  phenotype. The three panels show decreasing levels of environmental
+  variance ($V_E$) holding the additive genetic variance constant ($V_A=1$). 
+ In these figures I simulate $100$ loci, as described in
+ the caption of Figure \ref{fig:QT1}. I simulate the genotypes and
+ phenotypes of the two parents, and then simulate the child's genotype
+following mendelian transmission. The blue line shows $x=y$ the red
+line shows the best fitting linear regression line. }
 \end{figure}
 
 More formally the expected phenotype of the child given the parental
@@ -418,6 +438,15 @@ trait ($V_A$) multiplied by the change within a generation as a
 fraction of the total phenotypic variance ($S/V$, sometimes called the
 the selection gradient $\beta$).\\
 
+If our selection pressure is sustained over many generations we can
+use our breeders equation to predict the response. If we are willing
+to assume that our heritability does not change and we maintain a constant selection
+gradient, then after $n$ generations our phenotype mean will have
+shifted 
+\begin{equation}
+n h^2 S
+\end{equation}
+i.e. our population will keep up a linear response to selection.
 
 \begin{figure}
 \begin{center}
@@ -475,6 +504,23 @@ we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with the parent phenotype.
 
+\begin{question}
+A population of red deer were trapped on Jersey (an island off of
+England) during the last inter-glacial period. From the fossil record
+we can see that the population rapidly adapted to their new
+surroundings, presumably due to reduced predation and limited
+food. Within 6,000 years they evolved from an estimated mean weight of
+the population of 200kg to an estimated mean weight of 36kg (a 6 fold
+reduction! True story see: \href{http://www.nature.com/nature/journal/v342/n6249/abs/342539a0.html}{Lister, A.M. Nature 1989}). Using a current
+day population on the mainland you estimate that the generation time
+of red deer is 5 years and that the narrow sense heritability of the
+phenotype is 0.5. (Assuming discrete generations).\\
+{\bf A)}	Estimate the mean change per generation in the mean body weight. \\
+
+{\bf B)}	Estimate the change in mean body weight caused by selection within a generation.\\
+
+{\bf C)}	What do you have to assume to perform the calculations in B. Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
+\end{question}
 \paragraph{The response of multiple traits to selection, the
   multivariate breeder's equation.}
 We can generalize these results for multiple traits, to ask how selection on

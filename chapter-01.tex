@@ -11,7 +11,7 @@ Note that this holds independently of Hardy--Weinberg proportions and equilibriu
 \subsection{Hardy--Weinberg proportions}
 
 Imagine a population mating at random with respect to genotypes, i.e.\
-no inbreeding, no population structure, no sex differences in allele frequencies. The frequency of allele $A_1$ in the population at the time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into our population and independently drawing two $A_1$ alelle gametes to form a zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote is $p^2$. This probability is also the expected frequency of the $A_1A_1$ homozygote in the population. The expected frequency of the three possible genotypes is
+no inbreeding, no population structure, no sex differences in allele frequencies. The frequency of allele $A_1$ in the population at the time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into our population and independently drawing two $A_1$ allele gametes to form a zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote is $p^2$. This probability is also the expected frequency of the $A_1A_1$ homozygote in the population. The expected frequency of the three possible genotypes is
 %\begin{table}[htp!]
 \begin{center}
 \begin{tabular}{|ccc|}
@@ -65,7 +65,7 @@ population is expected to be homozygotes under Hardy-Weinberg?
   (calculated using a loess smoothing). The dashed line shows the
   predicted genotype frequency from Hardy Weinberg equilibrium. I find
   it really pretty that the analytical predictions work as well as
-  they do. } \label{fig:HWE_CEU_YRI}
+  they do. See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
 \end{figure}
 
 
@@ -90,15 +90,6 @@ parents of the child are randomly mated individuals from the
 population. In figure \ref{fig:IBD_cousins_cartoon} I show a pedigree
 demonstrating some configurations of IBD. \\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
-\end{center}
-\caption{Alleles being transmitted through an inbred pedigree. The mum and the
-  aunt share two alleles identical by descent (IBD). The cousins share one
-  allele IBD. The offspring of first cousins being homozygous by
-  descent at a locus.} \label{fig:IBD_cousins_cartoon}  
-\end{figure}
 
 A key quantity is the probability that our pair of individuals share
 0, 1, or 2 alleles identical by descent (see Figure \ref{fig:IBD_0_1_2}). We denote these probabilities
@@ -114,6 +105,15 @@ some examples. \\
   shared ancestor). } \label{fig:IBD_0_1_2}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
+\end{center}
+\caption{Alleles being transmitted through an inbred pedigree. The mum and the
+  aunt share two alleles identical by descent (IBD). The cousins share one
+  allele IBD. The offspring of first cousins is homozygous by
+  descent at this locus.} \label{fig:IBD_cousins_cartoon}  
+\end{figure}
 
 
 One summary of relatedness that will be important is the probability that two alleles picked at random, one from each of the two different individuals $i$ and $j$, are identical by descent. We call this quantity the coefficient of kinship of individuals $i$ and $j$, and denote it by $F_{ij}$. It is calculated as
