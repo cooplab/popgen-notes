@@ -15,7 +15,7 @@
 \hypersetup{colorlinks=true, urlcolor=blue, citecolor=black, linkcolor=black}
 
 \usepackage[normalem]{ulem}
-
+\usepackage{tcolorbox}
 \newcommand{\gc}[1]{{\em \color{green} #1}}
 \newcommand{\sa}[1]{{\color{black} #1}}
 \newcommand{\plr}[1]{{\em \color{green} (#1)}}
@@ -34,8 +34,15 @@
 %\setcounter{Question}{1}
 
 \newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+
+
 \newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
-   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
+   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
+
+%\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+%   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
  
 
 \definecolor{rev1}{rgb}{1, 0, 0}

@@ -202,6 +202,16 @@ Note that, again, the absolute value of the fitnesses is irrelevant to
 the frequency of the allele. Therefore, we can just as easily replace
 the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{ij}$ by $w_{ij} = W_{ij}/W_{11}$, for instance. \\
 
+\begin{tcolorbox} 
+\begin{question}
+You have been studying an annual wildflower for many generations with two color morphs orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
+Heavy February rainfall creates optimal growing conditions for an exotic herbivorous beetle with a preference for orange-flowered individuals.  This year it arrives at your study site with a ravenous appetite.  Only 50\% of orange-flowered individuals survive its wrath, while 90\% of white-flowered individuals survive until the end of the growing season.  Additionally, surviving orange flowered individuals produce 80 seeds on average, while surviving white-flowered individuals produce 100 seeds on average. 
+{\bf A} What is the initial frequency of the white allele, and what do you
+have to assume to obtain this?\\
+{\bf B} What is the frequency of the white allele in the seeds forming the next generation?\\
+\end{question}
+\end{tcolorbox}
+
 The change in frequency from generation $t$ to $t+1$ is
 \begin{equation}
 \Delta p_t = p_{t+1} -p_{t}= \frac{w_{11} p_t^2 + w_{12} p_tq_t}{\wbar} - p_t. \label{deltap_dip1}
@@ -237,16 +247,13 @@ i.e.\ $\wbar_1 > \wbar_2$, while if $\wbar_1 < \wbar_2$, the
 frequency of $A_1$ will decrease. Note the similarity between eqn.\ \eqref{deltap_dip2} and the respective expression for the haploid model in eqn.\ \eqref{eq:deltap_haploid}. (We will return to the
 special case where $\wbar_1 = \wbar_2$ shortly).\\
 
-
 We can also rewrite \eqref{deltap_dip1} as
-\sa{
 \begin{equation}
 \Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp},
 \label{deltap_dip3}
 \end{equation}
-}
 the demonstration of this we leave to the reader.
-\sa{This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).}
+This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).
 %This form shows that
 %$\Delta p_t$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
 %frequency of $1$ increases the mean fitness, while the frequency of
@@ -256,14 +263,16 @@ Thus, although selection acts on
 individuals, under this simple model, selection is acting to increase
 the mean fitness of the population. \sa{The rate of this increase is proportional to
 the variance in allele frequencies within the population ($p_tq_t$).}\\
-
-{\bf Question} Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip1} are equivalent.\\
-
-\sa{So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.}
+\begin{tcolorbox} 
+\begin{question}
+Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are equivalent.\\
+\end{question}
+\end{tcolorbox}
+So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
 
 %%Selection coeffs in diploid model
 \subsubsection{Diploid directional selection}
-\sa{Directional selection means that} one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, \sa{and hence $\wbar_1 > \wbar_2$}.
+Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$\.
 As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
 one we met in the haploid selection section, as follows:\\
 \begin{center}
@@ -276,7 +285,7 @@ relative fitness  (specific) & $1$ & $1-sh$ & $1-s$. \\
 \end{center}
 Here, the selection coefficient $s$ is the difference in relative
 fitness between the two homozygotes, and $h$ is the
-dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozogote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
+dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozgyote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
 
 %, of the $12$ and
 %$22$ genotypes we will use selection coefficients $s_{12} \leq 0$ and
@@ -292,27 +301,41 @@ where
 \wbar_t = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
-\sa{A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to}
+\begin{tcolorbox} 
+\begin{question}
+Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
+\end{question}
+\end{tcolorbox}
+
+A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to
 \begin{equation}
 	\Delta p_t = \frac{1}{2}\frac{s}{\wbar}p_tq_t .
 	\label{deltap_add}
 \end{equation}
+
 
 If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and \sa{we have}
 \begin{equation}
 	\Delta p_t = \frac{1}{2} s p_t q_t .
 	\label{deltap_add_simpl}
 \end{equation}
-\sa{It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in dipliod model instead, in which case the agreement with the haploid model would be perfect.\\
+It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \eqref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes}
+From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \eqref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes
 
 \begin{equation}
 	\tau \approx \frac{2}{s} \log(2N)
 \end{equation}
 generations for the favourable allele ($A_1$)
  to transit from its entry into the population ($p_0 =1/(2N)$)
-to close to fixation ($p_{\tau} =1-1/(2N)$). \sa{Note again the difference by a factor of 2 due to the choice of parametrization. Also, the total number of alleles is $2N$ in the diploid model, rather than $N$, which explains another factor of 2 in the argument of the logarithm.}\\
+to close to fixation ($p_{\tau} =1-1/(2N)$). Note again the difference
+by a factor of 2 due to the choice of parametrization. Also, the total
+number of alleles is $2N$ in the diploid model, rather than $N$, which
+explains another factor of 2 in the argument of the logarithm. More
+generally we can use this correspondance of the trajectory additive
+diploid model to the haploid model to understand how quickly allele
+frequencies should change given a selection coefficient between
+arbitrary frequencies.\\
 
 \begin{figure}
 \begin{center}
@@ -324,7 +347,12 @@ to close to fixation ($p_{\tau} =1-1/(2N)$). \sa{Note again the difference by a 
   \label{fig:diploid_traj}
 \end{figure}
 
-\sa{{\bf Question} Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.}\\
+
+\begin{tcolorbox} 
+\begin{question}
+An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against the resistance allele.
+\end{question}
+\end{tcolorbox}
 
 \subsubsection{Heterozygote advantage}
 What if the heterozygotes are fitter than either
@@ -342,7 +370,7 @@ Here, $s_1$ and $s_2$ are the differences between the relative fitnesses
 of the two homozygotes and the heterozygote. Note that to obtain
 relative fitnesses we have divided
 absolute fitness by the heterozygote fitness. We could use the
-same parameterization as in the model of directional selection, but the reparameterization we have choisen here makes the math prettier.\\
+same parameterization as in the model of directional selection, but the reparameterization we have chosen here makes the math prettier.\\
 
 In this case, when allele $A_1$ is rare, it is often found in a
 heterozygous state and so it increases in frequency. However, when
@@ -386,7 +414,7 @@ While such alleles might not spread within populations (if $p_U \gg
 zones. That is because alleles $A_1$ and $A_2$ may have arisen in a
 stepwise fashion, i.e.\ not by a single mutation, in separate
 subpopulations. Now, heterozygote disadvantage will play a
-potential role in species maintenance, \sa{if isolation of the subpopulations is not complete}.\\
+potential role in species maintenance, if isolation of the subpopulations is not complete.\\
 
 \paragraph{Diploid fluctuating fitness}
 We would like to think about the case where the diploid absolute fitnesses
@@ -427,7 +455,7 @@ or whether there are cases in which we can obtain a balanced polymorphism. To in
 \end{equation}
 Now, for allele $A_1$ to carry on increasing in frequency and to
 approach fixation, the $A_1A_1$ genotype has to be
-out-compeeting the heterozygotes. For allele $A_1$ to approach
+out-competing the heterozygotes. For allele $A_1$ to approach
 fixation, we need the geometric mean of $w_{11,i}$ to be greater than the
 geometric mean fitness of heterozygotes ($w_{12,i}$).
 At the same time, if heterozygotes have higher geometric mean fitness than
@@ -465,7 +493,7 @@ despite the fact that the heterozygote is never the fitest genotype.
 %</source-file>
 Mutation is constantly introducing new alleles into the
 population. Therefore, variation can be maintained within a
-population \sa{not only if selection is balancing (e.g.\ through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to} a balance between
+population not only if selection is balancing (e.g.\ through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to a balance between
 mutation \sa{and selection. A case of particular interest is when mutation introduces deleterious} alleles and selection acts against these alleles. To study this balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
 \begin{center}
 \begin{tabular}{lccc}
