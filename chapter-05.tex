@@ -314,7 +314,7 @@ A special case is when $h = 0.5$. This case is the case of no dominance, as the 
 \end{equation}
 
 
-If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and \sa{we have}
+If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and we have
 \begin{equation}
 	\Delta p_t = \frac{1}{2} s p_t q_t .
 	\label{deltap_add_simpl}
@@ -353,6 +353,7 @@ arbitrary frequencies.\\
 An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against the resistance allele.
 \end{question}
 \end{tcolorbox}
+
 
 \subsubsection{Heterozygote advantage}
 What if the heterozygotes are fitter than either
@@ -415,6 +416,15 @@ zones. That is because alleles $A_1$ and $A_2$ may have arisen in a
 stepwise fashion, i.e.\ not by a single mutation, in separate
 subpopulations. Now, heterozygote disadvantage will play a
 potential role in species maintenance, if isolation of the subpopulations is not complete.\\
+
+\begin{tcolorbox} 
+\begin{question}
+You are studying the polymorphism that affects flight speed in butterflies. The polymorphism does not appear to affect fecundity.  Homozygotes for the B allele are slow in flight and so only 40\% of them survive to have offspring. Heterozygotes for the polymorphism (Bb) fly quickly and have a 70\% probability of surviving to reproduce. The homozygotes for the alternative allele (bb) fly very quickly indeed, but often die of exhaustion, with only 10\% of them making it to reproduction.  \\
+{\bf A)} What is the equilibrium frequency of the B allele?\\
+{\bf B)} Calculate the marginal fitnesses of the B and the b allele at
+the equilbrium frequency. 
+\end{question}
+\end{tcolorbox}
 
 \paragraph{Diploid fluctuating fitness}
 We would like to think about the case where the diploid absolute fitnesses
@@ -488,6 +498,24 @@ Geometric mean fitness & $w_{11,B}$ & $<w_{12,B}>$ & $w_{22}$ \\
 In this case, the polymorphism will remain balanced in the population,
 despite the fact that the heterozygote is never the fitest genotype.
 
+
+\begin{tcolorbox} 
+\begin{question}
+Imagine a randomly-mating population of hermaphrodites. In this
+population a derived allele (D) segregates that distorts transmission
+in its favour over the ancestral allele (d) in the production of all
+the gametes of heterozygotes. The drive leads to $r\%$ of the gametes
+of heterozygotes (D/d) to carry the D allele ($r>50\%$). The D allele
+causes viability problems in the homozygote state such that the
+relative fitnesses are $w_{dd}=1$, $w_{Dd}=1$, $w_{DD}=1-e$. The allele
+is currently at frequency p in the population at birth. Assuming that the
+population is very large and no mutation occurs:\\
+{\bf A)}	What is the frequency of the D allele in the next generation, before selection has had a chance to act?\\
+{\bf B)}	What conditions do you need for a polymorphic equilibrium to be maintained? At what is the equilibrium frequency of this balanced polymorphism?\\
+{\bf C)}	Imagine the cost of the driver were additive
+$w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the driver invade the population? Can a polymorphic equilibrium be maintained?
+\end{question}
+\end{tcolorbox}
 
 \subsection{Mutation--selection balance}
 %</source-file>
@@ -573,6 +601,24 @@ that, for truly recessive alleles,
 \end{equation}
 }
 
+\begin{tcolorbox} 
+\begin{question}
+You are studying an outbred population of mice living in a farmer’s field. Mutations occur at a gene called nurseryrhyme that cause a totally recessive form of blindness. These blind mice do not survive to reproduce as the farmer’s wife cuts off their tail (and other bits) with a carving knife. 
+Surveying the field for baby mice you find that 3 in ten thousand mice are blind.\\
+{\bf A} Assuming that the population mates at random, what is the mutation
+ rate of blindness causing alleles?\\
+{\bf B} Following more careful study you now find that there is actually a $20
+\%$ reduction in the viability of heterozygotes for these
+mutations. What would you now estimate as the mutation rate for this
+gene?  
+{\bf C)} Explain how and why your answers differ?
+\end{question}
+\end{tcolorbox}
+
+%B) You look at family of outbred mice. You find that one of the mice in the family is blind, what is the probability that its 1st cousin is also blind?
+
+%C) In another isolated field on the farm, there is a high rate of inbreeding among the mice. The farmer’s wife also carries out her cruel carving knife policy in this field as well. Do you expect to the underlying blindness mutations to be at a higher or low rate in this second field than the first field? Briefly explain your answer.
+
 
 \subsubsection{Inbreeding depression}
 All else being equal, eqn.\ \eqref{eqn:mut_sel_bal} suggests that mutations that have a smaller effect in the
@@ -591,7 +637,7 @@ decreases with the inbreeding coefficient, i.e.\ this so-called inbreeding depre
 is a common observation.
 
 \paragraph{Purging the inbreeding load.}
-That said, populations that regularly inbreed over sustained periods of time
+Populations that regularly inbreed over sustained periods of time
 are expected to partially purge this load of deleterious
 alleles. This is because such populations have exposed many of these alleles
 in a homozygous state, and so selection can more readily remove these alleles
@@ -641,6 +687,23 @@ so that migration is playing to role of mutation and so
 migration-selection balance (at least under strong selection) is
 analogous to mutation selection balance.\\
 
+\begin{tcolorbox} 
+\begin{question}
+You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively) neutral biallelic markers the freshwater population has frequencies:
+0.2, 0.7, 0.8
+at the same markers the marine population has frequencies:
+0.4, 0.5 and 0.7.
+ From studying patterns of heterozygosity at a large collection of markers, you have estimated the long term effective size of your freshwater population is 2000 individuals.\\
+{\bf A)}	What is $F_{ST}$ across these neutral markers in the freshwater population, with respect to the large marine population (i.e. treat the marine population as the total)?\\
+{\bf B)} You are also studying an unlinked locus involved in the
+regulation of salt uptake. In the marine population the ancestral
+allele is at close to fixation, but in your river population the
+derived allele is at 0.99 frequency. Estimate the selective
+disadvantage of the ancestral allele in your river population. [Hint
+how can you use neutral differentiation to estimate the migration rate?]
+\end{question}
+\end{tcolorbox}
+ 
 \subsubsection{Some theory of the spatial distribution of allele
 frequencies under deterministic models of selection}
 
