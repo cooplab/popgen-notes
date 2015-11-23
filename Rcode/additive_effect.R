@@ -1,29 +1,25 @@
 #library("symbols")
 
-layout(matrix(1:4,nrow=2)) #byrow=TRUE
+layout(matrix(1:4,nrow=2,byrow=TRUE))
 par(mar=c(2,2,1,1))
-a<-c(0.5,1,1.5)
-p<-0.1
-plot.lm.genos(a,p)
-p<-0.9
-plot.lm.genos(a,p)
-p<-0.1
-a<-c(0.5,1,1)
-plot.lm.genos(a,p)
-p<-0.9
-plot.lm.genos(a,p)
+a<-c(0.5,1,1.5)  ##additive
+plot.lm.genos(a=a,p=0.1)
+plot.lm.genos(a,p=0.9)
+a<-c(0.5,1,1)  ##dominant
+plot.lm.genos(a,p=0.1)
+plot.lm.genos(a,p=0.9)
 dev.copy2pdf(file="~/Dropbox/Courses/PBGG_Core/Popgen_teaching_Notes/figures/additive_effect.pdf")
 
 ####BALANCING SELECTION
 layout(t(1:3))
 par(mar=c(2,2,1,1))
+
 a<-c(0.5,1,0.75)
-p<-0.1
-plot.lm.genos(a,p)
-p<-0.5/(0.75)
-plot.lm.genos(a,p)
-p<-0.9
-plot.lm.genos(a,p)
+p.eq<-(1-a[1])/sum(1-a[c(1,3)])
+
+plot.lm.genos(a=a,p=0.1)
+plot.lm.genos(a,p=p.eq)
+plot.lm.genos(a=q,p=0.9)
 dev.copy2pdf(file="~/Dropbox/Courses/PBGG_Core/Popgen_teaching_Notes/figures/additive_effect_OverDom.pdf")
 
 
