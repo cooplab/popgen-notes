@@ -24,6 +24,7 @@ with the selected allele has $i$ children is
 P_i= \frac{(1+s)^i e^{-(1+s)}}{i!}
 \end{equation}
 
+
 Consider starting from a single individual with the selected allele, and ask
 about the probability of eventual loss of our selected allele starting
 from this single copy ($p_L$). To derive this we'll make use of a
@@ -33,16 +34,18 @@ with the allele fails to leave descendants.
 \begin{enumerate}
 \item In our first generation
 with probability $P_0$ our individual leaves no copies of itself to
-the next generation, in which case our allele is lost.
+the next generation, in which case our allele is lost (Figure \ref{fig:Proof_of_pL_2s}A).
 \item Alternatively
 it could leave one copy of itself to the next generation (with
 probability $P_1$), in which
-case with probability $p_L$ this copy eventually goes extinct.
+case with probability $p_L$ this copy eventually goes extinct (Figure \ref{fig:Proof_of_pL_2s}B).
 \item It could leave two copies of itself to the next generation (with
 probability $P_2$), in which
-case with probability $p_L^2$ both of these copies eventually goes extinct.
+case with probability $p_L^2$ both of these copies eventually goes
+extinct (Figure \ref{fig:Proof_of_pL_2s}C).
 \item More generally it could leave could leave $k$ copies ($k>0$) of itself to the next generation (with
-probability $P_k$), in which case with probability $p_L^k$  all of these copies eventually go extinct.
+probability $P_k$), in which case with probability $p_L^k$  all of
+these copies eventually go extinct (e.g. Figure \ref{fig:Proof_of_pL_2s}D).
 \end{enumerate}
 summing over this probabilities we see that
 \begin{eqnarray}
@@ -77,6 +80,13 @@ p_F = 2s.
 Thus even an allele with a $1\%$ selection coefficient has a $98\%$
 probability of being lost when it is first introduced into the
 population by mutation. \\
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s}
+\end{center}
+\caption{} \label{fig:Proof_of_pL_2s}
+\end{figure}
 
 %%consider reparameterizing 1+(1-hs)s
 We can also adapt this result to a diploid setting.
