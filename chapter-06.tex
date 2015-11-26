@@ -97,7 +97,14 @@ the population, is
 p_F = 2 (1-h)s \label{eqn:diploid_escape}
 \end{equation}
 for $h>0$.\\
+\begin{tcolorbox} 
+\begin{question}
+Melanic squirrels suffer a higher rate of predation (due to hawks) than normally pigmented squirrels. Melanism is due to a dominant, autosomal mutation. The frequency of melanic squirrels at birth is $4 \times 10^{-5}$.\\
 
+{\bf A)} If the mutation rate to new melanic alleles is $10^{-6}$, assuming the melanic allele is at mutation-selection equilibrium, what is the reduction in fitness of the heterozygote? \\ 
+{\bf B)} Suddenly levels of pollution increase dramatically in our population, and predation by hawks now offers an equal (and opposite) advantage to the dark individuals as it once offered to the normally pigmented individuals. If the population size of our squirrels is a million individuals, what is the probability that the population adapts from the standing pool of melanic alleles?  
+\end{question}
+\end{tcolorbox}
 
 \subsection{The interaction between genetic drift and weak selection.}
 For strongly selected alleles, once the allele has escaped initial
@@ -149,7 +156,12 @@ dominant genetic drift? This will happen if $\E(\Delta p) \gg Var(\Delta p)$ whe
 hope of our selected allele following its deterministic path will be quickly undone if our change in allele frequencies due to selection is
 much less than the variance induced by drift. So if $Ns \ll 1$ then
 drift will dominate the fate of our allele. \\
-
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figures/prob_fix_diffusion.pdf}
+\end{center}
+\caption{} \label{fig:prob_fix_diffusion}
+\end{figure}
 
 To make further progress on understanding the fate of alleles with
 selection coefficients of the order $1/N$ requires more careful
@@ -162,34 +174,63 @@ from a frequency $p$ is given by
 the proof of this is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele will arrive in the population at frequency $p=1/(2N)$,
 then its probability of reaching fixation is
 \begin{equation}
-\pi \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}}
+\pi \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
 \end{equation}
 if $s \ll1$ but $Ns \gg 1$ then $\pi(\frac{1}{2N}) \approx s$, which
 nicely gives
 us back our result that we obtained above
-(eqn. \eqref{eqn:diploid_escape}).\\
+(eqn. \eqref{eqn:diploid_escape}). Our probability of fixation
+(eqn. \eqref{eqn:new_mut_prob_fixed}) is plotted as a function of $s$
+and $N$ in Figure \ref{fig:prob_fix_diffusion}. \\
 
 In the case where $Ns$ close to $1$ then
 \begin{equation}
 \pi(\frac{1}{2N}) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
-this is greater than $s$, increasingly so for smaller $N$.
-Why is this? Well in small populations selected alleles spend a
-somewhat shorter time segregating (especially at low frequencies), and so are
-slightly less susceptible to genetic drift. \\
+this is greater than our result $p_F=s$ from the branching process argument, increasingly so for smaller $N$. 
+Why is this?  The reason why is that $p_F$ is really the probability
+of “never being lost” in an infinitely large population. So to persist
+indefinitely the allele has to escape loss permanently, by never being
+absorbed by the zero state. When the population size is finite, to fix we only need to reach a size 2N individuals. Weakly beneficial mutations (Ns~1) are slightly more likely to fix than the s probability, as they only have to reach 2N to never be lost.
+%Well in small populations selected alleles spend a
+%somewhat shorter time segregating (especially at low frequencies), and so are
+%slightly less susceptible to genetic drift. \\
 
 \subsubsection{The fixation of slightly deleterious alleles.}
-We can also use eqn. \eqref{eqn:escape_from_intro} to understand how
+From Figure \ref{fig:prob_fix_diffusion} we can see that weakly
+deleterious alleles can fix, especially in small populations.  To understand how
 likely it is that deleterious alleles accidently reach fixation by
-genetic drift, assuming a diploid model with additive selection (with
+genetic drift, lets assume a diploid model with additive selection (with
 a selection coefficient of $-s$ against our allele $2$).  
 If $N s \gg 1$ then our deleterious allele (allele $2$) can not possibly reach
 fixation. However, if $Ns$ is not large then
 \begin{equation}
-\pi(\frac{1}{2N}) = \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
+\pi(\frac{1}{2N}) \approx \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
 \end{equation}
 for our deleterious allele. So deleterious alleles can fix within
-populations (albeit at a low rate) if $Ns$ is not too large.\\
+populations (albeit at a low rate) if $Ns$ is not too large. As above
+this is because while deleterious mutations will never escape loss in
+infinite population, but they can become fixed in finite population by
+reach 2N copies. This is captured by the denominator of the fixation
+probability under the diffusion model, which that this increases the
+fixation prob. of alleles with |Ns|~1. The absorption of alleles at 2N
+copies can also be modeled in finite individual models (i.e. not the
+diffusion limit), but we will not go into that here. 
+
+\begin{tcolorbox} 
+\begin{question}
+\includegraphics[width=0.3\textwidth]{figures/haldanes_sieve.png}
+
+`Haldane's sieve’ is the name for the idea that the mutations that contribute to adaptation are likely to be dominant or at least co-dominant. \\
+\bf{A)} Briefly explain this argument with a verbal model relating to the
+results we’ve developed in the last two chapters. \\
+{\bf B)} Haldane’s sieve is thought to be less important for adaptation from previously deleterious standing variation, than adaptation from new mutation. Can you explain the intuition behind of this idea?\\
+{\bf C)} Haldane’s sieve is likely to be less important in inbred
+populations. Why is that? \\
+\end{question}
+\end{tcolorbox}
+
+
 
 \subsubsection{A Sketch Proof of the probability of fixation of
 weakly selected alleles} \label{Section:fixation_weakly_sel}
