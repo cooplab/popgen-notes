@@ -166,7 +166,8 @@ drift will dominate the fate of our allele. \\
 \end{center}
 \caption{The probability of the fixation of a new mutation with
   selection coefficient $s$ ($h=1/2$) in a diploid population of effective
-  size $N_e$. The dashed line gives the infinite population solutub} \label{fig:prob_fix_diffusion}
+  size $N_e$. The dashed line gives the infinite population
+  solution. The dots give the solution for $s \rightarrow 0$, i.e. $1/(2N_e)$} \label{fig:prob_fix_diffusion}
 \end{figure}
 
 To make further progress on understanding the fate of alleles with
@@ -187,11 +188,13 @@ nicely gives
 us back our result that we obtained above
 (eqn. \eqref{eqn:diploid_escape}). Our probability of fixation
 (eqn. \eqref{eqn:new_mut_prob_fixed}) is plotted as a function of $s$
-and $N$ in Figure \ref{fig:prob_fix_diffusion}. \\
+and $N$ in Figure \ref{fig:prob_fix_diffusion}. If we take the
+limit $s \rightarrow 0$ then we recover our neutral fixation
+probability $1/(2N)$. \\
 
 In the case where $Ns$ close to $1$ then
 \begin{equation}
-\pi(\frac{1}{2N}) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
+\pi \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
 this is greater than our result $p_F=s$ from the branching process
 argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. 
@@ -217,7 +220,7 @@ a selection coefficient of $-s$ against our allele $2$).
 If $N s \gg 1$ then our deleterious allele (allele $2$) can not possibly reach
 fixation. However, if $Ns$ is not large then
 \begin{equation}
-\pi(\frac{1}{2N}) \approx \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
+\pi \left( \frac{1}{2N} \right) \approx \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
 \end{equation}
 for our deleterious allele. So deleterious alleles can fix within
 populations (albeit at a low rate) if $Ns$ is not too large. As above
