@@ -48,7 +48,7 @@ $P_{t+\tau} = (W_1)^{\tau} P_t$ and $Q_{t+\tau}=  (W_2)^{\tau} Q_t$, respectivel
 	p_{t+\tau} = \frac{ (W_1)^{\tau} P_t}{ (W_1)^{\tau} P_t+(W_2)^{\tau} Q_t} = \frac{ (w_1)^{\tau} P_t}{ (w_1)^{\tau} P_t+(w_2)^{\tau} Q_t} = \frac{p_t}{p_t + (w_2/w_1)^{\tau} q_t},
 	\label{eq:haploid_tau_gen}
 \end{equation}
-where the last step includes dividing the whole term by $w_1$ and switching from absolute to relative allele frequencies.\\
+where the last step includes dividing the whole term by $(w_1)^{\tau}$ and switching from absolute to relative allele frequencies.\\
 
 Rearranging eqn.\ \eqref{eq:haploid_tau_gen} and setting $t = 0$, we can work out the time $\tau$ for the frequency of $A_1$ to change from $p_0$ to $p_{\tau}$. First, we write
 \begin{equation}
@@ -350,7 +350,7 @@ arbitrary frequencies.\\
 
 \begin{tcolorbox} 
 \begin{question}
-An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against the resistance allele.
+An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against homozygotes for the resistance allele.
 \end{question}
 \end{tcolorbox}
 
@@ -504,8 +504,8 @@ despite the fact that the heterozygote is never the fitest genotype.
 Imagine a randomly-mating population of hermaphrodites. In this
 population a derived allele (D) segregates that distorts transmission
 in its favour over the ancestral allele (d) in the production of all
-the gametes of heterozygotes. The drive leads to $r\%$ of the gametes
-of heterozygotes (D/d) to carry the D allele ($r>50\%$). The D allele
+the gametes of heterozygotes. The drive leads to a fraction $r$ of the gametes
+of heterozygotes (D/d) to carry the D allele ($r>0.5$). The D allele
 causes viability problems in the homozygote state such that the
 relative fitnesses are $w_{dd}=1$, $w_{Dd}=1$, $w_{DD}=1-e$. The allele
 is currently at frequency p in the population at birth. Assuming that the
@@ -548,7 +548,7 @@ generations. That is, if the initial frequency of $A_2$ is $q_0$, then its frequ
 We will now consider the change in frequency induced by mutation. Recalling that $\mu$ is
 the mutation rate from $A_1$ to $A_2$ per generation, the frequency of $A_2$ after mutation
 \begin{equation}
-	q^{\prime} =  \mu p_t = \mu(1 - q_t).
+	q^{\prime} =  \mu p_t + q_t = \mu(1 - q_t) + q_t.
 \end{equation}
 Assuming that $\mu \ll 1$ and that $q \ll 1$, the change in the
 frequency of allele $A_2$ due to mutation ($\Delta_M q_t$) can be approximated by
@@ -558,7 +558,7 @@ frequency of allele $A_2$ due to mutation ($\Delta_M q_t$) can be approximated b
 \end{equation}
 Hence, when $A_2$ is rare and the mutation rate is low, mutation acts to linearly increase the frequency of the deleterious allele $A_2$.\\
 
-If selection is to balance deleterious mutation, there combined effect over one generation has to be zero. Therefore, to find the mutation--selection equilibrium, we set
+If selection is to balance deleterious mutation, their combined effect over one generation has to be zero. Therefore, to find the mutation--selection equilibrium, we set
 \begin{equation}
 	\Delta_M q_t + \Delta_S q_t = 0,
 \end{equation}
@@ -628,7 +628,7 @@ low frequencies in the population, as long as they do not have a
 strong effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
 
-On consequence of this is that inbred individuals from usually outbred
+One consequence of this is that inbred individuals from usually outbred
 populations may have dramatically lower fitnesses than outbred
 individuals. This is a consequence of being homozygous at many loci for
 alleles with recessive deleterious effects. Indeed, this seems to be a common observation, dating back to systematic surveys by
@@ -668,8 +668,8 @@ As a simple model of migration lets suppose within a population a
 fraction of $m$ individuals are migrants from the other population,
 and $1-m$ individuals are from the same deme.\\
 
-To quickly sketch a solution to this well set up a situation analogous
-to our mutation-selection balance model. to do this lets assume that selection is strong compared to migration ($s \gg m$) then allele
+To quickly sketch a solution to this, we'll set up a situation analogous
+to our mutation-selection balance model. To do this let's assume that selection is strong compared to migration ($s \gg m$) then allele
 $1$ will be almost fixed in population $1$ and allele $2$ will be
 almost fixed in population $2$. If that is the case,
 migration changes the frequency of allele $2$ in population $1$ ($q_1$) by
@@ -677,13 +677,13 @@ migration changes the frequency of allele $2$ in population $1$ ($q_1$) by
 \Delta_{Mig.} q_1 \approx m
 \end{equation}
 while as noted above $\Delta_{S} q_1= -sq_1$, so that migration and
-selection are at an equilibrium when $\Delta_{S} q_1+
+selection are at an equilibrium when $0 = \Delta_{S} q_1+
 \Delta_{Mig.}q_1$, i.e. an equilibrium frequency of allele $2$ in
 population $1$ of
 \begin{equation}
 q_{e,1} = \frac{m}{s}
 \end{equation}
-so that migration is playing to role of mutation and so
+so that migration is playing the role of mutation and so
 migration-selection balance (at least under strong selection) is
 analogous to mutation selection balance.\\
 
