@@ -2,7 +2,27 @@
 \section{Allele and genotype frequencies}
 
 \subsection{Allele frequencies}
-Consider a diploid autosomal locus segregating at two alleles ($A_1$ and $A_2$). Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of diploid individuals in the population. We can then define the relative frequencies of $A_1A_1$ and $A_1A_2$ genotypes as $f_{11} = N_{11}/N$ and $f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the population is then given by
+Loci and alleles are the basic currency of population genetics--and
+indeed of genetics. A locus (the singular of loci) is a specific location on the genome,
+e.g. a particular DNA pair position in a gene. An allele is the genetic
+information (variant) contained at that position, for example an A-T
+base-pair. As DNA base pairs are complementary, it will suffice to say
+that there is an A allele at this locus. All of the individuals in a
+population (or a sample) may carry the same
+genetic information at this locus, in which case we will say that the
+locus is monomorphic. Or individuals may differ in the genetic
+information they carry at a locus, for example there may be an A
+allele and a T allele at our locus. When multiple alleles are present at a locus
+the locus is said to be polymorphic.  In our example some individuals
+will be be
+homozygote for an A
+allele and some homozygote for a T allele, and some heterozygotes
+(A/T). \\
+
+
+Consider a diploid autosomal locus segregating at two alleles ($A_1$
+and $A_2$). We'll use these arbitrary labels for our alleles, merely
+to keep this general.   Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of diploid individuals in the population. We can then define the relative frequencies of $A_1A_1$ and $A_1A_2$ genotypes as $f_{11} = N_{11}/N$ and $f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the population is then given by
 \begin{equation}
 p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. % Modified by Simon
 \end{equation}
@@ -80,7 +100,30 @@ population is expected to be homozygotes under Hardy-Weinberg?
 %figure/QT1.eps
 
 
-\subsection{Coefficient of kinship}
+\subsection{Identity by Descent \& The Coefficient of Kinship}
+All of the individuals in a population are related to each other by a giant pedigree (family
+tree). For most pairs of indivdiduals in a population these relationships are very
+distant (i.e. distant cousins). However, some individuals will be 
+more closely related, e.g. sibling/first cousins. 
+Individuals of different levels of relatedness (kinship). Related individuals
+will share alleles.  With closer relatives sharing more alleles. In
+Figure \ref{fig:IBD_cousins_chr_cartoon} we show the sharing of
+chromosomal regions between two cousins.  As we
+are interested in the genetics of populations we are interested in
+kinship, and we need some way to quantify the degree of kinship among individuals.\\ 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
+\end{center}
+\caption{First cousins sharing a stretch of chromosome identical by
+  descent. The different grandparental diploid chromosomes are coloured so we
+  can track them and recombinations between them across the
+  generations. Notice that the identity by descent between the cousins persists for a long
+stretch of chromosome due to the limited number of generations for
+recombination.} \label{fig:IBD_cousins_chr_cartoon}  
+\end{figure}
+
 We will define two alleles to be identical by descent (IBD) if they are
 identical due to a common ancestor in the past few generations. For
 the moment, we ignore mutation, 
@@ -159,18 +202,6 @@ two individuals are both homozygous for allele 1?\\
 %{\bf} What is the probability that both individuals heterozygotes? 
 \end{question}
 
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
-\end{center}
-\caption{First cousins sharing a stretch of chromosome identical by
-  descent. The different grandparental diploid chromosomes are coloured so we
-  can track them and recombinations between them across the
-  generations. Notice that the identity by descent between the cousins persists for a long
-stretch of chromosome due to the limited number of generations for
-recombination.} \label{fig:IBD_cousins_chr_cartoon}  
-\end{figure}
 
 
 \subsection{Inbreeding}

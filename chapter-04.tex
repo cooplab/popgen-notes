@@ -5,6 +5,7 @@ to understand the phenotypic resemblance between relatives in
 quantitative phenotypes. We can then use this to understand the
 evolutionary change in quantitative phenotypes in response to selection. \\
 
+\subsection{A simple additive model of a trait}
 Let's imagine that the genetic component of the variation in our trait
 is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of
 allele $1$ at this locus increasing your trait value by $a_l$ above
@@ -84,7 +85,7 @@ that is an individual's average contribution  to the next generation
 (i.e. the additive effect of the alleles that their genotype consists of).
 
 
-\subsubsection{Additive genetic variance and heritability}
+\subsection{Additive genetic variance and heritability}
 As we are talking about an additive genetic model we'll talk about the
 additive genetic variance ($V_A$), the variance due to the additive
 effects of segregating genetic variation. This is a subset of the total genetic
@@ -144,7 +145,7 @@ individuals drawn from the population. Now the obvious caveat here is
 that relatives also share an environment, so may resemble each other
 due to shared environmental effects. \\
 
-\subsubsection{The covariance between relatives}
+\subsection{The covariance between relatives}
 So we'll go ahead and calculate the covariance in phenotype between two individuals
 ($1$ and $2$) who have a phenotype $X_1$ and $X_2$ respectively.
 \begin{equation}
@@ -313,58 +314,8 @@ for shared environments between particular individuals (e.g. a shared nest).
 This is sometimes called the ``animal model'', and also goes by the
 name of variance components analysis.
 
-\paragraph{Multiple traits.}
 
-Traits often covary with each other, due to both environmentally
-induced effects (e.g. due to the effects of diet on multiple traits)
-and due to the expression of underlying genetic covariance between
-traits. In turn this genetic covariance can reflect pleiotropy, a
-mechanistic effect of an allele on multiple traits (e.g. variants that
-effect skin pigmentation often effect hair color) or the genetic
-linkage of loci independently affecting multiple traits. If we are
-interested in evolution over short time-scales we can (often) ignore
-the genetic basis of this correlation. 
-
-Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
-say the individual's leg length and nose length. As before we can write
-these as 
-\begin{eqnarray}
-X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
-X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
-\end{eqnarray}
-As before we can talk about the total phenotypic variance ($V_1,V_2$),
-environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance in trait one and two
-($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
-total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
-,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
-=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
-
-We can store these values in a matrices 
-\begin{equation}
-\bf{V}= \left( \begin{array}{cc} 
-V_{1} & V_{1,2} \\
-V_{1,2} & V_{2} \\
-\end{array} \right) \label{P_matrix}
-\end{equation}
-and
-\begin{equation}
-\bf{G}= \left( \begin{array}{cc} 
-V_{1,A} & V_{A,1,2} \\
-V_{A,1,2} & V_{2,A} \\
-\end{array} \right)  \label{G_matrix}
-\end{equation}
-we can generalize this to an abitrary number of traits.
-
-We can estimate these quantities, in a similar way to before, by
-studying the covariance in different traits between relatives: 
-
-\begin{equation}
-Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
-\end{equation}
-
-
-
-\subsubsection{The response to selection}
+\subsection{The response to selection}
 Evolution by natural selection requires:
 \begin{enumerate}
 \item Variation in a phenotype
@@ -521,6 +472,56 @@ phenotype is 0.5. (Assuming discrete generations).\\
 
 {\bf C)}	What do you have to assume to perform the calculations in B. Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
+
+\subsection{Multiple traits.}
+
+Traits often covary with each other, due to both environmentally
+induced effects (e.g. due to the effects of diet on multiple traits)
+and due to the expression of underlying genetic covariance between
+traits. In turn this genetic covariance can reflect pleiotropy, a
+mechanistic effect of an allele on multiple traits (e.g. variants that
+effect skin pigmentation often effect hair color) or the genetic
+linkage of loci independently affecting multiple traits. If we are
+interested in evolution over short time-scales we can (often) ignore
+the genetic basis of this correlation. 
+
+Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
+say the individual's leg length and nose length. As before we can write
+these as 
+\begin{eqnarray}
+X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
+X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
+\end{eqnarray}
+As before we can talk about the total phenotypic variance ($V_1,V_2$),
+environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance in trait one and two
+($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
+total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
+,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
+=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
+
+We can store these values in a matrices 
+\begin{equation}
+\bf{V}= \left( \begin{array}{cc} 
+V_{1} & V_{1,2} \\
+V_{1,2} & V_{2} \\
+\end{array} \right) \label{P_matrix}
+\end{equation}
+and
+\begin{equation}
+\bf{G}= \left( \begin{array}{cc} 
+V_{1,A} & V_{A,1,2} \\
+V_{A,1,2} & V_{2,A} \\
+\end{array} \right)  \label{G_matrix}
+\end{equation}
+we can generalize this to an abitrary number of traits.
+
+We can estimate these quantities, in a similar way to before, by
+studying the covariance in different traits between relatives: 
+
+\begin{equation}
+Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
+\end{equation}
+
 \paragraph{The response of multiple traits to selection, the
   multivariate breeder's equation.}
 We can generalize these results for multiple traits, to ask how selection on
