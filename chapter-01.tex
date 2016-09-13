@@ -100,7 +100,7 @@ population is expected to be homozygotes under Hardy-Weinberg?
 %figure/QT1.eps
 
 
-\subsection{Identity by Descent \& The Coefficient of Kinship}
+\subsection{Allele sharing among related individuals and Identity by Descent}
 All of the individuals in a population are related to each other by a giant pedigree (family
 tree). For most pairs of indivdiduals in a population these relationships are very
 distant (i.e. distant cousins). However, some individuals will be 
@@ -110,7 +110,7 @@ will share alleles.  With closer relatives sharing more alleles. In
 Figure \ref{fig:IBD_cousins_chr_cartoon} we show the sharing of
 chromosomal regions between two cousins.  As we
 are interested in the genetics of populations we are interested in
-kinship, and we need some way to quantify the degree of kinship among individuals.\\ 
+kinship, and so we need some way to quantify the degree of kinship among individuals.\\ 
 
 \begin{figure}
 \begin{center}
@@ -137,7 +137,9 @@ demonstrating some configurations of IBD. \\
 A key quantity is the probability that our pair of individuals share
 0, 1, or 2 alleles identical by descent (see Figure \ref{fig:IBD_0_1_2}). We denote these probabilities
 by $r_0$, $r_1$, and $r_2$ respectively. See Table \ref{table:IBDprobs} for
-some examples. \\
+some examples. We can also interpret these probabilities as
+genome-wide averages. For example, on average, full-sibs share zero alleles for a
+quarter of all of their autosomal loci.\\
 
 \begin{figure}
 \begin{center}
@@ -217,10 +219,9 @@ through the pedigree.  This increased likelihood of being homozygous
 relative to an outbred individual is the most obvious effect of
 inbreeding. It is also the one that will be of most interest to us, as it
 underlies a lot of our ideas about inbreeding depression and
-population structure.  In figure \ref{fig:IBD_cousins_cartoon} our
+population structure. For example, in figure \ref{fig:IBD_cousins_cartoon} our
 offspring of first cousins is homozygous by descent having received
 the same IBD allele via two different routes around an inbreeding loop.\\
-
 
 As the offspring receives a random allele from each parent ($i$ and $j$), the
 probability that those two alleles are identical by descent is equal to the
@@ -283,7 +284,7 @@ and the heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 \hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
 \label{eqn:FhatHO}
 \end{equation}
-Hence, $F$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
+Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
 If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
 
@@ -363,7 +364,9 @@ heterozygosity from the total population to that in the subpopulation.\\
 \begin{center}
 \includegraphics[width= 0.5 \textwidth]{figures/FST_pig.png}
 \end{center}
-\caption{A diagram showing the hierarchical nature of F statistics. We
+\caption{A diagram showing the hierarchical nature of F
+  statistics. The two solid dots within an individual show the two
+  alleles at a locus for an individual $I$. We
   can compare the heterozygosity on individuals ($H_i$), to that found
 by randomly drawing alleles from the sub-population ($H_S=2p_Sq_S$),
 to that found in the total population ($H_T=2p_Tq_T$). } \label{fig:FST_pig}  
@@ -379,6 +382,7 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = 1/K \sum_{i = 1}^{K} H_{S}^{(i)}$, and $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation $i$.
 Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and $H_T$ with their averages across loci (as above). \\
 
+\paragraph{Interpretations of F-statistics.}
 Let us now return to Wright's definition of the $F$-statistics as correlations between random gametes, drawn from the same level $X$,
 relative to level $Y$. Without loss of generality, we may think about $X$ as
 individuals and $S$ as the subpopulation.
