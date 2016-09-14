@@ -92,12 +92,24 @@ Assuming again that $s \ll 1$, this simplifies to
 \end{equation}
 
 
-One particular case of interest is the time it takes to go from an absolute frequency of 1 to near fixation in a population of size $N$. In this case, we have $p_0 = 1/N$, and we may set $p_{\tau} = 1 - 1/N$, which is very close to fixation. Of course, we then have $q_0 = 1 - 1/N$ and $q_{\tau} = 1/N$. If $N$ is sufficiently large, we may for mathematical convenience approximate $q_0$ by $q_0 = 1$. Plugging these values into eqn.\ \eqref{eq:estTauExplSimpl}, we obtain
-\begin{equation}
-	\label{eq:fixTimeSimpl}
-	\tau \approx \frac{1}{s} \log\left( \frac{1 - 1/N}{(1 - 1/N)\ 1/N}  \right) = \frac{1}{s} \log(N)
-\end{equation}
-as an approximation for the time to fixation.
+One particular case of interest is the time it takes to go from an absolute
+frequency of 1 to near fixation in a population of size $N$.  In this case, we
+have $p_0 = 1/N$, and we may set $p_{\tau} = 1 - 1/N$, which is very close to
+fixation. Then, plugging these values into eqn.\ \eqref{eq:estTauExplSimpl}, we
+obtain
+
+\begin{align*}
+  %% TODO: should add unsimplified expression first.
+  tau &= \frac{1}{s} \log\left( \frac{1 - \nicefrac{2}{N} + \nicefrac{1}{N^2}}{\nicefrac{1}{N^2}} \right) \\
+  % &= \frac{1}{s} \log\left( N^2 - 2N + 1 \right) \\
+  % &\approx \frac{1}{s} (\log(N) + \log(N-2)) \\
+  &\approx \frac{1}{s} (\log(N) + \log(N-2)) \\
+  &\approx \frac{2}{s} \log(N) \\
+  \label{eq:fixTimeSimpl}
+\end{align*}
+%
+where we make the approximations $N^2 - 2N + 1 \approx N^2 - 2N$ and later
+$N-2 \approx N$.
 
 
 \paragraph{Haploid model with fluctuating selection}

@@ -2,6 +2,7 @@
 \section{Allele and genotype frequencies}
 
 \subsection{Allele frequencies}
+
 Loci and alleles are the basic currency of population genetics--and
 indeed of genetics. A locus (the singular of loci) is a specific location on the genome,
 e.g. a particular DNA pair position in a gene. An allele is the genetic
@@ -20,18 +21,59 @@ allele and some homozygote for a T allele, and some heterozygotes
 (A/T). \\
 
 
-Consider a diploid autosomal locus segregating at two alleles ($A_1$
-and $A_2$). We'll use these arbitrary labels for our alleles, merely
-to keep this general.   Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of diploid individuals in the population. We can then define the relative frequencies of $A_1A_1$ and $A_1A_2$ genotypes as $f_{11} = N_{11}/N$ and $f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the population is then given by
+% TODO: My version, feel free to chop and incorporate Evolution is the process
+% by which the genetic composition of a population changes across generations.
+% Multiple forces alter the genetic composition of a population, such as
+% mutation, recombination, selection, migration, and genetic drift. Population
+% genetics is the study of how these forces combine to alter a population's
+% genetic composition. In these notes, we summarize the major areas of
+% population genetic theory that describe how these forces interact to change
+% the genetic composition of a population.
+
+% The genetic composition of a population is composed of the particular genetic
+% variants the population's individuals' contain. Each individual's genetic
+% makeup is defined in their \emph{genome}. A \emph{locus} (plural: \emph{loci})
+% is a specific spot in the genome. A locus may be an entire gene, or a single
+% nucleotide base pair such as A-T. At each locus, there may be multiple genetic
+% variants segregating in the population---these different genetic variants are
+% known as \emph{alleles}. For example, at a particular nucleotide site in the
+% genome, a population may segregate for A-T and G-C base pairs (note that due to
+% the complementary nature of DNA, it will suffice to say the site segregates for
+% A and G variants). If all individuals in the population carry the same allele,
+% we say that the locus is \emph{monomorphic}; at this locus there is no genetic
+% variability in the population. If there are multiple alleles in the population
+% at a locus, we say that this locus is \emph{polymorphic}.
+
+Consider a diploid autosomal locus segregating at two alleles ($A_1$ and
+$A_2$). We'll use these arbitrary labels for our alleles, merely to keep this
+general. Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and
+$A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of
+diploid individuals in the population. We can then define the relative
+frequencies of $A_1A_1$ and $A_1A_2$ genotypes as $f_{11} = N_{11}/N$ and
+$f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the
+population is then given by
+
 \begin{equation}
-p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. % Modified by Simon
+  p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. 
 \end{equation}
-Note that this holds independently of Hardy--Weinberg proportions and equilibrium [see below]. The frequency of the alternate allele ($A_2$) is then just $q=1-p$.
+
+Note that this follows directly from how we count alleles given individuals'
+genotypes, and holds independently of Hardy--Weinberg proportions and
+equilibrium (discussed below). The frequency of the alternate allele ($A_2$) is
+then just $q=1-p$.
 
 \subsection{Hardy--Weinberg proportions}
 
-Imagine a population mating at random with respect to genotypes, i.e.\
-no inbreeding, no population structure, no sex differences in allele frequencies. The frequency of allele $A_1$ in the population at the time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into our population and independently drawing two $A_1$ allele gametes to form a zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote is $p^2$. This probability is also the expected frequency of the $A_1A_1$ homozygote in the population. The expected frequency of the three possible genotypes is
+Imagine a population mating at random with respect to genotypes, i.e. no
+inbreeding, no assortative mating, no population structure, no sex differences
+in allele frequencies. The frequency of allele $A_1$ in the population at the
+time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into
+our population and independently drawing two $A_1$ allele gametes to form a
+zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote
+is $p^2$. This probability is also the expected frequency of the $A_1A_1$
+homozygote in the population. The expected frequency of the three possible
+genotypes is
+
 %\begin{table}[htp!]
 \begin{center}
 \begin{tabular}{|ccc|}
@@ -101,16 +143,22 @@ population is expected to be homozygotes under Hardy-Weinberg?
 
 
 \subsection{Allele sharing among related individuals and Identity by Descent}
-All of the individuals in a population are related to each other by a giant pedigree (family
-tree). For most pairs of indivdiduals in a population these relationships are very
-distant (i.e. distant cousins). However, some individuals will be 
-more closely related, e.g. sibling/first cousins. 
-Individuals of different levels of relatedness (kinship). Related individuals
-will share alleles.  With closer relatives sharing more alleles. In
-Figure \ref{fig:IBD_cousins_chr_cartoon} we show the sharing of
-chromosomal regions between two cousins.  As we
-are interested in the genetics of populations we are interested in
-kinship, and so we need some way to quantify the degree of kinship among individuals.\\ 
+
+% TODO: VB added some stuff here
+All of the individuals in a population are related to each other by a giant
+pedigree (family tree). For most pairs of individuals in a population these
+relationships are very distant (i.e. distant cousins), while some individuals
+will be more closely related (i.e. sibling/first cousins). All individuals of
+are related to one another by varying levels of relatedness, or \emph{kinship}.
+Related individuals can share alleles that have both descended from the shared
+common ancestor. To be shared, these alleles must be inherited through all
+meioses connecting the two individuals (e.g. surviving the $\nicefrac{1}{2}$
+probability of segregation each meiosis). As fewer closer relatives are
+separated by fewer meioses, closer relatives share more alleles. In Figure
+\ref{fig:IBD_cousins_chr_cartoon} we show the sharing of chromosomal regions
+between two cousins. As we are interested in the genetics of populations we are
+interested in kinship, and so we need some way to quantify the degree of
+kinship among individuals.\\ 
 
 \begin{figure}
 \begin{center}
@@ -125,13 +173,13 @@ recombination.} \label{fig:IBD_cousins_chr_cartoon}
 \end{figure}
 
 We will define two alleles to be identical by descent (IBD) if they are
-identical due to a common ancestor in the past few generations. For
-the moment, we ignore mutation, 
-and we will be more precise about what we mean by `past few generations' later on. For example, parent and child share exactly
-one allele identical by descent at a locus, assuming that the two
-parents of the child are randomly mated individuals from the
-population. In figure \ref{fig:IBD_cousins_cartoon} I show a pedigree
-demonstrating some configurations of IBD. \\
+identical due to a common ancestor in the past few generations. For the moment,
+we ignore mutation, and we will be more precise about what we mean by `past few
+generations' later on. For example, parent and child share exactly one allele
+identical by descent at a locus, assuming that the two parents of the child are
+randomly mated individuals from the population. In Figure
+\ref{fig:IBD_cousins_cartoon} I show a pedigree demonstrating some
+configurations of IBD. \\
 
 
 A key quantity is the probability that our pair of individuals share
