@@ -1,3 +1,5 @@
+% TODO: standardized equation notation. Is it eqn, Eqn, Eq? (all three are used).
+
 \section*{Introduction}
 
 Evolution is change over time. Biological evolution is change over time in the
@@ -167,13 +169,13 @@ population is expected to be homozygotes under Hardy-Weinberg?
 \begin{center}
 \includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
 \end{center}
-\caption{Demonstrating Hardy-Weinberg proportions using 10,000 SNPs
+\caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
   from the HapMap CEU European and YRI African populations. Within
   each of these populations I plot the allele frequency against the
   frequency of the 3 genotypes. Each SNP is represented by 3 different
   coloured points. The solid lines show the mean genotype frequency
   (calculated using a loess smoothing). The dashed line shows the
-  predicted genotype frequency from Hardy Weinberg equilibrium. I find
+  predicted genotype frequency from Hardy--Weinberg equilibrium. I find
   it really pretty that the analytical predictions work as well as
   they do. See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
 \end{figure}
@@ -201,12 +203,16 @@ are related to one another by varying levels of relatedness, or \emph{kinship}.
 Related individuals can share alleles that have both descended from the shared
 common ancestor. To be shared, these alleles must be inherited through all
 meioses connecting the two individuals (e.g. surviving the $\nicefrac{1}{2}$
-probability of segregation each meiosis). As fewer closer relatives are
-separated by fewer meioses, closer relatives share more alleles. In Figure
+probability of segregation each meiosis). As closer relatives are separated by
+fewer meioses, closer relatives share more alleles. In Figure
 \ref{fig:IBD_cousins_chr_cartoon} we show the sharing of chromosomal regions
-between two cousins. As we are interested in the genetics of populations we are
-interested in kinship, and so we need some way to quantify the degree of
-kinship among individuals.\\ 
+between two cousins. As we'll see, many population and quantitative genetic
+concepts rely on how closely related individuals are, and thus we need some way
+to quantify the degree of kinship among individuals. \\
+
+% % As we are interested in the genetics of populations we are
+% interested in kinship, and so we need some way to quantify the degree of
+% kinship among individuals.\\ 
 
 \begin{figure}
 \begin{center}
@@ -226,16 +232,16 @@ we ignore mutation, and we will be more precise about what we mean by `past few
 generations' later on. For example, parent and child share exactly one allele
 identical by descent at a locus, assuming that the two parents of the child are
 randomly mated individuals from the population. In Figure
-\ref{fig:IBD_cousins_cartoon} I show a pedigree demonstrating some
+\ref{fig:IBD_cousins_cartoon}, I show a pedigree demonstrating some
 configurations of IBD. \\
 
 
-A key quantity is the probability that our pair of individuals share
-0, 1, or 2 alleles identical by descent (see Figure \ref{fig:IBD_0_1_2}). We denote these probabilities
-by $r_0$, $r_1$, and $r_2$ respectively. See Table \ref{table:IBDprobs} for
-some examples. We can also interpret these probabilities as
-genome-wide averages. For example, on average, full-sibs share zero alleles for a
-quarter of all of their autosomal loci.\\
+One summary of how related two individuals are is the probability that our pair
+of individuals share 0, 1, or 2 alleles identical by descent (see Figure
+\ref{fig:IBD_0_1_2}). We denote these probabilities by $r_0$, $r_1$, and $r_2$
+respectively. See Table \ref{table:IBDprobs} for some examples. We can also
+interpret these probabilities as genome-wide averages. For example, on average,
+full-sibs share zero alleles for a quarter of all of their autosomal loci.\\
 
 \begin{figure}
 \begin{center}
@@ -257,36 +263,61 @@ quarter of all of their autosomal loci.\\
 \end{figure}
 
 
-One summary of relatedness that will be important is the probability that two alleles picked at random, one from each of the two different individuals $i$ and $j$, are identical by descent. We call this quantity the coefficient of kinship of individuals $i$ and $j$, and denote it by $F_{ij}$. It is calculated as
+One summary of relatedness that will be important is the probability that two
+alleles picked at random, one from each of the two different individuals $i$
+and $j$, are identical by descent. We call this quantity the \emph{coefficient
+of kinship} of individuals $i$ and $j$, and denote it by $F_{ij}$. It is
+calculated as
+
 \begin{equation}
 F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2. 
 \label{eqn:coeffkinship}
 \end{equation}
-
+%
 The coefficient of kinship will appear multiple times, in both our discussion of
 inbreeding and in the context of phenotypic resemblance between relatives.\\
 
+% \begin{table}
+% \begin{center}
+% \begin{tabular}{| l | c c c c|}
+% \hline
+% Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
+% \hline
+% parent--child & 0 & 1 & 0 & 1/4\\
+% full siblings & 1/4 & 1/2 & 1/4 & 1/4\\
+% identical (monzygotic) twins  & 0 & 0 & 1  & 1/2 \\
+% $1^{st}$ cousins & 3/4 & 1/4 & 0 & 1/16\\
+% \hline
+% \end{tabular}
+% \end{center}
+% \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
+% identical by descent on the autosomes. $^{*}$ assuming this is the only relationship
+% the pair of individuals share (above that expected from randomly
+% sampling individuals from the population). } \label{table:IBDprobs}
+% \end{table}
+%% TODO: nicefrac'd this version, original above
 \begin{table}
 \begin{center}
 \begin{tabular}{| l | c c c c|}
 \hline
 Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
 \hline
-parent--child & 0 & 1 & 0 & 1/4\\
-full siblings & 1/4 & 1/2 & 1/4 & 1/4\\
-identical (monzygotic) twins  & 0 & 0 & 1  & 1/2 \\
-$1^{st}$ cousins & 3/4 & 1/4 & 0 & 1/16\\
+parent--child & 0 & 1 & 0 & \nicefrac{1}{4}\\
+full siblings & \nicefrac{1}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & \nicefrac{1}{4}\\
+identical (monzygotic) twins  & 0 & 0 & 1  & \nicefrac{1}{2} \\
+$1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \hline
 \end{tabular}
 \end{center}
 \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
-identical by descent on the autosomes. $^{*}$ assuming this is the only relationship
+identical by descent on the autosomes. $^{*}$Assuming this is the only relationship
 the pair of individuals share (above that expected from randomly
-sampling individuals from the population). } \label{table:IBDprobs}
+sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
+\label{table:IBDprobs}
 \end{table}
 
 \begin{question}
-What are $r_0$, $r_1$, and $r_2$ for 1/2 sibs? (1/2 sibs share one
+  What are $r_0$, $r_1$, and $r_2$ for $\nicefrac{1}{2}$ sibs? ($\nicefrac{1}{2}$ sibs share one
 parent but not the other).
 \end{question}
 
@@ -299,8 +330,6 @@ What is the overall probability that these
 two individuals are both homozygous for allele 1?\\
 %{\bf} What is the probability that both individuals heterozygotes? 
 \end{question}
-
-
 
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
@@ -315,7 +344,7 @@ through the pedigree.  This increased likelihood of being homozygous
 relative to an outbred individual is the most obvious effect of
 inbreeding. It is also the one that will be of most interest to us, as it
 underlies a lot of our ideas about inbreeding depression and
-population structure. For example, in figure \ref{fig:IBD_cousins_cartoon} our
+population structure. For example, in Figure \ref{fig:IBD_cousins_cartoon} our
 offspring of first cousins is homozygous by descent having received
 the same IBD allele via two different routes around an inbreeding loop.\\
 
@@ -323,23 +352,28 @@ As the offspring receives a random allele from each parent ($i$ and $j$), the
 probability that those two alleles are identical by descent is equal to the
 kinship coefficient $F_{ij}$ of the two parents (Eqn.\ \ref{eqn:coeffkinship}). This follows from the fact that
 the genotype of the offspring is made by sampling an allele at random from each
-of our parents. We will use IBD for identical by descent. \\
+of our parents. % We will use IBD for identical by descent. \\ %% this was already defined above.
 
-The only way the offspring can be heterozygous ($A_1 A_2$) is if their two alleles at a
-locus are not IBD (otherwise they would necessarily be homozygous). Therefore, the probability that they are
-heterozygous is
+The only way the offspring can be heterozygous ($A_1 A_2$) is if their two
+alleles at a locus are not IBD (otherwise they would necessarily be
+homozygous). Therefore, the probability that they are heterozygous is
+
 \begin{equation}
 (1-F) 2p q,
 \label{eq:hetGenHW}
 \end{equation}
-where we have dropped the indices $i$ and $j$ for simplicity.
-The offspring can be homozygous for the $A_1$ allele in two different ways. 
-They can have two non-IBD alleles that are not IBD but happen to be of the allelic type $A_1$,
-or their two alleles can be IBD, such that they inherited allele $A_1$ by
-two different routes from the same ancestor. Thus, the probability that an offspring is homozygous is
+%
+where we have dropped the indices $i$ and $j$ for simplicity.  The offspring
+can be homozygous for the $A_1$ allele in two different ways.  They can have
+two non-IBD alleles that are not IBD but happen to be of the allelic type
+$A_1$, or their two alleles can be IBD, such that they inherited allele $A_1$
+by two different routes from the same ancestor. Thus, the probability that an
+offspring is homozygous for $A_1$ is
+
 \begin{equation}
 (1-F) p^2 + F p.
 \end{equation}
+%
 Therefore, the frequencies of the three possible genotypes can be written as given in
 Table \ref{table:GeneralizedHWE}, which provides a generalization of the Hardy--Weinberg
 proportions.\\
@@ -364,18 +398,29 @@ Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
 
 \begin{question}
-The frequency of the $A_1$ allele is p the frequency of the $A_2$ allele is q. Assume that our population is randomly mating and that the genotype frequencies in the population follow from HW. We select two individuals at random to mate from this population. We then mate the children from this cross. What is the probability that the child from this sib-mating is homozygous? 
+The frequency of the $A_1$ allele is $p$, and  the frequency of the $A_2$
+allele is $q$. Assume that our population is randomly mating and that the
+genotype frequencies in the population follow from HW. We select two
+individuals at random to mate from this population. We then mate the children
+from this cross. What is the probability that the child from this sib-mating is
+homozygous? 
 \end{question}
 
 \subsection{Calculating inbreeding coefficients from data}
-If the observed heterozygosity in a population is $H_O$, and we assume that the generalized Hardy--Weinberg proportions hold, we can set $H_O$ equal to $f_{12}$, and solve Eq.\ \eqref{eq:hetGenHW} for $F$ to obtain an estimate of the inbreeding coefficient as
+
+If the observed heterozygosity in a population is $H_O$, and we assume that the
+generalized Hardy--Weinberg proportions hold, we can set $H_O$ equal to
+$f_{12}$, and solve Eq.\ \eqref{eq:hetGenHW} for $F$ to obtain an estimate of
+the inbreeding coefficient as
+
 \begin{equation}
 \hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq}.
 \label{eqn:Fhat}
 \end{equation}
-As before, $p$ is the frequency of allele $A_{1}$ in the
-population. This can be rewritten in terms of the observed heterozygosity ($H_O$)
-and the heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
+%
+As before, $p$ is the frequency of allele $A_{1}$ in the population. This can
+be rewritten in terms of the observed heterozygosity ($H_O$) and the
+heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 \begin{equation}
 \hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
 \label{eqn:FhatHO}
@@ -386,7 +431,7 @@ over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, w
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 \begin{question} 
-Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele): 
+  Suppose the following genotype frequencies were observed for at an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
 \begin{center}
 \begin{tabular}{|ccc|}
 AA &	AB &	BB\\
@@ -414,16 +459,19 @@ be close to zero, but would likely be larger if we used world-wide
 frequencies. This is because there is a somewhat lower level of
 expected heterozygosity within the UK than in the human population across the world as a whole.\\
 
-Wright (1943, 1951) developed a set of `F-statistics' (also called `fixation indices') that formalize the idea
-of inbreeding with respect to different levels of population
-structure. See figure \ref{fig:FST_pig} for a schematic diagram. He defined $F_{\mathrm{XY}}$ as
-the correlation between random gametes, drawn from the same level $X$,
-relative to level $Y$. We will return to why $F$-statistics are statements
-about correlations between alleles in just a moment. One commonly uses $\fis$ for the inbreeding
-coefficient between an individual ($I$) and the subpopulation
-($S$). Consider a single locus, where in a subpopulation ($S$) a fraction $H_I=f_{12}$ of individuals
-are heterozygous. In this subpopulation, let the frequency of
-allele $A_1$ be $p_S$, such that the expected heterozygosity under random mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
+Wright (1943, 1951) developed a set of `F-statistics' (also called `fixation
+indices') that formalize the idea of inbreeding with respect to different
+levels of population structure. See Figure \ref{fig:FST_pig} for a schematic
+diagram. Wright defined $F_{\mathrm{XY}}$ as the correlation between random
+gametes, drawn from the same level $X$, relative to level $Y$. We will return
+to why $F$-statistics are statements about correlations between alleles in just
+a moment. One commonly used $F$-statistic is $\fis$, which is the inbreeding
+coefficient between an individual ($I$) and the subpopulation ($S$). Consider a
+single locus, where in a subpopulation ($S$) a fraction $H_I=f_{12}$ of
+individuals are heterozygous.  In this subpopulation, let the frequency of
+allele $A_1$ be $p_S$, such that the expected heterozygosity under random
+mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
+
 \begin{equation}
 \fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
 \label{eqn:FIS}
@@ -460,10 +508,9 @@ heterozygosity from the total population to that in the subpopulation.\\
 \begin{center}
 \includegraphics[width= 0.5 \textwidth]{figures/FST_pig.png}
 \end{center}
-\caption{A diagram showing the hierarchical nature of F
-  statistics. The two solid dots within an individual show the two
+\caption{A diagram showing the hierarchical nature of F-statistics. The two solid dots within an individual show the two
   alleles at a locus for an individual $I$. We
-  can compare the heterozygosity on individuals ($H_i$), to that found
+  can compare the heterozygosity on individuals ($H_I$), to that found
 by randomly drawing alleles from the sub-population ($H_S=2p_Sq_S$),
 to that found in the total population ($H_T=2p_Tq_T$). } \label{fig:FST_pig}  
 \end{figure}
@@ -475,30 +522,36 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 \begin{equation}
 	\fst = 1 - \frac{\bar{H}_{S}}{H_T},
 \end{equation}
-where $\bar{H}_S = 1/K \sum_{i = 1}^{K} H_{S}^{(i)}$, and $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation $i$.
-Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and $H_T$ with their averages across loci (as above). \\
+where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
+$H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
+$i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
+$H_T$ with their averages across loci (as above). \\
 
-\paragraph{Interpretations of F-statistics.}
-Let us now return to Wright's definition of the $F$-statistics as correlations between random gametes, drawn from the same level $X$,
-relative to level $Y$. Without loss of generality, we may think about $X$ as
-individuals and $S$ as the subpopulation.
-Rewriting $\fis$ in terms of the observed homozygote frequencies ($f_{11}$, $f_{22}$) and expected homozygosities ($p_{S}^2$, $q_{S}^2$) we find
+\paragraph{Interpretations of F-statistics}
+
+Let us now return to Wright's definition of the $F$-statistics as correlations
+between random gametes, drawn from the same level $X$, relative to level $Y$.
+Without loss of generality, we may think about $X$ as individuals and $S$ as
+the subpopulation.  Rewriting $\fis$ in terms of the observed homozygote
+frequencies ($f_{11}$, $f_{22}$) and expected homozygosities ($p_{S}^2$,
+$q_{S}^2$) we find
 \begin{equation}
 \fis = \frac{2p_Sq_S - f_{12}}{2p_Sq_S} = \frac{f_{11}+f_{22} -
 p_S^2 - q_S^2}{2p_Sq_S},
 \label{eqn:Fascorr}
 \end{equation}
-using the fact that $p^2+2pq+q^2=1$, and $f_{12} = 1 - f_{11} - f_{12}$. The form of eqn.\ (\ref{eqn:Fascorr}) reveals that $\fis$ is the covariance between pairs of alleles
-found in an individual, divided by the
-expected variance under binomial sampling. Thus, $F$-statistics can be
-understood as the correlation between alleles drawn from a population
-(or an individual) above that expected by chance (i.e.\ drawing alleles
-sampled at random from some broader population).\\
+using the fact that $p^2+2pq+q^2=1$, and $f_{12} = 1 - f_{11} - f_{12}$. The
+form of eqn.\ (\ref{eqn:Fascorr}) reveals that $\fis$ is the covariance between
+pairs of alleles found in an individual, divided by the expected variance under
+binomial sampling. Thus, $F$-statistics can be understood as the correlation
+between alleles drawn from a population (or an individual) above that expected
+by chance (i.e.\ drawing alleles sampled at random from some broader
+population).\\
 
 We can also interpret $F$-statistics as proportions of variance explained by
 different levels of population structure. To see this, let us think about $\fst$ averaged over $K$
 subpopulations, whose frequencies are $p_1,\dots,p_K$. The
-frequency in the total population is $p_T=\bar{p} = 1/K \sum_{i=1}^K p_i$.
+frequency in the total population is $p_T=\bar{p} = \nicefrac{1}{K} \sum_{i=1}^K p_i$.
 Then, we can
 write
 \begin{equation}
@@ -512,10 +565,11 @@ which shows that $\fst$ is the proportion of the variance explained by the
 subpopulation labels.
 
 \subsection{Other approaches to population structure}
-There is a broad spectrum of methods to describe patterns of
-population structure in populaion genetic datasets. We'll briefly
-discuss two broad-classes of methods, assigment methods and principal
-components analysis,that appear often in the literature.
+
+There is a broad spectrum of methods to describe patterns of population
+structure in population genetic datasets. We'll briefly discuss two
+broad-classes of methods that appear often in the literature: assignment
+methods and principal components analysis.
 
 \subsubsection{Assignment Methods}
 
@@ -536,15 +590,18 @@ clustering algorithms such as STRUCTURE and ADMIXTURE do (Pritchard et al. Genet
 
 \paragraph{A simple assignment method}
 
-We have genotype data from unlinked S bi-allelic loci for $K$ populations. The allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
+We have genotype data from unlinked $S$ biallelic loci for $K$ populations. The
+allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by
+$p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
+p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
 
 You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$ (i.e. their alleles being a random HW draw from population $k$) is 
 \begin{equation}
-P(g_l | \textrm{pop k}) = I(g_l=0) (1-p_{k,l})^2 +  I(g_l=1) 2 p_{k,l} (1-p_{k,l}) + I(g_l=2) p_{k,l}^2
+  P(g_l | \textrm{pop k}) = \mathbb{I}(g_l=0) (1-p_{k,l})^2 +  \mathbb{I}(g_l=1) 2 p_{k,l} (1-p_{k,l}) + \mathbb{I}(g_l=2) p_{k,l}^2
 \end{equation}
-where $I(g_l=0)$ is an indicator function which is $1$ if $g_l=0$ and
+where $\mathbb{I}(g_l=0)$ is an indicator function which is $1$ if $g_l=0$ and
 zero otherwise, and likewise for the other indicator functions. This
 follows simply from HWE.
 
@@ -553,7 +610,11 @@ Assuming that the loci are independent, the probability of individual's genotype
 P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}
 \end{equation}
 
-We wish to know the probability that this new individual comes from population $k$, i.e. $P(\textrm{pop k} | \textrm{new ind.})$. We can obtain this through Bayes rule 
+% TODO: deleted "new" in bayes -- this is confusing I think for students
+We wish to know the probability that this new individual comes from population
+$k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes
+rule 
+
 \begin{equation}
  P(\textrm{pop k} | \textrm{ind.})  = \frac{P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})}{P(\textrm{ind.})}
 \end{equation}
@@ -563,9 +624,9 @@ P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop
 \end{equation}
 is the normalizing constant. We interpret $P(\textrm{pop k})$ as the
 prior probability of the individual coming from population $k$, unless
-we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=1/K$.  
+we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.  
 
-We intepret 
+We interpret 
 \begin{equation}
  P(\textrm{pop k} | \textrm{ind.})
 \end{equation}
@@ -577,10 +638,12 @@ from population $k$ and estimate the set of $q_k$'s.
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question}  
 \begin{question} 
-Returning to our chimp example, imagine that we have genotyped a set
-of individuals from the Western and Eastern populations at
-two SNPs (we'll ignore the central population to keep things simpler).  The frequency of capital allele
-at two SNPs ($A/a$ and $B/b$)  is given by
+
+Returning to our chimp example, imagine that we have genotyped a set of
+individuals from the Western and Eastern populations at two SNPs (we'll ignore
+the central population to keep things simpler).  The frequency of the capital
+allele at two SNPs ($A/a$ and $B/b$) is given by
+
 \begin{center}
 \begin{tabular}{|ccc|}
 \hline
@@ -592,45 +655,44 @@ Eastern  & $0.95$ & $0.2$ \\
 \hline
 \end{tabular}
 \end{center}
-{\bf A)} Our individual, whose origin is unknown, has the genotype $AA$ at the first locus
-and $bb$ at the second. What
-is the posterior probability that our indvidual comes from the Western
-population vs
-Eastern chimp population?\\
-
-{\bf B)}
-Lets assume that with probability $q_W$ our individual draws an allele
-from the Western population and that with probability $q_C=1-q_W$ they draw an allele from
-the Eastern population. What is the probability of our individual's genotype
-given $q_C$? \\
+%
+{\bf A)} Our individual, whose origin is unknown, has the genotype $AA$ at the
+first locus and $bb$ at the second. What is the posterior probability that our
+individual comes from the Western population versus Eastern chimp population?\\[1 em]
+%
+{\bf B)} Lets assume that with probability $q_W$ our individual draws an allele
+from the Western population and that with probability $q_C=1-q_W$ they draw an
+allele from the Eastern population. What is the probability of our individual's
+genotype given $q_C$? \\
 
 {\bf Optional} You could plot this probability as a function of $q_W$. How does 
 your plot change if our individual is heterozygote at both loci?
 \end{question} 
 
 \paragraph{Clustering based on assignment methods}
+
 While it is great to be able to assign our individuals to particular
-population, these ideas can be pushed to learn about how best to
-describe our genotype data in terms of discrete populations without
-assigning any of our individuals to populations {\it a priori}. 
-We wish to cluster our individuals into $K$ unknown populations. We begin by assigning our individuals at random to these $K$ populations. 
-\begin{itemize}
+population, these ideas can be pushed to learn about how best to describe our
+genotype data in terms of discrete populations without assigning any of our
+individuals to populations {\it a priori}.  We wish to cluster our individuals
+into $K$ unknown populations. We begin by assigning our individuals at random
+to these $K$ populations. 
+\begin{enumerate}
 \item Given these assignments we estimate the allele frequencies at all of our loci in each population. 
 \item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
-\end{itemize}
+\end{enumerate}
 We iterate steps 1 and 2 for many iterations. If the data is
 sufficiently informative the assignments and allele frequencies will
-quickly converge on a set of likely population assigments and allele
+quickly converge on a set of likely population assignments and allele
 frequencies for these populations. 
 
-To do this in a full bayesian scheme we need to place priors on the
-allele frequencies (e.g. a beta distribution).Technically we are using
-this is the joint posterior of our allele frequencies and assignments. 
-
-
+To do this in a full Bayesian scheme we need to place priors on the allele
+frequencies (for example, one could use a beta distribution prior). Technically
+we are using this is the joint posterior of our allele frequencies and
+assignments. 
 
 \begin{figure}
-
+% TODO: MISSING FIGURE
 \caption{
 Becquet {\it et al} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
 over 300 polymorphic markers (in this case microsatellites, a type of
@@ -641,31 +703,33 @@ vertical bar divided into four colours depicting the estimate of the fraction
 of ancestry that each individual draws from each of the four
 populations.  In their caption of this figure they say:  
 ``Figure 1. STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
-Individuals 76–78 are reported hybrids. Only two individuals with a >5\% proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
+Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
 \end{figure}
+
 \subsubsection{Principal components analysis}
 The use of principal component analysis in population genetics was
 pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
 a come back. See Patterson et al 2006, PLoS Genetics and McVean,
 G. 2010 PLoS Genetics and for recent discussion.
+% TODO: citations.
  
-Consider a dataset consisting of N individuals at S bi-allelic
-SNPs. The $i^{th}$ individual's genotype data at locus $\ell$ takes
-value $g_{i,\ell}$=0,1, or 2 (corresponding to the number of copies of
-allele $A_1$ an individual carrys at this SNP). We can think of this
-as a N x S matrix (where usually $N \ll S$). 
+Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
+$i^{th}$ individual's genotype data at locus $\ell$ takes a value
+$g_{i,\ell}=0,1,\; \text{or} \; 2$ (corresponding to the number of copies of
+allele $A_1$ an individual carries at this SNP). We can think of this as a $N
+\times S$ matrix (where usually $N \ll S$). 
 
- Denoting the sample mean allele freq at SNP $\ell$ by $p_{\ell}$ we usually standardize the genotype in the following way
+ Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$ it's common to standardize the genotype in the following way
 \begin{equation}
 \frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}}
 \end{equation}
-i.e. at each SNP we center the genotypes by minusing of the mean
+i.e. at each SNP we center the genotypes by subtracting the mean
 genotype ($2\epsilon_{\ell}$) and divide through by the expected
 variance assuming that alleles are sampled binomially from the mean
 frequency ($\sqrt{p_{\ell} (1-p_{\ell})}$). Doing this to
-all of our genotypes we form a data matrix (of dimension N x S). We
+all of our genotypes we form a data matrix (of dimension $N \times S$). We
 can then perform principal components analysis of this data matrix to
-cover the major axes of genotype variance in our sample.
+uncover the major axes of genotype variance in our sample.
 
 It is worth taking a moment to delve further into what we are doing
 here. There's a number of equivalent ways to thinking about what PCA
@@ -703,8 +767,8 @@ haplotype. If no recombination occurs between our two loci in this
 individual, then these two haplotypes will be transmitted intact to
 the next generation. While if a recombination (or more generally an
 odd number of recombinations) occurs between our two loci on the
-haplotype transmitted to the child then $\tfrac{1}{2}$ the time the
-child receives a $Ab$ haplotype and $\tfrac{1}{2}$ the time the child
+haplotype transmitted to the child then $\nicefrac{1}{2}$ the time the
+child receives a $Ab$ haplotype and $\nicefrac{1}{2}$ the time the child
 receives a $aB$ haplotype. So recombination is breaking up the
 association between loci. We'll define the recombination fraction ($r$) to be
 the probability of an odd number of recombinations between our loci.
