@@ -1,10 +1,10 @@
-\section{Introduction}
+\section*{Introduction}
 Evolution is change over time. Biological evolution is change over
 time in the genetic composition of populations. We define the genetic
 composition of a population to be the set of genomes
 that the individuals in our population carry. While, at first, this definition of
 evolution seems at odds with our textbook view of the evolution of
-phenotypes, such as the changing shape of the finch beaks over generation, it is genetic
+phenotypes, such as the changing shape of the finch beaks over generations, it is genetic
 changes that underpin these phenotypic changes.  \\
 
 The genetic composition of the population can alter due to the death
@@ -41,8 +41,8 @@ Population genetics emerged from early efforts to reconcile
 Mendelian genetics with Evolution. 
 Thanks to Mendel and Mendelian genetics (and a lot of prior and subsequent work), we understand that
 the genome of an individual is formed from the contribution of
-genomes from the gametes that fused to form zygote. The genomes of the
-gametes was in turn formed from a parental genome through meiosis, in particular the segregation and
+genomes from the gametes that fused to form a zygote. The genomes of the
+gametes in turn formed from a parental genome through meiosis, in particular the segregation and
 recombination of the parental genome. In this chapter we will 
 work through how the basics of Mendelian Genetics play out
 at the population level in sexually reproducing organisms. 
@@ -536,8 +536,16 @@ components analysis,that appear often in the literature.
 
 Here we'll describe a simple probabilistic assignment to find the
 probability that an individual of unknown population comes from one of
-$K$ predefined populations. We'll then briefly explain how to extend this
-to cluster individuals into $K$ initially unknown populations. This
+$K$ predefined populations. For example, there are three broad populations
+of common chimpanzee ({\it Pan troglodytes}) in Africa: western,
+central, and eastern. Imagine that we have a chimpanzee, whose
+population of origin is unknown (e.g. it's from an illegal private
+collection). If we have genotyped a set of unlinked markers from a panel
+of individuals representative of these populations, we can calculate
+the probability that our chimp comes from each of these populations. \\   
+
+We'll then briefly explain how to extend this idea
+to cluster a set of individuals into $K$ initially unknown populations. This
 method is a simplified version of what Bayesian population genetics
 clustering algorithms such as STRUCTURE and ADMIXTURE do (Pritchard et al. Genetics 2000). 
 
@@ -584,26 +592,34 @@ from population $k$ and estimate the set of $q_k$'s.
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question}  
 \begin{question} 
-We have two populations where the frequency of capital allele
+Returning to our chimp example, imagine that we have genotyped a set
+of individuals from the Western and Eastern populations at
+two SNPs (we'll ignore the central population to keep things simpler).  The frequency of capital allele
 at two SNPs ($A/a$ and $B/b$)  is given by
 \begin{center}
 \begin{tabular}{|ccc|}
 \hline
 Population & locus A & locus B \\
 \hline
-1 & $0.1$ & $0.85$ \\
-2  & $0.95$ & $0.2$ \\
+Western & $0.1$ & $0.85$ \\
+Eastern  & $0.95$ & $0.2$ \\
+%Eastern & $0.5$ & $0.5$ \\
 \hline
 \end{tabular}
 \end{center}
-We sample an individual whose genotype is $AA$ at the first locus
+{\bf A)} Our individual, whose origin is unknown, has the genotype $AA$ at the first locus
 and $bb$ at the second. What
-is the posterior probability that our indvidual comes from population 1 vs
-population 2?
-Lets assume that with probability $q_1$ our individual draws an allele
-from population $1$ and that with probability $q_2=1-q_1$ they draw an allele from
-population $2$. What is the probability of our individual's genotype
-given $q_1$? You could plot this probability as a function of $q_1$. How does 
+is the posterior probability that our indvidual comes from the Western
+population vs
+Eastern chimp population?\\
+
+{\bf B)}
+Lets assume that with probability $q_W$ our individual draws an allele
+from the Western population and that with probability $q_C=1-q_W$ they draw an allele from
+the Eastern population. What is the probability of our individual's genotype
+given $q_C$? \\
+
+{\bf Optional} You could plot this probability as a function of $q_W$. How does 
 your plot change if our individual is heterozygote at both loci?
 \end{question} 
 
@@ -617,12 +633,31 @@ We wish to cluster our individuals into $K$ unknown populations. We begin by ass
 \item Given these assignments we estimate the allele frequencies at all of our loci in each population. 
 \item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
 \end{itemize}
-We iterate steps 1 and 2 for many iterations. If the data is sufficiently informative the assignments and allele frequencies will quickly converge. 
+We iterate steps 1 and 2 for many iterations. If the data is
+sufficiently informative the assignments and allele frequencies will
+quickly converge on a set of likely population assigments and allele
+frequencies for these populations. 
 
 To do this in a full bayesian scheme we need to place priors on the
 allele frequencies (e.g. a beta distribution).Technically we are using
 this is the joint posterior of our allele frequencies and assignments. 
 
+
+
+\begin{figure}
+
+\caption{
+Becquet {\it et al} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
+over 300 polymorphic markers (in this case microsatellites, a type of
+multiallelic marker). They ran STRUCTURE to cluster the individuals
+using these data into $K=4$
+populations. In the above figure they show each individual as a
+vertical bar divided into four colours depicting the estimate of the fraction
+of ancestry that each individual draws from each of the four
+populations.  In their caption of this figure they say:  
+``Figure 1. STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
+Individuals 76–78 are reported hybrids. Only two individuals with a >5\% proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
+\end{figure}
 \subsubsection{Principal components analysis}
 The use of principal component analysis in population genetics was
 pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
