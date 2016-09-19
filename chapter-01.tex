@@ -114,6 +114,21 @@ then just $q=1-p$.
 
 \subsection{Hardy--Weinberg proportions}
 
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
+\end{center}
+\caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
+  from the HapMap CEU European and YRI African populations. Within
+  each of these populations I plot the allele frequency against the
+  frequency of the 3 genotypes. Each SNP is represented by 3 different
+  coloured points. The solid lines show the mean genotype frequency
+  (calculated using a loess smoothing). The dashed line shows the
+  predicted genotype frequency from Hardy--Weinberg equilibrium. I find
+  it really pretty that the analytical predictions work as well as
+  they do. See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
+\end{figure}
+
 Imagine a population mating at random with respect to genotypes, i.e. no
 inbreeding, no assortative mating, no population structure, no sex differences
 in allele frequencies. The frequency of allele $A_1$ in the population at the
@@ -143,6 +158,8 @@ the time when gametes fuse. See Figure \ref{fig:HWE_CEU_YRI} for a nice
 empirical demonstration of Hardy-Weinberg proportions. 
 
 
+
+
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
 %\begin{question} 
@@ -165,20 +182,6 @@ population is expected to be homozygotes under Hardy-Weinberg?
 %%%ADD A comment about WF sampling here!
 %% Also add a question about Poisson offspring number.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
-\end{center}
-\caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
-  from the HapMap CEU European and YRI African populations. Within
-  each of these populations I plot the allele frequency against the
-  frequency of the 3 genotypes. Each SNP is represented by 3 different
-  coloured points. The solid lines show the mean genotype frequency
-  (calculated using a loess smoothing). The dashed line shows the
-  predicted genotype frequency from Hardy--Weinberg equilibrium. I find
-  it really pretty that the analytical predictions work as well as
-  they do. See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
-\end{figure}
 
 
 %\begin{figure}
@@ -689,10 +692,14 @@ frequencies for these populations.
 To do this in a full Bayesian scheme we need to place priors on the allele
 frequencies (for example, one could use a beta distribution prior). Technically
 we are using this is the joint posterior of our allele frequencies and
-assignments. 
+assignments. Programs like STRUCTURE, use this type of algorithm to
+cluster the individuals in an ``unsupervised'' manner (i.e. they work
+out how to assign individuals to unknown set of populations).  See Figure \ref{fig:chimp_structure} for an example of
+Becquet {\it et al}  using STRUCTURE to determine the population structure of chimpanzees. 
 
 \begin{figure}
 % TODO: MISSING FIGURE
+\includegraphics[width= \textwidth, height = 0.2 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
 \caption{
 Becquet {\it et al} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
 over 300 polymorphic markers (in this case microsatellites, a type of
@@ -701,20 +708,18 @@ using these data into $K=4$
 populations. In the above figure they show each individual as a
 vertical bar divided into four colours depicting the estimate of the fraction
 of ancestry that each individual draws from each of the four
-populations.  In their caption of this figure they say:  
-``Figure 1. STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
-<<<<<<< HEAD
-Individuals 76–78 are reported hybrids. Only two individuals with a
->5\% proportion of ancestry in more than one inferred cluster are wild
-born: number 54 and number 17. Red, central; blue, eastern; green,
-western; yellow, bonobo.''}  % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+estimated populations. We can see that these four colours/populations correspond to: Red, central; blue, eastern; green,
+western; yellow, bonobo.  In their caption of this figure they say:  
+{\it ``STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
+Individuals 76–-78 are reported hybrids. Only two individuals with a
+$>5\%$ proportion of ancestry in more than one inferred cluster are wild
+born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
 %=======
 %Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
-
 \end{figure}
 
 \subsubsection{Principal components analysis}
-The use of principal component analysis in population genetics was
+The use of principal component analysis (PCA) in population genetics was
 pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
 a come back. See Patterson et al 2006, PLoS Genetics and McVean,
 G. 2010 PLoS Genetics and for recent discussion.
@@ -736,7 +741,12 @@ variance assuming that alleles are sampled binomially from the mean
 frequency ($\sqrt{p_{\ell} (1-p_{\ell})}$). Doing this to
 all of our genotypes we form a data matrix (of dimension $N \times S$). We
 can then perform principal components analysis of this data matrix to
-uncover the major axes of genotype variance in our sample.
+uncover the major axes of genotype variance in our sample. We find the
+location of each individual on each of the principal component
+vectors. These PC axes reflect major axes of
+variation in the data, with the first PC being that which explains
+most, the second the second most, and so on. Figure
+\ref{fig:chimp_PCA} shows the 
 
 It is worth taking a moment to delve further into what we are doing
 here. There's a number of equivalent ways to thinking about what PCA
@@ -755,6 +765,17 @@ from the total sample at random (rather than the covariance of alleles
 within a single individual). So by performing PCA on the data we are
 learning about the major (orthogonal) axes of the kinship matrix.    
 
+
+\begin{figure}
+% TODO: MISSING FIGURE
+\includegraphics[]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
+\caption{
+PCA analysis of by Becquet {\it et al} (PLOS Genetics 2007) using the same data as in
+Figure \ref{fig:chimp_structure}. Here they plot the location of each
+individual on the first two principal components in the left panel, } \label{fig:chimp_PCA} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+%=======
+%Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
+\end{figure}
 
 \newpage
 \subsection{Correlations between loci, linkage disequilibrium, and recombination}
