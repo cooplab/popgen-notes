@@ -684,7 +684,7 @@ to these $K$ populations.
 \item Given these assignments we estimate the allele frequencies at all of our loci in each population. 
 \item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
 \end{enumerate}
-We iterate steps 1 and 2 for many iterations. If the data is
+We iterate steps 1 and 2 for many iterations (technically, this approach is known as \emph{Gibbs Sampling}). If the data is
 sufficiently informative the assignments and allele frequencies will
 quickly converge on a set of likely population assignments and allele
 frequencies for these populations. 
@@ -699,7 +699,7 @@ Becquet {\it et al}  using STRUCTURE to determine the population structure of ch
 
 \begin{figure}
 % TODO: MISSING FIGURE
-\includegraphics[width= \textwidth, height = 0.2 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
+\includegraphics[width= \textwidth, height = 0.12 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
 \caption{
 Becquet {\it et al.} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
 over 300 polymorphic markers (in this case microsatellites, a type of
@@ -731,28 +731,26 @@ $g_{i,\ell}=0,1,\; \text{or} \; 2$ (corresponding to the number of copies of
 allele $A_1$ an individual carries at this SNP). We can think of this as a $N
 \times S$ matrix (where usually $N \ll S$). 
 
- Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$ it's common to standardize the genotype in the following way
-\begin{equation}
-\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}}
-\end{equation}
-i.e. at each SNP we center the genotypes by subtracting the mean
-genotype ($2\epsilon_{\ell}$) and divide through by the expected
-variance assuming that alleles are sampled binomially from the mean
-frequency ($\sqrt{p_{\ell} (1-p_{\ell})}$). Doing this to
-all of our genotypes we form a data matrix (of dimension $N \times S$). We
-can then perform principal components analysis of this data matrix to
-uncover the major axes of genotype variance in our sample. We find the
-location of each individual on each of the principal component
-vectors. These PC axes reflect major axes of
-variation in the data, with the first PC being that which explains
-most, the second the second most, and so on. Figure
-\ref{fig:chimp_PCA} shows the 
+Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$ it's
+common to standardize the genotype in the following way \begin{equation}
+\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}} \end{equation} i.e.
+at each SNP we center the genotypes by subtracting the mean genotype
+($2\epsilon_{\ell}$) and divide through by the expected variance assuming that
+alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
+  (1-p_{\ell})}$). Doing this to all of our genotypes we form a data matrix (of
+  dimension $N \times S$). We can then perform principal components analysis of
+  this data matrix to uncover the major axes of genotype variance in our
+  sample.  We find the location of each individual on each of the principal
+  component vectors. These PC axes reflect major axes of variation in the data,
+  with the first PC being that which explains most, the second the second most,
+  and so on.  Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
+  (2007) using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
 It is worth taking a moment to delve further into what we are doing
 here. There's a number of equivalent ways to thinking about what PCA
 is doing, one of these is to think that when we do PCA we are building the individual by individual
-covariance matrix and performing eigen-value decomposition of this
-matrix (with the eigen-vectors giving the PC).  This individual by individual covariance matrix has entries
+covariance matrix and performing eigenvalue decomposition of this
+matrix (with the eigenvectors giving the PC).  This individual by individual covariance matrix has entries
 the $(i,~j)^{th}$ entry given by
 \begin{equation}
 \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
@@ -768,34 +766,37 @@ learning about the major (orthogonal) axes of the kinship matrix.
 
 \begin{figure}
 % TODO: MISSING FIGURE
-\includegraphics[width= \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
-\caption{
-Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
-2007) using the same chimp data as in
-Figure \ref{fig:chimp_structure}. Here they plot the location of each
-individual on the first two principal components (called eigenvectors) in
-the left panel, and on the second and third principal components (eigenvectors) in the
-right panel. 
- Becquet {\it et al.} 's caption reads: {\it ``PCA, Without
-  Using Population Labels, Divides the 84 Chimpanzees into Four
-  Apparently Discontinuous Populations of Western, Central, Eastern,
-  and Bonobo. Plots of eigenvectors 1 versus 2, and eigenvectors 2
-  versus 3, show clustering into populations, with the expected
-  assignments for the 75 individuals identified as all of one ancestry
-  by STRUCTURE (solid circles). The nine individuals identified by
-  STRUCTURE as hybrids (open circles) are for the most part identified
-  as hybrids by PCA as well. There are two individuals (red open
-  circles) reported as being of a particular population but that in
-  fact appear to be hybrids: number 23, reported as eastern but in
-  fact a western-eastern hybrid, and number 54, a wild-born individual
-  reported as western but in fact a western-central hybrid.''. }
-Notethat PC1 mostly separates Western chimps from the others, PC2
-  separates bonobos from all the three groups of  common
-  chimpanzee. While PC3 separates the Eastern chimp samples from the
-  others. Note also how the hybrid individuals (open black and red
-  circles) tend to fall intermediate between groups.} \label{fig:chimp_PCA} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
-%=======
-%Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
+\includegraphics[width=
+  \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
+  \caption{ Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
+    2007) using the same chimpanzee data as in Figure
+    \ref{fig:chimp_structure}. Here they plot the location of each individual
+    on the first two principal components (called eigenvectors) in the left
+    panel, and on the second and third principal components (eigenvectors) in
+    the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
+      Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
+      Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
+      of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
+      into populations, with the expected assignments for the 75 individuals
+      identified as all of one ancestry by STRUCTURE (solid circles). The nine
+      individuals identified by STRUCTURE as hybrids (open circles) are for the
+      most part identified as hybrids by PCA as well. There are two individuals
+      (red open circles) reported as being of a particular population but that
+      in fact appear to be hybrids: number 23, reported as eastern but in fact
+    a western-eastern hybrid, and number 54, a wild-born individual reported as
+  western but in fact a western-central hybrid.''. } Note that PC1 mostly
+  separates Western chimps from the others, PC2 separates bonobos from all the
+three groups of common chimpanzee. While PC3 separates the Eastern chimp
+samples from the others. Note also how the hybrid individuals (open black and
+red circles) tend to fall intermediate between groups.}
+
+\label{fig:chimp_PCA}
+
+% http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+%======= Individuals 76–78 are reported hybrids. Only two individuals with a
+%$>5\%$ proportion of ancestry in more than one inferred cluster are wild born:
+%number 54 and number 17. Red, central; blue, eastern; green, western; yellow,
+%bonobo.''}
 \end{figure}
 
 \newpage
@@ -803,37 +804,38 @@ Notethat PC1 mostly separates Western chimps from the others, PC2
 
 %</source-file>
 
-Up to now we have been interested in correlations between alleles at the
-same locus, e.g. correlations within individuals (inbreeding) or between
-individuals (relatedness). We have seen how relatedness between parents affects the extent to which their offspring is inbred. We now turn to 
-correlations between alleles at different loci. To understand
-correlations between loci we need to understand recombination.\\
+Up to now we have been interested in correlations between alleles at the same
+locus, e.g. correlations within individuals (inbreeding) or between individuals
+(relatedness). We have seen how relatedness between parents affects the extent
+to which their offspring is inbred. We now turn to correlations between alleles
+at different loci. To understand correlations between loci we need to
+understand recombination.\\
 
 
-\paragraph{Recombination}  Lets
-consider an individual heterozygous for a $AB$ and $ab$
-haplotype. If no recombination occurs between our two loci in this
-individual, then these two haplotypes will be transmitted intact to
-the next generation. While if a recombination (or more generally an
-odd number of recombinations) occurs between our two loci on the
-haplotype transmitted to the child then $\nicefrac{1}{2}$ the time the
-child receives a $Ab$ haplotype and $\nicefrac{1}{2}$ the time the child
-receives a $aB$ haplotype. So recombination is breaking up the
-association between loci. We'll define the recombination fraction ($r$) to be
-the probability of an odd number of recombinations between our loci.
-In practice we'll often be interested in relatively short regions
-where recombination is relatively rare, and so we might think that
-$r=r_{BP}L \ll 1$, where $r_{BP}$ is the average recombination rate
-per base pair (typically $\sim 10^{-8}$) and L is the number of base
-pairs separating our two loci.\\
+\paragraph{Recombination} 
+
+Let us consider a heterozygous individual, containing $AB$ and $ab$ haplotypes.
+If no recombination occurs between our two loci in this individual, then these
+two haplotypes will be transmitted intact to the next generation. While if a
+recombination (i.e. an odd number of crossing over events) occurs between the
+two parental haplotypes, then $\nicefrac{1}{2}$ the time the child receives a
+$Ab$ haplotype and $\nicefrac{1}{2}$ the time the child receives a $aB$
+haplotype. Effectively, recombination breaks up the association between loci.
+We'll define the recombination fraction ($r$) to be the probability of an odd
+number of crossing over events between our loci. In practice we'll often be
+interested in relatively short regions such that recombination is relatively
+rare, and so we might think that $r=r_{BP}L \ll 1$, where $r_{BP}$ is the
+average recombination rate per base pair (typically $\sim 10^{-8}$) and L is
+the number of base pairs separating our two loci.\\
 
 
 
 \paragraph{Linkage disequilibrium}
+
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have allele
+alleles in a population at different loci. Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
@@ -842,7 +844,9 @@ We can define a covariance between the $A$ and $B$ alleles at our two loci as
 D_{AB} = p_{AB} - p_Ap_B
 \end{equation}
 and likewise for our other combinations at our two loci
-($D_{Ab},~D_{aB},~D_{ab}$). These $D$ statistics are all closely
+($D_{Ab},~D_{aB},~D_{ab}$).
+% Gametes with two similar case alleles (e.g. A and B, or a and b) are known as \emph{coupling} gametes, and those with different case alleles are known as repulsion gametes (e.g. a and B, or A and b). Then, we can think of $D$ as measuring the \emph{excess} of coupling to repulsion gametes.
+These $D$ statistics are all closely
 related to each other as $D_{AB} = - D_{Ab}$ and so on. Thus we only
 need to specify one $D_{AB}$ to know them all, so we'll drop the
 subscript and just refer to $D$. Also a handy result is that we can rewrite our haplotype
