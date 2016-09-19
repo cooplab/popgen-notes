@@ -401,11 +401,11 @@ Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
 
 \begin{question}
-The frequency of the $A_1$ allele is $p$, and  the frequency of the $A_2$
-allele is $q$. Assume that our population is randomly mating and that the
+The frequency of the $A_1$ allele is $p$ at a biallelic locus. Assume that our population is randomly mating and that the
 genotype frequencies in the population follow from HW. We select two
 individuals at random to mate from this population. We then mate the children
-from this cross. What is the probability that the child from this sib-mating is
+from this cross. What is the probability that the child from this full
+sib-mating is
 homozygous? 
 \end{question}
 
@@ -701,7 +701,7 @@ Becquet {\it et al}  using STRUCTURE to determine the population structure of ch
 % TODO: MISSING FIGURE
 \includegraphics[width= \textwidth, height = 0.2 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
 \caption{
-Becquet {\it et al} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
+Becquet {\it et al.} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
 over 300 polymorphic markers (in this case microsatellites, a type of
 multiallelic marker). They ran STRUCTURE to cluster the individuals
 using these data into $K=4$
@@ -768,11 +768,32 @@ learning about the major (orthogonal) axes of the kinship matrix.
 
 \begin{figure}
 % TODO: MISSING FIGURE
-\includegraphics[]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
+\includegraphics[width= \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
 \caption{
-PCA analysis of by Becquet {\it et al} (PLOS Genetics 2007) using the same data as in
+Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
+2007) using the same chimp data as in
 Figure \ref{fig:chimp_structure}. Here they plot the location of each
-individual on the first two principal components in the left panel, } \label{fig:chimp_PCA} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+individual on the first two principal components (called eigenvectors) in
+the left panel, and on the second and third principal components (eigenvectors) in the
+right panel. 
+ Becquet {\it et al.} 's caption reads: {\it ``PCA, Without
+  Using Population Labels, Divides the 84 Chimpanzees into Four
+  Apparently Discontinuous Populations of Western, Central, Eastern,
+  and Bonobo. Plots of eigenvectors 1 versus 2, and eigenvectors 2
+  versus 3, show clustering into populations, with the expected
+  assignments for the 75 individuals identified as all of one ancestry
+  by STRUCTURE (solid circles). The nine individuals identified by
+  STRUCTURE as hybrids (open circles) are for the most part identified
+  as hybrids by PCA as well. There are two individuals (red open
+  circles) reported as being of a particular population but that in
+  fact appear to be hybrids: number 23, reported as eastern but in
+  fact a western-eastern hybrid, and number 54, a wild-born individual
+  reported as western but in fact a western-central hybrid.''. }
+Notethat PC1 mostly separates Western chimps from the others, PC2
+  separates bonobos from all the three groups of  common
+  chimpanzee. While PC3 separates the Eastern chimp samples from the
+  others. Note also how the hybrid individuals (open black and red
+  circles) tend to fall intermediate between groups.} \label{fig:chimp_PCA} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
 %=======
 %Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
 \end{figure}
