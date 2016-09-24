@@ -266,7 +266,7 @@ probability of escaping loss in a very large population above. \\
 So we need an expression for $\pi(p+\Delta p)$. To obtain this we'll
 do a Taylor series expansion of $\pi(p)$ assuming that $\Delta p $ is small
 \begin{equation}
-\pi(p+\Delta p) \approx \pi(p) + \Delta p \frac{d\pi(p)}{dp} + (\Delta p)^2
+\pi(p+\Delta p) \approx \pi(p) + \Delta p \frac{d\pi(p)}{dp} + \frac{(\Delta p)^2}{2}
 \frac{d^2\pi(p)}{dp^2} (p)
 \end{equation}
 ignoring higher order terms.\\
@@ -274,7 +274,7 @@ ignoring higher order terms.\\
 Taking the expectation over $\Delta p $ on both sides, as in
 eqn. \ref{eqn:prob_fix_diff_step1}, we obtain
 \begin{equation}
-\pi(p) = \pi(p) + \E(\Delta p) \frac{d\pi (p)}{dp} + \E((\Delta p)^2)
+\pi(p) = \pi(p) + \E(\Delta p) \frac{d\pi (p)}{dp} + \frac{\E((\Delta p)^2)}{2}
 \frac{d^2\pi(p)}{dp^2}
 \end{equation}
 
@@ -282,7 +282,7 @@ Well $\E(\Delta p) = \frac{s}{2}p(1-p)$ and $Var(\Delta p)= \E((\Delta
 p)^2)-\E^2(\Delta p)$, so if $s \ll 1$ then $\E^2(\Delta p) \approx
 0$, and $\E(\Delta p)^2 = \frac{p(1-p)}{2N}$. This leaves us with
 \begin{equation}
-0= \frac{s}{2}p(1-p)\frac{d\pi (p) }{dp} + \frac{p(1-p)}{2N}
+0= \frac{s}{2}p(1-p)\frac{d\pi (p) }{dp} + \frac{p(1-p)}{4N}
 \frac{d^2\pi (p) }{dp^2}
 \end{equation}
 and we can specify the boundary conditions to be $\pi(1)=1$ and $\pi(0)=0$. 
