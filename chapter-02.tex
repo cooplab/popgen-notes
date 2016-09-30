@@ -1,21 +1,20 @@
 
 \section{Genetic Drift and Neutral Diversity}
 
-Various sources of randomness are inherent in evolution. One major
-source of stochasticity in population genetics is genetic drift. 
-Genetic drift occurs because more or less copies of an allele by chance
-can be transmitted to the next generation. This can occur because by
-chance the individuals carrying a particular allele can 
-leave more or less offspring in the next generation. In a sexual
-population genetic drift also occurs because Mendelian transmission
-means that only one of the two alleles in an individual, chosen at
-random at a locus, is transmitted to the offspring. 
+Various sources of randomness are inherent in evolution.  One major source of
+stochasticity in population genetics is genetic drift.  Genetic drift occurs
+because more or less copies of an allele by chance can be transmitted to the
+next generation. This can occur because by chance the individuals carrying a
+particular allele can leave more or less offspring in the next generation. In a
+sexual population genetic drift also occurs because Mendelian transmission
+means that only one of the two alleles in an individual, chosen at random at a
+locus, is transmitted to the offspring. 
 
 Genetic drift can play a role in the dynamics of all alleles and populations,
 but it will play the biggest role for neutral alleles. A neutral polymorphism
 occurs when the segregating alleles at a polymorphic site have no discernible
 effect on the fitness (we'll make clear what we mean by discernible later, for
-the moment think of this as “no effect” on fitness). 
+the moment think of this as ``no effect" on fitness). 
 
 
 \subsection{Loss of heterozygosity due to drift.} \label{LossofHet} 
@@ -24,12 +23,12 @@ Genetic drift will, in the absence of new mutations, slowly purge our
 population of neutral genetic diversity as alleles slowly drift to high or low
 frequencies and are lost or fixed over time. \\
 
-Imagine a population of a constant size $N$ diploid individuals, and
-that we are examining a locus segregating for two alleles that are
-neutral with respect to each other.  This population is randomly
-mating with respect to the alleles at this locus. See figures
-\ref{fig:LossHet_two_alleles} and \ref{fig:LossHet_many_alleles} to
-see how genetic drift proceeds, by tracking alleles within a small population. \\
+Imagine a population of a constant size $N$ diploid individuals, and that we
+are examining a locus segregating for two alleles that are neutral with respect
+to each other.  This population is randomly mating with respect to the alleles
+at this locus. See Figures \ref{fig:LossHet_two_alleles} and
+\ref{fig:LossHet_many_alleles} to see how genetic drift proceeds, by tracking
+alleles within a small population. \\
 
 In generation $t$ our current level of heterozygosity is $H_t$,
 i.e. the probability that two randomly sampled alleles in generation
@@ -44,7 +43,7 @@ generation $t+1$?\\
 \caption{Loss of heterozygosity over time, in the absence of new
   mutations. A diploid population of 5 individuals over the
   generations, with lines showing transmission. In the first
-  generation every individual is a heterozygote..} \label{fig:LossHet_two_alleles}
+  generation every individual is a heterozygote.} \label{fig:LossHet_two_alleles}
 \end{figure} 
 
 \begin{figure}
@@ -55,8 +54,6 @@ generation $t+1$?\\
   mutations. A diploid population of 5 individuals. In the first generation I colour every allele a different
 colour so we can track their descendants.} \label{fig:LossHet_many_alleles}
 \end{figure} 
-
-
 
 In the next generation ($t+1$) we are looking at the alleles in the
 offspring of generation $t$. If we randomly sample two alleles in generation
@@ -71,55 +68,94 @@ the proceeding generation (i.e. the alleles are identical by descent
 one generation back) then these two alleles must be identical (as we
 are not allowing for any mutation). \\
 
-In a diploid population of size $N$ individuals there are $2N$
-alleles. The probability that our two alleles have the same parental
-allele in the proceeding generation is $1/(2N)$, the probability that
-they have different parental alleles is is $1-1/(2N)$. So by the above
+In a diploid population of size $N$ individuals there are $2N$ alleles. The
+probability that our two alleles have the same parental allele in the
+proceeding generation is $\nicefrac{1}{(2N)}$, the probability that they have
+different parental alleles is is $1-\nicefrac{1}{(2N)}$. So by the above
 argument the expected heterozygosity in generation $t+1$ is
+%
 \begin{equation}
 H_{t+1} = \frac{1}{2N} \times 0 + \left(1-\frac{1}{2N} \right)H_t
 \end{equation}
+%
 By this argument if the heterozygosity in generation $0$ is $H_0$ our
 expected heterozygosity in generation $t$ is
+%
 \begin{equation}
 H_t = \left(1-\frac{1}{2N} \right)^tH_0
 \end{equation}
+%
 i.e. the expected heterozygosity with our population is decaying
-geometrically with each passing generation. If we assume that $1/(2N)
+geometrically with each passing generation. If we assume that $\nicefrac{1}{(2N)}
 \ll 1$ then we can approximate this geometric decay by an exponential
 decay, such that
+%
 \begin{equation}
 H_t =H_0 \exp \left(-\frac{t}{2N} \right)  
 \end{equation}
-i.e. heterozygosity decays exponentially at a rate $1/(2N)$.
+%
+i.e. heterozygosity decays exponentially at a rate $\nicefrac{1}{(2N)}.
 
-\begin{question}
-You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you estimate that the mean level of heterozygosity in this population is 0.005. You set yourself a goal of maintaining a level of heterozygosity of at least 0.0049 for the next two hundred years. Assuming that the smelt have a generation time of 3 years, and that only genetic drift affects these loci. What is the smallest fully outbreeding population that you would need to maintain to meet this goal?
-(Note this is similar to the calculations being carried out by conservation biologists but my numbers are made up.). 
+Note how this picture of decreasing heterozygosity is in contrast to the
+consistency of Hardy--Weinberg equilibrium of the previous chapter. Here, the
+freqeuncy of each genotype will likely change, due to chance fluctuations in
+the underlying allele frequency $p$. While within a single generation
+Hardy--Weinberg proportions are maintained (at least approximately), across
+generations the genotypic frequencies change with allele frequency. The change
+in allele frequencies is due to drift: due to random variation in family size
+and Mendelian segregation, the allele frequency in generation $t$ may differ
+from that of $t+1$. We'll develop some mathematical models for these allele
+frequency changes later on.
+
+\begin{question} You are in charge of maintaining a population of delta smelt
+  in the Sacramento river delta. Using a large set of microsatellites you
+  estimate that the mean level of heterozygosity in this population is 0.005.
+  You set yourself a goal of maintaining a level of heterozygosity of at least
+  0.0049 for the next two hundred years. Assuming that the smelt have a
+  generation time of 3 years, and that only genetic drift affects these loci.
+  What is the smallest fully outbreeding population that you would need to
+maintain to meet this goal?  (Note that while these numbers are made up, this
+is similar to the calculations being carried out by conservation biologists).
+\end{question}
+
+\begin{question} In mathematical population genetics, a commonly used
+  approximation $(1-x) \approx e^{-x}$ for $x << 1$ (this follows from the
+    Taylor series expansion of $\exp(-x)$ ignoring second order terms of $x$.
+    This is especially useful for approximating a geometric decay process by an
+    exponential decay process, e.g. $(1 - x)^t \approx e^{-xt}$. Using R, check
+    how good of an approximation this is for three values of x, $x = 0.5, 0.1,
+    0.01$. Do this by plotting the geometric decay as points, and the
+    exponential decay as a curve, using different colors for each of these
+    three values. Note that you should have a discrete timescale for the
+    geoemtric decay (e.g. using \texttt{seq(0, 18)}) and a near continous scale
+    for the exponential decay (e.g. using \texttt{seq(0, 18, length.out=100)}.
+
+    % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works
+
 \end{question}
 
 \subsection{Levels of diversity maintained by a balance between
  mutation and drift} \label{DriftMutationBalance}
 
-Looking backwards in time from one generation to the next, we are going
-to say that two alleles which have the same parental allele (i.e. find
-their common ancestor) in the
-preceding generation have {\emph coalesced}, and refer to this event as a {\emph coalescent event}.
+Looking backwards in time from one generation to the next, we are going to say
+that two alleles which have the same parental allele (i.e. find their common
+ancestor) in the preceding generation have \emph{coalesced}, and refer to this
+event as a \emph{coalescent event}.
 
-The probability that our pair of randomly sampled alleles have
-coalesced in the preceding generation is $1/(2N)$, the probability
-that our pair of alleles fail to coalesce is $1-1/(2N)$. 
+The probability that our pair of randomly sampled alleles have coalesced in the
+preceding generation is $\nicefrac{1}{(2N)}$, the probability that our pair of
+alleles fail to coalesce is $1-\nicefrac{1}{(2N)}$. 
 
 The probability that a mutation changes the identity of the
 transmitted allele is $\mu$ per generation. So the probability of no
 mutation occurring is $(1-\mu)$. We'll assume that when a mutation
 occurs it creates some new allelic type which is not present in the
 population. This assumption (commonly called the infinitely-many-alleles model) makes the math slightly cleaner, and also
-is not too bad an assumption biologically. See figure
+is not too bad an assumption biologically. See Figure
 \ref{fig:Mut_Sel_balance} for a depiction of mutation-drift balance in
 this model over the generations.
 
-This model lets us calculate when our two alleles last shared a common
+This model let's us calculate when our two alleles last shared a common
 ancestor and whether these alleles are identical as a result of
 failing to mutate since this shared ancestor.  For example we can work out the probability that our
 two randomly sampled alleles coalesced $2$ generations in the past
@@ -135,44 +171,68 @@ to mutate through $2$ meioses each.
 More generally the probability that our alleles coalesce in generation
 $t+1$ and are identical due to no mutation to either allele in the
 subsequent generations is
+%
 \begin{equation}
 P(\textrm{coal. in t+1 \& no mutations}) =  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2(t+1)}
 \end{equation}
-assuming that $\frac{1}{2N} \ll$ and $\mu \ll 1$ then we can
-approximate this as
+%
+to make this slightly easier on ourselves let's further assume that $t
+\approx t+1$ and so rewrite this as:
 \begin{equation}
-P(\textrm{coal. in t+1 \& no mutations}) \approx  \frac{1}{2N}
-e^{-t/(2N)} e^{-2\mu (t+1)}
+P(\textrm{coal. in t+1 \& no mutations}) \approx \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2t}
 \end{equation}
-to make this slightly easier on ourselves lets further assume that $t
-\approx t+1$ and so rewrite this as
-\begin{equation}
-\approx \frac{1}{2N} e^{-t(2\mu+1/(2N))}
-\end{equation}
+%
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.8 \textwidth]{figures/Mut_drift_balance.png}
-\end{center}
-\caption{Mutation-drift balance. A diploid population of 5
-  individuals. In the first generation everyone has the same
-  allele. Each generation the transmitted allele can mutate and we
-  generate a new colour. In the bottom plot I trace the frequency of
-  alleles in our population over time.} \label{fig:Mut_Sel_balance}
+This gives us the approximate probability that two alleles will coalesce in the
+$(t+1)^\text{th}$ generation. In general, we may not know when two alleles may
+coalesce: they could coalesce in generation $t=1, t=2, \ldots $, and so on.
+Thus, to calculate the probability that two alleles coalesce in \emph{any}
+generation before mutating, we can write:
+
+\begin{align*}
+  P(\textrm{coal. in any generation \& no mutations}) &\approx P(\textrm{coal. in} \; t=1 \; \textrm{\& no mutations}) \; + \\ 
+  P(\textrm{coal. in} \; t=2 \; \textrm{\& no mutations}) + \ldots \\
+  &\approx \sum_{t=1}^\infty P(\textrm{coal. in } \; t \; \textrm{generations \& no mutation})
+\end{align*}
+%
+which follows from the fact that coalescing in a particular generation is
+mutually exclusive with coalescing in a different generation and basic probability.
+
+While we could calculate a value for this sum given $N$ and $\mu$, it's
+difficult to get a sense of what's going on with such a complicated expression.
+Here, we turn to a common approximation in population genetics (and all applied
+mathematics), where we assume that $\nicefrac{1}{(2N)} \ll$ and $\mu \ll 1$.
+This allows us to approximate the geometric decay as an exponential decay.
+Then, the probability two alleles coalesce in generation $t+1$ and don't mutate
+can be written as:
+%
+\begin{align} P(\textrm{coal. in t+1 \& no mutations}) &\approx \frac{1}{2N}
+\left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2t} \\ & \approx
+\frac{1}{2N} e^{-t/(2N)} e^{-2\mu t } \end{align} \begin{equation} \approx
+\frac{1}{2N} e^{-t(2\mu+1/(2N))} \end{equation}
+%
+and then we simply approximate the summation by an integral, giving us:
+%
+\begin{figure} \begin{center} \includegraphics[width= 0.8
+\textwidth]{figures/Mut_drift_balance.png} \end{center} \caption{Mutation-drift
+balance. A diploid population of 5 individuals. In the first generation
+everyone has the same allele (black). Each generation the transmitted allele
+can mutate and we generate a new colour. In the bottom plot I trace the
+frequency of alleles in our population over time.} \label{fig:Mut_Sel_balance}
 \end{figure} 
 
-If we sample two alleles at random from the population we will not in
-general know when they share a common ancestor. In which case we will
-need to integrate out over when this coalescent event occurred. Doing
-this we find the probability that our two alleles are identical due to
-no mutation on either ancestral lineage since the pair shared a common
-ancestor to be
 \begin{equation}
 \frac{1}{2N} \int_0^{\infty} e^{-t(2\mu+1/(2N))} dt =
 \frac{1/(2N)}{1/(2N)+2\mu} = \frac{1}{1+4N\mu}
 \end{equation}
-The probability that our pair of alleles are non-identical is
-simply one minus this, i.e.
+
+Doing so gives us the probability that our two alleles coalesce at some point
+in time, and do not mutate on either ancestral lineage to their common
+ancestor. Equivalently, this can be thought about as the probability our two
+alleles coalesce \emph{before} mutating.
+
+Then, the complementary probability that our pair of alleles are non-identical
+(or heterozygous) is simply one minus this, i.e.
 \begin{equation}
 \frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
 \end{equation}
@@ -185,10 +245,7 @@ will come up a number of times so we'll give it its own name
 So all else being equal, species with larger population sizes should
 have proportionally higher levels of neutral polymorphism. 
 
-
-
-
-\subsection{The effective population size.}
+\subsection{The effective population size}
 In practice populations rarely conform to our assumptions of being
 constant in size with low variance in reproduction success. Real
 populations experience dramatic fluctuations in size, and there is
@@ -199,10 +256,10 @@ size would imply.\\
 To cope with this population geneticists often invoke the concept of
 an effective population size ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
 
-Specifically the effective population size ($N_e$) is the population
-size that would result in the same rate of drift in an idealized constant
-population size, obeying our modeling assumptions, as that observed in
-our true population. \\
+Specifically the effective population size ($N_e$) is the population size that
+would result in the same rate of drift in an idealized constant population size
+as that observed in our true population (following our modeling assumptions).
+\\
 
 If population sizes vary rapidly in size, we can (if certain conditions are met)
 replace our population size by the harmonic mean population size.
@@ -241,7 +298,7 @@ mean true population size over time. The harmonic mean is very
 strongly affected by small values, such that if our population size is
 one million $99\%$ of the time but drops to a $1000$ every hundred or
 so generations, $N_e$ will be much closer to $1000$ than a
-million. See figure \ref{fig:LossHet_varying_pop}  for a depiction of
+million. See Figure \ref{fig:LossHet_varying_pop}  for a depiction of
 a repeatedly bottlenecked population losing diversity at a fast rate.\\
 
 \begin{figure}
@@ -261,7 +318,7 @@ Variance in reproductive success will also affect our effective
 population size. Even if our population has a large constant size of $N$
 individuals, if only small proportion of them get to reproduce then
 the rate of drift will reflect this much small number of reproducing
-individuals. See figure \ref{fig:LossHet_varying_RS} for a depiction of the higher rate of drift
+individuals. See Figure \ref{fig:LossHet_varying_RS} for a depiction of the higher rate of drift
 in a population where there is high variance in reproductive success.
 
  If only $N_M$ males get to contribute to the next
@@ -319,11 +376,11 @@ for an example of this. The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
 $t+1$ generation back is
 \begin{equation}
-\frac{1}{2N} (1- \frac{1}{2N} )^{t} \approx \frac{1}{2N} e^{-t/(2N)} \label{eqn:coal_time_dist}
+  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \approx \frac{1}{2N} e^{-t/(2N)} \label{eqn:coal_time_dist}
 \end{equation}
 thus the coalescent time of a pair of sequences ($T_2$) is
 approximately exponentially distributed with a rate $1/(2N)$. We'll denote that by
-saying that $T_2 \sim Exp \left( 1/(2N) \right)$. The mean coalescent
+saying that $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. The mean coalescent
 time of a pair of a pair of alleles is $2N$ generations\\
 
 
