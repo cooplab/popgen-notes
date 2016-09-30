@@ -118,19 +118,18 @@ maintain to meet this goal?  (Note that while these numbers are made up, this
 is similar to the calculations being carried out by conservation biologists).
 \end{question}
 
-\begin{question} \label{geo_question} In mathematical population genetics, a commonly used
-  approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally this follows from the
-    Taylor series expansion of $\exp(-x)$ ignoring second order terms of $x$).
-    This is especially useful for approximating a geometric decay process by an
-    exponential decay process, e.g. $(1 - x)^t \approx e^{-xt}$. Using R, check
-    how good of an approximation this is for three values of x, $x = 0.5, 0.1,
-    0.01$. Do this by plotting the geometric decay as points, and the
-    exponential decay as a curve, using different colors for each of these
-    three values. Note that you should have a discrete timescale for the
-    geoemtric decay (e.g. using \texttt{seq(0, 18)}) and a near continous scale
-    for the exponential decay (e.g. using \texttt{seq(0, 18,
-      length.out=100)}. Print off some of your your graphs and hand
-    them in. 
+\begin{question} \label{geo_question} In mathematical population genetics, a
+  commonly used approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally
+  this follows from the Taylor series expansion of $\exp(-x)$ ignoring second
+  order terms of $x$).  This is especially useful for approximating a geometric
+  decay process by an exponential decay process, e.g. $(1 - x)^t \approx
+  e^{-xt}$. Using R, check how good of an approximation this is for three
+  values of x, $x = 0.5, 0.1, 0.01$. Do this by plotting the geometric decay as
+  points, and the exponential decay as a curve, using different colors for each
+  of these three values. Note that you should have a discrete timescale for the
+  geometric decay (e.g. using \texttt{seq(0, 18)}) and a near continuous scale
+  for the exponential decay (e.g. using \texttt{seq(0, 18, length.out=100)}.
+  Print off some of your graphs and hand them in. 
 
     % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works
 
@@ -419,32 +418,32 @@ P(j | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
 \end{equation}
 i.e. a Poisson with mean $2\mu t $. \\
 
-As our expected coalescent time is $2N$ generations, the expected
+As our expected coalescent time is $2N$ generations (which follows from the expected value of exponential distributions), the expected
 number of mutations separating two alleles drawn at random from the
 population is
-\begin{equation}
-\E(j) = 4N\mu = \theta
-\end{equation}
+%
+\begin{align}
+  \E(j) &= 2\mu\E(t) \\ \nonumber
+  &= 4N\mu \\
+  &= \theta \nonumber
+\end{align}
 We'll assume that mutations never happen at the same site twice,
 i.e. no multiple hits, such that we get to see all of the mutation events that separate our pair
 of sequences (we'll call this the infinitely-many-sites assumption,
-which should be fine if $N\mu_{BP} \ll 1$). Thus the number of
+which should be fine if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per base pair). Thus the number of
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. \\
 
-
-We'll denote the observed number of pairwise differences at putatively
-neutral sites separating a
-pair of sequences as $\pi$ (we usually average this over a number of
-pairs of sequences for a region). So we can estimate of
-$\theta$ from $\pi$, $\widehat{\theta}_{\pi}$ by setting $\widehat{\theta}_{\pi}=\pi$.
-If we have an independent
-estimate of $\mu$, then from setting $\pi = \widehat{\theta}_{\pi} = 4N\mu$ we can obtain an
-estimate of the population size $N$ that is consistent with our levels
-of neutral polymorphism.
+We'll denote the observed number of pairwise differences at putatively neutral
+sites separating a pair of sequences as $\pi$ (we usually average this over a
+number of pairs of sequences for a region). So we can estimate of $\theta$ from
+$\pi$, $\widehat{\theta}_{\pi}$ by setting $\widehat{\theta}_{\pi}=\pi$.  If we
+have an independent estimate of $\mu$, then from setting $\pi =
+\widehat{\theta}_{\pi} = 4N\mu$ we can obtain an estimate of the population
+size $N$ that is consistent with our levels of neutral polymorphism.
 
 \begin{question}
-Robinson et al (Current Biology 2016) report $\pi$ for sample from
+Robinson et al. (Current Biology 2016) report $\pi$ for sample from
 populations of the California mainland gray fox and
 the San Nicolas Channel Island fox to be 0.0012 and 0.000014
 respectively. \\
@@ -467,20 +466,18 @@ To allow for this instead of just following a pair of lineages back until they
 coalesce, we can follow the history of a sample of alleles back
 through the population.
 
-Consider first sampling three alleles at random from the
-population. The probability that all three alleles choose exactly the
-same ancestral allele one generation back is $1/(2N)^2$. If $N$ is
-reasonably large then this is a very small probability. As such it is
-very unlikely that our three alleles coalesce at once, a in a moment
-we'll see that it is safe to ingnore such unlikely events. \\
+Consider first sampling three alleles at random from the population. The
+probability that all three alleles choose exactly the same ancestral allele one
+generation back is $\nicefrac{1}{(2N)^2}$. If $N$ is reasonably large then this
+is a very small probability. As such it is very unlikely that our three alleles
+coalesce at once, a in a moment we'll see that it is safe to ignore such
+unlikely events. \\
 
-The
-probability that a specific pair of alleles find a common ancestor in
-the preceding generation is still $1/(2N)$. There are three possible
-pairs of alleles so the probability that no pair finds a common
-ancestor is
+The probability that a specific pair of alleles find a common ancestor in the
+preceding generation is still $\nicefrac{1}{(2N)}$. There are three possible pairs of
+alleles so the probability that no pair finds a common ancestor is
 \begin{equation}
-\left(1-\frac{1}{(2N)} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
+\left(1-\frac{1}{2N} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
 \end{equation}
 in making this approximation we are multiplying out the right hand-side
 and ignoring terms of $1/N^2$ and higher. See
@@ -511,11 +508,11 @@ of alleles coalesces in the preceding generation is
 while the probability of any pair coalescing is $\approx \frac{{i \choose
  2}}{2N}$.\\
 
-We can ignore the possibility of more than pairs of alleles (e.g. tripletons) simultaneously
-coalescing at once as terms of $1/N^2$ and higher can
-be ignored as they are vanishingly rare. Obviously there are in reasonable sample sizes there are
-many more triples (${i \choose 3}$), and higher order combinations, than pairs
-(${i \choose 2}$) but if $i \ll N$ then we are safe to
+We can ignore the possibility of more than pairs of alleles (e.g. tripletons)
+simultaneously coalescing at once as terms of $\nicefrac{1}{N^2}$ and higher
+can be ignored as they are vanishingly rare. Obviously there are in reasonable
+sample sizes there are many more triples (${i \choose 3}$), and higher order
+combinations, than pairs (${i \choose 2}$) but if $i \ll N$ then we are safe to
 ignore these terms.
 
 When there are $i$ alleles the probability that we wait until the
@@ -530,10 +527,10 @@ any pair of alleles coalesce is
 \end{equation}
 thus the waiting time $T_i$ to the first coalescent event in a sample
 of $i$ alleles is exponentially distributed with rate $\frac{{i \choose
- 2}}{2N}$, i.e. $T_i \sim Exp\left(\frac{{i \choose
+2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
  2}}{2N} \right)$. The mean waiting time till any of pair within our
-sample to coalesce is $2N/{i \choose
- 2}$.\\
+ sample to coalesce is $\nicefrac{2N}{{i \choose
+ 2}}$.\\
 
 When a pair of alleles first find a common ancestral allele some
 number of generations back further into the past we only have to keep
@@ -548,14 +545,14 @@ there to a single most recent common ancestor (MRCA).\\
 To simulate a coalescent genealogy at a locus for a sample of $n$ alleles we therefore simply follow this
 algorithm
 \begin{enumerate}
-\item set $i=n$.
+\item Set $i=n$.
 \item We simulate a random variable to be the time $t_i$ to the next coalescent event from $t_i \sim
- Exp\left(\frac{{i \choose
+  \text{Exp}\left(\nicefrac{{i \choose
  2}}{2N} \right)$
-\item choose a pair of alleles to coalesce at random from all possible
+\item Choose a pair of alleles to coalesce at random from all possible
  pairs.
-\item set $i=i-1$
-\item continue looping of steps 1-3 until $i=1$ i.e. the most recent
+\item Set $i=i-1$
+\item Continue looping of steps 1-3 until $i=1$ i.e. the most recent
  common ancestor of the sample is found.
 \end{enumerate}
 by following this algorithm we are generating realizations of the
@@ -584,25 +581,34 @@ happening here is that in large samples our lineages typically coalesce rapidly
 at the start and very soon coalesce down to a much smaller number of
 lineages.   \\
 
-Above we argued that a mutation is only becomes a fixed difference if
-it is lucky enough to be the
-ancestor of the entire population. As we saw above this occurs with
-probability $1/(2N)$. How long does is take on average for such an
-allele to fix within our population. We've just seen that it
-takes $4N$ generations for a large sample of alleles to all trace
-their ancestry back to a single most recent common
-ancestor. Thus it must take roughly $4N$ generations for a neutral
-allele present in a single copy within the the population to the
-ancestor of all alleles within our population. This argument can be
-made more precise, but in general we would still find that it takes
-$\approx 4N$ generations for a neutral allele to go from its
-introduction to fixation with the population.   \\
+% TODO
+Above we argued that a mutation only becomes a fixed difference if it is lucky
+enough to be the ancestor of the entire population. As we saw above this occurs
+with probability $\nicefrac{1}{(2N)}$. How long does is take on average for
+such an allele to fix within our population? We've just seen that it takes $4N$
+generations for a large sample of alleles to all trace their ancestry back to a
+single most recent common ancestor. Thus it must take roughly $4N$ generations
+for a neutral allele present in a single copy within the population to the
+ancestor of all alleles within our population. This argument can be made more
+precise, but in general we would still find that it takes $\approx 4N$
+generations for a neutral allele to go from its introduction to fixation with
+the population.   \\
 
 
 %%point about the fixation time of a neutral allele
 
+\paragraph{The total amount of time in a genealogy}
 
-The total amount of time in the genealogy ($T_{tot}$)
+Mutations fall on lineages of the coalescent genealogy. These mutations affect all
+descendants of this lineage, and under the infinitely-many-sites assumption,
+create a new segregating site for each new mutation. The mutation process is a
+\emph{Poisson process}, and the longer a particular lineage branch, the more
+mutations that can accumulate on it. The total number of segregating sites in
+the genealogy is thus a function of the \emph{total} amount of time in the
+genealogy of the sample, or the sum of all the genealogy branch lengths,
+$T_{tot}$. Since our coalescent genealogies are bifurcating (only two lineages
+coalesce at once), our total amount of time in the genealogy is:
+
 \begin{equation}
 T_{tot} = \sum_{i=n}^2 iT_i
 \end{equation}
