@@ -97,15 +97,40 @@ H_t =H_0 \exp \left(-\frac{t}{2N} \right)
 i.e. heterozygosity decays exponentially at a rate $\nicefrac{1}{(2N)}$.
 
 Note how this picture of decreasing heterozygosity is in contrast to the
-consistency of Hardy--Weinberg equilibrium of the previous chapter. Here, the
-freqeuncy of each genotype will likely change, due to chance fluctuations in
-the underlying allele frequency $p$. While within a single generation
-Hardy--Weinberg proportions are maintained (at least approximately), across
-generations the genotypic frequencies change with allele frequency. The change
-in allele frequencies is due to drift: due to random variation in family size
-and Mendelian segregation, the allele frequency in generation $t$ may differ
-from that of $t+1$. We'll develop some mathematical models for these allele
-frequency changes later on.
+consistency of Hardy--Weinberg equilibrium of the previous chapter. 
+However, our Hardy-Weinberg \emph{proportions} hold in forming each new
+generation. As the offspring genotypes in the next represent a random
+draw from the previous generation. If the frequency is $p$ we
+\emph{expect} a proportion $2p(1-p)$ of our offspring to be
+heterozygotes. However, because of population size is finite the
+observed frequencies will (likely) not match exactly with our
+expectations. As our genotype frequencies likely change slightly due
+to sampling (biologically due to random variation in family size
+and Mendelian segregation,) the allele frequency will changed. 
+Therefore, while each generation represents a sample from
+Hardy-Weinberg proportions based on the generation before, our
+genotype proportions is not a equilbrium (an unchanging state) as the
+underyling allele frequency changes over the generations. We'll develop some mathematical models for these allele
+frequency changes later on., for now it is sufficient to note that,
+under our simple model of drift (formally the Wright Fisher model), our
+allele frequency in the $t+1^{th}$ generation represents a binomial sample
+(of size $2N$) from the popuation frequency $p_t$ in the previous
+generation.  
+
+% generation $t$ may differ
+%from that of $t+1$. We'll develop some mathematical models for these allele
+%frequency changes 
+ %from the previous generation we are
+%drawing alleles at random from the  
+%Here, the
+%freqeuncy of each genotype will likely change, due to chance fluctuations in
+%the underlying allele frequency $p$. While within a single generation
+%Hardy--Weinberg proportions are maintained (at least approximately), across
+%generations the genotypic frequencies change with allele frequency. The change
+%in allele frequencies is due to drift: due to random variation in family size
+%and Mendelian segregation, the allele frequency in generation $t$ may differ
+%from that of $t+1$. We'll develop some mathematical models for these allele
+%frequency changes later on.
 
 \begin{question} You are in charge of maintaining a population of delta smelt
   in the Sacramento river delta. Using a large set of microsatellites you
