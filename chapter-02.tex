@@ -234,9 +234,11 @@ ancestor. Equivalently, this can be thought about as the probability our two
 alleles coalesce \emph{before} mutating.
 
 Then, the complementary probability that our pair of alleles are non-identical
-(or heterozygous) is simply one minus this, i.e.
+(or heterozygous) is simply one minus this. This gives the equilibrium
+heterozygosity in a population at equilibrium between mutation and drift:
+
 \begin{equation}
-\frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
+  H = \frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
 \end{equation}
 This compound parameter $4N\mu$, the population-scaled mutation rate,
 will come up a number of times so we'll give it its own name
@@ -655,12 +657,11 @@ segregating sites in a sample ($S$) equal to this expectation. We'll call this e
 this estimator was devised by Watterson, hence the $W$.
 
 
-\subsection{The fixation of neutral alleles}
-It is very unlikely that a rare neutral allele accidentally drifts up
-to fixation, it is much more likely that such an allele is eventually
-lost from the population. However, there is a large and constant influx of
-rare alleles into the population due to mutation, so even if it is very
-unlikely that an individual allele fixes within the population, some
+\subsection{The fixation of neutral alleles} It is very unlikely that a rare
+neutral allele accidentally drifts up to fixation; more likely, such an allele
+will be eventually lost from the population. However, populations experience a
+large and constant influx of rare alleles due to mutation, so even if it is
+very unlikely that an individual allele fixes within the population, some
 neutral alleles will fix.  \\
 
 %We'll first consider the probability that a neutral allele fixes
@@ -671,28 +672,33 @@ neutral alleles will fix.  \\
 %must have been that allele
 
 
-\paragraph{Probability of the eventual fixation of a neutral allele.} An allele which reaches fixation within a population, is an ancestor to
-the entire population. In a particular generation there can be only single
-allele that all other alleles at the locus in  later generation can claim as an
-ancestor. As at a neutral locus all of our alleles are exchangeable, as
-they have no effect on the number of descendents an individual
-leaves, so any allele is equally likely to be the ancestor of the
-entire population.  In a diploid population size of size $N$, there are $2N$
-alleles all of which are equally likely to be the ancestor of the
-entire population at some later time point. So if our allele is present in a single copy, the chance that
-is the ancestor to the entire population in some future generation is
-$1/(2N)$, i.e. the chance our neutral allele is eventually fixed is
-$1/(2N)$. See Figure \ref{fig:subs_simulation}, our orange allele in
-the first generation is one of 10 differently coloured alleles, 
-and so has a $1/10$ chance of being  the ancestor of the entire
-population at some later time point (as it is by the 9th generation).\\
+\paragraph{Probability of the eventual fixation of a neutral allele}
+% TODO: tried to clean up this section, needs more work
+An allele which reaches fixation within a population is an ancestor to the
+entire population. In a particular generation there can be only single allele
+that all other alleles at the locus in later generation can claim as an
+ancestor. A neutral locus, the actual allele does not affect the number of
+descendents that the allele has (this follows from the definition of
+neutrality: neutral alleles don't leave more or less descendents on average).
+An equivalent way to state this is that the allele labels don't affect
+anything; thus the alleles are \emph{exchangeable}. As a consequence of this,
+any allele is equally likely to be the ancestor of the entire population.  In a
+diploid population size of size $N$, there are $2N$ alleles all of which are
+equally likely to be the ancestor of the entire population at some later time
+point. So if our allele is present in a single copy, the chance that it is the
+ancestor to the entire population in some future generation is
+$\nicefrac{1}{(2N)}$, i.e. the chance our neutral allele is eventually fixed is
+$\nicefrac{1}{(2N)}$.  See Figure \ref{fig:subs_simulation}, our orange allele
+in the first generation is one of 10 differently coloured alleles, and so has a
+$1/10$ chance of being the ancestor of the entire population at some later time
+point (as it is by the 9th generation).\\
 
 More generally if our neutral allele is present in $i$ copies in the
-population, of $2N$ alleles, the probability that this allele is fixed
-is $i/(2N)$. I.e. the probability that a neutral allele is eventually
-fixed is simply given by its frequency ($p$) in the population.
-We can also derive this result by letting $Ns \rightarrow
-0$ in eqn. \eqref{eqn:prob_fixed}.
+population, of $2N$ alleles, the probability that this allele is fixed is
+$\nicefrac{i}{(2N)}$, i.e. the probability that a neutral allele is eventually
+fixed is simply given by its frequency ($p$) in the population.  We can also
+derive this result by letting $Ns \rightarrow 0$ in eqn.
+\eqref{eqn:prob_fixed}.
 
 \begin{figure}
 \begin{center}
@@ -704,13 +710,13 @@ We can also derive this result by letting $Ns \rightarrow
   population can trace their ancestry back to the orange allele.} \label{fig:subs_simulation}
 \end{figure}
 
-\paragraph{Rate of substitution of neutral alleles.}
+\paragraph{Rate of substitution of neutral alleles}
 
-A substitution between populations that do not exchange gene flow is
-simply a fixation event within one population. The rate of
-substitution is therefore the rate at which new alleles fix in the
-population, so that the long-term substitution rate is the rate at
-which mutations arise that will eventually become fixed within our population.\\
+A substitution between populations that do not exchange gene flow is simply a
+fixation event within one population. The rate of substitution is therefore the
+rate at which new alleles fix in the population, so that the long-term
+substitution rate is the rate at which mutations arise that will eventually
+become fixed within our population.\\
 
 Assume that there are two classes of mutational changes that can occur with a
 region, highly deleterious mutations and neutral mutations. A fraction
