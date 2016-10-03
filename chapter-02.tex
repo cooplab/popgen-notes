@@ -13,8 +13,8 @@ locus, is transmitted to the offspring.
 Genetic drift can play a role in the dynamics of all alleles and populations,
 but it will play the biggest role for neutral alleles. A neutral polymorphism
 occurs when the segregating alleles at a polymorphic site have no discernible
-effect on the fitness (we'll make clear what we mean by discernible later, for
-the moment think of this as ``no effect" on fitness). 
+differences in their effect on fitness. We'll make clear what we mean by discernible later, for
+the moment think of this as ``no effect" on fitness. 
 
 
 \subsection{Loss of heterozygosity due to drift.} \label{LossofHet} 
@@ -94,26 +94,27 @@ decay (see Question \ref{geo_question} below), such that
 H_t =H_0 \exp \left(-\frac{t}{2N} \right)  
 \end{equation}
 %
-i.e. heterozygosity decays exponentially at a rate $\nicefrac{1}{(2N)}$.
+i.e. heterozygosity decays exponentially at a rate
+$\nicefrac{1}{(2N)}$.
 
 Note how this picture of decreasing heterozygosity is in contrast to the
 consistency of Hardy--Weinberg equilibrium of the previous chapter. 
 However, our Hardy-Weinberg \emph{proportions} hold in forming each new
-generation. As the offspring genotypes in the next represent a random
-draw from the previous generation. If the frequency is $p$ we
-\emph{expect} a proportion $2p(1-p)$ of our offspring to be
-heterozygotes. However, because of population size is finite the
-observed frequencies will (likely) not match exactly with our
+generation. As the offspring genotypes in the next generation ($t+1$) represent a random
+draw from the previous generation ($t$). If the parental frequency is $p_t$ we
+\emph{expect} a proportion $2p_t(1-p_t)$ of our offspring to be
+heterozygotes (and HW proportions for our homozygotes). However, because of population size is finite the
+observed genotype frequencies in the offspring will (likely) not match exactly with our
 expectations. As our genotype frequencies likely change slightly due
-to sampling (biologically due to random variation in family size
-and Mendelian segregation,) the allele frequency will changed. 
+to sampling, biologically this reflects random variation in family size
+and Mendelian segregation, the allele frequency will changed. 
 Therefore, while each generation represents a sample from
 Hardy-Weinberg proportions based on the generation before, our
 genotype proportions is not a equilbrium (an unchanging state) as the
 underyling allele frequency changes over the generations. We'll develop some mathematical models for these allele
-frequency changes later on., for now it is sufficient to note that,
-under our simple model of drift (formally the Wright Fisher model), our
-allele frequency in the $t+1^{th}$ generation represents a binomial sample
+frequency changes later on. For now we'll simply note that
+under our simple model of drift (formally the Wright Fisher model) our
+allele count in the $t+1^{th}$ generation represents a binomial sample
 (of size $2N$) from the popuation frequency $p_t$ in the previous
 generation.  
 
@@ -154,7 +155,7 @@ is similar to the calculations being carried out by conservation biologists).
   of these three values. Note that you should have a discrete timescale for the
   geometric decay (e.g. using \texttt{seq(0, 18)}) and a near continuous scale
   for the exponential decay (e.g. using \texttt{seq(0, 18, length.out=100)}.
-  Print off some of your graphs and hand them in. 
+  Print off your graph and hand it in. 
 
     % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works
 
@@ -192,7 +193,7 @@ that they are identical as
 \left(1- \frac{1}{2N} \right) \frac{1}{2N} (1-\mu)^4
 \end{equation}
 note the power of $4$ is because our two alleles have to have failed
-to mutate through $2$ meioses each.
+to mutate through $2$ meioses each. 
 
 More generally the probability that our alleles coalesce in generation
 $t+1$ and are identical due to no mutation to either allele in the
@@ -256,7 +257,7 @@ frequency of alleles in our population over time.} \label{fig:Mut_Sel_balance}
 Doing so gives us the probability that our two alleles coalesce at some point
 in time, and do not mutate on either ancestral lineage to their common
 ancestor. Equivalently, this can be thought about as the probability our two
-alleles coalesce \emph{before} mutating.
+alleles coalesce \emph{before} mutating. 
 
 Then, the complementary probability that our pair of alleles are non-identical
 (or heterozygous) is simply one minus this. This gives the equilibrium
@@ -272,7 +273,9 @@ will come up a number of times so we'll give it its own name
 \end{equation}
 
 So all else being equal, species with larger population sizes should
-have proportionally higher levels of neutral polymorphism. 
+have proportionally higher levels of neutral polymorphism.  If you've read to here please email Prof Coop a picture of JBS Haldane
+in a striped suit with the title ``I'm reading the chapter 2 notes''. (It's well worth googling JBS Haldane and read more about his life,
+he's a true character and one of the last great polymaths. )
 
 \subsection{The effective population size}
 In practice populations rarely conform to our assumptions of being
@@ -598,8 +601,8 @@ is
 \end{equation}
 using the fact that $\frac{1}{i(i-1)}=\frac{1}{i-1} - \frac{1}{i}$ with a bit of
 rearrangement we can rewrite this is
-\begin{equation}
-\E(T_{MRCA}) = 4N\left(1- \frac{1}{n} \right)
+\begin{equation} 
+\E(T_{MRCA}) = 4N\left(1- \frac{1}{n} \right) \label{TMRCA_neutral}
 \end{equation}
 so the average $T_{MRCA}$ scales linearly with population
 size. Interestingly, as we move to larger and larger samples (i.e. $n \gg 1$) the average
@@ -607,19 +610,6 @@ time to the most recent common ancestor is converging on $4N$. What's
 happening here is that in large samples our lineages typically coalesce rapidly
 at the start and very soon coalesce down to a much smaller number of
 lineages.   \\
-
-% TODO
-Above we argued that a mutation only becomes a fixed difference if it is lucky
-enough to be the ancestor of the entire population. As we saw above this occurs
-with probability $\nicefrac{1}{(2N)}$. How long does is take on average for
-such an allele to fix within our population? We've just seen that it takes $4N$
-generations for a large sample of alleles to all trace their ancestry back to a
-single most recent common ancestor. Thus it must take roughly $4N$ generations
-for a neutral allele present in a single copy within the population to the
-ancestor of all alleles within our population. This argument can be made more
-precise, but in general we would still find that it takes $\approx 4N$
-generations for a neutral allele to go from its introduction to fixation with
-the population.   \\
 
 
 %%point about the fixation time of a neutral allele
@@ -734,6 +724,22 @@ derive this result by letting $Ns \rightarrow 0$ in eqn.
   time. By the 9th generation all of the alleles present in the
   population can trace their ancestry back to the orange allele.} \label{fig:subs_simulation}
 \end{figure}
+
+
+% TODO
+An allele newly arisen mutation only becomes a fixed difference if it is lucky
+enough to be the ancestor of the entire population. As we saw above this occurs
+with probability $\nicefrac{1}{(2N)}$. How long does is take on average for
+such an allele to fix within our population? Well in developing
+equation \eqref{TMRCA_neutral} we've seen that it takes $4N$
+generations for a large sample of alleles to all trace their ancestry back to a
+single most recent common ancestor. Thus it must take roughly $4N$ generations
+for a neutral allele present in a single copy within the population to the
+ancestor of all alleles within our population. This argument can be made more
+precise, but in general we would still find that it takes $\approx 4N$
+generations for a neutral allele to go from its introduction to fixation with
+the population.   \\
+
 
 \paragraph{Rate of substitution of neutral alleles}
 
