@@ -1,16 +1,25 @@
 N<-10
 offset<-0.2
 
+pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/pairwise_coalescent.pdf")
+col.allele<-  c("red","blue")   #c("red","blue","purple") #
+
+pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/3_tip_coalescent.pdf")
+col.allele<-  c("red","blue","purple") #c("red","blue")   #
+num.tracked<-3
+
 num.gens<-20
+n.iter<-20
+for(iter in 1:n.iter){
 plot(c(1,num.gens),c(1,N),type="n",axes=FALSE,xlab="",ylab="")
 mtext(side=1,line=1,"Generations")
-num.tracked<-3
+
 track.this.allele<-vector("list", 2*N)
 
 track.this.allele[sample(1:(2*N),num.tracked)]<-1:num.tracked
 
 track.this.allele.next.gen<-vector("list", 2*N)
-col.allele<-  c("red","blue","purple") #c("red","blue")  
+
 for(i in num.gens:1){
 	
 for(ind in 1:N){
@@ -42,3 +51,5 @@ for(ind in 1:N){
 	 track.this.allele<-track.this.allele.next.gen
 	 track.this.allele.next.gen<-vector("list", 2*N)
 	}
+	}
+dev.off()	

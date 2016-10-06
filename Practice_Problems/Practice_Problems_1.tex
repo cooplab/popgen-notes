@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage{nicefrac}
+\newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+
+
+\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
+
+
+\begin{document}
+\title{EVE102 Practice Problems 1}
+\author{Graham Coop}
+\date{}
+\maketitle
+
+{\bf Unless otherwise stated assume that loci are biallelic and
+autosomal. Show your work, and state the asumptions you have to make
+(if any). }
+
+\begin{question}
+You are studying a codominant flower colour polymorphism. Skipping
+through a meadow of flowers you compile the following data:
+red  pink  white\\
+200 100 200\\
+{\bf A)} What frequencies would you expect at this locu under Hardy Weinberg equilibrium? \\
+{\bf B)} Calculate the inbreeding coefficient at this locus.\\ 
+{\bf C)} Name two distinct processes that could lead to the deviation
+you see, and describe how they would result in a deficit of heterozygotes.
+\end{question}
+
+\begin{question}
+The colour and shape of a a species of beetles wings are controled by two distinct
+polymorphisms (with alleles big/small and red/yellow respectively). 
+In a museum collection you estimate the frequency of the four
+haplotypes to be:
+big/red big/yellow small/red small/yellow\\
+0.69 0.00 0.09 0.22\\
+This collection is from 60 years ago. In present day populations you
+estimate the frequencies of the haplotypes to be:\\
+0.5452 0.1448 0.2348 0.0752\\
+{\bf A)} Assuming one generation per year, what is the recombination fraction
+between these loci?
+{\bf B} Qualitatively how would your answer change if you determined
+that crossing over only occurred in females and not in males?
+\end{question}
+
+\begin{question}
+Charles the 2$^{nd}$ of Spain was the offspring of a uncle-niece marriage. 
+{\bf A)} What were the relatedness coefficients ($r_0$, $r_1$, $r_2$) of his parents? 
+{\bf B)} What was Charles's inbreeding coefficient from this inbreeding loop?
+In answering this question ignore the other deeper inbreeding in his pedigree.
+\end{question}
+
+\begin{question}
+What are the relatedness coefficients of the X chromosome between:\\
+1) Two male full siblings?\\
+2) Two female full siblings?\\
+\end{question}
+
+\begin{question}
+You are studying the wing spot polymorphism in a butterfly
+species. From crosses in the lab you find that the presence of
+wing spots is determined by a dominant allele.\\
+You collect 100 butterflies, 84 of them have the wing spots. What is
+the frequency of the wing-spot allele?  
+\end{question}
+
+\begin{question}
+An allele has frequency of $0.01$ in the population. What the
+probability that both you and your first (full) cousin are heterozygote for
+the alele?
+\end{question}
+
+\begin{question}
+The kinship coefficient of the parents is the inbreeding coefficient
+of the offspring. Explain, with reference to the weighting of
+relatedness coefficients in the inbreeding coefficient, why the
+inbreeding coefficient is the probability that a locus is homozygous
+by descent.
+\end{question}
+
+\begin{question}
+Explain why multiple inbreeding loops in an individual's pedigree
+lead to higher levels of inbreeding. 
+\end{question}
+
+\begin{question}
+Based on museum samples, from $\sim 1800$, you estimate that the
+average heterozygosity in Northern Elephant Seals
+was $0.0304$ across many loci. Based on futher samples you estimate
+that in $1960$ this had dropped to $0.011$. Elephant Seals have a
+generation time of $8$ years. \\
+What effective population size do you estimate is consistent with this
+drop? 
+\end{question}
+
+
+\begin{question}
+Assume that at a locus, where allele 1 has frequency $p$. What is
+the probability that two 1/2 sibs are both heterozygotes? 
+\end{question}
+
+
+\begin{question}
+{\bf A)} Why are large populations expected to harbor more neutral variation?\\
+{\bf B)} What is the effective population size? Is it usually higher or lower than the census population size?
+\end{question}
+
+\begin{question}
+You are providing genetic counsoling for a couple. They are first
+cousins. The man is a heterozgote carrier for a rare recessive disease
+allele, the carrier status for the woman is unknown. The frequency of
+the allele is $0.00001$ in the population. 
+{\bf A) } If they have a child what is the probability that the
+child will be homozygote for the disease allele?  
+{\bf B)} How would your answer change if they were 2nd cousins)? (2nd
+cousins share a pair of great grandparents).
+\end{question}
+
+\begin{question}
+You find a pair of sites where Neanderthal and human populations had a
+fixed difference at both loci (all neanderthals had one allele and all
+humans had the alternate allele). You find that in present day populations the frequency of haplotype with the
+Neanderthal allele at both sites is 2.24\%. 
+Based on independent information you
+know that the initial Neanderthal admixture proportion was 5\%. The marginal frequency of the Neanderthal allele has not changed from
+this initial frequency to be present day, at either locus. 
+The recombination fraction between your loci is 0.0005.\\
+How many generations back do you estimate that the Neanderthal
+admixture occurred?   
+\end{question}
+
+\begin{question}
+Under a model of (only) genetic drift why does the expected level of heterozygosity decrease by a factor of
+$1-\nicefrac{1}{(2N)}$ every generation? Explain your answer in terms
+of the probability of identity by descent.
+\end{question}
+
+\begin{question}
+Why is the historical rate of genetic drift often much higher than the
+census size of the population might suggest? Name two distinct
+processes that can contribute to this mismatch in your answer.
+\end{question}
+
+\end{document}
