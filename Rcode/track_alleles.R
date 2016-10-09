@@ -1,9 +1,13 @@
 N<-10
 offset<-0.2
-
+###Track pairs
 pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/pairwise_coalescent.pdf")
 col.allele<-  c("red","blue")   #c("red","blue","purple") #
+num.tracked<-2
 
+###OR
+
+###Track trio of lineages
 pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/3_tip_coalescent.pdf")
 col.allele<-  c("red","blue","purple") #c("red","blue")   #
 num.tracked<-3
@@ -53,3 +57,17 @@ for(ind in 1:N){
 	}
 	}
 dev.off()	
+
+###coal vs geo
+
+layout(1:2); par(mar=c(0.5,0.5,0.5,0.5))
+n.iter<-1
+
+##run above here with n.iter=1 n=30, N=20 
+
+
+plot(-(1:30),c(NA,dgeom(1:29,1/20)),pch=19,cex=2,xlab="generations back to coalescence",ylab="Probability",ylim=c(0.0,0.05)); lines(-(1:30),c(NA,exp(-(1:29)/20)/20),col="red",lwd=3)
+abline(v=-21,col="blue",lwd=3)
+
+dev.copy2pdf(file="~/Downloads/Coal_vs_geometric.pdf")
+
