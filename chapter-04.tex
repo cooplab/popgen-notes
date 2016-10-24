@@ -13,12 +13,12 @@ the population mean.
 The phenotype of an individual, let's call her $i$, is $X_i$.
 Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
-has at this SNP. Her expected deviation from the population mean phenotype, given her genotype, is then
+has at this SNP. Her expected phenotype, given her genotype, is then
 \begin{equation}
-X_{A,i} = \E (X_i | G_{i,1},\cdots,G_{i,L}) = \sum_{l=1}^L \label{pheno_geno}
-G_{i,l} a_{l} 
+\E (X_i | G_{i,1},\cdots,G_{i,L}) =\mu + X_{A,i} = \mu+\sum_{l=1}^L G_{i,l} a_{l} \label{pheno_geno}
 \end{equation}
-where $\mu$ is the mean phenotype in our population. Now in reality the genetic phenotype is a function of the
+where $\mu$ is the mean phenotype in our population, and $X_{A,i}$ is
+the deviation away from the mean phenotype due to her genotype. Now in reality the genetic phenotype is a function of the
 expression of those alleles in a particular environment. Therefore, we
 can think of this expected phenotype as being an average across a set
 of environments that occur in the population. \\
@@ -26,7 +26,7 @@ of environments that occur in the population. \\
 %\gc{NEED to resolve $\mu$ in above equation}
 
 
-When we measure our individual's phenotype we see
+When we measure our individual's observed phenotype we see
 \begin{equation}
 X_i =   \mu+X_{A,i} + X_{E,i} \label{pheno_geno_environ}
 \end{equation}
@@ -83,6 +83,7 @@ allele at each locus on to the next generation. As such, it is the
 effect of these transmitted alleles, averaged over possible matings,
 that is an individual's average contribution  to the next generation
 (i.e. the additive effect of the alleles that their genotype consists of).
+
 
 
 \subsection{Additive genetic variance and heritability}
@@ -238,7 +239,14 @@ variance to get $h^2$. \\
 %shared environmental effect is to use paternal half-sibs as they share a
 
 \begin{question}
-In polygynous blackbird populations (i.e. males mate with several females), paternal half-sibs can be identified.  Suppose that the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and that the total phenotypic variance is 4 $cm^2$.  Use these data to estimate $h^2$ for tarsus length in this population. 
+{\bf A)} In polygynous blackbird populations (i.e. males mate with
+several females), paternal half-sibs can be identified.  Suppose that
+the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and
+that the total phenotypic variance is 4 $cm^2$.  Use these data to
+estimate $h^2$ for tarsus length in this population. \\
+
+{\bf B)} Why might paternal half-sibs be preferable for measuring
+heritability than maternal half-sibs? 
 \end{question}
 
 Another way that we can estimate the narrow sense heritability is
@@ -290,6 +298,11 @@ child's predicted phenotype we simply take the mean phenotype and add
 on the difference between our parental mid-point multiplied by our
 narrow sense heritability. \\
 
+
+\begin{question}
+Briefly explain Galton’s observation of the regression towards
+mediocrity in light of Mendelian inheritance. 
+\end{question}
 
 \paragraph{Estimating additive genetic variance across a variety of
   different relationships.}
@@ -456,6 +469,10 @@ fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with the parent phenotype.
 
 \begin{question}
+A student has been studying barnacle populations and has found the mean height (before selection) to be 10 mm and the variance in height to be 4 mm2.  After a stormy season (one generation), the mean of the population in the next generation before selection has increased to 12 mm.  In a breeding experiment, the student found the slope of the regression between parental midpoint and child to be 0.2.  Assuming the observed change was caused by selection, what was the mean height of the parents that survived the stormy season?  
+\end{question}
+
+\begin{question}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record
 we can see that the population rapidly adapted to their new
@@ -548,6 +565,121 @@ selection on other traits that covary with that trait.
 This offers a good way to think about how genetic trade offs play out
 over evolution over short time-scales.
 
+\newpage
+\subsection{Non-additive variation.}
+Up to now we've assumed that our alleles contribute to our phenotype
+in an additive fashion. However, that does not have to be the case as
+there may be non-additivity among the alleles present at a locus
+(dominance) or among alleles at different loci (epistasis). We can accomodate these complications into our models. We do this by
+partitioning our total genetic variance into independent variance
+components.
 
+Consider autosomal biallelic locus $\ell$, with frequency $p$ for allele 1, and
+genotypes $0$, $1$, and $2$ corresponding to how many copies of allele
+1 individuals carry. We'll denote the mean phenotype of an individual
+with genotype $0$, $1$, and $2$ are $\overline{X}_{\ell,0}$,
+$\overline{X}_{\ell,1}$, $\overline{X}_{\ell,2}$ respectively. Here this mean is
+taken over all the environments and genetic backgrounds the alleles
+are present on. We'll mean center (MC)
+these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} - \mu$, and
+likewise for the other genotypes. 
 
+To illustrate the approach we'll plot two different cases of dominance relationship in Figure \label{fig:add_dom} in the first row we show the
+relationship between genotype and MC phenotype under and additive model,
+and in the second row under a model where the allele 1 is dominant,
+such that the genotype of the heterozyote is the same as the $11$
+homozygote. The area of each circle is proportion to the fraction of
+the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/additive_effect.pdf}
+\end{center}
+\caption{The average mean-centered (MC) phenotypes of each genotype. 
+{\bf Top Row:} Additive relationship between genotype and phenotype. 
+{\bf Bottom Row:} Allele 1 is dominant over allele 2, such that the
+heterozygote has the same phenotype as the $22$ genotype ($2$). 
+The area of each circle is proportion to the fraction of
+the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
+One the left column $p=0.1$ and the right column is $p=0.9$.
+The additive genetic values of the genotypes are shown as
+  red dots. The regression between phenotype and additive genotype is
+  shown as a red line. The black vertical arrows show the difference
+between the average MC phenotype and additive genetic value for each genotype. } \label{fig:add_dom}
+\end{figure}
+
+The first variance component is the variance due to
+the additive contribution of each allele ($V_A$). 
+We can think about the average
+(marginal) MC
+phenotype for an allele 1 as the average of the MC phenotype
+for heterozgotes and 11 homozygotes weighted by the probability that
+an allele $1$ in present in these genotypes. 
+These marginal MC
+phenotypes for allele 1 and 2 are given by 
+\begin{equation} 
+a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1}, ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} 
+\end{equation}
+the marginal value for allele 1, $a_{\ell, 1}$,  follows from the fact that (assuming HW) an allele 1 will be
+paired with another allele 1 with probability $p$, resulting in a
+genotype $11$ (with phenotypic deviation $\overline{X}'_{\ell,2}$) and will
+be paired with an allele 2 with probability $q$ in a heterozygote
+(with phenotypic deviation $\overline{X}'_{\ell,1}$). A similar argument
+can be made for $a_{\ell, 2}$. 
+
+The additive MC genetic values (breeding values) of genotype 0, 1, and
+2 are then 
+\begin{center}
+\begin{tabular}{cccc}
+genotype: & 0, & 1, & 2.\\
+additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,1}$   \label{add_values}
+\end{tabular}
+\end{center}
+Here we are
+simply adding up the additive contributions of the alleles present in
+each genotype. These are the genotypic values of the trait that would
+result taking only the additive component of the genotype. 
+They also have the intepretation as being the mean phenotype of each
+genotypes' offspring averaged over across all possible matings
+to other individuals in the population (assuming individuals mate at random). 
+
+The additive genetic values of the genotypes are shown as red dots in
+Figure \label{fig:add_dom}. Note that in the additive values of the
+genotypes line up with the observed MC phenotypic means in the top row
+when our alleles interact in a completely additive manner. They fall
+along a single linear line (red line in our Figure). The additive values are falling
+best fitting line of linear regression for our population, when phenotype is regressed
+against the additive genotype ($0$, $1$, $2$ copies of allele 1)
+across all individuals in our population. Note in the
+dominant case the additive genetic values of the genotypes are closer
+to the observed values for the genotypes that are common in the
+population. \\
+
+The variance in the population phenotype due to these
+additive breeding values at locus $\ell$ assuming HW proportions is
+\begin{align}
+V_{A, \ell} &= p^2 (2a_{\ell,2}) + 2pq (a_{\ell,1}+a_{\ell,1}) + q^2
+(2a_{\ell,0}) \\
+& = 2(p a_{\ell, 1} ^2 + q a_{\ell, 2} )\\
+& = 2pq (a_{\ell, 2}-a_{\ell, 1})^2
+\end{align}
+$a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
+swapping an allele 1 for an allele 2, we'll call this
+$\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is the
+slope of the red line in 
+The total additive effect can
+be found by summing this additive genetic variance across loci
+\begin{equation}
+V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
+2p_{\ell}q_{\ell} \alpha_{\ell}
+\end{equation}. 
+
+The dominance variance is the population variance among
+genotypes at a locus due to their deviation from additivity.
+The heterzygote deviates 
+\begin{equation}
+\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
+\end{equation}
+away from its additive genetic value, with similar expressions for
+each of the homozygotes. 
 \newpage
