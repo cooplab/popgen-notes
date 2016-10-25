@@ -674,12 +674,28 @@ V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
 2p_{\ell}q_{\ell} \alpha_{\ell}
 \end{equation}. 
 
-The dominance variance is the population variance among
+Having assigned the additive genetic variance to be the variance
+explained by the additive contribution of the alleles at a locus,  dominance variance is the population variance among
 genotypes at a locus due to their deviation from additivity.
-The heterzygote deviates 
+We can calculate how much each genotypic mean deviates away from its
+additive prediction at locus $\ell$ (the length of the arrows in
+Figure \label{fig:add_dom}), for example the heterzygote deviates 
 \begin{equation}
-\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
+d_{\ell,1} =\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
 \end{equation}
 away from its additive genetic value, with similar expressions for
-each of the homozygotes. 
+each of the homozygotes ($d_{\ell,0}$ and $d_{\ell,2}$). We can then write the dominance variance at
+our locus as 
+\begin{equation}
+V_{D,\ell} = p^2 d_{\ell,0}+ 2pq d_{\ell,1}+ q^2 d_{\ell,2}.
+\end{equation}
+Writing our total dominance variance as the sum across loci 
+\begin{equation}
+V_D = \sum_{\ell=1}^{L}  V_{D,\ell} 
+\end{equation}
+we can write our total genetic variance as 
+\begin{equation}
+V_{G} = V_A+V_D
+\end{equation}
+
 \newpage
