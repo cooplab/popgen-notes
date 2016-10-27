@@ -685,9 +685,10 @@ d_{\ell,1} =\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
 \end{equation}
 away from its additive genetic value, with similar expressions for
 each of the homozygotes ($d_{\ell,0}$ and $d_{\ell,2}$). We can then write the dominance variance at
-our locus as 
+our locus as the genotype-frequency weighted sum of our squared
+dominance coefficients/
 \begin{equation}
-V_{D,\ell} = p^2 d_{\ell,0}+ 2pq d_{\ell,1}+ q^2 d_{\ell,2}.
+V_{D,\ell} = p^2 d_{\ell,0}^2+ 2pq d_{\ell,1}^2+ q^2 d_{\ell,2}^2.
 \end{equation}
 Writing our total dominance variance as the sum across loci 
 \begin{equation}
@@ -695,7 +696,10 @@ V_D = \sum_{\ell=1}^{L}  V_{D,\ell}
 \end{equation}
 we can write our total genetic variance as 
 \begin{equation}
-V_{G} = V_A+V_D
+V_{G} = V_A+V_D.
 \end{equation}
+We can do this because by construction the covariance between our
+additive and dominant deviations for the genotypes is zero. 
+
 
 \newpage
