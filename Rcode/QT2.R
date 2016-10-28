@@ -88,7 +88,7 @@ par.off.corr<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cut
 	if(print.slope) text(x=min(parental.midpoint)*.8,y=max(child.pheno)*.9,label=paste("slope= ",format(my.slope,digit=3)),col="red",lwd=4,cex=1.5)
 	
 	abline(0,1,col="red",lwd=3,lty=2)
- 	recover()
+ #	recover()
  }
  
 
