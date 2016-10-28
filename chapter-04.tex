@@ -227,7 +227,7 @@ V_A$. Therefore, the general covariance between two
 relatives is
 \begin{equation}
 Cov(X_1,X_2) = r_0 \times 0 + r_1 \frac{1}{2}V_A + r_2  V_A =
-2 F_{1,2} V_A
+2 F_{1,2} V_A  \label{additive_covar_general_rellys}
 \end{equation}\\
 So under a simple additive model of the genetic basis of a phenotype
 to measure the narrow sense heritability we need to measure the
@@ -665,14 +665,33 @@ V_{A, \ell} &= p^2 (2a_{\ell,2}) + 2pq (a_{\ell,1}+a_{\ell,1}) + q^2
 \end{align}
 $a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
 swapping an allele 1 for an allele 2, we'll call this
-$\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is the
+$\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is also the
 slope of the red line in 
 The total additive effect can
 be found by summing this additive genetic variance across loci
 \begin{equation}
 V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
-2p_{\ell}q_{\ell} \alpha_{\ell}
-\end{equation}. 
+2p_{\ell}q_{\ell} \alpha_{\ell}.
+\end{equation}
+Note that the slope of our regression of genotype on phenotype ($\alpha_{\ell}$) does not depend on
+allele frequency for our completely additive locus (top row of
+\ref{fig:add_dom}), changing the frequency at our locus does change
+it's contribution to additive variance but only via the heterozygosity
+($2p_{\ell}q_{\ell}$). In contrast, when there is dominance, our the
+slope between genotype on phenotype ($\alpha_{\ell}$) is a
+function of allele frequency (bottom row of
+\ref{fig:add_dom}). When a dominant allele (1) is rare there is a strong
+slope of genotype on phenotype, bottom left Figure \ref{fig:add_dom},
+as replacing a single copy of the 2 allele with a 1 allele in an
+individual has a big
+effect on average, as it will most likely move an individual from
+being a 22 homozygote to being a 12 heterozygote. However, when the
+dominant allele (1) is common in the population, replacing a 2 allele
+by a 1 allele in an individual on average has little phenotypic
+effect. This small effect is because as we are mainly turning
+heterozygotes into homozygotes (11), who have the same mean phenotype.  
+
+
 
 Having assigned the additive genetic variance to be the variance
 explained by the additive contribution of the alleles at a locus,  dominance variance is the population variance among
@@ -699,7 +718,115 @@ we can write our total genetic variance as
 V_{G} = V_A+V_D.
 \end{equation}
 We can do this because by construction the covariance between our
-additive and dominant deviations for the genotypes is zero. 
+additive and dominant deviations for the genotypes is zero. We can
+define the narrow sense heritability as before
+$h^2=V_A/V_P=V_A/(V_G+V_E)$, which is the proportion of phenotypic
+variance due to additive genetic variance. We can also define the 
+total proportion of the phenotype variance due to genetic differences
+among individuals, as the broad-sense heritability $H^2 =
+V_G/(V_G+V_E)$. 
 
+When dominance is present in the loci influencing our trait ($V_D>0$), i.e. when alleles do not interact
+in a completely additive manner with loci, we need to modify our
+phenotype covariance among relatives to account for this
+non-additivity. Specifically our equation for the covariance among a
+general pair of relatives
+(eqn. \ref{additive_covar_general_rellys} for additive variation) becomes
+\begin{equation}
+ Cov(X_1,X_2) = 2 F_{1,2} V_A + r_2 V_D
+\end{equation}
+where $r_2$ is the probability that the pair of individuals share 2
+alleles identical by descent, making the same assumptions (other than additivity) that we made in deriving
+eqn. \ref{additive_covar_general_rellys}.  In table
+\ref{table:domcovar} we show the phenotypic covariance for some common
+pairs of relatives. The regression of offspring phenotype on parental
+midpoint still has a slope $V_A/V_P$.
+
+Full sibs and parent-offspring have the same
+covariance if there is no dominance variance (as they have the same
+kinship coefficient $F_{1,2}$). However, when dominance
+is present ($V_D>0$), full-sibs resemble each other more than
+parent-offspring pairs. That's because parents and offspring share
+precisely one allele, while full-sibs can share both alleles (i.e. the
+full genotype at a locus) identical by descent. We can attempt to
+estimate $V_D$ by comparing different sets of relationships. For
+example non-identical twins (full sibs born at same time) 
+should have $1/2$ the phenotypic covariance of identical twins if
+$V_D=0$. Therefore, we can attempt to estimate $V_D$ by looking at
+whether identical twins have more than twice the phenotypic covariance
+than non-identical twins. \\
+
+The most important aspect of this discussion for thinking about
+evolutionary genetics is that the parent-offspring covariance is still
+only a function of $V_A$. This is because our parent (e.g. the mother) transmits only a
+single allele, at each locus, to its offspring. The other allele the
+offspring receives is random (assuming random mating), as it comes
+from the other unrelated parent (the father). Therefore, the average
+effect on the offspring phenotype of
+the allele the offspring receives from the mother, is averaged over
+the random allele the child receives from the father. Thus we only
+care about the additive effect of the allele, as parents transmit only
+alleles not genotypes to their offspring. This means that the short-term response
+to selection, as described by the breeder equation, depends only on
+$V_A$ and the additive effect of alleles.
+
+\begin{question}
+You collect observations of red deer within a generation; recording an
+individual’s number of offspring and phenotypes, which are known to
+have additive genetic variation, and construct the plots shown in
+Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
+questions. For each question choose one of the bold options. Briefly justify each of your answers with reference to the breeder's
+equation and multi-trait breeder's equation. No calculations are required. \\
+{\bf A)}	Looking at just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf C)}	(3 Points) Looking at figures \ref{fig:red_deer_Q} A, B, and C in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+\end{question}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
+\end{center}
+\caption{ Observations of red deer within a generation; recording an
+individual’s number of offspring and phenotypes, which are known to
+have additive genetic variation. The figures left to right are A-C.} \label{fig:red_deer_Q}
+\end{figure}
+
+
+
+\begin{question}
+How could you use 1/2 sibs vs full-sibs to estimate $V_D$? Why might
+this be difficult in practice? Why are identical vs non-identical
+twins better suited for this?
+\end{question}
+
+\begin{question}
+Can you construct a case where $V_A=0$ and $V_D>0$? You need
+just describe it qualitatively, you don't need to work out the
+math. (tricker question).
+\end{question}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| l | c|}
+\hline
+Relationship (i,j)$^{*}$ &  $Cov(X_i,X_j)$  \\
+\hline
+parent--child & $\nicefrac{1}{2} V_A$\\
+full siblings &$\nicefrac{1}{2} V_A +\nicefrac{1}{4} V_D$\\
+identical (monzygotic) twins & $V_A+V_D$ \\
+$1^{st}$ cousins & $\nicefrac{1}{8} V_A$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Phenotypic covariance between some pairs of relatives. $^{*}$Assuming this is the only relationship
+the pair of individuals share (above that expected from randomly
+sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
+\label{table:domcovar}
+\end{table}
 
 \newpage
