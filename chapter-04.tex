@@ -646,16 +646,16 @@ to other individuals in the population (assuming individuals mate at random).
 The additive genetic values of the genotypes are shown as red dots in
 Figure \ref{fig:add_dom}. Note that the additive values of the
 genotypes line up with the observed MC phenotypic means in the top row
-when our alleles interact in a completely additive manner. They fall
-along a single linear line (the red line in our Figure). The additive values are falling
+when our alleles interact in a completely additive manner. Our
+additive genetic values always fall along a linear line (the red line in our Figure). The additive values are falling
 best fitting line of linear regression for our population, when phenotype is regressed
 against the additive genotype ($0$, $1$, $2$ copies of allele 1)
 across all individuals in our population. Note in the
-dominant case the additive genetic values of the genotypes are closer
-to the observed values for the genotypes that are common in the
-population (which genotypes this is depends on the allele frequency). \\
+dominant case the additive genetic values differ from the observed
+phenotypic means, and are closer to the observed values for the genotypes that are common in the
+population. \\
 
-The difference in the additive effect $a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
+The difference in the additive effect of the two alleles $a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
 swapping an allele 1 for an allele 2, we'll call this difference
 $\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is also the
 slope of the regression of genotype against phenotype (the red line in
@@ -665,22 +665,21 @@ allele frequency for our completely additive locus (top row of
 slope between genotype on phenotype ($\alpha_{\ell}$) is a
 function of allele frequency (bottom row of
 \ref{fig:add_dom}). When a dominant allele (1) is rare there is a strong
-slope of genotype on phenotype, bottom left Figure \ref{fig:add_dom},
-as replacing a single copy of the 2 allele with a 1 allele in an
-individual has a big
-effect on average, as it will most likely move an individual from
+slope of genotype on phenotype, bottom left Figure
+\ref{fig:add_dom}. This strong slope is because replacing a single copy of the 2 allele with a 1 allele in an
+individual has a big effect on average phenotype, as it will most likely move an individual from
 being a 22 homozygote to being a 12 heterozygote. However, when the
 dominant allele (1) is common in the population, replacing a 2 allele
 by a 1 allele in an individual on average has little phenotypic
 effect. This small effect is because as we are mainly turning
-heterozygotes into homozygotes (11), who have the same mean phenotype.  
+heterozygotes into homozygotes (11), who have the same mean phenotype.  \\
 
 The variance in the population phenotype due to these
 additive breeding values at locus $\ell$ assuming HW proportions is
 \begin{align}
 V_{A, \ell} &= p^2 (2a_{\ell,2}) + 2pq (a_{\ell,1}+a_{\ell,1}) + q^2
-(2a_{\ell,0}) \\
-& = 2(p a_{\ell, 1} ^2 + q a_{\ell, 2} )\\
+(2a_{\ell,0}) \nonumber \\
+& = 2(p a_{\ell, 1} ^2 + q a_{\ell, 2} ) \nonumber \\
 & = 2pq \alpha_{\ell}
 \end{align}
 The total additive effect can
@@ -704,7 +703,7 @@ d_{\ell,1} =\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
 away from its additive genetic value, with similar expressions for
 each of the homozygotes ($d_{\ell,0}$ and $d_{\ell,2}$). We can then write the dominance variance at
 our locus as the genotype-frequency weighted sum of our squared
-dominance coefficients/
+dominance deviations
 \begin{equation}
 V_{D,\ell} = p^2 d_{\ell,0}^2+ 2pq d_{\ell,1}^2+ q^2 d_{\ell,2}^2.
 \end{equation}
@@ -712,7 +711,8 @@ Writing our total dominance variance as the sum across loci
 \begin{equation}
 V_D = \sum_{\ell=1}^{L}  V_{D,\ell}. 
 \end{equation}
-we can write our total genetic variance as 
+Having now partitioned all of the genetic variance into additive and
+dominant terms, we can write our total genetic variance as 
 \begin{equation}
 V_{G} = V_A+V_D.
 \end{equation}
@@ -723,7 +723,27 @@ $h^2=V_A/V_P=V_A/(V_G+V_E)$, which is the proportion of phenotypic
 variance due to additive genetic variance. We can also define the 
 total proportion of the phenotype variance due to genetic differences
 among individuals, as the broad-sense heritability $H^2 =
-V_G/(V_G+V_E)$. 
+V_G/(V_G+V_E)$. \\
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| l | c|}
+\hline
+Relationship (i,j)$^{*}$ &  $Cov(X_i,X_j)$  \\
+\hline
+parent--child & $\nicefrac{1}{2} V_A$\\
+full siblings &$\nicefrac{1}{2} V_A +\nicefrac{1}{4} V_D$\\
+identical (monzygotic) twins & $V_A+V_D$ \\
+$1^{st}$ cousins & $\nicefrac{1}{8} V_A$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Phenotypic covariance between some pairs of relatives,
+  include the dominance variation. $^{*}$Assuming this is the only relationship
+the pair of individuals share (above that expected from randomly
+sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
+\label{table:domcovar}
+\end{table}
 
 When dominance is present in the loci influencing our trait ($V_D>0$), i.e. when alleles do not interact
 in a completely additive manner with loci, we need to modify our
@@ -739,7 +759,7 @@ alleles identical by descent, making the same assumptions (other than additivity
 eqn. \ref{additive_covar_general_rellys}.  In table
 \ref{table:domcovar} we show the phenotypic covariance for some common
 pairs of relatives. The regression of offspring phenotype on parental
-midpoint still has a slope $V_A/V_P$.
+midpoint still has a slope $V_A/V_P$. 
 
 Full sibs and parent-offspring have the same
 covariance if there is no dominance variance (as they have the same
@@ -767,7 +787,32 @@ the random allele the child receives from the father. Thus we only
 care about the additive effect of the allele, as parents transmit only
 alleles not genotypes to their offspring. This means that the short-term response
 to selection, as described by the breeder equation, depends only on
-$V_A$ and the additive effect of alleles.
+$V_A$ and the additive effect of alleles. Therefore, if we can
+estimate the narrow-sense heritability we can predict the short-term response.
+However, if alleles display dominance our value of $V_A$ will change
+as our loci change frequency, e.g. as dominant alleles become common
+in the population their contribution to $V_A$ decreases. Therefore,
+our value of $V_A$ will not be a constant across generations.
+
+Up to this point we have only considered
+dominance and not epistasis. However, we include epistasis in a
+similar manner (for example among pairs of loci). This gets a little
+tricky to think about so we will only briefly explain it. 
+ We can first estimate the additive effect of the
+alleles by considering the effect of the alleles averaging over the
+other alleles they are paired with, just as before. We can then
+calculate the additive genetic variance from this. We can estimate
+the dominance variance, by calculating the residual variance among
+genotypes at a locus unexplained by the additive effect of the
+loci. We can then estimate the epistatic variance by estimating the
+residual variance left unexplained among the two locus genotypes from the additive and dominant
+deviations calculated from each locus separately. In practice these
+high variance components are hard to estimate, and usually small as
+much of our variance is assigned to the additive effect.  Again we
+would find that we mostly care about $V_A$ for predicting short-term
+evolution, but that the contribution of loci to the additive genetic
+variance will depend on the epstatic relationships among loci.
+
 
 \begin{question}
 You collect observations of red deer within a generation; recording an
@@ -809,23 +854,6 @@ just describe it qualitatively, you don't need to work out the
 math. (tricker question).
 \end{question}
 
-\begin{table}
-\begin{center}
-\begin{tabular}{| l | c|}
-\hline
-Relationship (i,j)$^{*}$ &  $Cov(X_i,X_j)$  \\
-\hline
-parent--child & $\nicefrac{1}{2} V_A$\\
-full siblings &$\nicefrac{1}{2} V_A +\nicefrac{1}{4} V_D$\\
-identical (monzygotic) twins & $V_A+V_D$ \\
-$1^{st}$ cousins & $\nicefrac{1}{8} V_A$\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Phenotypic covariance between some pairs of relatives. $^{*}$Assuming this is the only relationship
-the pair of individuals share (above that expected from randomly
-sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
-\label{table:domcovar}
-\end{table}
+
 
 \newpage
