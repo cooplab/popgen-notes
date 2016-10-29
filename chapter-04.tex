@@ -567,12 +567,13 @@ over evolution over short time-scales.
 
 \newpage
 \subsection{Non-additive variation.}
-Up to now we've assumed that our alleles contribute to our phenotype
-in an additive fashion. However, that does not have to be the case as
-there may be non-additivity among the alleles present at a locus
-(dominance) or among alleles at different loci (epistasis). We can accomodate these complications into our models. We do this by
-partitioning our total genetic variance into independent variance
-components.
+
+Up to now we've assumed that our alleles contribute to our phenotype in an
+additive fashion. However, that does not have to be the case as there may be
+non-additivity among the alleles present at a locus (dominance) or among
+alleles at different loci (epistasis). We can accommodate these complications
+into our models. We do this by partitioning our total genetic variance into
+independent variance components.
 
 Consider autosomal biallelic locus $\ell$, with frequency $p$ for allele 1, and
 genotypes $0$, $1$, and $2$ corresponding to how many copies of allele
@@ -585,12 +586,12 @@ these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} 
 likewise for the other genotypes. 
 
 To illustrate the approach we'll plot two different cases of dominance
-relationship in Figure \ref{fig:add_dom}. In Figure \ref{fig:add_dom} the first row we show the
-relationship between genotype and MC phenotype under an additive model,
-and in the second row under a model where the allele 1 is dominant,
-such that the phenotype of the genotype of the heterozyote is the same as the $11$
-homozygote. The area of each circle is proportion to the fraction of
-the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
+relationship in Figure \ref{fig:add_dom}. In the first row of Figure
+\ref{fig:add_dom} we show the relationship between genotype and MC phenotype
+under an additive model, and in the second row under a model where the allele 1
+is dominant, such that the phenotype of the genotype of the heterozyote is the
+same as the $11$ homozygote. The area of each circle is proportion to the
+fraction of the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
 
 \begin{figure}
 \begin{center}
@@ -636,42 +637,43 @@ genotype: & 0, & 1, & 2.\\
 additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,1}$   \label{add_values}
 \end{tabular}
 \end{center}
-Here we are simply adding up the additive contributions of the alleles present in
-each genotype. These are the genotypic values of the trait that would
-result taking only the additive component of the genotype. 
-They also have the intepretation as being the mean phenotype of each
-genotypes' offspring averaged over across all possible matings
-to other individuals in the population (assuming individuals mate at random). 
+%
+Here we are simply adding up the additive contributions of the alleles present
+in each genotype. These are the genotypic values of the trait that would result
+taking only the additive component of the genotype.  They also have the
+interpretation as being the mean phenotype of each genotypes' offspring
+averaged over across all possible matings to other individuals in the
+population (assuming individuals mate at random). 
 
-The additive genetic values of the genotypes are shown as red dots in
-Figure \ref{fig:add_dom}. Note that the additive values of the
-genotypes line up with the observed MC phenotypic means in the top row
-when our alleles interact in a completely additive manner. Our
-additive genetic values always fall along a linear line (the red line in our Figure). The additive values are falling
-best fitting line of linear regression for our population, when phenotype is regressed
-against the additive genotype ($0$, $1$, $2$ copies of allele 1)
-across all individuals in our population. Note in the
-dominant case the additive genetic values differ from the observed
-phenotypic means, and are closer to the observed values for the genotypes that are common in the
+The additive genetic values of the genotypes are shown as red dots in Figure
+\ref{fig:add_dom}. Note that the additive values of the genotypes line up with
+the observed MC phenotypic means in the top row when our alleles interact in a
+completely additive manner. Our additive genetic values always fall along a
+linear line (the red line in our figure). The additive values are falling best
+fitting line of linear regression for our population, when phenotype is
+regressed against the additive genotype ($0$, $1$, $2$ copies of allele 1)
+across all individuals in our population. Note in the dominant case the
+additive genetic values differ from the observed phenotypic means, and are
+closer to the observed values for the genotypes that are common in the
 population. \\
 
-The difference in the additive effect of the two alleles $a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
-swapping an allele 1 for an allele 2, we'll call this difference
-$\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is also the
-slope of the regression of genotype against phenotype (the red line in
-Figure \ref{fig:add_dom}). Note that the slope of our regression of genotype on phenotype ($\alpha_{\ell}$) does not depend on
+The difference in the additive effect of the two alleles $a_{\ell, 2}-a_{\ell,
+1}$ can be interpreted as a average effect of swapping an allele 1 for an
+allele 2, we'll call this difference $\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$.
+Our $\alpha_{\ell}$ is also the slope of the regression of genotype against
+phenotype (the red line in Figure \ref{fig:add_dom}). Note that the slope of
+our regression of genotype on phenotype ($\alpha_{\ell}$) does not depend on
 allele frequency for our completely additive locus (top row of
-\ref{fig:add_dom}). In contrast, when there is dominance, our the
-slope between genotype on phenotype ($\alpha_{\ell}$) is a
-function of allele frequency (bottom row of
-\ref{fig:add_dom}). When a dominant allele (1) is rare there is a strong
-slope of genotype on phenotype, bottom left Figure
-\ref{fig:add_dom}. This strong slope is because replacing a single copy of the 2 allele with a 1 allele in an
-individual has a big effect on average phenotype, as it will most likely move an individual from
-being a 22 homozygote to being a 12 heterozygote. However, when the
-dominant allele (1) is common in the population, replacing a 2 allele
-by a 1 allele in an individual on average has little phenotypic
-effect. This small effect is because as we are mainly turning
+\ref{fig:add_dom}). In contrast, when there is dominance, our the slope between
+genotype on phenotype ($\alpha_{\ell}$) is a function of allele frequency
+(bottom row of \ref{fig:add_dom}). When a dominant allele (1) is rare there is
+a strong slope of genotype on phenotype, bottom left Figure \ref{fig:add_dom}.
+This strong slope is because replacing a single copy of the 2 allele with a 1
+allele in an individual has a big effect on average phenotype, as it will most
+likely move an individual from being a 22 homozygote to being a 12
+heterozygote. However, when the dominant allele (1) is common in the
+population, replacing a 2 allele by a 1 allele in an individual on average has
+little phenotypic effect. This small effect is because as we are mainly turning
 heterozygotes into homozygotes (11), who have the same mean phenotype.  \\
 
 The variance in the population phenotype due to these
@@ -696,7 +698,7 @@ define the dominance variance as the population variance among
 genotypes at a locus due to their deviation from additivity.
 We can calculate how much each genotypic mean deviates away from its
 additive prediction at locus $\ell$ (the length of the arrows in
-Figure \label{fig:add_dom}), for example the heterzygote deviates 
+Figure \label{fig:add_dom}), for example the heterozygote deviates 
 \begin{equation}
 d_{\ell,1} =\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
 \end{equation}
