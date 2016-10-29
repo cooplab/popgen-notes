@@ -111,7 +111,17 @@ obtain
 where we make the approximations $N^2 - 2N + 1 \approx N^2 - 2N$ and later
 $N-2 \approx N$.
 
-
+\begin{tcolorbox}
+\begin{question}
+You are studying the frequency of antibiotic-resistant bacteria in a
+patient.  Before administering the antibiotic the frequency of the 
+resistance allele is $\nicefrac{1}{1000}$. You adminster the antibiotic,
+alarming just 8 days later you find the frequency of the 
+resistance allele to be $99\%$. Assume a generation time of $\nicefrac{1}{4}$ a day for
+these bacteria. \\
+What is the selection coefficient associated with the resistance to antibiotics?
+\end{question}
+\end{tcolorbox}
 \paragraph{Haploid model with fluctuating selection}
 We can now consider the case where the fitnesses depend on time, and
 say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
@@ -217,7 +227,13 @@ the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{
 \begin{tcolorbox} 
 \begin{question}
 You have been studying an annual wildflower for many generations with two color morphs orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
-Heavy February rainfall creates optimal growing conditions for an exotic herbivorous beetle with a preference for orange-flowered individuals.  This year it arrives at your study site with a ravenous appetite.  Only 50\% of orange-flowered individuals survive its wrath, while 90\% of white-flowered individuals survive until the end of the growing season.  Additionally, surviving orange flowered individuals produce 80 seeds on average, while surviving white-flowered individuals produce 100 seeds on average. 
+Heavy February rainfall creates optimal growing conditions for an
+exotic herbivorous beetle with a preference for orange-flowered
+individuals.  This year it arrives at your study site with a ravenous
+appetite.  Only 50\% of orange-flowered individuals survive its wrath,
+while 90\% of white-flowered individuals survive until the end of the
+growing season.  \\
+%Additionally, surviving orange flowered individuals produce 80 seeds on average, while surviving white-flowered individuals produce 100 seeds on average. 
 {\bf A} What is the initial frequency of the white allele, and what do you
 have to assume to obtain this?\\
 {\bf B} What is the frequency of the white allele in the seeds forming the next generation?\\
@@ -277,7 +293,8 @@ the mean fitness of the population. \sa{The rate of this increase is proportiona
 the variance in allele frequencies within the population ($p_tq_t$).}\\
 \begin{tcolorbox} 
 \begin{question}
-Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are equivalent.\\
+Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are
+equivalent. (Trickier question.)\\
 \end{question}
 \end{tcolorbox}
 So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
@@ -497,22 +514,53 @@ has higher geometric fitness than either of the homozygotes.\\
 %\eqref{geometric_2wins}).
 
 Intriguingly, we can have a balanced polymorphism even if the
-heterozygote is never the fittest genotype in any generation. To see
-this, consider the simple example, where there are two environments
-alternate from generation to generation:\\
-\begin{tabular}{lccc}
-genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
-relative fitness in environment A & $w_{11,A}$ & $>w_{12,A}>$ & $w_{22,A}$ \\
-relative fitness in environment B  & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
-Geometric mean fitness & $w_{11,B}$ & $<w_{12,B}>$ & $w_{22}$ \\
-\end{tabular}\\
-
-In this case, the polymorphism will remain balanced in the population,
+heterozygote is never the fittest genotype in any generation, if the heterozygotes
+has a higher geometric mean fitness than either of the homozygotes. In this case, the polymorphism will remain balanced in the population,
 despite the fact that the heterozygote is never the fitest genotype.
 
+%To see
+%this, consider the simple example, where there are two environments
+%alternate from generation to generation:\\
+%\begin{tabular}{lccc}
+%genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
+%relative fitness in environment A & $w_{11,A}$ & $>w_{12,A}>$ & $w_{22,A}$ \\
+%relative fitness in environment B  & $w_{11,B}$ & $<w_{12,B}<$ & $w_{22,B}$ \\
+%Geometric mean fitness & $w_{11,B}$ & $<w_{12,B}>$ & $w_{22}$ \\
+%\end{tabular}\\
+
+
+\begin{tcolorbox}
+\begin{question}
+Consider a plant population found in one of two different environments each
+generation. These occur randomly, $\nicefrac{1}{3}$ of time the population
+experiences the dry environment and with probability $\nicefrac{2}{3}$ it
+experiences the wet environment Y. The Absolute Fitnesses
+are as follows:
+\begin{center}
+\begin{tabular}{cccc} 
+Environment & AA & Aa & aa \\
+\hline \\
+Wet. & 6.25 & 5.0 & 3.75 \\
+Dry & 3.85 & 5.0 & 6.15\\
+\end{tabular}
+\end{center}
+{\bf A)} Show whether the equilibrium frequency of A will be $0$, $1$, or in between.\\
+{\bf B)} If the probabilities of wet and dry environments were equal,
+i.e., 0.5 how would your conclusion change?\\
+(HINT: Lets write $w_{AA,\text{dry}}$ and $w_{AA,\text{wet}}$ for the
+fitnesses of the AA homozygote in the two environments. Then if the
+two environments are equally common $\prod_{i=0}^{t}w_{AA,i} \approx w_{AA,\text{dry}}^{\nicefrac{t}{2}}
+w_{AA,\text{wet}}^{\nicefrac{t}{2}}$ for large values of $t$.)
+%> (6.25)^(1/3)*(3.85)^(2/3);(5)^(1/3)*(5)^(2/3);(3.75)^(1/3)*(6.15)^(2/3)
+%[1] 4.524812, 5, 5.215074
+% (6.25)^(1/2)*(3.85)^(1/2);(5)^(1/2)*(5)^(1/2);(3.75)^(1/2)*(6.15)^(1/2)
+% 4.905354, 5, 4.802343
+\end{question}
+\end{tcolorbox}
 
 \begin{tcolorbox} 
 \begin{question}
+OPTIONAL trickier question.\\
 Imagine a randomly-mating population of hermaphrodites. In this
 population a derived allele (D) segregates that distorts transmission
 in its favour over the ancestral allele (d) in the production of all
@@ -582,7 +630,7 @@ insert eqns. \eqref{eq:dirSelApprox} and \eqref{eq:mutApprox}, and solve for $q$
 We see that the frequency of the deleterious allele $A_2$ is balanced at the mutation rate ($\mu$) divided by
 the reduction in relative fitness in the heterozygote ($hs$).}\\
 
-\sa{It is worth pointing out that the fitness of the $A_2A_2$ homozygote
+It is worth pointing out that the fitness of the $A_2A_2$ homozygote
 has not entered this calculation, as $A_2$ is so rare that it is hardly ever found in the 
 homozygous state. Therefore, if $A_2$ has any deleterious effect
 in a heterozygous state (i.e.\ if $h>0$) it is this effect that determines the
@@ -611,7 +659,7 @@ that, for truly recessive alleles,
 \begin{equation}
 	q_e = \sqrt{\frac{\mu}{s}}.
 \end{equation}
-}
+
 
 \begin{tcolorbox} 
 \begin{question}
@@ -705,10 +753,10 @@ our haploid $s$ by the cost to heterozygotes $hs$.
 
 \begin{tcolorbox} 
 \begin{question}
-You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively) neutral biallelic markers the freshwater population has frequencies:
-0.2, 0.7, 0.8
-at the same markers the marine population has frequencies:
-0.4, 0.5 and 0.7.
+You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively) neutral biallelic markers the freshwater population has frequencies:\\
+0.2, 0.7, 0.8\\
+at the same markers the marine population has frequencies:\\
+0.4, 0.5 and 0.7.\\
  From studying patterns of heterozygosity at a large collection of markers, you have estimated the long term effective size of your freshwater population is 2000 individuals.\\
 {\bf A)}	What is $F_{ST}$ across these neutral markers in the freshwater population, with respect to the large marine population (i.e. treat the marine population as the total)?\\
 {\bf B)} You are also studying an unlinked locus involved in the
