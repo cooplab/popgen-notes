@@ -153,8 +153,8 @@ is similar to the calculations being carried out by conservation biologists).
   values of x, $x = 0.5, 0.1, 0.01$. Do this by plotting the geometric decay as
   points, and the exponential decay as a curve, using different colors for each
   of these three values. Note that you should have a discrete timescale for the
-  geometric decay (e.g. using \texttt{seq(0, 18)}) and a near continuous scale
-  for the exponential decay (e.g. using \texttt{seq(0, 18, length.out=100)}.
+  geometric decay (e.g. using \texttt{t=seq(0, 18)}) and a near continuous scale
+  for the exponential decay (e.g. using \texttt{t=seq(0, 18, length.out=100)}.
   Print off your graph and hand it in. 
 
     % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works

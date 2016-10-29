@@ -584,10 +584,11 @@ are present on. We'll mean center (MC)
 these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} - \mu$, and
 likewise for the other genotypes. 
 
-To illustrate the approach we'll plot two different cases of dominance relationship in Figure \label{fig:add_dom} in the first row we show the
-relationship between genotype and MC phenotype under and additive model,
+To illustrate the approach we'll plot two different cases of dominance
+relationship in Figure \ref{fig:add_dom}. In Figure \ref{fig:add_dom} the first row we show the
+relationship between genotype and MC phenotype under an additive model,
 and in the second row under a model where the allele 1 is dominant,
-such that the genotype of the heterozyote is the same as the $11$
+such that the phenotype of the genotype of the heterozyote is the same as the $11$
 homozygote. The area of each circle is proportion to the fraction of
 the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
 
@@ -625,7 +626,7 @@ paired with another allele 1 with probability $p$, resulting in a
 genotype $11$ (with phenotypic deviation $\overline{X}'_{\ell,2}$) and will
 be paired with an allele 2 with probability $q$ in a heterozygote
 (with phenotypic deviation $\overline{X}'_{\ell,1}$). A similar argument
-can be made for $a_{\ell, 2}$. 
+can be made for $a_{\ell, 2}$. \\
 
 The additive MC genetic values (breeding values) of genotype 0, 1, and
 2 are then 
@@ -635,8 +636,7 @@ genotype: & 0, & 1, & 2.\\
 additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,1}$   \label{add_values}
 \end{tabular}
 \end{center}
-Here we are
-simply adding up the additive contributions of the alleles present in
+Here we are simply adding up the additive contributions of the alleles present in
 each genotype. These are the genotypic values of the trait that would
 result taking only the additive component of the genotype. 
 They also have the intepretation as being the mean phenotype of each
@@ -644,40 +644,24 @@ genotypes' offspring averaged over across all possible matings
 to other individuals in the population (assuming individuals mate at random). 
 
 The additive genetic values of the genotypes are shown as red dots in
-Figure \label{fig:add_dom}. Note that in the additive values of the
+Figure \ref{fig:add_dom}. Note that the additive values of the
 genotypes line up with the observed MC phenotypic means in the top row
 when our alleles interact in a completely additive manner. They fall
-along a single linear line (red line in our Figure). The additive values are falling
+along a single linear line (the red line in our Figure). The additive values are falling
 best fitting line of linear regression for our population, when phenotype is regressed
 against the additive genotype ($0$, $1$, $2$ copies of allele 1)
 across all individuals in our population. Note in the
 dominant case the additive genetic values of the genotypes are closer
 to the observed values for the genotypes that are common in the
-population. \\
+population (which genotypes this is depends on the allele frequency). \\
 
-The variance in the population phenotype due to these
-additive breeding values at locus $\ell$ assuming HW proportions is
-\begin{align}
-V_{A, \ell} &= p^2 (2a_{\ell,2}) + 2pq (a_{\ell,1}+a_{\ell,1}) + q^2
-(2a_{\ell,0}) \\
-& = 2(p a_{\ell, 1} ^2 + q a_{\ell, 2} )\\
-& = 2pq (a_{\ell, 2}-a_{\ell, 1})^2
-\end{align}
-$a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
-swapping an allele 1 for an allele 2, we'll call this
+The difference in the additive effect $a_{\ell, 2}-a_{\ell, 1}$ can be interpreted as a average effect of
+swapping an allele 1 for an allele 2, we'll call this difference
 $\alpha_{\ell}=a_{\ell, 2}-a_{\ell, 1}$. Our $\alpha_{\ell}$ is also the
-slope of the red line in 
-The total additive effect can
-be found by summing this additive genetic variance across loci
-\begin{equation}
-V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
-2p_{\ell}q_{\ell} \alpha_{\ell}.
-\end{equation}
-Note that the slope of our regression of genotype on phenotype ($\alpha_{\ell}$) does not depend on
+slope of the regression of genotype against phenotype (the red line in
+Figure \ref{fig:add_dom}). Note that the slope of our regression of genotype on phenotype ($\alpha_{\ell}$) does not depend on
 allele frequency for our completely additive locus (top row of
-\ref{fig:add_dom}), changing the frequency at our locus does change
-it's contribution to additive variance but only via the heterozygosity
-($2p_{\ell}q_{\ell}$). In contrast, when there is dominance, our the
+\ref{fig:add_dom}). In contrast, when there is dominance, our the
 slope between genotype on phenotype ($\alpha_{\ell}$) is a
 function of allele frequency (bottom row of
 \ref{fig:add_dom}). When a dominant allele (1) is rare there is a strong
@@ -691,10 +675,25 @@ by a 1 allele in an individual on average has little phenotypic
 effect. This small effect is because as we are mainly turning
 heterozygotes into homozygotes (11), who have the same mean phenotype.  
 
+The variance in the population phenotype due to these
+additive breeding values at locus $\ell$ assuming HW proportions is
+\begin{align}
+V_{A, \ell} &= p^2 (2a_{\ell,2}) + 2pq (a_{\ell,1}+a_{\ell,1}) + q^2
+(2a_{\ell,0}) \\
+& = 2(p a_{\ell, 1} ^2 + q a_{\ell, 2} )\\
+& = 2pq \alpha_{\ell}
+\end{align}
+The total additive effect can
+be found by summing this additive genetic variance across loci
+\begin{equation}
+V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
+2p_{\ell}q_{\ell} \alpha_{\ell}.
+\end{equation}
 
 
 Having assigned the additive genetic variance to be the variance
-explained by the additive contribution of the alleles at a locus,  dominance variance is the population variance among
+explained by the additive contribution of the alleles at a locus, we
+define the dominance variance as the population variance among
 genotypes at a locus due to their deviation from additivity.
 We can calculate how much each genotypic mean deviates away from its
 additive prediction at locus $\ell$ (the length of the arrows in
@@ -711,7 +710,7 @@ V_{D,\ell} = p^2 d_{\ell,0}^2+ 2pq d_{\ell,1}^2+ q^2 d_{\ell,2}^2.
 \end{equation}
 Writing our total dominance variance as the sum across loci 
 \begin{equation}
-V_D = \sum_{\ell=1}^{L}  V_{D,\ell} 
+V_D = \sum_{\ell=1}^{L}  V_{D,\ell}. 
 \end{equation}
 we can write our total genetic variance as 
 \begin{equation}
