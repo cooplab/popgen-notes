@@ -56,6 +56,10 @@ plot.lm.genos(a=a,p=p.eq,dom.arrows=TRUE)
 plot.lm.genos(a=a,p=0.9,dom.arrows=TRUE)
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/additive_effect_OverDom.pdf")
 
+
+###Work in progress
+if(FALSE){
+
 mice.coat<-matrix(NA,nrow=3,ncol=3,dimname=list(c("MM","Mm","mm"),c("AA","Aa","aa")))
 mice.coat["MM",]<-c(0,0,0)
 mice.coat["Mm",]<-c(0.9,1,1.5)
@@ -89,4 +93,6 @@ sapply(1:3,function(i){
 	abline(lm((phenos-pop.mean)~genos),col="red",lwd=3)
 	slope<-lm((phenos-pop.mean)~genos)$coeff
 	z_bars<- a -pop.mean
+}
+
 }

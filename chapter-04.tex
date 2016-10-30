@@ -688,7 +688,7 @@ The total additive effect can
 be found by summing this additive genetic variance across loci
 \begin{equation}
 V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
-2p_{\ell}q_{\ell} \alpha_{\ell}.
+2p_{\ell}q_{\ell} \alpha_{\ell}^2.
 \end{equation}
 
 
@@ -747,8 +747,7 @@ sampling individuals from the population). } % doesn't this implicitly assume an
 \label{table:domcovar}
 \end{table}
 
-When dominance is present in the loci influencing our trait ($V_D>0$), i.e. when alleles do not interact
-in a completely additive manner with loci, we need to modify our
+When dominance is present in the loci influencing our trait ($V_D>0$), we need to modify our
 phenotype covariance among relatives to account for this
 non-additivity. Specifically our equation for the covariance among a
 general pair of relatives
