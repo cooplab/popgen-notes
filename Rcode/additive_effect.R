@@ -96,3 +96,30 @@ sapply(1:3,function(i){
 }
 
 }
+
+# Jess Hayward
+MC5R    RSP02    avg_phenotype_shedding aa    aa    0.778 aa    ad    0.834337349 aa    dd    0.146464646 ad    aa    0.274358974 ad    ad    0.243902439 ad    dd    0.013888889 dd    aa    0.238312429 dd    ad    0.095794393 dd    dd    0.006003431
+FGF5    RSPO2    avg_pheno_furlength aa    aa    1.503340757 aa    ad    1.419847328 aa    dd    3.104972376 ad    aa    2.152542373 ad    ad    2.138686131 ad    dd    3.427272727 dd    aa    3.279623477 dd    ad    3.169811321 dd    dd    4.708333333
+MC5R    FGF5    avg_pheno_furlength
+aa    aa    3.178571429
+aa    ad    2.709039548
+aa    dd    3.48733536
+ad    aa    2.260869565
+ad    ad    2.434554974
+ad    dd    3.776685393
+dd    aa    1.701277955
+dd    ad    2.233236152
+dd    dd    3.610784314
+
+MC5R    RSPO2    avg_pheno_furlength
+aa    aa    3.017806935
+aa    ad    3.18974359
+aa    dd    4.194719472
+ad    aa    2.816720257
+ad    ad    3.229508197
+ad    dd    4.528846154
+dd    aa    2.524156791
+dd    ad    1.805054152
+dd    dd    3.650406504
+
+The MC5R ancestral allele is at a freq of 0.401, FGF5 ancestral allele is at 0.305, and the RSPO2 derived allele is at 0.353.
