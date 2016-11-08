@@ -238,6 +238,7 @@ variance to get $h^2$. \\
 %One way potentially to get somewhat around the
 %shared environmental effect is to use paternal half-sibs as they share a
 
+\begin{tcolorbox}
 \begin{question}
 {\bf A)} In polygynous blackbird populations (i.e. males mate with
 several females), paternal half-sibs can be identified.  Suppose that
@@ -248,6 +249,7 @@ estimate $h^2$ for tarsus length in this population. \\
 {\bf B)} Why might paternal half-sibs be preferable for measuring
 heritability than maternal half-sibs? 
 \end{question}
+\end{tcolorbox}
 
 Another way that we can estimate the narrow sense heritability is
 through the regression of child's phenotype on the parental mid-point
@@ -260,7 +262,7 @@ V_A$, and $Var(X_{mid}) = \half V$ as by taking the average of the
 parents we have halved the variance, such that the slope of the
 regression is
 \begin{equation}
-\beta= \frac{Cov(X_{kid},X_{mid})}{Var(X_{mid})} = \frac{V_A}{V} = h^2
+\beta_{mid,kid}= \frac{Cov(X_{kid},X_{mid})}{Var(X_{mid})} = \frac{V_A}{V} = h^2
 \end{equation}
 i.e. the regression of the child's phenotype on the parental midpoint
 phenotype is an estimate of the narrow sense heritability. This is a
@@ -291,7 +293,7 @@ More formally the expected phenotype of the child given the parental
 phenotypes is
 \begin{equation}
 \E(X_{kid} | X_{mum},X_{dad}) = \mu +
-\beta(X_{mid} - \mu) =\mu + h^2(X_{mid} - \mu)  \label{predict_kid}
+\beta_{mid,kid}(X_{mid} - \mu) =\mu + h^2(X_{mid} - \mu)  \label{predict_kid}
 \end{equation}
 this follows from the definition of linear regression. So to find the
 child's predicted phenotype we simply take the mean phenotype and add
@@ -370,7 +372,7 @@ who survive to reproduce. We can use eqn. \ref{predict_kid} to obtain
 an expression for this
 \begin{equation}
 \mu_{NG} = \mu_{BS} +
-\beta ( \E(X_{mid}) - \mu_{BS})
+\beta_{mid,kid} ( \E(X_{mid}) - \mu_{BS})
 \end{equation}
 so to obtain $\mu_{NG}$ we need to compute $\E(X_{mid})$ the expected
 mid-point phenotype of pairs of individuals who survive to

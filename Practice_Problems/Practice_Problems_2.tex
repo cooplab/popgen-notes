@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage{nicefrac}
+\newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+
+
+\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
+
+
+\begin{document}
+\title{EVE102 Practice Problems 1}
+\author{Graham Coop}
+\date{}
+\maketitle
+
+These study questions are to help you prepare for the exams.
+These, and questions given in the homework, are the sorts of questions
+that you can expect to see. Indeed, some of these questions are old
+exam questions.  Your answers should not to be handed in and no key
+will be posted.  If you have questions come to see your TA or
+instructor during office hours or try asking your peers for help in
+the Chat Room on Piazza.\\
+ In the past students have worked
+collaboratively on an answer key. We think that's great! However, remember to
+attempt the questions multiple times before looking at the answers.\\
+
+Remember the exams are cumulative, so please review your the previous
+practice problems and exam.
+
+%Note that population genetics is an analytic
+%subject that requires repeatedly working through the problems to fully
+%understand it. 
+
+{\bf Unless otherwise stated assume that loci are biallelic and
+autosomal. \\
+For full credit on the exam you must show your work, and state the asumptions you have to make
+(if any). }\\
+
+\begin{question}
+Assume that the frequency of the HoP allele is 10\%, that there are 1000 males at birth, and that individual adults mate at random.\\
+{\bf A)} What is the expected number of males with each of the three genotypes in the population at birth? Show your work.\\
+
+Assume that a typical male individual of three different genotypes
+have the following probabilities of surviving to adulthood:\\
+\begin{center}
+\begin{tabular}{ccc}
+Ho+Ho+  &	Ho+Hop 	&HopHop\\
+0.5	&	0.8	&	0.8\\
+\end{tabular}
+\end{center}
+Assume as before that the frequency of the Hop allele is 10\% at birth, and that mating of adults is random.  \\
+{\bf B)} How many individuals of each genotype do you expect to find in your population of males that have survived to adulthood? Show your work.\\
+
+
+Of the males who survive to reproduce, you estimate that males with the Ho+Ho+  and Ho+Hop  genotype have on average 2.5 offspring, while HopHop males have on average 1 offspring. \\
+
+{\bf C)} Taking into account both survival and reproduction how many
+offspring do you expect each of the three males genotypes to contribute to the total population in the next generation? \\
+
+{\bf C)} What is the frequency of the Hop allele in the sperm that will form this next generation?  \\
+
+{\bf D)}  How would your answers change if the Hop allele was at 90\% frequency? \\
+
+{\bf E)} At the equilibrium frequency the marginal fitnesses of the Hop and Ho+ alleles are the same (you can calculate the marginal fitnesses to verify this, if you want to). Can you explain intuitively why this is the case, and what it means?\\
+\end{question}
+
+\begin{question}
+ What can we infer from the widespread observation of inbreeding depression in crosses performed in outbred species?
+\end{question}
+
+\begin{question}
+Analyzing polymorphism and divergence data for a gene you calculate the  following McDonald‐Kreitman table.
+\begin{center}
+\begin{tabular}{ccc}
+& Polymorphism & Substitutions\\
+Synonymous & 40 & 80\\
+Nonsynonymous & 20 &  80 \\
+\end{tabular}
+\end{center}
+{\bf A)} Based on the ratio of non-synonymous to synonymous
+polymorphisms, given the 80 synonymous substitutions how many
+nonsynymous substitutions would you expect if this gene were evolving neutrally?\\
+{\bf B)} Is this table consistent with the gene evolving neutrally? If
+not what could explain the results?\\
+\end{question}
+
+\begin{question}
+You are studying the rapid evolution of light organ size in fireflies (Photinus pyralis) in response to light pollution on a prairie in Ohio.  In January of 1985, a highway was constructed through the prairie with bright streetlights.  Since fireflies use light signals to locate mates, individuals with smaller, and thus less visible, light organs were less successful at mating in these new light conditions.  You know the light organ was, on average, 4mm long prior to the construction of the highway.  In 2005, the average light organ size in this population before mating was 6mm.  If this firefly has 1 generation per year and the narrow sense heritability is 0.1, what was the mean light organ length of successfully reproducing individuals in 1985 (the first year of selection)? 
+\end{question} 
+
+\begin{question}
+In a region of Africa where malaria is common, the frequency of the
+sickle cell allele among newborns has been 0.2 for many
+generations. Assume that homozygotes for the sickle cell allele
+historically did not survive to reproductive age.\\
+{\bf A)} Estimate the relative fitness in this environment of
+homozygotes for the “normal” (non-sickle cell) allele.\\
+{\bf B)}  Assuming that this selection works only through viability differences, what frequency of heterozygous adults do you expect to find in this population.
+\end{question}
+
+\begin{question}
+The nineteenth-century notion of blending inheritance posed a problem for Darwinian evolution by natural selection, a problem which is solved by Mendelian inheritance.  Briefly explain the problem and its solution. 
+\end{question}
+
+
+\begin{question}
+An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against homozygotes for the resistance allele.
+\end{question}
+
+\begin{question}
+Assuming that the mutation rate is $\mu$/gamete/generation and the population size is N diploid individuals, what is the number of new mutations introduced into the population each generation?
+\end{question}
+
+\begin{question}
+What is the probability of fixation of a unique new, neutral mutation in a population of N haploid individuals?
+\end{question}
+
+\begin{question}
+Why is dN/dS much less than one for the majority of genes in our genome?
+\end{question}
+
+\begin{question}
+Albino squirrels suffer a higher rate of predation than normally pigmented squirrels. Albinism is due to a recessive, autosomal mutation. The frequency of albino squirrels at birth is $4 \times 10^{-6}$. If the mutation rate to new albino alleles is $10^{-6}$, assuming the albino allele is at mutation-selection equilibrium, what is the reduction in fitness of the homozygote? 
+\end{question}
+
+\begin{question}
+Briefly explain why the rate of substitution in pseudogenes can be used to estimate the rate of mutation. 
+\end{question}
+
+\begin{question}
+In 1945 fisherman in the salmon fishing industry began being paid by the pound rather than by the number of fish caught.  As a result, they began using gill nets, which preferentially catch large fish.  The result of this practice was that the mean weight of salmon in a particular river dropped from 6 lbs in 1950 to 5 lbs in 1970.  The salmon lifecycle involves a discrete generation every 4 years and gill netting causes the weight of spawning salmon to be 2/3 of a pound less each generation than it would have been without fishing.  \\
+
+What is the heritability of weight in these salmon? Show your work.\\
+\end{question}
+
+\begin{question}
+You sequence a gene in {\it Drosophila melanogaster} and {\it
+  D. simulans}. You observe 5 non-synonymous substitutions out of 500
+bases where non-synonymous substitutions could occur, and 15
+synonymous substitutions  out of 500
+bases where synonymous substitutions could occur. What is the level of
+constraint at nonsynonymous sites?
+\end{question}
+\end{document}
