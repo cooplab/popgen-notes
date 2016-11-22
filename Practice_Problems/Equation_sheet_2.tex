@@ -1,5 +1,8 @@
 \documentclass[12pt,twocolumn]{article}
 \usepackage{nicefrac}
+ \usepackage{amsmath}
+  \usepackage{amsfonts}
+  \usepackage{amssymb}
 \newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
 %\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
  %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
@@ -31,7 +34,7 @@ $(1-F) p^2 + F p$, & $(1-F) 2pq$, & $(1-F) q^2 + F q$ \nonumber
 \end{center}
 
 \begin{equation}
-q_{eq} = \frac{s_1}{s_1+s_2}
+q_{eq} = \frac{s_1}{s_1+s_2} \nonumber
 \end{equation}
 
 \begin{equation}
@@ -52,9 +55,12 @@ D_{AB} = p_{AB} - p_Ap_B \nonumber
 
 \begin{equation}
 \E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =
-4N_e(1-1/n),   \E[T_{tot}] = \sum_{k=n}^2 \frac{4N_e}{k-1}
-\end{question}
+4N_e(1-1/n) \nonumber
+\end{equation}
 
+\begin{equation}
+\E[T_{tot}] = \sum_{k=n}^2 \frac{4N_e}{k-1}  \nonumber
+\end{equation}
 
 \begin{equation}
   H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  \nonumber
@@ -66,7 +72,7 @@ D_{AB} = p_{AB} - p_Ap_B \nonumber
 \end{equation}
 
 \begin{equation}
-R = h^2 S = V_A \beta
+R = h^2 S = V_A \beta \nonumber
 \end{equation}
 
 
@@ -76,12 +82,7 @@ R = h^2 S = V_A \beta
 \end{equation}
 
 \begin{equation}
-\fit =1-\frac{H_I}{H_T}.\nonumber
-%\label{eqn:F_relationships}
-\end{equation}
-
-\begin{equation}
-\fis =1-\frac{H_I}{H_S}.\nonumber
+\fit =1-\frac{H_I}{H_T},~~\fis =1-\frac{H_I}{H_S}.\nonumber
 %\label{eqn:F_relationships}
 \end{equation}
 
@@ -91,37 +92,38 @@ R = h^2 S = V_A \beta
 \end{equation}
 
 \begin{equation}
-  \fst = \frac{ T}{ T + 4N_e }
+  \fst = \frac{ T}{ T + 4N_e } \nonumber
 %\label{eqn:F_relationships}
 \end{equation}
 
 \begin{equation}
-  F_{IM} = \frac{1}{1 + 4N_I m}
+  F_{IM} = \frac{1}{1 + 4N_I m} \nonumber
 %\label{eqn:F_relationships}
 \end{equation}
 
 
 \begin{equation}
-	\tau = -\frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right)
+	\tau = \frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau}
+            p_0}\right) \nonumber
 \end{equation}
 
 \begin{equation}
-\overline{w} = w_{11}p^2+w_{12}2pq+w_{22}q^2
+\overline{w} = w_{11}p^2+w_{12}2pq+w_{22}q^2  \nonumber
 \end{equation}
 
 \begin{equation}
-q_{eq} = \frac{\mu}{hs}
+q_{eq} = \frac{\mu}{hs}  \nonumber
 \end{equation}
 \begin{equation}
-q_{eq} =\sqrt{\frac{\mu}{s}}~~~\textrm{if } h=0
-\end{equation}
-
-\begin{equation}
-Cov(X_1,X_2)  = F_{1,2} V_A 
+q_{eq} =\sqrt{\frac{\mu}{s}}~~~\textrm{if } h=0 \nonumber
 \end{equation}
 
 \begin{equation}
-Cov(X_1,X_2)  = F_{1,2} V_A + r_2 V_D~~~\textrm{if } V_D>0
+Cov(X_1,X_2)  = 2 F_{1,2} V_A  \nonumber
+\end{equation}
+
+\begin{equation}
+Cov(X_1,X_2)  = 2F_{1,2} V_A + r_2 V_D~~~\textrm{if } V_D>0  \nonumber
 \end{equation}
 
 

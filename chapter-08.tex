@@ -1,8 +1,8 @@
 \section{The effect of linked selection on patterns of neutral diversity}
 
 A newly derived allele with an additive selection coefficient $s$ will
-take a time $\tau \approx 2\log(2N)/s$ generations to reach to fixation
-within our population. This short time window offers very little time
+take a time $\tau \approx 4\log(2N)/s$ generations to reach to fixation
+within our population (see eqn. \eqref{eq:diploid_fix_time}). This short time window offers very little time
 for recombination between the selected site and linked neutral
 sites.  \\
 
@@ -92,8 +92,9 @@ given by eqn. \eqref{eqn:pi_HH}, for two different selection coefficients.\\
 For our expected diversity levels to recover to $50\%$ of
 its neutral expectation $\E(\pi_r)/\theta=0.5$, requires a physical
 distance $\ell^{*}$ such that $\log(0.5) = -r_{BP} \ell ^*\tau$ as using our
-expression for $\tau$ then $ \ell^* = \frac{s}{r_{BP} \log (2N) }$. The width of our trough of reduced diversity depends on $s/r_{BP}$,
-so  else being equal we expect stronger sweeps or sweeps in regions of low
+expression for $\tau$ then $ \ell^* = \frac{-\log(0.5)}{r_{BP} \tau }$. As
+$\tau$ depends inversely on the selection $s$ (eqn. \eqref{eq:diploid_fix_time}), the width of our trough of reduced diversity depends on $s/r_{BP}$.
+All else being equal we expect stronger sweeps or sweeps in regions of low
 recombination to have a larger hitchhiking effect. So that a selection coefficient of $s=0.1\%$ would reduce
 diversity over 10's of kb, while a sweep of $s=1\%$ would affect
 $\sim$100kb.   \\
@@ -108,6 +109,29 @@ a function of the distance away from a site where a selected allele
 has just gone to fixation. The recombination rate is $r_{BP}= 1\times
 10^{-8}$.} \label{fig:hitchhiking_reduction}
 \end{figure}
+
+\begin{question}
+A recently published study has identified the genetic basis of
+melanism in the pepper moth. This allele swept to fixation in northern
+parts of the UK; a classic case of adaptation to industrial pollution
+(made famous by the work of Kettlewell). The genetic basis of melanism
+is a transposable element (TE) inserted into a pigmentation gene. The
+investigators found that diversity is suppressed in a broad region
+around the TE. Specifically, on the background of the TE, it takes
+roughly 200 kb in either direction for diversity levels to recover to
+50\% of genome-wide levels. \\
+
+Random facts: In all moths and butterflies only males recombine;
+chromosomes are transmitted without recombination in female. The
+recombination rate in males is 2.9 cM/Mb.  Peppered moths have an
+effective population size of roughly a hundred thousand
+individuals. Kettlewell used to eat moths when out collecting them in
+the field (personal communication, Art. Shapiro). \\
+{\bf A)} Briefly explain how this pattern offers further evidence that the melanic allele was favoured by selection.\\
+{\bf B)} Using this information what is your estimate as to the age of the allele?\\
+{\bf C)} What is your estimate of the selection coefficient favouring this melanic?
+\end{question}
+
 
 \subsection{A simple recurrent model of selective sweeps}
 We sample a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
