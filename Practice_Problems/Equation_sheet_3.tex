@@ -1,0 +1,134 @@
+\documentclass[12pt,twocolumn]{article}
+\usepackage{nicefrac}
+ \usepackage{amsmath}
+  \usepackage{amsfonts}
+  \usepackage{amssymb}
+\newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\half}{\tfrac{1}{2}}
+
+\newcommand{\wbar}{\overline{w}}
+% New commands added by Simon:
+\newcommand{\fis}{F_{\mathrm{IS}}}
+\newcommand{\fit}{F_{\mathrm{IT}}}
+\newcommand{\fst}{F_{\mathrm{ST}}}
+\newcommand{\Wbar}{\overline{W}}
+
+\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
+
+
+\begin{document}
+\section*{EVE102 Equation Sheet for Midterm 3}
+
+\begin{center}
+\begin{tabular}{ccc}
+$(1-F) p^2 + F p$, & $(1-F) 2pq$, & $(1-F) q^2 + F q$ \nonumber
+\end{tabular}
+\end{center}
+
+\begin{equation}
+q_{eq} = \frac{s_1}{s_1+s_2} \nonumber
+\end{equation}
+
+\begin{equation}
+D_{AB} = p_{AB} - p_Ap_B \nonumber
+\end{equation}
+
+\begin{equation}
+	\frac{\sqrt[t]{\prod_{i=0}^{t-1}w_{12,i}}}{\sqrt[t]{\prod_{i=0}^{t-1}w_{22,i}}} \nonumber
+\end{equation}
+
+\begin{equation}
+  H_t = \left(1-\frac{1}{2N_e} \right)^tH_0 \approx H_0 e^{-\nicefrac{t}{2N_e}} \nonumber
+\end{equation}
+
+\begin{equation}
+  D_t=  (1-r)^t D_0 \approx D_0 e^{-rt} \nonumber
+\end{equation}
+
+\begin{equation}
+\E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =
+4N_e(1-1/n) \nonumber
+\end{equation}
+
+\begin{equation}
+\E[T_{tot}] = \sum_{k=n}^2 \frac{4N_e}{k-1}  \nonumber
+\end{equation}
+
+\begin{equation}
+\ell^* = \frac{-\log(0.5)}{r_{BP} \tau }  \nonumber
+\end{equation}
+
+\begin{equation}
+  H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  \nonumber
+\end{equation}
+
+\begin{equation}
+  F_{ij}= 0 \times r_0 + (\nicefrac{1}{4}) r_1  + (\nicefrac{1}{2}) r_2.  \nonumber
+\label{eqn:coeffkinship}
+\end{equation}
+
+\begin{equation}
+R = h^2 S = V_A \beta \nonumber
+\end{equation}
+
+
+\begin{equation}
+(1-\fit) =\frac{H_I}{H_S} \frac{H_S}{H_T}=(1-\fis)(1-\fst).\nonumber
+\label{eqn:F_relationships}
+\end{equation}
+
+\begin{equation}
+\fit =1-\frac{H_I}{H_T},~~\fis =1-\frac{H_I}{H_S}.\nonumber
+%\label{eqn:F_relationships}
+\end{equation}
+
+\begin{equation}
+\fst =1-\frac{H_S}{H_T}.\nonumber
+%\label{eqn:F_relationships}
+\end{equation}
+
+\begin{equation}
+  \fst = \frac{ T}{ T + 4N_e } \nonumber
+%\label{eqn:F_relationships}
+\end{equation}
+
+\begin{equation}
+  F_{IM} = \frac{1}{1 + 4N_I m} \nonumber
+%\label{eqn:F_relationships}
+\end{equation}
+
+
+\begin{equation}
+	\tau = \frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau}
+            p_0}\right) \nonumber
+\end{equation}
+
+\begin{equation}
+\overline{w} = w_{11}p^2+w_{12}2pq+w_{22}q^2  \nonumber
+\end{equation}
+
+\begin{equation}
+q_{eq} = \frac{\mu}{hs}  \nonumber
+\end{equation}
+\begin{equation}
+q_{eq} =\sqrt{\frac{\mu}{s}}~~~\textrm{if } h=0 \nonumber
+\end{equation}
+
+\begin{equation}
+Cov(X_1,X_2)  = 2 F_{1,2} V_A  \nonumber
+\end{equation}
+
+\begin{equation}
+Cov(X_1,X_2)  = 2F_{1,2} V_A + r_2 V_D~~~\textrm{if } V_D>0  \nonumber
+\end{equation}
+
+\begin{equation}
+\pi \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}}  \nonumber
+\end{equation}
+
+\end{document}
