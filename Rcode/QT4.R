@@ -51,7 +51,7 @@ genetic.covar<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cu
 	abline(lm(other.pheno~ind.pheno),col="blue",lwd=2)
 	abline(0,1,col="red",lwd=3,lty=2)
 	my.cov<-cov(ind.pheno,other.pheno);
-	text(x=min(ind.pheno)*.7,y=max(other.pheno)*.9,label=paste("Cov= ",format(my.cov,digit=3)),col="red",lwd=4,cex=1.5)
+	text(x=min(ind.pheno)*.5,y=max(other.pheno)*.9,label=paste("Cov= ",format(my.cov,digit=3)),col="red",lwd=4,cex=1.5)
 	cat("pheno. covariance=",my.cov,"\n")
 	cat("Expected covar=",sum(ibd.prob*c(0,0.5,1)),"\n")
 	VA<-my.cov/sum(ibd.prob*c(0,0.5,1))
