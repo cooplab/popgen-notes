@@ -59,11 +59,11 @@ genetic.covar<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cu
  }
  
 
-layout(t(1:3))
-
-genetic.covar(L=100, environ.var=0.1,Num_inds=500,ibd.prob=c(0.25,0.5,0.25),relly.type="Full Sibs")
-genetic.covar(L=100, environ.var=0.1,Num_inds=500,ibd.prob=c(0.5,0.5,0),relly.type="1/2 Sibs")
-genetic.covar(L=100, environ.var=0.1,Num_inds=500,ibd.prob=c(0.75,0.25,0.0),relly.type="1st Cousins")
+layout(t(1:4))
+genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.,0.,1),relly.type="Id. Twins")
+genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.25,0.5,0.25),relly.type="Full Sibs")
+genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.5,0.5,0),relly.type="1/2 Sibs")
+genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.75,0.25,0.0),relly.type="1st Cousins")
 
  
 
