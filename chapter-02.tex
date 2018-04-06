@@ -641,7 +641,7 @@ increasing with sample size but is doing so very slowly. To see this
 more carefully we can see that for large $n$
 \begin{equation}
 \E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \approx 4N \int_1^n \frac{1}{i} di
-= 4N \log(n-1)
+= 4N \log(n)
 \end{equation}
 here we are approximating our sum by an integral, which will work for
 large $n$. So our expected total amount of time in the genealogy
@@ -768,7 +768,10 @@ thus the rate of substitution under a model where newly arising alleles are eith
 highly deleterious or neutral, is simply given by the mutation rate
 towards neutral alleles, i.e. $\mu(1-C)$.\\
 
-Consider a pair of species have diverged for $T$ generations, i.e. orthologous sequences shared between the species last shared a common ancestor $T$ generations ago. If they have maintained a constant $\mu$ over that time, will have accumulated an average of
+Consider a pair of species have diverged for $T$ generations, i.e. orthologous
+sequences shared between the species last shared a common ancestor $T$ generations
+ago. If they have maintained a constant $\mu$ over that time, will have accumulated
+an average of
 \begin{equation}
 2\mu(1-C)T
 \end{equation}
@@ -790,12 +793,17 @@ worth of transmissions. Thus the average number of neutral mutational
 differences separating our pair of species is simply $2\mu (1-C) T$.\\
 
 \begin{question}
-For this, and the next question, assume that humans and chimp diverged
-around 5.5$\times 10^6$ years, a generation time ~20 years, that the speciation occurred instantaneously in allopatry with no subsequent gene flow, and the ancestral effective population size of the human and chimp common ancestor population was 10,000 individuals.\\
-Nachman and Crowell sequenced 12 pseudogenes in human and chimp found substitutions at 1.3\% of sites. \\
-{\bf A) } What can you say about the mutation rate per site per generation at these genes, and how does it compare to other estimates of human mutation rate?\\
+For this, and the next question, assume that humans and chimps diverged
+around 5.5$\times 10^6$ years, a generation time $\sim20$ years, that the
+speciation occurred instantaneously in allopatry with no subsequent gene flow,
+and the ancestral effective population size of the human and chimp common
+ancestor population was 10,000 individuals.\\
+Nachman and Crowell sequenced 12 pseudogenes in humans and chimps and found
+substitutions at 1.3\% of sites. \\
+{\bf A) } What can you say about the mutation rate per site per generation at
+these genes, and how does it compare to other estimates of human mutation rate?\\
 {\bf B)} All of the pseudogenes they sequenced are on the autosomes. What
-would you prediction be for pseudogenes on the X and Y chromosomes,
+would your prediction be for pseudogenes on the X and Y chromosomes,
 given that there are fewer rounds of replication in the female
 germline than in the male germline.
 \end{question}

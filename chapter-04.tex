@@ -127,7 +127,7 @@ heritability, and denote it by $h^2$. We can then write this as
 \begin{equation}
 h^2 = \frac{Var(X_A)}{V} = \frac{V_A}{V}
 \end{equation}
-remember that we thinking about a trait where all of the alleles act
+remember that we are thinking about a trait where all of the alleles act
 in a perfectly additive manner. In this case our heritability $h^2$ is
 referred to as the narrow sense heritability, the proportion of the
 variance explained by the additive effect of our loci.
@@ -172,7 +172,7 @@ write our phenotypic covariance between our pair of individuals as
 \begin{equation}
 Cov(X_1,X_2) =
 Cov((X_{1M},X_{2M})+Cov(X_{1M},X_{2P})+Cov(X_{1P},X_{2M})
-+Cov(X_{1P},X_{2P}) \label{cov_rels_1}
++Cov(X_{1P},X_{2P})) \label{cov_rels_1}
 \end{equation}
 This is saying that under our simple additive model we can see the
 covariance in phenotypes between individuals as the covariance between
@@ -192,7 +192,7 @@ covariance between their effects on the phenotype is zero
 (i.e. $Cov(X_{1P},X_{2M})=Cov(X_{1M},X_{2P})=0$). In that case
 eqn. \ref{cov_rels_1} is
 \begin{equation}
-Cov(X_1,X_2) = Cov((X_{1M},X_{2M})+Cov(X_{1P},X_{2P}) = 2Var(X_{1M})
+Cov(X_1,X_2) = Cov((X_{1M},X_{2M})+Cov(X_{1P},X_{2P})) = 2Var(X_{1M})
 = V_A
 \end{equation}
 Now in general identical twins are not going to be super helpful for
@@ -217,7 +217,7 @@ V_A$. \\
 additive model}
 The two examples make clear that to understand the covariance between
 phenotypes of relatives we simply need to think about the alleles they
-share IBD. Consider a pair of relatives ($1$ and $1$) with a probability $r_0$,
+share IBD. Consider a pair of relatives ($1$ and $2$) with a probability $r_0$,
 $r_1$, and $r_2$ of sharing zero, one, or two alleles IBD
 respectively. When they share zero alleles
 $Cov((X_{1M}+X_{1P}),(X_{2M}+X_{2P}))=0$, when they share one allele
@@ -253,11 +253,11 @@ heritability than maternal half-sibs?
 
 Another way that we can estimate the narrow sense heritability is
 through the regression of child's phenotype on the parental mid-point
-phenotype. The parental mid-point phenotype is simple the average of
+phenotype. The parental mid-point phenotype is simply the average of
 the mum and dad's phenotype. Denoting the child's phenotype by $X_{kid}$ and mid-point
 phenotype by $X_{mid}$ so that if we take the regression $X_{kid} \sim X_{mid}$ this
 regression has slope $\beta = Cov(X_{kid},X_{mid})/Var(X_{mid})$.
-The covariance of $Cov(X_{kid},X_{mid})=\half
+The covariance is $Cov(X_{kid},X_{mid})=\half
 V_A$, and $Var(X_{mid}) = \half V$ as by taking the average of the
 parents we have halved the variance, such that the slope of the
 regression is
