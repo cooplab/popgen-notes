@@ -1,0 +1,159 @@
+\section{Correlations between loci, linkage disequilibrium, and recombination}
+
+%</source-file>
+
+Up to now we have been interested in correlations between alleles at the
+same locus, e.g. correlations within individuals (inbreeding) or between
+individuals (relatedness). We have seen how relatedness between parents affects the extent to which their offspring is inbred. We now turn to 
+correlations between alleles at different loci. To understand
+correlations between loci we need to understand recombination.\\
+
+
+\paragraph{Recombination}  Lets
+consider an individual heterozygous for a $AB$ and $ab$
+haplotype. If no recombination occurs between our two loci in this
+individual, then these two haplotypes will be transmitted intact to
+the next generation. While if a recombination (or more generally an
+odd number of recombinations) occurs between our two loci on the
+haplotype transmitted to the child then $\tfrac{1}{2}$ the time the
+child receives a $Ab$ haplotype and $\tfrac{1}{2}$ the time the child
+receives a $aB$ haplotype. So recombination is breaking up the
+association between loci. We'll define the recombination fraction ($r$) to be
+the probability of an odd number of recombinations between our loci.
+In practice we'll often be interested in relatively short regions
+where recombination is relatively rare, and so we might think that
+$r=r_{BP}L \ll 1$, where $r_{BP}$ is the average recombination rate
+per base pair (typically $\sim 10^{-8}$) and L is the number of base
+pairs separating our two loci.\\
+
+
+
+\paragraph{Linkage disequilibrium}
+The (horrible) phrase linkage
+disequilibrium (LD) refers to the statistical non-independence
+(i.e. a correlation)  of
+alleles at different loci. Our two loci, which segregate alleles $A/a$ and $B/b$, have allele
+frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
+and likewise for our other three combinations. If our loci were
+statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
+We can define a covariance between the $A$ and $B$ alleles at our two loci as
+\begin{equation}
+D_{AB} = p_{AB} - p_Ap_B
+\end{equation}
+and likewise for our other combinations at our two loci
+($D_{Ab},~D_{aB},~D_{ab}$). These $D$ statistics are all closely
+related to each other as $D_{AB} = - D_{Ab}$ and so on. Thus we only
+need to specify one $D_{AB}$ to know them all, so we'll drop the
+subscript and just refer to $D$. Also a handy result is that we can rewrite our haplotype
+frequency $p_{AB}$ as
+\begin{equation}
+p_{AB} = p_Ap_B+D. \label{eqn:ABviaD}
+\end{equation}
+If $D=0$ we'll say the two loci are in linkage equilibrium, while if
+$D>0$ or $D<0$ we'll say that the loci are in linkage
+disequilibrium (we'll perhaps want to test whether $D$ is
+statistically different from $0$ before making this choice). You should be careful to keep the concepts of linkage
+and linkage disequilibrium separate in your mind. Genetic linkage refers to the
+linkage of multiple loci due to the fact that they
+are transmitted through meiosis together (most often because the
+loci are on the same chromosome). Linkage disequilibrium merely refers
+to the correlation between the alleles at different loci, this may in
+part be due to the genetic linkage of these loci but does not
+necessarily imply this (e.g. genetically unlinked loci can be in LD
+due to population structure). \\
+
+Another common statistic for summarizing LD is $r^2$ which we write as
+\begin{equation}
+r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
+\end{equation}
+as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
+drawn at random from locus $A$, $r^2$ is the squared correlation
+coefficient.    \\
+
+
+{\bf Question.} You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
+\begin{center}
+\begin{tabular}{|c|cccc|}
+\hline
+Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
+\hline
+1 &    .02    & .18 &     .08 &    .72\\
+2&    .72 &    .18 &    .08 &    .02\\
+\hline
+\end{tabular}
+\end{center}
+
+{\bf A)} How much LD is there within populations, i.e. estimate D?\\
+
+{\bf B)} If we mixed the two populations together in equal proportions what value would D take before any mating has had the chance to occur? \\
+
+
+
+\paragraph{The decay of LD due to recombination}
+We will now examine what happens to LD over the generations if we
+only allow recombination to occur in a very large population (i.e. no
+genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
+$p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
+recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
+haplotypes recombining together to form $AB$ haplotypes. Thus in the
+next generation
+\begin{equation}
+p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B
+\end{equation}
+this last term here is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$, which
+multiplying this out is the
+probability of recombination in the different diploid genotypes that
+could generate a $p_{AB}$ haplotype. \\
+
+We can then write the change in the frequency of the $p_{AB}$
+haplotype as
+\begin{equation}
+\Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -r p_{AB} + rp_Ap_B = - r D
+\end{equation}
+so recombination will cause a decrease in the frequency of $p_{AB}$ if
+there is an excess of $AB$ haplotypes within the population ($D>0$), and an
+increase if there is a deficit of $AB$ haplotypes within the
+population ($D<0$). Our LD in the next generation is $D^{\prime} =
+p_{AB}^{\prime}$, so we can rewrite the above eqn. in terms of the
+$D^{\prime} $
+\begin{equation}
+D^{\prime}= (1-r) D
+\end{equation}
+so if the level of LD in generation $0$ is $D_0$ the level $t$
+generations later ($D_t$) is
+\begin{equation}
+D_t=  (1-r)^t D_0
+\end{equation}
+so recombination is acting to decrease LD, and it does so
+geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
+approximate this by an exponential and say that   
+\begin{equation}
+D_t \approx  D_0 e^{-rt}
+\end{equation}\\
+
+
+
+{\bf Q C)} You find a hybrid population between the two mouse subspecies
+described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
+
+%\subsection{Testing for departures from HWE.}
+%Note the form of $\hat{F}$ \eqref{eqn:FhatHO} is the same as the $X^2$
+%statistic, and so we can test for a deviation from hardy-weinberg  $X^2$
+
+
+%\subsection{Population structure}
+%The question naturally arises at this point: what reference population
+%(i.e. what allele frequency) do we use to calculate $\hat{F}$? If we are %calculating the inbreeding coefficient
+%of an English person do we use the frequencies of the town of that
+%person, of England, of the United Kingdom, or of the World?
+
+
+
+%\gc{Include the HapMap exercise here?}
+
+
+%==One locus models of selection==
+%<source-file filename="one_loc_sel_models.tex" display="one_loc_sel_models.wrapped.latexml.xhtml">
+
+\newpage
+

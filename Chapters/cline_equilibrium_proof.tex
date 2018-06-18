@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath}
+%opening
+\title{Diffusion equations for clines at migration-selection balance}
+\author{Erin Calfee}
+
+\begin{document}
+
+\maketitle
+
+\section{For addition to Graham's pop gen textbook..}
+
+Let $s(x)$ describe the selection coefficient over one-dimensional space, such at that allele 1 has fitness 1 and allele 2 has fitness $1+ s(x)$ at location $x$. Consider the change in frequency of allele 2, $\Delta q(x)$, at location $x$ in one short time step $\Delta t$. \\
+We can calculate the change in allele frequency by adding the change due to migration and the change due to selection. This is an approximation supposing migration and selection happen simultaneously and independently, which is sufficiently accurate as long as selection is weak, such that we don't have to worry about the contribution of migrants who should have died from selection (i.e. $ms(x)$ is small):
+\begin{align*}
+\frac{\Delta q(x)}{\Delta t} = \frac{\Delta q_{m}(x)}{\Delta t} + \frac{\Delta q_{s}(x)}{\Delta t}
+\end{align*}
+
+We'll start with the contribution from migration. Assume $\Delta t$ is small enough that individuals can only disperse a short distance $\Delta x$ in this time. Let $m$ be the probability an individual migrates distance $\Delta x$, with equal probability to the left or right, and $1-m$ be the probability an individual doesn't migrate in $\Delta t$:
+
+\begin{align*}
+\frac{\Delta q_{m}(x)}{\Delta t} & = (1-m)q(x) + m(\frac{1}{2}q(x + \Delta x) + \frac{1}{2}q(x - \Delta x)) - q(x) \\
+& = q(x) - q(x) + \frac{m}{2}\left(q(x + \Delta x) + q(x - \Delta x) - 2q(x)\right) \\
+& = \frac{m}{2}\left((q(x + \Delta x) - q(x)) - (q(x) - q(x - \Delta x))\right)
+\end{align*}
+Somehow I'm missing a $\Delta x^{2}$ in the denominator. \newline
+For the contribution of selection, we use the approximation that selection does not strongly distort mean population fitness, i.e. $\overline{w} \approx 1$:
+\begin{align*}
+\frac{\Delta q_{s}(x)}{\Delta t} = (1+s(x))(1-q(x))q(x)
+\end{align*}
+Summing these terms together and taking the limit as $\Delta x$ and $\Delta t$ go to zero, we get the classic diffusion equation for the description of a cline:
+\begin{align}
+\frac{dq(x)}{dt} = \frac{m}{2}\frac{d^{2}q(x)}{dx^2} + s(x)q(x)(1-q(x))
+\end{align}
+It could be that the cline is dynamic and one allele is on the path to fixation as it diffuses across space, but for the equilibrium case at migration-selection balance, $\frac{dq(x)}{dt} = 0$. If we make assumptions about the way selection pressures are distributed across the environment (e.g. a discrete environmental boundary where selection is $-s$ to the left of $x=0$ and $+s$ to the right), we can estimate the strength of selection $s$ by plugging in empirically-estimated migration rates, where $m$ is the variance of individual dispersal distances.
+\end{document}
