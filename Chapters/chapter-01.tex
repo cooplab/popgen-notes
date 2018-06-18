@@ -301,6 +301,20 @@ kinship coefficient $F_{ij}$ of the two parents (Eqn.\ \ref{eqn:coeffkinship}). 
 the genotype of the offspring is made by sampling an allele at random from each
 of our parents. % We will use IBD for identical by descent. \\ %% this was already defined above.
 
+\begin{margintable}
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$f_{11}$ & $f_{12}$ & $f_{22}$ \\
+\hline
+$(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\textbf{Generalized Hardy--Weinberg}} \label{table:GeneralizedHWE}
+\end{margintable}
+
+
 The only way the offspring can be heterozygous ($A_1 A_2$) is if their two
 alleles at a locus are not IBD (otherwise they would necessarily be
 homozygous). Therefore, the probability that they are heterozygous is
@@ -325,25 +339,13 @@ Therefore, the frequencies of the three possible genotypes can be written as giv
 Table \ref{table:GeneralizedHWE}, which provides a generalization of the Hardy--Weinberg
 proportions.\\
 
-\begin{margintable}
-\begin{center}
-\begin{tabular}{ccc}
-\hline
-$f_{11}$ & $f_{12}$ & $f_{22}$ \\
-\hline
-$(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
-\hline
-\end{tabular}
-\end{center}
-\caption{\textbf{Generalized Hardy--Weinberg}} \label{table:GeneralizedHWE}
-\end{margintable}
 
 Note that the generalized Hardy--Weinberg proportions completely
 specify the genotype probabilities, as there are two parameters ($p$ and $F$)
 and two degrees of freedom (as $p$ and $q$ have to sum to one).
 Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
-
+\marginnote{
 \begin{question}
 The frequency of the $A_1$ allele is $p$ at a biallelic locus. Assume that our population is randomly mating and that the
 genotype frequencies in the population follow from HW. We select two
@@ -352,7 +354,7 @@ from this cross. What is the probability that the child from this full
 sib-mating is
 homozygous? 
 \end{question}
-
+}
 \subsection{Calculating inbreeding coefficients from data}
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
@@ -364,19 +366,8 @@ the inbreeding coefficient as
 \hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq}.
 \label{eqn:Fhat}
 \end{equation}
-%
-As before, $p$ is the frequency of allele $A_{1}$ in the population. This can
-be rewritten in terms of the observed heterozygosity ($H_O$) and the
-heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
-\begin{equation}
-\hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
-\label{eqn:FhatHO}
-\end{equation}
-Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
-If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
-over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question} 
+
 \marginnote{
 \begin{question} 
   Suppose the following genotype frequencies were observed for at an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
@@ -391,6 +382,20 @@ AA &	AB &	BB\\
 What is the estimate of the inbreeding coefficient at the esterase locus?
 \end{question}
 }
+
+As before, $p$ is the frequency of allele $A_{1}$ in the population. This can
+be rewritten in terms of the observed heterozygosity ($H_O$) and the
+heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
+\begin{equation}
+\hat{F} = \frac{H_E-H_O}{H_E} = 1 - \frac{H_O}{H_E}.
+\label{eqn:FhatHO}
+\end{equation}
+Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
+If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
+over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
+
+%{\bf Q}\arabic{Question} \refstepcounter{Question} 
+
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
@@ -455,9 +460,9 @@ heterozygosity from the total population to that in the subpopulation.\\
 %n, as we will seebelow, due to the Wahlund effect (to be added)
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= \marginwidth]{figures/Pop_struct/FST_hierarchy.pdf}
+\includegraphics{figures/Pop_struct/FST_hierarchy.pdf}  %[width= \marginwidth]
 \end{center}
-\caption{The hierarchical nature of F-statistics. The two  dots within an individual show the two
+\caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
   alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
 by randomly drawing alleles from the sub-population (S),
 to that found in the total population (T). } \label{fig:FST_pig}  
@@ -533,8 +538,8 @@ the probability that our chimp comes from each of these populations. \\
 
 We'll then briefly explain how to extend this idea
 to cluster a set of individuals into $K$ initially unknown populations. This
-method is a simplified version of what Bayesian population genetics
-clustering algorithms such as STRUCTURE and ADMIXTURE do. \cite{pritchard:00} 
+method is a simplified version of what population genetics
+clustering algorithms such as STRUCTURE and ADMIXTURE do. \cite{pritchard:00,alexander:09} 
 
 \paragraph{A simple assignment method}
 
@@ -545,13 +550,15 @@ p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on.
 
 You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
 
-The probability of this individual's genotype at locus $l$ conditional on coming from population $k$ (i.e. their alleles being a random HW draw from population $k$) is 
+The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is 
 \begin{equation}
-  P(g_l | \textrm{pop k}) = \mathbb{I}(g_l=0) (1-p_{k,l})^2 +  \mathbb{I}(g_l=1) 2 p_{k,l} (1-p_{k,l}) + \mathbb{I}(g_l=2) p_{k,l}^2
+  P(g_l | \textrm{pop k}) =
+  \begin{cases}
+(1-p_{k,l})^2  & g_l=0 \\
+2 p_{k,l} (1-p_{k,l}) & g_l=1\\
+p_{k,l}^2  & g_l=2
+\end{cases}
 \end{equation}
-where $\mathbb{I}(g_l=0)$ is an indicator function which is $1$ if $g_l=0$ and
-zero otherwise, and likewise for the other indicator functions. This
-follows simply from HWE.
 
 Assuming that the loci are independent, the probability of individual's genotypes conditional on them coming from population $k$ is 
 \begin{equation}
@@ -664,6 +671,7 @@ born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals
 \end{figure}
 
 \subsection{Principal components analysis}
+Principal component analysis is a common statistial approach to summarize high dimensional data, used by many fields. 
 The use of principal component analysis (PCA) in population genetics was
 pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
 a come back. See Patterson et al 2006, PLoS Genetics and McVean,
