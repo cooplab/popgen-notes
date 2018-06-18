@@ -171,11 +171,6 @@ fewer meioses, closer relatives share more alleles. In Figure
 between two cousins. As we'll see, many population and quantitative genetic
 concepts rely on how closely related individuals are, and thus we need some way
 to quantify the degree of kinship among individuals. \\
-
-% % As we are interested in the genetics of populations we are
-% interested in kinship, and so we need some way to quantify the degree of
-% kinship among individuals.\\ 
-
 \begin{figure}
 \begin{center}
 \includegraphics[width= 0.5 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
@@ -187,6 +182,7 @@ to quantify the degree of kinship among individuals. \\
 stretch of chromosome due to the limited number of generations for
 recombination.} \label{fig:IBD_cousins_chr_cartoon}  
 \end{figure}
+
 
 We will define two alleles to be identical by descent (IBD) if they are
 identical due to a common ancestor in the past few generations. For the moment,
@@ -205,24 +201,14 @@ respectively. See Table \ref{table:IBDprobs} for some examples. We can also
 interpret these probabilities as genome-wide averages. For example, on average,
 full-sibs share zero alleles for a quarter of all of their autosomal loci.\\
 
-\begin{figure}
+\begin{marginfigure}
 \begin{center}
-\includegraphics[width= \textwidth]{figures/IBD_0_1_2.png}
+\includegraphics[width= \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf}
 \end{center}
 \caption{Three pairs of diploid individuals sharing 0, 1, or 2 alleles IBD
   where lines show the sharing of alleles by descent (e.g. from a
   shared ancestor). } \label{fig:IBD_0_1_2}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
-\end{center}
-\caption{Alleles being transmitted through an inbred pedigree. The mum and the
-  aunt share two alleles identical by descent (IBD). The cousins share one
-  allele IBD. The offspring of first cousins is homozygous by
-  descent at this locus.} \label{fig:IBD_cousins_cartoon}  
-\end{figure}
+\end{marginfigure}
 
 
 One summary of relatedness that will be important is the probability that two
@@ -297,6 +283,17 @@ two individuals are both homozygous for allele 1?\\
 We can define an inbred individual as an individual whose parents are
 more closely related to each other than two random individuals drawn
 from some reference population.  \\
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
+\end{center}
+\caption{Alleles being transmitted through an inbred pedigree. The mum and the
+  aunt share two alleles identical by descent (IBD). The cousins share one
+  allele IBD. The offspring of first cousins is homozygous by
+  descent at this locus.} \label{fig:IBD_cousins_cartoon}  
+\end{figure}
 
 When two related individuals produce an offspring, that individual can
 receive two alleles that are identical by descent, i.e.\ they
