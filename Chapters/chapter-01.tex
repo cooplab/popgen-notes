@@ -31,7 +31,7 @@ that this locus is \emph{polymorphic}.
   \tiny
 \setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
-\csvautotabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
+\csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
   \caption{Variable sites in the ADH gene, from exons 2 and 3 taken
     from \citet{mcdonald:91}.  
 The first column (pos.) gives the position in the gene, exon 2 begins at
@@ -252,9 +252,7 @@ $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \end{tabular}
 \end{center}
 \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
-identical by descent on the autosomes. $^{*}$Assuming this is the only relationship
-the pair of individuals share (above that expected from randomly
-sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
+identical by descent on the autosomes. $^{*}$Assuming this is the only close relationship the pair shares. } % doesn't this implicitly assume an infinite population?
 \label{table:IBDprobs}
 \end{margintable}
 
@@ -383,17 +381,20 @@ If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
+\marginnote{
 \begin{question} 
   Suppose the following genotype frequencies were observed for at an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
 \begin{center}
-\begin{tabular}{|ccc|}
+\begin{tabular}{ccc}
+\hline
 AA &	AB &	BB\\
+\hline
 0.6 &	0.2 &	0.2\\
-\end{tabular}\,.
+\end{tabular}
 \end{center}
 What is the estimate of the inbreeding coefficient at the esterase locus?
 \end{question}
-
+}
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
@@ -401,9 +402,8 @@ What is the estimate of the inbreeding coefficient at the esterase locus?
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
 
-\subsection{Summarizing population structure}
-We defined inbreeding as having parents that are
-more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in
+\section{Summarizing population structure}
+We defined inbreeding as having parents that are more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in
 comparison to allele frequencies in the United Kingdom (UK), where I am from, my
 parents certainly are not two individuals drawn at random from the
 world-wide population. If we estimated my inbreeding coefficient $F$ using allele frequencies
@@ -412,7 +412,7 @@ be close to zero, but would likely be larger if we used world-wide
 frequencies. This is because there is a somewhat lower level of
 expected heterozygosity within the UK than in the human population across the world as a whole.\\
 
-Wright (1943, 1951) developed a set of `F-statistics' (also called `fixation
+Wright (1943, 1951)\cite{Wright:43} developed a set of `F-statistics' (also called `fixation
 indices') that formalize the idea of inbreeding with respect to different
 levels of population structure. See Figure \ref{fig:FST_pig} for a schematic
 diagram. Wright defined $F_{\mathrm{XY}}$ as the correlation between random
