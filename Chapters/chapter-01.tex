@@ -1,28 +1,13 @@
 % TODO: standardized equation notation. Is it eqn, Eqn, Eq? (all three are used).
 
 
-\begin{table}
-  \tiny
-\setlength{\tabcolsep}{.5\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
-  \csvautotabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
-  \caption{Variable sites in the ADH gene, from exons 2 and 3 taken
-    from \citet{McdonaldKreitman:91}.  
-The first column (pos.) gives the position in the gene, exon 2 begins at
-position 778 and exon 3 begins at position 942.
-The second column gives the consensus nucleotide (con.), i.e. the most
-common base at that position; individuals with nucleotides that match
-the consensus are marked with a dash.  The first columns of sequence (a-l) are from D. melanogaster;
-    the next columns (a-f) give sequences from D. simulans, the final 
-  coumns (a-l ) from D yakuba. I've dropped the heterozygote sites from
-  D. yakuba..}
-  \label{Table:ADH}
-\end{table}
 
 
-\section{Allele and genotype frequencies}
+\chapter{Allele and genotype frequencies}
 
-Population genetics emerged from early efforts to reconcile Mendelian genetics
-with Evolution.  Thanks to Mendel and Mendelian genetics (and a lot of prior
+
+\newthought{Population genetics emerged} from early efforts to reconcile Mendelian genetics
+with Darwinian thought.  Thanks to Mendel and Mendelian genetics (and a lot of prior
 and subsequent work), we understand that the genome of an individual is formed
 from two gametes that fused to form a zygote. The genomes of each gamete
 originate from a parental genome through meiosis, in particular the segregation
@@ -48,8 +33,25 @@ is \emph{monomorphic}; at this locus there is no genetic variability in the
 population. If there are multiple alleles in the population at a locus, we say
 that this locus is \emph{polymorphic}.
 
-\subsection{Allele frequencies}
+\begin{table}
+  \tiny
+\setlength{\tabcolsep}{.5\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
+ 
+\csvautotabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
+  \caption{Variable sites in the ADH gene, from exons 2 and 3 taken
+    from \citet{McdonaldKreitman:91}.  
+The first column (pos.) gives the position in the gene, exon 2 begins at
+position 778 and exon 3 begins at position 942.
+The second column gives the consensus nucleotide (con.), i.e. the most
+common base at that position; individuals with nucleotides that match
+the consensus are marked with a dash.  The first columns of sequence (a-l) are from D. melanogaster;
+    the next columns (a-f) give sequences from D. simulans, the final 
+  coumns (a-l ) from D yakuba. I've dropped the heterozygote sites from
+  D. yakuba.}
+  \label{Table:ADH}
+\end{table}
 
+\section{Allele frequencies}
 
 Consider a diploid autosomal locus segregating at two alleles ($A_1$ and
 $A_2$). We'll use these arbitrary labels for our alleles, merely to keep this
@@ -73,7 +75,7 @@ then just $q=1-p$.
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
+\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
 \end{center}
 \caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
   from the HapMap CEU European and YRI African populations. Within
@@ -256,15 +258,15 @@ inbreeding and in the context of phenotypic resemblance between relatives.\\
 % sampling individuals from the population). } \label{table:IBDprobs}
 % \end{table}
 %% TODO: nicefrac'd this version, original above
-\begin{table}
+\begin{margintable}
 \begin{center}
-\begin{tabular}{| l | c c c c|}
+\begin{tabular}{ l c c c c}
 \hline
 Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
 \hline
 parent--child & 0 & 1 & 0 & \nicefrac{1}{4}\\
 full siblings & \nicefrac{1}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & \nicefrac{1}{4}\\
-identical (monzygotic) twins  & 0 & 0 & 1  & \nicefrac{1}{2} \\
+Monzygotic twins  & 0 & 0 & 1  & \nicefrac{1}{2} \\
 $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \hline
 \end{tabular}
@@ -274,7 +276,7 @@ identical by descent on the autosomes. $^{*}$Assuming this is the only relations
 the pair of individuals share (above that expected from randomly
 sampling individuals from the population). } % doesn't this implicitly assume an infinite population?
 \label{table:IBDprobs}
-\end{table}
+\end{margintable}
 
 \begin{question}
   What are $r_0$, $r_1$, and $r_2$ for $\nicefrac{1}{2}$ sibs? ($\nicefrac{1}{2}$ sibs share one
@@ -338,9 +340,9 @@ Therefore, the frequencies of the three possible genotypes can be written as giv
 Table \ref{table:GeneralizedHWE}, which provides a generalization of the Hardy--Weinberg
 proportions.\\
 
-\begin{table}
+\begin{margintable}
 \begin{center}
-\begin{tabular}{|ccc|}
+\begin{tabular}{ccc}
 \hline
 $f_{11}$ & $f_{12}$ & $f_{22}$ \\
 \hline
@@ -349,7 +351,7 @@ $(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
 \end{tabular}
 \end{center}
 \caption{\textbf{Generalized Hardy--Weinberg}} \label{table:GeneralizedHWE}
-\end{table}
+\end{margintable}
 
 Note that the generalized Hardy--Weinberg proportions completely
 specify the genotype probabilities, as there are two parameters ($p$ and $F$)
@@ -531,7 +533,7 @@ structure in population genetic datasets. We'll briefly discuss two
 broad-classes of methods that appear often in the literature: assignment
 methods and principal components analysis.
 
-\subsubsection{Assignment Methods}
+\subsection{Assignment Methods}
 
 Here we'll describe a simple probabilistic assignment to find the
 probability that an individual of unknown population comes from one of
@@ -675,7 +677,7 @@ born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals
 %Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
 \end{figure}
 
-\subsubsection{Principal components analysis}
+\subsection{Principal components analysis}
 The use of principal component analysis (PCA) in population genetics was
 pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
 a come back. See Patterson et al 2006, PLoS Genetics and McVean,
