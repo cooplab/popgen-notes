@@ -404,6 +404,9 @@ over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, w
 
 
 \section{Summarizing population structure}
+\newthought{Individuals rarely mate complete at random}, therefore, genetic variation is never uniformly distributed across individuals.
+
+\subsection{Inbreeding as a summary of population structure.}
 We defined inbreeding as having parents that are more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in
 comparison to allele frequencies in the United Kingdom (UK), where I am from, my
 parents certainly are not two individuals drawn at random from the
@@ -671,11 +674,9 @@ born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals
 \end{figure}
 
 \subsection{Principal components analysis}
-Principal component analysis is a common statistial approach to summarize high dimensional data, used by many fields. 
-The use of principal component analysis (PCA) in population genetics was
-pioneered by Cavalli-Sforza. With large genotyping datasets PCA has made
-a come back. See Patterson et al 2006, PLoS Genetics and McVean,
-G. 2010 PLoS Genetics and for recent discussion.
+Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to  of each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
+  with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
+pioneered by Cavalli-Sforza and colleagues and With large genotyping datasets PCA has made come back. \cite{menozzi:78,patterson:06}
 % TODO: citations.
  
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
@@ -693,10 +694,7 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
   this data matrix to uncover the major axes of genotype variance in our
-  sample.  We find the location of each individual on each of the principal
-  component vectors. These PC axes reflect major axes of variation in the data,
-  with the first PC being that which explains most, the second the second most,
-  and so on.  Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
+  sample. Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
   (2007) using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
 It is worth taking a moment to delve further into what we are doing

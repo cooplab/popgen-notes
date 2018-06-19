@@ -132,16 +132,16 @@ generation.
 %from that of $t+1$. We'll develop some mathematical models for these allele
 %frequency changes later on.
 
-\begin{question} You are in charge of maintaining a population of delta smelt
-  in the Sacramento river delta. Using a large set of microsatellites you
+\marginnote{
+\begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
   estimate that the mean level of heterozygosity in this population is 0.005.
   You set yourself a goal of maintaining a level of heterozygosity of at least
   0.0049 for the next two hundred years. Assuming that the smelt have a
   generation time of 3 years, and that only genetic drift affects these loci.
   What is the smallest fully outbreeding population that you would need to
-maintain to meet this goal?  (Note that while these numbers are made up, this
-is similar to the calculations being carried out by conservation biologists).
+maintain to meet this goal?  
 \end{question}
+}
 
 \begin{question} \label{geo_question} In mathematical population genetics, a
   commonly used approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally
@@ -285,11 +285,10 @@ natural populations are often a lot higher than the census population
 size would imply.\\
 
 To cope with this population geneticists often invoke the concept of
-an effective population size ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
-
-Specifically the effective population size ($N_e$) is the population size that
+an \emph{effective population size} ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
+\marginnote{the effective population size ($N_e$) is the population size that
 would result in the same rate of drift in an idealized constant population size
-as that observed in our true population (following our modeling assumptions).
+as that observed in our true population (following our modeling assumptions).}
 \\
 
 If population sizes vary rapidly in size, we can (if certain conditions are met)
@@ -301,7 +300,9 @@ given by
 \prod_{i=1}^{t} \left(1-\frac{1}{2N_t} \right)
 \end{equation}
 note that this is simply collapses to our original expression
-$\left(1-\frac{1}{2N } \right)^t $ if $N_i$ is constant. If $1/(N_i)$ is
+$\left(1-\frac{1}{2N } \right)^t $ if $N_i$ is constant. 
+\marginnote{
+If $1/(N_i)$ is
 small, then we can approximate $1-\frac{1}{2N_i}$ by
 $\exp(-\frac{1}{2N_i})$. Such that if $N_i$ is never too small
 \begin{equation}
@@ -322,7 +323,7 @@ $N=N_e$ and rearrange this to see
 \begin{equation}
 N_e =\frac{1}{\frac{1}{t} \sum_{i=1}^{t} \frac{1}{N_i} }.
 \end{equation}
-this is the harmonic mean of the varying population size. Thus our
+this is the harmonic mean of the varying population size.} Thus our
 effective population size, the size of an idealized constant
 population which matches the rate of genetic drift, is the harmonic
 mean true population size over time. The harmonic mean is very
