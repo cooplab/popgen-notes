@@ -279,6 +279,11 @@ in a striped suit with the title ``I'm reading the chapter 2 notes''. (It's well
 he's a true character and one of the last great polymaths. )
 
 \subsection{The effective population size}
+\marginnote{the effective population size ($N_e$) is the population size that
+would result in the same rate of drift in an idealized constant population size
+as that observed in our true population (following our modeling
+assumptions).}
+
 In practice populations rarely conform to our assumptions of being
 constant in size with low variance in reproduction success. Real
 populations experience dramatic fluctuations in size, and there is
@@ -288,10 +293,23 @@ size would imply.\\
 
 To cope with this population geneticists often invoke the concept of
 an \emph{effective population size} ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
-\marginnote{the effective population size ($N_e$) is the population size that
-would result in the same rate of drift in an idealized constant population size
-as that observed in our true population (following our modeling assumptions).}
 \\
+
+\marginnote{
+To see this note that if $1/(N_i)$ is
+small, then we can approximate \eqref{eqn:var_pop_coal} by 
+\begin{equation}
+\prod_{i=1}^{t} \exp \left( -\frac{1}{2N_i} \right)   =
+\exp \left(- \sum_{i=1}^{t} \frac{1}{2N_i} \right) .
+\end{equation}
+This is same form but
+the exponent has changed. Comparing the exponent in the two cases we see
+\begin{equation}
+\frac{t}{2N} = \sum_{i=1}^{t} \frac{1}{2N_i}
+\end{equation}
+so that if we want a constant effective population size ($N_e$) that has the same
+rate of loss of heterozygosity as our variable population we need to set
+$N=N_e$ and rearrange this to give \eqref{eq:Ne_harmonic}.} 
 
 If population sizes vary rapidly in size, we can (if certain conditions are met)
 replace our population size by the harmonic mean population size.
@@ -299,33 +317,21 @@ Consider a diploid population of variable size, whose size is $N_t$ $t$ generati
 past. The probability our pairs of alleles have not coalesced by the generation $t^{th}$ is
 given by
 \begin{equation}
-\prod_{i=1}^{t} \left(1-\frac{1}{2N_t} \right)
+\prod_{i=1}^{t} \left(1-\frac{1}{2N_t} \right) \label{eqn:var_pop_coal}
 \end{equation}
 note that this is simply collapses to our original expression
 $\left(1-\frac{1}{2N } \right)^t $ if $N_i$ is constant. 
-\marginnote{
-If $1/(N_i)$ is
-small, then we can approximate $1-\frac{1}{2N_i}$ by
-$\exp(-\frac{1}{2N_i})$. Such that if $N_i$ is never too small
+
+The rate of loss of heterzygosity in this population is equivalent to
+a population of effective size
 \begin{equation}
-\prod_{i=1}^{t} \left(1-\frac{1}{2N_i} \right)
-\approx \prod_{i=1}^{t} \exp \left( -\frac{1}{2N_i} \right)   =
-\exp \left(- \sum_{i=1}^{t} \frac{1}{2N_i} \right) .
+N_e =\frac{1}{\frac{1}{t} \sum_{i=1}^{t} \frac{1}{N_i} }. \label{eq:Ne_harmonic}
 \end{equation}
-In our constant population size case
-the probability of failing to coalesce is $\exp(-t/(2N))$. So the
-variable population coalescent probabilities are still of the same form but
-the exponent has changed. Comparing the exponent in the two cases we see
-\begin{equation}
-\frac{t}{2N} = \sum_{i=1}^{t} \frac{1}{2N_i}
-\end{equation}
-so that if we want a constant effective population size ($N_e$) that has the same
-coalescent probability as our variable population we need to set
-$N=N_e$ and rearrange this to see
-\begin{equation}
-N_e =\frac{1}{\frac{1}{t} \sum_{i=1}^{t} \frac{1}{N_i} }.
-\end{equation}
-this is the harmonic mean of the varying population size.} Thus our
+this is the harmonic mean of the varying population size.
+
+
+
+Thus our
 effective population size, the size of an idealized constant
 population which matches the rate of genetic drift, is the harmonic
 mean true population size over time. The harmonic mean is very
@@ -355,9 +361,7 @@ the rate of drift will reflect this much small number of reproducing
 individuals. See Figure \ref{fig:LossHet_varying_RS} for a depiction of the higher rate of drift
 in a population where there is high variance in reproductive success.
 
- If only $N_M$ males get to contribute to the next
-generation and $N_F$ females get to contribute to the next
-generation. When our two alleles pick an ancestor, $25\%$ of the time
+\marginnote{When our two alleles pick an ancestor, $25\%$ of the time
 our alleles were both in a female ancestor in which case they coalesce
 with probability $1/(2N_F)$, and $25\%$ of the time they are both in a
 male ancestor in which case they coalesce with probability
@@ -366,18 +370,23 @@ are in two individuals are different sexes in a generation so cannot
 coalescence.  Therefore, our probability of coalescence in the preceding
 generation is
 \begin{equation}
-\frac{1}{4}\frac{1}{2N_M}+\frac{1}{4}\frac{1}{2N_F} =
-\frac{1}{8}\frac{N_F+N_M}{N_FN_M} 
+\frac{1}{4}\frac{1}{2N_M}+\frac{1}{4}\frac{1}{2N_F} %=
+%\frac{1}{8}\frac{N_F+N_M}{N_FN_M} 
 \end{equation}
 i.e. the rate of coalescence is the harmonic mean of the two
 sexes population sizes, 
-equating this to $\frac{1}{2N_e}$ we find
+equating this to $\frac{1}{2N_e}$}
+
+While every individual has a mother an a father, not every individual
+gets to be a parent. In practice in many populations far more females
+get to reproduce than males. If only $N_M$ males get to contribute to the next
+generation and $N_F$ females get to contribute to the next
+generation, we find
 \begin{equation}
 N_e = \frac{4N_FN_M}{N_F+N_M}
 \end{equation}
 Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
 N/2$) our effective population size will be much reduced as a result.\\
-
 
 \begin{figure}
 \begin{center}
@@ -403,28 +412,11 @@ mutations do not affect the probability that an individual transmits
 that allele, so don't affect the way in which we can trace ancestral lineages
 back. \\
 
+
 As such it will often be helpful to consider the time to the common
 ancestor of a pair of sequences, and then think of the impact of that
 on patterns of diversity. See Figure \ref{fig:Coalescent_simulation}
-for an example of this. The probability that a pair of alleles
-have failed to coalesce in $t$ generations and then coalesce in the
-$t+1$ generation back is
-\begin{equation}
-  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
-\end{equation}
-The mean coalescent
-time of a pair of a pair of alleles is $2N$ generations\\
-
-\marginnote{
-Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
-\begin{equation}
-\approx \frac{1}{2N} e^{-t/(2N)} 
-\end{equation}
-thus the coalescent time of a pair of sequences ($T_2$) is
-approximately exponentially distributed with a rate $1/(2N)$. We'll denote that by
-saying that $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. 
-}
-
+for an example of this. 
 
 \begin{figure}
 \begin{center}
@@ -439,24 +431,22 @@ saying that $T_2 \sim \text{Exp}\left( 1/(2N) \right)$.
   untill they find a common ancestor.} \label{fig:Coalescent_simulation}
 \end{figure}
 
+The probability that a pair of alleles
+have failed to coalesce in $t$ generations and then coalesce in the
+$t+1$ generation back is
+\begin{equation}
+  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
+\end{equation}
+Thus the coalescent time of our pair of alleles is a Geometrically distributed random variable,
+where the probability of success is $1/(2N)$, we've denote this by $T_2 \sim  \text{Geo}(1/(2N))$
+The mean coalescent time of a pair of a pair of alleles is $2N$ generations\\
 
 
 Conditional on a pair of alleles coalescing $t$ generations ago
-there are $2t$ generations in which a mutation could occur. Thus the
-probability of our pair of alleles are separated by $j$ mutations
-since they last shared a common ancestor is
-\begin{equation}
-P(j | T_2 = t ) = {2t \choose j} \mu^{j} (1-\mu)^{2t-j}
-\end{equation}
-i.e. mutations happen in $j$ generations, and do not happen in $2t-j$
-generations (with ${2t \choose j}$ ways this can possibly
-happen). Assuming that $\mu \ll 1$, and that $2t-j \approx 2t$ then we
-can approximate the probability that we have $j$ mutations as a
-Poisson distribution
-\begin{equation}
-P(j | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
-\end{equation}
-i.e. a Poisson with mean $2\mu t $. \\
+there are $2t$ generations in which a mutation could occur. If the per
+generation mutation rate is $\mu$ then the expected number of
+mutations between a pair of alleles coalescing $t$ generations ago is
+$2 t\mu$
 
 As our expected coalescent time is $2N$ generations (which follows from the expected value of exponential distributions), the expected
 number of mutations separating two alleles drawn at random from the
@@ -473,6 +463,9 @@ of sequences (we'll call this the infinitely-many-sites assumption,
 which should be fine if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per base pair). Thus the number of
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. \\
+
+
+
 
 We'll denote the observed number of pairwise differences at putatively neutral
 sites separating a pair of sequences as $\pi$ (we usually average this over a
@@ -496,6 +489,34 @@ effective population size do you estimate for these two populations?
 so low? [Hint: quickly google Channel island foxes to read up on their
 history, also to see how ridiculously cute they are.]
 \end{question}
+
+\paragraph{More details on the pairwise coalescent.}
+\graham{This section is currently where some of the continuous time
+  coal. has been moved.}
+
+Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
+\begin{equation}
+\approx \frac{1}{2N} e^{-t/(2N)} 
+\end{equation}
+thus if we wanted a continuous random variable we could say that the coalescent time of a pair of sequences ($T_2$) is
+approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. 
+
+
+Conditional on the calescent time $t$ the probability of our pair of alleles are separated by $j$ mutations
+since they last shared a common ancestor is
+\begin{equation}
+P(j | T_2 = t ) = {2t \choose j} \mu^{j} (1-\mu)^{2t-j}
+\end{equation}
+i.e. mutations happen in $j$ generations, and do not happen in $2t-j$
+generations (with ${2t \choose j}$ ways this can possibly
+happen). Assuming that $\mu \ll 1$, and that $2t-j \approx 2t$ then we
+can approximate the probability that we have $j$ mutations as a
+Poisson distribution
+\begin{equation}
+P(j | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
+\end{equation}
+i.e. a Poisson with mean $2\mu t $. \\
+
 
 \subsection{The coalescent process of a sample of alleles.}
 
@@ -545,8 +566,8 @@ of alleles coalesces in the preceding generation is
  2}} \approx \left( 1- \frac{{i \choose
  2}}{2N}\right)
 \end{equation}
-while the probability of any pair coalescing is $\approx \frac{{i \choose
- 2}}{2N}$.\\
+while the probability of any pair coalescing is $\approx \nicefrac{2N}{{i \choose
+ 2}}$.\\
 
 We can ignore the possibility of more than pairs of alleles (e.g. tripletons)
 simultaneously coalescing at once as terms of $\nicefrac{1}{N^2}$ and higher
@@ -555,22 +576,35 @@ sample sizes there are many more triples (${i \choose 3}$), and higher order
 combinations, than pairs (${i \choose 2}$) but if $i \ll N$ then we are safe to
 ignore these terms.
 
+\marginnote{
+To see the continuous time  version of this note that \eqref{eqn:T_i} is
+\begin{equation} 
+\approx  \frac{{i \choose
+ 2}}{2N} \exp \left( - \frac{{i \choose
+ 2}}{2N} t \right)
+\end{equation}
+the waiting time $T_i$ to the first coalescent event in a sample
+of $i$ alleles is exponentially distributed with rate $\nicefrac{2N}{{i \choose
+ 2}}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
+ 2}}{2N} \right)$. }
+
 When there are $i$ alleles the probability that we wait until the
 $t+1$ generation before
 any pair of alleles coalesce is
 \begin{equation}
  \frac{{i \choose
  2}}{2N}\left( 1- \frac{{i \choose
- 2}}{2N}\right)^{t} \approx  \frac{{i \choose
- 2}}{2N} \exp \left( - \frac{{i \choose
- 2}}{2N} t \right)
+ 2}}{2N}\right)^{t} \label{eqn:T_i}
 \end{equation}
-thus the waiting time $T_i$ to the first coalescent event in a sample
-of $i$ alleles is exponentially distributed with rate $\frac{{i \choose
-2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
- 2}}{2N} \right)$. The mean waiting time till any of pair within our
+thus the waiting time while there are $i$ lineages is a geometrically
+distributed random variable with probability of success $ \nicefrac{{i \choose
+ 2}}{2N}$, which we denote by $\sim \text{Geo}
+\left(  \nicefrac{{i \choose
+ 2}}{2N} \right)$.
+The mean waiting time till any of pair within our
  sample to coalesce is $\nicefrac{2N}{{i \choose
- 2}}$.\\
+ 2}}$.
+
 
 When a pair of alleles first find a common ancestral allele some
 number of generations back further into the past we only have to keep
@@ -582,6 +616,7 @@ process continues until we coalesce back to a sample of two, and from
 there to a single most recent common ancestor (MRCA).\\
 
 
+\paragraph{Simulating a coalescent genealogy}
 To simulate a coalescent genealogy at a locus for a sample of $n$ alleles we therefore simply follow this
 algorithm
 \begin{enumerate}
@@ -598,6 +633,13 @@ algorithm
 by following this algorithm we are generating realizations of the
 genealogy of our sample. \\
 
+
+
+\subsection{Expected properties of coalescent genealogies and
+  mutations.} 
+
+
+\paragraph{The expected time to the most recent common ancestor.}
 We will first consider the time to the most recent common ancestor of
 the entire sample ($T_{MRCA}$). This is
 \begin{equation}
@@ -624,7 +666,8 @@ lineages.   \\
 
 %%point about the fixation time of a neutral allele
 
-\paragraph{The total amount of time in a genealogy}
+\paragraph{The expected total time in a genealogy and the number of
+  segregating sites.}
 
 Mutations fall on lineages of the coalescent genealogy. These mutations affect all
 descendants of this lineage, and under the infinitely-many-sites assumption,
@@ -650,11 +693,13 @@ with our population size. Our expected total amount of time is also
 increasing with sample size but is doing so very slowly. To see this
 more carefully we can see that for large $n$
 \begin{equation}
-\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \approx 4N \int_1^n \frac{1}{i} di
-= 4N \log(n-1)
+\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \approx 4N \label{eqn:E_T_tot}
 \end{equation}
-here we are approximating our sum by an integral, which will work for
-large $n$. So our expected total amount of time in the genealogy
+\marginnote{To get a better sense of how this grows with the sample we
+  can see that \ref{eqn:E_T_tot} can be approximated by $\int_1^n \frac{1}{i} di
+= 4N \log(n-1)$ approximating our sum by an integral, which will work for
+large $n$. }
+So our expected total amount of time in the genealogy
 is growing with $n$ but it is doing so very slowly. This again follows
 from the fact that in large samples the initial coalescence usually
 happens very rapidly, so that extra samples adds little to the total
@@ -679,8 +724,7 @@ segregating sites in a sample ($S$) equal to this expectation. We'll call this e
 \begin{equation}
 \widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \frac{1}{i}}  
 \end{equation}
-this estimator was devised by Watterson, hence the $W$.
-
+this estimator was devised by \citeauthor{watterson:75}\cite{watterson:75}, hence the $W$.
 
 \subsection{The fixation of neutral alleles} It is very unlikely that a rare
 neutral allele accidentally drifts up to fixation; more likely, such an allele
