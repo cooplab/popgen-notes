@@ -36,18 +36,27 @@
 %\setcounter{Question}{1}
 
 \newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
-%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
- %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
-
-
-\setcounter{secnumdepth}{2}
 
 \newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
    \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
 
+%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+
+\setcounter{secnumdepth}{2}
+
+
 %\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
 %   \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
  
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
 
 \definecolor{rev1}{rgb}{1, 0, 0}
 
@@ -65,7 +74,33 @@
 
 \date{}
 \maketitle
+\newpage
 
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+%Copyright \copyright\ \the\year\ 
+Author: \thanklessauthor\\
+  \small Author address: Department of Evolution and Ecology \& Center for Population Biology,\\
+ \small University of California, Davis.\\
+  \small To whom correspondence should be addressed: \texttt{gmcoop@ucdavis.edu}\\
+ \small This work is licensed under a Creative Commons Attribution 3.0 Unported License.\\
+ \small http://creativecommons.org/licenses/by/3.0/ \\
+ \small i.e. you are free to reuse and remix this work, but please include an attribution to the original.
+
+\par  Typeset using \LaTeX~and the \smallcaps{tufte-latex} book style. 
+
+\par  The \LaTeX~code and R code for this book are kept here
+https://github.com/cooplab/popgen-notes/ and again are under a Creative Commons Attribution 3.0 Unported License.
+
+\par\textit{Updated on \monthyear}
+\end{fullwidth}
+
+
+
+\newpage
 \tableofcontents
 
 \newpage

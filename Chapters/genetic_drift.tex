@@ -67,6 +67,17 @@ the proceeding generation (i.e. the alleles are identical by descent
 one generation back) then these two alleles must be identical (as we
 are not allowing for any mutation). \\
 
+\marginnote{
+\begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
+  estimate that the mean level of heterozygosity in this population is 0.005.
+  You set yourself a goal of maintaining a level of heterozygosity of at least
+  0.0049 for the next two hundred years. Assuming that the smelt have a
+  generation time of 3 years, and that only genetic drift affects these loci.
+  What is the smallest fully outbreeding population that you would need to
+maintain to meet this goal?  
+\end{question}
+}
+
 In a diploid population of size $N$ individuals there are $2N$ alleles. The
 probability that our two alleles have the same parental allele in the
 proceeding generation is $\nicefrac{1}{(2N)}$, the probability that they have
@@ -132,16 +143,7 @@ generation.
 %from that of $t+1$. We'll develop some mathematical models for these allele
 %frequency changes later on.
 
-\marginnote{
-\begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
-  estimate that the mean level of heterozygosity in this population is 0.005.
-  You set yourself a goal of maintaining a level of heterozygosity of at least
-  0.0049 for the next two hundred years. Assuming that the smelt have a
-  generation time of 3 years, and that only genetic drift affects these loci.
-  What is the smallest fully outbreeding population that you would need to
-maintain to meet this goal?  
-\end{question}
-}
+
 
 \begin{question} \label{geo_question} In mathematical population genetics, a
   commonly used approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally
@@ -216,10 +218,10 @@ Thus, to calculate the probability that two alleles coalesce in \emph{any}
 generation before mutating, we can write:
 
 \begin{align*}
-  P(\textrm{coal. in any generation \& no mutations}) &\approx P(\textrm{coal. in} \; t=1 \; \textrm{\& no mutations}) \; + \\ 
+  P(\textrm{coal. in any generation \& no mutations}) \approx & P(\textrm{coal. in} \; t=1 \; \textrm{\& no mutations}) \; + \\ 
 &  P(\textrm{coal. in} \; t=2 \; \textrm{\& no mutations}) + \ldots \\
   %P(\textrm{coal. in} \; t=3 \; \textrm{\& no mutations})  +\ldots \\
-  &= \sum_{t=1}^\infty P(\textrm{coal. in } \; t \; \textrm{generations \& no mutation})
+  = & \sum_{t=1}^\infty P(\textrm{coal. in } \; t \; \textrm{generations \& no mutation})
 \end{align*}
 %
 which follows from the fact that coalescing in a particular generation is
@@ -389,7 +391,7 @@ colour so we can track their descendants, there are no new
 \end{figure} 
 
 
-\subsection{The Coalescent and patterns of neutral diversity}
+\section{The Coalescent and patterns of neutral diversity}
 
 \paragraph{Pairwise Coalescent time distribution and the number of
  pairwise differences.}
@@ -408,12 +410,20 @@ for an example of this. The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
 $t+1$ generation back is
 \begin{equation}
-  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \approx \frac{1}{2N} e^{-t/(2N)} \label{eqn:coal_time_dist}
+  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
+\end{equation}
+The mean coalescent
+time of a pair of a pair of alleles is $2N$ generations\\
+
+\marginnote{
+Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
+\begin{equation}
+\approx \frac{1}{2N} e^{-t/(2N)} 
 \end{equation}
 thus the coalescent time of a pair of sequences ($T_2$) is
 approximately exponentially distributed with a rate $1/(2N)$. We'll denote that by
-saying that $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. The mean coalescent
-time of a pair of a pair of alleles is $2N$ generations\\
+saying that $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. 
+}
 
 
 \begin{figure}
