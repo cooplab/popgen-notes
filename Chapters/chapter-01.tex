@@ -31,18 +31,24 @@ that this locus is \emph{polymorphic}.
 \setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
-  \caption{Variable sites in the ADH gene, from exons 2 and 3 taken
-    from \citet{mcdonald:91}.  
+  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\emph Drosophila} \citet{mcdonald:91}.  
 The first column (pos.) gives the position in the gene, exon 2 begins at
 position 778 and exon 3 begins at position 942.
 The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
-the consensus are marked with a dash.  The first columns of sequence (a-l) are from D. melanogaster;
-    the next columns (a-f) give sequences from D. simulans, the final 
-  coumns (a-l ) from D yakuba. I've dropped the heterozygote sites from
-  D. yakuba.}
+the consensus are marked with a dash.  The first columns of sequence
+(a-l) are from {\emph D. melanogaster};
+    the next columns (a-f) give sequences from {\emph D. simulans}, the final 
+  coumns (a-l ) from {\emph D. yakuba}.}  % I've dropped the
+                                % heterozygote sites from D. yakuba.
   \label{Table:ADH}
 \end{table}
+
+\begin{question}
+How many segregating sites are there in {\emph D. yakuba}?
+What is the per base pair divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+
+\end{question}
 
 \section{Allele frequencies}
 
@@ -105,7 +111,13 @@ as long at $p$ is the frequency of the $A_1$ allele in the population at
 the time when gametes fuse. See Figure \ref{fig:HWE_CEU_YRI} for a nice
 empirical demonstration of Hardy-Weinberg proportions. 
 
-
+\marginnote{
+\begin{question} 
+You are investigating a locus with three alleles, A, B, and C, with
+allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
+population is expected to be homozygotes under Hardy-Weinberg? 
+\end{question}
+}
 
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
@@ -121,13 +133,7 @@ empirical demonstration of Hardy-Weinberg proportions.
 %What genotype frequencies would you expect under Hardy Weinberg expectations?
 %\end{question}
 
-\marginnote{
-\begin{question} 
-You are investigating a locus with three alleles, A, B, and C, with
-allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
-population is expected to be homozygotes under Hardy-Weinberg? 
-\end{question}
-}
+
 %%%ADD A comment about WF sampling here!
 %% Also add a question about Poisson offspring number.
 
@@ -145,7 +151,6 @@ population is expected to be homozygotes under Hardy-Weinberg?
 
 
 \section{Allele sharing among related individuals and Identity by Descent}
-
 
 All of the individuals in a population are related to each other by a giant
 pedigree (family tree). For most pairs of individuals in a population these
@@ -173,9 +178,8 @@ stretch of chromosome due to the limited number of generations for
 recombination.} \label{fig:IBD_cousins_chr_cartoon}  
 \end{figure}
 
-
 We will define two alleles to be identical by descent (IBD) if they are
-identical due to a common ancestor in the past few generations \cite{cotterman:40,malecot:48}. For the moment,
+identical due to transmission from a common ancestor in the past few generations\cite{cotterman:40,malecot:48}. For the moment,
 we ignore mutation, and we will be more precise about what we mean by `past few
 generations' later on. For example, parent and child share exactly one allele
 identical by descent at a locus, assuming that the two parents of the child are
@@ -215,25 +219,7 @@ F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2.
 The coefficient of kinship will appear multiple times, in both our discussion of
 inbreeding and in the context of phenotypic resemblance between relatives.\\
 
-% \begin{table}
-% \begin{center}
-% \begin{tabular}{| l | c c c c|}
-% \hline
-% Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
-% \hline
-% parent--child & 0 & 1 & 0 & 1/4\\
-% full siblings & 1/4 & 1/2 & 1/4 & 1/4\\
-% identical (monzygotic) twins  & 0 & 0 & 1  & 1/2 \\
-% $1^{st}$ cousins & 3/4 & 1/4 & 0 & 1/16\\
-% \hline
-% \end{tabular}
-% \end{center}
-% \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
-% identical by descent on the autosomes. $^{*}$ assuming this is the only relationship
-% the pair of individuals share (above that expected from randomly
-% sampling individuals from the population). } \label{table:IBDprobs}
-% \end{table}
-%% TODO: nicefrac'd this version, original above
+
 \begin{margintable}
 \begin{center}
 \begin{tabular}{ l c c c c}
@@ -257,7 +243,7 @@ identical by descent on the autosomes. $^{*}$Assuming this is the only close rel
 parent but not the other).
 \end{question}
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question} 
+
 \begin{question} 
 Consider a biallelic locus where allele 1 is
 at frequency $p$, and two individuals who have IBD allele sharing

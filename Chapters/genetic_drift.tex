@@ -536,17 +536,6 @@ is a very small probability. As such it is very unlikely that our three alleles
 coalesce at once, a in a moment we'll see that it is safe to ignore such
 unlikely events. \\
 
-The probability that a specific pair of alleles find a common ancestor in the
-preceding generation is still $\nicefrac{1}{(2N)}$. There are three possible pairs of
-alleles so the probability that no pair finds a common ancestor is
-\begin{equation}
-\left(1-\frac{1}{2N} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
-\end{equation}
-in making this approximation we are multiplying out the right hand-side
-and ignoring terms of $1/N^2$ and higher. See
-Figure \ref{fig:Coalescent_simulation_3} for a random realization of this process. \\
-
-
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Coalescent_3.png}
@@ -558,6 +547,16 @@ Figure \ref{fig:Coalescent_simulation_3} for a random realization of this proces
   then coalesces twelve generations in the past. Note that different
   random realizations of this process will differ from each other a lot.} \label{fig:Coalescent_simulation_3}
 \end{figure}
+
+The probability that a specific pair of alleles find a common ancestor in the
+preceding generation is still $\nicefrac{1}{(2N)}$. There are three possible pairs of
+alleles so the probability that no pair finds a common ancestor is
+\begin{equation}
+\left(1-\frac{1}{2N} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
+\end{equation}
+in making this approximation we are multiplying out the right hand-side
+and ignoring terms of $1/N^2$ and higher. See
+Figure \ref{fig:Coalescent_simulation_3} for a random realization of this process. \\
 
 
 More generally when we sample $i$ alleles there are ${i \choose
@@ -640,6 +639,14 @@ genealogy of our sample. \\
 \subsection{Expected properties of coalescent genealogies and
   mutations.} 
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Coalescent/Coal_w_muts.pdf}
+\end{center}
+\caption{ } \label{fig:Coal_w_muts}
+\end{figure}
+
+
 
 \paragraph{The expected time to the most recent common ancestor.}
 We will first consider the time to the most recent common ancestor of
@@ -695,7 +702,7 @@ with our population size. Our expected total amount of time is also
 increasing with sample size but is doing so very slowly. To see this
 more carefully we can see that for large $n$
 \begin{equation}
-\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \approx 4N \label{eqn:E_T_tot}
+\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \label{eqn:E_T_tot}
 \end{equation}
 \marginnote{To get a better sense of how this grows with the sample we
   can see that \ref{eqn:E_T_tot} can be approximated by $\int_1^n \frac{1}{i} di
@@ -845,6 +852,8 @@ are simply looking at the mutations that have occurred in $2T$ generations
 worth of transmissions. Thus the average number of neutral mutational
 differences separating our pair of species is simply $2\mu (1-C) T$.\\
 
+
+
 \begin{question}
 For this, and the next question, assume that humans and chimp diverged
 around 5.5$\times 10^6$ years, a generation time ~20 years, that the speciation occurred instantaneously in allopatry with no subsequent gene flow, and the ancestral effective population size of the human and chimp common ancestor population was 10,000 individuals.\\
@@ -856,8 +865,49 @@ given that there are fewer rounds of replication in the female
 germline than in the male germline.
 \end{question}
 
+%\paragraph{dN/dS}
 
+\paragraph{The Mcdonald-Kreitman test}
+\citet{mcdonald:91} devised a simple test of the neutral theory of molecular
+evolution at a gene (building on the conceptually similar HKA
+test\cite{HKA}. They partitioned polymorphism and fixed differences into 
+nonsynonymous and synonymous changes:
+\begin{center}
+%\begin{table}
+\begin{tabular}{ccc}
+ & Poly. & Fixed \\
+\hline 
+Non-Syn. &    $P_N$  &   $D_N$  \\
+Syn. &    $P_S$   &     $D_S$   \\
+Ratio & $P_N/P_S$ & $D_N/D_S$
+\end{tabular}
+%\end{table}
+\end{center}
 
+Under neutral theory we expect a smaller number of non-synonymous to
+synonymous fixed differences ($P_N/P_S < 1$) but exactly the same
+expectation holds for polymorphism
+($P_N/P_S$). To see this denote the total time on the coalescent genealogy within the species as
+$T_{tot}$ and the total time for fixed differences by $T_{div}'$ then:
+\begin{marginfigure}
+\begin{center}
+\includegraphics{figures/Coalescent/MK_tree.pdf} 
+\end{center}
+\caption{ } \label{fig:MK_tree}
+\end{marginfigure}
+\begin{center}
+%\begin{table}
+\begin{tabular}{ccc}
+ & Poly. & Fixed  \\
+ \hline
+Non-Syn. &    $\mu_N T_{tot}$  &   $\mu_N  T_{div}'$ \\
+Syn. &    $\mu_S T_{tot}$   &     $\mu_S  T_{div}'$  \\
+Ratio & $\mu_N/\mu_S$  & $\mu_N/\mu_S$
+\end{tabular}
+%\end{table}
+\end{center}
+We can test this expectation of equal ratios via the standard G-test of a $2
+\times 2$ table.
 
 \subsection{Neutral diversity and population structure}
 %%this section was moved from the coalescent chapter
