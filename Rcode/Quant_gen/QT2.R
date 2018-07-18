@@ -58,9 +58,9 @@ par.off.corr<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cut
 	# plot parental midpoint against offsprings phenotype.
 	#layout(1) ###done in case this is run after the code with 3 plots
 	if(sel.cutoff){
-		plot(parental.midpoint,child.pheno,xlab="Parental midpoint",ylab="Child's phenotype",cex=1.5,cex.axis=1.5,cex.main=1.5,cex.lab=1.5,main=paste("L =",L,"VE=",environ.var,", VA=1"),col=ifelse(parental.midpoint>1,"red","grey"))
+		plot(parental.midpoint,child.pheno,xlab="Parental midpoint",ylab="Child's phenotype",cex=1.5,cex.axis=1.5,cex.main=1.5,cex.lab=1.5,main=paste("VE=",environ.var,", VA=1 ","(L =",L,")",sep=""),col=ifelse(parental.midpoint>1,"red","grey"))
 	}else{
-		plot(parental.midpoint,child.pheno,xlab="Parental midpoint",ylab="Child's phenotype",cex=1.5,cex.axis=1.5,cex.main=1.5,cex.lab=1.5,main=paste("L =",L,"VE=",environ.var,", VA=1"))
+		plot(parental.midpoint,child.pheno,xlab="Parental midpoint",ylab="Child's phenotype",cex=1.5,cex.axis=1.5,cex.main=1.5,cex.lab=1.5,main=paste("VE=",environ.var,", VA=1 ","(L =",L,")",sep=""))
 	}
 	## plot the regression in red
 	abline(h=0,col="grey",lwd=2)
@@ -101,7 +101,7 @@ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT.pdf")
 
 
 par.off.corr(L=100, environ.var=1,Num_inds=500, sel.cutoff=1) #,print.slope=TRUE)
-dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Breeders_eqn.pdf")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Response_to_sel/Breeders_eqn.pdf")
 
 
 #for(environ.var in c(0.00001,0.5,1,2)){

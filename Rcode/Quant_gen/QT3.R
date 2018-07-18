@@ -67,7 +67,7 @@ layout(1:3)
 my.lim<-quantile(c(mum.pheno,dad.pheno),p=c(0.01,0.99))
 my.lim[2]<-quantile(child.pheno,p=c(0.99))
 
-hist(c(mum.pheno,dad.pheno),breaks=100,xlim=my.lim,xlab="Phenotype",main=paste("Phenotype distribution before selection, Mean=0, VA=1, VE=",environ.var,", Taking top ",round(100*sel),"%",sep=""),cex.axis=1.5,cex.lab=1.5,cex.main=1.5); 
+hist(c(mum.pheno,dad.pheno),breaks=100,xlim=my.lim,xlab="Phenotype",main=paste("Phenotype distribution before selection"),cex.axis=1.5,cex.lab=1.5,cex.main=1.5); #, Mean=0, VA=1, VE=",environ.var,", Taking top ",round(100*sel),"%",sep="")
 abline(v=0,col="blue",lwd=3)
 
 par.mean<-mean(c(mum.pheno[top.sel.per.mums],dad.pheno[top.sel.per.dads]))
@@ -110,7 +110,7 @@ if(plot.geno){
 }
 
 one.gen.sel(L=100,environ.var=1,sel=0.1,add.arrow=TRUE)
-dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT3.pdf")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Response_to_sel/QT3.pdf")
 pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT3_w_genosums.pdf")
 one.gen.sel(L=100,environ.var=1,sel=0.1,plot.geno=TRUE)
 dev.off()

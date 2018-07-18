@@ -431,6 +431,14 @@ for an example of this.
   untill they find a common ancestor.} \label{fig:Coalescent_simulation}
 \end{figure}
 
+\marginnote{Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
+\begin{equation}
+\approx \frac{1}{2N} e^{-t/(2N)} 
+\end{equation}
+thus if we wanted a continuous random variable we could say that the coalescent time of a pair of sequences ($T_2$) is
+approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. }
+
+\graham{fix equation numbers here}
 The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
 $t+1$ generation back is
@@ -440,6 +448,7 @@ $t+1$ generation back is
 Thus the coalescent time of our pair of alleles is a Geometrically distributed random variable,
 where the probability of success is $1/(2N)$, we've denote this by $T_2 \sim  \text{Geo}(1/(2N))$
 The mean coalescent time of a pair of a pair of alleles is $2N$ generations\\
+
 
 
 Conditional on a pair of alleles coalescing $t$ generations ago
@@ -459,12 +468,10 @@ population is
 \end{align}
 We'll assume that mutations never happen at the same site twice,
 i.e. no multiple hits, such that we get to see all of the mutation events that separate our pair
-of sequences \note{This is called the infinitely-many-sites assumption,
+of sequences \sidenote{This is called the infinitely-many-sites assumption,
 which should be fine if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per base pair).} Thus the number of
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. \\
-
-
 
 
 We'll denote the observed number of pairwise differences at putatively neutral
@@ -474,6 +481,14 @@ $\pi$, $\widehat{\theta}_{\pi}$ by setting $\widehat{\theta}_{\pi}=\pi$.  If we
 have an independent estimate of $\mu$, then from setting $\pi =
 \widehat{\theta}_{\pi} = 4N\mu$ we can obtain an estimate of the population
 size $N$ that is consistent with our levels of neutral polymorphism.
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width =
+  \textwidth]{illustration_images/Quant_gen/Grey_fox/14770789583_4db7ec5164_o.jpg}  %https://www.flickr.com/photos/internetarchivebookimages/14770789583/in/photolist-axdicF-ovfa8V-odM3sY-bCrnQ8-ovgYXn-tiQfMQ-odMpu5-x1xCJu-wQ7qT7-wE7kfs-xEZQd1-wK4YSh-ovWx4g-wpDZzF-xjvQ89-tHDjuS-w9Wit5-xEvyhH-xjCbKD-u4q3Qe
+\end{center}
+\caption{Gray Fox, {\it Urocyon cinereoargenteiis}. Pearson and Warren. Diseases and enemies of poultry. (1897) BHL.} 
+\end{marginfigure}
 
 \marginnote{
 \begin{question}
@@ -494,13 +509,6 @@ history, also to see how ridiculously cute they are.]
 \paragraph{More details on the pairwise coalescent.}
 \graham{This section is currently where some of the continuous time
   coal. has been moved.}
-
-Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
-\begin{equation}
-\approx \frac{1}{2N} e^{-t/(2N)} 
-\end{equation}
-thus if we wanted a continuous random variable we could say that the coalescent time of a pair of sequences ($T_2$) is
-approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. 
 
 
 Conditional on the calescent time $t$ the probability of our pair of alleles are separated by $j$ mutations
@@ -557,9 +565,8 @@ in making this approximation we are multiplying out the right hand-side
 and ignoring terms of $1/N^2$ and higher. See
 Figure \ref{fig:Coalescent_simulation_3} for a random realization of this process. \\
 
-
-More generally when we sample $i$ alleles there are ${i \choose
- 2}$ pairs, i.e. $i(i-1)/2$ pairs, thus the probability that no pair
+More generally when we sample $i$ alleles there are ${i \choose 2}$
+pairs,\sidenote{said as ``i choose 2''}  i.e. $i(i-1)/2$ pairs, thus the probability that no pair
 of alleles coalesces in the preceding generation is
 \begin{equation}
 \left(1-\frac{1}{(2N)} \right)^{{i \choose
@@ -584,8 +591,8 @@ To see the continuous time  version of this note that \eqref{eqn:T_i} is
  2}}{2N} t \right)
 \end{equation}
 the waiting time $T_i$ to the first coalescent event in a sample
-of $i$ alleles is exponentially distributed with rate $\nicefrac{2N}{{i \choose
- 2}}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
+of $i$ alleles is exponentially distributed with rate $\nicefrac{{i \choose
+ 2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
  2}}{2N} \right)$. }
 
 When there are $i$ alleles the probability that we wait until the
