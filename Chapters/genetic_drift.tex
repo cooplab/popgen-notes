@@ -289,7 +289,19 @@ constant in size with low variance in reproduction success. Real
 populations experience dramatic fluctuations in size, and there is
 often high variance in reproductive success. Thus rates of drift in
 natural populations are often a lot higher than the census population
-size would imply.\\
+size would imply. See Figure \ref{fig:LossHet_varying_pop}  for a depiction of
+a repeatedly bottlenecked population losing diversity at a fast rate.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_pop_dark.png}
+\end{center}
+\caption{Loss of heterozygosity over time in a bottlenecking population. A diploid population of 10 individuals, that bottlenecks
+  down to three individuals repeatedly. In the first generation I colour every allele a different
+colour so we can track their descendants, there are no new
+  mutations.} \label{fig:LossHet_varying_pop}  
+\end{figure} 
+
 
 To cope with this population geneticists often invoke the concept of
 an \emph{effective population size} ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
@@ -330,7 +342,6 @@ N_e =\frac{1}{\frac{1}{t} \sum_{i=1}^{t} \frac{1}{N_i} }. \label{eq:Ne_harmonic}
 this is the harmonic mean of the varying population size.
 
 
-
 Thus our
 effective population size, the size of an idealized constant
 population which matches the rate of genetic drift, is the harmonic
@@ -338,21 +349,22 @@ mean true population size over time. The harmonic mean is very
 strongly affected by small values, such that if our population size is
 one million $99\%$ of the time but drops to a $1000$ every hundred or
 so generations, $N_e$ will be much closer to $1000$ than a
-million. See Figure \ref{fig:LossHet_varying_pop}  for a depiction of
-a repeatedly bottlenecked population losing diversity at a fast rate.\\
+million. \\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_pop_dark.png}
-\end{center}
-\caption{Loss of heterozygosity over time in a bottlenecking population. A diploid population of 10 individuals, that bottlenecks
-  down to three individuals repeatedly. In the first generation I colour every allele a different
-colour so we can track their descendants, there are no new
-  mutations.} \label{fig:LossHet_varying_pop}  
-\end{figure} 
 
 %would result in the same rate of drift
 %Luckily, in many (not all) situations, departures from model assumptions can be captured by substituting Ne for N, i.e., by plugging in a fictitious N that leads to the same level of genetic drift as observed.
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.7 \textwidth]{illustration_images/Genetic_drift/Hamadryas_baboon/Hamadryas_baboon.pdf}
+\end{center}
+\caption{Male Hamadryas baboons. Brehm's Tierleben. Brehm,
+  A.E. 1893. Up to ten females live in a harem with a single male.  %Brehm's animal life
+} \label{fig:Hamadryas_baboon}  
+\end{marginfigure} 
+
 
 Variance in reproductive success will also affect our effective
 population size. Even if our population has a large constant size of $N$
@@ -391,7 +403,6 @@ N/2$) our effective population size will be much reduced as a result.\\
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_RS.png}
-
 \end{center}
 \caption{High variance on reproductive success increases the rate of genetic drift. A diploid population of 10 individuals, where the circled
   individuals have much higher reproductive success. In the first generation I colour every allele a different
@@ -448,8 +459,6 @@ $t+1$ generation back is
 Thus the coalescent time of our pair of alleles is a Geometrically distributed random variable,
 where the probability of success is $1/(2N)$, we've denote this by $T_2 \sim  \text{Geo}(1/(2N))$
 The mean coalescent time of a pair of a pair of alleles is $2N$ generations\\
-
-
 
 Conditional on a pair of alleles coalescing $t$ generations ago
 there are $2t$ generations in which a mutation could occur. If the per

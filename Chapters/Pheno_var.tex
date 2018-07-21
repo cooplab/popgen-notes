@@ -1,6 +1,12 @@
 \chapter{Phenotypic variation and resemblance between relatives.}
 
-The distinction between genotype and phenotype is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
+\begin{quote}
+All that we mean when we speak of a gene [allele] for pink eyes is, a gene which differentiates a pink eyed fly 
+from a normal one — not a gene [allele] which produces pink eyes per se, for the character pink eyes is dependent 
+on  the action of many other genes. \end{quote} - \citet{sturtevant:15}
+
+
+\newthought{The distinction between genotype and phenotype} is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
 The genotype of an individual (the genome), for most purposes, is decided when
 the sperm fertilizes egg. The phenotype of an individual represents any
 measurable aspect of an organism. Your height, to the amount of
@@ -11,51 +17,89 @@ developmental, and physiological or behavioural processes which interact with a 
 stochastic factors. Honestly it boggles the mind how organisms work
 as well as they do, let alone that you managed to eat lunch last Tueday. 
  
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{illustration_images/Quant_gen/Aspen_budset/Aspen_leaves.pdf}
+\end{center}
+\caption{{\it P. tremula}. Der baum. H. Schacht. 1860. BHL } \label{fig:Apsen_geno_pheno}
+\end{marginfigure}
 The simplest way to measure the genotype-phenotype relationship is
 the calculate the phenotypic mean for each genotype at a locus.
-For example in Figure XXX we plot the effect of XXX on XXX.
-
+For example, \citet{wang:18} \cite{wang:18} explored the genetic basis
+of budset time in European aspen  ({\it Populus tremula}), the effect
+of a specific SNP on the phenotype is shown in
+in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait
+underlying local adaptation to varying growing season length. The SNP
+falls in the gene (PtFT2) that is known to play a strong role in flowering
+time regulation in other plants. 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Poplar_Aspen_budset_geno_pheno.pdf}
 \end{center}
-\caption{} \label{fig:Apsen_budset_geno_pheno}
+\caption{The effect of a flowering time gene (PtFT2) SNP on budset time in
+  European aspen. Each dot gives the genotype-phenotype combination for
+  an individual. The horizontal lines give the budset mean for each
+  genotype, the vertical liens show the inter-quartile range. The
+  dotted line gives the linear regression of phenotype on genotype.
+  Thanks to P{\"a}r Ingvarsson for the data. } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
 
+One way for us to assess the relationship between
+genotype phenotype is to fit a linear regression, i.e. the best fitting linear line through the data, of
+phenotype on genotype. The slope of this line has the interpretation of being the average
+effetc of substituting a copy of allele $2$ for a copy of allele
+$1$. In our Aspen example the slope is $-13.6$, i.e. swopping a single $T$ for a $G$ allele
+moves the budset forward by $13.6$ days, with the $GG$ homozygote
+is predicted to set buds $27.2$ days earlier than the $TT$
+homozgote. As a measure of significance of this relationship we can
+calculate the p-value of this regression. To try and identify loci
+that are associated with our trait gneome-wide we can conduct this
+regression at each SNP in the genome. One common way to display these
+reuslts is to plot the logarithm of the p-value for each SNP along
+genome (a so-called Manhattan plot). Here's one from 
+\citet{wang:18} for their the Aspen budset phenotype
 
-One way for us to assess whether there is a relationship between
-genotype phenotype is to assess the linear relationship, by linear
-regressio, i.e. the best fitting linear line through the data, of
-phenotype on genotype. 
-The slope of this line has the interpretation of being the average
-effec of substituting a copy of allele $2$ for a copy of allele $1$.
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Wang_Fig_just_Manhattan.pdf}
 \end{center}
-\caption{} \label{fig:Apsen_budset_geno_pheno}
+
+\caption{Manhattan plot of the p-value of the linear association
+  between genotype and budset in Aspen. Each dot represents the test at a single SNP,
+  plotted at physical coordinate on the genome. Different chromosomes
+  are plotted in alternating colours. The SNPs surrounding the PtFT2
+  gene are shown in red.} \label{fig:Apsen_Manhattan}
 \end{figure}
+The SNP with the most significant p-value is the PtFT2 SNP. Note
+that other SNPs in the surrounding region also light up as showing a
+significant association with budet timing. This is because loci that are in LD with a functional locus may in turn show an
+association, not because they directly affect the phenotype but simply
+because  the genotypes at the two loci are themselves are non-randomly
+associated. Here is a zoomed in version (Figure 2 in \citet{wang:18}) with SNPs coloured by the
+strength of their LD with the putatively functional SNP
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Wang_Fig_zoomed_Manhattan.pdf}
+\end{center}
+\caption{The Manhattan plot zoomed in on the top-hit (red SNPs from Figure
+  \ref{fig:Apsen_Manhattan}). SNPs are now coloured by their $D\prime$
+  value with the most significant SNP. $D\prime$ is the $D$ LD
+  covariance between a pair of loci ($D$, eqn \gc{XXX}) normalized by
+  the largest value it can take given the allele frequencies. From
+  Figure 2 of } \label{fig:Apsen_zoom_Manhattan}
+\end{figure}
+Note how SNPs with strong LD with the functional allele (redder
+points) have more signicant p-values. 
 
-We can test whether 
-
-We say that there is this locus is associated with this phenotype. 
-
-\begin{quote}
-All that we mean when we speak of a gene for pink eyes is, a gene which differentiates a pink eyed fly 
-from a normal one — not a gene which produces pink eyes per se, for the character pink eyes is dependent 
-on  the action of many other genes. \end{quote} - \citet{sturtevant:15}
-
-
-The effect of a locus on phenotype may well differ across
-environments. 
-
-A locus that are in LD with a functional locus may in turn show an
-association, not because it affects the phenotype but simply because
-the genotypes at the two loci are themselves are non-randomly associated. 
-
-
+Variation in some traits seems to have a relatively simple genetic
+basis. In our Aspen example there is one clear large-effect locus,
+which explains  62\% of the variation in budset.
+However, many phenotypes are likely much more genetically complex in their
+variation involving the functional effect of many alleles at many
+polymorphic loci. Such genetically complex traits are called polygenic traits. 
 
 
 

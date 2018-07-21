@@ -60,6 +60,7 @@ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/additive_effe
 ###Work in progress
 if(FALSE){
 
+##http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050219
 mice.coat<-matrix(NA,nrow=3,ncol=3,dimname=list(c("MM","Mm","mm"),c("AA","Aa","aa")))
 mice.coat["MM",]<-c(0,0,0)
 mice.coat["Mm",]<-c(0.9,1,1.5)
@@ -85,11 +86,13 @@ plot.lm.two.locus<-function(a,p1,p2,dom.arrows=FALSE){
 	axis(2)
 	axis(1,at=c(0,1,2))
 	my.col<-c("red","purple","blue")
-sapply(1:3,function(i){
-	symbols(x=0:2,y=a[i,]-pop.mean,circles=3*sqrt(HWE.1[i]*HWE.2)/(2*pi),bg=adjustcolor(my.col[i],0.3),add=TRUE,inches=FALSE)  #ylim=range(a)*c(.2,1.8),xlim=c(-1,3)
-})
+	sapply(1:3,function(i){
+		symbols(x=0:2,y=a[i,]-pop.mean,circles=3*sqrt(HWE.1[i]*HWE.2)/(2*pi),bg=adjustcolor(my.col[i],0.3),add=TRUE,inches=FALSE)  
+		points(x=0:2,y=a[i,]-pop.mean,pch=19,cex=1)
+		#ylim=range(a)*c(.2,1.8),xlim=c(-1,3)
+	})
 
-	points(x=0:2,y=a-pop.mean,pch=19,cex=1)
+
 	abline(lm((phenos-pop.mean)~genos),col="red",lwd=3)
 	slope<-lm((phenos-pop.mean)~genos)$coeff
 	z_bars<- a -pop.mean
@@ -97,6 +100,9 @@ sapply(1:3,function(i){
 
 }
 
+
+
+##https://www.nature.com/articles/ncomms10460/figures/4
 # Jess Hayward
 MC5R    RSP02    avg_phenotype_shedding aa    aa    0.778 aa    ad    0.834337349 aa    dd    0.146464646 ad    aa    0.274358974 ad    ad    0.243902439 ad    dd    0.013888889 dd    aa    0.238312429 dd    ad    0.095794393 dd    dd    0.006003431
 FGF5    RSPO2    avg_pheno_furlength aa    aa    1.503340757 aa    ad    1.419847328 aa    dd    3.104972376 ad    aa    2.152542373 ad    ad    2.138686131 ad    dd    3.427272727 dd    aa    3.279623477 dd    ad    3.169811321 dd    dd    4.708333333

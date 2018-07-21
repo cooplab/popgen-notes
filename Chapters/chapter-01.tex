@@ -84,6 +84,9 @@ then just $q=1-p$.
   predicted genotype frequency from Hardy--Weinberg equilibrium.See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
 \end{figure}
 
+
+
+
 Imagine a population mating at random with respect to genotypes, i.e. no
 inbreeding, no assortative mating, no population structure, no sex differences
 in allele frequencies. The frequency of allele $A_1$ in the population at the
@@ -94,6 +97,7 @@ is $p^2$. This probability is also the expected frequency of the $A_1A_1$
 homozygote in the population. The expected frequency of the three possible
 genotypes is
 
+
 %\begin{table}[htp!]
 \begin{center}
 \begin{tabular}{ccc}
@@ -101,15 +105,49 @@ genotypes is
 $f_{11}$ & $f_{12}$ & $f_{22}$ \\
 \hline
 $p^2$ & $2pq$ & $q^2$ \\
-\end{tabular}\,.
+\end{tabular}
 \end{center}
 %\caption{\textbf{Hardy Weinberg}} \label{table:HWE}
 %\end{table}
 Note that we only need to assume random mating with
 respect to our alleles in order for these expected frequencies to hold,
 as long at $p$ is the frequency of the $A_1$ allele in the population at
-the time when gametes fuse. See Figure \ref{fig:HWE_CEU_YRI} for a nice
+the time when gametes fuse. 
+
+\begin{question}
+On the coastal islands of British Columbia there is a subspecies of
+black bear ({\it Ursus americanus kermodei}, Kermode's bear). Many members of this
+black bear subspecies are white (they're sometimes called spirit bears). These
+bears arent hybrids with polar bears, nor are they albinos, they are
+homozygotes for a recessive change at the MC1R gene (with $GG$
+individuals being white and $AA$ and $AG$ individuals being black.   
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/Kermode_bear/Kermode_bear.pdf}
+\end{center}
+\caption{Kermode's bear. Extinct and vanishing mammals of the western
+  hemisphere. A, Glover 1942.} \label{fig:Kermodes_bear}
+\end{marginfigure}
+
+Below are the genotype frequencies for the MC1R polymorphism on from a
+sample from British Columbi island populations \cite{RITLAND:01}. 
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$AA$ & $AG$ & $GG$ \\
+\hline
+42 & 24 & 21\\
+\end{tabular}
+\end{center}
+Calculate the expected frequencies of the allele under HWE.  
+\end{question}
+
+
+See Figure \ref{fig:HWE_CEU_YRI} for a nice
 empirical demonstration of Hardy-Weinberg proportions. 
+
+
 
 \marginnote{
 \begin{question} 

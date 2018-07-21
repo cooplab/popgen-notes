@@ -183,52 +183,6 @@ that our child's phenotype is correlated with the parent phenotype.
 
 
 
-\paragraph{Breeding values}
-
-\gc{Here be dragons, this section has not be worked through}
-Before we turn to our discussion of the response to selection it will
-help to define one more quantity, the breeding value. 
-The breeding value of an individual is the mean phenotype of the
-offspring of this individual averaged over all possible matings in the
-population. This is $X_{Ai}$.
-
-For an individual $i$ we can write the the breeding value of an individual $G_X$ as
-\begin{equation}
-G_i = \alpha_G + \beta_{GP} X_i   +\epsilon_G %equation 10.4 Falconer
-\end{equation}
-where $\beta_{GX}  Cov(X,G)/Var(X) =h^2$ 
-
-
-The breeder's equation is in fact a statement of the change in the mean
-breeding value of the population. To see this consider the fact that
-we can write the change in mean breeding value within a generation due
-to selection as 
-\begin{equation}
-R=\E[G_i] = \beta_{GP} \bar{X_{}}-\bar{P_X}
-\end{equation}
-
-We can also write the breeder's equation as 
-\begin{equation} 
-R =\delta \bar{G} = Cov(G,W)
-\end{equation}
-i.e. the mean change in phenotypes over the generations is due to the
-fact that our breeding values covaries with fitness 
-this is the Price equation. 
-
-If  $\epsilon_G$ and G are uncorrelated then
-\begin{equation}
-\delta \bar{G} = Cov(G,W) = \beta_{GP} Cov(P,W) = h^2 S
-\end{equation}
-we can also write
-\begin{equation}
-W = \alpha_W + \beta_{WP} P +\epsilon_W
-\end{equation}
-where $\beta_{WP} = Cov(W,P)/Var(P)$. If $\epsilon_W$ and $G$ are uncorrelated
-
-\begin{equation}
-\delta \bar{G} = Cov(G,W) = \beta_{WP} Cov(G,P) 
-\end{equation}
-
 
 \section{Multiple traits.}
 
@@ -424,13 +378,15 @@ C < & r  B \\
 
 Males ($\mars$) and females ($\venus$)
 
-We will assume that there is a trait, e.g. tail length, under direct
+We will assume that there is a trait, e.g. tail length, is under direct
 selection in males, such that its response to selection can be written as
 \begin{equation}
 R_{\mars} = \beta_{\mars} V_{A, \mars}
 \end{equation}
 
-
+Lets assume that the female preference trait is not under direct
+selection $\beta_{\venus}=0$ then the response to selection of the
+preference trait can be written as
 \begin{eqnarray}
 R_{\venus} &=\beta_{\venus}V_{A,\venus}  + \beta_{\mars} V_{A, \venus
   \mars}
@@ -438,13 +394,21 @@ R_{\venus} &=\beta_{\venus}V_{A,\venus}  + \beta_{\mars} V_{A, \venus
 \end{eqnarray}
 so the female preference will respond to selection if it is
 genetically correlated with the male trait, i.e. if $V_{A, \venus
-  \mars}$. There's a number of different ways this could happen. The
+  \mars}$. There's a number of different ways this correlation could arise. The
 simplest is that the loci underlying the male trait may have a
 pleiotropic effect on female preference, however, female preference
 may often have quite a distinct genetic basis from male display traits.
+A more general way in which trait-preference genetic correlations may
+arise is through assortative mating. Females vary in their
+tail-length preference, the ones will a preference for longer
+tails will mate with long-tailed males and the opposite for females
+with a preference for shorter-tails.
 
-A potentially more general way in which trait-preference genetic correlations may arise
-is by assortative mating. 
 
-
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
+\end{center}
+\caption{}
+\end{figure}
 
