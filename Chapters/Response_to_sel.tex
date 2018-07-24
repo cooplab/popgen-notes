@@ -181,77 +181,7 @@ we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with the parent phenotype.
 
-
-
-
-\section{Multiple traits.}
-
-Traits often covary with each other, due to both environmentally
-induced effects (e.g. due to the effects of diet on multiple traits)
-and due to the expression of underlying genetic covariance between
-traits. In turn this genetic covariance can reflect pleiotropy, a
-mechanistic effect of an allele on multiple traits (e.g. variants that
-effect skin pigmentation often effect hair color) or the genetic
-linkage of loci independently affecting multiple traits. If we are
-interested in evolution over short time-scales we can (often) ignore
-the genetic basis of this correlation. 
-
-Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
-say the individual's leg length and nose length. As before we can write
-these as 
-\begin{eqnarray}
-X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
-X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
-\end{eqnarray}
-As before we can talk about the total phenotypic variance ($V_1,V_2$),
-environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance in trait one and two
-($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
-total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
-,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
-=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
-
-We can store these values in a matrices 
-\begin{equation}
-\bf{V}= \left( \begin{array}{cc} 
-V_{1} & V_{1,2} \\
-V_{1,2} & V_{2} \\
-\end{array} \right) \label{P_matrix}
-\end{equation}
-and
-\begin{equation}
-\bf{G}= \left( \begin{array}{cc} 
-V_{1,A} & V_{A,1,2} \\
-V_{A,1,2} & V_{2,A} \\
-\end{array} \right)  \label{G_matrix}
-\end{equation}
-we can generalize this to an abitrary number of traits.
-
-We can estimate these quantities, in a similar way to before, by
-studying the covariance in different traits between relatives: 
-\begin{equation}
-Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
-\end{equation}
-An example of 
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
-\end{center}
-\caption{Relationship of standardized forehead patch size between
-  farthers and sons and daughters in  Pied fly-catchers. Redrawn from \citeauthor{potti:11}.} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
-\end{figure}
-
-\begin{marginfigure}[-40mm]
-\begin{center}
-\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.pdf}
-\end{center}
-\caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  Coloured illustrations of British birds, and their eggs.
-London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
-                                %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
-\end{marginfigure}
-
-
-\paragraph{The response of multiple traits to selection, the
+\subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
 We can generalize these results for multiple traits, to ask how selection on
 multiple phenotypes plays out over short time intervals. We'll write
@@ -276,6 +206,58 @@ statement that our response in any one phenotype is modified by
 selection on other traits that covary with that trait.
 This offers a good way to think about how genetic trade offs play out
 over evolution over short time-scales.
+
+\begin{marginfigure}[-40mm]
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
+\end{center}
+\caption{Stalk-eyed Flies ({\it Diopsidae}).  Diptera.
+van der Wulp. 1898. BHL} \label{fig:Stalk_eyed_flies}  
+\end{marginfigure}
+
+As an example of correlated responses to selection consider the  \citeauthor{wilkinson:93} selection experiment on Stalk-eyed
+ flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved
+ amazingly long eye-stalks. In the lab \citeauthor{wilkinson:93} established six populations of
+ wild-caught flies and selected up and down on males eye-stalk to body
+ size ratio for 10 generations (left plot in Figure
+ \ref{fig:Stalk_eyed_response}). Despite the fact that he did not
+ select on females, he saw a correlated response in the females from
+ each of the lines (right plot), because the genetic correlation
+ between male and female body proportions. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/stalk_eyed_flies/stalk_eyed_flies_response.pdf}
+\end{center}
+\caption{ \citeauthor{wilkinson:93} selected two of populations for flies for
+ increased and eye-stalk to body length ratio in males (mean shown as
+ up triangles), and two for a
+ decreased ratio (down triangles), by taking the top 10 males with the highest (lowest)
+ ratio out of 50 measures. He also established two control populations
+ (circles). He constructed each generation of females by sampling 10
+ at random from each population.  
+
+} \label{fig:Stalk_eyed_response}   %\cite{potti:11} 
+\end{figure}
+
+
+\begin{question}
+
+At the end of ten generation in \citeauthor{wilkinson:93}'s experiment (Figure
+\ref{fig:Stalk_eyed_response}) the males from the up- and down-selected
+lines had mean eye-stalk to body ratios of $1.29$ and $1.14$
+respectively. While the females from the up- and down-selected lines
+had means of $0.9$ and $0.82$. \\
+{\bf A)} \citeauthor{wilkinson:93} estimated that by selecting the top/bottom
+10 males he had on average shifted the mean body ratio by 0.024 within
+each generation. What is the male heritability of  mean eye-stalk to body ratio?
+
+{\bf B} Assume that the heritability of male and female phenotypes are
+equal.  Assuming that there is no direct
+selection on female boy-ratios in this experiment, i.e. that all of
+the response in female is due to correlated selection, can you
+estimate the genetic correlation? 
+\end{question}
 
 
 \subsection{Some applications of the multivariate trait breeder's equation}
@@ -394,21 +376,23 @@ R_{\venus} &=\beta_{\venus}V_{A,\venus}  + \beta_{\mars} V_{A, \venus
 \end{eqnarray}
 so the female preference will respond to selection if it is
 genetically correlated with the male trait, i.e. if $V_{A, \venus
-  \mars}$. There's a number of different ways this correlation could arise. The
+  \mars}$. There's a number of different ways this genetic correlation could arise. The
 simplest is that the loci underlying the male trait may have a
 pleiotropic effect on female preference, however, female preference
 may often have quite a distinct genetic basis from male display traits.
+
 A more general way in which trait-preference genetic correlations may
 arise is through assortative mating. Females vary in their
 tail-length preference, the ones will a preference for longer
 tails will mate with long-tailed males and the opposite for females
-with a preference for shorter-tails.
+with a preference for shorter-tails. Therefore, there will be a
+correlation between mates display and preference traits (see Figure \ref{fig:assort_mating_2_trait}). 
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
-\end{center}
+\end{center} \label{fig:assort_mating_2_trait}
 \caption{}
 \end{figure}
 

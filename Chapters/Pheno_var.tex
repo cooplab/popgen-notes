@@ -459,10 +459,79 @@ $A_{ij}= 2 F_{i,j}$ and $A_{ii}= 1$. Given the matrix $A$ we can estimate $V_A$.
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
-This is sometimes called the ``animal model'', and also goes by the
-name of variance components analysis.
+This is sometimes called the ``animal model''.
 
 
+
+\section{Multiple traits.}
+
+Traits often covary with each other, due to both environmentally
+induced effects (e.g. due to the effects of diet on multiple traits)
+and due to the expression of underlying genetic covariance between
+traits. In turn this genetic covariance can reflect pleiotropy, a
+mechanistic effect of an allele on multiple traits (e.g. variants that
+effect skin pigmentation often effect hair color) or the genetic
+linkage of loci independently affecting multiple traits. If we are
+interested in evolution over short time-scales we can (often) ignore
+the genetic basis of this correlation. 
+
+Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
+say the individual's leg length and nose length. As before we can write
+these as 
+\begin{eqnarray}
+X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
+X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
+\end{eqnarray}
+As before we can talk about the total phenotypic variance ($V_1,V_2$),
+environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance in trait one and two
+($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
+total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
+,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
+=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
+
+We can store these values in a matrices 
+\begin{equation}
+\bf{V}= \left( \begin{array}{cc} 
+V_{1} & V_{1,2} \\
+V_{1,2} & V_{2} \\
+\end{array} \right) \label{P_matrix}
+\end{equation}
+and
+\begin{equation}
+\bf{G}= \left( \begin{array}{cc} 
+V_{1,A} & V_{A,1,2} \\
+V_{A,1,2} & V_{2,A} \\
+\end{array} \right)  \label{G_matrix}
+\end{equation}
+we can generalize this to an abitrary number of traits.
+
+We can estimate these quantities, in a similar way to before, by
+studying the covariance in different traits between relatives: 
+\begin{equation}
+Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
+\end{equation}
+
+\graham{Added genetic correlation, needed for the stalk-eyed flies}
+
+A simple example of a genetic covariance is the covariance of male and
+female phenotypes. 
+\graham{add question estimating genetic coar/corr}
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
+\end{center}
+\caption{Relationship of standardized forehead patch size between
+  farthers and sons and daughters in  Pied fly-catchers. Redrawn from \citeauthor{potti:11}.} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
+\end{figure}
+
+\begin{marginfigure}[-40mm]
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.pdf}
+\end{center}
+\caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  Coloured illustrations of British birds, and their eggs.
+London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
+                                %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
+\end{marginfigure}
 
 
 

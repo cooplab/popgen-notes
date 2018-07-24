@@ -22,7 +22,8 @@ population---these different genetic variants are known as \emph{alleles}.} If
 all individuals in the population carry the same allele, we say that the locus
 is \emph{monomorphic}; at this locus there is no genetic variability in the
 population. If there are multiple alleles in the population at a locus, we say
-that this locus is \emph{polymorphic}.
+that this locus is \emph{polymorphic} (this is sometimes referred to
+as a segregating site).
 
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
 
@@ -45,9 +46,7 @@ the consensus are marked with a dash.  The first columns of sequence
 \end{table}
 
 \begin{question}
-How many segregating sites are there in {\emph D. yakuba}?
-What is the per base pair divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
-
+What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
 \end{question}
 
 \section{Allele frequencies}
@@ -64,11 +63,61 @@ population is then given by
 \begin{equation}
   p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. 
 \end{equation}
-
 Note that this follows directly from how we count alleles given individuals'
 genotypes, and holds independently of Hardy--Weinberg proportions and
 equilibrium (discussed below). The frequency of the alternate allele ($A_2$) is
 then just $q=1-p$.
+
+
+\subsection{Measures of genetic variability}
+
+\paragraph{Nucleotide diversity ($\pi$)}
+One common measure of genetic diversity is the average number of single
+nucleotide differences between haplotypes chosen at random from a
+sample. This is called Nucleotide diversity and often denoted by
+$\pi$. 
+
+This measure will depend on the length of sequence it is calculated
+for. Therefore, $\pi$ is usually normalized by the length of sequence,
+to be a per site (or per base) measure. 
+
+\paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
+that are polymorphic (segregating) in our sample. One issue is that
+the number of segregating sites will grow as we sequence more
+individuals (unlike $\pi$).  
+
+\begin{question}
+A) How many segregating sites are there in {\emph D. yakuba}?\\
+B) 
+\end{question}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Ciona_intestinalis/21016139168_2a8a57ded3_z.jpg}
+\end{center}
+\caption{Sea Squirt ({\it Ciona intestinalis}). Einleitung in die vergleichende gehirnphysiologie und
+  Vergleichende psychologie. Loeb, J. 1899. } \label{fig:Lynx}
+\end{marginfigure}
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
+\end{center}
+\caption{Eurasian Lynx ({\it Lynx lynx}). An introduction to the study
+  of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.} \label{fig:Lynx}
+\end{marginfigure}
+
+\paragraph{Levels of genetic variability across species.}
+\gc{TEXT}
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/alleles_genotypes/Leffer_riddle/Leffer_riddle_diversity.pdf}
+\end{center}
+\caption{} \label{fig:Leffer}
+\end{figure*}
+
+
 
 \subsection{Hardy--Weinberg proportions}
 
@@ -83,7 +132,6 @@ then just $q=1-p$.
   coloured points. The solid lines show the mean genotype frequency. The dashed line shows the
   predicted genotype frequency from Hardy--Weinberg equilibrium.See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
 \end{figure}
-
 
 
 

@@ -144,6 +144,37 @@ generation.
 %frequency changes later on.
 
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Black_footed_ferrets/Black_footed_ferret.pdf}
+\end{center}
+\caption{The black-footed ferret ({\it M. nigripes}). Wild animals of North America, The National geographical
+  society, 1918. BHL} \label{fig:LossHet_varying_pop}  
+\end{marginfigure} 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf}
+\end{center}
+\caption{Loss of heterozygosity in the Black-footed Ferrets.} \label{fig:LossHet_ferrets}  
+\end{figure} 
+The population size of the black-footed ferret ({\it Mustela
+  nigripes}) declined dramatically through the twentifth century due
+to destruction of their habitat.  In 1979 what was thought to
+be the the last ferret died in captivity, and they thought to be
+extinct. In 1981 a very small, wild population were rediscovered ($40$ individuals), but in 1985 this
+suffered a number of disease outbreaks. All of the $18$ remaining wild individuals
+were brought into captivity, 7 of these individuals
+reproduced. \citeauthor{Wisely:02} measured heterozygosity at a number
+of microsatellites in indviduals from museum collections, see Figure \ref{fig:LossHet_ferrets}.
+Thanks to intense captive breeding efforts and conservation work a
+wild population of over 300 individuals has be established
+since. However, because all of these individuals are descended from
+those 7 individuals who survived the bottleneck diversity levels
+remain low. 
+
+
+
+
 
 \begin{question} \label{geo_question} In mathematical population genetics, a
   commonly used approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally
@@ -412,6 +443,11 @@ colour so we can track their descendants, there are no new
 
 
 \section{The Coalescent and patterns of neutral diversity}
+
+\begin{quote}
+"Life can only be understood backwards; but it must be lived
+forwards." -- Kierkegaard
+\end{quote}
 
 \paragraph{Pairwise Coalescent time distribution and the number of
  pairwise differences.}
@@ -817,7 +853,6 @@ precise, but in general we would still find that it takes $\approx 4N$
 generations for a neutral allele to go from its introduction to fixation with
 the population.   \\
 
-
 \paragraph{Rate of substitution of neutral alleles}
 
 A substitution between populations that do not exchange gene flow is simply a
@@ -879,7 +914,57 @@ given that there are fewer rounds of replication in the female
 germline than in the male germline.
 \end{question}
 
-%\paragraph{dN/dS}
+
+\paragraph{Estimating levels of constraint.}
+
+
+
+\paragraph{Adaptive substitutions}
+
+\begin{equation}
+(1-C) \mu  + A
+\end{equation}
+
+\paragraph{Comparing the rates of non-synonymous to synonymous
+substitutions. dN/dS}
+A common test molecular evolution is to compare the ratio of the rates (or number) of non-synonymous to synonymous
+substitutions. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Yang_lysozyme/Yang_lysozyme.pdf}
+\end{center}
+\caption{A phylogram for the primate lysozyme gene redrawn from
+  \citeauthor{Yang:98}. For each branch the numbers give the estimated average
+number of non-synonymous to synonymous changes in the lysozyme protein.} \label{fig:lysozyme}  
+\end{figure} 
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Colobus/19792029373_fcce706e67_k.jpg}
+\end{center}
+\caption{Abyssinian black-and-white colobus ({\it Colobus guereza}). Brehm's Tierleben,  Brehm,
+  A.E. 1893. A member of the leaf-eating Colobines.} \label{fig:Colobus}  
+\end{marginfigure} 
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Hoatzin/14747388314_85798ba97e_z.jpg}
+\end{center}
+\caption{ (hoatzin ({\it Opisthocomus hoazin}). A history of birds
+  Pycraft, W.P. 1910.  A leaf-eating bird.} \label{fig:hoatzin}  
+\end{marginfigure} 
+A classic example of looking for adaptive evolution using dN/dS is the
+evolution of the lysozyme protein in primates\citep{Messier:97,Yang:98}, see
+the phylogeny in Figure \ref{fig:lysozyme}. The lysozyme protein is
+a key component for the breakdown of bacterial walls. It shows very
+fast protein evolution notably on the lineages leading to apes (e.g. gibbons
+and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
+these leaves by fermentation with bacteria in their foregut, and use lysozymes to break down the bacteria to extract energy from the
+leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably the Colobine
+lysozyme has convergently evolved this activity via very similar
+amino-acid changes at 5 key residuals as in cows and Hoatzins (a leaf
+eating bird). 
 
 \paragraph{The Mcdonald-Kreitman test}
 \citet{mcdonald:91} devised a simple test of the neutral theory of molecular
