@@ -212,3 +212,13 @@ make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teac
     dev.off() 	
 
 }
+
+
+##simulate demography
+single.crash<- c(rep(10,10),rep(3,2),rep(10,5))
+simulate.pop(N.vec=single.crash, const.RS=TRUE,  mutation= TRUE, mut.rate=  0.05, for.class= TRUE, initial.state="all.black")
+
+
+pop.growth<- c(rep(2,3),2^c(1:4,4))
+simulate.pop(N.vec=pop.growth, const.RS=TRUE,  mutation= TRUE, mut.rate=  0.05, for.class= TRUE, initial.state="all.black")
+
