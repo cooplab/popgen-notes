@@ -132,7 +132,7 @@ simulate.pop<-function(N.vec=rep(5,30), const.RS=TRUE,  mutation= TRUE, mut.rate
 
 
 
-make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teaching_Notes/Figs/"){
+make.figures.for.class<-function(my.dir="~/Dropbox/Courses/Popgen_teaching_Notes/figures/"){
 
 	single.crash<- c(rep(10,5),rep(3,2),rep(10,5))
 	repeated.crash<- c(rep(10,5),rep(3,2),rep(10,5),rep(3,2),rep(10,5))
@@ -181,7 +181,9 @@ make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teac
 	three.out.of.3<-c(rep(1,5),rep(2,5),rep(3,5))
 	pops<-list()
 	pops[["ind.pop.par"]]<-	matrix(c(rep(one.out.of.3,5),c(rep(1,10),rep(0,5)),rep(two.out.of.3,4),c(rep(1,5),rep(2,10)) ,rep(three.out.of.3,15)),nrow=15)	
-	N.vec<-apply(ind.pop.par,2,function(x){sum(x!=0)})
+	
+	N.vec<-apply(pops[["ind.pop.par"]],2,function(x){sum(x!=0)})
+	#N.vec<-apply(ind.pop.par,2,function(x){sum(x!=0)})
 	num.gens<- length(N.vec)-1
     pops[["ind.pop"]]<-sapply(1:num.gens,function(i){c(rep(1,5),rep(2,5),rep(3,5))})
    
@@ -192,6 +194,15 @@ make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teac
 		lines(x=c(11.5,100),y=c(10.5,10.5),lwd=4,col="darkgrey")
 	})
     dev.off() 			
+
+
+   	pdf(file=paste(my.dir,"ILS_figs_single_mut.pdf",sep=""),width=15,height=8) #,width = 800, height = 400	
+	replicate(100,{
+		simulate.pop(N.vec=N.vec, const.RS=TRUE,  mutation= FALSE, for.class= TRUE, initial.state="single.mut",mult.pop=TRUE,pops=pops)
+		lines(x=c(6.5,100),y=c(5.5,5.5),lwd=4,col="darkgrey")	##show barrier to migration
+		lines(x=c(11.5,100),y=c(10.5,10.5),lwd=4,col="darkgrey")
+	})
+    dev.off() 
 
 	one.out.of.2<-c(rep(1,5),rep(0,5))
 	two.out.of.2<-c(rep(1,5),rep(2,5))
@@ -217,7 +228,6 @@ make.figures.for.class<-function(my.dir="~/Dropbox/Courses/PBGG_Core/Popgen_teac
 ##simulate demography
 single.crash<- c(rep(10,10),rep(3,2),rep(10,5))
 simulate.pop(N.vec=single.crash, const.RS=TRUE,  mutation= TRUE, mut.rate=  0.05, for.class= TRUE, initial.state="all.black")
-
 
 pop.growth<- c(rep(2,3),2^c(1:4,4))
 simulate.pop(N.vec=pop.growth, const.RS=TRUE,  mutation= TRUE, mut.rate=  0.05, for.class= TRUE, initial.state="all.black")
