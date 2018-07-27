@@ -149,16 +149,20 @@ generation.
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Black_footed_ferrets/Black_footed_ferret.pdf}
 \end{center}
 \caption{The black-footed ferret ({\it M. nigripes}). Wild animals of North America, The National geographical
-  society, 1918. BHL} \label{fig:LossHet_varying_pop}  
+  society, 1918. BHL} \label{fig:black_footed_ferret}  
 \end{marginfigure} 
-\begin{figure}[h]
+
+\begin{marginfigure}
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf}
+\includegraphics[width= \textwidth]{Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf}
 \end{center}
-\caption{Loss of heterozygosity in the Black-footed Ferrets.} \label{fig:LossHet_ferrets}  
-\end{figure} 
-The population size of the black-footed ferret ({\it Mustela
-  nigripes}) declined dramatically through the twentifth century due
+\caption{Loss of heterozygosity in the Black-footed Ferrets. Redrawn
+  from \citeauthor{Wisely:02}.} \label{fig:LossHet_ferrets}  
+\end{marginfigure} 
+
+To see how a decline in population size can affect levels of
+heterozygosity lets consider the case of black-footed ferrets ({\it Mustela
+  nigripes}). The black-footed ferrets population size of the declined dramatically through the twentifth century due
 to destruction of their habitat.  In 1979 what was thought to
 be the the last ferret died in captivity, and they thought to be
 extinct. In 1981 a very small, wild population were rediscovered ($40$ individuals), but in 1985 this
@@ -173,9 +177,6 @@ those 7 individuals who survived the bottleneck diversity levels
 remain low. 
 
 
-
-
-
 \begin{question} \label{geo_question} In mathematical population genetics, a
   commonly used approximation $(1-x) \approx e^{-x}$ for $x << 1$ (formally
   this follows from the Taylor series expansion of $\exp(-x)$ ignoring second
@@ -188,14 +189,13 @@ remain low.
   geometric decay (e.g. using \texttt{t=seq(0, 18)}) and a near continuous scale
   for the exponential decay (e.g. using \texttt{t=seq(0, 18, length.out=100)}.
   Print off your graph and hand it in. 
-
     % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works
 
 \end{question}
 
 \subsection{Levels of diversity maintained by a balance between
  mutation and drift} \label{DriftMutationBalance}
-
+\graham{Move this to a supp? And just have $\pi$}
 Looking backwards in time from one generation to the next, we are going to say
 that two alleles which have the same parental allele (i.e. find their common
 ancestor) in the preceding generation have \emph{coalesced}, and refer to this
@@ -348,7 +348,7 @@ small, then we can approximate \eqref{eqn:var_pop_coal} by
 This is same form but
 the exponent has changed. Comparing the exponent in the two cases we see
 \begin{equation}
-\frac{t}{2N} = \sum_{i=1}^{t} \frac{1}{2N_i}
+\frac{t}{2N} = \sum_{i=1}^{t} \frac{1}{2N_i} 
 \end{equation}
 so that if we want a constant effective population size ($N_e$) that has the same
 rate of loss of heterozygosity as our variable population we need to set
@@ -395,7 +395,6 @@ million. \\
   A.E. 1893. Up to ten females live in a harem with a single male.  %Brehm's animal life
 } \label{fig:Hamadryas_baboon}  
 \end{marginfigure} 
-
 
 Variance in reproductive success will also affect our effective
 population size. Even if our population has a large constant size of $N$
@@ -517,7 +516,6 @@ of sequences \sidenote{This is called the infinitely-many-sites assumption,
 which should be fine if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per base pair).} Thus the number of
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. \\
-
 
 We'll denote the observed number of pairwise differences at putatively neutral
 sites separating a pair of sequences as $\pi$ (we usually average this over a
@@ -654,9 +652,10 @@ distributed random variable with probability of success $ \nicefrac{{i \choose
 \left(  \nicefrac{{i \choose
  2}}{2N} \right)$.
 The mean waiting time till any of pair within our
- sample to coalesce is $\nicefrac{2N}{{i \choose
- 2}}$.
-
+ sample to coalesce is 
+\begin{equation}
+\frac{2N}{{i \choose  2}}  \ref{eqn:E_T_i}
+\end{equation}
 
 When a pair of alleles first find a common ancestral allele some
 number of generations back further into the past we only have to keep
@@ -723,8 +722,6 @@ at the start and very soon coalesce down to a much smaller number of
 lineages.   \\
 
 
-%%point about the fixation time of a neutral allele
-
 \paragraph{The expected total time in a genealogy and the number of
   segregating sites.}
 
@@ -772,7 +769,7 @@ genealogy will cause a segregating polymorphism in the sample
 in the genealogy is $T_{tot}$ there is $T_{tot}$
 generations for mutations. So the total number of mutations
 segregating in our sample ($S$) is Poisson with mean $\mu T_{tot}$. Thus the
-expected number of segregating  in history a sample of size $n$ is
+expected number of segregating in history a sample of size $n$ is
 \begin{equation}
 \E(S) = \mu \E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N\mu }{i} = \theta
 \sum_{i=n-1}^1 \frac{1}{i}
@@ -784,6 +781,72 @@ segregating sites in a sample ($S$) equal to this expectation. We'll call this e
 \widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \frac{1}{i}}  
 \end{equation}
 this estimator was devised by \citeauthor{watterson:75}\cite{watterson:75}, hence the $W$.
+
+
+\paragraph{The neutral site-frequency spectrum.}
+
+We can use our coalescent process to find our the expected number of
+alleles present $i$ times out of $n$, e.g. how many singletons do we
+expect to find in our sample?  
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Genetic_drift/freq_spec_tree.pdf}
+\end{center}
+\caption{A tree for three samples, note that this is the only possible
+tree shape (treating the tips as unlabelled)} \label{fig:freq_coal}
+\end{marginfigure}
+
+To see how we could go about working this out, lets start by
+considering the coalescent tree, shown in \ref{fig:freq_coal}, for sample of $3$ alleles drawn from a
+population. Mutations that fall on the
+branches coloured in black will be derived singletons, while mutations that
+fall along the orange branch will be doubletons in the sample. The
+total number of generations where a singleton mutation could arise is
+$3 T_3 + T_2$, note that we only count the time where there are two
+lineages once. While the time where doubletons could arise is
+$T_2$. So our expected number of singletons, using eqn \eqref{eqn:E_T_i}, is 
+\begin{equation}
+\E(S_i) = \mu \left( 3\E(T_3) +  \E(T_3) \right) = \mu \left( 3
+  \frac{2N}{3}+ 2N \right) = \theta
+\end{equation}
+by similar logic our expected number of doubletons is $\E(S_i)
+=\theta/2$, i.e. there are half as many doubletons as singletons. 
+
+Extending this logic to large samples is doable, but tedious
+\graham{Give  numbers for 10 tips}. A nice
+simple proof of the neutral site frequency spectrum is given by
+\gc{HUDSON}, but we won't give this here. The general form is: 
+\begin{equation}
+\E(S_i) = \theta \frac{1}{i}
+\end{equation}
+there are twice as many singletons as doubletons, three times as many
+singletons as tripletons, and so on. 
+
+\begin{question}
+There are two possible tree shapes that could relate four
+samples. Colour (or otherwise mark) the branches by where singletons,
+doubletons, and tripleton derived alleles could arise. 
+
+Can you work out the expected number of each types of allele?
+\end{question}
+
+
+\paragraph{Demography and the site frequency spectrum}
+We've already seen how changes in population size can change the rate
+at which heterozygosity is lost from the population (see the
+discussion around eqn. \eqref{eqn:var_pop_coal}). If the population
+size in generation $i$ is $N_i$ the probability that a pair of
+lineages coalesce is $\nicefrac{1}{2N_i}$, this conforms to our
+intuition that if the population size is small that the rate at which
+pairs of lineages find their common ancestor is faster. If the
+population randomly fluctuates rapidly in size throughout 
+we can often accomodate this simply by using the effective popuation size $N_e$ in place of $N$. However,
+longer term more systematic changes in population size will distort
+the coalescent genealogies, and hence patterns of diversity, in more
+systematic ways. 
+
+Two common 
 
 \subsection{The fixation of neutral alleles} It is very unlikely that a rare
 neutral allele accidentally drifts up to fixation; more likely, such an allele
@@ -915,20 +978,43 @@ germline than in the male germline.
 \end{question}
 
 
-\paragraph{Estimating levels of constraint.}
+\paragraph{Comparing the rates of non-synonymous to synonymous
+substitutions $d_N/d_S$}
+A common test molecular evolution is to compare the ratio of the rates of non-synonymous to synonymous
+substitutions. The simplest way to calculate $d_N$ is to 
+count up the non-synonymous changes and divide by the total number of
+positions in the gene where a non-synonymous change could occur. We
+can do likewise for $d_S$, and then take the ratio. This is a helpful
+conceptual way to think about what $d_N/d_S$ represents, however, this
+ignores the fact that particular changes are more likely to occur by
+mutaiton and also does not account for multiple hits. Therefore, in
+practice $d_N/d_S$ is more usually calculated by model-based
+likelihood and bayesian methods
+that can account for these features (see \gc{XXXX}). 
 
 
-
-\paragraph{Adaptive substitutions}
-
+If we are willing to make the assumption that all synymous changes are
+neutral $d_S=2T \mu$. (Note that synonymous changes can sometimes be subject to
+both positive and negative selection, but we have to start somewhere.) 
+Lets assume that a fraction $B$ of non-synonymous mutations that arise are
+beneficial, and that they fix with probability $f_B$. This fixation
+probability may be much higher than that of neutral mutations (we'll
+discuss how to calculate the fixation probability for beneficial
+alleles is section \gc{XX}).  If $T$ generations of divergence have
+elapsed between the two populations 
 \begin{equation}
-(1-C) \mu  + A
+2T (1-C - B) \mu  + 2T B f_B \mu
 \end{equation}
 
-\paragraph{Comparing the rates of non-synonymous to synonymous
-substitutions. dN/dS}
-A common test molecular evolution is to compare the ratio of the rates (or number) of non-synonymous to synonymous
-substitutions. 
+We often see that $d_N/d_S \ll 1$, this is consistent with the view
+that non-synonymous sites are much more constained than synonymous.  
+
+Then
+\begin{equation} 
+d_N/d_S  = (1-C-B) +  B f_B
+\end{equation}
+If $B=0$ then we can estimate the fraction of mutational changes that
+are constrained by negative selection as $C= 1- d_N/d_S$. 
 
 \begin{figure}
 \begin{center}

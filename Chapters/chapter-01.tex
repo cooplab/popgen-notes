@@ -2,7 +2,6 @@
 
 
 
-
 \chapter{Allele and genotype frequencies}
 \newthought{Population genetics emerged} from early efforts to reconcile Mendelian genetics with Darwinian thought.\marginnote{See \citet{provine:01} \cite{provine:01} for a history of early population genetics.} The genome of an individual is formed from two gametes that fused to form a zygote. In turn, the genomes of each gamete originate from a parental genome through meiosis, in particular the segregation
 and recombination of the parental genome's two gametes. In this chapter we will
@@ -25,6 +24,36 @@ population. If there are multiple alleles in the population at a locus, we say
 that this locus is \emph{polymorphic} (this is sometimes referred to
 as a segregating site).
 
+Table \ref{Table:ADH} show a small stretch orthologous sequence for
+the ADH from samples from {\it Drosophila melanogaster},  {\it D. simulans},
+and {\it D. yakuba}.  {\it D. melanogaster} and {\it D. simulans} are
+sister species, with  {\it D. yakuba} being close outgroup to the two.  Each column represents a single haplotype from an
+individual (the individuals are diploid but were inbred so they're
+homozygous for their haplotype). Only sites that differ among
+individuals of the three species are shown. Site $834$ is an example
+of a polymophism, some  {\it D. simulans} individuals carry a $C$
+allele while others have a $T$. {\emph Fixed differences}  are sites that differ between the species but are monomorphic within
+  the species. For example site $781$ is a fixed difference between
+  {\it D. melanogaster} and the other two species. 
+
+
+\begin{question}
+{\bf A)} How many segregating sites does the sample from {\it
+  D. simulans} have in the ADH gene?\\ 
+{\bf B)} How many fixed differences are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+%What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+\end{question}
+
+We can also annotate the alleles and loci in various ways. For example position
+$781$ is a non-synonymous fixed difference. We call the less common
+allele at a polymorphism the  {\emph minor allele} and the common
+allele the {\emph major allele}, e.g. at site $1068$ the $T$ allele is the
+minor allele in {\it D. melanogaster}. We call the more evolutionary
+recent of the two alleles the {\emph derived allele} and the older of
+the two the {\emph ancestral allele}. The $T$ allele at our site is
+the derived allele as the $C$ is found in both the other species,
+suggesting that the $T$ allele arose via a $C \leftarrow T$ mutation.
+
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
 
 \begin{table}
@@ -32,26 +61,27 @@ as a segregating site).
 \setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
-  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\emph Drosophila} \citet{mcdonald:91}.  
+  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.  
 The first column (pos.) gives the position in the gene, exon 2 begins at
 position 778 and exon 3 begins at position 942.
 The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
-(a-l) are from {\emph D. melanogaster};
-    the next columns (a-f) give sequences from {\emph D. simulans}, the final 
-  coumns (a-l ) from {\emph D. yakuba}.}  % I've dropped the
+(a-l) are from {\it D. melanogaster};
+    the next columns (a-f) give sequences from {\it D. simulans}, the final 
+ set of coumns (a-l ) from {\it D. yakuba}. The last column shows
+ whether the difference is a non-synonymous (N) or synonymous change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
   \label{Table:ADH}
 \end{table}
 
-\begin{question}
-What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
-\end{question}
+
 
 \section{Allele frequencies}
-
-Consider a diploid autosomal locus segregating at two alleles ($A_1$ and
+Allele frequencies are a central unit of population genetics
+analysis, but from diploid individuals we only get to observe genotype
+counts. Our first task then is to calculate allele frequencies from
+genotype counts. Consider a diploid autosomal locus segregating at two alleles ($A_1$ and
 $A_2$). We'll use these arbitrary labels for our alleles, merely to keep this
 general. Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and
 $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of
@@ -68,9 +98,7 @@ genotypes, and holds independently of Hardy--Weinberg proportions and
 equilibrium (discussed below). The frequency of the alternate allele ($A_2$) is
 then just $q=1-p$.
 
-
 \subsection{Measures of genetic variability}
-
 \paragraph{Nucleotide diversity ($\pi$)}
 One common measure of genetic diversity is the average number of single
 nucleotide differences between haplotypes chosen at random from a
@@ -86,10 +114,36 @@ that are polymorphic (segregating) in our sample. One issue is that
 the number of segregating sites will grow as we sequence more
 individuals (unlike $\pi$).  
 
-\begin{question}
-A) How many segregating sites are there in {\emph D. yakuba}?\\
-B) 
-\end{question}
+\paragraph{The frequency spectrum.}
+We also often want to compile information about the frequency of
+alleles across sites.  We call alleles that are found once in a sample
+{\emph singletons}, alleles that are found twice in a sample {\emph
+  doubletons}, and so on. We count up the number of loci where an
+allele is found $i$ times out of $n$, e.g. how many singletons are
+there in the sample, and this is called the {\emph frequency
+  spectrum}. We'll want to do this in some consistent manner, so we
+often calculate the minor allele frequency spectrum, or the frequency
+spectrum of derived alleles. \graham{Plot a simple freq. spectrum for
+  ADH? And add $\pi$ calc. }
+
+\paragraph{Levels of genetic variability across species.}
+Two observations have puzzled population geneticists since the
+inception of molecular population genetics. The first is the relatively high
+level of genetic variation observed in most obligately sexual species.  
+This first observation, in part, drove the devleopment of the Neutral
+theory of molecular evolution, the idea that much of this molecular
+polymorphism may simply reflect a balance between genetic drift and
+mutation. 
+The second observation is the relatively narrow range of
+polymorphism across species with vastly different census sizes. This
+observation represented puzzle as Neutral theory predicts that
+levels of genetic diversity should scale population size. Much effort
+in theoretical and empirical population genetics has been devoted to
+trying to reconcile models with these various observations. We'll
+return to discuss these ideas throughout our course.
+
+
+
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Ciona_intestinalis/21016139168_2a8a57ded3_z.jpg}
@@ -106,34 +160,29 @@ B)
   of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.} \label{fig:Lynx}
 \end{marginfigure}
 
-\paragraph{Levels of genetic variability across species.}
-\gc{TEXT}
-
-
+These observations were first raised from surveys of allozyme data within
+natural populations but we can revisit them with modern data. For
+example, \citet{leffler:12} compiled data on levels of within-population,
+autosomal nucleotide diversity ($\pi$) for 167 species across 14 phyla from
+non-coding or synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
+$\pi$ in their survey was Lynx, with $\pi = 0.01\%$, i.e. only
+$1/10000$ bases differed between two sequences. While the some of the highest levels of
+diversity were found in {\it Ciona savignyi}, Sea Squirts, where a remarkable
+$1/12$ bases differ between pairs of sequences. This $800$-fold range of
+diversity seems impressive, but census population sizes have a much
+larger range.   
 \begin{figure*}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/alleles_genotypes/Leffer_riddle/Leffer_riddle_diversity.pdf}
 \end{center}
-\caption{} \label{fig:Leffer}
+\caption{Levels of autosomal nucleotide diversity for 167
+species across 14 phyla. Figure 1 from \citet{leffler:12}. Points are
+ranked by their $\pi$, and coloured by their phylum. Note the log-scale.} \label{fig:Leffer}
 \end{figure*}
 
 
 
 \subsection{Hardy--Weinberg proportions}
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
-\end{center}
-\caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
-  from the HapMap CEU European and YRI African populations. Within
-  each of these populations I plot the allele frequency against the
-  frequency of the 3 genotypes. Each SNP is represented by 3 different
-  coloured points. The solid lines show the mean genotype frequency. The dashed line shows the
-  predicted genotype frequency from Hardy--Weinberg equilibrium.See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
-\end{figure}
-
-
 
 Imagine a population mating at random with respect to genotypes, i.e. no
 inbreeding, no assortative mating, no population structure, no sex differences
@@ -179,7 +228,7 @@ individuals being white and $AA$ and $AG$ individuals being black.
 \end{marginfigure}
 
 Below are the genotype frequencies for the MC1R polymorphism on from a
-sample from British Columbi island populations \cite{RITLAND:01}. 
+sample from British Columbi island populations from \citeauthor{RITLAND:01}. 
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -195,6 +244,18 @@ Calculate the expected frequencies of the allele under HWE.
 See Figure \ref{fig:HWE_CEU_YRI} for a nice
 empirical demonstration of Hardy-Weinberg proportions. 
 
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
+\end{center}
+\caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
+  from the HapMap CEU European and YRI African populations. Within
+  each of these populations I plot the allele frequency against the
+  frequency of the 3 genotypes. Each SNP is represented by 3 different
+  coloured points. The solid lines show the mean genotype frequency. The dashed line shows the
+  predicted genotype frequency from Hardy--Weinberg equilibrium.See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
+\end{figure}
 
 
 \marginnote{
