@@ -17,6 +17,6 @@ N<-c("N>10k","N=62","N=40","N=7")
 axis(1)
 axis(2)
 
-text(black_footed$date-6,black_footed$He-0.008,paste(" (",N,")",sep="")) #black_footed$date,
+text(black_footed$date-6,black_footed$He-0.008,paste(" (",N,")",sep="")) #black_footed$date)
 
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf")

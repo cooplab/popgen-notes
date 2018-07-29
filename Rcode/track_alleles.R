@@ -82,12 +82,21 @@ dev.copy2pdf(file="~/Downloads/Coal_vs_geometric.pdf")
 col.allele<-  c("red","blue","purple","orange") #c("red","blue")   #
 num.tracked<-4
 
+#my.seed<-.Random.seed;
+# save(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Genetic_drift/Demography/crash_seed.Robj",my.seed)
+
 single.crash<- c(rep(10,10),rep(3,2),rep(10,5))
 track_lineages(N.vec=single.crash, n.iter=1, num.tracked=4, col.allele= c("red","blue","purple","orange"))
+#dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Genetic_drift/Demography/Crash_genealogy.pdf")
 
+
+par(mar=c(2,1,1,1))
+#my.seed<-.Random.seed;
+# save(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Genetic_drift/Demography/growth_seed.Robj",my.seed)
+show(load(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Genetic_drift/Demography/growth_seed.Robj"))
+.Random.seed<-my.seed
 pop.growth<- c(rep(2,3),2^c(1:5))
 track_lineages(N.vec=pop.growth, n.iter=1, num.tracked=4, col.allele= c("red","blue","purple","orange"))
-
-
+ #dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Genetic_drift/Demography/Growth_genealogy.pdf")
 
 

@@ -818,10 +818,12 @@ Extending this logic to large samples is doable, but tedious
 simple proof of the neutral site frequency spectrum is given by
 \gc{HUDSON}, but we won't give this here. The general form is: 
 \begin{equation}
-\E(S_i) = \theta \frac{1}{i}
+\E(S_i) = \theta \frac{1}{i}   \label{eqn:neutral_freq_spec}
 \end{equation}
 there are twice as many singletons as doubletons, three times as many
-singletons as tripletons, and so on. 
+singletons as tripletons, and so on. The other thing that will be
+helpful for us to know is that neutral alleles at intermediate frequency tend to be old, and
+those that are rare in the sample are young.
 
 \begin{question}
 There are two possible tree shapes that could relate four
@@ -846,7 +848,42 @@ longer term more systematic changes in population size will distort
 the coalescent genealogies, and hence patterns of diversity, in more
 systematic ways. 
 
-Two common 
+For example, if the population has grown rapidly then the pairwise-coalescent
+rate in the past may be much higher than closer to the present. (see Figure \ref{fig:Genealogy_growth}). 
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Growth_genealogy.pdf}
+\end{center}
+\caption{} \label{fig:Genealogy_growth}
+\end{figure}
+The first consequence of this is that they'll be much less genetic
+diversity in the population than you'd predict using the census
+population size. One example of this is in humans, there's $7$ billion
+of us alive today, but this is due to very rapid population growth
+over the past thousand to tens of thousands of years. Our level of
+genetic diversity is very much lower than you'd predict given our
+census size. 
+The second consequence is that the deeper coalescent branches are
+much more squished together in time, compared to those in a constant
+population.  These deeper branches are the source of alleles at more
+intermediate frequency, and so there are even fewer of these alleles
+in growing populations. 
+
+As an example of the osberved frequency spectrum from a very large
+sample of humans is shown in Figure \ref{fig:Human_growth}. For
+comparison the neutral frequency spectrum, eqn
+\eqrefl{eqn:neutral_freq_spec, is shown as a red line. There are
+  vastly more rare alleles than expected under our neutral constant
+  population size coalecent model. 
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.pdf}
+\end{center}
+\caption{Data from 202 genes from 14002 people of European ancestry (28004 alleles). Note
+  the double log-scale. } \label{fig:Human_growth}
+\end{marginfigure}
+
 
 \subsection{The fixation of neutral alleles} It is very unlikely that a rare
 neutral allele accidentally drifts up to fixation; more likely, such an allele
