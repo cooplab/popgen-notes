@@ -834,7 +834,43 @@ Can you work out the expected number of each types of allele?
 \end{question}
 
 
-\paragraph{Demography and the site frequency spectrum}
+\paragraph{tests based on the site frequency spectrum}
+A variety of tests of whether site frequency spectrum conforms to its
+neutral, constant-population expectations have been proposed. This is
+useful for detecting population size changes using many loci data, or
+for detecting the signal of selection at individual loci. One of
+the first was proposed by \citeauthor{tajima:89}, and is called
+Tajima's $D$. Tajima's $D$ is
+\begin{equation}
+D = \frac{\theta_{\pi}-\theta_{W}}{C}
+\end{equation}
+where the numerator is the difference between the estimate of
+$\theta$ based on pairwise differences and that based on segregating
+sites. As these two estimators both have expectation $\theta$ under
+the neutral, constant-population model the expectation of $D$ is zero. The denominator $C$ is the square-root of an estimator
+variance of this difference, the idea being for $D$ to have mean zero
+and variance $1$. \\
+
+An excess of rare alleles compared to the constant-population, neutral
+model will result in the negative Tajima's $D$, because each
+additional rare allele increases the number of segregating sites by
+$1$, but only has a small effect on the pairwise differences. 
+A positive Tajima's $D$ reflects an excess of intermediate frequency alleles, relative to
+the  constant-population, neutral model. As intermediate-frequency, neutral alleles increase pairwise diversity
+more per segregating site than a typical neutral alleles.
+
+
+\subsection{Demography and the coalescent}
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.pdf}
+\end{center}
+\caption{Data from 202 genes from 14002 people of European ancestry (28004 alleles). Note
+  the double log-scale. Redrawn from citeauthor{nelson:12}. The red
+  line gives the neutral, constant population size estimate using a
+  $\theta$ estimated from $\pi$.} \label{fig:Human_growth}
+\end{marginfigure}
 We've already seen how changes in population size can change the rate
 at which heterozygosity is lost from the population (see the
 discussion around eqn. \eqref{eqn:var_pop_coal}). If the population
@@ -848,44 +884,112 @@ longer term more systematic changes in population size will distort
 the coalescent genealogies, and hence patterns of diversity, in more
 systematic ways. 
 
-For example, if the population has grown rapidly then the pairwise-coalescent
-rate in the past may be much higher than closer to the present. (see Figure \ref{fig:Genealogy_growth}). 
+As an example of how demography can potentially distort patterns left
+in a sample the observed frequency spectrum from a very large sample of humans, shown in Figure \ref{fig:Human_growth}. For
+comparison the neutral frequency spectrum, eqn
+\eqref{eqn:neutral_freq_spec}, is shown as a red line. There are
+  vastly more rare alleles than expected under our neutral, constant-population-size model. 
+
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Growth_genealogy.pdf}
 \end{center}
 \caption{} \label{fig:Genealogy_growth}
 \end{figure}
+
+Why is this? Well this is likely the result of the very recent
+explosive growth in human populations. If the population has grown rapidly then the pairwise-coalescent
+rate in the past may be much higher than closer to the present. (see Figure \ref{fig:Genealogy_growth}). 
+
 The first consequence of this is that they'll be much less genetic
 diversity in the population than you'd predict using the census
 population size. One example of this is in humans, there's $7$ billion
 of us alive today, but this is due to very rapid population growth
 over the past thousand to tens of thousands of years. Our level of
 genetic diversity is very much lower than you'd predict given our
-census size. 
-The second consequence is that the deeper coalescent branches are
+census size. The second consequence is that the deeper coalescent branches are
 much more squished together in time, compared to those in a constant
 population.  These deeper branches are the source of alleles at more
 intermediate frequency, and so there are even fewer of these alleles
-in growing populations. 
+in growing populations. That's why there are so many rare alleles,
+especially singletons in this large sample of Europeans. 
 
-As an example of the osberved frequency spectrum from a very large
-sample of humans is shown in Figure \ref{fig:Human_growth}. For
-comparison the neutral frequency spectrum, eqn
-\eqrefl{eqn:neutral_freq_spec, is shown as a red line. There are
-  vastly more rare alleles than expected under our neutral constant
-  population size coalecent model. 
+
+Another common demographic scenerio is a population population
+neck. Here the population size crashes dramatically, and subsequently
+recovers. For example our population may have size $N_{\textrm{Big}}$
+and have crashed down to $N_{\textrm{Small}}$, one example of a
+bottleneck is shown in Figure \ref{fig:Genealogy_crash}. 
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Crash_genealogy.pdf}
+\end{center}
+\caption{} \label{fig:Genealogy_crash}
+\end{figure}
+Looking at a sample of lineages drawn from the population today, if
+the bottleneck was somewhat recent, $\ll N_{\textrm{Big}}$ generations
+in the past, many of our lineages will not have coalesced by the time
+the bottleneck moving backward in time. But during the bottleneck our
+lineages coalesce at a much higher rate, such that many of our
+lineages will coalesce if the bottneck lasts long enough
+($\sim N_{\textrm{Small}}$ generations). If the bottleneck is very
+strong then all of our lineages will coalesce during it, and this may
+look very like our population growth model (with an excess of rare
+alleles). However, if some pairs of lineages escape coalescing during
+the bottleneck they will coalesce much more deeply in time (e.g. the
+blue and orange ancestral lineages in
+\ref{fig:Genealogy_crash}). 
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Mimulus_coalescent_times.pdf}
+\end{center}
+\caption{Black dots give $\pi$ in 1kb windows, the red line is a
+  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $\pi = 2 t
+  \mu$m using $\mu_{BP}=10^{-9}$.} \label{fig:Mimulus_bottleneck}
+\end{figure}
+An example of this is shown Figure
+\ref{fig:Mimulus_bottleneck}, data from \citeauthor{brandvain:14}. {\it Mimulus nasutus} is a selfing
+species that arose recently from out-crossing progenitor {\it M.
+  guttatus}, and experienced a strong bottleneck. {\it M. guttatus} has a very high levels of genetic diversity
+($\pi=4\%$ at synonymous sites), but {\it M. nasutus} has lost much 
+of this diversity ($\pi =1\%$). Looking along the genome, between a
+pait of {\it M. guttatus} chromosomes, levels of
+diversity are fairly uniformly high.
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = 0.5 \textwidth]{illustration_images/Genetic_drift/Mimulus/Mimulus.png}
+\end{center}
+\caption{{\it M. guttatus} by Pierre-Joseph
+  Redout\'e.} \label{fig:Human_growth}  %é
+\end{marginfigure}
+ But in comparing two {\it
+  M. nasutus} diversity is low because the pair of lineages coalesce
+recently; in a few places we see levels of diversity comparable to
+{\it M. guttatus}, these regions correspond to our pair of lineages
+failing to coalesce during the bottleneck and subsequently coalescing
+much more deeply in the ancestral {\it M. guttatus} population.
+
+
+Mutations that arise on these deeper lineages will be at intermediate frequency in our sample, and so mild bottlenecks
+can lead to an excess of intermediate frequency alleles compared to
+the standard constant-population model. 
+
 
 \begin{marginfigure}
 \begin{center}
-  \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.pdf}
+  \includegraphics[width = 0.5 \textwidth]{Journal_figs/genetic_drift/human_pop_growth/Wright_Tajima_D.pdf}
 \end{center}
-\caption{Data from 202 genes from 14002 people of European ancestry (28004 alleles). Note
-  the double log-scale. } \label{fig:Human_growth}
+\caption{{\it M. guttatus} by Pierre-Joseph
+  Redout\'e.} \label{fig:Human_growth}  %é
 \end{marginfigure}
 
 
-\subsection{The fixation of neutral alleles} It is very unlikely that a rare
+
+
+
+
+
+\section{The fixation of neutral alleles} It is very unlikely that a rare
 neutral allele accidentally drifts up to fixation; more likely, such an allele
 will be eventually lost from the population. However, populations experience a
 large and constant influx of rare alleles due to mutation, so even if it is

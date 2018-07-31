@@ -297,6 +297,17 @@ So far, our treatment of the diploid model of selection has been in terms of gen
 
 %%Selection coeffs in diploid model
 \subsection{Diploid directional selection}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/simple_diploid_trajs.png}
+\end{center}
+\caption{The trajectory of the frequency of allele $A_1$, starting
+  from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
+  different dominance coefficients. The recessive allele will
+  eventually fix in the population, but it takes a long time.}
+  \label{fig:diploid_traj}
+\end{marginfigure}
+
 Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$\.
 As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
 one we met in the haploid selection section, as follows:\\
@@ -311,6 +322,50 @@ relative fitness  (specific) & $1$ & $1-sh$ & $1-s$. \\
 Here, the selection coefficient $s$ is the difference in relative
 fitness between the two homozygotes, and $h$ is the
 dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozgyote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%FOXSES
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
+\end{center}
+\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
+  and silver foxes from left to right. From ``The
+  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
+\end{marginfigure}
+
+As an example of how dominance affects the trajectory of a real
+polymorphism we'll consider an example from a colour polymorphism in
+red foxes ({\it Vulpes vulpes}). There are three colour morphs of red foxes: silver, cross, and
+red (see Figure \ref{fig:Fox_morphs}), with this difference primarily
+controlled by a single polymorphism; with genotypes RR, Rr, rr respectively. The fur pelts of the silver morph
+fetched three times the price for hunters compared to cross (a smoky red) and red
+pelts, the latter two being seen as roughly equivalent in worth. Thus
+the desirability of the pelts acts as a recessive trait, with much
+stronger selection against the silver homozygotes.  As a
+result of this price difference silver foxes were hunted more
+intensely and declined as a proportion of the population in Eastern Canada, see Figure
+\ref{fig:Fox_morph_freqs}, as documented by \citeauthor{elton:42},
+from $16\%$ to $5\%$ from 1834 to 1937.
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
+\end{center}
+\caption{Data from \citeauthor{elton:42}, redrawn from \citeauthor{Allendorf:09}.} \label{fig:Fox_morph_freqs}
+\end{marginfigure}
+\citeauthor{haldane:42} reanalyzed these data and showed that they
+were consistent with recessive selection acting against silver
+morph alone. Note how the heterozygotes (cross) decline somewhat as a
+result of selection on the silver homozygotes, but overall the R
+allele is slow to respond to selection as it is `hidden' from
+selection in the heterozygote state.
+
+\graham{Add selection lines or get students to do that as an exercise.}
+
+
+
 
 %, of the $12$ and
 %$22$ genotypes we will use selection coefficients $s_{12} \leq 0$ and
@@ -361,15 +416,6 @@ diploid model to the haploid model to understand how quickly allele
 frequencies should change given a selection coefficient between
 arbitrary frequencies.\\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{figures/simple_diploid_trajs.png}
-\end{center}
-\caption{The trajectory of the frequency of allele $A_1$, starting
-  from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
-  different dominance coefficients.}
-  \label{fig:diploid_traj}
-\end{figure}
 
 
 %\begin{tcolorbox} 
