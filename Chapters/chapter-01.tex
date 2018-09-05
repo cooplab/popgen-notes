@@ -537,10 +537,18 @@ over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, w
 
 
 \section{Summarizing population structure}
-\newthought{Individuals rarely mate complete at random}, therefore, genetic variation is never uniformly distributed across individuals.
+\newthought{Individuals rarely mate complete at random}, your parents
+weren't two Bilateria plucked at random from the tree of
+life. Even within species, there's often geographically-restricted
+mating among individuals. Individuals tend to mate with individuals
+from the same, or closely related sets of populations. This form of
+non-random mating is called population structure and can have profound
+effects on the distribution of genetic variation within and amojg
+natural populations.  
 
 \subsection{Inbreeding as a summary of population structure.}
-We defined inbreeding as having parents that are more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in
+It turns out that statements about inbreeding represent one natural
+way way to summarize population structure. We defined inbreeding as having parents that are more closely related to each other than two individuals drawn at random from some reference population. The question that naturally arises is: Which reference population should we use? While I might not look inbred in
 comparison to allele frequencies in the United Kingdom (UK), where I am from, my
 parents certainly are not two individuals drawn at random from the
 world-wide population. If we estimated my inbreeding coefficient $F$ using allele frequencies
@@ -561,7 +569,15 @@ single locus, where in a subpopulation ($S$) a fraction $H_I=f_{12}$ of
 individuals are heterozygous.  In this subpopulation, let the frequency of
 allele $A_1$ be $p_S$, such that the expected heterozygosity under random
 mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
-
+\begin{marginfigure}
+\begin{center}
+\includegraphics{figures/Pop_struct/FST_hierarchy.pdf}  %[width= \marginwidth]
+\end{center}
+\caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
+  alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
+by randomly drawing alleles from the sub-population (S),
+to that found in the total population (T). } \label{fig:FST_pig}  
+\end{marginfigure}
 \begin{equation}
 \fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
 \label{eqn:FIS}
@@ -594,15 +610,6 @@ in the total population can be decomposed to the reduction in
 heterozygosity of individuals compared to the subpopulation, and the reduction in
 heterozygosity from the total population to that in the subpopulation.\\
 %n, as we will seebelow, due to the Wahlund effect (to be added)
-\begin{marginfigure}
-\begin{center}
-\includegraphics{figures/Pop_struct/FST_hierarchy.pdf}  %[width= \marginwidth]
-\end{center}
-\caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
-  alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
-by randomly drawing alleles from the sub-population (S),
-to that found in the total population (T). } \label{fig:FST_pig}  
-\end{marginfigure}
 
 If we want a summary of
 population structure across multiple subpopulations, we can average $H_I$
@@ -615,6 +622,63 @@ where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above). \\
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/blue_golden_winged_warblers/The_warblers_of_North_America_6309257188.jpg}  %[width= \marginwidth]
+\end{center}
+\caption{The warblers of North America. Chapman, F.M. 1907.} \label{fig:blue_golden_warblers}  
+\end{marginfigure}
+
+As an example of comparing a genome-wide estimate of $F_{ST}$ to that
+at individual loci we can look at some data from blue- and
+golden-winged warblers ({\it Vermivora cyanoptera} and {\it
+  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}). These two species are spead across eastern
+Northern America, with the golden-winged warbler having a smaller, more
+northernly range. They're quite different in terms of plumage, but
+have long been known to have similar songs and ecologies. The two species
+hybridize readily in the wild; in fact two other previously-recognized species, Brewster's
+and Lawrence’s warbler (4 \& 3 in \ref{fig:blue_golden_warblers}), actually just being hybirds between theses two species. 
+The golden-winged warbler is listed as `threatened' under the Canadian
+endangered species act, its habitat is under pressure for human activity
+and hybrization with the blue warbler as it moves north also poses a
+significant issue. \citeauthor{Toews:16} investigated the population
+genomics of these warblers, sequencing ten golden- and ten blue-winged
+warblers. They found very low divergence among these species, with a
+genome-wide $F_{ST}=0.0045$. In Figure \ref{fig:warbler_FST}, per SNP
+$F_{ST}$ is averaged in $2000$bp windows moving along the genome. 
+\begin{figure*}
+\begin{center}
+\includegraphics[width = 0.8 \textwidth]{Journal_figs/alleles_genotypes/blue_golden_winged_warblers/GW_FST_warblers.png}  %[width= \marginwidth]
+\end{center}
+\caption{Thanks to David Toews for the figure. } \label{fig:warbler_FST}  
+\end{figure*}
+The average is very low, but some regions of very high $F_{ST}$ stand
+out. Nearly all of these regions correspond to large allele frequency
+difference at loci in, or close, to genes known to be involved in
+plumage colouration difference in other birds.  
+To illustrate these frequency differences \citeauthor{Toews:16}
+genotyped a SNP in each of this high-$F_{ST}$ regions. Here's their
+geotyping counts from the SNP in the {\it Wnt}
+region, a key regulatory gene involved in feather development:
+\begin{center}
+\begin{tabular}{ l c c c}
+Species & 11 & 12 & 22\\
+\hline
+Blue-winged & 2 & 21 & 31\\
+Golden-winged & 48 & 12 & 1\\
+\hline   
+\end{tabular}
+\end{center}
+
+\begin{question}
+With reference to the table of {\it Wnt}-allele frequency:\\
+{\bf A)} Calculate $F_{IS}$ in blue-winged warblers.\\
+{\bf B)} Calculate $F_{ST}$ for the sub-population of blue-winged
+warblers compared to the combined sample.\\
+{ \bf C)} Calculate $F_{ST}$ for both sub-populations.
+\end{question}
 
 \paragraph{Interpretations of F-statistics}
 

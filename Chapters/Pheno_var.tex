@@ -534,14 +534,12 @@ London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
 \end{marginfigure}
 
 
-
-\newpage
 \subsection{Non-additive variation.}
 
 Up to now we've assumed that our alleles contribute to our phenotype in an
 additive fashion. However, that does not have to be the case as there may be
-non-additivity among the alleles present at a locus (dominance) or among
-alleles at different loci (epistasis). We can accommodate these complications
+non-additivity among the alleles present at a locus (\emph{dominance}) or among
+alleles at different loci (\emph{epistasis}). We can accommodate these complications
 into our models. We do this by partitioning our total genetic variance into
 independent variance components.
 
@@ -555,13 +553,60 @@ are present on. We'll mean center (MC)
 these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} - \mu$, and
 likewise for the other genotypes. 
 
-To illustrate the approach we'll plot two different cases of dominance
-relationship in Figure \ref{fig:add_dom}. In the first row of Figure
-\ref{fig:add_dom} we show the relationship between genotype and MC phenotype
-under an additive model, and in the second row under a model where the allele 1
-is dominant, such that the phenotype of the genotype of the heterozyote is the
-same as the $11$ homozygote. The area of each circle is proportion to the
-fraction of the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
+
+%, such that the phenotype of the genotype of the heterozyote is the
+%same as the $11$ homozygote. The area of each circle is proportion to the
+%fraction of the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
+
+\paragraph{Dominance.} To understand the effect of dominance lets consider how the allele
+that a parent transmits influences their offspring's
+phenotype. A parent transmits one of their two alleles at a locus to their offspring. 
+Assuming that individuals mate at random, this allele is paired with another allele drawn at random from the population.
+For example, if your mother transmitted allele 1 to you: with probability $p$ it would be paired with another allele 1, and you would be a homozygote; and with probability $q$ it's paired with a 2 allele and you're a heterozygote.
+
+%The first variance component is the variance due to
+%the additive contribution of each allele ($V_A$). 
+
+We can think about the average
+(marginal) MC
+phenotype of an individual who received an allele 1 from their as the average of the MC phenotype
+for heterozgotes and 11 homozygotes weighted by the probability that
+an allele $1$ in present in these genotypes
+\begin{equation} 
+  a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1},
+\end{equation}
+Similarly if your parent transmitted a 2 allele to you, your average
+MC phenotype would be
+\begin{equation}
+  ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} 
+\end{equation}
+
+%the marginal value for allele 1, $a_{\ell, 1}$,  follows from the fact that (assuming HW) an allele 1 will be
+%paired with another allele 1 with probability $p$, resulting in a
+%genotype $11$ (with phenotypic deviation $\overline{X}'_{\ell,2}$) and will
+%be paired with an allele 2 with probability $q$ in a heterozygote
+%(with phenotypic deviation $\overline{X}'_{\ell,1}$). A similar argument
+%can be made for $a_{\ell, 2}$. \\
+
+%The additive MC genetic values (breeding values) of genotype 0, 1, and
+%2 are then
+
+Lets now consider the average phenotype of an offspring of each of our
+three genotypes
+\begin{center}
+\begin{tabular}{cccc}
+genotype: & 0, & 1, & 2.\\
+additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,1}$   \label{add_values}
+\end{tabular}
+\end{center}
+%
+i.e. mean phenotype of each genotypes' offspring
+averaged over across all possible matings to other individuals in the
+population (assuming individuals mate at random). Theses are the
+additive MC genetic values (breeding values) of our genotypes. 
+Here we are simply adding up the additive contributions of the alleles present
+in each genotype. These are the genotypic values of the trait that would result
+taking only the additive effects of the components of the genotype.  
 
 \begin{figure}
 \begin{center}
@@ -580,43 +625,10 @@ The additive genetic values of the genotypes are shown as
 between the average MC phenotype and additive genetic value for each genotype. } \label{fig:add_dom}
 \end{figure}
 
-The first variance component is the variance due to
-the additive contribution of each allele ($V_A$). 
-We can think about the average
-(marginal) MC
-phenotype for an allele 1 as the average of the MC phenotype
-for heterozgotes and 11 homozygotes weighted by the probability that
-an allele $1$ in present in these genotypes. 
-These marginal MC
-phenotypes for allele 1 and 2 are given by 
-\begin{equation} 
-a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1}, ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} 
-\end{equation}
-the marginal value for allele 1, $a_{\ell, 1}$,  follows from the fact that (assuming HW) an allele 1 will be
-paired with another allele 1 with probability $p$, resulting in a
-genotype $11$ (with phenotypic deviation $\overline{X}'_{\ell,2}$) and will
-be paired with an allele 2 with probability $q$ in a heterozygote
-(with phenotypic deviation $\overline{X}'_{\ell,1}$). A similar argument
-can be made for $a_{\ell, 2}$. \\
 
-The additive MC genetic values (breeding values) of genotype 0, 1, and
-2 are then 
-\begin{center}
-\begin{tabular}{cccc}
-genotype: & 0, & 1, & 2.\\
-additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,1}$   \label{add_values}
-\end{tabular}
-\end{center}
-%
-Here we are simply adding up the additive contributions of the alleles present
-in each genotype. These are the genotypic values of the trait that would result
-taking only the additive component of the genotype.  They also have the
-interpretation as being the mean phenotype of each genotypes' offspring
-averaged over across all possible matings to other individuals in the
-population (assuming individuals mate at random). 
-
-The additive genetic values of the genotypes are shown as red dots in Figure
-\ref{fig:add_dom}. Note that the additive values of the genotypes line up with
+To illustrate this in Figure \ref{fig:add_dom} we plot two different cases of dominance
+relationship, in the top row an additive polymorphism and in the second
+row a fully dominant allele. The additive genetic values of the genotypes are shown as red dots. Note that the additive values of the genotypes line up with
 the observed MC phenotypic means in the top row when our alleles interact in a
 completely additive manner. Our additive genetic values always fall along a
 linear line (the red line in our figure). The additive values are falling best
@@ -668,7 +680,7 @@ define the dominance variance as the population variance among
 genotypes at a locus due to their deviation from additivity.
 We can calculate how much each genotypic mean deviates away from its
 additive prediction at locus $\ell$ (the length of the arrows in
-Figure \label{fig:add_dom}), for example the heterozygote deviates 
+Figure \ref{fig:add_dom}), for example the heterozygote deviates 
 \begin{equation}
 d_{\ell,1} =\overline{X}'_{\ell,1}  - (a_{\ell,1}+ a_{\ell,2})
 \end{equation}

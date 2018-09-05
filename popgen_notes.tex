@@ -27,6 +27,10 @@
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\half}{\tfrac{1}{2}}
 
+  \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+  \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+
+
 %\usepackage[colorlinks=true, allcolors=black]{hyperref}
 
 \newcommand{\wbar}{\overline{w}}
@@ -79,8 +83,6 @@
 %  \small i.e. you are free to reuse and remix this work, but please include an attribution to the original.
 
 
-
-
 \date{}
 \maketitle
 \newpage
@@ -98,12 +100,9 @@ Author: \thanklessauthor\\
  \small This work is licensed under a Creative Commons Attribution 3.0 Unported License.\\
  \small http://creativecommons.org/licenses/by/3.0/ \\
  \small i.e. you are free to reuse and remix this work, but please include an attribution to the original.
-
 \par  Typeset using \LaTeX~and the \smallcaps{tufte-latex} book style. 
-
 \par  The \LaTeX~code and R code for this book are kept here
 https://github.com/cooplab/popgen-notes/ and again are under a Creative Commons Attribution 3.0 Unported License.
-
 \par\textit{Updated on \monthyear}
 \end{fullwidth}
 
@@ -124,6 +123,6 @@ https://github.com/cooplab/popgen-notes/ and again are under a Creative Commons 
 %\include{chapter-07}
 \include{Chapters/chapter-08}
 \include{Chapters/multi_locus_sel}
-\bibliography{Chapters/popgen_notes}
+\bibliography{popgen_notes}
 
 \end{document}

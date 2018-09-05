@@ -138,6 +138,8 @@ frequencies $p_t$ and $q_t$, then $\tau$ generations later,
 \end{equation}
 \\
 
+\graham{Dempster (1955) }
+
 The question of which allele is increasing or decreasing in frequency comes down
 to whether $\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)$ is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
@@ -193,7 +195,7 @@ Therefore, the relative frequency of individuals with the three different genoty
 \end{equation}
 (see Table \ref{dip_fitness_table}).\\
 
-\begin{table}
+\begin{table*}
 \begin{center}
 \begin{tabular}{lccc}
 \hline
@@ -207,7 +209,18 @@ Relative freq.\ at reproduction & $\frac{NW_{11} p_t^2}{N \Wbar} = \frac{W_{11}}
 \end{tabular}
 \end{center}
 \caption{Relative genotype frequencies after one episode of viability selection.} \label{dip_fitness_table}
-\end{table}
+\end{table*}
+
+%\gc{Dobzhansky}
+
+%\begin{center}
+%\begin{tabular}{lccc}
+%\hline
+% & ST/ST & ST/CH & CH/CH \\  ##From Evolution encylopedia
+%Eggs & 41 & 82 &27\\
+%Adults & 25 & 74 & 12\\
+%\end{tabular}
+%\end{center}
 
 As there is no difference in the fecundity of the three genotypes, the
 allele frequencies in the zygotes forming the next generation are simply the
@@ -219,6 +232,60 @@ allele frequency among the reproducing individuals of the previous generation. H
 Note that, again, the absolute value of the fitnesses is irrelevant to
 the frequency of the allele. Therefore, we can just as easily replace
 the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{ij}$ by $w_{ij} = W_{ij}/W_{11}$, for instance. \\
+
+Each of our genotype frequencies is responding to selection in a
+manner that depends just on its fitness compared to the mean fitness
+of the population. For example the frequency of the $11$ homozygotes
+increases from birth to adulthood in proportion to $W_{11}/Wbar$. In
+fact we can estimate this fitness ratio for each genotype by comparing
+the frequency at birth compared to adults. As an example of this we'll
+look at some data from sticklebacks. 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Stickleback/Gasterosteus_aculeatus_1879.jpg}
+\end{center}
+\caption{Freshwater threespine Stickleback ({\it
+    G. aculeatus}). British fresh-water fishes. Houghton W 1879. BHL.} \label{fig:stickleback}
+\end{marginfigure}
+Marine threespine stickleback ({\it Gasterosteus aculeatus}) have
+independently colonized and adapted to many freshwater lakes
+as glaciers receded following the last ice age making them a
+wonderful system for studying the genetics of adaptation. In marine
+habitats most of the stickleback have armour plates to protect them
+from predation, but freshwater populations repeatedly evolve the
+loss of armour plates due to selection on an allele at the
+Ectodysplasin gene (EDA).  This allele is found as a standing variant at very low frequency marine populations;
+\citeauthor{Barrett:08} took advantage of this fact and collected and bred
+a population of marine individuals carrying both the low- (L) and
+completely- plated (C) alleles. The introduced the offspring of this
+cross into four freshwater ponds and monitored genotype frequencies
+\sidenote{The actual dynamics observed by \citeauthor{Barrett:08} as
+  in the very young selection reverses direction}
+over their life courses: 
+\begin{center}
+\begin{tabular}{lccc}
+ & CC & LC & LL \\
+Juveniles & 0.55 & 0.23 & 0.22\\
+Adults     & 0.21 & 0.53 & 0.26\\
+Juv./Adult ($W_{\bullet}/\Wbar$)  & 0.4 & 2.3 & 1.2 \\
+rel. fitness ($W_{\bullet}/W_{12}$)  & 0.17 & 1.0 & 0.54 \\
+\end{tabular}
+\end{center}
+The heterozygotes have increased in frequency dramatically in the
+population as their fitness is more than double the mean fitness of
+the population. We can also calculate the the relative fitness of each
+genotype by dividing through by the fitness of the fitest genotype,
+the heterozygote in this case (doing this cancels through
+$\Wbar$). The relative fitness of the $CC$ is $\sim 1/5$ of the
+heterozygote. This calculation does not rely on the genotype
+frequencie being at their HWE in the juveniles.
+
+\begin{question}
+{\bf A} What is the frequency of the low-plated EDA allele ($L$) at the start
+of the stickleback experiment? \\
+{\bf B} What is the frequency in the adults? 
+\end{question}
+
 
 \begin{tcolorbox} 
 \begin{question}
@@ -324,6 +391,10 @@ fitness between the two homozygotes, and $h$ is the
 dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozgyote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
 
 
+\gc{Yellow monkey flowers} ({\it Mimulus guttatus}) have repeatedly adapted
+to the toxic soils found at copper mines throughout the Californian
+foothills in the past 150 years. Kevin Wright   
+
 
 
 %%%%%%%%%%%%%%%%%%%%%FOXSES
@@ -335,6 +406,29 @@ dominance coefficient. \sa{For selection to be directional, we require that $0 \
   and silver foxes from left to right. From ``The
   larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
 \end{marginfigure}
+
+
+%, of the $12$ and
+%$22$ genotypes we will use selection coefficients $s_{12} \leq 0$ and
+%$s_{22} \leq s_{12}$
+
+We can then rewrite eqn.\ \eqref{deltap_dip2} as
+\begin{equation}
+\Delta p_t = \frac{p_ths + q_t s(1-h)}{\wbar}p_tq_t ,
+\label{deltap_direct}
+\end{equation}
+where
+\begin{equation}
+\wbar_t = 1-2p_tq_t sh-q_t^2s.
+\end{equation}\\
+
+\begin{tcolorbox} 
+\begin{question}
+Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
+\end{question}
+\end{tcolorbox}
+
+
 
 As an example of how dominance affects the trajectory of a real
 polymorphism we'll consider an example from a colour polymorphism in
@@ -365,28 +459,6 @@ selection in the heterozygote state.
 \graham{Add selection lines or get students to do that as an exercise.}
 
 
-
-
-%, of the $12$ and
-%$22$ genotypes we will use selection coefficients $s_{12} \leq 0$ and
-%$s_{22} \leq s_{12}$
-
-We can then rewrite eqn.\ \eqref{deltap_dip2} as
-\begin{equation}
-\Delta p_t = \frac{p_ths + q_t s(1-h)}{\wbar}p_tq_t ,
-\label{deltap_direct}
-\end{equation}
-where
-\begin{equation}
-\wbar_t = 1-2p_tq_t sh-q_t^2s.
-\end{equation}\\
-
-\begin{tcolorbox} 
-\begin{question}
-Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
-\end{question}
-\end{tcolorbox}
-
 A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to
 \begin{equation}
 	\Delta p_t = \frac{1}{2}\frac{s}{\wbar}p_tq_t .
@@ -415,7 +487,6 @@ generally we can use this correspondance of the trajectory additive
 diploid model to the haploid model to understand how quickly allele
 frequencies should change given a selection coefficient between
 arbitrary frequencies.\\
-
 
 
 %\begin{tcolorbox} 
@@ -504,7 +575,35 @@ this case is much less tractable than the haploid case, as segregation
 makes it tricky to keep track of the genotype frequencies.  
 We can make some progress and gain some intuition by thinking about
 how the frequency of allele $A_1$ changes when it is rare.\\
+\graham{Haldane and Jayakar (1963) }
+
 % (This argument is originally due to Haldane and J. )\\
+
+Selection pressures clearly fluctuate over time, how does this affect
+the dynamics of polymorphisms. Two examples of polymorphisms
+fluctuating in frequency in response to temporally-varying selection
+are shown in Figure \ref{fig:Droso_fluct}; thanks to the short
+lifespan of {\it Drosophila} we can see seasonally-varying selection. The first is an inversion
+allele in {\it Drosophila pseudoobscura}, in {\it D. pseudoobscura}
+populations. Throughout western North America two orientations of the
+chromosome, two inversion alleles, exist: the Chiricahua and Standard
+alleles. \graham{Add figure of het.} \citeauthor{wright:46}
+\graham{need earlier Dob. ref IX} investigated their frequency over
+four years at a number of locations, and found that their frequency
+fluctuated systematically over the seasons in response to
+selection. Our second example is an insertion-deletion polymorphism in
+the Insulin-like Receptor gene. \citeauthor{paaby:14} tracked the
+frequency of this allele over a number of seasons, and found it
+oscillated over the seasons. She and her coauthors also determined that these alleles had large effects on
+traits such as developmental time and fecunity, which could mediate
+the maintainance of this polymorphism through life-history trade-offs.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/single_locus_selection/temporal_Droso_freq/temporal_Droso_freq.pdf}
+\end{center}
+\caption{  } \label{fig:Droso_fluct} 
+\end{figure}
 
 When $A_1$ is rare, i.e.\ $p_t \ll 1$, its frequency in the next
 generation \eqref{pgen_dip} can be approximated as
@@ -623,7 +722,7 @@ $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the driver in
 Mutation is constantly introducing new alleles into the
 population. Therefore, variation can be maintained within a
 population not only if selection is balancing (e.g.\ through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to a balance between
-mutation and selection. A case of particular interest is when mutation introduces deleterious alleles and selection acts against these alleles. To study this balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
+mutation and selection\cite{Haldane:37}. A case of particular interest is when mutation introduces deleterious alleles and selection acts against these alleles. To study this balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
 \begin{center}
 \begin{tabular}{lccc}
 genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
@@ -681,6 +780,34 @@ $ we have implicitly assumed that we can ignore terms of order $\mu
 \times s$. That is, we have assumed that there is no interaction between mutation and selection. We can do so as we assumed that both $\mu$ and $s$ are small.\\
 
 
+If an allele was truly recessive (although few likely are), we have $h=0$, and
+so eqn.\ \eqref{eqn:mut_sel_bal} is not valid. However, we can make an argument similar to the one above to show
+that, for truly recessive alleles,
+\begin{equation}
+	q_e = \sqrt{\frac{\mu}{s}}.
+\end{equation}
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/mutation_selection_balance/Pink_Katydid.png}
+\end{center}
+\caption{Oblong-winged katydid. Field book of insects. Lutz,
+  F.E. 1918.} \label{fig:katydid}  %https://www.flickr.com/photos/biodivlibrary/6244366674/in/photolist-avN1Eo-oryMQJ-otszkE-owcT1v-rmioFJ-rshxSS-otehvW-r94w4a-odY9oG-ouGyrw-ormnow-otADXZ-ce8krE-ouviqy-rsgo6D-owjZfG-otERD9-osGcMG-tFBjpS-ovagk4-vNj4qo-raPuoW-odiS3R-r71XYf-ovhSyW-roAbgX-otSMZn-oteYxg-owtP1B-ouk7tq-rsgj5c-roAhrc-otwafC-r94wYr-wX5186-tBBz3o-ouJWQD-oe1erd-ovhT8d-r72RMs-otTfyG-oujQ9m-vdVLQQ-rsnUL8-oderxh-ov94Ci-otABpx-odf6U7-xeyTGn-oukYY8
+\end{marginfigure}
+
+\begin{question}
+Oblong-winged katydids ({\it Amblycorypha oblongifolia}) are usually
+% these are actually false katydid
+green. However, some are bright pink, thanks to a erythrism
+mutation (a nice example of an early Mendelian reasoning in a wonderful
+titled paper\cite{Wheeler:07}). This condition is thought to be due to
+a dominant mutation (\citeauthor{Crew:13}). Assume that roughly
+one in ten thousand is bright pink and that the mutation rate at the
+gene underlying this condition is $10^{-5}$. What is the relative fitness of heterozygotes for the pink mutation? 
+\end{question}
+
+
+\paragraph{The genetic load of deleterious alleles}
 What effect do such deleterious mutations at mutation--selection balance have on the population? It is common to express this effect in terms of a reduction of the mean relative fitness of the population. For a single site at which a deleterious mutation is segregating at $q_e = \mu/(hs)$, the mean relative fitness is reduced to
 \begin{equation}
 	\wbar = 1- 2p_e q_e hs - q_e^2s \approx 1-2\mu.
@@ -692,29 +819,53 @@ heterozygote; it depends only the mutation rate. Note that this applies only if 
 A reduction of $1 - 2\mu$ is very small, given that the
 mutation rate of a gene is likely $<10^{-5}$. However, if there are many loci
 segregating at mutation--selection balance, this can accumulate to a substantial so-called
-genetic load, and a major cause of variation in fitness-related traits among individuals.
+genetic load, and a major cause of variation in fitness-related traits
+among individuals. For example, the human genome contains over twenty
+thousand genes, and many other functional regions, the vast majority
+of which will be subject to purifying selection against mutations that
+disrupt their function. In humans most loss of function (LOF) variants, which severely
+disrupt a protein-coding gene, are found at low frequencies. However, each human genome typically carries over
+hundred LOF variants \citep{macarthur:12,lek:16}. Not every LOF allele will be
+deleterious, some could be advantagous, but the combined load of these
+LOF must on average lower our fitness, otherwise selection wouldn't be
+removing them from the population. Each one of us
+carries a unique set of these LOF alleles.. We differ slightly in how
+many of these alleles we carry. For example Figure \ref{fig:LOF} shows
+the distribution of number of LOF alleles carried by 769 individuals
+of Dutch ancestry. The individuals who carry fewer of these LOF
+alleles will on average have higher fitness than those individuals
+with more. We don't let know how much lower the fitness of these
+individuals is, nor how most of these alleles manifest their fitness
+consequences through disease and other mechanisms.  
 
-As an aside, if an allele was truly recessive (although few likely are), we have $h=0$, and
-so eqn.\ \eqref{eqn:mut_sel_bal} is not valid. However, we can make an argument similar to the one above to show
-that, for truly recessive alleles,
-\begin{equation}
-	q_e = \sqrt{\frac{\mu}{s}}.
-\end{equation}
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/LOF_variants/Neatherlands_LOF_variants.pdf}
+\end{center}
+\caption{The distribution of LOF alleles in 769 individuals from the
+  Genome of the Netherlands project. Redrawn from
+  \citeauthor{francioli:14}. The average individual carries 144 LOF
+  alleles. } \label{fig:LOF} 
+\end{marginfigure}
 
 
-\begin{tcolorbox} 
-\begin{question}
-You are studying an outbred population of mice living in a farmer’s field. Mutations occur at a gene called nurseryrhyme that cause a totally recessive form of blindness. These blind mice do not survive to reproduce as the farmer’s wife cuts off their tail (and other bits) with a carving knife. 
-Surveying the field for baby mice you find that 3 in ten thousand mice are blind.\\
-{\bf A} Assuming that the population mates at random, what is the mutation
- rate of blindness causing alleles?\\
-{\bf B} Following more careful study you now find that there is actually a $20
-\%$ reduction in the viability of heterozygotes for these
-mutations. What would you now estimate as the mutation rate for this
-gene?  
-{\bf C)} Explain how and why your answers differ?
-\end{question}
-\end{tcolorbox}
+%\begin{question}
+
+
+%\begin{tcolorbox} 
+%\begin{question}
+%You are studying an outbred population of mice living in a farmer’s field. Mutations occur at a gene called nurseryrhyme that cause a totally recessive form of blindness. These blind mice do not survive to reproduce as the farmer’s wife cuts off their tail (and other bits) with a carving knife. 
+%Surveying the field for baby mice you find that 3 in ten thousand mice are blind.\\
+%{\bf A} Assuming that the population mates at random, what is the mutation
+% rate of blindness causing alleles?\\
+%{\bf B} Following more careful study you now find that there is actually a $20
+%\%$ reduction in the viability of heterozygotes for these
+%mutations. What would you now estimate as the mutation rate for this
+%gene?  
+%{\bf C)} Explain how and why your answers differ?
+%\end{question}
+%\end{tcolorbox}
 
 %B) You look at family of outbred mice. You find that one of the mice in the family is blind, what is the probability that its 1st cousin is also blind?
 
@@ -725,17 +876,53 @@ gene?
 All else being equal, eqn.\ \eqref{eqn:mut_sel_bal} suggests that mutations that have a smaller effect in the
 heterozygote can segregate at higher frequency under mutation--selection balance. As a consequence, alleles that have
 strongly deleterious effects in the homozygous state can segregate at
-low frequencies in the population, as long as they do not have a
-strong effect in heterozygotes. Thus, outbred populations may have many
+low frequencies in the population, as long as they do not have too 
+strong a deleterious effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
-
+\begin{question}
+Assume that a deleterious allele has a relative fitness $.99$ in
+heterozygotes and a relative fitness $0.2$. Assuming that the
+deleterious allele is at a frequency $10^{-3}$ at birth the
+genotype frequencies follow from HWE:\\
+{\bf A)} What is the average fitness of an individual in the population
+due to this allele? \\
+ {\bf B)} What is the fitness of the child of a full-sib mating? \\
+\end{question}
 One consequence of this is that inbred individuals from usually outbred
-populations may have dramatically lower fitnesses than outbred
-individuals. This is a consequence of being homozygous at many loci for
-alleles with recessive deleterious effects. Indeed, this seems to be a common observation, dating back to systematic surveys by
-Darwin. In typically outbred populations, the mean fitness of individuals
+populations may have lower fitnesses than outbred
+individuals.  In typically outbred populations, the mean fitness of individuals
 decreases with the inbreeding coefficient, i.e.\ this so-called inbreeding depression
-is a common observation.
+is a common observation. This is wide-spread observation, dating back to systematic
+surveys of inbreeding depression by \citeauthor{darwin:1876}.
+Inbreeding depression is likely as primarily a consequence of being homozygous at many loci for
+alleles with recessive deleterious effects. One example of inbreeding
+depression is shown in Figure \ref{fig:Silene_inbreeding}.  White
+campion ({\it Silene latifolia}) is a dioecious flowering plant, dioecious means that the males and females are
+separate individuals. \citeauthor{richards:00} performed crosses to
+create offspring who were outbred, the offspring of half-sibs,
+full-sibs, and of two generations of full-sib mating. He measured
+their germination success, which is plotted in Figure \ref{fig:Silene_inbreeding}.
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Silene_inbreeding_dep/Silene_latifolia_Sturm18.jpg}
+\end{center}
+\caption{  White
+campion  ({\it S. latifolia}) } \label{fig:Silene} 
+\end{marginfigure}
+
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Silene_inbreeding_Richards/Silene_inbreeding_depression.pdf}
+\end{center}
+\caption{Data showing inbreeding depression over different degrees of
+  inbreeding in {\it S. latifolia}. Each point is the mean seed germination rates for different
+  family crosses.  Redrawn from \citeauthor{richards:00}. } \label{fig:Silene_inbreeding} 
+\end{marginfigure}
+
+\graham{Add theory line?}
 
 \paragraph{Purging the inbreeding load.}
 Populations that regularly inbreed over sustained periods of time
@@ -743,6 +930,18 @@ are expected to partially purge this load of deleterious
 alleles. This is because such populations have exposed many of these alleles
 in a homozygous state, and so selection can more readily remove these alleles
 from the population.
+
+If the population has sustained inbreeding, such that individuals in the population have an inbreeding
+coefficient $F$, deleterious alleles at each locus will find a
+new equilibrium frequency. Assuming the model of mutation-selection
+model, with this inbreeding is, the new equilbrium frequency is 
+\begin{equation}
+	q_e = \frac{\mu}{\big( h(1-f) + f \big) s}
+\end{equation}
+Note how the frequency of the deleterious allele is decreased due to
+the allele now being expressed, and therefore exposed to selection, in
+homozygotes due to inbreeding.  
+
 
 \newpage
 \subsection{Migration--selection balance}
@@ -753,6 +952,29 @@ This seems unlikely to be as broad an explanation for the
 persistence of deleterious alleles genome-wide as mutation-selection
 balance. However, a brief discussion of such alleles is worthwhile as
 it helps to inform our ideas about local adaptation.\\
+
+
+\gc{Adaptation can occur over a range of geographic scales.}
+
+Adaptation can potentially occur on much finer geographic scales
+from kilometers down to meters in some species. On such scales
+dispersal is surely rapidly moving alleles between environments, but
+the adaptation is maintained by the continued action of selection. An
+example of adaptation at fine-scales is shown in Figure
+\ref{fig:Zinc_mine}.. \gc{Jain and
+  Bradshaw} studied the patterns of heavy-metal resistance in plants
+on mine tailings and in nearby meadows, a set of classic studies of 
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Anthoxanthum_mines_Jain_Bradshaw/Anthoxanthum_zinc.pdf}
+\end{center}
+\caption{Data showing the Zinc tolerance of {\it Anthoxanthum
+odoratum} on and off of the Trelogan
+Mine, Flintshire, North Wales. } \label{fig:Zinc_mine} 
+\end{figure}
+
+
+
 
 As a first pass at this lets consider a haploid two allele model with
 two different populations, where the relative fitnesses of our alleles
