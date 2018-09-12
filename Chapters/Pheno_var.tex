@@ -543,15 +543,7 @@ alleles at different loci (\emph{epistasis}). We can accommodate these complicat
 into our models. We do this by partitioning our total genetic variance into
 independent variance components.
 
-Consider autosomal biallelic locus $\ell$, with frequency $p$ for allele 1, and
-genotypes $0$, $1$, and $2$ corresponding to how many copies of allele
-1 individuals carry. We'll denote the mean phenotype of an individual
-with genotype $0$, $1$, and $2$ are $\overline{X}_{\ell,0}$,
-$\overline{X}_{\ell,1}$, $\overline{X}_{\ell,2}$ respectively. Here this mean is
-taken over all the environments and genetic backgrounds the alleles
-are present on. We'll mean center (MC)
-these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} - \mu$, and
-likewise for the other genotypes. 
+
 
 
 %, such that the phenotype of the genotype of the heterozyote is the
@@ -566,6 +558,16 @@ For example, if your mother transmitted allele 1 to you: with probability $p$ it
 
 %The first variance component is the variance due to
 %the additive contribution of each allele ($V_A$). 
+
+Consider autosomal biallelic locus $\ell$, with frequency $p$ for allele 1, and
+genotypes $0$, $1$, and $2$ corresponding to how many copies of allele
+1 individuals carry. We'll denote the mean phenotype of an individual
+with genotype $0$, $1$, and $2$ are $\overline{X}_{\ell,0}$,
+$\overline{X}_{\ell,1}$, $\overline{X}_{\ell,2}$ respectively. Here this mean is
+taken over all the environments and genetic backgrounds the alleles
+are present on. We'll mean center (MC)
+these phenotypic values setting $\overline{X}'_{\ell,0} = \overline{X}_{\ell,0} - \mu$, and
+likewise for the other genotypes. 
 
 We can think about the average
 (marginal) MC
@@ -658,6 +660,30 @@ population, replacing a 2 allele by a 1 allele in an individual on average has
 little phenotypic effect. This small effect is because as we are mainly turning
 heterozygotes into homozygotes (11), who have the same mean phenotype.  \\
 
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Quant_gen/Salmon/6918368208_5353868a88_z.jpg}
+\end{center}
+\caption{Atlantic Salmon ({\it Salmo salar}). Histoire naturelle des poissons. 1796. Bloch, M. E.} \label{fig:Salmon}
+\end{marginfigure}
+
+
+As as an example of this lets consider the genetics of sexual maturity
+in Atlantic Salmon.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/salmon_age/Salmon_age_dom.pdf}
+\end{center}
+\caption{The average age at sexual maturity for each genotype, broken
+  down by sex. 
+The area of each circle is proportion to the fraction of
+the population in each genotypic class. The regression between phenotype and additive genotype is
+  shown as a red line. The black vertical arrows show the difference
+between the average MC phenotype and additive genetic value for each genotype. } \label{fig:salmon_add_dom}
+\end{figure}
+
 The variance in the population phenotype due to these
 additive breeding values at locus $\ell$ assuming HW proportions is
 \begin{align}
@@ -672,7 +698,6 @@ be found by summing this additive genetic variance across loci
 V_A = \sum_{\ell=1}^{L} V_{A, \ell} = \sum_{\ell=1}^{L}
 2p_{\ell}q_{\ell} \alpha_{\ell}^2.
 \end{equation}
-
 
 Having assigned the additive genetic variance to be the variance
 explained by the additive contribution of the alleles at a locus, we

@@ -3,15 +3,10 @@
 
 
 \chapter{Allele and genotype frequencies}
-\newthought{Population genetics emerged} from early efforts to reconcile Mendelian genetics with Darwinian thought.\marginnote{See \citet{provine:01} \cite{provine:01} for a history of early population genetics.} The genome of an individual is formed from two gametes that fused to form a zygote. In turn, the genomes of each gamete originate from a parental genome through meiosis, in particular the segregation
-and recombination of the parental genome's two gametes. In this chapter we will
+ In this chapter we will
 work through how the basics of Mendelian genetics play out at the population
-level in sexually reproducing diploid organisms. Part of the power of
-population genetics comes from the fact that the rules of Mendelian genetics
-are nearly universal across diploids. Therefore, the simple models
-we build in these notes are firmly grounded in basic Mendelian principals. \\
-
-
+level in sexually reproducing organisms.The genome of an individual is formed from two gametes that fused to form a zygote. In turn, the genomes of each gamete originate from a parental genome through meiosis, in particular the segregation
+and recombination of the parental genome's two gametes. 
 Loci and alleles are the basic currency of population genetics--and indeed of
 genetics. Each individual's genetic makeup is defined in their genome. \marginnote[-1cm]{A
 \emph{locus} (plural: \emph{loci}) is a specific spot in the genome. A locus
@@ -56,7 +51,7 @@ suggesting that the $T$ allele arose via a $C \leftarrow T$ mutation.
 
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
 
-\begin{table}
+\begin{table*}
   \tiny
 \setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
@@ -73,7 +68,7 @@ the consensus are marked with a dash.  The first columns of sequence
  whether the difference is a non-synonymous (N) or synonymous change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
   \label{Table:ADH}
-\end{table}
+\end{table*}
 
 
 
@@ -244,7 +239,6 @@ Calculate the expected frequencies of the allele under HWE.
 See Figure \ref{fig:HWE_CEU_YRI} for a nice
 empirical demonstration of Hardy-Weinberg proportions. 
 
-
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
@@ -400,6 +394,15 @@ two individuals are both homozygous for allele 1?\\
 %{\bf} What is the probability that both individuals heterozygotes? 
 \end{question}
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{figures/FSJ_IBD.png}
+\end{center}
+\caption{} \label{fig:FSJ_IBD}  
+\end{figure}
+
+
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
 more closely related to each other than two random individuals drawn
@@ -500,7 +503,6 @@ the inbreeding coefficient as
 \label{eqn:Fhat}
 \end{equation}
 
-
 \marginnote{
 \begin{question} 
   Suppose the following genotype frequencies were observed for at an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
@@ -543,7 +545,7 @@ life. Even within species, there's often geographically-restricted
 mating among individuals. Individuals tend to mate with individuals
 from the same, or closely related sets of populations. This form of
 non-random mating is called population structure and can have profound
-effects on the distribution of genetic variation within and amojg
+effects on the distribution of genetic variation within and among
 natural populations.  
 
 \subsection{Inbreeding as a summary of population structure.}
@@ -977,7 +979,6 @@ average recombination rate per base pair (typically $\sim 10^{-8}$) and L is
 the number of base pairs separating our two loci.\\
 
 
-
 \paragraph{Linkage disequilibrium}
 
 The (horrible) phrase linkage
@@ -1010,21 +1011,11 @@ and linkage disequilibrium separate in your mind. Genetic linkage refers to the
 linkage of multiple loci due to the fact that they
 are transmitted through meiosis together (most often because the
 loci are on the same chromosome). Linkage disequilibrium merely refers
-to the correlation between the alleles at different loci, this may in
+to the covariance between the alleles at different loci, this may in
 part be due to the genetic linkage of these loci but does not
 necessarily imply this (e.g. genetically unlinked loci can be in LD
 due to population structure). \\
 
-Another common statistic for summarizing LD is $r^2$ which we write as
-\begin{equation}
-r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
-\end{equation}
-as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
-drawn at random from locus $A$, $r^2$ is the squared correlation
-coefficient.  Note that this $r$ in $r^2$ is NOT the recombination
-fraction.   \\
-
-%{\bf Q}\arabic{Question} \refstepcounter{Question}  
 \begin{question} 
 You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
 \begin{center}
@@ -1044,7 +1035,89 @@ Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
 \end{question}
 
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth ]{Journal_figs/alleles_genotypes/TAPS_hotspot/Taps_hotspot.png}
+\end{center}
+\caption{LD across the TAP2 gene region in a sample of Humans and
+  Chimps. The rows and columns are consecutive SNPs, with each cell giving
+  the absolute $D^{\prime}$ value between a pair of SNPs. Note that these
+are different sets of SNPs in the two species, as shared polymorphisms
+are very rare.} \label{fig:TAPS_hotspot}
+\end{figure}
+
+Our linkage  disequilibrium statistic $D$ depends strongly on the
+allele frequencies of the two loci involved. One common way to
+partially remove this dependence, and make it more comparable across
+loci, is to divide $D$ through by its the maximum possible value given
+the frequency of the loci. This normalized statistic is called
+$D^{\prime}$ and vaies between $+1$ and $-1$. In Figure
+\ref{fig:TAPS_hotspot} there's an example of LD across the TAP2 region
+in human and chimp. Notice how physically close SNPs, i.e. those close
+to the diagonal, have higher absolute values of $D^{\prime}$ as
+closely linked alleles are separated by recombination less often
+allowing high levels of LD to accumulate. Over large physically
+distances, away from the diagonal, there is lower $D^{\prime}$. This is
+especially notable in humans as there is an intense, human-specific recombination
+hotspot in this region, which is breaking down LD between opposite
+sides of this region. 
+
+Another common statistic for summarizing LD is $r^2$ which we write as
+\begin{equation}
+r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
+\end{equation}
+as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
+drawn at random from locus $A$, $r^2$ is the squared correlation
+coefficient.  Note that this $r$ in $r^2$ is NOT the recombination
+fraction.   \\
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/alleles_genotypes/Mus_musculus/20746324002_e014b4fcc6_z.jpg}
+\end{center}
+\caption{{\it Mus musculus}. A history of British quadrupeds, including the Cetacea. 1874. Bell T., Tomes, R. F.m Alston E. R.} \label{fig:Mouse}
+\end{marginfigure}
+
+
+
+Figure \ref{fig:Mouse_LD} shows $r^2$ pairs of SNPs at
+various physical distances in two population samples of {\it Mus musculus
+  domesticus}. Again LD is highest between physically close markers as LD is being generated faster than it can be
+decayed via recombination; more distance marker have much lower LD as
+here recombination is winning out. Note how the decay of LD is much
+slower in the advanced-generation cross population, where LD persists
+across megabases. due to the limited number of generations for recombination
+since the cross was created.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{Journal_figs/alleles_genotypes/mouse_LD/mouse_LD_Laurie_et_al.png}
+\end{center}
+\caption{The decay of LD for autosomal SNP in {\it Mus musculus
+  domesticus}, as measured by $r^2$, in a wild-caught mouse population
+  from Arizona and a set of advanced-generation crosses between inbred lines of lab mice. Each dot gives the $r^2$ for a
+  pair of SNPs a given physical distance apart, for a total of $\sim
+  3000$ SNPs. The solid black line gives the mean, the jagged the
+  $95^{th}$ percentile, and the flat red line a cutoff for
+  significant $LD$. From \citeauthor{Laurie:07}. } \label{fig:Mouse_LD}
+\end{figure}
+
+
+\paragraph{The generation of LD.}
+Various population genetic forces can generate LD. Selection can generate LD by favouring particular combinations of
+alleles. Genetic drift will also generate LD, not because particular
+combinations of alleles are favoured, but simply because at random particular
+haplotypes can by chance drift up in frequency. Mixing between
+divergent populations can also generate LD, as we saw in mouse
+Question above. 
+
+
+
+
 \paragraph{The decay of LD due to recombination}
+
 We will now examine what happens to LD over the generations if we
 only allow recombination to occur in a very large population (i.e. no
 genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
@@ -1083,7 +1156,7 @@ so recombination is acting to decrease LD, and it does so
 geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
 approximate this by an exponential and say that   
 \begin{equation}
-D_t \approx  D_0 e^{-rt}
+D_t \approx  D_0 e^{-rt}  \label{eqn_LD_decay}
 \end{equation}\\
 
 
@@ -1093,6 +1166,57 @@ D_t \approx  D_0 e^{-rt}
 You find a hybrid population between the two mouse subspecies
 described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
 \end{question}
+
+%
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/alleles_genotypes/Neanderthal/14800262343_f21929987a_z.jpg}
+\end{center}
+\caption{The earliest discovered fossil of a Neanderthal, fragments of
+  a skull found in a cave in the Neander Valley in Germany. Man's place in nature. 1890. Huxley, T. H.} \label{fig:Mouse_LD}
+\end{marginfigure} 
+
+A particularly striking example of the decay of LD generated by
+the mixing of populations is offered by the LD created by the
+interbreeding on humans and Neanderthals. Neanderthals and modern
+Humans diverged from each other likely over half a million years ago,
+allowing time for allele frequency differences to accumulate between
+the species. The two population spread back into secondary contact, when
+humans moved out of Africa over the past hundred thousand years or
+so. One of the most exciting findings from the sequencing of the
+Neanderthal genome was that modern-day people with Eurasian ancestry
+carry a few percent of their genome derived from the Neanderthal
+genome, via interbreeding during this secondary contact. To date the timing of this
+interbreeding \citeauthor{Sankararaman:12} looked at the LD in modern
+humans between pairs of alleles found to be derived the Neanderthal
+genome (and nearly absent from African populations). 
+In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci
+is shown as a function of the genetic distance ($r$) between them from
+the works of 
+\citeauthor{Sankararaman:12}.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{Journal_figs/alleles_genotypes/Neanderthal_LD/European_neanderthal_LD.pdf}
+\end{center}
+\caption{ } \label{fig:LD_Neanderthal}
+\end{figure}
+
+We can fit the exponential decay of LD with $r$ predicted by eqn \eqref{eqn_LD_decay} to the data points in this figure,
+the fit is shown as a red line. Doing this we estimate $t=1200$
+generations, or about 35 thousand years (using a human generation time of 29
+years). Thus the LD, in modern Eurasians, between alleles derived from
+the interbreeding Neanderthal represents over thirty thousand years of
+recombination slowly breaking down these old
+associations. \marginnote{The calculation done by
+  \citeauthor{Sankararaman:12} is actually a bit more involved as they
+account for inhomogenity in recombination rates and arrive at a date
+of  47,334–63,146 years.}
+
+
+
+
+
+
 %\subsection{Testing for departures from HWE.}
 %Note the form of $\hat{F}$ \eqref{eqn:FhatHO} is the same as the $X^2$
 %statistic, and so we can test for a deviation from hardy-weinberg  $X^2$
@@ -1112,5 +1236,4 @@ described in the question above, which appears to be comprised of equal proporti
 %==One locus models of selection==
 %<source-file filename="one_loc_sel_models.tex" display="one_loc_sel_models.wrapped.latexml.xhtml">
 
-\newpage
 

@@ -387,14 +387,6 @@ million. \\
 %Luckily, in many (not all) situations, departures from model assumptions can be captured by substituting Ne for N, i.e., by plugging in a fictitious N that leads to the same level of genetic drift as observed.
 
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= 0.7 \textwidth]{illustration_images/Genetic_drift/Hamadryas_baboon/Hamadryas_baboon.pdf}
-\end{center}
-\caption{Male Hamadryas baboons. Brehm's Tierleben. Brehm,
-  A.E. 1893. Up to ten females live in a harem with a single male.  %Brehm's animal life
-} \label{fig:Hamadryas_baboon}  
-\end{marginfigure} 
 
 Variance in reproductive success will also affect our effective
 population size. Even if our population has a large constant size of $N$
@@ -419,6 +411,15 @@ i.e. the rate of coalescence is the harmonic mean of the two
 sexes population sizes, 
 equating this to $\frac{1}{2N_e}$}
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.7 \textwidth]{illustration_images/Genetic_drift/Hamadryas_baboon/Hamadryas_baboon.pdf}
+\end{center}
+\caption{Male Hamadryas baboons. Brehm's Tierleben. Brehm,
+  A.E. 1893. Up to ten females live in a harem with a single male.  %Brehm's animal life
+} \label{fig:Hamadryas_baboon}  
+\end{marginfigure} 
+
 While every individual has a mother an a father, not every individual
 gets to be a parent. In practice in many populations far more females
 get to reproduce than males. If only $N_M$ males get to contribute to the next
@@ -429,6 +430,12 @@ N_e = \frac{4N_FN_M}{N_F+N_M}
 \end{equation}
 Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
 N/2$) our effective population size will be much reduced as a result.\\
+
+\begin{question}
+You are studying a population of 1000 Hamadryas baboons. Assuming a
+1/10 male to female sex ratio of matings. What is the effective
+population size?
+ \end{question}
 
 \begin{figure}
 \begin{center}
@@ -648,13 +655,16 @@ any pair of alleles coalesce is
 \end{equation}
 thus the waiting time while there are $i$ lineages is a geometrically
 distributed random variable with probability of success $ \nicefrac{{i \choose
- 2}}{2N}$, which we denote by $\sim \text{Geo}
+    2}}{2N}$, which we denote by
+\begin{equation}
+T_i \sim \text{Geo}
 \left(  \nicefrac{{i \choose
- 2}}{2N} \right)$.
+      2}}{2N} \right).
+\end{equation}
 The mean waiting time till any of pair within our
  sample to coalesce is 
 \begin{equation}
-\frac{2N}{{i \choose  2}}  \ref{eqn:E_T_i}
+\E( T_i) \frac{2N}{{i \choose  2}}  \label{eqn:E_T_i}
 \end{equation}
 
 When a pair of alleles first find a common ancestral allele some
@@ -816,7 +826,7 @@ by similar logic our expected number of doubletons is $\E(S_i)
 Extending this logic to large samples is doable, but tedious
 \graham{Give  numbers for 10 tips}. A nice
 simple proof of the neutral site frequency spectrum is given by
-\gc{HUDSON}, but we won't give this here. The general form is: 
+\citeauthor{Hudson:15}, but we won't give this here. The general form is: 
 \begin{equation}
 \E(S_i) = \theta \frac{1}{i}   \label{eqn:neutral_freq_spec}
 \end{equation}
@@ -842,7 +852,7 @@ for detecting the signal of selection at individual loci. One of
 the first was proposed by \citeauthor{tajima:89}, and is called
 Tajima's $D$. Tajima's $D$ is
 \begin{equation}
-D = \frac{\theta_{\pi}-\theta_{W}}{C}
+  D = \frac{\theta_{\pi}-\theta_{W}}{C} \label{eqn_Tajimas_D}
 \end{equation}
 where the numerator is the difference between the estimate of
 $\theta$ based on pairwise differences and that based on segregating
@@ -957,7 +967,7 @@ pait of {\it M. guttatus} chromosomes, levels of
 diversity are fairly uniformly high.
 \begin{marginfigure}
 \begin{center}
-  \includegraphics[width = 0.5 \textwidth]{illustration_images/Genetic_drift/Mimulus/Mimulus.png}
+  \includegraphics[width = 0.75 \textwidth]{illustration_images/Genetic_drift/Mimulus/Mimulus.png}
 \end{center}
 \caption{{\it M. guttatus} by Pierre-Joseph
   Redout\'e.} \label{fig:Human_growth}  %é
@@ -972,15 +982,35 @@ much more deeply in the ancestral {\it M. guttatus} population.
 
 Mutations that arise on these deeper lineages will be at intermediate frequency in our sample, and so mild bottlenecks
 can lead to an excess of intermediate frequency alleles compared to
-the standard constant-population model. 
+the standard constant-population model. This can result in skew 
+Tajima's D, see eqn \ref{eqn_Tajimas_D}, towards positive values and away from its expectation of
+zero . One example of this skew is shown in Figure
+\ref{fig:maize_Tajimas_D}. Maize ({\it Zea mays}) was domesticated
+  from its wild progenitor teosinte ({\it Z. }) roughly ten thousand years ago. We can see how the
+ bottleneck associated with domestication as resulted in a loss of
+ genetic diversity in maize and a skew
+ towards intermediate frequency polymorphisms and so more positive
+ values of Tajima's D.
 
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = 0.75 \textwidth]{Journal_figs/genetic_drift/Maize_bottleneck/Wright_Tajima_D.pdf}
+\end{center}
+\caption{Data for polymorphism from Maize and Teosinite 774
+  genes redrawn from \citeauthor{Wright:05}{\bf Left)} Genetic
+  diversity levels in maize and and Teosinte at each of these genes.
+Note how diversity levels are lower in maize than teosinte, i.e. most
+points are below the red $x=y$ line.  
+. {\bf Right)}The distribution of Tajima's D in maize and teosinte. } \label{fig:maize_Tajimas_D}  %é
+\end{figure}
 
 \begin{marginfigure}
 \begin{center}
-  \includegraphics[width = 0.5 \textwidth]{Journal_figs/genetic_drift/human_pop_growth/Wright_Tajima_D.pdf}
+  \includegraphics[width = \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
 \end{center}
-\caption{{\it M. guttatus} by Pierre-Joseph
-  Redout\'e.} \label{fig:Human_growth}  %é
+\caption{Maize ({\it Zea mays}.) Prof. Dr. Thomé's Flora von
+  Deutschland. 1886. Thomé, O. W. } \label{fig:maize}  %é
 \end{marginfigure}
 
 
@@ -1110,7 +1140,6 @@ differences separating our pair of species is simply $2\mu (1-C) T$.\\
 \end{marginfigure} 
 
 
-
 If we are considering $T$ to represent the divergence between long
 separated species, then we can think of $T$ as the time that the
 species split. However, for more recently diverged populations and
@@ -1144,29 +1173,123 @@ given that there are fewer rounds of replication in the female
 germline than in the male germline.
 \end{question}
 
-\subsection{Tests of molecular evolution.}
+\section{Tests of molecular evolution.}
 
-\paragraph{Comparing the rates of non-synonymous to synonymous
-substitutions $d_N/d_S$}
+\subsection{Comparing the rates of non-synonymous to synonymous
+substitutions $\dNdS$}
 A common test molecular evolution is to compare the ratio of the rates of non-synonymous to synonymous
 substitutions. The simplest way to calculate $d_N$ is to 
 count up the non-synonymous changes and divide by the total number of
 positions in the gene where a non-synonymous change could occur. We
 can do likewise for $d_S$, and then take the ratio. This is a helpful
-conceptual way to think about what $d_N/d_S$ represents, however, this
+conceptual way to think about what $\dNdS$ represents, however, this
 ignores the fact that particular changes are more likely to occur by
 mutation and also does not account for multiple hits. Therefore, in
-practice $d_N/d_S$ is more usually calculated by model-based
+practice $\dNdS$ is more usually calculated by model-based
 likelihood and bayesian methods
 that can account for these features (see \gc{XX}). 
 
-For the vast majority of genes in the genome we see that $d_N/d_S \ll 1$, this is consistent with the view
+For the vast majority of genes in the genome we see that $\dNdS < 1$, this is consistent with the view
 that non-synonymous sites are much more constained than synonymous,
 i.e. that most non-synonymous mutations are deleterious and quicky
 removed from the population. If we are willing to make the assumption that all synymous changes are
 neutral, $d_S=2T \mu$, then we can estimate the degree of constraint. (Note that synonymous changes can sometimes be subject to
 both positive and negative selection, but we have to start somewhere.) 
 
+Assuming that a fraction $C$ of non-synonymous changes are too
+deleterious to contribute to polymorphism then, if $T$ generations of divergence have
+elapsed between the two populations we expect
+\begin{equation}
+d_N = 2T (1-C) \mu  
+\end{equation}
+Then
+\begin{equation} 
+\dNdS = (1-C) 
+\end{equation}
+therefore, if we assume that non-synonymous mutations can only be
+strongly deleterious or neutral, we estimate the fraction of mutational changes that
+are constrained by negative selection as $C= 1- \dNdS$. This has the
+interpretations of being the fraction of non-synonymous mutations that
+are quickly weeded out of the populaiton by selection, and so do not
+contribute to divergence among species. 
+
+\paragraph{Loss of constraint at pseudogenes.}
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}
+\end{center}
+\caption{} \label{fig:sloth}  
+\end{marginfigure} 
+
+While most genes evolve under constraint, we can find examples of
+genes that are evolving in a less constrained manner. The simplest
+example of this is where the gene has lost function, e.g. has recently
+become pseudogenized. When a gene completely loses function there will be no
+selection against non-synoynous changes and so they are just as free
+to accumulate as synonymous changes, and so $\dNdS=1$.
+Genes can lose function because of inactivating mutations that stop
+them being transcribed or translated into functional proteins, such genes are
+called pseudogenes. Our genomes are filled with old pseudogenes whose
+meaning are slowly being eroded through the accumulation of neutral substitutions.
+One nice example of as gene that has been repeatedly lost function,
+i.e. become repeatedly psuedogenized, is
+the Enamlin gene from the study of \citeauthor{Meredith:09}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin.pdf}
+\end{center}
+\caption{Examples of frameshift mutations (insertions blue, deleteions
+  red) and premature stop codons in Enamlin in Cetacea and
+  Xenarthra. Figure taken from \citeauthor{Meredith:09}} \label{fig:Enamlin_coding}  
+\end{figure} 
+
+\marginnote{
+``Rudimentary organs may be compared with the letters in a word, still
+retained in the spelling, but become useless in the pronunciation, but
+which serve as a clue .. for its derivation.''
+}
+
+The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have
+secondarily evolved to lack enamel on their teeth, because their diet does not
+demand hard teeth, e.g. : two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark 
+{\it Orycteropus}). While others have lost their teeth entirely: giant anteaters ({\it Myrmecophaga}); Baleen whales, including 
+or lack enamel on their teeth.
+Due to this loss of selective function
+pseudogenizing substitutions, premature stop codons and frameshift mutations, have
+accumulated in the gene Enamlin (see Figure \ref{fig:Enamlin_coding}
+for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
+range of species and found that none of the species with Enamel have frameshift
+mutations in Enamlin, while 17/20 of species that lack Enamel or teeth have
+frameshifts in Enamlin and all of them carry premature stop codons
+(Figure \ref{fig:Enamlin_phylo}). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin_phylo.pdf}
+\end{center}
+\caption{The tooth symbol next to each taxon shows whether they have
+  teeth, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
+  Enamlin is functional (black), pre-mutation (blue), mixed (purple),
+  and pseudogenic (red). The black and white vertical bars on branches show frameshift
+  mutations.  The Numbers after taxon names indicate minimum number of
+  stop codons in the sequence /  the length of the sequence.} \label{fig:Enamlin_phylo}  
+\end{figure} 
+
+The branches of the Enamlin phylogeny with a functional Enamlin gene (black)
+had an estimated $\dNdS= 0.51$ consistent with the protein evolving in
+a constrained manner. While the branches with a pseudogenized Enamlin
+had $\dNdS = 1.02$ consistent with the gene evolving an unconstrained
+way. The branches where the gene was likely transitioning from a functional
+to non-function state (premutation and mixed, blue and purple) had an intermediate values of
+$\dNdS=0.83-0.98$ consistent with them transitioning from a
+constrained to unconstrained mode of protein evolution.
+
+
+\paragraph{Adaptive evolution and $\dNdS$.}
+Clearly genes are not only subject to neutral and deleterious
+mutations, as beneficial mutations must also arise from time to time. 
 Lets assume that a fraction $B$ of non-synonymous mutations that arise are
 beneficial, and that they fix with probability $f_B$. This fixation
 probability may be much higher than that of neutral mutations (we'll
@@ -1178,17 +1301,21 @@ elapsed between the two populations
 \end{equation}
 Then
 \begin{equation} 
-d_N/d_S  = (1-C-B) +  B f_B
+\dNdS = (1-C-B) +  B f_B
 \end{equation}
-If $B=0$ then we can estimate the fraction of mutational changes that
-are constrained by negative selection as $C= 1- d_N/d_S$. 
+Note that this means that our estimates of $C$ using $1-\dNdS$ will be
+a  lower bound on the true constraint if even a small fraction of
+mutations are beneficial.
+However, genes may still evolve in a constrained way
+(i.e. $\dNdS<1$)  if adaptive substitutions are common at a gene if
+they are outweighed by the loss of potential subsitutions to negative selection.
 
 While most genes evolve under constraint, we can find examples of
 genes that are evolving in a less constrained manner. The simplest
 example of this is where the gene has lost function, e.g. has recently
 become pseudogenized. Along branches of the phylogeny where all the
 constraint against non-synonymous mutation has
-been lost then $d_N/d_S=1$. We can also identify cases where the gene
+been lost then $\dNdS=1$. We can also identify cases where the gene
 is evolving more rapidly at the protein level than at synonymous
 sites, i.e. $d_N/d_S > 1$, corresponding to cases of rapid change due
 to positive selection. 
@@ -1218,7 +1345,7 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
   Pycraft, W.P. 1910.  A leaf-eating bird.} \label{fig:hoatzin}  
 \end{marginfigure} 
 A classic example of looking for adaptive evolution using dN/dS is the
-evolution of the lysozyme protein in primates\citep{Messier:97,Yang:98}, see
+evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}, see
 the phylogeny in Figure \ref{fig:lysozyme}. The lysozyme protein is
 a key component for the breakdown of bacterial walls. It shows very
 fast protein evolution notably on the lineages leading to apes (e.g. gibbons
@@ -1243,7 +1370,6 @@ Non-Syn. &    $P_N$  &   $D_N$  \\
 Syn. &    $P_S$   &     $D_S$   \\
 Ratio & $P_N/P_S$ & $D_N/D_S$
 \end{tabular}
-%\end{table}
 \end{center}
 
 Under neutral theory we expect a smaller number of non-synonymous to
@@ -1260,7 +1386,6 @@ $T_{tot}$ and the total time for fixed differences by $T_{div}'$ then:
 \end{marginfigure}
 
 \begin{center}
-%\begin{table}
 \begin{tabular}{ccc}
  & Poly. & Fixed  \\
  \hline
@@ -1268,7 +1393,6 @@ Non-Syn. &    $\mu_N T_{tot}$  &   $\mu_N  T_{div}'$ \\
 Syn. &    $\mu_S T_{tot}$   &     $\mu_S  T_{div}'$  \\
 Ratio & $\mu_N/\mu_S$  & $\mu_N/\mu_S$
 \end{tabular}
-%\end{table}
 \end{center}
 Therefore, we expect the ratio of non-synonymous to synonymous changes
 to be the same for polymorphism and divergence. We can test this expectation of equal ratios via the standard G-test of a $2
