@@ -107,7 +107,9 @@ to be a per site (or per base) measure.
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
 that are polymorphic (segregating) in our sample. One issue is that
 the number of segregating sites will grow as we sequence more
-individuals (unlike $\pi$).  
+individuals (unlike $\pi$), we'll talked about how to standardize the
+number of segregating sites for the number of individuals sequenced
+later in the notes (see eqn \eqref{watterson_theta}).
 
 \paragraph{The frequency spectrum.}
 We also often want to compile information about the frequency of
@@ -178,7 +180,6 @@ ranked by their $\pi$, and coloured by their phylum. Note the log-scale.} \label
 
 
 \subsection{Hardy--Weinberg proportions}
-
 Imagine a population mating at random with respect to genotypes, i.e. no
 inbreeding, no assortative mating, no population structure, no sex differences
 in allele frequencies. The frequency of allele $A_1$ in the population at the
@@ -188,7 +189,6 @@ zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote
 is $p^2$. This probability is also the expected frequency of the $A_1A_1$
 homozygote in the population. The expected frequency of the three possible
 genotypes is
-
 
 %\begin{table}[htp!]
 \begin{center}
@@ -209,10 +209,10 @@ the time when gametes fuse.
 \begin{question}
 On the coastal islands of British Columbia there is a subspecies of
 black bear ({\it Ursus americanus kermodei}, Kermode's bear). Many members of this
-black bear subspecies are white (they're sometimes called spirit bears). These
-bears arent hybrids with polar bears, nor are they albinos, they are
-homozygotes for a recessive change at the MC1R gene (with $GG$
-individuals being white and $AA$ and $AG$ individuals being black.   
+black bear subspecies are white; they're sometimes called spirit bears. These
+bears aren't hybrids with polar bears, nor are they albinos, they are
+homozygotes for a recessive change at the MC1R gene. Individuals who
+are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.   
 
 \begin{marginfigure}
 \begin{center}
@@ -223,7 +223,7 @@ individuals being white and $AA$ and $AG$ individuals being black.
 \end{marginfigure}
 
 Below are the genotype frequencies for the MC1R polymorphism on from a
-sample from British Columbi island populations from \citeauthor{RITLAND:01}. 
+sample from British Columbia island populations from \citeauthor{RITLAND:01}. 
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -261,7 +261,52 @@ population is expected to be homozygotes under Hardy-Weinberg?
 }
 
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question} 
+Microsatellites are regions of the genome where individuals vary for
+the number of copies of some short DNA repeat that they carry. These
+regions are often highly variable across individuals, making them
+suitable way to identify individuals from a DNA sample. This
+so-called DNA-fingerprinting has a range of applications from
+establishing paternity, identifying human remains, to matching
+individuals to DNA samples from a crime scene. The FBI make use of the
+CODIS database\sidenote{CODIS: Combined DNA Index System}. The CODIS
+database contains the genotypes of over 13 million people, most of
+whom have been convicted of a crime. Most of
+the profiles record genotypes at 13 microsatellite loci that are
+tetranucleotide repeats (since 2017, 20 sites have been genotyped). 
+
+The allele counts for two loci (D16S539
+and TH01) are shown in table \ref{table:CODIS_1} and
+\ref{table:CODIS_2} for a sample of 155 people of european ancestry.
+
+\begin{table}
+{\small
+\setlength{\tabcolsep}{.45\tabcolsep}  
+\csvautobooktabular{Rcode/CODIS/D16S539_counts.csv}  \label{table:CODIS_1}
+\caption{ Data for 155 Europeans at the D16S539 microsatellite from
+  CODIS from \citeauthor{algee:16}. The top row gives the number of
+  tetranucleotide repeats for each allele, the bottom row gives the
+  sample counts.}
+ } 
+
+\end{table}
+
+\begin{table}
+  {\small
+\setlength{\tabcolsep}{.45\tabcolsep}   
+\csvautobooktabular{Rcode/CODIS/TH01_counts.csv}  \label{table:CODIS_2}
+}
+\end{table}
+
+\begin{question} \label{Q:CODIS}
+You extract a DNA sample from a crime scene the genotype is 100/80 for
+D16S539 and 70/93 at TH01.\\
+{\bf A)} You have a suspect in custody, what is the probability
+that their genotype would match this profile by chance. i.e. if it
+wasn't the suspect's DNA at the crime scene?\\
+{\bf B)} The FBI uses $\geq 13$ markers, why is this higher number
+necessary to make the match statement convincing evidence in court?
+\end{question}
+\graham{Add question about diff. ref pop?}
 
 %\begin{question} 
 %Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele): 
@@ -277,8 +322,6 @@ population is expected to be homozygotes under Hardy-Weinberg?
 
 %%%ADD A comment about WF sampling here!
 %% Also add a question about Poisson offspring number.
-
-
 
 %\begin{figure}
 %\begin{center}
@@ -309,7 +352,7 @@ concepts rely on how closely related individuals are, and thus we need some way
 to quantify the degree of kinship among individuals. \\
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
+\includegraphics[width= 0.75 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
 \end{center}
 \caption{First cousins sharing a stretch of chromosome identical by
   descent. The different grandparental diploid chromosomes are coloured so we
@@ -338,9 +381,9 @@ full-sibs share zero alleles for a quarter of all of their autosomal loci.\\
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf} 
+\includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf} 
 \end{center}
-\caption{Three pairs of diploid individuals sharing 0, 1, or 2 alleles IBD
+\caption{A diploid individuals (X and Y) sharing 0, 1, or 2 alleles IBD
   where lines show the sharing of alleles by descent (e.g. from a
   shared ancestor). } \label{fig:IBD_0_1_2}
 \end{marginfigure}
@@ -384,20 +427,94 @@ identical by descent on the autosomes. $^{*}$Assuming this is the only close rel
 parent but not the other).
 \end{question}
 
+%Question 5. Consider a biallelic locus where allele 1 is at fre- quency p, and two individuals who have IBD allele sharing probabili- ties r0, r1, r2.
+%What is the overall probability that these two individuals are both homozygous for allele 1?
 
-\begin{question} 
-Consider a biallelic locus where allele 1 is
+Our $r$ coefficients are going to have a various uses. For example, they allow us
+to calculate the probability of the genotypes of a pair of
+relatives. Consider a biallelic locus where allele 1 is
 at frequency $p$, and two individuals who have IBD allele sharing
-probabilities $r_0$, $r_1$, $r_2$. \\
-What is the overall probability that these
-two individuals are both homozygous for allele 1?\\
-%{\bf} What is the probability that both individuals heterozygotes? 
-\end{question}
+probabilities $r_0$, $r_1$, $r_2$. What is the overall probability that these
+two individuals are both homozygous for allele 1? Well that's
+\begin{align}
+  P(A_1 A_1) = &P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
+  & + P(A_1 A_1 | \text{1 alleles IBD}) P(\text{1 alleles IBD})  \nonumber\\
+  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD}) \\
+\end{align}
+in our $r_0$, $r_1$, $r_2$ notation
+\begin{align}
+  P(A_1 A_1) = P(A_1 A_1 | \text{0 alleles IBD}) r_0 + P(A_1 A_1 |
+  \text{1 alleles IBD}) r_1 + P(A_1 A_1 | \text{2 alleles IBD}) r_2 \label{eqn:initial_relly_IBD_calc}
+\end{align}
+If our pair of relatives share $0$ alleles IBD, then the probability that
+they are both homozygote is $P(A_1 A_1 |
+\text{0 alleles IBD}) =p^2 \times p^2$, as all four alleles
+represent independent draws from the population. If they share $1$
+allele IBD, then this is of type $A_1$ with probability $p$, and then
+the other non-IBD allele, in both relatives, also needs
+to be $A_1$ which happens with probability $p^2$ so $P(A_1 A_1 |
+\text{1 alleles IBD})=p \times p^2$. Finally our pair of relatives can
+share two alleles IBD, in that case $P(A_1 A_1 | \text{2 alleles IBD})
+= p^2$ as if one of our individuals is homozygote for the $A_1$ allele
+both individuals will be. Putting this all together our
+\eqref{eqn:initial_relly_IBD_calc} becomes 
+\begin{equation}
+P(A_1 A_2) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
+\end{equation}
+Note that  for specific cases we could also calculate this by summing over the
+genotypes of their shared ancestor was; however, that would be much more
+involved and not as general as the form we have derived here.
+
+We can write out terms like eq \eqref{eqn:IBD_relly_calc} for all of
+the possible configurations of genotype
+sharing/non-sharing between a pair of individuals. Based on this we can write down the expected number of
+polymorphic sites where our individuals are observed to share 0, 1, or 2
+alleles. There's a variety of ways to estimate the relationships among
+individuals. 
+
+\begin{question}
+The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
+D16S539 and 70/80 at TH01. The suspect is not a match to the DNA
+from the crime scene; however, they could be a sibling.
+
+Calculate the joint probability of the genotype from the  crime and our
+suspect:\\
+{\bf A)} Assuming that they share no close relationship.\\
+
+{\bf B)} Assuming that they are full sibs.\\
+
+{\bf C)} Briefly explain your findings.  
+  \end{question}
+
+ \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/Florida_scrub_jay/8576533889_3a131ffc4c_z.jpg}
+\end{center}
+\caption{Florida Scrub-Jays ({\it Aphelocoma coerulescens}). The birds of America : from drawings made in the United
+  States and their territories. 1880. Audubon J.J.
+} \label{fig:FSJ}  
+\end{marginfigure}
+
+  
+An example of using allele sharing to identify relatives is offered by
+the work on Nancy Chen. She has collected genotyping data from thousands of
+Florida Scrub Jays at over ten thousand loci. These Jays live at the
+Archbold field site, and have been carefully monitored for many
+decades allowing the pedigree of many of the birds to be known.
+Using these data she could estimate allele frequencies at each
+locus. Then by equating the observed number of times that a pair of
+individuals share $0$, $1$, or $2$ alleles to the theoretical
+expectation she can estimate the probability of $r_0$, $r_1$, and
+$r_2$ for each pair of birds. A plot of these are shown in Figure
+\ref{fig:FSJ_IBD}, showing how well the estimates match those known
+from the pedigree.
+
+%\end{question}
 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/FSJ_IBD.png}
+\includegraphics[width= \textwidth]{figures/FSJ_IBD.pdf}
 \end{center}
 \caption{} \label{fig:FSJ_IBD}  
 \end{figure}
@@ -913,41 +1030,62 @@ from the total sample at random (rather than the covariance of alleles
 within a single individual). So by performing PCA on the data we are
 learning about the major (orthogonal) axes of the kinship matrix.    
 
+\begin{figure}
+\includegraphics[width=
+  0.5 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
+    \caption{  }
+\label{fig:warbler_geo}
+\end{figure}
+
 
 \begin{figure}
-% TODO: MISSING FIGURE
 \includegraphics[width=
-  \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
-  \caption{ Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
-    2007) using the same chimpanzee data as in Figure
-    \ref{fig:chimp_structure}. Here they plot the location of each individual
-    on the first two principal components (called eigenvectors) in the left
-    panel, and on the second and third principal components (eigenvectors) in
-    the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
-      Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
-      Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
-      of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
-      into populations, with the expected assignments for the 75 individuals
-      identified as all of one ancestry by STRUCTURE (solid circles). The nine
-      individuals identified by STRUCTURE as hybrids (open circles) are for the
-      most part identified as hybrids by PCA as well. There are two individuals
-      (red open circles) reported as being of a particular population but that
-      in fact appear to be hybrids: number 23, reported as eastern but in fact
-    a western-eastern hybrid, and number 54, a wild-born individual reported as
-  western but in fact a western-central hybrid.''. } Note that PC1 mostly
-  separates Western chimps from the others, PC2 separates bonobos from all the
-three groups of common chimpanzee. While PC3 separates the Eastern chimp
-samples from the others. Note also how the hybrid individuals (open black and
-red circles) tend to fall intermediate between groups.}
-
-\label{fig:chimp_PCA}
-
-% http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
-%======= Individuals 76–78 are reported hybrids. Only two individuals with a
-%$>5\%$ proportion of ancestry in more than one inferred cluster are wild born:
-%number 54 and number 17. Red, central; blue, eastern; green, western; yellow,
-%bonobo.''}
+  0.75 \textwidth]{figures/warbler_PCA_figs/warbler_heatmap.pdf}
+    \caption{  }
+\label{fig:warbler_heat}
 \end{figure}
+
+\begin{figure}
+\includegraphics[width=
+  0.75 \textwidth]{figures/warbler_PCA_figs/warbler_PCAmap.pdf}
+    \caption{  }
+\label{fig:warbler_PCA}
+\end{figure}
+
+% \begin{figure}
+% % TODO: MISSING FIGURE
+% \includegraphics[width=
+%   \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
+%   \caption{ Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
+%     2007) using the same chimpanzee data as in Figure
+%     \ref{fig:chimp_structure}. Here they plot the location of each individual
+%     on the first two principal components (called eigenvectors) in the left
+%     panel, and on the second and third principal components (eigenvectors) in
+%     the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
+%       Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
+%       Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
+%       of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
+%       into populations, with the expected assignments for the 75 individuals
+%       identified as all of one ancestry by STRUCTURE (solid circles). The nine
+%       individuals identified by STRUCTURE as hybrids (open circles) are for the
+%       most part identified as hybrids by PCA as well. There are two individuals
+%       (red open circles) reported as being of a particular population but that
+%       in fact appear to be hybrids: number 23, reported as eastern but in fact
+%     a western-eastern hybrid, and number 54, a wild-born individual reported as
+%   western but in fact a western-central hybrid.''. } Note that PC1 mostly
+%   separates Western chimps from the others, PC2 separates bonobos from all the
+% three groups of common chimpanzee. While PC3 separates the Eastern chimp
+% samples from the others. Note also how the hybrid individuals (open black and
+% red circles) tend to fall intermediate between groups.}
+
+% \label{fig:chimp_PCA}
+
+% % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+% %======= Individuals 76–78 are reported hybrids. Only two individuals with a
+% %$>5\%$ proportion of ancestry in more than one inferred cluster are wild born:
+% %number 54 and number 17. Red, central; blue, eastern; green, western; yellow,
+% %bonobo.''}
+% \end{figure}
 
 \newpage
 \subsection{Correlations between loci, linkage disequilibrium, and recombination}

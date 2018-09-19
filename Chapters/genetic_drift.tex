@@ -788,9 +788,9 @@ Thus we can use this formula to derive another estimate of the
 population scaled mutation rate, by setting our observed number of
 segregating sites in a sample ($S$) equal to this expectation. We'll call this estimator $\widehat{\theta}_W$
 \begin{equation}
-\widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \frac{1}{i}}  
+\widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \frac{1}{i}}   \label{watterson_theta}
 \end{equation}
-this estimator was devised by \citeauthor{watterson:75}\cite{watterson:75}, hence the $W$.
+this estimator was devised by \citeauthor{watterson:75}, hence the $W$.
 
 
 \paragraph{The neutral site-frequency spectrum.}
@@ -1219,7 +1219,8 @@ contribute to divergence among species.
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}
 \end{center}
-\caption{} \label{fig:sloth}  
+\caption{Two-toed sloth ({\it Choloepus hoffmanni}). An introduction
+  to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.} \label{fig:sloth}  
 \end{marginfigure} 
 
 While most genes evolve under constraint, we can find examples of
@@ -1248,8 +1249,9 @@ the Enamlin gene from the study of \citeauthor{Meredith:09}.
 \marginnote{
 ``Rudimentary organs may be compared with the letters in a word, still
 retained in the spelling, but become useless in the pronunciation, but
-which serve as a clue .. for its derivation.''
-}
+which serve as a clue .. for its derivation.'' 
+}  %http://darwin-online.org.uk/Variorum/1859/1859-456-dns.html
+\graham{get Darwin page number etc}
 
 The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have
 secondarily evolved to lack enamel on their teeth, because their diet does not
@@ -1286,10 +1288,22 @@ to non-function state (premutation and mixed, blue and purple) had an intermedia
 $\dNdS=0.83-0.98$ consistent with them transitioning from a
 constrained to unconstrained mode of protein evolution.
 
+%\begin{question}
+%Enamlin was pseudogenized somewhere along the branch leading to
+%Aardvarks ({\it Orycteropus}). This branch has $\dNdS=0.75$
+% https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000634#pgen.1000634.s007
+%dawn pangloin
+%https://commons.wikimedia.org/wiki/File:Eomanis_waldi_4.jpg
+%% aadvark https://www.flickr.com/photos/internetarchivebookimages/20514695666/in/photolist-xfPbiq-xUcng7-xCyGQA-xdRRQ3-wPMGZr-tFgYfN-wPMPkT-tDahHQ-xuc4KM-xKR4u3-xUkupQ-w88zeU-xMia2r-sp4Aq5-x1wNyZ-xMi46D-tDaCr7-sJE2X4-tFB8Lc-wHWiNj-tp8AUk-tFvh4R-xu3M7w-toUVwN-wYWgVi-w34vHn-x9xAfL-wWhnso-ovvmHE-tG5AgB-xdUzWD-y82dEG-xCA7kx-xV5xWg-wYc33H-wYbFdX-wYbBMP-xUcjpL-xKQjHw-xJmBQU-xKPwEQ-xLEzv4-xu3wHJ-xLEg9V-xnA6Lr-x684wQ-wZNgpq-wYcVbh-wZtb3F-wYbJLh
+%%% w1 t/T + w2(T-t)/T = wT
+%% https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000634#pgen.1000634.s007
 
+
+
+%\end{question}
 \paragraph{Adaptive evolution and $\dNdS$.}
 Clearly genes are not only subject to neutral and deleterious
-mutations, as beneficial mutations must also arise from time to time. 
+mutations, beneficial mutations must also arise and fix from from time to time. 
 Lets assume that a fraction $B$ of non-synonymous mutations that arise are
 beneficial, and that they fix with probability $f_B$. This fixation
 probability may be much higher than that of neutral mutations (we'll
