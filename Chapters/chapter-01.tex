@@ -32,13 +32,6 @@ allele while others have a $T$. {\emph Fixed differences}  are sites that differ
   {\it D. melanogaster} and the other two species. 
 
 
-\begin{question}
-{\bf A)} How many segregating sites does the sample from {\it
-  D. simulans} have in the ADH gene?\\ 
-{\bf B)} How many fixed differences are there between {\emph D. melanogaster} and {\emph D. yakuba}?
-%What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
-\end{question}
-
 We can also annotate the alleles and loci in various ways. For example position
 $781$ is a non-synonymous fixed difference. We call the less common
 allele at a polymorphism the  {\emph minor allele} and the common
@@ -64,12 +57,18 @@ common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
 (a-l) are from {\it D. melanogaster};
     the next columns (a-f) give sequences from {\it D. simulans}, the final 
- set of coumns (a-l ) from {\it D. yakuba}. The last column shows
+ set of cloumns (a-l ) from {\it D. yakuba}. The last column shows
  whether the difference is a non-synonymous (N) or synonymous change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
   \label{Table:ADH}
 \end{table*}
 
+\begin{question}
+{\bf A)} How many segregating sites does the sample from {\it
+  D. simulans} have in the ADH gene?\\ 
+{\bf B)} How many fixed differences are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+%What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+\end{question}
 
 
 \section{Allele frequencies}
@@ -99,8 +98,17 @@ One common measure of genetic diversity is the average number of single
 nucleotide differences between haplotypes chosen at random from a
 sample. This is called Nucleotide diversity and often denoted by
 $\pi$. 
+For our example, for our ADH locus, Table \ref{Table:ADH}, we have
+6 sequences in {\it D. simulans}  (a-f), there's a total of 15 ways of pairing
+the sequences, and 
+\begin{equation}
+\pi=\frac{1}{15} \big( (2 + 1 + 1 + 1 + 0 ) + (3 + 3 + 3 + 2 ) +(0 + 0 + 1) + (0 + 1) + (1)  \big)=1.2\overline{6}
+\end{equation}
+where the first bracketed term gives the pairwise differences between
+a and b-f, the second bracketed term the differences between b and c-f
+and so on. \\
 
-This measure will depend on the length of sequence it is calculated
+Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
 to be a per site (or per base) measure. 
 
@@ -120,9 +128,11 @@ allele is found $i$ times out of $n$, e.g. how many singletons are
 there in the sample, and this is called the {\emph frequency
   spectrum}. We'll want to do this in some consistent manner, so we
 often calculate the minor allele frequency spectrum, or the frequency
-spectrum of derived alleles. \graham{Plot a simple freq. spectrum for
-  ADH? And add $\pi$ calc. }
+spectrum of derived alleles.
 
+\begin{question}
+How many minor-allele singletons are there in {\it D. simulans}?
+ \end{question} 
 \paragraph{Levels of genetic variability across species.}
 Two observations have puzzled population geneticists since the
 inception of molecular population genetics. The first is the relatively high
@@ -139,8 +149,6 @@ in theoretical and empirical population genetics has been devoted to
 trying to reconcile models with these various observations. We'll
 return to discuss these ideas throughout our course.
 
-
-
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Ciona_intestinalis/21016139168_2a8a57ded3_z.jpg}
@@ -149,13 +157,6 @@ return to discuss these ideas throughout our course.
   Vergleichende psychologie. Loeb, J. 1899. } \label{fig:Lynx}
 \end{marginfigure}
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
-\end{center}
-\caption{Eurasian Lynx ({\it Lynx lynx}). An introduction to the study
-  of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.} \label{fig:Lynx}
-\end{marginfigure}
 
 These observations were first raised from surveys of allozyme data within
 natural populations but we can revisit them with modern data. For
@@ -178,7 +179,6 @@ ranked by their $\pi$, and coloured by their phylum. Note the log-scale.} \label
 \end{figure*}
 
 
-
 \subsection{Hardy--Weinberg proportions}
 Imagine a population mating at random with respect to genotypes, i.e. no
 inbreeding, no assortative mating, no population structure, no sex differences
@@ -190,6 +190,13 @@ is $p^2$. This probability is also the expected frequency of the $A_1A_1$
 homozygote in the population. The expected frequency of the three possible
 genotypes is
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
+\end{center}
+\caption{Eurasian Lynx ({\it Lynx lynx}). An introduction to the study
+  of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.} \label{fig:Lynx}
+\end{marginfigure}
 %\begin{table}[htp!]
 \begin{center}
 \begin{tabular}{ccc}
@@ -237,18 +244,27 @@ Calculate the expected frequencies of the allele under HWE.
 
 
 See Figure \ref{fig:HWE_CEU_YRI} for a nice
-empirical demonstration of Hardy-Weinberg proportions. 
+empirical demonstration of Hardy-Weinberg proportions. The mean
+frequency of each genotype
+closely match their HW expectations, and much of the scatter of the
+dots around the expected line is due to our small sample size ($\sim
+60$ individuals). While HW often
+seems like a silly model it often holds remarkable well within
+population. This is because individuals don't mate at random, but they
+do mate at random with respect to their genotype at most of the loci
+in the gneome. 
 
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
 \end{center}
 \caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
-  from the HapMap CEU European and YRI African populations. Within
-  each of these populations I plot the allele frequency against the
-  frequency of the 3 genotypes. Each SNP is represented by 3 different
+  from the HapMap European (CEU)  and African (YRI) populations. Within
+  each of these populations the allele frequency against the
+  frequency of the 3 genotypes; each SNP is represented by 3 different
   coloured points. The solid lines show the mean genotype frequency. The dashed line shows the
-  predicted genotype frequency from Hardy--Weinberg equilibrium.See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. } \label{fig:HWE_CEU_YRI}
+  predicted genotype frequency from Hardy--Weinberg
+  equilibrium.} \label{fig:HWE_CEU_YRI}  %See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. 
 \end{figure}
 
 
@@ -289,24 +305,31 @@ and TH01) are shown in table \ref{table:CODIS_1} and
  } 
 
 \end{table}
-
+\vspace*{1cm}
 \begin{table}
   {\small
 \setlength{\tabcolsep}{.45\tabcolsep}   
 \csvautobooktabular{Rcode/CODIS/TH01_counts.csv}  \label{table:CODIS_2}
 }
+
+\caption{Same as \ref{table:CODIS_1} but for the TH01 microsatellite. } 
 \end{table}
 
 \begin{question} \label{Q:CODIS}
 You extract a DNA sample from a crime scene the genotype is 100/80 for
 D16S539 and 70/93 at TH01.\\
 {\bf A)} You have a suspect in custody, what is the probability
-that their genotype would match this profile by chance. i.e. if it
+that their genotype would match this profile by chance (a false match probability). i.e. if it
 wasn't the suspect's DNA at the crime scene?\\
 {\bf B)} The FBI uses $\geq 13$ markers, why is this higher number
-necessary to make the match statement convincing evidence in court?
+necessary to make the match statement convincing evidence in court?\\
+{\bf C)}  An early case that triggered debate among forensic geneticists was a crime among the Abenaki, a Native American community in
+Vermont \citep[see ][ for discussion]{lewontin:94}. There was a DNA sample from the crime scene, and the
+perpetrator was thought likely to be a member of the Abenaki
+community. Given that allele frequencies vary among populations, why would people be concerned about using data from a non-Abenaki population to compute a false match probability?
+%---that is, the probability
+%that a suspect's DNA would match a crime-scene sample if he were unrelated to anyone present at the crime scene
 \end{question}
-\graham{Add question about diff. ref pop?}
 
 %\begin{question} 
 %Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele): 
@@ -383,7 +406,7 @@ full-sibs share zero alleles for a quarter of all of their autosomal loci.\\
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf} 
 \end{center}
-\caption{A diploid individuals (X and Y) sharing 0, 1, or 2 alleles IBD
+\caption{A pair of diploid individuals (X and Y) sharing 0, 1, or 2 alleles IBD
   where lines show the sharing of alleles by descent (e.g. from a
   shared ancestor). } \label{fig:IBD_0_1_2}
 \end{marginfigure}
@@ -469,8 +492,7 @@ We can write out terms like eq \eqref{eqn:IBD_relly_calc} for all of
 the possible configurations of genotype
 sharing/non-sharing between a pair of individuals. Based on this we can write down the expected number of
 polymorphic sites where our individuals are observed to share 0, 1, or 2
-alleles. There's a variety of ways to estimate the relationships among
-individuals. 
+alleles. 
 
 \begin{question}
 The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
@@ -496,8 +518,10 @@ suspect:\\
 \end{marginfigure}
 
   
-An example of using allele sharing to identify relatives is offered by
-the work on Nancy Chen. She has collected genotyping data from thousands of
+There's a variety of ways to estimate the relationships among
+individuals.  An example of using allele sharing to identify relatives is offered by
+the work on Nancy Chen \citep[ in collaboration with Stepfanie
+Aguillon, see ][]{chen:16,Aguillon:17}. Nancy has collected genotyping data from thousands of
 Florida Scrub Jays at over ten thousand loci. These Jays live at the
 Archbold field site, and have been carefully monitored for many
 decades allowing the pedigree of many of the birds to be known.
@@ -516,7 +540,12 @@ from the pedigree.
 \begin{center}
 \includegraphics[width= \textwidth]{figures/FSJ_IBD.pdf}
 \end{center}
-\caption{} \label{fig:FSJ_IBD}  
+\caption[3cm]{Estimated coefficient
+of kinship from Florida Scrub Jays. Each point is a pair of
+individuals, plotted at $r_1$ and $r_2$ from their genetic data, the
+points are coloured by their known pedigree relationships. Note that
+most pairs have low kinship, and no recent genealogical relationship,
+and so appear as black points in the lower left corner. } \label{fig:FSJ_IBD}  
 \end{figure}
 
 
