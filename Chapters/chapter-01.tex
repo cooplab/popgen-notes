@@ -543,22 +543,33 @@ most pairs have low kinship, and no recent genealogical relationship,
 and so appear as black points in the lower left corner. Thanks to Nancy Chen for supplying the data.} \label{fig:FSJ_IBD}  
 \end{figure}
 
-
-\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. (If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here.) 
+\paragraph{Sharing of genomic blocks among relatives.}
+\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
 
 }
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/First_cousin_overlap.pdf}
+\includegraphics[width= \textwidth]{figures/sharing_relatives/First_cousin_overlap.pdf}
 \end{center}
 \caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are 
-coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. Details about how we made these simulations here.
+coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations here.
 } \label{fig:first_cousin_IBD}  
 \end{figure}
 
 
-You and your first cousin by share will share at least one allele of your genotypes in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to  
+\gc{You and your first cousin by share will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to identify unknown relatives in gneotyping datasets. This is how companies like 23\&me and Ancestry.com  
+
+As another example consider consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and your third cousin each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin’s genomes($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors.Here’s a simulated example where third cousins share some blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother:
+}
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/sharing_relatives/Third_cousin_overlap_1.pdf}
+\end{center}
+\caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are 
+coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations here.
+} \label{fig:third_cousin_IBD}  
+\end{figure}
 
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
