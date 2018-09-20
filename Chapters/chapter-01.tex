@@ -5,10 +5,10 @@
 \chapter{Allele and genotype frequencies}
  In this chapter we will
 work through how the basics of Mendelian genetics play out at the population
-level in sexually reproducing organisms.The genome of an individual is formed from two gametes that fused to form a zygote. In turn, the genomes of each gamete originate from a parental genome through meiosis, in particular the segregation
-and recombination of the parental genome's two gametes. 
-Loci and alleles are the basic currency of population genetics--and indeed of
-genetics. Each individual's genetic makeup is defined in their genome. \marginnote[-1cm]{A
+level in sexually reproducing organisms.
+
+	Loci and alleles are the basic currency of population genetics--and indeed of
+genetics. \marginnote[-1cm]{A
 \emph{locus} (plural: \emph{loci}) is a specific spot in the genome. A locus
 may be an entire gene, or a single nucleotide base pair such as A-T. At each
 locus, there may be multiple genetic variants segregating in the
@@ -20,27 +20,27 @@ that this locus is \emph{polymorphic} (this is sometimes referred to
 as a segregating site).
 
 Table \ref{Table:ADH} show a small stretch orthologous sequence for
-the ADH from samples from {\it Drosophila melanogaster},  {\it D. simulans},
+the ADH locus from samples from {\it Drosophila melanogaster},  {\it D. simulans},
 and {\it D. yakuba}.  {\it D. melanogaster} and {\it D. simulans} are
-sister species, with  {\it D. yakuba} being close outgroup to the two.  Each column represents a single haplotype from an
+sister species and  {\it D. yakuba} is a close outgroup to the two.  Each column represents a single haplotype from an
 individual (the individuals are diploid but were inbred so they're
 homozygous for their haplotype). Only sites that differ among
 individuals of the three species are shown. Site $834$ is an example
-of a polymophism, some  {\it D. simulans} individuals carry a $C$
+of a polymophism; some  {\it D. simulans} individuals carry a $C$
 allele while others have a $T$. {\emph Fixed differences}  are sites that differ between the species but are monomorphic within
-  the species. For example site $781$ is a fixed difference between
+  the species. Site $781$ is an example of a fixed difference between
   {\it D. melanogaster} and the other two species. 
 
 
-We can also annotate the alleles and loci in various ways. For example position
+We can also annotate the alleles and loci in various ways. For example, position
 $781$ is a non-synonymous fixed difference. We call the less common
 allele at a polymorphism the  {\emph minor allele} and the common
 allele the {\emph major allele}, e.g. at site $1068$ the $T$ allele is the
-minor allele in {\it D. melanogaster}. We call the more evolutionary
+minor allele in {\it D. melanogaster}. We call the more evolutionarily
 recent of the two alleles the {\emph derived allele} and the older of
-the two the {\emph ancestral allele}. The $T$ allele at our site is
+the two the {\emph ancestral allele}. The $T$ allele at site 1068 is
 the derived allele as the $C$ is found in both the other species,
-suggesting that the $T$ allele arose via a $C \leftarrow T$ mutation.
+suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
 
@@ -50,15 +50,15 @@ suggesting that the $T$ allele arose via a $C \leftarrow T$ mutation.
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
   \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.  
-The first column (pos.) gives the position in the gene, exon 2 begins at
+The first column (pos.) gives the position in the gene; exon 2 begins at
 position 778 and exon 3 begins at position 942.
 The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
 (a-l) are from {\it D. melanogaster};
-    the next columns (a-f) give sequences from {\it D. simulans}, the final 
- set of cloumns (a-l ) from {\it D. yakuba}. The last column shows
- whether the difference is a non-synonymous (N) or synonymous change. }  % I've dropped the
+    the next columns (a-f) give sequences from {\it D. simulans}, and the final 
+ set of columns (a-l ) from {\it D. yakuba}. The last column shows
+ whether the difference is a non-synonymous (N) or synonymous (S) change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
   \label{Table:ADH}
 \end{table*}
@@ -75,7 +75,7 @@ the consensus are marked with a dash.  The first columns of sequence
 Allele frequencies are a central unit of population genetics
 analysis, but from diploid individuals we only get to observe genotype
 counts. Our first task then is to calculate allele frequencies from
-genotype counts. Consider a diploid autosomal locus segregating at two alleles ($A_1$ and
+genotype counts. Consider a diploid autosomal locus segregating for two alleles ($A_1$ and
 $A_2$). We'll use these arbitrary labels for our alleles, merely to keep this
 general. Let $N_{11}$ and $N_{12}$ be the number of $A_1A_1$ homozygotes and
 $A_1A_2$ heterozygotes, respectively. Moreover, let $N$ be the total number of
@@ -96,11 +96,11 @@ then just $q=1-p$.
 \paragraph{Nucleotide diversity ($\pi$)}
 One common measure of genetic diversity is the average number of single
 nucleotide differences between haplotypes chosen at random from a
-sample. This is called Nucleotide diversity and often denoted by
+sample. This is called {\emph nucleotide diversity} and is often denoted by
 $\pi$. 
-For our example, for our ADH locus, Table \ref{Table:ADH}, we have
-6 sequences in {\it D. simulans}  (a-f), there's a total of 15 ways of pairing
-the sequences, and 
+For example, we can calculate $\pi$ for our ADH locus from Table \ref{Table:ADH} above: we have
+6 sequences from {\it D. simulans}  (a-f), there's a total of 15 ways of pairing
+these sequences, and 
 \begin{equation}
 \pi=\frac{1}{15} \big( (2 + 1 + 1 + 1 + 0 ) + (3 + 3 + 3 + 2 ) +(0 + 0 + 1) + (0 + 1) + (1)  \big)=1.2\overline{6}
 \end{equation}
@@ -111,13 +111,12 @@ and so on. \\
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
 to be a per site (or per base) measure. 
-
+\erin{would be nice to put in per pb pi for ADH locus here but I don't know how long it is..}
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
 that are polymorphic (segregating) in our sample. One issue is that
 the number of segregating sites will grow as we sequence more
-individuals (unlike $\pi$), we'll talked about how to standardize the
-number of segregating sites for the number of individuals sequenced
-later in the notes (see eqn \eqref{watterson_theta}).
+individuals (unlike $\pi$). Later in the course, we'll talk about how to standardize the
+number of segregating sites for the number of individuals sequenced (see eqn \eqref{watterson_theta}).
 
 \paragraph{The frequency spectrum.}
 We also often want to compile information about the frequency of
@@ -137,13 +136,13 @@ How many minor-allele singletons are there in {\it D. simulans}?
 Two observations have puzzled population geneticists since the
 inception of molecular population genetics. The first is the relatively high
 level of genetic variation observed in most obligately sexual species.  
-This first observation, in part, drove the devleopment of the Neutral
+This first observation, in part, drove the development of the Neutral
 theory of molecular evolution, the idea that much of this molecular
 polymorphism may simply reflect a balance between genetic drift and
 mutation. 
 The second observation is the relatively narrow range of
 polymorphism across species with vastly different census sizes. This
-observation represented puzzle as Neutral theory predicts that
+observation represented a puzzle as Neutral theory predicts that
 levels of genetic diversity should scale population size. Much effort
 in theoretical and empirical population genetics has been devoted to
 trying to reconcile models with these various observations. We'll
@@ -158,13 +157,12 @@ return to discuss these ideas throughout our course.
 \end{marginfigure}
 
 
-These observations were first raised from surveys of allozyme data within
-natural populations but we can revisit them with modern data. For
+The first observations of genetic diversity within natural populations were made from surveys of allozyme data, but we can revisit these general patterns with modern data. For
 example, \citet{leffler:12} compiled data on levels of within-population,
 autosomal nucleotide diversity ($\pi$) for 167 species across 14 phyla from
-non-coding or synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
+non-coding and synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
 $\pi$ in their survey was Lynx, with $\pi = 0.01\%$, i.e. only
-$1/10000$ bases differed between two sequences. While the some of the highest levels of
+$1/10000$ bases differed between two sequences. In contrast, some of the highest levels of
 diversity were found in {\it Ciona savignyi}, Sea Squirts, where a remarkable
 $1/12$ bases differ between pairs of sequences. This $800$-fold range of
 diversity seems impressive, but census population sizes have a much
