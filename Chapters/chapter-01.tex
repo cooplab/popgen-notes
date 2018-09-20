@@ -51,7 +51,7 @@ suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
   \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.  
 The first column (pos.) gives the position in the gene; exon 2 begins at
-position 778 and exon 3 begins at position 942.
+position $778$ and we've truncated the dataset at site $1175$.
 The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
@@ -110,8 +110,9 @@ and so on. \\
 
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
-to be a per site (or per base) measure. 
-\erin{would be nice to put in per pb pi for ADH locus here but I don't know how long it is..}
+to be a per site (or per base) measure. \gc{For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous), to do that we we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.\sidenote{More technically we need to divide by the total number of one point mutations changes that would result in a synonymous change, this is because some mutational changes at a particular site will result in a N or S change depending on the base-pair change.}} 
+%\erin{would be nice to put in per pb pi for ADH locus here but I don't know how long it is..}
+
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
 that are polymorphic (segregating) in our sample. One issue is that
 the number of segregating sites will grow as we sequence more
@@ -148,7 +149,7 @@ in theoretical and empirical population genetics has been devoted to
 trying to reconcile models with these various observations. We'll
 return to discuss these ideas throughout our course.
 
-\begin{marginfigure}
+\begin{marginfigure}[-1cm]
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Ciona_intestinalis/21016139168_2a8a57ded3_z.jpg}
 \end{center}
@@ -157,7 +158,16 @@ return to discuss these ideas throughout our course.
 \end{marginfigure}
 
 
-The first observations of genetic diversity within natural populations were made from surveys of allozyme data, but we can revisit these general patterns with modern data. For
+The first observations of molecular genetic diversity within natural populations were made from surveys of allozyme data, but we can revisit these general patterns with modern data. \\
+\begin{figure*}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/alleles_genotypes/Leffer_riddle/Leffer_riddle_diversity.png}
+\end{center}
+\caption{Levels of autosomal nucleotide diversity for 167
+species across 14 phyla. Figure 1 from \citet{leffler:12}. Points are
+ranked by their $\pi$, and coloured by their phylum. Note the log-scale.} \label{fig:Leffer}
+\end{figure*}
+For
 example, \citet{leffler:12} compiled data on levels of within-population,
 autosomal nucleotide diversity ($\pi$) for 167 species across 14 phyla from
 non-coding and synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
@@ -167,34 +177,27 @@ diversity were found in {\it Ciona savignyi}, Sea Squirts, where a remarkable
 $1/12$ bases differ between pairs of sequences. This $800$-fold range of
 diversity seems impressive, but census population sizes have a much
 larger range.   
-\begin{figure*}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/alleles_genotypes/Leffer_riddle/Leffer_riddle_diversity.png}
-\end{center}
-\caption{Levels of autosomal nucleotide diversity for 167
-species across 14 phyla. Figure 1 from \citet{leffler:12}. Points are
-ranked by their $\pi$, and coloured by their phylum. Note the log-scale.} \label{fig:Leffer}
-\end{figure*}
 
-
-\subsection{Hardy--Weinberg proportions}
-Imagine a population mating at random with respect to genotypes, i.e. no
-inbreeding, no assortative mating, no population structure, no sex differences
-in allele frequencies. The frequency of allele $A_1$ in the population at the
-time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into
-our population and independently drawing two $A_1$ allele gametes to form a
-zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote
-is $p^2$. This probability is also the expected frequency of the $A_1A_1$
-homozygote in the population. The expected frequency of the three possible
-genotypes is
-
-\begin{marginfigure}
+\begin{marginfigure}[1cm]
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
 \end{center}
 \caption{Eurasian Lynx ({\it Lynx lynx}). An introduction to the study
   of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.} \label{fig:Lynx}
 \end{marginfigure}
+
+\subsection{Hardy--Weinberg proportions}
+Imagine a population mating at random with respect to genotypes, i.e. no
+inbreeding, no assortative mating, no population structure, and no sex differences
+in allele frequencies. The frequency of allele $A_1$ in the population at the
+time of reproduction is $p$. An $A_1A_1$ genotype is made by reaching out into
+our population and independently drawing two $A_1$ allele gametes to form a
+zygote. Therefore, the probability that an individual is an $A_1A_1$ homozygote
+is $p^2$. This probability is also the expected frequencies of the $A_1A_1$
+homozygote in the population. The expected frequency of the three possible
+genotypes are
+
+
 %\begin{table}[htp!]
 \begin{center}
 \begin{tabular}{ccc}
@@ -206,16 +209,14 @@ $p^2$ & $2pq$ & $q^2$ \\
 \end{center}
 %\caption{\textbf{Hardy Weinberg}} \label{table:HWE}
 %\end{table}
-Note that we only need to assume random mating with
-respect to our alleles in order for these expected frequencies to hold,
-as long at $p$ is the frequency of the $A_1$ allele in the population at
-the time when gametes fuse. 
+Note that we only need to assume random mating with respect to our focal allele in order for these expected frequencies \gc{to hold in the zygotes forming the next generation. Evolutionary forces, such as selection change allele frequencies within generations, but do not change this expectation for new zygotes}, as long as $p$ is the frequency of the $A_1$ allele in the population at the time when gametes fuse.
+%\erin{I wasn't sure what contrast you were getting at here, so may not be a good edit}
 
 \begin{question}
 On the coastal islands of British Columbia there is a subspecies of
 black bear ({\it Ursus americanus kermodei}, Kermode's bear). Many members of this
 black bear subspecies are white; they're sometimes called spirit bears. These
-bears aren't hybrids with polar bears, nor are they albinos, they are
+bears aren't hybrids with polar bears, nor are they albinos. They are
 homozygotes for a recessive change at the MC1R gene. Individuals who
 are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.   
 
@@ -227,8 +228,8 @@ are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
   hemisphere. 1942. Glover A.} \label{fig:Kermodes_bear}
 \end{marginfigure}
 
-Below are the genotype frequencies for the MC1R polymorphism on from a
-sample from British Columbia island populations from \citeauthor{RITLAND:01}. 
+Below are the genotype frequencies for the MC1R polymorphism in a
+sample of bears from British Columbia's island populations from \citeauthor{RITLAND:01}. 
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -247,10 +248,10 @@ frequency of each genotype
 closely match their HW expectations, and much of the scatter of the
 dots around the expected line is due to our small sample size ($\sim
 60$ individuals). While HW often
-seems like a silly model it often holds remarkable well within
-population. This is because individuals don't mate at random, but they
+seems like a silly model, it often holds remarkably well within
+populations. This is because individuals don't mate at random, but they
 do mate at random with respect to their genotype at most of the loci
-in the gneome. 
+in the genome. 
 
 \begin{figure}[!h]
 \begin{center}
@@ -260,25 +261,22 @@ in the gneome.
   from the HapMap European (CEU)  and African (YRI) populations. Within
   each of these populations the allele frequency against the
   frequency of the 3 genotypes; each SNP is represented by 3 different
-  coloured points. The solid lines show the mean genotype frequency. The dashed line shows the
+  coloured points. The solid lines show the mean genotype frequency. The dashed lines show the
   predicted genotype frequency from Hardy--Weinberg
   equilibrium.} \label{fig:HWE_CEU_YRI}  %See \href{blog post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/} here on this plot. 
 \end{figure}
 
 
-\marginnote{
 \begin{question} 
 You are investigating a locus with three alleles, A, B, and C, with
 allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
 population is expected to be homozygotes under Hardy-Weinberg? 
 \end{question}
-}
-
 
 Microsatellites are regions of the genome where individuals vary for
 the number of copies of some short DNA repeat that they carry. These
 regions are often highly variable across individuals, making them
-suitable way to identify individuals from a DNA sample. This
+a suitable way to identify individuals from a DNA sample. This
 so-called DNA-fingerprinting has a range of applications from
 establishing paternity, identifying human remains, to matching
 individuals to DNA samples from a crime scene. The FBI make use of the
@@ -290,7 +288,7 @@ tetranucleotide repeats (since 2017, 20 sites have been genotyped).
 
 The allele counts for two loci (D16S539
 and TH01) are shown in table \ref{table:CODIS_1} and
-\ref{table:CODIS_2} for a sample of 155 people of european ancestry.
+\ref{table:CODIS_2} for a sample of 155 people of European ancestry.
 
 \begin{table}
 {\small
@@ -314,12 +312,11 @@ and TH01) are shown in table \ref{table:CODIS_1} and
 \end{table}
 
 \begin{question} \label{Q:CODIS}
-You extract a DNA sample from a crime scene the genotype is 100/80 for
-D16S539 and 70/93 at TH01.\\
-{\bf A)} You have a suspect in custody, what is the probability
-that their genotype would match this profile by chance (a false match probability). i.e. if it
-wasn't the suspect's DNA at the crime scene?\\
-{\bf B)} The FBI uses $\geq 13$ markers, why is this higher number
+You extract a DNA sample from a crime scene. The genotype is 100/80 at the
+D16S539 locus and 70/93 at TH01.\\
+{\bf A)} You have a suspect in custody. Assuming this suspect is innocent and of European ancestry, what is the probability
+that their genotype would match this profile by chance (a false-match probability)?\\
+{\bf B)} The FBI uses $\geq 13$ markers. Why is this higher number
 necessary to make the match statement convincing evidence in court?\\
 {\bf C)}  An early case that triggered debate among forensic geneticists was a crime among the Abenaki, a Native American community in
 Vermont \citep[see ][ for discussion]{lewontin:94}. There was a DNA sample from the crime scene, and the
@@ -354,13 +351,12 @@ community. Given that allele frequencies vary among populations, why would peopl
 
 %figure/QT1.eps
 
-
 \section{Allele sharing among related individuals and Identity by Descent}
 
 All of the individuals in a population are related to each other by a giant
 pedigree (family tree). For most pairs of individuals in a population these
-relationships are very distant (i.e. distant cousins), while some individuals
-will be more closely related (i.e. sibling/first cousins). All individuals of
+relationships are very distant (e.g. distant cousins), while some individuals
+will be more closely related (e.g. sibling/first cousins). All individuals
 are related to one another by varying levels of relatedness, or \emph{kinship}.
 Related individuals can share alleles that have both descended from the shared
 common ancestor. To be shared, these alleles must be inherited through all
@@ -397,10 +393,10 @@ One summary of how related two individuals are is the probability that our pair
 of individuals share 0, 1, or 2 alleles identical by descent (see Figure
 \ref{fig:IBD_0_1_2}). We denote these probabilities by $r_0$, $r_1$, and $r_2$
 respectively. See Table \ref{table:IBDprobs} for some examples. We can also
-interpret these probabilities as genome-wide averages. For example, on average,
-full-sibs share zero alleles for a quarter of all of their autosomal loci.\\
+interpret these probabilities as genome-wide averages. For example, on average, at a quarter of all their autosomal loci 
+full-sibs share zero alleles identical by descent.\\
 
-\begin{marginfigure}
+\begin{marginfigure}[-1cm]
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf} 
 \end{center}
@@ -425,7 +421,7 @@ The coefficient of kinship will appear multiple times, in both our discussion of
 inbreeding and in the context of phenotypic resemblance between relatives.\\
 
 
-\begin{margintable}
+\begin{table}
 \begin{center}
 \begin{tabular}{ l c c c c}
 \hline
@@ -441,7 +437,7 @@ $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
 identical by descent on the autosomes. $^{*}$Assuming this is the only close relationship the pair shares. } % doesn't this implicitly assume an infinite population?
 \label{table:IBDprobs}
-\end{margintable}
+\end{table}
 
 \begin{question}
   What are $r_0$, $r_1$, and $r_2$ for $\nicefrac{1}{2}$ sibs? ($\nicefrac{1}{2}$ sibs share one
@@ -451,39 +447,41 @@ parent but not the other).
 %Question 5. Consider a biallelic locus where allele 1 is at fre- quency p, and two individuals who have IBD allele sharing probabili- ties r0, r1, r2.
 %What is the overall probability that these two individuals are both homozygous for allele 1?
 
-Our $r$ coefficients are going to have a various uses. For example, they allow us
+Our $r$ coefficients are going to have various uses. For example, they allow us
 to calculate the probability of the genotypes of a pair of
 relatives. Consider a biallelic locus where allele 1 is
 at frequency $p$, and two individuals who have IBD allele sharing
 probabilities $r_0$, $r_1$, $r_2$. What is the overall probability that these
 two individuals are both homozygous for allele 1? Well that's
 \begin{align}
-  P(A_1 A_1) = &P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
-  & + P(A_1 A_1 | \text{1 alleles IBD}) P(\text{1 alleles IBD})  \nonumber\\
+  P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
+  & + P(A_1 A_1 | \text{1 allele IBD}) P(\text{1 allele IBD})  \nonumber\\
   &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD}) \\
 \end{align}
-in our $r_0$, $r_1$, $r_2$ notation
+Or, in our $r_0$, $r_1$, $r_2$ notation:
 \begin{align}
-  P(A_1 A_1) = P(A_1 A_1 | \text{0 alleles IBD}) r_0 + P(A_1 A_1 |
-  \text{1 alleles IBD}) r_1 + P(A_1 A_1 | \text{2 alleles IBD}) r_2 \label{eqn:initial_relly_IBD_calc}
+  P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) r_0  \nonumber\\
+  & + P(A_1 A_1 |
+  \text{1 alleles IBD}) r_1  \nonumber\\
+  & + P(A_1 A_1 | \text{2 alleles IBD}) r_2 \label{eqn:initial_relly_IBD_calc}
 \end{align}
 If our pair of relatives share $0$ alleles IBD, then the probability that
-they are both homozygote is $P(A_1 A_1 |
+they are both homozygous is $P(A_1 A_1 |
 \text{0 alleles IBD}) =p^2 \times p^2$, as all four alleles
 represent independent draws from the population. If they share $1$
-allele IBD, then this is of type $A_1$ with probability $p$, and then
+allele IBD, then the shared allele is of type $A_1$ with probability $p$, and then
 the other non-IBD allele, in both relatives, also needs
-to be $A_1$ which happens with probability $p^2$ so $P(A_1 A_1 |
-\text{1 alleles IBD})=p \times p^2$. Finally our pair of relatives can
-share two alleles IBD, in that case $P(A_1 A_1 | \text{2 alleles IBD})
-= p^2$ as if one of our individuals is homozygote for the $A_1$ allele
-both individuals will be. Putting this all together our
+to be $A_1$ which happens with probability $p^2$, so $P(A_1 A_1 |
+\text{1 alleles IBD})=p \times p^2$. Finally, our pair of relatives can
+share two alleles IBD, in which case $P(A_1 A_1 | \text{2 alleles IBD})
+= p^2$, because if one of our individuals is homozygous for the $A_1$ allele,
+both individuals will be. Putting this all together our equation 
 \eqref{eqn:initial_relly_IBD_calc} becomes 
 \begin{equation}
 P(A_1 A_2) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
 \end{equation}
-Note that  for specific cases we could also calculate this by summing over the
-genotypes of their shared ancestor was; however, that would be much more
+Note that for specific cases we could also calculate this by summing over all the
+possible genotypes their shared ancestor(s) had; however, that would be much more
 involved and not as general as the form we have derived here.
 
 We can write out terms like eq \eqref{eqn:IBD_relly_calc} for all of
@@ -497,7 +495,7 @@ The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
 D16S539 and 70/80 at TH01. The suspect is not a match to the DNA
 from the crime scene; however, they could be a sibling.
 
-Calculate the joint probability of the genotype from the  crime and our
+Calculate the joint probability of observing the genotype from the crime and our
 suspect:\\
 {\bf A)} Assuming that they share no close relationship.\\
 
@@ -518,34 +516,49 @@ suspect:\\
   
 There's a variety of ways to estimate the relationships among
 individuals.  An example of using allele sharing to identify relatives is offered by
-the work on Nancy Chen \citep[ in collaboration with Stepfanie
-Aguillon, see ][]{chen:16,Aguillon:17}. Nancy has collected genotyping data from thousands of
+the work of Nancy Chen \citep[in collaboration with Stepfanie
+Aguillon, see ][]{chen:16,Aguillon:17}. \citeauthor{chen:16} has collected genotyping data from thousands of
 Florida Scrub Jays at over ten thousand loci. These Jays live at the
 Archbold field site, and have been carefully monitored for many
 decades allowing the pedigree of many of the birds to be known.
-Using these data she could estimate allele frequencies at each
+Using these data she estimates allele frequencies at each
 locus. Then by equating the observed number of times that a pair of
 individuals share $0$, $1$, or $2$ alleles to the theoretical
-expectation she can estimate the probability of $r_0$, $r_1$, and
+expectation, she estimates the probability of $r_0$, $r_1$, and
 $r_2$ for each pair of birds. A plot of these are shown in Figure
 \ref{fig:FSJ_IBD}, showing how well the estimates match those known
 from the pedigree.
-
 %\end{question}
 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{figures/FSJ_IBD.png}
+\includegraphics[width= 0.75 \textwidth]{figures/FSJ_IBD.png}
 \end{center}
 \caption[3cm]{Estimated coefficient
 of kinship from Florida Scrub Jays. Each point is a pair of
-individuals, plotted at $r_1$ and $r_2$ from their genetic data, the
+individuals, plotted by their estimated IBD ($r_1$ and $r_2$) from their genetic data. The
 points are coloured by their known pedigree relationships. Note that
 most pairs have low kinship, and no recent genealogical relationship,
-and so appear as black points in the lower left corner. } \label{fig:FSJ_IBD}  
+and so appear as black points in the lower left corner. Thanks to Nancy Chen for supplying the data.} \label{fig:FSJ_IBD}  
 \end{figure}
 
+
+\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. (If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here.) 
+
+}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/First_cousin_overlap.pdf}
+\end{center}
+\caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are 
+coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. Details about how we made these simulations here.
+} \label{fig:first_cousin_IBD}  
+\end{figure}
+
+
+You and your first cousin by share will share at least one allele of your genotypes in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to  
 
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
@@ -625,7 +638,7 @@ specify the genotype probabilities, as there are two parameters ($p$ and $F$)
 and two degrees of freedom (as $p$ and $q$ have to sum to one).
 Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
-\marginnote{
+
 \begin{question}
 The frequency of the $A_1$ allele is $p$ at a biallelic locus. Assume that our population is randomly mating and that the
 genotype frequencies in the population follow from HW. We select two
@@ -634,7 +647,7 @@ from this cross. What is the probability that the child from this full
 sib-mating is
 homozygous? 
 \end{question}
-}
+
 \subsection{Calculating inbreeding coefficients from data}
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
@@ -647,21 +660,6 @@ the inbreeding coefficient as
 \label{eqn:Fhat}
 \end{equation}
 
-\marginnote{
-\begin{question} 
-  Suppose the following genotype frequencies were observed for at an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
-\begin{center}
-\begin{tabular}{ccc}
-\hline
-AA &	AB &	BB\\
-\hline
-0.6 &	0.2 &	0.2\\
-\end{tabular}
-\end{center}
-What is the estimate of the inbreeding coefficient at the esterase locus?
-\end{question}
-}
-
 As before, $p$ is the frequency of allele $A_{1}$ in the population. This can
 be rewritten in terms of the observed heterozygosity ($H_O$) and the
 heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
@@ -673,6 +671,19 @@ Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed hete
 If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
 
+\begin{question} 
+  Suppose the following genotype frequencies were observed for an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+AA &	AB &	BB\\
+\hline
+0.6 &	0.2 &	0.2\\
+\end{tabular}
+\end{center}
+What is the estimate of the inbreeding coefficient at the esterase locus?
+\end{question}
+
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
 %==Phenotypic resemblance between relatives ==
@@ -683,7 +694,7 @@ over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, w
 
 
 \section{Summarizing population structure}
-\newthought{Individuals rarely mate complete at random}, your parents
+\newthought{Individuals rarely mate completely at random}; your parents
 weren't two Bilateria plucked at random from the tree of
 life. Even within species, there's often geographically-restricted
 mating among individuals. Individuals tend to mate with individuals
@@ -768,7 +779,7 @@ where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above). \\
-
+\erin{I might just add a footnote that it's improper to just avg. Fst across loci, citing Bhatia .. not for the undergraduates so much as the random graduate students who read your open notes as a reference}
 
 \begin{marginfigure}
 \begin{center}
@@ -785,10 +796,10 @@ Northern America, with the golden-winged warbler having a smaller, more
 northernly range. They're quite different in terms of plumage, but
 have long been known to have similar songs and ecologies. The two species
 hybridize readily in the wild; in fact two other previously-recognized species, Brewster's
-and Lawrence’s warbler (4 \& 3 in \ref{fig:blue_golden_warblers}), actually just being hybirds between theses two species. 
+and Lawrence's warbler (4 \& 3 in \ref{fig:blue_golden_warblers}), are actually found to just be hybirds \erin{is this pun on purpose? amazing!} between theses two species. 
 The golden-winged warbler is listed as `threatened' under the Canadian
-endangered species act, its habitat is under pressure for human activity
-and hybrization with the blue warbler as it moves north also poses a
+endangered species act. The golden-winged warbler's habitat is under pressure from human activity
+and increased hybridization with the blue warbler, which is moving north into its range, also poses a
 significant issue. \citeauthor{Toews:16} investigated the population
 genomics of these warblers, sequencing ten golden- and ten blue-winged
 warblers. They found very low divergence among these species, with a
@@ -805,7 +816,7 @@ out. Nearly all of these regions correspond to large allele frequency
 difference at loci in, or close, to genes known to be involved in
 plumage colouration difference in other birds.  
 To illustrate these frequency differences \citeauthor{Toews:16}
-genotyped a SNP in each of this high-$F_{ST}$ regions. Here's their
+genotyped a SNP in each of these high-$F_{ST}$ regions. Here's their
 geotyping counts from the SNP in the {\it Wnt}
 region, a key regulatory gene involved in feather development:
 \begin{center}
@@ -819,11 +830,11 @@ Golden-winged & 48 & 12 & 1\\
 \end{center}
 
 \begin{question}
-With reference to the table of {\it Wnt}-allele frequency:\\
+With reference to the table of {\it Wnt}-allele frequencies:\\
 {\bf A)} Calculate $F_{IS}$ in blue-winged warblers.\\
 {\bf B)} Calculate $F_{ST}$ for the sub-population of blue-winged
 warblers compared to the combined sample.\\
-{ \bf C)} Calculate $F_{ST}$ for both sub-populations.
+{ \bf C)} Calculate mean $F_{ST}$ across both sub-populations. \erin{is this what you meant?}
 \end{question}
 
 \paragraph{Interpretations of F-statistics}
@@ -862,7 +873,7 @@ write
 \end{equation}
 which shows that $\fst$ is the proportion of the variance explained by the
 subpopulation labels.
-
+\erin{should there be a bar (avg) over Var(pi)?}
 \subsection{Other approaches to population structure}
 
 There is a broad spectrum of methods to describe patterns of population
@@ -894,7 +905,7 @@ allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by
 $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
 p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
 
-You type a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
+You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is 
 \begin{equation}
@@ -906,14 +917,14 @@ p_{k,l}^2  & g_l=2
 \end{cases}
 \end{equation}
 
-Assuming that the loci are independent, the probability of individual's genotypes conditional on them coming from population $k$ is 
+Assuming that the loci are independent, the probability of the individual's genotype across all S loci, conditional on the individual coming from population $k$, is 
 \begin{equation}
 P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}
 \end{equation}
 
 % TODO: deleted "new" in bayes -- this is confusing I think for students
 We wish to know the probability that this new individual comes from population
-$k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes
+$k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes'
 rule 
 
 \begin{equation}
@@ -924,7 +935,7 @@ where
 P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})
 \end{equation}
 is the normalizing constant. We interpret $P(\textrm{pop k})$ as the
-prior probability of the individual coming from population $k$, unless
+prior probability of the individual coming from population $k$, and unless
 we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.  
 
 We interpret 
@@ -961,18 +972,19 @@ Eastern  & $0.95$ & $0.2$ \\
 first locus and $bb$ at the second. What is the posterior probability that our
 individual comes from the Western population versus Eastern chimp population?\\[1 em]
 %
-{\bf B)} Lets assume that with probability $q_W$ our individual draws an allele
-from the Western population and that with probability $q_C=1-q_W$ they draw an
+{\bf B)} Lets assume that our individual is a hybrid. At each locus, with probability $q_W$ our individual draws an allele
+from the Western population and with probability $q_C=1-q_W$ they draw an
 allele from the Eastern population. What is the probability of our individual's
 genotype given $q_C$? \\
 
+
 {\bf Optional} You could plot this probability as a function of $q_W$. How does 
-your plot change if our individual is heterozygote at both loci?
+your plot change if our individual is heterozygous at both loci?
 \end{question} 
 
 \paragraph{Clustering based on assignment methods}
 
-While it is great to be able to assign our individuals to particular
+While it is great to be able to assign our individuals to a particular
 population, these ideas can be pushed to learn about how best to describe our
 genotype data in terms of discrete populations without assigning any of our
 individuals to populations {\it a priori}.  We wish to cluster our individuals
@@ -983,16 +995,16 @@ to these $K$ populations.
 \item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
 \end{enumerate}
 We iterate steps 1 and 2 for many iterations (technically, this approach is known as \emph{Gibbs Sampling}). If the data is
-sufficiently informative the assignments and allele frequencies will
+sufficiently informative, the assignments and allele frequencies will
 quickly converge on a set of likely population assignments and allele
 frequencies for these populations. 
 
 To do this in a full Bayesian scheme we need to place priors on the allele
 frequencies (for example, one could use a beta distribution prior). Technically
-we are using this is the joint posterior of our allele frequencies and
+we are using the joint posterior of our allele frequencies and
 assignments. Programs like STRUCTURE, use this type of algorithm to
 cluster the individuals in an ``unsupervised'' manner (i.e. they work
-out how to assign individuals to unknown set of populations).  See Figure \ref{fig:chimp_structure} for an example of
+out how to assign individuals to an unknown set of populations).  See Figure \ref{fig:chimp_structure} for an example of
 Becquet {\it et al}  using STRUCTURE to determine the population structure of chimpanzees. 
 
 \begin{figure}
@@ -1017,9 +1029,9 @@ born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals
 \end{figure}
 
 \subsection{Principal components analysis}
-Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to  of each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
+Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
   with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
-pioneered by Cavalli-Sforza and colleagues and With large genotyping datasets PCA has made come back. \cite{menozzi:78,patterson:06}
+pioneered by Cavalli-Sforza and colleagues and \erin{fragmented sentence. also overlapping text in margin can't be read} With large genotyping datasets PCA has made come back. \cite{menozzi:78,patterson:06}
 % TODO: citations.
  
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
@@ -1028,30 +1040,30 @@ $g_{i,\ell}=0,1,\; \text{or} \; 2$ (corresponding to the number of copies of
 allele $A_1$ an individual carries at this SNP). We can think of this as a $N
 \times S$ matrix (where usually $N \ll S$). 
 
-Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$ it's
+Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
 \frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}} \end{equation} i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
 ($2\epsilon_{\ell}$) and divide through by the expected variance assuming that
 alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
-  (1-p_{\ell})}$). Doing this to all of our genotypes we form a data matrix (of
+  (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
   this data matrix to uncover the major axes of genotype variance in our
-  sample. Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
+  sample. \erin{figure missing!} Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
   (2007) using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
 It is worth taking a moment to delve further into what we are doing
-here. There's a number of equivalent ways to thinking about what PCA
-is doing, one of these is to think that when we do PCA we are building the individual by individual
-covariance matrix and performing eigenvalue decomposition of this
-matrix (with the eigenvectors giving the PC).  This individual by individual covariance matrix has entries
-the $(i,~j)^{th}$ entry given by
+here. There's a number of equivalent ways of thinking about what PCA
+is doing. One of these ways is to think that when we do PCA we are building the individual by individual
+covariance matrix and performing an eigenvalue decomposition of this
+matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
+the $[i,~j]$ given by
 \begin{equation}
 \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
 \end{equation}
-note that this is the covariance, is very similar to those we
+Note that this is the covariance, and is very similar to those we
 encountered in discussing $F$-statistics as correlations (equation
-\eqref{eqn:Fascorr}), expect now we are asking about the allelic covariance
+\eqref{eqn:Fascorr}), except now we are asking about the covariance
 between two individuals above that expected if they were both drawn
 from the total sample at random (rather than the covariance of alleles
 within a single individual). So by performing PCA on the data we are
@@ -1063,7 +1075,7 @@ learning about the major (orthogonal) axes of the kinship matrix.
     \caption{  }
 \label{fig:warbler_geo}
 \end{figure}
-
+\erin{figures need captions, clearly you're still working on it}
 
 \begin{figure}
 \includegraphics[width=
@@ -1133,16 +1145,16 @@ Let us consider a heterozygous individual, containing $AB$ and $ab$ haplotypes.
 If no recombination occurs between our two loci in this individual, then these
 two haplotypes will be transmitted intact to the next generation. While if a
 recombination (i.e. an odd number of crossing over events) occurs between the
-two parental haplotypes, then $\nicefrac{1}{2}$ the time the child receives a
-$Ab$ haplotype and $\nicefrac{1}{2}$ the time the child receives a $aB$
+two parental haplotypes, then $\nicefrac{1}{2}$ the time the child receives an
+$Ab$ haplotype and $\nicefrac{1}{2}$ the time the child receives an $aB$
 haplotype. Effectively, recombination breaks up the association between loci.
 We'll define the recombination fraction ($r$) to be the probability of an odd
-number of crossing over events between our loci. In practice we'll often be
+number of crossing over events between our loci \ec{in a single meiosis}. In practice we'll often be
 interested in relatively short regions such that recombination is relatively
 rare, and so we might think that $r=r_{BP}L \ll 1$, where $r_{BP}$ is the
 average recombination rate per base pair (typically $\sim 10^{-8}$) and L is
 the number of base pairs separating our two loci.\\
-
+\erin{should it maybe be 1/2 as the right side <<1/2 because that's the limit}
 
 \paragraph{Linkage disequilibrium}
 
@@ -1150,7 +1162,7 @@ The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
 alleles in a population at different loci. Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
-frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype is $p_{AB}$,
+frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
 We can define a covariance between the $A$ and $B$ alleles at our two loci as
@@ -1196,7 +1208,7 @@ Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
 
 {\bf A)} How much LD is there within populations, i.e. estimate D?\\
 
-{\bf B)} If we mixed the two populations together in equal proportions what value would D take before any mating has had the chance to occur? \\
+{\bf B)} If we mixed the two populations together in equal proportions, what value would D take before any mating has had the chance to occur? \\
 \end{question}
 
 
@@ -1217,7 +1229,7 @@ allele frequencies of the two loci involved. One common way to
 partially remove this dependence, and make it more comparable across
 loci, is to divide $D$ through by its the maximum possible value given
 the frequency of the loci. This normalized statistic is called
-$D^{\prime}$ and vaies between $+1$ and $-1$. In Figure
+$D^{\prime}$ and varies between $+1$ and $-1$. In Figure
 \ref{fig:TAPS_hotspot} there's an example of LD across the TAP2 region
 in human and chimp. Notice how physically close SNPs, i.e. those close
 to the diagonal, have higher absolute values of $D^{\prime}$ as
@@ -1232,7 +1244,7 @@ Another common statistic for summarizing LD is $r^2$ which we write as
 \begin{equation}
 r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
 \end{equation}
-as $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
+As $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
 drawn at random from locus $A$, $r^2$ is the squared correlation
 coefficient.  Note that this $r$ in $r^2$ is NOT the recombination
 fraction.   \\
@@ -1249,10 +1261,9 @@ fraction.   \\
 Figure \ref{fig:Mouse_LD} shows $r^2$ pairs of SNPs at
 various physical distances in two population samples of {\it Mus musculus
   domesticus}. Again LD is highest between physically close markers as LD is being generated faster than it can be
-decayed via recombination; more distance marker have much lower LD as
-here recombination is winning out. Note how the decay of LD is much
-slower in the advanced-generation cross population, where LD persists
-across megabases. due to the limited number of generations for recombination
+decayed via recombination; more distant markers have much lower LD as
+here recombination is winning out. Note the decay of LD is much
+slower in the advanced-generation cross population than in the natural wild-caught population. This persistence of LD across megabases is due to the limited number of generations for recombination
 since the cross was created.
 
 
@@ -1275,8 +1286,8 @@ Various population genetic forces can generate LD. Selection can generate LD by 
 alleles. Genetic drift will also generate LD, not because particular
 combinations of alleles are favoured, but simply because at random particular
 haplotypes can by chance drift up in frequency. Mixing between
-divergent populations can also generate LD, as we saw in mouse
-Question above. 
+divergent populations can also generate LD, as we saw in the mouse
+question above. 
 
 
 
@@ -1285,7 +1296,7 @@ Question above.
 
 We will now examine what happens to LD over the generations if we
 only allow recombination to occur in a very large population (i.e. no
-genetic drift, i.e. the frequencies of our loci follow their expectations). To do so consider the frequency of our $AB$ haplotype in the next generation
+genetic drift, i.e. the frequencies of our loci follow their expectations). To do so, consider the frequency of our $AB$ haplotype in the next generation,
 $p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
 recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
 haplotypes recombining together to form $AB$ haplotypes. Thus in the
@@ -1293,9 +1304,7 @@ next generation
 \begin{equation}
 p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B
 \end{equation}
-this last term here is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$, which
-multiplying this out is the
-probability of recombination in the different diploid genotypes that
+The last term above is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$ multiplied out, which is the probability of recombination in the different diploid genotypes that
 could generate a $p_{AB}$ haplotype. \\
 
 We can then write the change in the frequency of the $p_{AB}$
@@ -1303,16 +1312,17 @@ haplotype as
 \begin{equation}
 \Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -r p_{AB} + rp_Ap_B = - r D
 \end{equation}
-so recombination will cause a decrease in the frequency of $p_{AB}$ if
+So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
 increase if there is a deficit of $AB$ haplotypes within the
 population ($D<0$). Our LD in the next generation is $D^{\prime} =
-p_{AB}^{\prime}$, so we can rewrite the above eqn. in terms of the
+p_{AB}^{\prime} - p'_{A}p'_{B}$, so we can rewrite the above eqn. in terms of the
 $D^{\prime} $
 \begin{equation}
 D^{\prime}= (1-r) D
 \end{equation}
-so if the level of LD in generation $0$ is $D_0$ the level $t$
+\erin{I think you're skipping too many steps above for students to easily follow, particularly that p'A = pA. I am not sure which 'above eqn.' is being referred to honestly.}
+So if the level of LD in generation $0$ is $D_0$, the level $t$
 generations later ($D_t$) is
 \begin{equation}
 D_t=  (1-r)^t D_0
@@ -1343,17 +1353,17 @@ described in the question above, which appears to be comprised of equal proporti
 
 A particularly striking example of the decay of LD generated by
 the mixing of populations is offered by the LD created by the
-interbreeding on humans and Neanderthals. Neanderthals and modern
+interbreeding between humans and Neanderthals. Neanderthals and modern
 Humans diverged from each other likely over half a million years ago,
 allowing time for allele frequency differences to accumulate between
-the species. The two population spread back into secondary contact, when
+the hominids. \erin{are we calling them species or groups or some other term?} The two populations spread back into secondary contact when
 humans moved out of Africa over the past hundred thousand years or
 so. One of the most exciting findings from the sequencing of the
 Neanderthal genome was that modern-day people with Eurasian ancestry
 carry a few percent of their genome derived from the Neanderthal
 genome, via interbreeding during this secondary contact. To date the timing of this
-interbreeding \citeauthor{Sankararaman:12} looked at the LD in modern
-humans between pairs of alleles found to be derived the Neanderthal
+interbreeding, \citeauthor{Sankararaman:12} looked at the LD in modern
+humans between pairs of alleles found to be derived from the Neanderthal
 genome (and nearly absent from African populations). 
 In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci
 is shown as a function of the genetic distance ($r$) between them from
@@ -1366,16 +1376,17 @@ the works of
 \caption{ } \label{fig:LD_Neanderthal}
 \end{figure}
 
-We can fit the exponential decay of LD with $r$ predicted by eqn \eqref{eqn_LD_decay} to the data points in this figure,
+We can fit the exponential decay of LD with $r$ predicted by eqn \eqref{eqn_LD_decay} to the data points in this figure;
 the fit is shown as a red line. Doing this we estimate $t=1200$
 generations, or about 35 thousand years (using a human generation time of 29
 years). Thus the LD, in modern Eurasians, between alleles derived from
-the interbreeding Neanderthal represents over thirty thousand years of
+the interbreeding Neanderthals represents over thirty thousand years of
 recombination slowly breaking down these old
 associations. \marginnote{The calculation done by
   \citeauthor{Sankararaman:12} is actually a bit more involved as they
 account for inhomogenity in recombination rates and arrive at a date
-of  47,334–63,146 years.}
+of  47,334-63,146 years.}
+\erin{how come sometimes you get weird symbols for things like dash '-'? Also fig. needs caption but you probably know that}
 
 
 
