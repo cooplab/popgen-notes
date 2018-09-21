@@ -694,7 +694,7 @@ What is the estimate of the inbreeding coefficient at the esterase locus?
 
 If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data. 
-As an example of this consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to  heterozygous at $12\%$ of these SNP. Therefore, the average inbreeding coefficient for the lobos is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of their genomes are homozygous due to recent inbreeding. 
+\gc{As an example of this consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to  heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobos is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of their genomes are homozygous due to recent inbreeding in their pedigree. }
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
@@ -790,8 +790,8 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above). \\
-\erin{I might just add a footnote that it's improper to just avg. Fst across loci, citing Bhatia .. not for the undergraduates so much as the random graduate students who read your open notes as a reference}
+$H_T$ with their averages across loci (as above). \sidenote{\gc{Taking the ratio of averages, instead of the average ratio, has better statistical properties as statistical noise in the denominator is averaged out.}}
+
 
 \begin{marginfigure}
 \begin{center}
@@ -808,7 +808,7 @@ Northern America, with the golden-winged warbler having a smaller, more
 northernly range. They're quite different in terms of plumage, but
 have long been known to have similar songs and ecologies. The two species
 hybridize readily in the wild; in fact two other previously-recognized species, Brewster's
-and Lawrence's warbler (4 \& 3 in \ref{fig:blue_golden_warblers}), are actually found to just be hybirds \erin{is this pun on purpose? amazing!} between theses two species. 
+and Lawrence's warbler (4 \& 3 in \ref{fig:blue_golden_warblers}), are actually found to just be hybrids between theses two species. 
 The golden-winged warbler is listed as `threatened' under the Canadian
 endangered species act. The golden-winged warbler's habitat is under pressure from human activity
 and increased hybridization with the blue warbler, which is moving north into its range, also poses a
@@ -846,7 +846,7 @@ With reference to the table of {\it Wnt}-allele frequencies:\\
 {\bf A)} Calculate $F_{IS}$ in blue-winged warblers.\\
 {\bf B)} Calculate $F_{ST}$ for the sub-population of blue-winged
 warblers compared to the combined sample.\\
-{ \bf C)} Calculate mean $F_{ST}$ across both sub-populations. \erin{is this what you meant?}
+{ \bf C)} Calculate mean $F_{ST}$ across both sub-populations.
 \end{question}
 
 \paragraph{Interpretations of F-statistics}
@@ -1022,20 +1022,19 @@ Becquet {\it et al}  using STRUCTURE to determine the population structure of ch
 \begin{figure}
 % TODO: MISSING FIGURE
 \includegraphics[width= \textwidth, height = 0.12 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
-\caption{
-Becquet {\it et al.} (PLOS Genetics 2007) genotyped 78 common chimpanzee and 6 bonobo at
-over 300 polymorphic markers (in this case microsatellites, a type of
-multiallelic marker). They ran STRUCTURE to cluster the individuals
+\caption{ \citet{becquet:07} genotyped 78 common chimpanzee and 6 bonobo at
+over 300 polymorphic markers (in this case microsatellites). They ran STRUCTURE to cluster the individuals
 using these data into $K=4$
 populations. In the above figure they show each individual as a
 vertical bar divided into four colours depicting the estimate of the fraction
 of ancestry that each individual draws from each of the four
 estimated populations. We can see that these four colours/populations correspond to: Red, central; blue, eastern; green,
-western; yellow, bonobo.  In their caption of this figure they say:  
-{\it ``STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
-Individuals 76–-78 are reported hybrids. Only two individuals with a
-$>5\%$ proportion of ancestry in more than one inferred cluster are wild
-born: number 54 and number 17.''}} \label{fig:chimp_structure} % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
+western; yellow, bonobo. } \label{fig:chimp_structure}
+%In their caption of this figure they say:  
+%{\it ``STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
+%Individuals 76–-78 are reported hybrids. Only two individuals with a
+%$>5\%$ proportion of ancestry in more than one inferred cluster are wild
+%born: number 54 and number 17.''}}  % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
 %=======
 %Individuals 76–78 are reported hybrids. Only two individuals with a $>5\%$ proportion of ancestry in more than one inferred cluster are wild born: number 54 and number 17. Red, central; blue, eastern; green, western; yellow, bonobo.''}
 \end{figure}
@@ -1063,6 +1062,33 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   this data matrix to uncover the major axes of genotype variance in our
   sample. \erin{figure missing!} Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
   (2007) using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
+
+% \begin{figure}
+% % TODO: MISSING FIGURE
+% \includegraphics[width=
+%   \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
+%   \caption{ Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
+%     2007) using the same chimpanzee data as in Figure
+%     \ref{fig:chimp_structure}. Here they plot the location of each individual
+%     on the first two principal components (called eigenvectors) in the left
+%     panel, and on the second and third principal components (eigenvectors) in
+%     the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
+%       Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
+%       Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
+%       of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
+%       into populations, with the expected assignments for the 75 individuals
+%       identified as all of one ancestry by STRUCTURE (solid circles). The nine
+%       individuals identified by STRUCTURE as hybrids (open circles) are for the
+%       most part identified as hybrids by PCA as well. There are two individuals
+%       (red open circles) reported as being of a particular population but that
+%       in fact appear to be hybrids: number 23, reported as eastern but in fact
+%     a western-eastern hybrid, and number 54, a wild-born individual reported as
+%   western but in fact a western-central hybrid.''. } Note that PC1 mostly
+%   separates Western chimps from the others, PC2 separates bonobos from all the
+% three groups of common chimpanzee. While PC3 separates the Eastern chimp
+% samples from the others. Note also how the hybrid individuals (open black and
+% red circles) tend to fall intermediate between groups.}
+
 
 It is worth taking a moment to delve further into what we are doing
 here. There's a number of equivalent ways of thinking about what PCA
@@ -1103,31 +1129,6 @@ learning about the major (orthogonal) axes of the kinship matrix.
 \label{fig:warbler_PCA}
 \end{figure}
 
-% \begin{figure}
-% % TODO: MISSING FIGURE
-% \includegraphics[width=
-%   \textwidth]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g002.png}
-%   \caption{ Principal Component Analysis by Becquet {\it et al.} (PLOS Genetics
-%     2007) using the same chimpanzee data as in Figure
-%     \ref{fig:chimp_structure}. Here they plot the location of each individual
-%     on the first two principal components (called eigenvectors) in the left
-%     panel, and on the second and third principal components (eigenvectors) in
-%     the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
-%       Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
-%       Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
-%       of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
-%       into populations, with the expected assignments for the 75 individuals
-%       identified as all of one ancestry by STRUCTURE (solid circles). The nine
-%       individuals identified by STRUCTURE as hybrids (open circles) are for the
-%       most part identified as hybrids by PCA as well. There are two individuals
-%       (red open circles) reported as being of a particular population but that
-%       in fact appear to be hybrids: number 23, reported as eastern but in fact
-%     a western-eastern hybrid, and number 54, a wild-born individual reported as
-%   western but in fact a western-central hybrid.''. } Note that PC1 mostly
-%   separates Western chimps from the others, PC2 separates bonobos from all the
-% three groups of common chimpanzee. While PC3 separates the Eastern chimp
-% samples from the others. Note also how the hybrid individuals (open black and
-% red circles) tend to fall intermediate between groups.}
 
 % \label{fig:chimp_PCA}
 
