@@ -544,10 +544,6 @@ and so appear as black points in the lower left corner. Thanks to Nancy Chen for
 \end{figure}
 
 \paragraph{Sharing of genomic blocks among relatives.}
-\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
-
-}
-
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/sharing_relatives/First_cousin_overlap.pdf}
@@ -556,19 +552,24 @@ and so appear as black points in the lower left corner. Thanks to Nancy Chen for
 coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations here.
 } \label{fig:first_cousin_IBD}  
 \end{figure}
-
-
-\gc{You and your first cousin by share will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to identify unknown relatives in gneotyping datasets. This is how companies like 23\&me and Ancestry.com  
-
-As another example consider consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and your third cousin each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin’s genomes($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors.Here’s a simulated example where third cousins share some blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother:
+\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
 }
+
+
+ 
+
+\gc{You and your first cousin by share will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to identify unknown relatives in genotyping datasets. This is how companies like 23\&me and Ancestry.com  
+
+As another example consider consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and your third cousin each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin’s genomes($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins sharing blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.  
+}
+
+\gc{Note how the third cousins in Figure \ref{fig:third_cousin_IBD} inherit less from their shared great, great grandmother than with their grandmother, as they inherit from more ancestors further back; and how the sharing occurs in shorter genomic blocks, as it has passed through more generations of recombination during meiosis. These blocks are still detectable, and so third cousins can be detected using high-density genotyping chips, lllowing more distant relatives to be identified than single marker methods alone. \sidenote{Indeed the suspect in case of the Golden State Killer was identified through identifying third cousins that genetically matched a DNA sample from an old crime scene (see a \href{https://gcbias.org/2018/05/07/how-lucky-was-the-genetic-investigation-in-the-golden-state-killer-case/}{here} for more details).} More distant relations than third cousins, e.g. fourth cousins, start have a significant probability of sharing none of their genome IBD. But you have many fourth cousins so you will share some of your genome IBD with some of them; however it gets increasingly hard to identify the degree of relatedness from such data the deep in the family tree this sharing goes.}
+
 \begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{figures/sharing_relatives/Third_cousin_overlap_1.pdf}
+\includegraphics[width= \textwidth]{figures/sharing_relatives/Third_cousin_overlap_1.png}
 \end{center}
-\caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are 
-coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations here.
-} \label{fig:third_cousin_IBD}  
+\caption[]{A simulation of sharing between third cousins, the details are the same as in Figure \ref{fig:first_cousin_IBD}.} \label{fig:third_cousin_IBD}  
 \end{figure}
 
 \subsection{Inbreeding}
@@ -577,16 +578,15 @@ more closely related to each other than two random individuals drawn
 from some reference population.  \\
 
 
-\begin{figure}
+\begin{marginfigure}
 \begin{center}
-\includegraphics[width= 0.5 \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
+\includegraphics[width= \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
 \end{center}
 \caption{Alleles being transmitted through an inbred pedigree. The mum and the
   aunt share two alleles identical by descent (IBD). The cousins share one
   allele IBD. The offspring of first cousins is homozygous by
   descent at this locus.} \label{fig:IBD_cousins_cartoon}  
-\end{figure}
-
+\end{marginfigure}
 When two related individuals produce an offspring, that individual can
 receive two alleles that are identical by descent, i.e.\ they
 can be homozygous by descent (sometimes termed autozygous), due to the
@@ -605,7 +605,7 @@ kinship coefficient $F_{ij}$ of the two parents (Eqn.\ \ref{eqn:coeffkinship}). 
 the genotype of the offspring is made by sampling an allele at random from each
 of our parents. % We will use IBD for identical by descent. \\ %% this was already defined above.
 
-\begin{margintable}
+\begin{table}
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -616,8 +616,7 @@ $(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
 \end{tabular}
 \end{center}
 \caption{\textbf{Generalized Hardy--Weinberg}} \label{table:GeneralizedHWE}
-\end{margintable}
-
+\end{table}
 
 The only way the offspring can be heterozygous ($A_1 A_2$) is if their two
 alleles at a locus are not IBD (otherwise they would necessarily be
@@ -679,8 +678,6 @@ heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 \label{eqn:FhatHO}
 \end{equation}
 Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
-If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
-over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.\\
 
 \begin{question} 
   Suppose the following genotype frequencies were observed for an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
@@ -694,6 +691,10 @@ AA &	AB &	BB\\
 \end{center}
 What is the estimate of the inbreeding coefficient at the esterase locus?
 \end{question}
+
+If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
+over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data. 
+As an example of this consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to  heterozygous at $12\%$ of these SNP. Therefore, the average inbreeding coefficient for the lobos is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of their genomes are homozygous due to recent inbreeding. 
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
