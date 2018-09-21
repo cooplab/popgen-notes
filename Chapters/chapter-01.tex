@@ -694,6 +694,15 @@ What is the estimate of the inbreeding coefficient at the esterase locus?
 
 If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data. 
+
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics  [width= \marginwidth]{illustration_images/alleles_genotypes/grey_wolf/5988399184_0c36a8e51c_z.jpg}
+\end{center}
+\caption{Grey wolf ({\it Canis lupus}). Dogs, jackals, wolves, and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans.} \label{fig:Grey_wolf}  
+\end{marginfigure}
+
 \gc{As an example of this consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to  heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobos is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of their genomes are homozygous due to recent inbreeding in their pedigree. }
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
@@ -740,7 +749,7 @@ allele $A_1$ be $p_S$, such that the expected heterozygosity under random
 mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
 \begin{marginfigure}
 \begin{center}
-\includegraphics{figures/Pop_struct/FST_hierarchy.pdf}  %[width= \marginwidth]
+\includegraphics[width= \marginwidth]{figures/Pop_struct/FST_hierarchy.pdf}  %
 \end{center}
 \caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
   alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
@@ -988,7 +997,6 @@ individual comes from the Western population versus Eastern chimp population?\\[
 from the Western population and with probability $q_C=1-q_W$ they draw an
 allele from the Eastern population. What is the probability of our individual's
 genotype given $q_C$? \\
-
 
 {\bf Optional} You could plot this probability as a function of $q_W$. How does 
 your plot change if our individual is heterozygous at both loci?
