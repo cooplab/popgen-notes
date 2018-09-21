@@ -110,7 +110,7 @@ and so on. \\
 
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
-to be a per site (or per base) measure. \gc{For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous), to do that we we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.\sidenote{More technically we need to divide by the total number of one point mutations changes that would result in a synonymous change, this is because some mutational changes at a particular site will result in a N or S change depending on the base-pair change.}} 
+to be a per site (or per base) measure. \gc{For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous), to do that we we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred. }{\sidenote{\gc{Technically we need to divide by the total possible number of one point mutations changes that would result in a synonymous change, this is because some mutational changes at a particular site will result in a N or S change depending on the base-pair change.}} 
 %\erin{would be nice to put in per pb pi for ADH locus here but I don't know how long it is..}
 
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
@@ -1087,7 +1087,7 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
 three groups of common chimpanzee. While PC3 separates the Eastern chimp
 samples from the others. Note also how the hybrid individuals (open black and
 red circles) tend to fall intermediate between groups.}
-
+\end{figure}
 
 It is worth taking a moment to delve further into what we are doing
 here. There's a number of equivalent ways of thinking about what PCA
@@ -1107,8 +1107,7 @@ within a single individual). So by performing PCA on the data we are
 learning about the major (orthogonal) axes of the kinship matrix.    
 
 \begin{figure}
-\includegraphics[width=
-  0.5 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
+\includegraphics[width= 0.5 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
     \caption{  }
 \label{fig:warbler_geo}
 \end{figure}
