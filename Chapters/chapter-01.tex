@@ -2,7 +2,7 @@
 
 
 
-\chapter{Allele and genotype frequencies}
+\chapter{Allele and Genotype Frequencies}
  In this chapter we will
 work through how the basics of Mendelian genetics play out at the population
 level in sexually reproducing organisms.
@@ -749,7 +749,7 @@ allele $A_1$ be $p_S$, such that the expected heterozygosity under random
 mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= 2 \textwidth]{figures/Pop_struct/FST_hierarchy.pdf}  %
+\includegraphics[width=\textwidth]{figures/Pop_struct/FST_hierarchy.pdf}  %
 \end{center}
 \caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
   alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
@@ -889,18 +889,17 @@ write
 \fst = \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
 \bar{p}\bar{q}} = \frac{ \left(\frac{1}{K} \sum_{i=1}^K p_i^2 +
 \frac{1}{K} \sum_{i=1}^K q_i^2 \right) -  \bar{p}^2-\bar{q}^2 }{2
-\bar{p}\bar{q}} = \frac{\mathrm{Var}(p_i)}{\mathrm{Var}(\bar{p})},
+\bar{p}\bar{q}} = \frac{\mathrm{Var}(p_1,\dots,p_K)}{\mathrm{Var}(\bar{p})},
 \label{eqn:F_as_propvar}
 \end{equation}
 which shows that $\fst$ is the proportion of the variance explained by the
 subpopulation labels.
-\erin{should there be a bar (avg) over Var(pi)?}
+
 \subsection{Other approaches to population structure}
 
 There is a broad spectrum of methods to describe patterns of population
 structure in population genetic datasets. We'll briefly discuss two
-broad-classes of methods that appear often in the literature: assignment
-methods and principal components analysis.
+broad-classes of methods that appear often in the literature: assignment methods and principal components analysis.
 
 \subsection{Assignment Methods}
 
@@ -1049,8 +1048,8 @@ western; yellow, bonobo. } \label{fig:chimp_structure}
 
 \subsection{Principal components analysis}
 Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
-  with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
-pioneered by Cavalli-Sforza and colleagues and \erin{fragmented sentence. also overlapping text in margin can't be read} With large genotyping datasets PCA has made come back. \cite{menozzi:78,patterson:06}
+  with the first PC being that which explains largest variance, the second the second most, and so on. \gc{The use of PCA in population genetics was
+pioneered by Cavalli-Sforza and colleagues and with large genotyping datasets PCA has made come back.} \cite{menozzi:78,patterson:06}
 % TODO: citations.
  
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
@@ -1068,8 +1067,7 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
   this data matrix to uncover the major axes of genotype variance in our
-  sample. \erin{figure missing!} Figure \ref{fig:chimp_PCA} shows a PCA from Becquet \emph{et al.}
-  (2007) using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
+  sample. Figure \ref{fig:chimp_PCA} shows a PCA from \citet{becquet:07} using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
 \begin{figure}
 % TODO: MISSING FIGURE
@@ -1079,22 +1077,11 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
     \ref{fig:chimp_structure}. Here they plot the location of each individual
     on the first two principal components (called eigenvectors) in the left
     panel, and on the second and third principal components (eigenvectors) in
-    the right panel.  Becquet {\it et al.}'s caption reads: {\it ``PCA, Without
-      Using Population Labels, Divides the 84 Chimpanzees into Four Apparently
-      Discontinuous Populations of Western, Central, Eastern, and Bonobo. Plots
-      of eigenvectors 1 versus 2, and eigenvectors 2 versus 3, show clustering
-      into populations, with the expected assignments for the 75 individuals
-      identified as all of one ancestry by STRUCTURE (solid circles). The nine
-      individuals identified by STRUCTURE as hybrids (open circles) are for the
-      most part identified as hybrids by PCA as well. There are two individuals
+    the right panel. PCA, The individuals
+      identified as all of one ancestry by STRUCTURE cluster together by population (solid circles). While the nine individuals identified by STRUCTURE as hybrids (open circles) are for the
+      most part fall at intermediate locations in the PCA. There are two individuals
       (red open circles) reported as being of a particular population but that
-      in fact appear to be hybrids: number 23, reported as eastern but in fact
-    a western-eastern hybrid, and number 54, a wild-born individual reported as
-  western but in fact a western-central hybrid.''. } Note that PC1 mostly
-  separates Western chimps from the others, PC2 separates bonobos from all the
-three groups of common chimpanzee. While PC3 separates the Eastern chimp
-samples from the others. Note also how the hybrid individuals (open black and
-red circles) tend to fall intermediate between groups.}
+      but appear to be hybrids.} \label{fig:chimp_PCA}
 \end{figure}
 
 It is worth taking a moment to delve further into what we are doing
