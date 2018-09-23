@@ -131,7 +131,7 @@ often calculate the minor allele frequency spectrum, or the frequency
 spectrum of derived alleles.
 
 \begin{question}
-How many minor-allele singletons are there in {\it D. simulans}?
+How many minor-allele singletons are there in {\it D. simulans} in the ADH region?
  \end{question} 
 \paragraph{Levels of genetic variability across species.}
 Two observations have puzzled population geneticists since the
@@ -1156,8 +1156,7 @@ similarly close group in terms of their higher kinship.
     \caption{The matrix of kinship coefficients calcuated for the 95
       samples of Greenish warblers. Each cell in the matrix gives the
       pairwise kinship coefficient calculated for a particular pair. Hotter colours indicating higher
-      kinship,. The x and y labels are coloured by subspecies label as
-      in Figure \ref{fig:Gwarbler_geo}. The rows and columns have been
+      kinship. The x and y labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure. The rows and columns have been
     organized to cluster individuals with high kinship.}
 \label{fig:warbler_heat}
 \end{figure}
@@ -1166,15 +1165,17 @@ We can then perform PCA on this kinship matrix to identify the major
 axes of variation in the dataset. Figure \ref{fig:warbler_PCA} shows
 the samples plotted on the first two PCs. 
 \begin{figure}
+\begin{center}
 \includegraphics[width=
   0.75 \textwidth]{figures/warbler_PCA_figs/warbler_PCAmap.pdf}
-    \caption{  }
+  \end{center}
+    \caption{ The 95 greenish warbler samples plotted on their locations on the first two principal components. The labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure.}
 \label{fig:warbler_PCA}
 \end{figure}
 The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the view the hypothesis that the Greenish warblers speciated as they moved around the Himalayan
 plateau. However, as noted by \citet{alcaide:14} it also suggests additional complications of the traditional view of this as unbroken ring species, a case of speciation by continuous geographic isolation. The {\it Ludlowi} subspecies shows a significant genetic break, with the southern most MN samples clustering with the {\it Trochiloides} subspecies, in both the PCA and kinship matrix (Figures \ref{fig:warbler_PCA} and \ref{fig:warbler_heat}), despite being much more geographically close to the other {\it Ludlowi} samples. This suggests that genetic isolation is not just a result of geographic distance and other biogeographic barriers must be considered in the case of this broken ring species.
 
-Finally while PCA is a wonderful tool for visualizing genetic data care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations pulling them genetically closer together, helping to form a genetic ring as well as geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex arrangements of populations in PC space can result under simple geographic models. Establishing the geographical, population-genetic history of species requires the application of a range of tools, see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers. 
+Finally while PCA is a wonderful tool for visualizing genetic data care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations pulling them genetically closer together, helping to form a genetic ring as well as geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Establishing the geographical, population-genetic history of species requires the application of a range of tools, see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers. 
 
 
 %For example, it would be tempting to see the U shape in the warbler example (Figure \ref{fig:warbler_PCA}) as representing a 
@@ -1212,17 +1213,17 @@ haplotype. Effectively, recombination breaks up the association between loci.
 We'll define the recombination fraction ($r$) to be the probability of an odd
 number of crossing over events between our loci \ec{in a single meiosis}. In practice we'll often be
 interested in relatively short regions such that recombination is relatively
-rare, and so we might think that $r=r_{BP}L \ll 1$, where $r_{BP}$ is the
+rare, and so we might think that $r=r_{BP}L \ll tidyfrac{1}{2}$, where $r_{BP}$ is the
 average recombination rate per base pair (typically $\sim 10^{-8}$) and L is
 the number of base pairs separating our two loci.\\
-\erin{should it maybe be 1/2 as the right side <<1/2 because that's the limit}
 
 \paragraph{Linkage disequilibrium}
-
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles in a population at different loci. Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
+alleles in a population at different loci. \gc{It's an awful name for a fantastically useful concept, which will be key to diverse topics from understanding sexual selection and speciation to setting the limits of genome-wide association studies. }
+
+Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
