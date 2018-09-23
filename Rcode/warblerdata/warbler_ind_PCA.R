@@ -47,4 +47,5 @@ par(mar=c(3,3,1,1));
 #plot(warbler_eig$vectors[,1],warbler_eig$vectors[,2],col=warb.sbspp.cols[warbler.ind.coords$pop],pch=19,xlab="Principal comp. 1",ylab="Principal comp. 2",cex.lab=1.4,cex=1.1)
 plot(warbler_eig$vectors[,1],warbler_eig$vectors[,2],col=warb.sbspp.cols[warbler.ind.coords$pop],pch=19,xlab="Principal comp. 1",ylab="Principal comp. 2",cex.lab=1.4,cex=1.1,type="n")
 text(x=warbler_eig$vectors[,1],y=warbler_eig$vectors[,2],warb_names,col=warb.sbspp.cols[warbler.ind.coords$pop])
+legend(x="topleft",legend=subspp,text.col=warb.sbspp.cols,bg="white")
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/warbler_PCA_figs/warbler_PCAmap.pdf")

@@ -1069,6 +1069,24 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   this data matrix to uncover the major axes of genotype variance in our
   sample. Figure \ref{fig:chimp_PCA} shows a PCA from \citet{becquet:07} using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
+  It is worth taking a moment to delve further into what we are doing
+here. There's a number of equivalent ways of thinking about what PCA
+is doing. One of these ways is to think that when we do PCA we are building the individual by individual
+covariance matrix and performing an eigenvalue decomposition of this
+matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
+the $[i,~j]$ given by
+\begin{equation}
+\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
+\end{equation}
+Note that this is the covariance, and is very similar to those we
+encountered in discussing $F$-statistics as correlations (equation
+\eqref{eqn:Fascorr}), except now we are asking about the covariance
+between two individuals above that expected if they were both drawn
+from the total sample at random (rather than the covariance of alleles
+within a single individual). So by performing PCA on the data we are
+learning about the major (orthogonal) axes of the kinship matrix.    
+
+ 
 \begin{figure}
 % TODO: MISSING FIGURE
 \includegraphics[width=
@@ -1091,39 +1109,54 @@ alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
 \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/greenish_warbler/10036311396_14915d1715_z.jpg}
   \caption{Greenish warbler, subspp. viridanus ({\it Phylloscopus
       trochiloides viridanus}). Coloured figures of the birds of the
-    British Islands. 1885. Lilford T. L. P.}\label{fig:greenish_warbler}
+    British Islands. 1885. Lilford T. L. P.. Greenish warblers are
+    rare visitors to the UK. }\label{fig:greenish_warbler}
 \end{marginfigure}
 
-It is worth taking a moment to delve further into what we are doing
-here. There's a number of equivalent ways of thinking about what PCA
-is doing. One of these ways is to think that when we do PCA we are building the individual by individual
-covariance matrix and performing an eigenvalue decomposition of this
-matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
-the $[i,~j]$ given by
-\begin{equation}
-\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
-\end{equation}
-Note that this is the covariance, and is very similar to those we
-encountered in discussing $F$-statistics as correlations (equation
-\eqref{eqn:Fascorr}), except now we are asking about the covariance
-between two individuals above that expected if they were both drawn
-from the total sample at random (rather than the covariance of alleles
-within a single individual). So by performing PCA on the data we are
-learning about the major (orthogonal) axes of the kinship matrix.    
+As an example of the application of PCA let's consider the case of the
+putative ring species in Greenish warbler ({\it Phylloscopus
+  trochiloides}) species complex . This set of subspecies exists in a
+ring around the edge of the Himalayan plateau. \citet{alcaide:14}
+collected $95$ greenish warbler samples from $22$ sites around the
+ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}. It is
+thought that the spread from the soutj, northward in two different directions around the inhospitable Himalayan
+plateau; establishing populations along the western edge
+(green and blue populations) and the eastern edge (yellow and red
+populations). When they came into secondary contact
+in Siberia they were reproductive isolated from one another, having
+evolved different songs and accumulated other reproductive barriers
+from each other as they spread independently north around the
+plateau; such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
+(red) populations form a stable hybrid zone.
 
 \begin{figure}
 \includegraphics[width= 0.5 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
-    \caption{  }
-\label{fig:warbler_geo}
+    \caption{}
+\label{fig:Gwarbler_geo} 
 \end{figure}
-\erin{figures need captions, clearly you're still working on it}
 
+\citet{alcaide:14}  sequenced their samples at 2,334 snps. In figure
+you can see the matrix of kinship coefficients, using \eqref{eqn:kinship_mat}, between all pairs of
+samples. You can already see a lot about population structure in this
+matrix. Note how the red and yellow samples, thought to be derived from
+the Eastern route around the Himalayas, have higher kinship with each
+other, and blue and the (majority) of the green samples, from the form a
+similarly close group in terms of their higher kinship. 
 \begin{figure}
 \includegraphics[width=
   0.75 \textwidth]{figures/warbler_PCA_figs/warbler_heatmap.pdf}
-    \caption{  }
+    \caption{The matrix of kinship coefficients calcuated for the 95
+      samples of Greenish warblers. Each cell in the matrix gives the
+      pairwise kinship coefficient calculated for a particular pair. Hotter colours indicating higher
+      kinship,. The x and y labels are coloured by subspecies label as
+      in Figure \ref{fig:Gwarbler_geo}. The rows and columns have been
+    organized to cluster individuals with high kinship.}
 \label{fig:warbler_heat}
 \end{figure}
+
+We can then perform PCA on this kinship matrix to identify the major
+axes of variation in the dataset. Figure \ref{fig:warbler_PCA} shows
+the samples plotted on the first two PCs. 
 
 \begin{figure}
 \includegraphics[width=
