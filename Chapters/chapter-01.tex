@@ -1062,7 +1062,7 @@ Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
 \frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}} \end{equation} i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
-($2\epsilon_{\ell}$) and divide through by the expected variance assuming that
+($2\p_{\ell}$) and divide through by the expected variance assuming that
 alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
@@ -1076,7 +1076,8 @@ covariance matrix and performing an eigenvalue decomposition of this
 matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
 the $[i,~j]$ given by
 \begin{equation}
-\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} - 2p_{\ell})}{p_{\ell}(1-p_{\ell})}
+\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
+  2p_{\ell})}{p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
 \end{equation}
 Note that this is the covariance, and is very similar to those we
 encountered in discussing $F$-statistics as correlations (equation
@@ -1113,6 +1114,7 @@ learning about the major (orthogonal) axes of the kinship matrix.
     rare visitors to the UK. }\label{fig:greenish_warbler}
 \end{marginfigure}
 
+
 As an example of the application of PCA let's consider the case of the
 putative ring species in Greenish warbler ({\it Phylloscopus
   trochiloides}) species complex . This set of subspecies exists in a
@@ -1128,6 +1130,7 @@ evolved different songs and accumulated other reproductive barriers
 from each other as they spread independently north around the
 plateau; such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
 (red) populations form a stable hybrid zone.
+
 
 \begin{figure}
 \includegraphics[width= 0.5 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
