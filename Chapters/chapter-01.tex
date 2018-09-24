@@ -367,7 +367,7 @@ fewer meioses, closer relatives share more alleles. In Figure
 between two cousins. As we'll see, many population and quantitative genetic
 concepts rely on how closely related individuals are, and thus we need some way
 to quantify the degree of kinship among individuals. \\
-\begin{figure}
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
 \end{center}
@@ -377,7 +377,7 @@ to quantify the degree of kinship among individuals. \\
   generations. Notice that the identity by descent between the cousins persists for a long
 stretch of chromosome due to the limited number of generations for
 recombination.} \label{fig:IBD_cousins_chr_cartoon}  
-\end{figure}
+\end{marginfigure}
 
 We will define two alleles to be identical by descent (IBD) if they are
 identical due to transmission from a common ancestor in the past few generations\cite{cotterman:40,malecot:48}. For the moment,
@@ -555,7 +555,6 @@ coloured red, those that your cousins inherited are coloured blue. In the third 
 We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
 
 
- 
 
 You and your first cousin will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous for different alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks, we can hope to identify unknown relatives in genotyping datasets. In fact, companies like 23\&me and Ancestry.com use signals of IBD to help identify family ties.
 
@@ -713,8 +712,82 @@ Genetic markers are commonly used to estimate inbreeding for wild and/or captive
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
 \gc{
-\paragraph{Genomic blocks of homozygosity due to inbreeding.}
-As we saw in 
+  \paragraph{Genomic blocks of homozygosity due to inbreeding.}
+
+  \begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
+\end{center}
+\caption{.} \label{fig:kid_first_cousins}  
+\end{marginfigure}
+As we saw above close relatives are expected to share the IBD alleles in
+large genomic blocks. Thus, when related individuals mate and transmit
+alleles to an inbred offpspring, they transmit these alleles in big
+blocks through meiosis. An example, lets return to the case of our
+hypothetical first cousins from Figure
+\ref{fig:IBD_cousins_chr_cartoon}, this pair of individuals had a
+child and a possible pattern of transmission is shown in Figure
+\ref{fig:kid_first_cousins}. The child has inherited the red stretch
+of chromosome via two different routes through their predigree from
+the granddparents. This region is homozygous by descent, an autozygous
+segment, the child would homozygous at all of the loci in this
+genome.
+
+The inbreeding coefficient of the child sets the proportion of their
+genome that will be these homozygous segments. For example, our child
+of first full cousins is expected to have $\tidyfrac{1}{16}$ of their
+genome in these segments.
+The more distant the loop in the pedigree, the more meioses that
+chromosomes have been through, the shorter these blocks will be. Our
+child of first cousins will have longer blocks than a child of second
+cousins.
+
+Individuals with multiple inbreeding loops in their family tree can
+have a high inbreeding coefficient, but have this distributed over
+many small blocks of autozygosity. For example, Carlos the second had
+an inbreeding coefficient that is equivalent to that of the child of
+full sibs, with a quarter of his genome expected to homozygous by
+descent, but this would be made up of many shorter blocks. 
+%With multiple rounds of inbreeding individuals can 
+
+We can hope to detect these blocks by looking for unusually long
+genomic runs of homzygosity (ROH) sites in an individual's genome. One way to
+estimate an individual's inbreeding coefficient is then to total up
+the proportion of an individual's genome that falls in such ROH
+regions. This estimate is called $F_{ROH}$.
+
+As an example of this is from the work of
+\citet{Sams:18}, who identified runs of homozygosity in 2,500 dogs,
+ranging from 500kb up to many megabases. In Figure
+\ref{fig:dog_FOH} is the distribution of $F_{ROH}$ of individuals in each dog
+breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
+broken down by the length distibution. Dog breeds have been subject
+to intense breeding that has resulted in high levels of inbreeding. 
+Doberman Pinscher have the highest levels of their genome in runs of
+homozygosity, however, much of this is due to many short blocks of
+homozyosity. This indicates that the inbreeding in Doberman Pinscher
+is old. While English bulldogs have lower levels of inbreeding,
+however, this is contained in long blocks of homozygosity. This
+suggests that English bulldogs have had high levels of inbreeding in
+the recent past. 
+
+  \begin{figure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{figures/sharing_relatives/dogs_FROH.pdf}
+\end{center}
+\caption{The distribution  of $F_{ROH}$ of individuals from various
+  dog breeds from \citet{Sams:18}.} \label{fig:dog_FOH}  
+\end{figure}
+
+
+  \begin{figure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{figures/sharing_relatives/dogs_FROH_dist.pdf}
+\end{center}
+\caption{Cumulative density of ROH from \citet{Sams:18} for various
+  dog breeds.} \label{fig:dog_FOH}  
+\end{figure}
+
 
 }
 
