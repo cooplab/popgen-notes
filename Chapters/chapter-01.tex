@@ -1140,7 +1140,7 @@ Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
 \frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}} \end{equation} i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
-($2p_{\ell}$) and divide through by the expected variance assuming that
+($2p_{\ell}$) and divide through by the square root of the expected variance \erin{I think the denominator in 2.24 and 2.25 is maybe missing a factor of 2 because it's diploid...b/c variance for a binomial sample size n is npq so wouldn't diploid be n=2 .. or maybe I'm missing something?} assuming that
 alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
@@ -1168,7 +1168,7 @@ here. There's a number of equivalent ways of thinking about what PCA
 is doing. One of these ways is to think that when we do PCA we are building the individual by individual
 covariance matrix and performing an eigenvalue decomposition of this
 matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
-the $[i,~j]$ given by
+the $[i,~j]$ given by \erin{why are we summing instead of averaging over loci? isn't this missing a 1/(S-1) term?}
 \begin{equation}
 \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
   2p_{\ell})}{p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
@@ -1183,9 +1183,9 @@ learning about the major (orthogonal) axes of the kinship matrix.
 
  
 
-As an example of the application of PCA let's consider the case of the
-putative ring species in Greenish warbler ({\it Phylloscopus
-  trochiloides}) species complex . This set of subspecies exists in a
+As an example of the application of PCA, let's consider the case of the
+putative ring species in the Greenish warbler ({\it Phylloscopus
+  trochiloides}) species complex. This set of subspecies exists in a
 ring around the edge of the Himalayan plateau. \citet{alcaide:14}
 collected $95$ greenish warbler samples from $22$ sites around the
 ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
@@ -1198,15 +1198,15 @@ ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
     rare visitors to the UK. }\label{fig:greenish_warbler}
 \end{marginfigure}
 It is
-thought that the spread from the south, northward in two different directions around the inhospitable Himalayan
-plateau; establishing populations along the western edge
+thought that these warblers spread from the south, northward in two different directions around the inhospitable Himalayan
+plateau, establishing populations along the western edge
 (green and blue populations) and the eastern edge (yellow and red
 populations). When they came into secondary contact
-in Siberia they were reproductive isolated from one another, having
+in Siberia, they were reproductive isolated from one another, having
 evolved different songs and accumulated other reproductive barriers
 from each other as they spread independently north around the
-plateau; such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
-(red) populations form a stable hybrid zone.
+plateau, such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
+(red) populations presently form a stable hybrid zone.
 
 
 \begin{figure}
@@ -1222,7 +1222,7 @@ you can see the matrix of kinship coefficients, using \eqref{eqn:kinship_mat}, b
 samples. You can already see a lot about population structure in this
 matrix. Note how the red and yellow samples, thought to be derived from
 the Eastern route around the Himalayas, have higher kinship with each
-other, and blue and the (majority) of the green samples, from the form a
+other, and blue and the (majority) of the green samples, from the Western route, form a
 similarly close group in terms of their higher kinship. 
 \begin{figure}
 \begin{center}
@@ -1248,10 +1248,10 @@ the samples plotted on the first two PCs.
     \caption{ The 95 greenish warbler samples plotted on their locations on the first two principal components. The labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure.}
 \label{fig:warbler_PCA}
 \end{figure}
-The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the view the hypothesis that the Greenish warblers speciated as they moved around the Himalayan
-plateau. However, as noted by \citet{alcaide:14} it also suggests additional complications of the traditional view of this as unbroken ring species, a case of speciation by continuous geographic isolation. The {\it Ludlowi} subspecies shows a significant genetic break, with the southern most MN samples clustering with the {\it Trochiloides} subspecies, in both the PCA and kinship matrix (Figures \ref{fig:warbler_PCA} and \ref{fig:warbler_heat}), despite being much more geographically close to the other {\it Ludlowi} samples. This suggests that genetic isolation is not just a result of geographic distance and other biogeographic barriers must be considered in the case of this broken ring species.
+The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the hypothesis that the Greenish warblers speciated as they moved around the Himalayan
+plateau. However, as noted by \citet{alcaide:14}, it also suggests additional complications to the traditional view of these warblers as an unbroken ring species, a case of speciation by continuous geographic isolation. The {\it Ludlowi} subspecies shows a significant genetic break, with the southern most MN samples clustering with the {\it Trochiloides} subspecies, in both the PCA and kinship matrix (Figures \ref{fig:warbler_PCA} and \ref{fig:warbler_heat}), despite being much more geographically close to the other {\it Ludlowi} samples. This suggests that genetic isolation is not just a result of geographic distance, and other biogeographic barriers must be considered in the case of this broken ring species.
 
-Finally while PCA is a wonderful tool for visualizing genetic data care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations pulling them genetically closer together, helping to form a genetic ring as well as geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Establishing the geographical, population-genetic history of species requires the application of a range of tools, see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers. 
+Finally, while PCA is a wonderful tool for visualizing genetic data, care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations, pulling them genetically closer together and helping to form a genetic ring as well as a geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex geometric arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Inferring the geographical and population-genetic history of species requires the application of a range of tools; see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers. 
 
 
 %For example, it would be tempting to see the U shape in the warbler example (Figure \ref{fig:warbler_PCA}) as representing a 
@@ -1297,7 +1297,7 @@ the number of base pairs separating our two loci.\\
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles in a population at different loci. \gc{It's an awful name for a fantastically useful concept which will be key to diverse topics from understanding sexual selection and speciation to setting the limits of genome-wide association studies. }
+alleles in a population at different loci. It's an awful name for a fantastically useful concept; LD is key to our understanding of diverse topics, from sexual selection and speciation to the limits of genome-wide association studies.
 
 Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
@@ -1454,16 +1454,14 @@ So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
 increase if there is a deficit of $AB$ haplotypes within the
 population ($D<0$). Our LD in the next generation is 
-
 \begin{align}
-D^{\prime} & =
-p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\ 
+D^{\prime} & = p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\ 
 & = (p_{AB} + \Delta p_{AB}) - (p_{A} + \Delta p_{A})(p_{B} + \Delta p_{B}) \nonumber\\
-& = (p_{AB} + \Delta p_{AB}) - p_{A}p_{B} \nonumber\\
-& = (1-r) D \\
+& = p_{AB} + \Delta p_{AB} - p_{A}p_{B} \nonumber\\
+& = (1-r) D \nonumber\\
 \end{align}
-
-\erin{I think you're skipping too many steps above for students to easily follow, particularly that p'A = pA. I am not sure which 'above eqn.' is being referred to honestly.}
+where we can cancel out $\Delta p_{A}$ and $\Delta p_{B}$ above because recombination only changes haplotype, not allele, frequencies.
+\erin{I think you're skipping too many steps above for students to easily follow, particularly that p'A = pA. I am not sure which 'above eqn.' is being referred to honestly. --> I modified equation 2.31 to try to make it more clear..see what you think.}
 So if the level of LD in generation $0$ is $D_0$, the level $t$
 generations later ($D_t$) is
 \begin{equation}
