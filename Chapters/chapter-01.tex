@@ -1220,7 +1220,7 @@ the number of base pairs separating our two loci.\\
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles in a population at different loci. \gc{It's an awful name for a fantastically useful concept, which will be key to diverse topics from understanding sexual selection and speciation to setting the limits of genome-wide association studies. }
+alleles in a population at different loci. \gc{It's an awful name for a fantastically useful concept which will be key to diverse topics from understanding sexual selection and speciation to setting the limits of genome-wide association studies. }
 
 Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
@@ -1365,7 +1365,7 @@ next generation
 \begin{equation}
 p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B
 \end{equation}
-The last term above is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$ multiplied out, which is the probability of recombination in the different diploid genotypes that
+The last term above is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$ simplified, which is the probability of recombination in the different diploid genotypes that
 could generate a $p_{AB}$ haplotype. \\
 
 We can then write the change in the frequency of the $p_{AB}$
@@ -1376,12 +1376,16 @@ haplotype as
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
 increase if there is a deficit of $AB$ haplotypes within the
-population ($D<0$). Our LD in the next generation is $D^{\prime} =
-p_{AB}^{\prime} - p'_{A}p'_{B}$, so we can rewrite the above eqn. in terms of the
-$D^{\prime} $
-\begin{equation}
-D^{\prime}= (1-r) D
-\end{equation}
+population ($D<0$). Our LD in the next generation is 
+
+\begin{align}
+$D^{\prime} & =
+p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\ 
+& = (p_{AB} + \Delta p_{AB}) - (p_{A} + \Delta p_{A})(p_{B} + \Delta p_{B}) \nonumber\\
+& = (p_{AB} + \Delta p_{AB}) - p_{A}p_{B} \nonumber\\
+& = (1-r) D
+\end{align}
+
 \erin{I think you're skipping too many steps above for students to easily follow, particularly that p'A = pA. I am not sure which 'above eqn.' is being referred to honestly.}
 So if the level of LD in generation $0$ is $D_0$, the level $t$
 generations later ($D_t$) is
