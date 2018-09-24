@@ -110,8 +110,8 @@ and so on. \\
 
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
-to be a per site (or per base) measure. \gc{For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous), to do that we we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred. }{\sidenote{\gc{Technically we need to divide by the total possible number of one point mutations changes that would result in a synonymous change, this is because some mutational changes at a particular site will result in a N or S change depending on the base-pair change.}} 
-%\erin{would be nice to put in per pb pi for ADH locus here but I don't know how long it is..}
+to be a per site (or per base) measure. For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous). For synonymous site $\pi$, we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.{\sidenote{Technically we would need to divide by the total number of possible point mutations that would result in a synonymous change; this is because some mutational changes at a particular nucleotide will result in a non-synonymous or synonymous change depending on the base-pair change.} 
+
 
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
 that are polymorphic (segregating) in our sample. One issue is that
@@ -209,7 +209,7 @@ $p^2$ & $2pq$ & $q^2$ \\
 \end{center}
 %\caption{\textbf{Hardy Weinberg}} \label{table:HWE}
 %\end{table}
-Note that we only need to assume random mating with respect to our focal allele in order for these expected frequencies \gc{to hold in the zygotes forming the next generation. Evolutionary forces, such as selection change allele frequencies within generations, but do not change this expectation for new zygotes}, as long as $p$ is the frequency of the $A_1$ allele in the population at the time when gametes fuse.
+Note that we only need to assume random mating with respect to our focal allele in order for these expected frequencies to hold in the zygotes forming the next generation. Evolutionary forces, such as selection, change allele frequencies within generations, but do not change this expectation for new zygotes, as long as $p$ is the frequency of the $A_1$ allele in the population at the time when gametes fuse.
 %\erin{I wasn't sure what contrast you were getting at here, so may not be a good edit}
 
 \begin{question}
@@ -552,18 +552,14 @@ and so appear as black points in the lower left corner. Thanks to Nancy Chen for
 coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations here.
 } \label{fig:first_cousin_IBD}  
 \end{figure}
-\gc{We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin’s genomic material that you both inherited from your shared grandmother, These are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
-}
+We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
 
 
  
 
-\gc{You and your first cousin by share will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous opposite alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks were can hope to identify unknown relatives in genotyping datasets. This is how companies like 23\&me and Ancestry.com  
+You and your first cousin will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous for different alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks, we can hope to identify unknown relatives in genotyping datasets. In fact, companies like 23\&me and Ancestry.com use signals of IBD to help identify family ties.
 
-As another example consider consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and your third cousin each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin’s genomes($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins sharing blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.  
-}
-
-\gc{Note how the third cousins in Figure \ref{fig:third_cousin_IBD} inherit less from their shared great, great grandmother than with their grandmother, as they inherit from more ancestors further back; and how the sharing occurs in shorter genomic blocks, as it has passed through more generations of recombination during meiosis. These blocks are still detectable, and so third cousins can be detected using high-density genotyping chips, lllowing more distant relatives to be identified than single marker methods alone. \sidenote{Indeed the suspect in case of the Golden State Killer was identified through identifying third cousins that genetically matched a DNA sample from an old crime scene (see a \href{https://gcbias.org/2018/05/07/how-lucky-was-the-genetic-investigation-in-the-golden-state-killer-case/}{here} for more details).} More distant relations than third cousins, e.g. fourth cousins, start have a significant probability of sharing none of their genome IBD. But you have many fourth cousins so you will share some of your genome IBD with some of them; however it gets increasingly hard to identify the degree of relatedness from such data the deep in the family tree this sharing goes.}
+As another example, consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and each of your third cousins each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin's genomes ($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins share blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.  
 
 \begin{figure}
 \begin{center}
@@ -571,6 +567,9 @@ As another example consider consider the case of third cousins. You share one of
 \end{center}
 \caption[]{A simulation of sharing between third cousins, the details are the same as in Figure \ref{fig:first_cousin_IBD}.} \label{fig:third_cousin_IBD}  
 \end{figure}
+
+
+Note how if you compare Figure \ref{fig:third_cousin_IBD} and Figure \ref{fig:first_cousin_IBD}, individuals inherit less IBD from a shared great, great grandmother than from a shared grandmother, as they inherit from more total ancestors further back. Also notice how the sharing occurs in shorter genomic blocks, as it has passed through more generations of recombination during meiosis. These blocks are still detectable, and so third cousins can be detected using high-density genotyping chips, allowing more distant relatives to be identified than single marker methods alone. \sidenote{Indeed the suspect in case of the Golden State Killer was identified through identifying third cousins that genetically matched a DNA sample from an old crime scene (see a \href{https://gcbias.org/2018/05/07/how-lucky-was-the-genetic-investigation-in-the-golden-state-killer-case/}{here} for more details).} More distant relations than third cousins, e.g. fourth cousins, start to have a significant probability of sharing none of their genome IBD. But you have many fourth cousins, so you will share some of your genome IBD with some of them; however, it gets increasingly hard to identify the degree of relatedness from genetic data the deeper in the family tree this sharing goes.
 
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
@@ -703,7 +702,7 @@ over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, w
 \caption{Grey wolf ({\it Canis lupus}). Dogs, jackals, wolves, and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans.} \label{fig:Grey_wolf}  
 \end{marginfigure}
 
-\gc{As an example of this consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to  heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobos is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of their genomes are homozygous due to recent inbreeding in their pedigree. }
+Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobo is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
@@ -799,7 +798,7 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above). \sidenote{\gc{Taking the ratio of averages, instead of the average ratio, has better statistical properties as statistical noise in the denominator is averaged out.}}
+$H_T$ with their averages across loci (as above). \sidenote{\ec{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}}
 
 
 \begin{marginfigure}
@@ -1048,8 +1047,8 @@ western; yellow, bonobo. } \label{fig:chimp_structure}
 
 \subsection{Principal components analysis}
 Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
-  with the first PC being that which explains largest variance, the second the second most, and so on. \gc{The use of PCA in population genetics was
-pioneered by Cavalli-Sforza and colleagues and with large genotyping datasets PCA has made come back.} \cite{menozzi:78,patterson:06}
+  with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
+pioneered by Cavalli-Sforza and colleagues and now with large genotyping datasets, PCA has made come back. \cite{menozzi:78,patterson:06}
 % TODO: citations.
  
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
