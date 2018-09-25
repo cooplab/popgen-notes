@@ -656,6 +656,53 @@ sib-mating is
 homozygous? 
 \end{question}
 
+
+\gc{Up to this point we have assumed that there is at most one
+  inbreeding loop in the recent family history our
+  individuals, i.e. the parents of our inbred individual have at most
+  one recent genealogical connection. However, an individual who has
+  multiple inbreeding loops in their pedigree can be homozygous by
+  descent thanks to recieving IBD alleles via different these
+  different loops. We can extend this
+  framework to handle pedigrees of arbitrary complexity. We can extend
+ beyond our coefficients $r_0$, $r_1$, and $r_2$, to account for
+ higher order sharing of alleles IBD among relatives. For example,
+ what is the probability that both of the alleles in the first individual
+ are shared IBD with one allele in the second individual. There are
+ nine of these coefficients in total, and we won't go in to them here
+ as it's a lot to keep track of.  
+However, we can calculate the inbreeding coefficient of an
+individual with multiple inbreeding loops more directly.\\
+
+Our parents of our inbred individual (B and C) have $n$ shared ancestors,
+i.e. individuals who appear in in both in their recent family trees. We denote these shared ancestors by $A_1, \dots,
+A_n$,  the number of meioses linking B and C to their shared ancestor
+are $n_-{i,~B}$ and $n_{i,~C}$ for a total of $n_i$ meioses linking
+B and C via $A_i$. Then the kinship coefficient of the parents,
+i.e. the inbreeding coefficient of the child is
+\begin{equation}
+ F = \sum_i \frac{1}{2^n_i} \big( 1+ f_A_i \big)
+\end{equation}
+where $f_A_i$ is the inbreeding coefficient of the ancestor
+$A_i$. What's happening here is that the sum is over the multiple
+independent paths through which B and C can share an allele IBD. With probability
+$nicefrac{1}{2^{n_i}}$ an allele picked at random from B and C are descended from the same ancestral allele in individual
+$A_i$, in which case they are IBD. However, if the ancestor $A_i$ was
+themselves inbred, even if at a locus B descended from maternal
+and C from the paternal allele of individual $A_i$ with probability $f_i$ those
+alleles are themselves IBD. Thus a shared inbred ancestor increases
+the kinship of the parents. 
+
+Multiple inbreeding loops increase the probability that a child
+is homozygous by descent, and this can be expressed simply by using our
+inbreeding coefficient in our generalized HW equation.
+
+As one extreme example of the impact of multiple inbreeding loops in
+an individual's pedigree. Lets consider Charles the second of
+spain, the last of the spanish Habsburgs.  Charles was the son of
+Philip IV of Spain and Mariana of Austria, who were uncle and niece. 
+
+}
 \subsection{Calculating inbreeding coefficients from data}
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
