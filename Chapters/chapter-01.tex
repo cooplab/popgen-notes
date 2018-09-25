@@ -238,7 +238,7 @@ $AA$ & $AG$ & $GG$ \\
 42 & 24 & 21\\
 \end{tabular}
 \end{center}
-Calculate the expected frequencies of the allele under HWE.  
+What are the expected frequencies of the three genotypes under HWE?
 \end{question}
 
 
@@ -728,7 +728,7 @@ segment, where the child is homozygous by descent at all of the loci in this
 red region.
   \begin{figure}
   \begin{center}
-    \includegraphics[width= 0.5 \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
+    \includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
 \end{center}
 \caption{.} \label{fig:kid_first_cousins}  
 \end{figure}
@@ -762,12 +762,10 @@ regions. This estimate is called $F_{ROH}$.
 \end{center}
 \caption{English bulldog. The dogs of Boytown. 1918.  Dyer, W. A.} \label{fig:dog_FOH}  
 \end{marginfigure}
+
 An example of using $F_{ROH}$ to study inbreeding comes from the work of
 \citet{Sams:18}, who identified runs of homozygosity in 2,500 dogs,
-ranging from 500kb up to many megabases. Figure
-\ref{fig:dog_FOH} shows the distribution of $F_{ROH}$ of individuals in each dog
-breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
-broken down by the length of ROH segments. 
+ranging from 500kb up to many megabases.
   \begin{figure}
   \begin{center}
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dogs_FROH.pdf}
@@ -775,12 +773,14 @@ broken down by the length of ROH segments.
 \caption{The distribution  of $F_{ROH}$ of individuals from various
   dog breeds from \citet{Sams:18}.} \label{fig:dog_FOH}  
 \end{figure}
+Figure
+\ref{fig:dog_FOH} shows the distribution of $F_{ROH}$ of individuals in each dog
+breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
+broken down by the length of ROH segments. 
 
 Dog breeds have been subject
 to intense breeding that has resulted in high levels of inbreeding. Of the population samples examined, Doberman Pinschers have the highest levels of their genome in runs of
-homozygosity, however, much of this is due to many short runs of homozygosity. \erin{It's hard for me to read these figures because they are very small. But, it looks like Dobermans have a large portion of long blocks to me (aren't they the top line in orange?), so maybe a better example would be French bulldogs for older inbreeding (and less inbreeding) compared to the English bulldog.} This indicates that the inbreeding in Doberman Pinschers
-is many generations back. In contrast, English bulldogs have lower levels of inbreeding, however, this is contained in long blocks of homozygosity. This suggests that English bulldogs have had high levels of inbreeding in
-the recent past. 
+homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog_FOH_dist} we can see that English bulldogs have more short ROH than Doberman Pinschers, but that Doberman Pinschers have more of their genome in very large ROH ($>16 Mb$). This suggests that English bulldogs have had long history of inbreeding but that Doberman Pinschers have a lot of recent inbreeding in their history.
 
   \begin{figure}
   \begin{center}
@@ -876,10 +876,11 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above). \sidenote{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}
+$H_T$ with their averages across loci (as above). 
+\sidenote[][-4cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}
 
 
-\begin{marginfigure}
+\begin{marginfigure}[-3cm]
 \begin{center}
 \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/blue_golden_winged_warblers/The_warblers_of_North_America_6309257188.jpg}  %[width= \marginwidth]
 \end{center}
@@ -889,7 +890,7 @@ $H_T$ with their averages across loci (as above). \sidenote{Averaging heterozygo
 As an example of comparing a genome-wide estimate of $F_{ST}$ to that
 at individual loci we can look at some data from blue- and
 golden-winged warblers ({\it Vermivora cyanoptera} and {\it
-  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}). These two species are spead across eastern
+  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}). These two species are spread across eastern
 Northern America, with the golden-winged warbler having a smaller, more
 northernly range. They're quite different in terms of plumage, but
 have long been known to have similar songs and ecologies. The two species
@@ -915,7 +916,7 @@ difference at loci in, or close, to genes known to be involved in
 plumage colouration difference in other birds.  
 To illustrate these frequency differences \citeauthor{Toews:16}
 genotyped a SNP in each of these high-$F_{ST}$ regions. Here's their
-geotyping counts from the SNP in the {\it Wnt}
+genotyping counts from the SNP in the {\it Wnt}
 region, a key regulatory gene involved in feather development:
 \begin{center}
 \begin{tabular}{ l c c c}
