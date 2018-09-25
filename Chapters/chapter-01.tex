@@ -580,8 +580,7 @@ from some reference population.  \\
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Child_first_cousins_Homozy_BD.png}
 \end{center}
-\caption{Alleles being transmitted through an inbred pedigree. The mum and the
-  aunt share two alleles identical by descent (IBD). The cousins share one
+\caption{Alleles being transmitted through an inbred pedigree. The two sisters (mum and aunt) share two alleles identical by descent (IBD). The cousins share one
   allele IBD. The offspring of first cousins is homozygous by
   descent at this locus.} \label{fig:IBD_cousins_cartoon}  
 \end{marginfigure}
@@ -656,13 +655,13 @@ sib-mating is
 homozygous? 
 \end{question}
 
-
+\paragraph{Multiple inbreeding loops in a pedigree.}
 \gc{Up to this point we have assumed that there is at most one
   inbreeding loop in the recent family history our
   individuals, i.e. the parents of our inbred individual have at most
   one recent genealogical connection. However, an individual who has
   multiple inbreeding loops in their pedigree can be homozygous by
-  descent thanks to recieving IBD alleles via different these
+  descent thanks to receiving IBD alleles via different these
   different loops. We can extend this
   framework to handle pedigrees of arbitrary complexity. We can extend
  beyond our coefficients $r_0$, $r_1$, and $r_2$, to account for
@@ -677,13 +676,13 @@ individual with multiple inbreeding loops more directly.\\
 Our parents of our inbred individual (B and C) have $n$ shared ancestors,
 i.e. individuals who appear in in both in their recent family trees. We denote these shared ancestors by $A_1, \dots,
 A_n$,  the number of meioses linking B and C to their shared ancestor
-are $n_-{i,~B}$ and $n_{i,~C}$ for a total of $n_i$ meioses linking
+are $n_{i,~B}$ and $n_{i,~C}$ respectively, for a total of $n_i$ meioses linking
 B and C via $A_i$. Then the kinship coefficient of the parents,
 i.e. the inbreeding coefficient of the child is
 \begin{equation}
- F = \sum_i \frac{1}{2^n_i} \big( 1+ f_A_i \big)
+ F = \sum_i \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big)
 \end{equation}
-where $f_A_i$ is the inbreeding coefficient of the ancestor
+where $f_{A_i}$ is the inbreeding coefficient of the ancestor
 $A_i$. What's happening here is that the sum is over the multiple
 independent paths through which B and C can share an allele IBD. With probability
 $\nicefrac{1}{2^{n_i}}$ an allele picked at random from B and C are descended from the same ancestral allele in individual
@@ -697,50 +696,52 @@ Multiple inbreeding loops increase the probability that a child
 is homozygous by descent, and this can be expressed simply by using our
 inbreeding coefficient in our generalized HW equation.
 
-\begin{marginfigure}
-\begin{center}
-  \includegraphics[width=
-  \textwidth]{illustration_images/alleles_genotypes/Carlos_second/378px-Juan_de_Miranda_Carreno_002.jpg}
-  %https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png
-\end{center}
-\caption{Charles the second of spain. } \label{fig:Carlos_second}  
-\end{marginfigure}
-
-
-As one extreme example of the impact of multiple inbreeding loops in
-an individual's pedigree. Lets consider king Charles II of
-Spain, the last of the spanish Habsburgs.  Charles was the son of
-Philip IV of Spain and Mariana of Austria, who were uncle and
-niece. In this were the only inbreeding loop then he would have had an
-inbreeding coefficient of $\nicefrac{1}{8}$. Unfortunately for Charles, the
-spanish Habsburgs had long kept wealth and power within their family
-by arranging marriages between close kin. The pedgree of Charles II is shown in Figure \ref{fig:Carlos_second_pedigree}, and
-multiple inbreeding loops are apparent. For example, Phillip III,
-Charles II's grandfather and great-grandfather, was himself a child of
-a uncle-niece marriage.     
 \begin{figure}
   \begin{center}
   \includegraphics[width= \textwidth]{Journal_figs/alleles_genotypes/Charles_second_pedigree/Carlos_second_pedigree_2_trimmed.pdf}
 \end{center}
 \caption{The pedigree of King Charles II of Spain} \label{fig:Carlos_second_pedigree}  
 \end{figure}
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width=
+  \textwidth]{illustration_images/alleles_genotypes/Carlos_second/378px-Juan_de_Miranda_Carreno_002.jpg}
+%https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png
+\end{center}
+\caption{Charles the second of Spain. } \label{fig:Carlos_second}  
+\end{marginfigure}
+
+As one extreme example of the impact of multiple inbreeding loops in
+an individual's pedigree. Lets consider king Charles II of
+Spain, the last of the Spanish Habsburgs.  Charles was the son of
+Philip IV of Spain and Mariana of Austria, who were uncle and
+niece. In this were the only inbreeding loop then he would have had an
+inbreeding coefficient of $\nicefrac{1}{8}$. Unfortunately for Charles, the
+Spanish Habsburgs had long kept wealth and power within their family
+by arranging marriages between close kin. The pedigree of Charles II is shown in Figure \ref{fig:Carlos_second_pedigree}, and
+multiple inbreeding loops are apparent. For example, Phillip III,
+Charles II's grandfather and great-grandfather, was himself a child of
+a uncle-niece marriage.     
+
 \citet{alvarez:09} calculated that Charles II has an inbreeding
 coefficient of $0.254$, equivalent to a full- sib mating
 thanks to all of the inbreeding loops in his pedigree. Therefore, he
 is expected to have been homozygous by descent for a full quarter of his
 genome. As we'll talk about later in these notes this means that he
 may have been homozygous for a number of recessive disease alleles,
-and indeed was a very sickly man who left no descendents thanks to his
+and indeed he was a very sickly man who left no descendants thanks to his
 infertility. \sidenote{Pedro Gargantilla who performed his autopsy stated
   that his body "did not contain a single drop of blood; his heart was
   the size of a peppercorn; his lungs corroded; his intestines rotten
   and gangrenous; he had a single testicle, black as coal, and his
-  head was full of water." Although some of these details seem a
+  head was full of water." Although, while some of this description
+  may refer to actual medical conditions, some of these details seem a
   little unlikely. } Thus plausibly the end of one of the great
 European dynasties came about through inbreeding. 
 
 }
-\subsection{Calculating inbreeding coefficients from data}
+\subsection{Calculating inbreeding coefficients from genetic data}
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
 generalized Hardy--Weinberg proportions hold, we can set $H_O$ equal to
