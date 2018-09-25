@@ -367,7 +367,7 @@ fewer meioses, closer relatives share more alleles. In Figure
 between two cousins. As we'll see, many population and quantitative genetic
 concepts rely on how closely related individuals are, and thus we need some way
 to quantify the degree of kinship among individuals. \\
-\begin{marginfigure}
+\begin{figure}
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/Cousins_IBD_chromo_cartoon.png}
 \end{center}
@@ -377,7 +377,7 @@ to quantify the degree of kinship among individuals. \\
   generations. Notice that the identity by descent between the cousins persists for a long
 stretch of chromosome due to the limited number of generations for
 recombination.} \label{fig:IBD_cousins_chr_cartoon}  
-\end{marginfigure}
+\end{figure}
 
 We will define two alleles to be identical by descent (IBD) if they are
 identical due to transmission from a common ancestor in the past few generations\cite{cotterman:40,malecot:48}. For the moment,
@@ -711,40 +711,39 @@ Genetic markers are commonly used to estimate inbreeding for wild and/or captive
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
 
-\gc{
   \paragraph{Genomic blocks of homozygosity due to inbreeding.}
 
 
-As we saw above close relatives are expected to share the IBD alleles in
+As we saw above, close relatives are expected to share alleles IBD in
 large genomic blocks. Thus, when related individuals mate and transmit
 alleles to an inbred offspring, they transmit these alleles in big
 blocks through meiosis. An example, lets return to the case of our
 hypothetical first cousins from Figure
-\ref{fig:IBD_cousins_chr_cartoon}, this pair of individuals had a
-child and a possible pattern of transmission is shown in Figure
+\ref{fig:IBD_cousins_chr_cartoon}. If this pair of individuals had a
+child, one possible pattern of genetic transmission is shown in Figure
 \ref{fig:kid_first_cousins}. The child has inherited the red stretch
 of chromosome via two different routes through their predigree from
-the granddparents. This region is homozygous by descent, an autozygous
-segment, the child would homozygous at all of the loci in this
-genome.
-  \begin{marginfigure}
+the grandparents. This is an example of an autozygous
+segment, where the child is homozygous by descent at all of the loci in this
+red region.
+  \begin{figure}
   \begin{center}
-    \includegraphics[width= \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
+    \includegraphics[width= 0.5 \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
 \end{center}
 \caption{.} \label{fig:kid_first_cousins}  
-\end{marginfigure}
+\end{figure}
 The inbreeding coefficient of the child sets the proportion of their
-genome that will be these homozygous segments. For example, our child
+genome that will be in these autozygous segments. For example, a child
 of first full cousins is expected to have $1/16$ of their
 genome in these segments.
 The more distant the loop in the pedigree, the more meioses that
-chromosomes have been through, the shorter these blocks will be. Our
+chromosomes have been through and the shorter individual blocks will be. A
 child of first cousins will have longer blocks than a child of second
-cousins.
+cousins, for example.
 
 Individuals with multiple inbreeding loops in their family tree can
-have a high inbreeding coefficient, but have this distributed over
-many small blocks of autozygosity. For example, Carlos the second had
+have a high inbreeding coefficient due to
+the combined effect of many small blocks of autozygosity. For example, Carlos the second had
 an inbreeding coefficient that is equivalent to that of the child of
 full-sibs, with a quarter of his genome expected to homozygous by
 descent, but this would be made up of many shorter blocks. 
@@ -763,25 +762,12 @@ regions. This estimate is called $F_{ROH}$.
 \end{center}
 \caption{English bulldog. The dogs of Boytown. 1918.  Dyer, W. A.} \label{fig:dog_FOH}  
 \end{marginfigure}
-
-
-
-As an example of this is from the work of
+An example of using $F_{ROH}$ to study inbreeding comes from the work of
 \citet{Sams:18}, who identified runs of homozygosity in 2,500 dogs,
-ranging from 500kb up to many megabases. In Figure
-\ref{fig:dog_FOH} is the distribution of $F_{ROH}$ of individuals in each dog
+ranging from 500kb up to many megabases. Figure
+\ref{fig:dog_FOH} shows the distribution of $F_{ROH}$ of individuals in each dog
 breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
-broken down by the length distribution. Dog breeds have been subject
-to intense breeding that has resulted in high levels of inbreeding. 
-Doberman Pinscher have the highest levels of their genome in runs of
-homozygosity, however, much of this is due to many short blocks of
-homozygosity. This indicates that the inbreeding in Doberman Pinscher
-is old. While English bulldogs have lower levels of inbreeding,
-however, this is contained in long blocks of homozygosity. This
-suggests that English bulldogs have had high levels of inbreeding in
-the recent past. 
-}
-
+broken down by the length of ROH segments. 
   \begin{figure}
   \begin{center}
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dogs_FROH.pdf}
@@ -790,15 +776,19 @@ the recent past.
   dog breeds from \citet{Sams:18}.} \label{fig:dog_FOH}  
 \end{figure}
 
+Dog breeds have been subject
+to intense breeding that has resulted in high levels of inbreeding. Of the population samples examined, Doberman Pinschers have the highest levels of their genome in runs of
+homozygosity, however, much of this is due to many short runs of homozygosity. \erin{It's hard for me to read these figures because they are very small. But, it looks like Dobermans have a large portion of long blocks to me (aren't they the top line in orange?), so maybe a better example would be French bulldogs for older inbreeding (and less inbreeding) compared to the English bulldog.} This indicates that the inbreeding in Doberman Pinschers
+is many generations back. In contrast, English bulldogs have lower levels of inbreeding, however, this is contained in long blocks of homozygosity. This suggests that English bulldogs have had high levels of inbreeding in
+the recent past. 
 
   \begin{figure}
   \begin{center}
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dog_FROH_dist.pdf}
 \end{center}
-\caption{Cumulative density of ROH from \citet{Sams:18} for various
-  dog breeds.} \label{fig:dog_FOH}  
+\caption{Cumulative density of length of ROH length, measured in megabases (Mb) from \citet{Sams:18} for various
+  dog breeds.} \label{fig:dog_FOH_dist}  
 \end{figure}
-
 
 
 \section{Summarizing population structure}
@@ -886,7 +876,7 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above). \sidenote{\ec{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}}
+$H_T$ with their averages across loci (as above). \sidenote{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}
 
 
 \begin{marginfigure}
@@ -917,7 +907,7 @@ $F_{ST}$ is averaged in $2000$bp windows moving along the genome.
 \begin{center}
 \includegraphics[width = 0.8 \textwidth]{Journal_figs/alleles_genotypes/blue_golden_winged_warblers/GW_FST_warblers.png}  %[width= \marginwidth]
 \end{center}
-\caption{Thanks to David Toews for the figure. } \label{fig:warbler_FST}  
+\caption{FST between blue- and golden-winged warbler population samples at SNPs across the genome. Each dot is a SNP, and SNPs are coloured alternating by scaffold. Thanks to David Toews for the figure. } \label{fig:warbler_FST}  
 \end{figure*}
 The average is very low, but some regions of very high $F_{ST}$ stand
 out. Nearly all of these regions correspond to large allele frequency
@@ -1147,10 +1137,11 @@ allele $A_1$ an individual carries at this SNP). We can think of this as a $N
 
 Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
-\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{p_{\ell}(1-p_{\ell})}} \end{equation} i.e.
+\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{2 p_{\ell}(1-p_{\ell})}} \end{equation} 
+i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
-($2p_{\ell}$) and divide through by the square root of the expected variance \erin{I think the denominator in 2.24 and 2.25 is maybe missing a factor of 2 because it's diploid...b/c variance for a binomial sample size n is npq so wouldn't diploid be n=2 .. or maybe I'm missing something?} assuming that
-alleles are sampled binomially from the mean frequency ($\sqrt{p_{\ell}
+($2p_{\ell}$) and divide through by the square root of the expected variance assuming that
+alleles are sampled binomially from the mean frequency ($\sqrt{2 p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
   dimension $N \times S$). We can then perform principal components analysis of
   this data matrix to uncover the major axes of genotype variance in our
@@ -1177,10 +1168,10 @@ here. There's a number of equivalent ways of thinking about what PCA
 is doing. One of these ways is to think that when we do PCA we are building the individual by individual
 covariance matrix and performing an eigenvalue decomposition of this
 matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
-the $[i,~j]$ given by \erin{why are we summing instead of averaging over loci? isn't this missing a 1/(S-1) term?}
+the $[i,~j]$ given by 
 \begin{equation}
-\sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
-  2p_{\ell})}{p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
+\frac{1 }{S-1} \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
+  2p_{\ell})}{2 p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
 \end{equation}
 Note that this is the covariance, and is very similar to those we
 encountered in discussing $F$-statistics as correlations (equation
@@ -1298,7 +1289,7 @@ haplotype. Effectively, recombination breaks up the association between loci.
 We'll define the recombination fraction ($r$) to be the probability of an odd
 number of crossing over events between our loci \ec{in a single meiosis}. In practice we'll often be
 interested in relatively short regions such that recombination is relatively
-rare, and so we might think that $r=r_{BP}L \ll tidyfrac{1}{2}$, where $r_{BP}$ is the
+rare, and so we might think that $r=r_{BP}L \ll \frac{1}{2}$, where $r_{BP}$ is the
 average recombination rate per base pair (typically $\sim 10^{-8}$) and L is
 the number of base pairs separating our two loci.\\
 
