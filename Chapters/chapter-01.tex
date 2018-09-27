@@ -456,7 +456,7 @@ two individuals are both homozygous for allele 1? Well that's
 \begin{align}
   P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
   & + P(A_1 A_1 | \text{1 allele IBD}) P(\text{1 allele IBD})  \nonumber\\
-  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD}) \\
+  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD}) 
 \end{align}
 Or, in our $r_0$, $r_1$, $r_2$ notation:
 \begin{align}
@@ -656,45 +656,33 @@ homozygous?
 \end{question}
 
 \paragraph{Multiple inbreeding loops in a pedigree.}
-\gc{Up to this point we have assumed that there is at most one
-  inbreeding loop in the recent family history our
-  individuals, i.e. the parents of our inbred individual have at most
-  one recent genealogical connection. However, an individual who has
-  multiple inbreeding loops in their pedigree can be homozygous by
-  descent thanks to receiving IBD alleles via different these
-  different loops. We can extend this
-  framework to handle pedigrees of arbitrary complexity. We can extend
- beyond our coefficients $r_0$, $r_1$, and $r_2$, to account for
+Up to this point we have assumed that there is at most one inbreeding loop in the recent family history of our
+  individuals, i.e. the parents of our inbred individual have at most one recent genealogical connection. However, an individual who has multiple inbreeding loops in their pedigree can be homozygous by
+  descent thanks to receiving IBD alleles via multiple different different loops. To calculate inbreeding in pedigrees of arbitrary complexity, we can extend 
+ beyond our original relatedness coefficients $r_0$, $r_1$, and $r_2$ to account for
  higher order sharing of alleles IBD among relatives. For example,
- what is the probability that both of the alleles in the first individual
- are shared IBD with one allele in the second individual. There are
- nine of these coefficients in total, and we won't go in to them here
+ we can ask, what is the probability that \textit{both} of the alleles in the first individual
+ are shared IBD with one allele in the second individual? There are
+ nine possible relatedness coefficients in total to completely describe kinship between two diploid individuals, and we won't go in to them here
  as it's a lot to keep track of.  
-However, we can calculate the inbreeding coefficient of an
+However, we will show how we can calculate the inbreeding coefficient of an
 individual with multiple inbreeding loops more directly.\\
 
-Our parents of our inbred individual (B and C) have $n$ shared ancestors,
-i.e. individuals who appear in in both in their recent family trees. We denote these shared ancestors by $A_1, \dots,
-A_n$,  the number of meioses linking B and C to their shared ancestor
-are $n_{i,~B}$ and $n_{i,~C}$ respectively, for a total of $n_i$ meioses linking
-B and C via $A_i$. Then the kinship coefficient of the parents,
-i.e. the inbreeding coefficient of the child is
+%ut at loci where the ancestor is inbred you get two more options (C inherits maternal/B paternal or opp.) so the factor of 2 applies to fA as well and cancels out for both.} 
+
+Let's say the parents of our inbred individual (B and C) have $K$ shared ancestors,
+i.e. individuals who appear in both B and C's recent family trees. We denote these shared ancestors by $A_1, \dots,A_K$, and we denote by $n$ the total number of individuals in the chain from B to C via ancestor $A_i$, including B, C, and $A_i$. For example, if B is C's aunt, then B and C share two ancestors, which are B's parents and, equivalently, C's grandparents. In this case, there are n=4 individuals from B to C through each of these two shared ancestor. In the general case, the kinship coefficient of B and C,
+i.e. the inbreeding coefficient of their child, is
 \begin{equation}
- F = \sum_i \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big)
+ F = \sum_{i=1}^K \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big)
 \end{equation}
 where $f_{A_i}$ is the inbreeding coefficient of the ancestor
-$A_i$. What's happening here is that the sum is over the multiple
-independent paths through which B and C can share an allele IBD. With probability
-$\nicefrac{1}{2^{n_i}}$ an allele picked at random from B and C are descended from the same ancestral allele in individual
-$A_i$, in which case they are IBD. However, if the ancestor $A_i$ was
-themselves inbred, even if at a locus B descended from maternal
-and C from the paternal allele of individual $A_i$ with probability $f_i$ those
-alleles are themselves IBD. Thus a shared inbred ancestor increases
-the kinship of the parents. 
-
-Multiple inbreeding loops increase the probability that a child
-is homozygous by descent, and this can be expressed simply by using our
-inbreeding coefficient in our generalized HW equation.
+$A_i$. What's happening here is that we sum over all the mutually-exclusive paths in the pedigree through which B and C can share an allele IBD. With probability
+$\nicefrac{1}{2^{n_i}}$, a pair of alleles picked at random from B and C is descended from the same ancestral allele in individual
+$A_i$, in which case the alleles are IBD. \sidenote{For example, in the case of our aunt-nephew case, assuming that the aunt's two parents are their only recent shared ancestors, then $F = \nicefrac{1}{2^4}+\nicefrac{1}{2^4} = \nicefrac{1}{8}$, in agreement with the answer we would obtain from  eqn \eqref{eqn:coeffkinship}.} However, even if B inherits the maternal allele and C inherits the paternal allele of shared ancestor $A_i$, if $A_i$ was
+themselves inbred,  with probability $f_{A_i}$ those two
+alleles are themselves IBD. Thus a shared \textit{inbred} ancestor further increases
+the kinship of B and C. 
 
 \begin{figure}
   \begin{center}
@@ -703,44 +691,46 @@ inbreeding coefficient in our generalized HW equation.
 \caption{The pedigree of King Charles II of Spain} \label{fig:Carlos_second_pedigree}  
 \end{figure}
 
+Multiple inbreeding loops increase the probability that a child
+is homozygous by descent at a locus, which can be calculated simply by plugging in $F$, the child's
+inbreeding coefficient, into our generalized HW equation.
+
 \begin{marginfigure}
 \begin{center}
   \includegraphics[width=
   \textwidth]{illustration_images/alleles_genotypes/Carlos_second/378px-Juan_de_Miranda_Carreno_002.jpg}
 %https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png
 \end{center}
-\caption{Charles the second of Spain. } \label{fig:Carlos_second}  
+\caption{Charles the second of Spain (by Juan Carre\~{n}o de Miranda, 1685).} \label{fig:Carlos_second}  
 \end{marginfigure}
-
 As one extreme example of the impact of multiple inbreeding loops in
-an individual's pedigree. Lets consider king Charles II of
+an individual's pedigree, let's consider king Charles II of
 Spain, the last of the Spanish Habsburgs.  Charles was the son of
 Philip IV of Spain and Mariana of Austria, who were uncle and
-niece. In this were the only inbreeding loop then he would have had an
+niece. If this were the only inbreeding loop, then Charles would have had an
 inbreeding coefficient of $\nicefrac{1}{8}$. Unfortunately for Charles, the
 Spanish Habsburgs had long kept wealth and power within their family
 by arranging marriages between close kin. The pedigree of Charles II is shown in Figure \ref{fig:Carlos_second_pedigree}, and
 multiple inbreeding loops are apparent. For example, Phillip III,
 Charles II's grandfather and great-grandfather, was himself a child of
-a uncle-niece marriage.     
+an uncle-niece marriage.     
 
-\citet{alvarez:09} calculated that Charles II has an inbreeding
-coefficient of $0.254$, equivalent to a full- sib mating
+\citet{alvarez:09} calculated that Charles II had an inbreeding
+coefficient of $0.254$, equivalent to a full-sib mating,
 thanks to all of the inbreeding loops in his pedigree. Therefore, he
 is expected to have been homozygous by descent for a full quarter of his
-genome. As we'll talk about later in these notes this means that he
+genome. As we'll talk about later in these notes, this means that Charles
 may have been homozygous for a number of recessive disease alleles,
-and indeed he was a very sickly man who left no descendants thanks to his
-infertility. \sidenote{Pedro Gargantilla who performed his autopsy stated
+and indeed he was a very sickly man who left no descendants due to his
+infertility. \sidenote{Pedro Gargantilla, who performed Charles' autopsy, stated
   that his body "did not contain a single drop of blood; his heart was
   the size of a peppercorn; his lungs corroded; his intestines rotten
   and gangrenous; he had a single testicle, black as coal, and his
-  head was full of water." Although, while some of this description
+  head was full of water." While some of this description
   may refer to actual medical conditions, some of these details seem a
   little unlikely. } Thus plausibly the end of one of the great
 European dynasties came about through inbreeding. 
 
-}
 \subsection{Calculating inbreeding coefficients from genetic data}
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
@@ -779,14 +769,13 @@ If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data. 
 
 
-\begin{marginfigure}
+Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. \begin{marginfigure}
 \begin{center}
   \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/grey_wolf/5988399184_0c36a8e51c_z.jpg}
 \end{center}
 \caption{Grey wolf ({\it Canis lupus}). Dogs, jackals, wolves, and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans.} \label{fig:Grey_wolf}  
 \end{marginfigure}
-
-Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobo is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
+They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobo is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question} 
 
@@ -840,7 +829,7 @@ estimate an individual's inbreeding coefficient is then to total up
 the proportion of an individual's genome that falls in such ROH
 regions. This estimate is called $F_{ROH}$. 
 
-  \begin{marginfigure}
+  \begin{marginfigure}[-1cm]
   \begin{center}
     \includegraphics[width=
     \textwidth]{illustration_images/alleles_genotypes/english_bulldog/14752595581_4330377c97_z.jpg}
@@ -961,11 +950,10 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$.  Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above). 
-\sidenote[][-4cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out.}
+$H_T$ with their averages across loci (as above).
+\sidenote[][-2cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
 
-
-\begin{marginfigure}[-3cm]
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/blue_golden_winged_warblers/The_warblers_of_North_America_6309257188.jpg}  %[width= \marginwidth]
 \end{center}
@@ -1275,7 +1263,15 @@ putative ring species in the Greenish warbler ({\it Phylloscopus
 ring around the edge of the Himalayan plateau. \citet{alcaide:14}
 collected $95$ greenish warbler samples from $22$ sites around the
 ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
-\begin{marginfigure}
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
+\end{center}
+    \caption[][3cm]{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies}
+\label{fig:Gwarbler_geo} 
+\end{figure}
+
+\begin{marginfigure}[2cm]
 % TODO: MISSING FIGURE
 \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/greenish_warbler/10036311396_14915d1715_z.jpg}
   \caption{Greenish warbler, subspp. viridanus ({\it Phylloscopus
@@ -1295,15 +1291,8 @@ plateau, such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
 (red) populations presently form a stable hybrid zone.
 
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
-\end{center}
-    \caption{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies}
-\label{fig:Gwarbler_geo} 
-\end{figure}
 
-\citet{alcaide:14}  sequenced their samples at 2,334 snps. In Figure \ref{fig:warbler_heat}
+\citet{alcaide:14} obtained sequence data for their samples at 2,334 snps. In Figure \ref{fig:warbler_heat}
 you can see the matrix of kinship coefficients, using \eqref{eqn:kinship_mat}, between all pairs of
 samples. You can already see a lot about population structure in this
 matrix. Note how the red and yellow samples, thought to be derived from
