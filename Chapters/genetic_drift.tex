@@ -1,10 +1,7 @@
 \chapter{Genetic Drift and Neutral Diversity}
 
 \newthought{Randomness is inherent to evolution}\gc{, from the species of bird where first to be blown of course to colonize an oceanic island to the mutations that arise first in the HIV infecting an individual taking anti-retroviral drugs.}  One major source of
-stochasticity in population genetics is genetic drift.  Genetic drift occurs
-because more or less copies of an allele by chance can be transmitted to the
-next generation. This can occur because by chance the individuals carrying a
-particular allele can leave more or less offspring in the next generation. In a
+stochasticity in population genetics is genetic drift.  Genetic drift occurs because more or less copies of an allele by chance can be transmitted to the next generation. This can occur because by chance the individuals carrying a particular allele can leave more or less offspring in the next generation. In a
 sexual population genetic drift also occurs because Mendelian transmission
 means that only one of the two alleles in an individual, chosen at random at a
 locus, is transmitted to the offspring. 
@@ -15,18 +12,20 @@ the moment think of this as ``no effect" on fitness.
 Proponents of this view suggested that the vast majority of new mutations could be divided into neutral mutations and highly deleterious mutations (e.g. those that disrupt proteins that already perform their function well). This latter class of mutations were too deleterious to usually contribute much to common polymorphisms or substitution between species, because they were quickly weeded out of the population by selection. 
 
 This can sound strange given that much of the time our first brush with evolution often focuses of adaptation and phenotypic evolution. However, proponents of this world-view didn't deny the existence of advantageous mutations, but they thought that they were rare enough that their contribute much to the bulk of polymorphism or divergence. They also often thought that much of phenotypic evolution may be adaptive evolution could be adaptive, but again the loci responsible for these phenotypes were a small fraction of all the molecular change that occurred. 
-What types of molecular changes could be neutral? 
+What types of molecular changes could be neutral? Perhaps:
 \begin{enumerate}
-\item Changes in non-coding DNA that don't disrupt regulatory sequence? 
+\item Changes in non-coding DNA that don't disrupt regulatory sequence
 \item Synonymous changes in coding regions, i.e. those that don't change the amino-acid encoded by a codon. 
 \item Non-synonymous changes that don't have a strong affect on the properties of the amino-acid encoded that are critical to protein function, e.g. changes that don't the size, charge ,and hydrophobic properties of the amino acid too much.
-\item An amino-acid change that prevents an organism living to 50, but most individuals die before their 20s.
+\item An amino-acid change that leads your ears to be a slight different shape, or that prevents an organism living to 50 in a species where most individuals die in their 20s.
 \end{enumerate}
+There's counter examples to all of these ideas, for example synonymous changes can affect the translation speed and accuracy of proteins and so subject to selection, however, it suggests that some proportion of molecular not being subject to selection isn't as daft as it initially sounds. 
+
+Various features of molecular polymorphism and divergence have been seen as consistent with the neutral theory of molecular evolution. The two we'll focus on in this chapter in the high level of molecular polymorphism in many species, see for example Figure \ref{fig:Leffer}, and the molecular clock. We'll see that various aspects of the original neutral theory have merit in describing some features and types of molecular change, but we'll also see that it is demonstrably wrong in some cases. We'll also see the primary position of neutral theory shouldn't be whether it is right or wrong, but that it serves a simple null model that can be tested and in some cases rejected. The broader debate that the field of molecular evolution now pursues is  determining genome-wide models that incorporate neutral, adaptive, and deleterious changes to determine the balance of these types of changes in driving different types of evolutionary change.   
 }
 \section{Loss of heterozygosity due to drift.} \label{LossofHet} 
 
-Genetic drift will, in the absence of new mutations, slowly purge our
-population of neutral genetic diversity as alleles slowly drift to high or low
+Genetic drift will, in the absence of new mutations, slowly purge our population of neutral genetic diversity as alleles slowly drift to high or low
 frequencies and are lost or fixed over time. \\
 
 Imagine a population of a constant size $N$ diploid individuals, and that we
@@ -35,6 +34,8 @@ to each other.  This population is randomly mating with respect to the alleles
 at this locus. See Figures \ref{fig:LossHet_two_alleles} and
 \ref{fig:LossHet_many_alleles} to see how genetic drift proceeds, by tracking
 alleles within a small population. \\
+
+
 
 In generation $t$ our current level of heterozygosity is $H_t$,
 i.e. the probability that two randomly sampled alleles in generation
@@ -60,6 +61,16 @@ generation $t+1$?\\
   mutations. A diploid population of 5 individuals. In the first generation I colour every allele a different
 colour so we can track their descendants.} \label{fig:LossHet_many_alleles}
 \end{figure} 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/WF_loss_het/WF_loss_het_N50.pdf}
+\end{center}
+\caption{Loss of heterozygosity over time, in the absence of new
+  mutations. A diploid population of 50 individuals. We start from a population with an allele at 30\% frequenct } \label{fig:LossHet_WF_N50}
+\end{figure} 
+
 
 In the next generation ($t+1$) we are looking at the alleles in the
 offspring of generation $t$. If we randomly sample two alleles in generation
