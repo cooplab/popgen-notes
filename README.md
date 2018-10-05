@@ -16,6 +16,11 @@ and feel free to contact me or leave a comment here.
 I hope to develop these notes into a fuller resource over the coming years,
 to create an up to date open source population genetics textbook.
 
+There are various other popgen notes openly available online. Here’s a couple of other resources:
+
+Kent Holsinger’s Notes: https://github.com/kholsinger/Lecture-Notes-in-Population-Genetics
+Joe Felsenstein’s book: http://evolution.genetics.washington.edu/pgbook/pgbook.html
+Waslh and Lynch pdfs: http://nitro.biosci.arizona.edu/zbook/NewVolume_2/newvol2.html
 Graham
 
 ## Notes on Building the Site
