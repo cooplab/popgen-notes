@@ -1355,7 +1355,7 @@ Up to now we have been interested in correlations between alleles at the same
 locus, e.g. correlations within individuals (inbreeding) or between individuals
 (relatedness). We have seen how relatedness between parents affects the extent
 to which their offspring is inbred. We now turn to correlations between alleles
-at different loci..\\
+at different loci.\\
    
 
 \paragraph{Recombination} 
@@ -1407,7 +1407,7 @@ and linkage disequilibrium separate in your mind. Genetic linkage refers to the
 linkage of multiple loci due to the fact that they
 are transmitted through meiosis together (most often because the
 loci are on the same chromosome). Linkage disequilibrium merely refers
-to the covariance between the alleles at different loci, this may in
+to the covariance between the alleles at different loci; this may in
 part be due to the genetic linkage of these loci but does not
 necessarily imply this (e.g. genetically unlinked loci can be in LD
 due to population structure). \\
@@ -1425,9 +1425,9 @@ Pop    & $p_{AB}$    & $p_{Ab}$ &    $p_{aB}$ &    $p_{ab}$\\
 \end{tabular}
 \end{center}
 
-{\bf A)} How much LD is there within populations, i.e. estimate D?\\
+{\bf A)} How much LD is there within \ec{species}? (i.e. estimate D)\\
 
-{\bf B)} If we mixed the two populations together in equal proportions, \gc{i.e. average the frequency for $p_{AB}$ across both populations and so on}, what value would D take before any mating has had the chance to occur? \\
+{\bf B)} \ec{If we mixed individuals from the two species together in equal proportions, we could form a new population with $p_{AB}$ equal to the average frequency of $p_{AB}$ across species 1 and 2. What value would D take in this new population before any mating has had the chance to occur?} \\
 \end{question}
 
 
@@ -1453,7 +1453,7 @@ $D^{\prime}$ and varies between $+1$ and $-1$. In Figure
 in human and chimp. Notice how physically close SNPs, i.e. those close
 to the diagonal, have higher absolute values of $D^{\prime}$ as
 closely linked alleles are separated by recombination less often
-allowing high levels of LD to accumulate. Over large physically
+allowing high levels of LD to accumulate. Over large physical
 distances, away from the diagonal, there is lower $D^{\prime}$. This is
 especially notable in humans as there is an intense, human-specific recombination
 hotspot in this region, which is breaking down LD between opposite
@@ -1477,10 +1477,10 @@ fraction.   \\
 
 
 
-Figure \ref{fig:Mouse_LD} shows $r^2$ pairs of SNPs at
+Figure \ref{fig:Mouse_LD} shows $r^2$ for pairs of SNPs at
 various physical distances in two population samples of {\it Mus musculus
-  domesticus}. Again LD is highest between physically close markers as LD is being generated faster than it can be
-decayed via recombination; more distant markers have much lower LD as
+  domesticus}. Again LD is highest between physically close markers as LD is being generated faster than it can
+decay via recombination; more distant markers have much lower LD as
 here recombination is winning out. Note the decay of LD is much
 slower in the advanced-generation cross population than in the natural wild-caught population. This persistence of LD across megabases is due to the limited number of generations for recombination
 since the cross was created.
@@ -1535,13 +1535,13 @@ haplotype as
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_time.pdf}
 \end{center}
-\caption{\gc{The decay of LD from an initial value of $D_0=0.25$ over time ($t$) due for a pair of loci $r$ apart.}} \label{fig:LD_time}
+\caption{The decay of LD from an initial value of $D_0=0.25$ over time (Generations) for a pair of loci $r$ \erin{add units?} apart.}\label{fig:LD_time}
 \end{marginfigure} 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_recom.pdf}
 \end{center}
-\caption{\gc{The decay of LD from an initial value of $D_0=0.25$ due to recombination, varying the recombination fraction ($r$) between our pair of loci for various times ($t$) that the LD has been decaying for.}} \label{fig:LD_recom}
+\caption{\ec{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci. }} \label{fig:LD_recom}
 \end{marginfigure} 
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
@@ -1559,7 +1559,7 @@ generations later ($D_t$) is
 \begin{equation}
 D_t=  (1-r)^t D_0
 \end{equation}
-so recombination is acting to decrease LD, and it does so
+Recombination is acting to decrease LD, and it does so
 geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
 approximate this by an exponential and say that   
 \begin{equation}
@@ -1586,7 +1586,7 @@ the mixing of populations is offered by the LD created by the
 interbreeding between humans and Neanderthals. Neanderthals and modern
 Humans diverged from each other likely over half a million years ago,
 allowing time for allele frequency differences to accumulate between
-the \gc{Neanderthal and modern human populations} The two populations spread back into secondary contact when
+the Neanderthal and modern human populations. The two populations spread back into secondary contact when
 humans moved out of Africa over the past hundred thousand years or
 so. One of the most exciting findings from the sequencing of the
 Neanderthal genome was that modern-day people with Eurasian ancestry
@@ -1595,22 +1595,22 @@ genome, via interbreeding during this secondary contact. To date the timing of t
 interbreeding, \citeauthor{Sankararaman:12} looked at the LD in modern
 humans between pairs of alleles found to be derived from the Neanderthal
 genome (and nearly absent from African populations). 
-In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci
-is shown as a function of the genetic distance ($r$) between them from
+In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci as a function of the genetic distance ($r$) between them, from
 the works of 
 \citeauthor{Sankararaman:12}.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/alleles_genotypes/Neanderthal_LD/European_neanderthal_LD.pdf}
 \end{center}
-\caption{\gc{The LD between putative-Neanderthal alleles in a modern European population (the CEU sample). Each point represents the average D statistic between a pair of alleles at loci at a given genetic distance apart (as given on the x-axis and measured in centiMorgans (cM)). The putative neanderthal alleles are alleles where the Neanderthal genome has a derived allele that is at very low frequency in an modern-human  West African population sample (thought to have little admixture from Neanderthals). The red line is the fit of an exponential decay of LD, using non-linear least squared (nls in R).}} \label{fig:LD_Neanderthal}
+\caption{The LD between putative-Neanderthal alleles in a modern European population (the CEU sample \ec{from the 1000 Genomes Project}). Each point represents the average D statistic between a pair of alleles at loci at a given genetic distance apart (as given on the x-axis and measured in centiMorgans (cM)). The putative Neanderthal alleles are alleles where the Neanderthal genome has a derived allele that is at very low frequency in an modern-human  West African population sample (thought to have little admixture from Neanderthals). The red line is the fit of an exponential decay of LD, using non-linear least squared (nls in R).}
+\label{fig:LD_Neanderthal}
 \end{figure}
 
-We can fit the exponential decay of LD with $r$ predicted by eqn \eqref{eqn_LD_decay} to the data points in this figure;
+\ec{Assuming a recombination rate $r$, we can fit the exponential decay of LD predicted by eqn. \eqref{eqn_LD_decay} to the data points in this figure;}
 the fit is shown as a red line. Doing this we estimate $t=1200$
 generations, or about 35 thousand years (using a human generation time of 29
-years). Thus the LD, in modern Eurasians, between alleles derived from
-the interbreeding Neanderthals represents over thirty thousand years of
+years). Thus the LD in modern Eurasians, between alleles derived from
+the interbreeding with Neanderthals, represents over thirty thousand years of
 recombination slowly breaking down these old
 associations. \marginnote{The calculation done by
   \citeauthor{Sankararaman:12} is actually a bit more involved as they
