@@ -8,29 +8,27 @@ locus, is transmitted to the offspring.
 
 Genetic drift can play a role in the dynamics of all alleles in all populations, but it will play the biggest role for neutral alleles. A neutral polymorphism occurs when the segregating alleles at a polymorphic site have no discernible differences in their effect on fitness. We'll make clear what we mean by "discernible" later, but for
 the moment think of this as "no effect" on fitness. 
-\paragraph{The neutral theory of molecular evolution.} The Neutral theory of molecular evolution\cite{kimura:68,king:69,kimura:83} stated that patterns of molecular polymorphism within species and substitution between species could be well understood by supposing that the vast majority of these molecular polymorphisms and substitutions were neutral alleles, whose dynamics were just subject to the vagaries of genetic drift and mutation. 
-\ec{Proponents of this view posited that the vast majority of new mutations are either neutral or highly deleterious (e.g. mutations that disrupt important protein functions).} This latter class of mutations are too deleterious to contribute much to common polymorphisms or substitutions between species, because they are quickly weeded out of the population by selection. 
+\paragraph{The neutral theory of molecular evolution.} The Neutral theory of molecular evolution\cite{kimura:68,king:69,kimura:83} stated that patterns of molecular polymorphism within species and substitution between species could be well understood by supposing that the vast majority of these molecular polymorphisms and substitutions were neutral alleles, whose dynamics were just subject to the vagaries of genetic drift and mutation. Proponents of this view posited that the vast majority of new mutations are either neutral or highly deleterious (e.g. mutations that disrupt important protein functions). This latter class of mutations are too deleterious to contribute much to common polymorphisms or substitutions between species, because they are quickly weeded out of the population by selection. 
 
-Neutral theory can sound strange given that much of the time our first brush with evolution often focuses of adaptation and phenotypic evolution. \ec{However, proponents of this world-view didn't deny the existence of advantageous mutations, they simply thought that beneficial mutations are rare enough that their contribution to the bulk of polymorphism or divergence can be largely ignored. They also often thought that much of phenotypic evolution may well be adaptive, but again the loci responsible for these phenotypes are a small fraction of all the molecular change that occur.} 
-What types of molecular changes could be neutral? Perhaps:
+Neutral theory can sound strange given that much of the time our first brush with evolution often focuses of adaptation and phenotypic evolution. However, proponents of this world-view didn't deny the existence of advantageous mutations, they simply thought that beneficial mutations are rare enough that their contribution to the bulk of polymorphism or divergence can be largely ignored. They also often thought that much of phenotypic evolution may well be adaptive, but again the loci responsible for these phenotypes are a small fraction of all the molecular change that occur. The original neutral theory of molecular evolution was original proposed to explain protein polymorphism. However, we can apply it more broadly to think about neutral evolution genome-wide. With that in mind, what types of molecular changes could be neutral? Perhaps:
 \begin{enumerate}
-\item Changes in non-coding DNA that don't disrupt regulatory sequences
-\item Synonymous changes in coding regions, i.e. those that don't change the amino-acid encoded by a codon
+\item Changes in non-coding DNA that don't disrupt regulatory sequences. For example, in the human genome only about 2\% of the genome codes for proteins. The rest is mostly made up of old transposable element and retrovirus insertions, repeats, pseudo-genes, and general genomic clutter. Current estimates suggesting that, even counting conserved, functional, non-coding regions that $<10\%$ of our genome is subject to evolutionary constraint \citep{rands:14}.   
+\item Synonymous changes in coding regions, i.e. those that don't change the amino-acid encoded by a codon.
 \item Non-synonymous changes that don't have a strong effect on the functional properties of the amino acid encoded, e.g. changes that don't change the size, charge, or hydrophobic properties of the amino acid too much.
-\item An amino-acid change with phenotypic consequences, but little relevance to fitness, \ec{e.g. a mutation that causes your ears to be a slightly different shape, or that prevents an organism from living past 50 in a species where most individuals reproduce and die by their 20s.}
+\item An amino-acid change with phenotypic consequences, but little relevance to fitness, e.g. a mutation that causes your ears to be a slightly different shape, or that prevents an organism from living past 50 in a species where most individuals reproduce and die by their 20s.
 \end{enumerate}
-There are counter examples to all of these ideas, e.g. synonymous changes can affect the translation speed and accuracy of proteins and so are subject to selection. \ec{However, the list above hopefully convinces you that the general thinking that some portion of molecular change may not be subject to selection isn't as daft as it may have initially sounded. }
+There are counter examples to all of these ideas, e.g. synonymous changes can affect the translation speed and accuracy of proteins and so are subject to selection. However, the list above hopefully convinces you that the general thinking that some portion of molecular change may not be subject to selection isn't as daft as it may have initially sounded. 
 
-Various features of molecular polymorphism and divergence have been viewed as consistent with the neutral theory of molecular evolution. The two we'll focus on in this chapter are the high level of molecular polymorphism in many species, see for example Figure \ref{fig:Leffer}, and the molecular clock. We'll see that various aspects of the original neutral theory have merit in describing some features and types of molecular change, but we'll also see that it is demonstrably wrong in some cases. We'll also see the primary position of neutral theory shouldn't be whether it is right or wrong, but that it serves as a simple null model that can be tested and in some cases rejected. \ec{The broader debate currenlty in the field of molecular evolution is the balance of neutral, adaptive, and deleterious changes that drive different types of evolutionary change.}   
+Various features of molecular polymorphism and divergence have been viewed as consistent with the neutral theory of molecular evolution. The two we'll focus on in this chapter are the high level of molecular polymorphism in many species, see for example Figure \ref{fig:Leffer}, and the molecular clock. We'll see that various aspects of the original neutral theory have merit in describing some features and types of molecular change, but we'll also see that it is demonstrably wrong in some cases. We'll also see the primary utility of the neutral theory isn't whether it is right or wrong, but that it serves as a simple null model that can be tested and in some cases rejected, and subsequently built on. The broader debate currently in the field of molecular evolution is the balance of neutral, adaptive, and deleterious changes that drive different types of evolutionary change.  
 
 \section{Loss of heterozygosity due to drift.} \label{LossofHet} 
 
 Genetic drift will, in the absence of new mutations, slowly purge our population of neutral genetic diversity, as alleles slowly drift to high or low
 frequencies and are lost or fixed over time. \\
 
-Imagine a population of a constant size $N$ diploid individuals, and that we
+Imagine a randomly mating population of a constant size $N$ diploid individuals, and that we
 are examining a locus segregating for two alleles that are neutral with respect
-to each other, \ec{i.e. equally fit}.  This population is randomly mating with respect to the alleles
+to each other.  This population is randomly mating with respect to the alleles
 at this locus. See Figures \ref{fig:LossHet_two_alleles} and
 \ref{fig:LossHet_many_alleles} to see how genetic drift proceeds, by tracking
 alleles within a small population. \\
@@ -63,7 +61,6 @@ colour so we can track their descendants.} \label{fig:LossHet_many_alleles}
 \end{figure} 
 
 
-
 In the next generation ($t+1$) we are looking at the alleles in the
 offspring of generation $t$. If we randomly sample two alleles in generation
 $t+1$ which had different parental alleles in generation $t$, that
@@ -76,7 +73,6 @@ Conversely, if the two alleles in our pair had the same parental allele in
 the proceeding generation (i.e. the alleles are identical by descent
 one generation back) then these two alleles must be identical (as we
 are not allowing for any mutation). \\
-
 
 
 
@@ -109,13 +105,12 @@ H_t =H_0 \exp \left(-\frac{t}{2N} \right)
 i.e. heterozygosity decays exponentially at a rate
 $\nicefrac{1}{(2N)}$.
 
-
-\ec{In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 independently simulated loci drifting in a population of 50 individuals. Each population was started from a frequency of $30\%$ some drift up and some drift down eventually being lost or fixed from the population, but on average, across simulations, the allele frequency doesn't change. We also track heterozygosity, you can see that heterozygosity sometimes goes up, and sometimes goes down, but on average we are loosing heterozygosity, and this rate of loss is well predicted by eqn. \eqref{eqn:loss_het_discrete}. }
+In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 independently simulated loci drifting in a population of 50 individuals. Each population was started from a frequency of $30\%$ some drift up and some drift down eventually being lost or fixed from the population, but on average, across simulations, the allele frequency doesn't change. We also track heterozygosity, you can see that heterozygosity sometimes goes up, and sometimes goes down, but on average we are loosing heterozygosity, and this rate of loss is well predicted by eqn. \eqref{eqn:loss_het_discrete}. 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/WF_loss_het/WF_loss_het_N50.pdf}
 \end{center}
-\caption{\gc{Change in allele frequency and loss of heterozygosity over time for 40 replicates. Simulations of genetic drift in a diploid population of 50 individuals, in the absence of new mutations. We start 40 independent, biallelic loci each with an initial allele at 30\% frequency. The left panel shows the allele frequency over time and the right panel shows the heterozygosity over time, with the mean decay matching eqn. \eqref{eqn:loss_het_discrete}.}} \label{fig:LossHet_WF_N50}
+\caption{Change in allele frequency and loss of heterozygosity over time for 40 replicates. Simulations of genetic drift in a diploid population of 50 individuals, in the absence of new mutations. We start 40 independent, biallelic loci each with an initial allele at 30\% frequency. The left panel shows the allele frequency over time and the right panel shows the heterozygosity over time, with the mean decay matching eqn. \eqref{eqn:loss_het_discrete}.} \label{fig:LossHet_WF_N50}
 \end{figure} 
 
 
@@ -126,14 +121,11 @@ $\nicefrac{1}{(2N)}$.
 \caption{Pond smelt ({\it Hypomesus olidus}), a close relative of delta smelt. Bulletin of the United States Fish Commission. 1906.} \label{fig:smelt}
 \end{marginfigure} 
 
-
-
 \begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
   estimate that the mean level of heterozygosity in this population is 0.005.
   You set yourself a goal of maintaining a level of heterozygosity of at least
   0.0049 for the next two hundred years. Assuming that the smelt have a
-  generation time of 3 years, and that only genetic drift affects these loci, what is the smallest fully outbreeding population that you would need to
-maintain to meet this goal?  
+  generation time of 3 years, and that only genetic drift affects these loci, what is the smallest fully outbreeding population that you would need to maintain to meet this goal?  
 \end{question}
 
 Note how this picture of decreasing heterozygosity stands in contrast to the
@@ -151,7 +143,7 @@ frequency changes later on. For now, we'll simply note that
 under our simple model of drift (formally the Wright Fisher model), our
 allele count in the $t+1^{th}$ generation represents a binomial sample
 (of size $2N$) from the population frequency $p_t$ in the previous
-generation.  
+generation.  If you've read to here, please email Prof Coop a picture of JBS Haldane in a striped suit with the title "I'm reading the chapter 3 notes''. (It's well worth googling JBS Haldane and to read more about his life; he's a true character and one of the last great polymaths. )
 
 % generation $t$ may differ
 %from that of $t+1$. We'll develop some mathematical models for these allele
@@ -195,42 +187,54 @@ wild population of over 300 individuals has been established
 since. However, because all of these individuals are descended from
 those 7 individuals who survived the bottleneck, diversity levels
 remain low.  \citeauthor{Wisely:02} measured heterozygosity at a number
-of microsatellites in individuals from museum collections, \ec{showing the sharp drop in diversity as population sizes crashed (see Figure \ref{fig:LossHet_ferrets}).}
-
+of microsatellites in individuals from museum collections, showing the sharp drop in diversity as population sizes crashed (see Figure \ref{fig:LossHet_ferrets}).
 
 \begin{question} \label{geo_question} In mathematical population genetics, a
   commonly used approximation is $(1-x) \approx e^{-x}$ for $x << 1$ (formally,
   this follows from the Taylor series expansion of $\exp(-x)$, ignoring second
   order and higher terms of $x$).  This approximation is especially useful for approximating a geometric
-  decay process by an exponential decay process, e.g. $(1 - x)^t \approx
-  e^{-xt}$. Using R, check how good of an approximation this is for three
-  values of x, $x = 0.5$, $0.1$, and $0.01$. Do this by plotting the geometric decay as
-  points, and the exponential decay as a curve, using different colors for each
-  of these three values of x. Note that you should have a discrete timescale for the
-  geometric decay (e.g. using \texttt{t=seq(0, 18)}) and a near continuous scale
-  for the exponential decay (e.g. using \texttt{t=seq(0, 18, length.out=100)}.
-  Print off your graph and hand it in \ec{with your homework.} \erin{do you still want to mix R into their hw in addition to the R coding exercises? Alternatively they could calculate a few values or plot this by hand..}
+  decay process by an exponential decay process, e.g. $(1 - x)^t \approx e^{-xt}$. Using your calculator, or R, check how good of an approximation this is compared to the exact expression for two values of x, $x = 0.1$, and $0.01$, across two different values of t, $t=5$ and $t=50$. I.e. calculate both expressions for these values, hand in your answers and briefly comment on your results. 
+ 
+  %Do this by plotting the geometric decay as
+ % points, and the exponential decay as a curve, using different colors for each
+ % of these three values of x. Note that you should have a discrete timescale for the
+ % geometric decay (e.g. using \texttt{t=seq(0, 18)}) and a near continuous scale
+ % for the exponential decay (e.g. using \texttt{t=seq(0, 18, length.out=100)}.
+%  Print off your graph and hand it in with your homework. 
     % max <- 18; x <- seq(0, max); x1 <- seq(0, max, length.out=100); plot(x, (1-0.5)^x, col='purple', pch=19); lines(x1, exp(-0.5*x1), col='purple'); points(x, (1-0.1)^x, pch=19, col='orange'); lines(x1, exp(-0.1*x1), col='orange'); points(x, (1-0.01)^x, pch=19, col='green'); lines(x1, exp(-0.01*x1), col='green') # messy but works
-
 \end{question}
 
 \subsection{Levels of diversity maintained by a balance between
  mutation and drift} \label{DriftMutationBalance}
 
-Next we're going to consider the amount of neutral polymorphism that can be maintained in a population as a balance between genetic drift removing variation and mutation introducing new neutral variation. We'll first want to consider the rate at which neutral mutations arise in the population.
+Next we're going to consider the amount of neutral polymorphism that can be maintained in a population as a balance between genetic drift removing variation and mutation introducing new neutral variation, see Figure \ref{fig:Mut_Sel_balance} for an example. Note in our example, how no-one allele is maintained at a stable equilibrium, rather an equilibrium level of polymorphism is maintained by a constantly shifting case of alleles. 
 
-\paragraph{The neutral mutation rate.} Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu_T$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is 
+\begin{figure} \begin{center} \includegraphics[width= 0.8
+\textwidth]{figures/Mut_drift_balance.png} \end{center} \caption{Mutation-drift
+balance. A diploid population of 5 individuals. In the first generation
+everyone has the same allele (black). Each generation the transmitted allele
+can mutate and we generate a new colour. In the bottom plot, I trace the
+frequency of alleles in our population over time. The mutation rate we use is very high, simply to maintain diversity in this small population.} \label{fig:Mut_Sel_balance}
+\end{figure} 
+
+\paragraph{The neutral mutation rate.} 
+We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu_T$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is 
 \begin{equation}
 \mu = (1-C) \mu_T
 \end{equation}
 This is the per generation rate.
-
 
 \begin{question}
 It's worth taking a minute to get familiar with both how rare, and how common, mutation is. The per base pair mutation rate in humans is around $1.5 \times 10^{-8}$ per generation. That means, on average, we have to monitor a site for $\sim 66.6$ million transmissions from parent to child to see a mutation. Yet populations and genomes are big places, so mutations are common at these levels. \\
 {\bf A)} Your autosomal genome is $\sim 3$ billion base pairs long ($3 \times 10^9$). You have two copies, the one you received from your mum and one from your dad. What is the average (i.e. the expected) number of mutations that occurred in the transmission from your mum and your dad to you?\\
 {\bf B)} The current human population size is $\sim 9$ billion individuals. How many times, at the level of the entire human population, is a single base-pair mutated in the transmission from one generation to the next? 
 \end{question}
+\paragraph{Levels of heterozygosity maintained as a balance between mutation and selection.}
+
+
+
+
+
 Looking backwards in time from one generation to the previous generation, we are going to say that two alleles which have the same parental allele (i.e. find their common ancestor) in the preceding generation have \emph{coalesced}, and refer to this
 event as a \emph{coalescent event}.
 
@@ -261,7 +265,7 @@ Note the power of $4$ is because our two alleles have to have failed
 to mutate through $2$ meioses each. 
 
 More generally, the probability that our alleles coalesce in generation
-$t+1$ \ec{(counting backwards in time)} and are identical due to no mutation to either allele in the
+$t+1$ (counting backwards in time) and are identical due to no mutation to either allele in the
 subsequent generations is
 %
 \begin{equation}
@@ -305,13 +309,6 @@ can be written as:
 %
 Then we can approximate the summation by an integral, giving us:
 %
-\begin{figure} \begin{center} \includegraphics[width= 0.8
-\textwidth]{figures/Mut_drift_balance.png} \end{center} \caption{Mutation-drift
-balance. A diploid population of 5 individuals. In the first generation
-everyone has the same allele (black). Each generation the transmitted allele
-can mutate and we generate a new colour. In the bottom plot, I trace the
-frequency of alleles in our population over time.} \label{fig:Mut_Sel_balance}
-\end{figure} 
 
 \begin{equation}
 \frac{1}{2N} \int_0^{\infty} e^{-t(2\mu+1/(2N))} dt =
@@ -319,9 +316,9 @@ frequency of alleles in our population over time.} \label{fig:Mut_Sel_balance}
 \end{equation}
 
 The equation above gives us the probability that our two alleles coalesce at some point
-in time, and do not mutate \ec{before reaching} their common
+in time, and do not mutate before reaching their common
 ancestor. Equivalently, this can be thought of as the probability our two
-alleles coalesce \emph{before} mutating, \ec{i.e. that they are homozygous}. 
+alleles coalesce \emph{before} mutating, i.e. that they are homozygous. 
 
 Then, the complementary probability that our pair of alleles are non-identical
 (or heterozygous) is simply one minus this. The following equation gives the equilibrium
@@ -337,19 +334,19 @@ will come up a number of times so we'll give it its own name:
 \end{equation}
 
 So all else being equal, species with larger population sizes should
-have proportionally higher levels of neutral polymorphism.  If you've read to here, please email Prof Coop a picture of JBS Haldane
-in a striped suit with the title "I'm reading the chapter 3 notes''. (It's well worth googling JBS Haldane and to read more about his life;
-he's a true character and one of the last great polymaths. )
+have proportionally higher levels of neutral polymorphism.  
+
+\begin{question}
+The sequence-level heterozygosity in {\it Capsella grandiflora} (grand shepherd's purse) is $\sim 2\%$ per base. Assuming a mutation rate of $10^{-9} bp^{-1}$ per generation, what is your estimate of the population size of {\it C. grandiflora}?  
+\end{question}
 
 \subsection{The effective population size}
 \marginnote{the effective population size ($N_e$) is the population size that
-would result in the same rate of drift in an idealized constant population size (following our modeling
+would result in the same rate of drift in an idealized population of constant size (following our modeling
 assumptions)
 as that observed in our true population .}
 
-In practice, populations rarely conform to our assumptions of being
-constant in size with low variance in reproduction success. Real
-populations experience dramatic fluctuations in size, and there is
+In practice, populations rarely conform to our assumptions of being constant in size with low variance in reproductive success. Real populations experience dramatic fluctuations in size, and there is
 often high variance in reproductive success. Thus rates of drift in
 natural populations are often a lot higher than the census population
 size would imply. See Figure \ref{fig:LossHet_varying_pop}  for a depiction of
@@ -360,7 +357,7 @@ a repeatedly bottlenecked population losing diversity at a fast rate.
 \includegraphics[width= \textwidth]{figures/Loss_of_he_col_alleles_varying_pop_dark.png}
 \end{center}
 \caption{Loss of heterozygosity over time in a bottlenecking population. A diploid population of 10 individuals, that bottlenecks
-  down to three individuals repeatedly. In the first generation I colour every allele a different
+  down to three individuals repeatedly. In the first generation, I colour every allele a different
 colour so we can track their descendants. There are no new
   mutations.} \label{fig:LossHet_varying_pop}  
 \end{figure} 
@@ -370,47 +367,40 @@ To cope with this discrepancy, population geneticists often invoke the concept o
 an \emph{effective population size} ($N_e$). In many situations (but not all), departures from model assumptions can be captured by substituting $N_e$ for $N$.
 \\
 
-\marginnote{
-To see this note that if $1/(N_i)$ is
-small, then we can approximate \eqref{eqn:var_pop_coal} by 
-\begin{equation}
-\prod_{i=1}^{t} \exp \left( -\frac{1}{2N_i} \right)   =
-\exp \left(- \sum_{i=1}^{t} \frac{1}{2N_i} \right) .
-\end{equation}
-This is same form but
-the exponent has changed. Comparing the exponent in the two cases we see
-\begin{equation}
-\frac{t}{2N} = \sum_{i=1}^{t} \frac{1}{2N_i} 
-\end{equation}
-so that if we want a constant effective population size ($N_e$) that has the same
-rate of loss of heterozygosity as our variable population we need to set
-$N=N_e$ and rearrange this to give \eqref{eq:Ne_harmonic}.} 
 
-If population sizes vary rapidly in size, we can (if certain conditions are met)
-replace our population size by the harmonic mean population size.
+If population sizes vary rapidly in size, we can (if certain conditions are met) replace our population size by the harmonic mean population size.
 Consider a diploid population of variable size, whose size is $N_t$ $t$ generations into the
-past. The probability our pairs of alleles have not coalesced by the generation $t^{th}$ is
+past. The probability our pairs of alleles have not coalesced by generation $t$ is
 given by
 \begin{equation}
-\prod_{i=1}^{t} \left(1-\frac{1}{2N_t} \right) \label{eqn:var_pop_coal}
+\prod_{i=1}^{t} \left(1-\frac{1}{2N_i} \right) \label{eqn:var_pop_coal}
 \end{equation}
-note that this simply collapses to our original expression
-$\left(1-\frac{1}{2N } \right)^t $ if $N_i$ is constant. 
-
-The rate of loss of heterzygosity in this population is equivalent to
+Note that this simply collapses to our original expression
+$\left(1-\frac{1}{2N } \right)^t $ if $N_i$ is constant. Under this model, the rate of loss of heterozygosity in this population is equivalent to
 a population of effective size
 \begin{equation}
 N_e =\frac{1}{\frac{1}{t} \sum_{i=1}^{t} \frac{1}{N_i} }. \label{eq:Ne_harmonic}
 \end{equation}
-this is the harmonic mean of the varying population size.
+This is the harmonic mean of the varying population size. \sidenote[][-6cm]{
+To see this, note that if $1/(N_i)$ is
+small, then we can approximate \eqref{eqn:var_pop_coal} using the exponential approximation: 
+\begin{equation}
+\prod_{i=1}^{t} \exp \left( -\frac{1}{2N_i} \right)   =
+\exp \left(- \sum_{i=1}^{t} \frac{1}{2N_i} \right) .
+\end{equation}
+When we put the product inside the exponent, it becomes a sum.  We can also write the probability of not coalescing by generation $t$ in a population of constant size ($N_e$) as an exponential, so that it takes the same form as the expression above on the right. Comparing the exponent in the two cases, we see
+\begin{equation}
+\frac{t}{2N_e} = \sum_{i=1}^{t} \nicefrac{1}{2N_i} 
+\end{equation}
+So that if we want a constant effective population size ($N_e$) that has the same
+rate of loss of heterozygosity as our variable population, we need to rearrange and solve this equation to give \eqref{eq:Ne_harmonic}. }
 
 
-Thus our
-effective population size, the size of an idealized constant
+Thus our effective population size, the size of an idealized constant
 population which matches the rate of genetic drift, is the harmonic
 mean true population size over time. The harmonic mean is very
 strongly affected by small values, such that if our population size is
-one million $99\%$ of the time but drops to a $1000$ every hundred or
+one million $99\%$ of the time but drops to $1000$ every hundred or
 so generations, $N_e$ will be much closer to $1000$ than a
 million. \\
 
@@ -429,24 +419,21 @@ colour so we can track their descendants, there are no new
 \end{figure} 
 
 Variance in reproductive success will also affect our effective
-population size. Even if our population has a large constant size of $N$
-individuals, if only small proportion of them get to reproduce then
-the rate of drift will reflect this much small number of reproducing
+population size. Even if our population has a large constant size $N$
+individuals, if only small proportion of them get to reproduce, then
+the rate of drift will reflect this much smaller number of reproducing
 individuals. See Figure \ref{fig:LossHet_varying_RS} for a depiction of the higher rate of drift
 in a population where there is high variance in reproductive success.
 
-When our two alleles pick an ancestor, $25\%$ of the time our alleles were both in a female ancestor in which case they are IBD  with probability $1/(2N_F)$, and $25\%$ of the time they are both in a
-male ancestor in which case they coalesce with probability
-$1/(2N_M)$. The remaining $50\%$ of the time our ancestral lineages
-are in two individuals are different sexes in a generation and so cannot by IBD in the previous generation.  Therefore, our probability of coalescence in the preceding
-generation is
+To see one example of this, consider the case where $N_F$ of  females get to reproduce and $N_M$ males get reproduce.
+While every individual has a mother an a father, not every individual gets to be a parent. In practice, in many animal species far more females get to reproduce than males, i.e. $NM <N_F$, as a few males get many mating opportunities and many males get no/few mating opportunities \citep[see ][for a broad analysis, and note that there a certainly many exceptions to this general pattern]{janicke:16}. When our two alleles pick an ancestor, $25\%$ of the time our alleles were both in a female ancestor, in which case they are IBD with probability $1/(2N_F)$, and $25\%$ of the time they are both in a
+male ancestor, in which case they coalesce with probability
+$1/(2N_M)$. The remaining $50\%$ of the time, our alleles trace back to two individuals of different sexes in the prior generation and so cannot coalesce.  Therefore, our probability of coalescence in the preceding generation is 
 \begin{equation}
-\frac{1}{4}\frac{1}{2N_M}+\frac{1}{4}\frac{1}{2N_F} %=
+\frac{1}{4}\left(\frac{1}{2N_M} \right)+\frac{1}{4}\left(\frac{1}{2N_F} \right) %=
 %\frac{1}{8}\frac{N_F+N_M}{N_FN_M} 
 \end{equation}
-i.e. the rate of coalescence is the harmonic mean of the two
-sexes population sizes, 
-equating this to $\frac{1}{2N_e}$
+i.e. the rate of coalescence is the harmonic mean of the two sexes' population sizes, equating this to $\frac{1}{2N_e}$ we find
 
 \begin{marginfigure}
 \begin{center}
@@ -457,20 +444,16 @@ equating this to $\frac{1}{2N_e}$
 } \label{fig:Hamadryas_baboon}  
 \end{marginfigure} 
 
-While every individual has a mother an a father, not every individual
-gets to be a parent. In practice in many populations far more females
-get to reproduce than males. If only $N_M$ males get to contribute to the next
-generation and $N_F$ females get to contribute to the next
-generation, we find
 \begin{equation}
 N_e = \frac{4N_FN_M}{N_F+N_M}
 \end{equation}
 Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
-N/2$) our effective population size will be much reduced as a result.\\
+N/2$), our effective population size will be much reduced as a result. For more on how different evolutionary forces affect the rate of genetic drift, and their impact on the effective population size, see \citet{charlesworth:09}.\\
 
 \begin{question}
-You are studying a population of 500 males and 500 females Hamadryas baboons . Assuming that only 1/10 males gets to mate (a 1:10 male:female operational sex-ratio). What is the effective
-population size?
+You are studying a population of 500 males and 500 females Hamadryas baboons . Assuming that all of the females but only 1/10 of the males get to mate: 
+{\bf A)} what is the effective population size for the autosome?\\
+{\bf B)} Do you expect the {\it ratio} of X-chromosome to autosomal diversity to be higher or lower in this species compared to a species where the sexes have more similar variance in reproductive success? Explain the intuition behind your answer.
  \end{question}
 
 
@@ -569,8 +552,7 @@ $\pi$, $\widehat{\theta}_{\pi}$ by setting $\widehat{\theta}_{\pi}=\pi$.  If we
 have an independent estimate of $\mu$, then from setting $\pi =\widehat{\theta}_{\pi} = 4N\mu$ we can obtain an estimate of the population
 size $N$ that is consistent with our levels of neutral polymorphism. If we estimate the population size this way, we should call it the effective coalescent population size ($N_e$). It's best to think about this as a long-term, effective population size for the species, but there's a boat load of caveats that come along with that assumption. For example, Past bottlenecks and population expansions are all subsumed into a single number and so it may not be very representative of the population size at any time. That said it's not a bad place to start when thinking about the rate of genetic drift in our population over long time-periods. \sidenote{Up to this point we've been describing only neutral processes, however, selection can also alter the levels of polymorphism at sites. For example if some synonymous sites directly experience selection, then even if we use $\pi$ for synonymous sites we may underestimate the coalescent effective population size. As we'll see later in the notes selection at linked sites can also impact neutral diversity. As such, if we can, we may want to use sites subject to the weakest constraints, and far from very constrained regions of the genome to estimate $N_e$ from $\pi$.} 
 
-Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two copies of the allele samples from a population at random are different from each other differences between. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. As such, $\pi$ is often a more useful measure as it records the number of differences between the sequences, not just that they are different from each other. In the case where our locus is a single base pair the two measures will usually be close to each other, as for $\theta \ll 1$, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$.
-
+Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two copies of the allele, sampled from a population at random, are different from each other. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. On the other hand our $\pi$ measure keeps track of the average total number of differences between our loci. As such, $\pi$ is often a more useful measure as it records the number of differences between the sequences, not just that they are different from each other (however, for certain types of loci, e.g. microsatellites, heterozygosity is often used as we cannot counts the differences in a sensible way). In the case where our locus is a single basepair the two measures will usually be close to each other, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$.
 
 \begin{marginfigure}
 \begin{center}
