@@ -24,16 +24,16 @@
 
 \newcommand{\ec}[1]{{\em \color{blue} #1}}
 
-\newcommand{\gc}[1]{{\em \color{green} #1}}
+\newcommand{\gc}[1]{{\color{black} #1}}   % color{green} #1}}
 \newcommand{\sa}[1]{{\color{black} #1}}
 \newcommand{\plr}[1]{{\em \color{green} (#1)}}
 \newcommand{\E}{\mathbb{E}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\half}{\tfrac{1}{2}}
 
-%\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
-
-%\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+%FOR compiling on xelatex 
+\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
 
 
 %\usepackage[colorlinks=true, allcolors=black]{hyperref}
@@ -47,7 +47,7 @@
 \newcommand{\dNdS}{\nicefrac{d_N}{d_S}}
 
 
-\usepackage[colorinlistoftodos]{todonotes}  %disable
+\usepackage[colorinlistoftodos,disable]{todonotes}  %disable
 \newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
 
 \newcommand{\erin}[1]{\todo[size=\scriptsize, color=blue!50]{#1}}
