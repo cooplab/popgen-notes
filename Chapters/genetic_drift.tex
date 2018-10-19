@@ -99,7 +99,7 @@ geometrically with each passing generation. If we assume that $\nicefrac{1}{(2N)
 decay (see Question \ref{geo_question} below), such that
 %
 \begin{equation}
-H_t =H_0 \exp \left(-\frac{t}{2N} \right)  
+H_t =H_{0} e^{ - \nicefrac{t}{(2N)} }
 \end{equation}
 %
 i.e. heterozygosity decays exponentially at a rate
@@ -468,15 +468,15 @@ forwards." -- Kierkegaard
  pairwise differences.}
 Thinking back to our calculations we made about the loss of neutral heterozygosity
 and equilibrium levels of diversity (in Sections \ref{LossofHet} and \ref{DriftMutationBalance}), you'll note that we could first specify
-what generation a pair of sequences coalesce in, and then calculate
+which generation a pair of sequences coalesce in, and then calculate
 some properties of heterozygosity based on that. That's because neutral
 mutations do not affect the probability that an individual transmits
-that allele, so don't affect the way in which we can trace ancestral lineages
-back. \\
+an allele, and so don't affect the way in which we can trace ancestral lineages
+back through the generations. \\
 
 
-As such it will often be helpful to consider the time to the common
-ancestor of a pair of sequences, and then think of the impact of that
+As such, it will often be helpful to consider the time to the common
+ancestor of a pair of sequences, and then think of the impact of that time to coalescence
 on patterns of diversity. See Figure \ref{fig:Coalescent_simulation}
 for an example of this. 
 
@@ -490,40 +490,38 @@ for an example of this.
   of an offspring (and the allele transmitted is indicated by a light
   grey line).  We track a
   pair of alleles, chosen in the present day, back 14 generations
-  untill they find a common ancestor.} \label{fig:Coalescent_simulation}
+  until they find a common ancestor.} \label{fig:Coalescent_simulation}
 \end{figure}
 
 The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
-$t+1$ generation back is
+$t+1$ generation back is 
 \begin{equation}
- P(t=T) = \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{T} \label{eqn:coal_time_dist}
+ P(T_2=t+1) = \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
 \end{equation}
-Thus the coalescent time of our pair of alleles is a Geometrically distributed random variable,
-where the probability of success is $1/(2N)$, we've denote this by $T_2 \sim  \text{Geo}(1/(2N))$
-The expected (i.e. the mean over many replicates) coalescent time of a pair of a pair of alleles is 
+Thus the coalescent time of our pair of alleles is a Geometrically distributed random variable, where the probability of success is $1/(2N)$; we denote this by $T_2 \sim  \text{Geo}(1/(2N))$.
+The expected (i.e. the mean over many replicates) coalescent time of a pair of alleles is then  
 \begin{equation}
 \E(T_2) = 2N 
 \end{equation}
 generations.\\
 
-\marginnote{Blurring our eyes a little we can see  that \ref{eqn:coal_time_dist} is
+\marginnote{Blurring our eyes a little, we can see  that \ref{eqn:coal_time_dist} is
 \begin{equation}
 \approx \frac{1}{2N} e^{-t/(2N)} 
 \end{equation}
-thus if we wanted a continuous random variable we could say that the coalescent time of a pair of sequences ($T_2$) is
-approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. }
+and so think of  a continuous random variable, i.e. we could say that the coalescent time of a pair of sequences ($T_2$) is approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. Formally we can do this by taking the limit of the discrete more carefully. }
 
 Conditional on a pair of alleles coalescing $t$ generations ago,
 there are $2t$ generations in which a mutation could occur. If the per
-generation mutation rate is $\mu$ then the expected number of
+generation mutation rate is $\mu$, then the expected number of
 mutations between a pair of alleles coalescing $t$ generations ago is
 $2 t\mu$ (the alleles have gone through a total of $2t$ meioses since they last shared a common ancestor). So we can write the expected
 number of mutations ($S_2$) separating two alleles drawn at random from the
-population as
+population as %\erin{I added subscript 2 to all the T's, which I think is appropriate}
 \begin{align}
-\E(S_2) &= \sum_{t=0}^{\infty} \E(S_2 | T=t) P(T=t) \nonumber\\
-& =\sum_{t=0}^{\infty} 2 \mu t P(t=T) \nonumber\\
+\E(S_2) &= \sum_{t=0}^{\infty} \E(S_2 | T_2=t) P(T_2=t) \nonumber\\
+& =\sum_{t=0}^{\infty} 2 \mu t P(T_2=t) \nonumber\\
 & =2\mu \E(T_2)  \nonumber\\
 & = 4 \mu N 
 \end{align}
@@ -543,16 +541,18 @@ which should be fine if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. In the previous chapter we denote the observed number of pairwise differences at putatively neutral
 sites separating a pair of sequences as $\pi$ (we usually average this over a
-number of pairs of sequences for a region). Therefore, under our simple, neutral, constant, population-size model we expect
+number of pairs of sequences for a region). Therefore, under our simple, neutral, constant population-size model we expect
 \begin{equation}
 \E(\pi) = 4 N \mu = \theta
 \end{equation}
-So we can estimate of $\theta$ from
-$\pi$, $\widehat{\theta}_{\pi}$ by setting $\widehat{\theta}_{\pi}=\pi$.  If we
-have an independent estimate of $\mu$, then from setting $\pi =\widehat{\theta}_{\pi} = 4N\mu$ we can obtain an estimate of the population
-size $N$ that is consistent with our levels of neutral polymorphism. If we estimate the population size this way, we should call it the effective coalescent population size ($N_e$). It's best to think about this as a long-term, effective population size for the species, but there's a boat load of caveats that come along with that assumption. For example, Past bottlenecks and population expansions are all subsumed into a single number and so it may not be very representative of the population size at any time. That said it's not a bad place to start when thinking about the rate of genetic drift in our population over long time-periods. \sidenote{Up to this point we've been describing only neutral processes, however, selection can also alter the levels of polymorphism at sites. For example if some synonymous sites directly experience selection, then even if we use $\pi$ for synonymous sites we may underestimate the coalescent effective population size. As we'll see later in the notes selection at linked sites can also impact neutral diversity. As such, if we can, we may want to use sites subject to the weakest constraints, and far from very constrained regions of the genome to estimate $N_e$ from $\pi$.} 
+So we can get an empirical estimate of $\theta$ from
+$\pi$, let's call this $\widehat{\theta}_{\pi}$, by setting $\widehat{\theta}_{\pi}=\pi$., i.e. our observed level of pairwise genetic diversity.  If we
+have an independent estimate of $\mu$, then from setting $\pi =\widehat{\theta}_{\pi} = 4N\mu$ we can furthermore obtain an estimate of the population
+size $N$ that is consistent with our levels of neutral polymorphism. If we estimate the population size this way, we should call it the effective coalescent population size ($N_e$). It's best to think about $N_{e}$ estimated from neutral diversity as a long-term, effective population size for the species, but there's a boat load of caveats that come along with that assumption. For example, past bottlenecks and population expansions are all subsumed into a single number and so this estimated $N_{e}$ may not be very representative of the population size at any time. That said, it's not a bad place to start when thinking about the rate of genetic drift for neutral diversity in our population over long time-periods. \sidenote{Up to this point we've been describing only neutral processes, however, selection can also alter levels of polymorphism. For example, if some synonymous sites directly experience selection, then even if we use $\pi$ calculated for on synonymous changes we may underestimate the coalescent effective population size. As we'll see later in the notes, selection at linked sites can also impact neutral diversity. As such, if we can, we may want to use genomic sites subject to the weakest selective constraints, and also far from gene-dense or otherwise very constrained regions of the genome, to estimate $N_e$ from $\pi$. But even then caution is warranted. } 
 
-Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two copies of the allele, sampled from a population at random, are different from each other. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. On the other hand our $\pi$ measure keeps track of the average total number of differences between our loci. As such, $\pi$ is often a more useful measure as it records the number of differences between the sequences, not just that they are different from each other (however, for certain types of loci, e.g. microsatellites, heterozygosity is often used as we cannot counts the differences in a sensible way). In the case where our locus is a single basepair the two measures will usually be close to each other, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$.
+Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two alleles at a locus, sampled from a population at random, are different from each other. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. On the other hand, our $\pi$ measure keeps track of the average total number of differences between our loci. As such, $\pi$ is often a more useful measure, as it records the number of differences between the sequences, not just whether they are different from each other (however, for certain types of loci, e.g. microsatellites, heterozygosity is often used as we cannot usually count up the minimum number of mutations in a sensible way). In the case where our locus is a single basepair, the two measures will usually be close to one another, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans, $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$. However, these two quantities start to differ from each other when we consider regions with higher mutation rates. For example, if we consider a 10kb region, our mutation rate will 10,000 times larger than a single base pair. For this length of sequence the probability that two randomly chosen haplotypes differ is quite different from the number of mutational differences  between them. (Try a mutation rate of $10^{-8}$ per base and a population size of $10,~000$ in our calculations of $\E[\pi]$ and H to see this.)
+
+%\erin{can you give an intuitive example when per bp $\pi$ is very different from heterozygosity? Or is this distinction really just key when we're talking about larger loci?}
 
 \begin{marginfigure}
 \begin{center}
@@ -569,8 +569,8 @@ low levels of diversity ($\pi =0.000014 \text{bp}^{-1}$) compared to
 its close relative the California mainland gray fox ($0.0012\text{bp}^{-1}$). \\
 %\bf A How many sites do you expect to differ between two samples
 %sequenced over a 100kb region in each of these populations?\\   
-{\bf A)} Assuming a mutation rate of $2\times 10^{-8}$ what
-effective population size do you estimate for these two populations?
+{\bf A)} Assuming a mutation rate of $2\times 10^{-8}$ per bp, what
+effective population sizes do you estimate for these two populations?
 \\
 {\bf B)} Why is the effective population size of the Channel Island fox
 so low? [Hint: quickly google Channel island foxes to read up on their
@@ -579,42 +579,43 @@ history, also to see how ridiculously cute they are.]
 
 
 \begin{question}
-The long-term $N_e$ estimated from genetic diversity within most  human populations is roughly $10,000$, and the generation time of humans is $\sim$30 years. What is the average time, in years, that we have to go back to to find the most recent common ancestor for   a pair of sequences drawn from the same human population?
+In your own words describe why the coalescent time of a pair of lineages scales linearly with the (effective) population size.
+%The long-term $N_e$ estimated from genetic diversity within most human populations is roughly $10,000$, and the generation time of humans is $\sim$30 years. What is the average time, in years, that we have to go back to to find the most recent common ancestor for  a pair of sequences drawn from the same human population?
 \end{question}
 
 
 \paragraph{More details on the pairwise coalescent and the randomness of mutation.}
 
-We've derived the expected number of differences between a pair of sequences, and talked about how variable the coalescent time is for a pair of sequences. The mutation process is also very variable, even if two sequences coalesce a far in the past by chance there may simply not have been a mutation in the transmission of the alleles to the present day. 
+We've derived the expected number of differences between a pair of sequences and talked about how variable the coalescent time is for a pair of sequences. The mutation process is also very variable; even if two sequences coalesce in the very distant past by chance, they may still be identical in the present if there was no mutation during that time. 
 
-Conditional on the coalescent time $t$ the probability of our pair of alleles are separated by $S_2$ mutations since they last shared a common ancestor is
+Conditional on the coalescent time $t$, the probability that our pair of alleles are separated by $S_2$ mutations since they last shared a common ancestor is
 \begin{equation}
 P(S_2 | T_2 = t ) = {2t \choose j} \mu^{j} (1-\mu)^{2t-j}
 \end{equation}
-i.e. mutations happen in $j$ generations, and do not happen in $2t-j$
-generations (with ${2t \choose j}$ ways this can possibly
-happen). Assuming that $\mu \ll 1$, and that $2t-j \approx 2t$ then we
+i.e. mutations happen in $j$ generations and do not happen in $2t-j$
+generations (with ${2t \choose j}$ ways this combination of events can possibly
+happen). Assuming that $\mu \ll 1$ and that $2t-j \approx 2t$, then we
 can approximate the probability that we have $S_2$ mutations as a
-Poisson distribution
+Poisson distribution:
 \begin{equation}
 P(S_2 | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
 \end{equation}
-i.e. a Poisson with mean $2\mu t $. We'll not make much use of this result, but it is very useful in thinking about how to simulate the process.\\
+i.e. a Poisson with mean $2\mu t $. We'll not make much use of this result, but it is very useful in thinking about how to simulate the process of mutation.\\
 
 \section{The coalescent process of a sample of alleles.}
 
-Usually we are not just interested pairs of alleles, or the
-average pairwise diversity, we are interested in the properties of
+Usually we are not just interested in pairs of alleles, or the
+average pairwise diversity. Generally we are interested in the properties of
 diversity in samples of a number of alleles drawn from the population.  
-To allow for this instead of just following a pair of lineages back until they
+Instead of just following a pair of lineages back until they
 coalesce, we can follow the history of a sample of alleles back
 through the population.
 
 Consider first sampling three alleles at random from the population. The
 probability that all three alleles choose exactly the same ancestral allele one
 generation back is $\nicefrac{1}{(2N)^2}$. If $N$ is reasonably large then this
-is a very small probability. As such it is very unlikely that our three alleles
-coalesce at once, a in a moment we'll see that it is safe to ignore such
+is a very small probability. As such, it is very unlikely that our three alleles
+coalesce all at once, and in a moment we'll see that it is safe to ignore such
 unlikely events. \\
 
 \begin{figure}
@@ -623,99 +624,97 @@ unlikely events. \\
 \end{center}
 \caption{A simple simulation of the coalescent process for three
   lineages. We track the ancestry of 
-  three modern-day alleles, the first pair (blue and purple) coalesce four generations back 
-  their are then two independent lineages we are tracking, this pair
+  three modern-day alleles, the first pair (blue and purple) coalesce four generations back, after which  
+  there are only two independent lineages we are tracking. This pair
   then coalesces twelve generations in the past. Note that different
   random realizations of this process will differ from each other a lot.} \label{fig:Coalescent_simulation_3}
 \end{figure}
 
 The probability that a specific pair of alleles find a common ancestor in the
 preceding generation is still $\nicefrac{1}{(2N)}$. There are three possible pairs of
-alleles so the probability that no pair finds a common ancestor is
+alleles, so the probability that no pair finds a common ancestor in the preceding generation is
 \begin{equation}
 \left(1-\frac{1}{2N} \right)^3 \approx \left( 1- \frac{3}{2N} \right)
 \end{equation}
-in making this approximation we are multiplying out the right hand-side
+In making this approximation we are multiplying out the right hand-side
 and ignoring terms of $1/N^2$ and higher. See
 Figure \ref{fig:Coalescent_simulation_3} for a random realization of this process. \\
 
-More generally when we sample $i$ alleles there are ${i \choose 2}$
-pairs,\sidenote{said as ``i choose 2''}  i.e. $i(i-1)/2$ pairs, thus the probability that no pair
-of alleles coalesces in the preceding generation is
+More generally, when we sample $i$ alleles there are ${i \choose 2}$
+pairs,\sidenote{said as ``i choose 2''}  i.e. $i(i-1)/2$ pairs. Thus, the probability that no pair
+of alleles in a sample of size $i$ coalesces in the preceding generation is
 \begin{equation}
 \left(1-\frac{1}{(2N)} \right)^{{i \choose
  2}} \approx \left( 1- \frac{{i \choose
  2}}{2N}\right)
 \end{equation}
-while the probability of any pair coalescing is $\approx \nicefrac{2N}{{i \choose
+while the probability any pair coalesces is $\approx \nicefrac{2N}{{i \choose
  2}}$.\\
 
-We can ignore the possibility of more than pairs of alleles (e.g. tripletons)
-simultaneously coalescing at once as terms of $\nicefrac{1}{N^2}$ and higher
-can be ignored as they are vanishingly rare. Obviously there are in reasonable
-sample sizes there are many more triples (${i \choose 3}$), and higher order
-combinations, than pairs (${i \choose 2}$) but if $i \ll N$ then we are safe to
+We can ignore the possibility that more than pairs of alleles (e.g. tripletons)
+simultaneously coalesce at once as terms of $\nicefrac{1}{N^2}$ and higher
+can be ignored as they are vanishingly rare. Obviously in reasonable
+sample sizes there are many more triples (${i \choose 3}$) and higher order
+combinations than there are pairs (${i \choose 2}$), but if $i \ll N$ then we are safe to
 ignore these terms.
 
-\marginnote{
-To see the continuous time  version of this note that \eqref{eqn:T_i} is
-\begin{equation} 
-\approx  \frac{{i \choose
- 2}}{2N} \exp \left( - \frac{{i \choose
- 2}}{2N} t \right)
-\end{equation}
-the waiting time $T_i$ to the first coalescent event in a sample
-of $i$ alleles is exponentially distributed with rate $\nicefrac{{i \choose
- 2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
- 2}}{2N} \right)$. }
 
-When there are $i$ alleles the probability that we wait until the
+
+When there are $i$ alleles, the probability that we wait until the
 $t+1$ generation before
-any pair of alleles coalesce is
+any pair of alleles coalesces is
 \begin{equation}
- \frac{{i \choose
+P(T_i =t+1) = \frac{{i \choose
  2}}{2N}\left( 1- \frac{{i \choose
  2}}{2N}\right)^{t} \label{eqn:T_i}
 \end{equation}
-thus the waiting time while there are $i$ lineages is a geometrically
-distributed random variable with probability of success $ \nicefrac{{i \choose
-    2}}{2N}$, which we denote by
+Thus the waiting time to the first coalescent event while there are $i$ lineages is a geometrically distributed random variable with probability of success $\nicefrac{{i \choose 2}}{2N}$, which we denote by
 \begin{equation}
 T_i \sim \text{Geo}
 \left(  \nicefrac{{i \choose
       2}}{2N} \right).
 \end{equation}
 The mean waiting time till any of pair within our
- sample to coalesce is 
+ sample coalesces is 
 \begin{equation}
-\E( T_i) \frac{2N}{{i \choose  2}}  \label{eqn:E_T_i}
+\E( T_i) = \frac{2N}{{i \choose  2}}  \label{eqn:E_T_i}
 \end{equation}
-
-When a pair of alleles first find a common ancestral allele some
-number of generations back further into the past we only have to keep
-track of that common ancestral allele for the pair. Thus when a pair
-of alleles in our sample of $i$ alleles coalesce, we then switch to
-having to follow $i-1$ alleles back. Then when a pair of these $i-1$
-alleles coalesce, we then have to follow $i-2$ alleles back. This
+\marginnote{
+To see the continuous time  version of this, note that \eqref{eqn:T_i} is
+\begin{equation} 
+\approx  \frac{{i \choose
+ 2}}{2N} \exp \left( - \frac{{i \choose
+ 2}}{2N} t \right)
+\end{equation}
+The waiting time $T_i$ to the first coalescent event in a sample
+of $i$ alleles is thus exponentially distributed with rate $\nicefrac{{i \choose
+ 2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
+ 2}}{2N} \right)$. }
+After a pair of alleles first finds a common ancestral allele some
+number of generations back in the past, we only have to keep
+track of that common ancestral allele for the pair when looking further into the past. Thus when a pair
+of alleles in our sample of $i$ alleles coalesces, we then switch to
+having to follow $i-1$ alleles back in time. Then when a pair of these $i-1$
+alleles coalesce, we then only have to follow $i-2$ alleles back. This
 process continues until we coalesce back to a sample of two, and from
 there to a single most recent common ancestor (MRCA).\\
 
 
 \paragraph{Simulating a coalescent genealogy}
-To simulate a coalescent genealogy at a locus for a sample of $n$ alleles we therefore simply follow this
-algorithm
+To simulate a coalescent genealogy at a locus for a sample of $n$ alleles we therefore simply follow the following
+algorithm:
 \begin{enumerate}
 \item Set $i=n$.
-\item We simulate a random variable to be the time $t_i$ to the next coalescent event from $t_i \sim
+\item Simulate a random variable to be the time $T_i$ to the next coalescent event from $T_i \sim
   \text{Exp}\left(\nicefrac{{i \choose
  2}}{2N} \right)$
 \item Choose a pair of alleles to coalesce at random from all possible
  pairs.
 \item Set $i=i-1$
-\item Continue looping of steps 1-3 until $i=1$ i.e. the most recent
+\item Continue looping steps 1-3 until $i=1$, i.e. the most recent
  common ancestor of the sample is found.
 \end{enumerate}
-by following this algorithm we are generating realizations of the
+By following this algorithm we are generating realizations of the
 genealogy of our sample. \\
 
 
@@ -727,7 +726,7 @@ genealogy of our sample. \\
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Coalescent/Coal_w_muts.pdf}
 \end{center}
-\caption{ } \label{fig:Coal_w_muts}
+\caption{A simple coalescent tree from a single coalescent simulation, tracing the genealogy of 4 alleles with mutational changes marked with dashes showing transitions away from the MRCA sequence (AGTTT) . The $T_{MRCA}$ is the sum of $T_4$, $T_3$, and $T_2$. The total time in the tree is $T_{tot}=4 T_4+2T_3 + 2T_2= 54$ generations. } \label{fig:Coal_w_muts}
 \end{figure}
 
 
@@ -737,103 +736,99 @@ the entire sample ($T_{MRCA}$). This is
 \begin{equation}
 T_{MRCA} = \sum_{i=n}^2 T_i
 \end{equation}
-generations back. As our coalescent times for different $i$ are independent, the expected time to the most recent common ancestor
+generations back, where we are summing from $i=n$ alleles counting backwards to $i=2$ alleles (see Figure \ref{fig:Coal_w_muts} for example). As our coalescent times for different $i$ are independent, the expected time to the most recent common ancestor
 is
 \begin{equation}
 \E(T_{MRCA}) = \sum_{i=n}^2 \E(T_i) = \sum_{i=n}^2  2N/{i \choose
  2}
 \end{equation}
-using the fact that $\frac{1}{i(i-1)}=\frac{1}{i-1} - \frac{1}{i}$ with a bit of
-rearrangement we can rewrite this is
+Using the fact that $\frac{1}{i(i-1)}=\frac{1}{i-1} - \frac{1}{i}$ and a bit of
+rearrangement, we can rewrite this as
 \begin{equation} 
 \E(T_{MRCA}) = 4N\left(1- \frac{1}{n} \right) \label{TMRCA_neutral}
 \end{equation}
-so the average $T_{MRCA}$ scales linearly with population
-size. Interestingly, as we move to larger and larger samples (i.e. $n \gg 1$) the average
-time to the most recent common ancestor is converging on $4N$. What's
+So the average $T_{MRCA}$ scales linearly with population
+size $N$. Interestingly, as we move to larger and larger samples (i.e. $n \gg 1$), the average
+time to the most recent common ancestor converges on $4N$. What's
 happening here is that in large samples our lineages typically coalesce rapidly
 at the start and very soon coalesce down to a much smaller number of
 lineages.   \\
 
-
+\begin{question}
+Assume an autosomal effective population of 10,000 individuals (roughly the long-term human estimate) and a generation time of 30 years. What is the expected time to the most recent common ancestor of a sample of 20 people? What is this time for a sample of 500 people?  
+\end{question}
 \paragraph{The expected total time in a genealogy and the number of
   segregating sites.}
 
-Mutations fall on lineages of the coalescent genealogy. These mutations affect all
-descendants of this lineage, and under the infinitely-many-sites assumption,
+Mutations fall on lineages of the coalescent genealogy. These mutations are transmitted to all descendants of a lineage that the mutation occurred on, and under the infinitely-many-sites assumption,
 create a new segregating site for each new mutation. The mutation process is a
-\emph{Poisson process}, and the longer a particular lineage branch, the more
+\emph{Poisson process}, and the longer a particular lineage, i.e. the more generations of meioses it represents, the more
 mutations that can accumulate on it. The total number of segregating sites in
 the genealogy is thus a function of the \emph{total} amount of time in the
 genealogy of the sample, or the sum of all the genealogy branch lengths,
-$T_{tot}$. Since our coalescent genealogies are bifurcating (only two lineages
-coalesce at once), our total amount of time in the genealogy is:
+$T_{tot}$. Our total amount of time in the genealogy is
 
 \begin{equation}
 T_{tot} = \sum_{i=n}^2 iT_i
 \end{equation}
-as when there are $i$ lineages each contributes a time $T_i$ to the
-total time. Taking the expectation of the total time in the genealogy
+as when there are $i$ lineages, each contributes a time $T_i$ to the total time (see Figure \ref{fig:Coal_w_muts} for an example). Taking the expectation of the total time in the genealogy,
 \begin{equation}
 \E(T_{tot}) = \sum_{i=n}^2 i \frac{2N}{{i \choose
- 2} } = \sum_{i=n}^2 \frac{4N}{i -1} =\sum_{i=n-1}^1 \frac{4N}{i}
+ 2} } = \sum_{i=n}^2 \frac{4N}{i -1} =\sum_{i=n-1}^1 \frac{4N}{i} \label{eqn:E_T_tot}
 \end{equation}
-so our expected total amount of time in the genealogy scales linearly
+we see that our expected total amount of time in the genealogy scales linearly
 with our population size. Our expected total amount of time is also
-increasing with sample size but is doing so very slowly. To see this
-more carefully we can see that for large $n$
-\begin{equation}
-\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} \label{eqn:E_T_tot}
-\end{equation}
-\marginnote{To get a better sense of how this grows with the sample we
+increasing with sample size, but is doing so very slowly. %To see this
+%more carefully, we can see that for large $n$
+%\begin{equation}
+%\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} 
+%\end{equation}
+\marginnote{To get a better sense of how $T_{tot}$ grows with the sample, we
   can see that \ref{eqn:E_T_tot} can be approximated by $\int_1^n \frac{1}{i} di
-= 4N \log(n-1)$ approximating our sum by an integral, which will work for
+= 4N \log(n-1)$, approximating our sum by an integral, which will work for
 large $n$. }
 So our expected total amount of time in the genealogy
-is growing with $n$ but it is doing so very slowly. This again follows
+is growing with $n$, but it is doing so very slowly. This again follows
 from the fact that in large samples the initial coalescence usually
-happens very rapidly, so that extra samples adds little to the total
-amount of time in the tree. \\
+happens very rapidly, so that extra samples add little to the total
+amount of time in the genealogical tree. \\
 
 We saw above that the number of mutational differences between a pair
 of alleles that coalescence $T_2$ generations ago was Poisson with a
 mean of $2 \mu T_2$. A mutation that occurs on any branch of our
 genealogy will cause a segregating polymorphism in the sample
-(making our infinitely-many-sites assumption). Thus if the total time
-in the genealogy is $T_{tot}$ there is $T_{tot}$
+(meeting our infinitely-many-sites assumption). Thus, if the total time
+in the genealogy is $T_{tot}$, there are $T_{tot}$
 generations for mutations. So the total number of mutations
 segregating in our sample ($S$) is Poisson with mean $\mu T_{tot}$. Thus the
-expected number of segregating in history a sample of size $n$ is
+expected number of segregating  sites in a sample of size $n$ is
 \begin{equation}
 \E(S) = \mu \E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N\mu }{i} = \theta
 \sum_{i=n-1}^1 \frac{1}{i}
 \end{equation}
-Thus we can use this formula to derive another estimate of the
-population scaled mutation rate, by setting our observed number of
-segregating sites in a sample ($S$) equal to this expectation. We'll call this estimator $\widehat{\theta}_W$
+Note that this is growing with the sample size albeit very slowly (roughly as $\log$ of the sample size). 
+Thus we can use this formula to derive another estimate of the population scaled mutation rate, by setting our observed number of segregating sites in a sample ($S$) equal to this expectation. We'll call this estimator $\widehat{\theta}_W$:
 \begin{equation}
-\widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \frac{1}{i}}   \label{watterson_theta}
+\widehat{\theta}_W =\frac{ S}{\sum_{i=n-1}^1 \nicefrac{1}{i}}   \label{watterson_theta}
 \end{equation}
-this estimator was devised by \citeauthor{watterson:75}, hence the $W$.
+This estimator of $\theta$ was devised by \citet{watterson:75}, hence the $W$.
 
 
 \paragraph{The neutral site-frequency spectrum.}
 
 We can use our coalescent process to find our the expected number of
-alleles present $i$ times out of $n$, e.g. how many singletons do we
-expect to find in our sample?  
+derived alleles present $i$ times out of $n$, e.g. how many singletons do we
+expect to find in our sample? For example, in Figure \ref{fig:Coal_w_muts} in our sample of four sequences, there are 3 singletons and 2 doubletons. The number of these different frequency of alleles depends on the branch lengths where these mutations can arise, e.g. in our example tree the total number of generations where a mutation could arise and be a doubleton could arise is $(T_3+T_2)$, the total length of the branch ancestral to just the orange and red allele, plus $T_2$, the branch ancestral to just the blue and purple allele. 
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Genetic_drift/freq_spec_tree.pdf}
 \end{center}
 \caption{A tree for three samples, note that this is the only possible
-tree shape (treating the tips as unlabelled)} \label{fig:freq_coal}
+tree shape (treating the tips as unlabeled, i.e.  I don't care which pair of sequences carry a doubleton just that two sequences carry a derived allele).} \label{fig:freq_coal}
 \end{marginfigure}
 
-To see how we could go about working this out, lets start by
-considering the coalescent tree, shown in \ref{fig:freq_coal}, for sample of $3$ alleles drawn from a
-population. Mutations that fall on the
+To see how we could go about working this out, lets start by considering the simple coalescent tree, shown in Figure \ref{fig:freq_coal}, for sample of $3$ alleles drawn from a population. Mutations that fall on the
 branches coloured in black will be derived singletons, while mutations that
 fall along the orange branch will be doubletons in the sample. The
 total number of generations where a singleton mutation could arise is
@@ -847,8 +842,7 @@ $T_2$. So our expected number of singletons, using eqn \eqref{eqn:E_T_i}, is
 by similar logic our expected number of doubletons is $\E(S_i)
 =\theta/2$, i.e. there are half as many doubletons as singletons. 
 
-Extending this logic to large samples is doable, but tedious
-\graham{Give  numbers for 10 tips}. A nice
+Extending this logic to large samples is doable, but tedious (I mean really tedious for 10 alleles there are thousands of possible tree shapes, it quickly gets impossible even computationally). A nice
 simple proof of the neutral site frequency spectrum is given by
 \citeauthor{Hudson:15}, but we won't give this here. The general form is: 
 \begin{equation}
@@ -861,10 +855,11 @@ those that are rare in the sample are young.
 
 \begin{question}
 There are two possible tree shapes that could relate four
-samples. Colour (or otherwise mark) the branches by where singletons,
-doubletons, and tripleton derived alleles could arise. 
+samples. 
 
-Can you work out the expected number of each types of allele?
+{\bf A)} Draw both of them and colour (or otherwise mark) the branches by where singletons, doubletons, and tripleton derived alleles could arise. 
+
+{\bf B)} Can you work out the expected number of each types of allele? [{\bf OPTIONAL}]
 \end{question}
 
 
@@ -893,6 +888,9 @@ A positive Tajima's $D$ reflects an excess of intermediate frequency alleles, re
 the  constant-population, neutral model. As intermediate-frequency, neutral alleles increase pairwise diversity
 more per segregating site than a typical neutral alleles.
 
+
+Voight sequenced 40 regions from a each of three population samples. The average length sequenced for each region was $2365$bp.  
+$S= 11.1$ $\pi = 0.0011$ per base 
 
 \subsection{Demography and the coalescent}
 
