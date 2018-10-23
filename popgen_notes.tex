@@ -32,8 +32,9 @@
 \newcommand{\half}{\tfrac{1}{2}}
 
 %FOR compiling on xelatex 
-%\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
-%\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+\usepackage[colorinlistoftodos  ,disable]{todonotes}  % ,disable
 
 
 %\usepackage[colorlinks=true, allcolors=black]{hyperref}
@@ -47,7 +48,7 @@
 \newcommand{\dNdS}{\nicefrac{d_N}{d_S}}
 
 
-\usepackage[colorinlistoftodos]{todonotes}  % ,disable
+
 \newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
 
 \newcommand{\erin}[1]{\todo[size=\scriptsize, color=blue!50]{#1}}
