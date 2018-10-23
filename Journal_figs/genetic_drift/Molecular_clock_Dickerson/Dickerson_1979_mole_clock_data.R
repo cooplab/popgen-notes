@@ -28,3 +28,5 @@ for(gene in my.genes){
 	 abline(a=0,b=my.lms[[gene]]$coefficients,col=my.cols[gene])
 	segments(x0=x[,1],x1=x[,1],y0=y[,1],y1=y[,2],col=my.cols[gene])
 }
+
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_fig.pdf")
