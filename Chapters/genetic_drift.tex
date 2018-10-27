@@ -1324,7 +1324,7 @@ Clearly genes are not only subject to neutral and deleterious mutations, benefic
 Lets assume that a fraction $B$ of non-synonymous mutations that arise are
 beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Now newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
 discuss how to calculate the fixation probability for beneficial
-alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reach fixation in the population with probability $f_B$ from its initial frequency of $\nice{1}{2N}$. This fixation
+alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reach fixation in the population with probability $f_B$ from its initial frequency of $\nicefrac{1}{2N}$. This fixation
 probability may be much higher than that of neutral mutations, but still much less than $1$.  If $2T$ generations of divergence have
 elapsed between the two populations then a total of
 \begin{equation}
@@ -1337,9 +1337,9 @@ Then
 \end{equation}
 assuming again that all synonymous mutations are neutral. Note that this means that our estimates of $C$ using $1-\dNdS$ will be
 a  lower bound on the true constraint if even a small fraction of
-mutations are beneficial. However, genes may still evolve in a constrained way
-(i.e. $\dNdS<1$)  even if adaptive substitutions are common at a gene if
-they are outweighed by the loss of potential substitutions to negative selection.
+mutations are beneficial. Those cases where the gene is evolving more rapidly at the protein level than at synonymous
+sites, i.e. $d_N/d_S > 1$, are potentially strong candidates for  positive selection rapidly driving change at the protein level. We can identify genes that have $\dNdS$ significantly greater than one, either on the complete gene phylogeny, or on particular branches. Note that is is a very conservative test that few genes in the genome meet, as many genes that are fixing adaptive non-synonymous substitutions will have $\dNdS<1$. This is because they may still evolve in a constrained way (i.e. $\dNdS<1$)  even if adaptive substitutions are common at a gene if
+they are outweighed by the loss of non-synonymous mutations to negative selection.
 
 % \paragraph{loss of constraint} While most genes evolve under constraint, we can find examples of
 % genes that are evolving in a less constrained manner. The simplest
@@ -1383,10 +1383,11 @@ fast protein evolution notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
 these leaves by fermentation with bacteria in their foregut, and use lysozymes to break down the bacteria to extract energy from the
 leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably the Colobine
-lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals as in cows and Hoatzins (a leaf
-eating bird). 
+lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals as in cows and Hoatzins \citep[a leaf
+eating bird,][]{kornegay1994molecular} 
 
 \paragraph{The Mcdonald-Kreitman test}
+As noted above the big issue with using $\dNdS$ to detect adaptation is that it is very conservative. What we need to do is obtain an internal control that all
 \citet{mcdonald:91} devised a simple test of the neutral theory of molecular
 evolution at a gene (building on the conceptually similar HKA
 test\cite{HKA}. They partitioned polymorphism and fixed differences into 
