@@ -53,7 +53,7 @@ legend ( "bottomright" , legend = c ( "N Europe" , "S Europe" ) , pch = 20 , col
 
 dev.copy2pdf(file=paste(direct,"Sardina_vs_French_num_tall_alleles.pdf",sep=""))
 
-
+plot(0:1,0:1,type="n")
 ###CODE FOR EMILY Josephs fig for review
 sapply(1:length(french.freqs$FRQ),function(i){
 	lines(c(0.25,.75),c(french.freqs$FRQ[i],sardinian.freqs$FRQ[i]),col=adjustcolor(ifelse(french.freqs$FRQ[i]-sardinian.freqs$FRQ[i]>0,"blue","red"),0.2))

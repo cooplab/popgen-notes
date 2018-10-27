@@ -1205,27 +1205,26 @@ germline than in the male germline.
 
 \subsection{Comparing the rates of non-synonymous to synonymous
 substitutions $\dNdS$}
-A common test molecular evolution is to compare the ratio of the rates of non-synonymous to synonymous
-substitutions. The simplest way to calculate $d_N$ is to 
+One common tool in molecular evolution is to compare the estimated number (or rates) of substitutions in different classes of genomic sites, for example the ratio of the number of non-synonymous to synonymous substitutions in a given gene. The simplest way to calculate $d_N$ is to 
 count up the non-synonymous changes and divide by the total number of
-positions in the gene where a non-synonymous change could occur. We
-can do likewise for $d_S$, and then take the ratio. This is a helpful
+positions in the gene where a non-synonymous point mutation could occur. We
+can do likewise for synonymous changes $d_S$, and then take the ratio $\dNdS$. This is a helpful
 conceptual way to think about what $\dNdS$ represents, however, this
 ignores the fact that particular changes are more likely to occur by
 mutation and also does not account for multiple hits. Therefore, in
-practice $\dNdS$ is more usually calculated by model-based
+practice the ratio $\dNdS$ is more usually calculated by model-based
 likelihood and bayesian methods
-that can account for these features (see \gc{XX}). 
+that can account for these features. 
 
-For the vast majority of genes in the genome we see that $\dNdS < 1$, this is consistent with the view
+For the vast majority of protein-coding genes in the genome we see that $\dNdS < 1$, this is consistent with the view
 that non-synonymous sites are much more constrained than synonymous, i.e. that most non-synonymous mutations are deleterious and quickly
 removed from the population. If we are willing to make the assumption that all synonymous changes are
 neutral, $d_S=2T \mu$, then we can estimate the degree of constraint. (Note that synonymous changes can sometimes be subject to
-both positive and negative selection, but we have to start somewhere.) 
+both positive and negative selection, but this assumption is a useful starting place.) 
 
 Assuming that a fraction $C$ of non-synonymous changes are too
 deleterious to contribute to polymorphism then, if $T$ generations of divergence have
-elapsed between the two populations we expect
+elapsed between the two populations we expect $d_N$ neutral non-synonymous substitutions, where
 \begin{equation}
 d_N = 2T (1-C) \mu  
 \end{equation}
@@ -1238,22 +1237,25 @@ strongly deleterious or neutral, we estimate the fraction of mutational changes 
 are constrained by negative selection as $C= 1- \dNdS$. This has the
 interpretations of being the fraction of non-synonymous mutations that are quickly weeded out of the population by selection, and so do not contribute to divergence among species. 
 
+We can test whether our gene is evolving in a constrained way at the protein level by estimating $\dNdS$ and testing whether this is significantly less that  $1$. This provides evolutionary evidence that a stretch of DNA proposed to be protein coding is subject to selective constraint, and so likely encodes for a functional protein. We can also perform this test on specific branches of a phylogeny for a gene, to test which branches the gene is subject to constraint, or to test for changes in the level of constaint. 
+
 \paragraph{Loss of constraint at pseudogenes.}
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}
-\end{center}
-\caption{Two-toed sloth ({\it Choloepus hoffmanni}). An introduction
-  to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.} \label{fig:sloth}  
-\end{marginfigure} 
 
-While most genes evolve under constraint, we can find examples of
+\marginnote{
+``Rudimentary organs may be compared with the letters in a word, still
+retained in the spelling, but become useless in the pronunciation, but
+which serve as a clue .. for its derivation.''  -- \citet{darwin1859} pg. 455
+}  %http://darwin-online.org.uk/Variorum/1859/1859-456-dns.html
+
+While most protein genes evolve under constraint, we can find examples of
 genes that are evolving in a less constrained manner. The simplest
 example of this is where the gene has lost function, e.g. has recently
 become pseudogenized. When a gene completely loses function there will be no
-selection against non-synoynous changes and so they are just as free
+selection against non-synonynous changes and so they are just as free
 to accumulate as synonymous changes, and so $\dNdS=1$.
+Pseudogenes are a wonderful example of the extension of Darwin's ideas about vestigial traits (`Rudimentary organs') to the DNA level,
+we can still recognize a once useful word (gene) whose spelling is slowly degrading.
 Genes can lose function because of inactivating mutations that stop
 them being transcribed or translated into functional proteins, such genes are
 called pseudogenes. Our genomes are filled with old pseudogenes whose
@@ -1266,20 +1268,20 @@ the Enamlin gene from the study of \citeauthor{Meredith:09}.
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin.pdf}
 \end{center}
-\caption{Examples of frameshift mutations (insertions blue, deleteions
+\caption{Examples of frameshift mutations (insertions blue, deletions
   red) and premature stop codons in Enamlin in Cetacea and
   Xenarthra. Figure taken from \citeauthor{Meredith:09}} \label{fig:Enamlin_coding}  
 \end{figure} 
 
-\marginnote{
-``Rudimentary organs may be compared with the letters in a word, still
-retained in the spelling, but become useless in the pronunciation, but
-which serve as a clue .. for its derivation.'' 
-}  %http://darwin-online.org.uk/Variorum/1859/1859-456-dns.html
-\graham{get Darwin page number etc}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}
+\end{center}
+\caption{Two-toed sloth ({\it Choloepus hoffmanni}). An introduction
+  to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.} \label{fig:sloth}  
+\end{marginfigure} 
 
-The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved to lack enamel on their teeth, or to lack teeth entirely, as because changing diet allowed selection to become was relaxed on having hard teeth. For example,  two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark {\it Orycteropus}) lack  enamel on teeth. While others have lost their teeth entirely e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint of the phenotype, loss of selective function pseudogenizing substitutions, premature stop codons and frameshift mutations, have
-accumulated in the gene Enamlin (see Figure \ref{fig:Enamlin_coding}
+The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel  or teeth at all. For example,  two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark {\it Orycteropus}) lack  enamel on teeth. While others have lost their teeth entirely e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint of the phenotype the Enamlin gene has accumulated pseudogenizing substitutions, premature stop codons, and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
 for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
 range of species and found that none of the species with Enamel have frameshift
 mutations in Enamlin, while 17/20 of species that lack Enamel or teeth have
@@ -1320,14 +1322,15 @@ $\dNdS=0.83-0.98$ consistent with them transitioning from a constrained to uncon
 \paragraph{Adaptive evolution and $\dNdS$.}
 Clearly genes are not only subject to neutral and deleterious mutations, beneficial mutations must also arise and fix from from time to time. 
 Lets assume that a fraction $B$ of non-synonymous mutations that arise are
-beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Each of this mutations reach fixation in the population with probability $f_B$. This fixation
-probability may be much higher than that of neutral mutations (we'll
+beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Now newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
 discuss how to calculate the fixation probability for beneficial
-alleles in Chapter \ref{Selection_Stochasticity}).  If $2T$ generations of divergence have
-elapsed between the two populations 
+alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reach fixation in the population with probability $f_B$ from its initial frequency of $\nice{1}{2N}$. This fixation
+probability may be much higher than that of neutral mutations, but still much less than $1$.  If $2T$ generations of divergence have
+elapsed between the two populations then a total odf
 \begin{equation}
 dN=2T (1-C - B) \mu  + 2T \times (2 N \mu B) \times  f_B
 \end{equation}
+non-synonymous substitutions will have occurred. 
 Then
 \begin{equation} 
 \dNdS = (1-C-B) +  2 N B f_B
