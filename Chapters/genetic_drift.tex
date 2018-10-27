@@ -784,7 +784,7 @@ increasing with sample size $n$, but is doing so very slowly. %To see this
 %\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i} 
 %\end{equation}
 \marginnote{To get a better sense of how $T_{tot}$ grows with the sample size, we
-  can approximate the sum \ref{eqn:E_T_tot} by an integral, which will work for large $n$. The result is  $\int_1^n \frac{4N}{i} di
+  can approximate the sum \ref{eqn:E_T_tot} by an integral, which will work for large $n$. The result is  $\int_1^{n-1} \frac{4N}{i} di
 = 4N \log(n-1)$. }
 This again follows
 from the fact that in large samples, the initial coalescence usually
@@ -990,7 +990,7 @@ much more deeply in the ancestral {\it M. guttatus} population.
   genes redrawn from \citet{Wright:05}. {\bf Left)} Genetic  diversity levels in maize and and Teosinte samples at each of these genes.
 Note how diversity levels are lower in maize than teosinte, i.e. most
 points are below the red $x=y$ line.  
-. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards. } \label{fig:maize_Tajimas_D}  %é
+. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards positive values. } \label{fig:maize_Tajimas_D}  %é
 \end{figure}
 \begin{marginfigure}[4cm]
 \begin{center}
@@ -998,7 +998,7 @@ points are below the red $x=y$ line.
 \end{center}
 \caption{Maize ({\it Zea mays}.) Prof. Dr. Thomé's Flora von
   Deutschland. 1886. Thomé, O. W. } \label{fig:maize}  %é
-\end{marginfigure}
+\end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
 
 Mutations that arise on deeper lineages will be at intermediate frequency in our sample, and so mild bottlenecks
 can lead to an excess of intermediate frequency alleles compared to
@@ -1218,9 +1218,8 @@ likelihood and bayesian methods
 that can account for these features (see \gc{XX}). 
 
 For the vast majority of genes in the genome we see that $\dNdS < 1$, this is consistent with the view
-that non-synonymous sites are much more constained than synonymous,
-i.e. that most non-synonymous mutations are deleterious and quicky
-removed from the population. If we are willing to make the assumption that all synymous changes are
+that non-synonymous sites are much more constrained than synonymous, i.e. that most non-synonymous mutations are deleterious and quickly
+removed from the population. If we are willing to make the assumption that all synonymous changes are
 neutral, $d_S=2T \mu$, then we can estimate the degree of constraint. (Note that synonymous changes can sometimes be subject to
 both positive and negative selection, but we have to start somewhere.) 
 
@@ -1237,9 +1236,7 @@ Then
 therefore, if we assume that non-synonymous mutations can only be
 strongly deleterious or neutral, we estimate the fraction of mutational changes that
 are constrained by negative selection as $C= 1- \dNdS$. This has the
-interpretations of being the fraction of non-synonymous mutations that
-are quickly weeded out of the populaiton by selection, and so do not
-contribute to divergence among species. 
+interpretations of being the fraction of non-synonymous mutations that are quickly weeded out of the population by selection, and so do not contribute to divergence among species. 
 
 \paragraph{Loss of constraint at pseudogenes.}
 
@@ -1281,13 +1278,7 @@ which serve as a clue .. for its derivation.''
 }  %http://darwin-online.org.uk/Variorum/1859/1859-456-dns.html
 \graham{get Darwin page number etc}
 
-The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have
-secondarily evolved to lack enamel on their teeth, because their diet does not
-demand hard teeth, e.g. : two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark 
-{\it Orycteropus}). While others have lost their teeth entirely: giant anteaters ({\it Myrmecophaga}); Baleen whales, including 
-or lack enamel on their teeth.
-Due to this loss of selective function
-pseudogenizing substitutions, premature stop codons and frameshift mutations, have
+The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved to lack enamel on their teeth, or to lack teeth entirely, as because changing diet allowed selection to become was relaxed on having hard teeth. For example,  two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark {\it Orycteropus}) lack  enamel on teeth. While others have lost their teeth entirely e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint of the phenotype, loss of selective function pseudogenizing substitutions, premature stop codons and frameshift mutations, have
 accumulated in the gene Enamlin (see Figure \ref{fig:Enamlin_coding}
 for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
 range of species and found that none of the species with Enamel have frameshift
@@ -1307,14 +1298,11 @@ frameshifts in Enamlin and all of them carry premature stop codons
   stop codons in the sequence /  the length of the sequence.} \label{fig:Enamlin_phylo}  
 \end{figure} 
 
-The branches of the Enamlin phylogeny with a functional Enamlin gene (black)
-had an estimated $\dNdS= 0.51$ consistent with the protein evolving in
-a constrained manner. While the branches with a pseudogenized Enamlin
+The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$ consistent with the protein evolving in a constrained manner. While the branches with a pseudogenized Enamlin
 had $\dNdS = 1.02$ consistent with the gene evolving an unconstrained
 way. The branches where the gene was likely transitioning from a functional
 to non-function state (premutation and mixed, blue and purple) had an intermediate values of
-$\dNdS=0.83-0.98$ consistent with them transitioning from a
-constrained to unconstrained mode of protein evolution.
+$\dNdS=0.83-0.98$ consistent with them transitioning from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
 
 %\begin{question}
 %Enamlin was pseudogenized somewhere along the branch leading to
@@ -1330,29 +1318,28 @@ constrained to unconstrained mode of protein evolution.
 
 %\end{question}
 \paragraph{Adaptive evolution and $\dNdS$.}
-Clearly genes are not only subject to neutral and deleterious
-mutations, beneficial mutations must also arise and fix from from time to time. 
+Clearly genes are not only subject to neutral and deleterious mutations, beneficial mutations must also arise and fix from from time to time. 
 Lets assume that a fraction $B$ of non-synonymous mutations that arise are
-beneficial, and that they fix with probability $f_B$. This fixation
+beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Each of this mutations reach fixation in the population with probability $f_B$. This fixation
 probability may be much higher than that of neutral mutations (we'll
 discuss how to calculate the fixation probability for beneficial
-alleles in Chapter \ref{Selection_Stochasticity}).  If $T$ generations of divergence have
+alleles in Chapter \ref{Selection_Stochasticity}).  If $2T$ generations of divergence have
 elapsed between the two populations 
 \begin{equation}
-2T (1-C - B) \mu  + 2T B f_B \mu
+dN=2T (1-C - B) \mu  + 2T \times (2 N \mu B) \times  f_B
 \end{equation}
 Then
 \begin{equation} 
-\dNdS = (1-C-B) +  B f_B
+\dNdS = (1-C-B) +  2 N B f_B
 \end{equation}
 Note that this means that our estimates of $C$ using $1-\dNdS$ will be
 a  lower bound on the true constraint if even a small fraction of
 mutations are beneficial.
 However, genes may still evolve in a constrained way
 (i.e. $\dNdS<1$)  if adaptive substitutions are common at a gene if
-they are outweighed by the loss of potential subsitutions to negative selection.
+they are outweighed by the loss of potential substitutions to negative selection.
 
-While most genes evolve under constraint, we can find examples of
+\paragraph{loss of constraint} While most genes evolve under constraint, we can find examples of
 genes that are evolving in a less constrained manner. The simplest
 example of this is where the gene has lost function, e.g. has recently
 become pseudogenized. Along branches of the phylogeny where all the
@@ -1394,8 +1381,7 @@ fast protein evolution notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
 these leaves by fermentation with bacteria in their foregut, and use lysozymes to break down the bacteria to extract energy from the
 leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably the Colobine
-lysozyme has convergently evolved this activity via very similar
-amino-acid changes at 5 key residuals as in cows and Hoatzins (a leaf
+lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals as in cows and Hoatzins (a leaf
 eating bird). 
 
 \paragraph{The Mcdonald-Kreitman test}
