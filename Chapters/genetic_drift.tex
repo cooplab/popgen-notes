@@ -1233,7 +1233,7 @@ strongly deleterious or neutral, we estimate the fraction of mutational changes 
 are constrained by negative selection as $C= 1- \dNdS$. C has the
 interpretations of being the fraction of non-synonymous mutations that are quickly weeded out of the population by selection, and so do not contribute to divergence among species. 
 
-We can test whether our gene is evolving in a constrained way at the protein level by estimating $\dNdS$ and testing whether this is significantly less that  $1$. A \ec{$\dNdS$ test} can provide evolutionary evidence that a stretch of DNA proposed to be protein-coding is subject to selective constraint, and so likely does encode for a functional protein. We can also perform a $\dNdS$ test on specific branches of a phylogeny for a gene, to test on which branches the gene is subject to constraint, or to test for changes in the level of constraint across the phylogeny. 
+We can test whether our gene is evolving in a constrained way at the protein level by estimating $\dNdS$ and testing whether this is significantly less that  $1$. A $\dNdS$ test can provide evolutionary evidence that a stretch of DNA proposed to be protein-coding is subject to selective constraint, and so likely does encode for a functional protein. We can also perform a $\dNdS$ test on specific branches of a phylogeny for a gene, to test on which branches the gene is subject to constraint, or to test for changes in the level of constraint across the phylogeny. 
 
 \paragraph{Loss of constraint at pseudogenes.}
 
@@ -1275,9 +1275,9 @@ the Enamlin gene from the study of \citet{Meredith:09}.
 
 The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark {\it Orycteropus}) all lack  enamel on teeth. Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
 for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
-range of species and found that none of the species with Enamel have frameshift
-mutations in Enamlin, while 17/20 of species that lack Enamel or teeth have
-frameshifts in Enamlin and all of them carry premature stop codons
+range of species and found that none of the species with enamel have frameshift
+mutations in Enamlin, while 17/20 of species that lack enamel or teeth have
+frameshifts in Enamlin, and all of them carry premature stop codons
 (Figure \ref{fig:Enamlin_phylo}). 
 
 \begin{figure}
@@ -1286,22 +1286,15 @@ frameshifts in Enamlin and all of them carry premature stop codons
 \end{center}
 \caption{The tooth symbol next to each taxon shows whether they have
   teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
-  Enamlin is functional (black), pre-mutation (blue), mixed (purple),
-%<<<<<<< HEAD
-  and pseudogenic (red). The black and white vertical bars on branches show frameshift
-  mutations.  The Numbers after taxon names indicate minimum number of
-  stop codons in the sequence /  the length of the sequence. Figure from \citeauthor{Meredith:09}} \label{fig:Enamlin_phylo}  
-%=======
-%%  or pseudogenic (red). The black and white vertical bars on branches show frameshift
- % mutations.  The numbers after taxon names indicate the minimum number of
- % stop codons in the sequence /  the length of the sequence.} \label{fig:Enamlin_phylo}  
-%>>>>>>> 1d0b0688317848839e2bc60aea52014777472ab9
+  Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white vertical bars on branches show frameshift
+  mutations.  The numbers after taxon names indicate minimum number of
+  stop codons in the sequence divided by  the length of the sequence. Figure from \citeauthor{Meredith:09}} \label{fig:Enamlin_phylo}  
 \end{figure} 
 
-The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin
+The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin (red)
 had $\dNdS = 1.02$, consistent with the gene evolving an unconstrained
 way. The branches where the gene was likely transitioning from a functional
-to non-function state (pre-mutation and mixed, blue and purple) had intermediate values of
+to non-function state, i.e. pre-mutation (blue) and mixed (purple), had intermediate values of
 $\dNdS=0.83-0.98$, consistent with a transition from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
 
 %\begin{question}
@@ -1320,7 +1313,7 @@ $\dNdS=0.83-0.98$, consistent with a transition from a constrained to unconstrai
 \paragraph{Adaptive evolution and $\dNdS$.}
 Clearly genes are not only subject to neutral and deleterious mutations; beneficial mutations must also arise and fix from from time to time. 
 Let's assume that a fraction $B$ of non-synonymous mutations that arise are
-beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Now newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
+beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
 discuss how to calculate the fixation probability for beneficial
 alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reaches fixation in the population with probability $f_B$ from its initial frequency of $\nicefrac{1}{2N}$. This fixation
 probability may be much higher than that of neutral mutations, but still much less than $1$.  If $2T$ generations of divergence have
@@ -1336,8 +1329,8 @@ Then
 assuming again that all synonymous mutations are neutral. Note that this means that our estimates of $C$ using $1-\dNdS$ will be
 a  lower bound on the true constraint if even a small fraction of
 mutations are beneficial. Those cases where the gene is evolving more rapidly at the protein level than at synonymous
-sites, i.e. $d_N/d_S > 1$, are potentially strong candidates for  positive selection rapidly driving change at the protein level. We can identify genes that have $\dNdS$ significantly greater than one, either on the complete gene phylogeny, or on particular branches. \ec{Note that is a very conservative test that few genes in the genome meet, as many genes that are fixing adaptive non-synonymous substitutions will have $\dNdS<1$;  even if adaptive mutations are common, genes may still evolve in a constrained way (i.e. $\dNdS<1$) if
-the rapid fixation of beneficial mutations due to positive selection is outweighed by the loss of non-synonymous mutations to negative selection.}
+sites, i.e. $d_N/d_S > 1$, are potentially strong candidates for  positive selection rapidly driving change at the protein level. We can identify genes that have $\dNdS$ significantly greater than one, either on the complete gene phylogeny, or on particular branches. Note that is a very conservative test that few genes in the genome meet, as many genes that are fixing adaptive non-synonymous substitutions will have $\dNdS<1$;  even if adaptive mutations are common, genes may still evolve in a constrained way (i.e. $\dNdS<1$) if
+the rapid fixation of beneficial mutations due to positive selection is outweighed by the loss of non-synonymous mutations to negative selection.
 
 % \paragraph{loss of constraint} While most genes evolve under constraint, we can find examples of
 % genes that are evolving in a less constrained manner. The simplest
@@ -1373,31 +1366,24 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
 \caption{ (hoatzin ({\it Opisthocomus hoazin}). A history of birds
   Pycraft, W.P. 1910.  A leaf-eating bird.} \label{fig:hoatzin}  
 \end{marginfigure} 
-A classic example of looking for adaptive evolution using dN/dS is the
+A classic example for looking at adaptive evolution using dN/dS is the
 evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}, see
 the phylogeny in Figure \ref{fig:lysozyme}. The lysozyme protein is
 a key component for the breakdown of bacterial walls. It shows very
 fast protein evolution, notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
-these leaves by fermentation with bacteria in their foregut, and use lysozymes to break down the bacteria to extract energy from the
-leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
+these leaves by bacterial fermentation in their foregut, and then use lysozymes to break down the bacteria to extract energy from the
+leaves. In Colobines, the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
 lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals in cows and Hoatzins \citep[a leaf
 eating bird,][]{kornegay1994molecular} 
 
 \paragraph{The Mcdonald-Kreitman test}
-%<<<<<<< HEAD
-As noted above a big issue with using $\dNdS$ to detect adaptation is that it is very conservative. What we need to do is to adjust for the level of constraint at non-synonymous sites a gene experiences when looking a divergence. One way to do this is to use polymorphism data as an internal control. If we see a little non-synonymous polymorphism at a gene, but a  lot of synonymous polymorphism, we now know that there's likely a strong constraint on the gene (i.e. high $C$), thus we expect $\dNdS$ to be low. \citet{mcdonald:91} devised a simple test of the neutral theory of molecular evolution at a gene based on this intuition \citep[building on the conceptually similar HKA
-test][]{hudson1987test}. \citeauthor{mcdonald:91} took the case where we have polymorphism data at a gene for one species and divergence to a closely related species. They  partitioned polymorphism and fixed differences in a sample into 
-nonsynonymous and synonymous changes:
-%=======
-%As noted above, the big issue with using $\dNdS$ to detect adaptation is that it is a very conservative test. What we need to do is obtain an internal control that \ec{accounts for %constraint, allowing us to more powerfully test for positive selection}.\erin{this sentence was a fragment!}
-%\citet{mcdonald:91} \ec{did just this,} devising a simple test of the neutral theory of molecular
-%evolution at a gene (building on the conceptually similar HKA
-%test\cite{HKA}). First, they partitioned polymorphism and fixed differences into 
-%non-synonymous and synonymous changes:
-%>>>>>>> 1d0b0688317848839e2bc60aea52014777472ab9
+
+As noted above, a big issue with using $\dNdS$ to detect adaptation is that it is very conservative. For a more powerful test of rapid divergence, what we need to do is adjust for the level of constraint a gene experiences at non-synonymous sites. One way to do this is to use polymorphism data as an internal control. If we see little non-synonymous polymorphism at a gene, but a  lot of synonymous polymorphism, we now know that there is likely strong constraint on the gene (i.e. high $C$), thus we expect $\dNdS$ to be low. \citet{mcdonald:91} devised a simple test of the neutral theory of molecular evolution at a gene based on this intuition \citep[building on the conceptually similar HKA
+test][]{hudson1987test}. \citeauthor{mcdonald:91} took the case where we have polymorphism data at a gene for one species and divergence to a closely related species. They  partitioned polymorphism and fixed differences in their sample into 
+non-synonymous and synonymous changes:
+
 \begin{center}
-%\begin{table}
 \begin{tabular}{ccc}
  & Poly. & Fixed \\
 \hline 
@@ -1408,16 +1394,11 @@ Ratio & $P_N/P_S$ & $D_N/D_S$
 \end{center}
 
 Under neutral theory, we expect a smaller number of non-synonymous to
-synonymous fixed differences ($D_N/D_S < 1$) \erin{this was a typo with P instead of D here} and exactly the same
-expectation holds for polymorphism ($P_N/P_S$). Lets consider a gene with $L_S$ and $L_N$ sites where a synonymous and non-synonymous mutations could arise respectively. 
-We can think of the underlying gene genealogy at our gene, see Figure \ref{fig:MK_tree}, with the total time on the coalescent genealogy within the species as $T_{tot}$ and the total time for fixed differences between our species $T_{div}'$. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
-non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ fixed differences. We can then fill out the rest of our table as follows: 
-%<<<<<<< HEAD
-% =======
-%($P_N/P_S$). To see this, denote the total time on the coalescent genealogy within the species as
-%$T_{tot}$ and the total time for fixed differences by $T_{div}'$ then:
+synonymous fixed differences ($D_N/D_S < 1$) and exactly the same
+expectation holds for polymorphism ($P_N/P_S$). Let's consider a gene with $L_S$ and $L_N$ sites where synonymous and non-synonymous mutations could arise respectively. 
+We can think of the underlying gene genealogy at our gene, see Figure \ref{fig:MK_tree}, with the total time on the coalescent genealogy within the species as $T_{tot}$ and the total time for fixed differences between our species as $T_{div}'$. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
+non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ non-synonymous fixed differences. We can then fill out the rest of our table as follows: 
 
-%>>>>>>> 1d0b0688317848839e2bc60aea52014777472ab9
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Coalescent/MK_tree.pdf}
@@ -1435,15 +1416,14 @@ Ratio & $ L_N(1-C)/( L_S)$  & $ L_N (1-C) / ( L_S)$
 \end{tabular}
 \end{center}
 Therefore, we expect the ratio of non-synonymous to synonymous changes to be the same for polymorphism and divergence under a strict neutral model. We can test this expectation of equal ratios via the standard G-test of a $2
-\times 2$ table. If the ratio of $N/S$ is significantly higher divergence than polymorphism we have evidence that non-synonymous substitutions are accumulating more rapidly than we would predict given levels of constraint alone.
+\times 2$ table. If the ratio of $N/S$ is significantly higher for divergence than polymorphism we have evidence that non-synonymous substitutions are accumulating more rapidly than we would predict given levels of constraint alone.
 
 \section{Neutral diversity and population structure}
 %%this section was moved from the coalescent chapter
-Up to now we have assumed that our alleles that we have modelled in the
-coalescent setting are drawn from a randomly mating population such
+Up to now we have assumed that our alleles that we have modeled in the
+coalescent setting are drawn from a randomly mating population, such
 that any pair of lineages is equally likely to coalesce with each
-other. However, when there is population structure this assumption is
-violated. \\
+other. However, when there is population structure this assumption is violated. \\
 
 
 
@@ -1459,7 +1439,7 @@ sampled at random from the total population differ.
 \paragraph{A simple population split model}
 Imagine a population of constant size of $N_e$ diploid individuals that
 $T$ generations in the past split into two daughter populations (sub-populations)
-each of size $N_e$ individuals, who do not subsequently exchange
+each of size $N_e$ individuals, which do not subsequently exchange
 migrants. In the current day we sample an equal number of alleles
 from both subpopulations. 
 
@@ -1471,9 +1451,9 @@ from both subpopulations.
 \end{figure} 
 
 Consider a pair of alleles sampled within one of our
-sub-populations,and think about their per site heterozygosity. 
-They have experienced a population of size $N_e$
-and so the probability that they differ is $H_S approx 4N_e \mu$ (assuming that $N_e \mu \ll 1$, using our equation  \ref{eqn:hetero} for heterozygosity within a population ).
+sub-populations and think about their per site heterozygosity. 
+These alleles have experienced a population of size $N_e$
+and so the probability that they differ is $H_S \approx 4N_e \mu$ (assuming that $N_e \mu \ll 1$, using our equation  \ref{eqn:hetero} for heterozygosity within a population ).
 
 %Consider a pair of alleles sampled within one of our
 %sub-populations, they have experienced a population of size $N_e$
@@ -1490,11 +1470,11 @@ subpopulations. Therefore, our total heterozygosity is given by
 H_T = \half H_S + \half H_B
 \end{equation}
 where $H_B$ is the probability that a pair of alleles drawn from our
-two different sub-populations differ from each other. Our pair of
-alleles can not find a common ancestor with each other for at least $T$
+two different sub-populations differ from each other. A pair of
+alleles from different sub-populations cannot find a common ancestor with each other for at least $T$
 generations into the past as they are in distinct populations (not
 connected by migration). Once our alleles find themselves back in the combined ancestral 
-population it takes them on average $2N$ generations. So the total opportunity for mutation between our pair of alleles sampled from different populations is $2 (T + 2N )$ generation, such that the probability that our pairs of alleles is different is 
+population it takes them on average $2N$ generations to coalesce. So the total opportunity for mutation between our pair of alleles sampled from different populations is $2 (T + 2N )$ generations of meioses, such that the probability that our pairs of alleles is different is 
 \begin{equation}
 H_B \approx 2\mu ( T + 2 N) %\left( 1-(1-\mu)^{2T} \right) + (1-\mu)^{2T}
   %\frac{\theta}{\theta+1} 
@@ -1518,10 +1498,10 @@ into $\fst$. Doing so we find that
 \begin{equation}
 \fst \approx \frac{ \mu T}{\mu T +  4N_e\mu }  = \frac{ T}{ T +  4N_e }
 \end{equation}
-note that $\mu$ cancels out of this. In this simple toy model $\fst$
-is increasing because the amount of between population diversity 
+Note that $\mu$ cancels out of this equation. In this simple toy model, $\fst$
+is increasing because the amount of between-population diversity 
 increases with the divergence time of the two populations (initially
-linearly with $T$). It does so at a rate
+linearly with $T$). $\fst$ grows at a rate
 give by $\nicefrac{T}{(4N_e)}$ so that differentiation will be higher
 between populations separated by long divergence times or with small
 effective population sizes.
@@ -1535,7 +1515,7 @@ effective population sizes.
 
 
 \begin{question}  %Pongo abelii (Sumatran) and Pongo pygmaeus
-  The genome-wide $F_{ST}$ between Bornean and Sumatran orang-utan species samples  ({\it Pongo pygmaeus} and {\it Pongo abelii}) is $\approx 0.37$ \citep{locke2011}, representing a deep population split between the species (potentially with little subsequent gene flow). Within the populations the genome-wide average Watterson's estimate of $\theta_W=1.4$kb$^{-1}$, estimated from the number of segregating sites. Assume a generation time of 20 years, and a mutation rate of $2 \times 10^{-8}$ per base per generation. How far in the past did the two populations diverge?
+  The genome-wide $F_{ST}$ between Bornean and Sumatran orang-utan species samples  ({\it Pongo pygmaeus} and {\it Pongo abelii}) is $\approx 0.37$ \citep{locke2011}, representing a deep population split between the species (potentially with little subsequent gene flow). Within the populations the genome-wide average Watterson's $\theta$ is $\theta_W=1.4$kb$^{-1}$, estimated from the number of segregating sites. Assume a generation time of 20 years, and a mutation rate of $2 \times 10^{-8}$ per base per generation. How far in the past did the two populations diverge?
 \end{question}
 %o understand this better we can make a simple
 %approximation based on our mutation rate being very low, such that
@@ -1556,9 +1536,9 @@ effective population sizes.
 
 \paragraph{A simple model of migration between an island and the mainland.}
 We can also use the coalescent to think about patterns of
-differentiation under a simple model of migration drift
-equilibrium. Lets consider a small island population that is relatively isolated
-from a large mainland population, and that both of these populations
+differentiation under a simple model of migration-drift
+equilibrium. Let's consider a small island population that is relatively isolated
+from a large mainland population, where both of these populations
 are constant in size. We'll assume that the expected heterozygosity
 for a pair of alleles sampled on the mainland is $H_M$.
 
@@ -1571,22 +1551,22 @@ these are a drop in the ocean compared to the large population size on
 the mainland and their effect can be ignored. 
 
 
-If we sample an allele on the island back and trace its ancestral
-lineage backward in time, each generation our ancestral allele have a low
-probability $m$ of being descended from the mainland in the proceeding
-generation (if we go far enough the allele eventually has to be
+If we sample an allele on the island and trace its ancestral
+lineage backward in time, each generation our ancestral allele has a low
+probability $m$ of being descended from the mainland in the preceding
+generation (if we go back far enough the allele eventually has to be
 descended from an allele on the mainland). The probability that a pair of alleles sampled on the
-island are descended from a shared recent common ancestral allele on the island, is the
-probability that our pair of alleles coalesce before either lineage
+island are descended from a shared recent common ancestral allele on the island is the
+probability that our pair of alleles coalesces before either lineage
 migrates. For example, the probability that our pair of alleles
-coalesce $t+1$ generations back is 
+coalesces $t+1$ generations back \ec{on the island} is 
 \begin{equation}
 \frac{1}{2N_I}(1-m)^{2(t+1)} \left(1-\frac{1}{2N_I} \right)^{t} \approx
 \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
 \end{equation}
 with the approximation following from assuming that $m \ll 1$ \& $\frac{1}{(2N_I)}
 \ll 1$ (note that this is very similar to our derivation of
-heterozygosity above). The probability that our alleles coalescence before either one
+heterozygosity above). The probability that our alleles coalesce before either one
 of them migrates off the island, irrespective of the time, is
 \begin{equation}
 \int_0^{\infty} \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} +
@@ -1594,7 +1574,7 @@ of them migrates off the island, irrespective of the time, is
     2m}.
 \end{equation}
 
-Lets assume that the mutation rate is very low such as it is very
+Let's assume that the mutation rate is very low such that it is very
 unlikely that the pair of alleles mutate before they coalesce on the
 island. Therefore, the only way that the alleles can be different from
 each other is if one or other of them migrates to the mainland, which
@@ -1602,10 +1582,7 @@ happens with probability
 \begin{equation}
   1 - \frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} + 2m}
 \end{equation}
-Conditional on one or other of our alleles migrating to the mainland 
-
-both of our alleles represent independent draws from the mainland and
-so differ from each other with probability $H_M$. Therefore, the level of
+Conditional on one or other of our alleles migrating to the mainland, both of our alleles represent independent draws from the mainland and so differ from each other with probability $H_M$. Therefore, the level of
 heterozygosity on the island is given by
 \begin{equation}
   H_I = \left(1 - \frac{\nicefrac{1}{(2N_I)}}{1/(2N_I) + 2m} \right)H_M
@@ -1615,23 +1592,14 @@ mainland is
 \begin{equation}
   F_{IM} = 1- \frac{H_I}{H_M} = \frac{\nicefrac{ 1}{(2N_I)}}{\nicefrac{1}{(2N_I)} + 2m} = \frac{ 1 }{1 + 4N_Im}.
 \end{equation}
-The level of inbreeding on the island compared to the mainland will
-be high in the migration rate is low and the effective population size
-of the island is low, as allele frequencies on the island are drifting
-and diversity is not being replenished on the island by migration. The
-key parameter here is the number individuals on the island replaced by
-immigrants from the mainland each generation ($N_I m$).
+The level of inbreeding on the island compared to the mainland will be high if the migration rate is low and the effective population size of the island is low, as allele frequencies on the island are drifting and diversity on the island is not being replenished by migration. The
+key parameter here is the number individuals on the island replaced by immigrants from the mainland each generation ($N_I m$).
 
-We have framed this as being about the reduction in genetic diversity on the
-island compared to the mainland. However, if we consider collecting 
-individuals on the island and mainland in proportion to population
-sizes the total level of heterozygosity would be $H_T=H_M$, as samples
-from our mainland would greatly outnumber those from our
-island. Therefore, considering our island our sub-population we have
-derived another simple model of $F_{ST}$.
+We have framed this problem as being about the reduction in genetic diversity on the island compared to the mainland. However, if we consider collecting individuals on the island and mainland in proportion to their population
+sizes, the total level of heterozygosity would be $H_T=H_M$, as samples from our mainland would greatly outnumber those from our island. Therefore, considering the island as our sub-population, we have derived another simple model of $F_{ST}$.
 
 \begin{question}
-You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively neutral biallelic markers the freshwater population has frequencies:\\
+You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of putatively neutral biallelic markers the freshwater population has frequencies:\\
 0.2, 0.7, 0.8\\
 at the same markers the marine population has frequencies:\\
 0.4, 0.5 and 0.7.\\
@@ -1642,32 +1610,21 @@ populations into the river?
 
 \paragraph{Incomplete lineage sorting}
 
-Because it can take a long time for an polymorphism to drift up or down in
-frequency, multiple population splits may occur during the transit of
-an allele. This can lead to incongruence between the overall
-population tree and the information about relationships present at
+Because it can take a long time for an polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
 individual loci. In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
-we show a simulations
-of three populations where the bottom population splits off from the
-other two first, followed by the subsequent spliting of the the top
-and the middle population. We start both simulations with a newly
-introduced red allele being polymorphic in the combined ancestral
-polymorphism. The most likely fate of this allele is that it is
-quickly lost from the population, but sometimes the allele can drift
-up in frequency and be polymorphic when the populations split, as the
-alleles in our two figures have done. If the allele is lost/fixed in
-the descendent populations before the next population split our allele
+we show a simulations of three populations where the bottom population splits off from the other two first, followed by the subsequent splitting of the the top and the middle populations. We start both simulations with a newly
+introduced red allele being polymorphic in the combined ancestral population. The most likely fate of this allele is that it is
+quickly lost from the population, but sometimes the allele can drift up in frequency and be polymorphic when the populations split, as the alleles in our two figures have done. If the allele is lost/fixed in the descendant populations before the next population split, our allele
 configuration will agree with the population tree, as it does in
-Figure  \ref{fig:NoILS_poly}, and so the gene tree will agree with population tree (as shown in the left side of Figure \ref{fig:ILS_cartoon}). 
+Figure  \ref{fig:NoILS_poly}, and so too the gene tree will agree with population tree (as shown in the left side of Figure \ref{fig:ILS_cartoon}). 
 However, if the allele persists as a polymorphism in the ancestral population till the top and the middle
 populations split, then the allele can fix in one of these populations
 and not the other. Such an event can lead to a substitution pattern
 that disagrees with the population tree, as in Figure \ref{fig:ILS_poly}.  If
-we were construct a phylogeny using the variation we would see a
-disagreement between the gene tree and population tree. In Figure \ref{fig:ILS_poly} an allele
+we were to construct a phylogeny using the variation at this site we would see a disagreement between the gene tree and population tree. In Figure \ref{fig:ILS_poly} an allele
 drawn from the top and the bottom populations are
-necessarily more closely related to each other than either is to an allele drawn from population 2, 
-as tracing our allelic lineages from top and bottom populations back through time they must coalesce with each other before we reach the point where the red mutation arose; while a lineage from the middle population has not yet to coalesce with either. An example of this in terms of the underlying tree is shown on the right side of Figure \ref{fig:ILS_cartoon} . 
+necessarily more closely related to each other than either is to an allele drawn from population 2; 
+tracing our allelic lineages from the top and bottom populations back through time, they must coalesce with each other before we reach the point where the red mutation arose; in contrast, a lineage from the middle population cannot have coalesced with either other lineage until past the time the red mutation arose. An example of this 'incomplete lineage sorting' in terms of the underlying tree is shown on the right side of Figure \ref{fig:ILS_cartoon} . 
 
 
 \begin{figure}
@@ -1694,12 +1651,12 @@ blocked out with black shapes. Two different coalescent trees are
 relating a single allele drawn from A, B, and C are shown with thinner lines.} \label{fig:ILS_cartoon} 
 \end{figure}
 
-A natural, pedigree analogy to this is the fact that while two
-biological siblings are morely closely related to each other genealogically than
+A natural pedigree analogy to incomplete lineage sorting is the fact that while two
+biological siblings are more closely related to each other genealogically than
 either is to their cousin, at any given locus one of the siblings can
-shared an allele IBD with their cousin that they do not share with
-their own sibling, due to the randomness of mendelian segregating down their
-pedigree. The average relatedness of the individuals/population disagrees
+share an allele IBD with their cousin that they do not share with
+their own sibling, due to the randomness of Mendelian segregation down their
+pedigree. In these cases, the average relatedness of the individuals/populations disagrees
 with the patterns of relatedness at a particular locus. 
 
 
@@ -1716,52 +1673,48 @@ with the patterns of relatedness at a particular locus.
   Elizabeth Gould. Birds of Australia Gould J. 1840. } \label{fig:Poephila_cincta} 
 \end{marginfigure}
 
-As an empirical example of incomplete lineage sorting lets consider the work of 
+As an empirical example of incomplete lineage sorting, let's consider the work of 
 \citeauthor{jennings:05} who sequenced a single allele from three
-different species of Australian grass finches (Poephila); two sister species
+different species of Australian grass finches (Poephila): two sister species
 of long-tailed finches ({\it Poephila acuticauda} and {\it P. hecki})
 and the black-throated finch ({\it Poephila cincta}, see Figure \ref{fig:Poephila_cincta}). They collected
 sequence data for 30 genes, and constructed phylogenetic gene trees
-at each of these loci, resulting in 28 well resolved gene trees. 
-16 gene trees of the gene trees showed {\it
+at each of these loci, resulting in 28 well-resolved gene trees. 
+16 of the gene trees showed {\it
   P. acuticauda} and {\it P. hecki} as sisters with {\it P. cincta})
-(the tree ((A,H),C)~). While for twelve genes the gene tree was
+(the tree ((A,H),C)~), while for twelve genes the gene tree was
 discordant with the population tree: for seven of their genes  {\it P. hecki}
-fell as an outgroup to the other two; and at five {\it P. acuticauda} fell as an outgroup (the trees ((A,C),H) and
+fell as an outgroup to the other two and at five {\it P. acuticauda} fell as an outgroup (the trees ((A,C),H) and
 ((H,C),A) respectively). 
 
 
-Lets use the coalescent to understand this discordance between gene
-trees and species trees. Lets assume that two sister populations
+Let's use the coalescent to understand this discordance between gene
+trees and species trees. Let's assume that two sister populations
 (A \& B) split $t_1$ generations in the past, with a
 deeper split from a third outgroup population (C) $t_2$ generations in the
 past. We'll assume that there's no gene flow among our populations
 after each split. We can trace back the ancestral lineages of our three alleles. The
 first opportunity for the A \& B lineages to coalesce is $t_1$
-generations. If they coalesce with each other in their shared
-ancestral population before $t_2$ in the past, left side of
-Figure \ref{fig:ILS_cartoon}, their gene tree will
+generations ago. If they coalesce with each other in their shared
+ancestral population before $t_2$ in the past (left side of
+Figure \ref{fig:ILS_cartoon}) their gene tree will
 definitely agree with the population tree. So the only way for the gene
 tree to disagree with the population tree is for the A \& B lineages
-to fail to coalesce in their shared ancestral population, this happens
+to fail to coalesce in their shared ancestral population between $t_1$ and  $t_2$; this happens
 with probability $\left(1 - \nicefrac{1}{2N}\right)^{t_2-t_1}$. We'll
-get a discordant gene tree, if A
+get a discordant gene tree if A
 \& B make it back to the shared ancestral population with C without
-coalescing, and then one or other of them coalesces with the C
-lineage first. This happens with probability $2/3$, as at the first
-pairwise-coalescent event there are are three possible pairs two of
+coalescing, and then one or the other of them coalesces with the C lineage before they coalesce with each other. This happens with probability $2/3$, as at the first
+pairwise-coalescent event there are are three possible pairs of lineages that could coalesce, two of
 which (A \& C  and B \$ C ) result in a discordant tree. So the
-probability that we get a coalescent tree that is discordant with the
-population tree is
+probability that we get a coalescent tree that is discordant with the population tree is
 \begin{equation}
 \frac{2}{3} \left(1 - \nicefrac{1}{2N}\right)^{t_2-t_1}.
 \end{equation}
-Thus we should expect gene-tree population-tree discordance when
-population split in rapid succession, and/or population sizes are
-large. 
+Thus we should expect gene-tree population-tree discordance when populations split in rapid succession and/or population sizes are large. 
 \begin{question}
-Lets return to \citeauthor{jennings:05}'s Australian grass finches
-example, they estimated that the ancestral population size of our two
+Let's return to \citeauthor{jennings:05}'s Australian grass finches
+example. They estimated that the ancestral population size of our two
 long-tailed finches was four hundred thousand. What is your best
 estimate of the inter-speciation time, i.e. $t_2-t_1$? 
 \end{question}
@@ -1771,45 +1724,35 @@ estimate of the inter-speciation time, i.e. $t_2-t_1$?
 We often want to test whether gene flow has occurred between populations. For example, we might want to establish a case
 that interbreeding between humans and Neanderthals occurred or demonstrate that
 gene flow occurred after two populations began to speciate. 
-A broad range of methods have been designed to test for gene flow, and
-to estimate gene flow rates, based on neutral expectations. Here'll we
-briefly just discuss one method based on
+A broad range of methods have been designed to test for gene flow and
+to estimate gene flow rates, based on neutral expectations. Here we'll briefly just discuss one method based on
 some simple coalescent ideas.  Above we assumed that gene-tree population-tree discordance was due to
 incomplete lineage sorting due to populations rapidly
-spliting. However, gene flow among populations can also lead to gene-tree discordance.
+splitting. However, gene flow among populations can also lead to gene-tree discordance.
 While both ILS and gene flow can lead to discordance, under
-simplifying assumptions ILS implies more symmetry in how these
-discordancies manifest themselves.\\
+simplifying assumptions, ILS implies more symmetry in how these
+discordances manifest themselves.\\
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ABBA_BABA_coal.pdf}
 \end{center}
-\caption{ In boh the left and and right trees ILS has occurred between our single lineages sampled from populations A, B, and C. Imagine that population D, is an somewhat distant outgroup
-such that the lineages from A-C (nearly) always coalesce with each
-other, before coalescing with D. The small dash on the branch
-indicates the mutation A$\rightarrow$B occuring, giving rise to the
+\caption{ In both the left and and right trees ILS has occurred between our single lineages sampled from populations A, B, and C. Imagine that population D is a somewhat distant outgroup
+such that the lineages from A through C (nearly) always coalesce with each other before any coalesce with D. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
 ABBA or BABA mutational pattern shown at the bottom. } \label{fig:ABBA_BABA} 
 \end{figure}
 
 Take a look at Figure \ref{fig:ABBA_BABA}. In both cases the lineages from A and B fail to coalesce in
-their initial shared ancestral population, and one or other of them
-coalesces with the lineage from C first. Each option is equally
-likely, therefore the mutational patterns ABBA and BABA are equally
-likely to occur under ILS.  \sidenote{here we have to assume no
-  structure in the ancestral population.}
+their initial shared ancestral population, and one or the other of them
+coalesces with the lineage from C before they coalesce with each other. Each option is equally
+likely; therefore the mutational patterns ABBA and BABA are equally likely to occur under ILS.  \sidenote{here we have to assume no structure in the ancestral population.}
 
-However, if gene flow occurs from population C into population B the
-lineage from B can more recently coalesce with lineage C, and so we
-should see more ABBAs than BABAs. To test for this we can sample four
-sequences from our populations and count up the number of sites that
-show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
-$n_{BABA}$ and take 
+However, if gene flow occurs from population C into population B, in addition to ILS the lineage from B can more recently coalesce with the lineage from C, and so we should see more ABBAs than BABAs. To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
+$n_{BABA}$ and calculate
 \begin{equation}
 \frac{n_{ABBA}-n_{BABA}}{n_{ABBA}+n_{BABA}}
 \end{equation}
-this statistic will have expectation zero if the gene-tree discordance
-is due to ILS, and be skewed negative if gene flow
-occurred from C into B (positive if gene flow occurred from C into A).
+This statistic will have expectation zero if the gene-tree discordance is due to ILS and will be skewed negative if gene flow
+occurred from C into B (and skewed positive if gene flow occurred from C into A).
 
