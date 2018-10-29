@@ -1210,34 +1210,33 @@ count up the non-synonymous changes and divide by the total number of
 positions in the gene where a non-synonymous point mutation could occur. We
 can do likewise for synonymous changes $d_S$, and then take the ratio $\dNdS$. This is a helpful
 conceptual way to think about what $\dNdS$ represents, however, this
-ignores the fact that particular changes are more likely to occur by
-mutation and also does not account for multiple hits. Therefore, in
-practice the ratio $\dNdS$ is more usually calculated by model-based
+ignores the fact that some changes are more likely to occur by
+mutation than others and also does not account for multiple hits (multiple mutations at the same bp position). Therefore, in
+practice the ratio $\dNdS$ is more typically calculated by model-based
 likelihood and bayesian methods
 that can account for these features. 
 
-For the vast majority of protein-coding genes in the genome we see that $\dNdS < 1$, this is consistent with the view
-that non-synonymous sites are much more constrained than synonymous, i.e. that most non-synonymous mutations are deleterious and quickly
-removed from the population. If we are willing to make the assumption that all synonymous changes are
-neutral, $d_S=2T \mu$, then we can estimate the degree of constraint. (Note that synonymous changes can sometimes be subject to
-both positive and negative selection, but this assumption is a useful starting place.) 
+For the vast majority of protein-coding genes in the genome we see that $\dNdS < 1$. This observation is consistent with the view
+that non-synonymous sites are much more constrained than synonymous sites, i.e. that most non-synonymous mutations are deleterious and quickly removed from the population. If we are willing to make the assumption that all synonymous changes are
+neutral, $d_S=2T \mu$, then we can estimate the degree of constraint on non-synonymous sites. (Note that synonymous changes can sometimes be subject to
+both positive and negative selection, but this neutral assumption is a useful starting place.) 
 
-Assuming that a fraction $C$ of non-synonymous changes are too
-deleterious to contribute to polymorphism then, if $T$ generations of divergence have
-elapsed between the two populations we expect $d_N$ neutral non-synonymous substitutions, where
+Assume that a fraction $C$ of non-synonymous changes are too
+deleterious to contribute to polymorphism. Then, after $T$ generations of divergence have
+elapsed between two populations, we'd expect $d_N$ neutral non-synonymous substitutions, where
 \begin{equation}
 d_N = 2T (1-C) \mu  
 \end{equation}
-Then
+Dividing by $d_S$, we find
 \begin{equation} 
 \dNdS = (1-C) 
 \end{equation}
-therefore, if we assume that non-synonymous mutations can only be
+Therefore, if we assume that non-synonymous mutations can only be
 strongly deleterious or neutral, we estimate the fraction of mutational changes that
-are constrained by negative selection as $C= 1- \dNdS$. This has the
+are constrained by negative selection as $C= 1- \dNdS$. C has the
 interpretations of being the fraction of non-synonymous mutations that are quickly weeded out of the population by selection, and so do not contribute to divergence among species. 
 
-We can test whether our gene is evolving in a constrained way at the protein level by estimating $\dNdS$ and testing whether this is significantly less that  $1$. This provides evolutionary evidence that a stretch of DNA proposed to be protein coding is subject to selective constraint, and so likely encodes for a functional protein. We can also perform this test on specific branches of a phylogeny for a gene, to test which branches the gene is subject to constraint, or to test for changes in the level of constaint. 
+We can test whether our gene is evolving in a constrained way at the protein level by estimating $\dNdS$ and testing whether this is significantly less that  $1$. A \ec{$\dNdS$ test} can provide evolutionary evidence that a stretch of DNA proposed to be protein-coding is subject to selective constraint, and so likely does encode for a functional protein. We can also perform a $\dNdS$ test on specific branches of a phylogeny for a gene, to test on which branches the gene is subject to constraint, or to test for changes in the level of constraint across the phylogeny. 
 
 \paragraph{Loss of constraint at pseudogenes.}
 
@@ -1250,17 +1249,13 @@ which serve as a clue .. for its derivation.''  -- \citet{darwin1859} pg. 455
 
 While most protein genes evolve under constraint, we can find examples of
 genes that are evolving in a less constrained manner. The simplest
-example of this is where the gene has lost function, e.g. has recently
-become pseudogenized. When a gene completely loses function there will be no
-selection against non-synonynous changes and so they are just as free
+example of this is where the gene has lost function. Genes can lose function because of inactivating mutations that stop them being transcribed or translated into functional proteins. Such genes are called 'pseudogenes'. When a gene completely loses function there is no longer
+selection against non-synonynous changes and so such mutations are just as free
 to accumulate as synonymous changes, and so $\dNdS=1$.
-Pseudogenes are a wonderful example of the extension of Darwin's ideas about vestigial traits (`Rudimentary organs') to the DNA level,
-we can still recognize a once useful word (gene) whose spelling is slowly degrading.
-Genes can lose function because of inactivating mutations that stop
-them being transcribed or translated into functional proteins, such genes are
-called pseudogenes. Our genomes are filled with old pseudogenes whose
-meaning are slowly being eroded through the accumulation of neutral substitutions.
-One nice example of as gene that has been repeatedly lost function,
+Pseudogenes are a wonderful example of the extension of Darwin's ideas about vestigial traits (`Rudimentary organs') to the DNA level;
+we can still recognize a once useful word (gene) whose spelling is slowly degrading. Our genomes are filled with old pseudogenes whose
+original meanings (functional protein coding sequences) are slowly being eroded through the accumulation of neutral substitutions.
+One nice example of a gene that has repeatedly lost function,
 i.e. become repeatedly psuedogenized, is
 the Enamlin gene from the study of \citeauthor{Meredith:09}.
 
@@ -1281,7 +1276,7 @@ the Enamlin gene from the study of \citeauthor{Meredith:09}.
   to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.} \label{fig:sloth}  
 \end{marginfigure} 
 
-The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel  or teeth at all. For example,  two-toed sloths ({\it Choloepus}); Pygmy sperm whales ({\it Kogia}); aardvark {\it Orycteropus}) lack  enamel on teeth. While others have lost their teeth entirely e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint of the phenotype the Enamlin gene has accumulated pseudogenizing substitutions, premature stop codons, and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
+The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark {\it Orycteropus}) all lack  enamel on teeth. Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
 for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
 range of species and found that none of the species with Enamel have frameshift
 mutations in Enamlin, while 17/20 of species that lack Enamel or teeth have
@@ -1293,18 +1288,18 @@ frameshifts in Enamlin and all of them carry premature stop codons
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin_phylo.pdf}
 \end{center}
 \caption{The tooth symbol next to each taxon shows whether they have
-  teeth, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
+  teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
   Enamlin is functional (black), pre-mutation (blue), mixed (purple),
-  and pseudogenic (red). The black and white vertical bars on branches show frameshift
-  mutations.  The Numbers after taxon names indicate minimum number of
+  or pseudogenic (red). The black and white vertical bars on branches show frameshift
+  mutations.  The numbers after taxon names indicate the minimum number of
   stop codons in the sequence /  the length of the sequence.} \label{fig:Enamlin_phylo}  
 \end{figure} 
 
-The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$ consistent with the protein evolving in a constrained manner. While the branches with a pseudogenized Enamlin
-had $\dNdS = 1.02$ consistent with the gene evolving an unconstrained
+The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin
+had $\dNdS = 1.02$, consistent with the gene evolving an unconstrained
 way. The branches where the gene was likely transitioning from a functional
-to non-function state (premutation and mixed, blue and purple) had an intermediate values of
-$\dNdS=0.83-0.98$ consistent with them transitioning from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
+to non-function state (pre-mutation and mixed, blue and purple) had intermediate values of
+$\dNdS=0.83-0.98$, consistent with a transition from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
 
 %\begin{question}
 %Enamlin was pseudogenized somewhere along the branch leading to
@@ -1320,11 +1315,11 @@ $\dNdS=0.83-0.98$ consistent with them transitioning from a constrained to uncon
 
 %\end{question}
 \paragraph{Adaptive evolution and $\dNdS$.}
-Clearly genes are not only subject to neutral and deleterious mutations, beneficial mutations must also arise and fix from from time to time. 
-Lets assume that a fraction $B$ of non-synonymous mutations that arise are
+Clearly genes are not only subject to neutral and deleterious mutations; beneficial mutations must also arise and fix from from time to time. 
+Let's assume that a fraction $B$ of non-synonymous mutations that arise are
 beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Now newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
 discuss how to calculate the fixation probability for beneficial
-alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reach fixation in the population with probability $f_B$ from its initial frequency of $\nicefrac{1}{2N}$. This fixation
+alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reaches fixation in the population with probability $f_B$ from its initial frequency of $\nicefrac{1}{2N}$. This fixation
 probability may be much higher than that of neutral mutations, but still much less than $1$.  If $2T$ generations of divergence have
 elapsed between the two populations then a total of
 \begin{equation}
@@ -1338,8 +1333,8 @@ Then
 assuming again that all synonymous mutations are neutral. Note that this means that our estimates of $C$ using $1-\dNdS$ will be
 a  lower bound on the true constraint if even a small fraction of
 mutations are beneficial. Those cases where the gene is evolving more rapidly at the protein level than at synonymous
-sites, i.e. $d_N/d_S > 1$, are potentially strong candidates for  positive selection rapidly driving change at the protein level. We can identify genes that have $\dNdS$ significantly greater than one, either on the complete gene phylogeny, or on particular branches. Note that is is a very conservative test that few genes in the genome meet, as many genes that are fixing adaptive non-synonymous substitutions will have $\dNdS<1$. This is because they may still evolve in a constrained way (i.e. $\dNdS<1$)  even if adaptive substitutions are common at a gene if
-they are outweighed by the loss of non-synonymous mutations to negative selection.
+sites, i.e. $d_N/d_S > 1$, are potentially strong candidates for  positive selection rapidly driving change at the protein level. We can identify genes that have $\dNdS$ significantly greater than one, either on the complete gene phylogeny, or on particular branches. \ec{Note that is a very conservative test that few genes in the genome meet, as many genes that are fixing adaptive non-synonymous substitutions will have $\dNdS<1$;  even if adaptive mutations are common, genes may still evolve in a constrained way (i.e. $\dNdS<1$) if
+the rapid fixation of beneficial mutations due to positive selection is outweighed by the loss of non-synonymous mutations to negative selection.}
 
 % \paragraph{loss of constraint} While most genes evolve under constraint, we can find examples of
 % genes that are evolving in a less constrained manner. The simplest
@@ -1355,8 +1350,8 @@ they are outweighed by the loss of non-synonymous mutations to negative selectio
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Yang_lysozyme/Yang_lysozyme.pdf}
 \end{center}
-\caption{A phylogram for the primate lysozyme gene redrawn from
-  \citeauthor{Yang:98}. For each branch the numbers give the estimated average
+\caption{A phylogram for the primate lysozyme gene, redrawn from
+  \citeauthor{Yang:98}. For each branch, the numbers give the estimated average
 number of non-synonymous to synonymous changes in the lysozyme protein.} \label{fig:lysozyme}  
 \end{figure} 
 
@@ -1379,19 +1374,19 @@ A classic example of looking for adaptive evolution using dN/dS is the
 evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}, see
 the phylogeny in Figure \ref{fig:lysozyme}. The lysozyme protein is
 a key component for the breakdown of bacterial walls. It shows very
-fast protein evolution notably on the lineages leading to apes (e.g. gibbons
+fast protein evolution, notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
 these leaves by fermentation with bacteria in their foregut, and use lysozymes to break down the bacteria to extract energy from the
-leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably the Colobine
-lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals as in cows and Hoatzins \citep[a leaf
+leaves. In Colobines the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
+lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals in cows and Hoatzins \citep[a leaf
 eating bird,][]{kornegay1994molecular} 
 
 \paragraph{The Mcdonald-Kreitman test}
-As noted above the big issue with using $\dNdS$ to detect adaptation is that it is very conservative. What we need to do is obtain an internal control that all
-\citet{mcdonald:91} devised a simple test of the neutral theory of molecular
+As noted above, the big issue with using $\dNdS$ to detect adaptation is that it is a very conservative test. What we need to do is obtain an internal control that \ec{accounts for constraint, allowing us to more powerfully test for positive selection}.\erin{this sentence was a fragment!}
+\citet{mcdonald:91} \ec{did just this,} devising a simple test of the neutral theory of molecular
 evolution at a gene (building on the conceptually similar HKA
-test\cite{HKA}. They partitioned polymorphism and fixed differences into 
-nonsynonymous and synonymous changes:
+test\cite{HKA}). First, they partitioned polymorphism and fixed differences into 
+non-synonymous and synonymous changes:
 \begin{center}
 %\begin{table}
 \begin{tabular}{ccc}
@@ -1403,10 +1398,10 @@ Ratio & $P_N/P_S$ & $D_N/D_S$
 \end{tabular}
 \end{center}
 
-Under neutral theory we expect a smaller number of non-synonymous to
-synonymous fixed differences ($P_N/P_S < 1$) but exactly the same
+Under neutral theory, we expect a smaller number of non-synonymous to
+synonymous fixed differences ($D_N/D_S < 1$) \erin{this was a typo with P instead of D here} and exactly the same
 expectation holds for polymorphism
-($P_N/P_S$). To see this denote the total time on the coalescent genealogy within the species as
+($P_N/P_S$). To see this, denote the total time on the coalescent genealogy within the species as
 $T_{tot}$ and the total time for fixed differences by $T_{div}'$ then:
 
 \begin{marginfigure}
