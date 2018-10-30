@@ -1,22 +1,14 @@
 \chapter{Phenotypic variation and resemblance between relatives.}
 
-\begin{quote}
-All that we mean when we speak of a gene [allele] for pink eyes is, a gene which differentiates a pink eyed fly 
-from a normal one — not a gene [allele] which produces pink eyes per se, for the character pink eyes is dependent 
-on  the action of many other genes. \end{quote} - \citet{sturtevant:15}
-
-
 \newthought{The distinction between genotype and phenotype} is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
 The genotype of an individual (the genome), for most purposes, is decided when
 the sperm fertilizes egg. The phenotype of an individual represents any
 measurable aspect of an organism. Your height, to the amount of
 RNA transcribed from a given gene, to what you ate last Tuesday; all
-of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the instructions
-encoded by that genome played out through an incredibly complicated
+of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
 developmental, and physiological or behavioural processes which interact with a myriad of environmental and
 stochastic factors. Honestly it boggles the mind how organisms work
-as well as they do, let alone that you managed to eat lunch last Tueday. 
- 
+as well as they do, let alone that you managed to eat lunch last Tuesday. 
 
 \begin{marginfigure}
 \begin{center}
@@ -24,26 +16,24 @@ as well as they do, let alone that you managed to eat lunch last Tueday.
 \end{center}
 \caption{{\it P. tremula}. Der baum. H. Schacht. 1860. BHL } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
-The simplest way to measure the genotype-phenotype relationship is
-the calculate the phenotypic mean for each genotype at a locus.
-For example, \citet{wang:18} \cite{wang:18} explored the genetic basis
-of budset time in European aspen  ({\it Populus tremula}), the effect
+
+There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simples way to measure the genotype-phenotype relationship is the calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}), the effect
 of a specific SNP on the phenotype is shown in
-in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait
-underlying local adaptation to varying growing season length. The SNP
+in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait underlying local adaptation to varying growing season length. The SNP
 falls in the gene (PtFT2) that is known to play a strong role in flowering
 time regulation in other plants. 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Poplar_Aspen_budset_geno_pheno.pdf}
 \end{center}
-\caption{The effect of a flowering time gene (PtFT2) SNP on budset time in
-  European aspen. Each dot gives the genotype-phenotype combination for
+\caption{The effect of a flowering time gene (PtFT2) SNP on budset time in European aspen. Each dot gives the genotype-phenotype combination for
   an individual. The horizontal lines give the budset mean for each
-  genotype, the vertical liens show the inter-quartile range. The
+  genotype, the vertical lines show the inter-quartile range. The
   dotted line gives the linear regression of phenotype on genotype.
   Thanks to P{\"a}r Ingvarsson for the data. } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
+
+
 
 One way for us to assess the relationship between
 genotype phenotype is to fit a linear regression, i.e. the best fitting linear line through the data, of
@@ -51,15 +41,16 @@ phenotype on genotype. The slope of this line has the interpretation of being th
 effetc of substituting a copy of allele $2$ for a copy of allele
 $1$. In our Aspen example the slope is $-13.6$, i.e. swopping a single $T$ for a $G$ allele
 moves the budset forward by $13.6$ days, with the $GG$ homozygote
-is predicted to set buds $27.2$ days earlier than the $TT$
-homozgote. As a measure of significance of this relationship we can
+is predicted to set buds $27.2$ days earlier than the $TT$ homozygote.   
+
+
+As a measure of significance of this relationship we can
 calculate the p-value of this regression. To try and identify loci
-that are associated with our trait gneome-wide we can conduct this
+that are associated with our trait genome-wide we can conduct this
 regression at each SNP in the genome. One common way to display these
 reuslts is to plot the logarithm of the p-value for each SNP along
 genome (a so-called Manhattan plot). Here's one from 
-\citet{wang:18} for their the Aspen budset phenotype
-
+\citet{wang:18} for their Aspen budset phenotype
 
 
 \begin{figure}
@@ -92,27 +83,24 @@ strength of their LD with the putatively functional SNP
   Figure 2 of } \label{fig:Apsen_zoom_Manhattan}
 \end{figure}
 Note how SNPs with strong LD with the functional allele (redder
-points) have more signicant p-values. 
+points) have more significant p-values. 
 
 Variation in some traits seems to have a relatively simple genetic
 basis. In our Aspen example there is one clear large-effect locus,
-which explains  62\% of the variation in budset.
-However, many phenotypes are likely much more genetically complex in their
-variation involving the functional effect of many alleles at many
-polymorphic loci. Such genetically complex traits are called polygenic traits. 
+which explains  62\% of the variation in budset. \marginnote{
+``All that we mean when we speak of a gene [allele] for pink eyes is, a gene which differentiates a pink eyed fly 
+from a normal one — not a gene [allele] which produces pink eyes per se, for the character pink eyes is dependent 
+on  the action of many other genes." - \citet{sturtevant:15}
+} Note that even in this case where we have an allele with a very strong effect on a phenotype this is not an allele {\it for} budset, nor is the locus it falls in a gene {\it for} budset. It is an allele that is associated with budset in the current set of environments. In a different set of environments this allele's affects may be far smaller, and a different set of alleles may contribute to phenotype variation. The gene it falls close to is just one of many genes and molecular pathways involved in budset, a mutant screen for budset may uncover many genes with larger effect, this gene is just a locus that happens to be polymorphic in this particular set of populations. 
 
+While phenotypic variation in some phenotypes has a relatively simple genetic basis, many phenotypes are likely much more genetically complex in their
+variation involving the functional effect of many alleles at hundreds or thousands of polymorphic loci. Such genetically complex traits are called polygenic traits. 
 
-
-We can use our understanding of the sharing of alleles between relatives
-to understand the phenotypic resemblance between relatives in
-quantitative phenotypes. We can then use this to understand the
-evolutionary change in quantitative phenotypes in response to selection. \\
+In this chapter we will use our understanding of the sharing of alleles between relatives to understand the phenotypic resemblance between relatives in
+quantitative phenotypes. This will allow us to understand the contribution of genetic variation to phenotypic variation. In the next chapter we then use these results to understand the evolutionary change in quantitative phenotypes in response to selection. \\
 
 \subsection{A simple additive model of a trait}
-Let's imagine that the genetic component of the variation in our trait
-is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of
-allele $1$ at this locus increasing your trait value by $a_l$ above
-the population mean.
+Let's imagine that the genetic component of the variation in our trait is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of allele $1$ at this locus increasing your trait value by $a_l$ above the population mean.
 The phenotype of an individual, let's call her $i$, is $X_i$.
 Her genotype at SNP $l$, is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$  represents the number of copies of allele $1$ she
@@ -153,14 +141,22 @@ normally distributed (see Figure \ref{fig:QT1}).\\
 \caption{The convergence of the phenotypic distribution to a normal
   distribution. Each of the three histograms shows the distribution of
 the phenotype in a large sample, for increasing large numbers of loci ($L$). I have simulated each individual's
-phenotype following equation \ref{pheno_geno} and \ref{pheno_geno_environ}. Specifically I simulate each
+phenotype following equation \ref{pheno_geno} and \ref{pheno_geno_environ}. Specifically we've simulated each
 individuals biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
-and that the allele is at 50\% frequency. I assume that all of the
-alleles have equal effects and combine them additively together. I then
-add an environmental contribution, which is normally distributed with
-variance $0.05$. Note that in the left two pictures you can see peaks
-corresponding to different genotypes.} \label{fig:QT1}
+and that the allele is at 50\% frequency. we've assume that all of the
+alleles have equal effects and combine them additively together. We then add an environmental contribution, which is normally distributed with variance $0.05$. Note that in the left two pictures you can see peaks
+corresponding to different genotypes; this is because we have little environmental noise in practice we can rarely see such peaks.} \label{fig:QT1}
 \end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
+\end{center}
+\caption{} \label{fig:QT1}
+\end{figure}
+
+
 
 Note that as this is an additive model we can decompose eqn. \ref{pheno_geno_environ} into the
 effects of the two alleles at each locus, in particular we can rewrite
