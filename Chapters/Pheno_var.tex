@@ -8,7 +8,7 @@ RNA transcribed from a given gene, to what you ate last Tuesday; all
 of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
 developmental, and physiological or behavioural processes which interact with a myriad of environmental and
 stochastic factors. Honestly it boggles the mind how organisms work
-as well as they do, let alone that you managed to eat lunch last Tuesday. 
+as well as they do, let alone that I managed to eat lunch last Tuesday. 
 
 \begin{marginfigure}
 \begin{center}
@@ -17,7 +17,7 @@ as well as they do, let alone that you managed to eat lunch last Tuesday.
 \caption{{\it P. tremula}. Der baum. H. Schacht. 1860. BHL } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
 
-There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simples way to measure the genotype-phenotype relationship is the calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}), the effect
+There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simple way to measure this genotype-phenotype relationship is the calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}), the effect
 of a specific SNP on the phenotype is shown in
 in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait underlying local adaptation to varying growing season length. The SNP
 falls in the gene (PtFT2) that is known to play a strong role in flowering
@@ -37,8 +37,12 @@ time regulation in other plants.
 
 One way for us to assess the relationship between
 genotype phenotype is to fit a linear regression, i.e. the best fitting linear line through the data, of
-phenotype on genotype. The slope of this line has the interpretation of being the average
-effetc of substituting a copy of allele $2$ for a copy of allele
+phenotypes of our individual on the genotype at a particular SNP ($l$), i.e. fit the regression
+\begin{equation}
+X \sim a_l G_{l}
+\end{equation}
+where $X$ is a vector of the phenotypes of a set of individuals and $G_{l}$ is our vector of genotypes at locus $l$, with $G_{i,l}$ taking the value 0, 1, or 2 depending on whether our individual $i$ is homozygote, heterozygote, or the alternate homozygote at our locus of interest. The slope of this line ($a_l$) has the interpretation of being the average
+effect of substituting a copy of allele $2$ for a copy of allele
 $1$. In our Aspen example the slope is $-13.6$, i.e. swopping a single $T$ for a $G$ allele
 moves the budset forward by $13.6$ days, with the $GG$ homozygote
 is predicted to set buds $27.2$ days earlier than the $TT$ homozygote.   
@@ -140,23 +144,13 @@ normally distributed (see Figure \ref{fig:QT1}).\\
 \end{center}
 \caption{The convergence of the phenotypic distribution to a normal
   distribution. Each of the three histograms shows the distribution of
-the phenotype in a large sample, for increasing large numbers of loci ($L$). I have simulated each individual's
+the phenotype in a large sample, for increasing large numbers of loci ($L=1,~4,$ and $10$, with the proportion of variance explained held at $V_A=1$). I have simulated each individual's
 phenotype following equation \ref{pheno_geno} and \ref{pheno_geno_environ}. Specifically we've simulated each
 individuals biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
 and that the allele is at 50\% frequency. we've assume that all of the
 alleles have equal effects and combine them additively together. We then add an environmental contribution, which is normally distributed with variance $0.05$. Note that in the left two pictures you can see peaks
-corresponding to different genotypes; this is because we have little environmental noise in practice we can rarely see such peaks.} \label{fig:QT1}
+corresponding to different genotypes due to our low  environmental noise (in practice we can rarely see such peaks.} \label{fig:QT1}
 \end{figure}
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
-\end{center}
-\caption{} \label{fig:QT1}
-\end{figure}
-
-
 
 Note that as this is an additive model we can decompose eqn. \ref{pheno_geno_environ} into the
 effects of the two alleles at each locus, in particular we can rewrite
@@ -169,48 +163,46 @@ the allele that our individual received from her mother (maternal
 alleles) and father (paternal alleles) respectively. This will come in
 handy in just a moment when we start thinking about the phenotype covariance of relatives.\\
 
-Now obviously this model seems silly at first sight as alleles don't
-only act in an additive manner, as they interact with alleles at the
-same loci (dominance) and at different loci (epistasis). Later we'll
-relax this assumption, 
-however, we'll find that if we are interested in evolutionary change
-over short time-scales it is actually only the ``additive
+Now obviously this model seems silly at first sight as alleles don't only act in an additive manner, as they interact with alleles at the same loci (dominance) and at different loci (epistasis). Later we'll relax this assumption, 
+however, we'll find that if we are interested in evolutionary change over short time-scales it is actually only the ``additive
 component'' of genetic variation that will (usually) concern us. 
 We will define this more formally later on, but for the moment 
-we can offer the intuition that parents only get to pass on a single
-allele at each locus on to the next generation. As such, it is the
-effect of these transmitted alleles, averaged over possible matings,
-that is an individual's average contribution  to the next generation
-(i.e. the additive effect of the alleles that their genotype consists of).
+we can offer the intuition that parents only get to pass on a single allele at each locus on to the next generation. As such, it is the effect of these transmitted alleles, averaged over possible matings, that is an individual's average contribution  to the next generation (i.e. the additive effect of the alleles that their genotype consists of).
 
 
 
 \subsection{Additive genetic variance and heritability}
-As we are talking about an additive genetic model we'll talk about the
-additive genetic variance ($V_A$), the variance due to the additive
-effects of segregating genetic variation. This is a subset of the total genetic
+As we are talking about an additive genetic model we'll talk about the additive genetic variance ($V_A$), the phenotypic variance due to the additive effects of segregating genetic variation. This is a subset of the total genetic
 variance if we allow for non-additive effects. \\
 
 The variance of our phenotype across individuals ($V$) can write this as
 \begin{equation}
 V = Var(X_A) + Var(X_E) = V_A+V_E
 \end{equation}
-in writing this we are assuming that there is no covariance between $X_{G,i}$
-and $X_{E,i}$ i.e. there is no covariance between genotype and
-environment. \\
+in writing this we are assuming that there is no covariance between $X_{G,i}$ and $X_{E,i}$ i.e. there is no covariance between genotype and environment. \\
 
 Our additive genetic variance can be written as
 \begin{equation}
 V_A = \sum_{l=1}^L Var(G_{i,l} a_{l})
 \end{equation}
 where $Var(G_{i,l} a_{l})$ is the contribution to the additive
-variance among individuals of the $l$ locus. Assuming random mating we
-can write our additive genetic variance as
+variance among individuals of the $l$ locus. Assuming random mating, and that our loci are in linkage equilibrium, we can write our additive genetic variance as
 \begin{equation}
-V_A = \sum_{l=1}^L a_{l}^2 2 p_l(1-p_l)
+V_A = \sum_{l=1}^L a_{l}^2 2 p_l(1-p_l)  \label{eqn:VA}
 \end{equation}
 where the $ 2 p_l(1-p_l)$ term follows the binomial sampling of two
 alleles per individual at each locus. \\
+
+\paragraph{An example of calculating polygenic scores.}
+Now we don't usually get to see the individual loci contributing to highly polygenic traits, and we only get to see the distribution of the trait in the population. However, with the advent of GWAS in human genetics we can see some of this using the many loci identified to date. Using the estimated effect sizes at each locus, each one of which is tiny, we can calculate the weight sum of an individual's genotype as in equation \ref{pheno_geno}. This weight sum is called the individual's polygenic score. To illustrate this we can take a set of 1700 SNPs, each chosen to the SNP with the strongest signal of association in 1700 roughly independent bins spaced across the genome. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individual's polygenic scores calculated using these 1700 SNPs. The The variance of these scores is $0.13$, the additive genetic variance calculated by equation \eqref{eqn:VA} is $0.135$, so the two are in good agreement.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
+\end{center}
+\caption{{\bf Left)} The distribution of the number of height-increasing alleles that individuals carry at 1700 SNPs associated with height in the UK Biobank, for a sample of 1000 individuals. {\bf right)} The distribution of the polygenic scores for these 1000 individuals. } \label{fig:Biobank_height_PGS}
+\end{figure}
+ 
 
 \paragraph{The narrow sense heritability}
 We would like a way to think about what proportion of the variation
@@ -302,32 +294,6 @@ don't just share alleles they share their entire genotype.\\
 
 \paragraph{The covariance in phenotype between mother and child}.
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
-\end{center}
-\caption{{\it Plemonium viscosum.}  Modified from Flowers of Mountain and Plain. New York :H.W. Wilson Co.,1920. \href{https://www.flickr.com/photos/biodivlibrary/8220461305/in/album-72157632108046380/}{BHL}. }
-\end{marginfigure}
-
-\marginnote{
-\begin{question}
-Galen \cite{galen:96} explored selection on flower shape in
-{\it P. viscosum}.  She found that plants with larger  corolla flare
-had more bumblebee visits, which resulted in higher seed set and a
-$17\%$ increase in corolla flare in the plants contributing to the
-next generation. Based on the data in Fig. \ref{fig:Galen_corolla}
-what is the expected response in the next generation? 
-\end{question}
-}
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
-\end{center}
-\caption{The relationship between maternal and offspring corolla flare (flower
-  width) in P. viscosum. Redrawn from \citeauthor{galen:96}.} \label{fig:Galen_corolla}  %
-\end{marginfigure}
-
 
 If the mother and father are unrelated individuals (i.e. are two
 random draws from the population) then the mother and a child share
@@ -340,21 +306,10 @@ $Cov(X_{M1},X_{M2})=Var(X_{M1})$ and all the other terms zero. By this
 argument $Cov(X_1,X_2) = \half Var(X_{M1}) + \half Var(X_{P1}) = \half
 V_A$. \\
 
+
+
 \paragraph{The covariance between general pairs of relatives under an
 additive model}
-
-\marginnote{
-\begin{question}
-{\bf A)} In polygynous blackbird populations (i.e. males mate with
-several females), paternal half-sibs can be identified.  Suppose that
-the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and
-that the total phenotypic variance is 4 $cm^2$.  Use these data to
-estimate $h^2$ for tarsus length in this population. \\
-
-{\bf B)} Why might paternal half-sibs be preferable for measuring
-heritability than maternal half-sibs? 
-\end{question}
-}
 
 
 The two examples make clear that to understand the covariance between
@@ -380,6 +335,42 @@ variance to get $h^2$. \\
 %One way potentially to get somewhat around the
 %shared environmental effect is to use paternal half-sibs as they share a
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
+\end{center}
+\caption{{\it Plemonium viscosum.}  Modified from Flowers of Mountain and Plain. New York :H.W. Wilson Co.,1920. \href{https://www.flickr.com/photos/biodivlibrary/8220461305/in/album-72157632108046380/}{BHL}. }
+\end{marginfigure}
+
+\graham{rewrite q}
+\begin{question}
+\citet{galen:96} explored selection on flower shape in
+{\it P. viscosum}.  She found that plants with larger  corolla flare
+had more bumblebee visits, which resulted in higher seed set and a
+$17\%$ increase in corolla flare in the plants contributing to the
+next generation. Based on the data in Fig. \ref{fig:Galen_corolla}
+what is the expected response in the next generation? 
+\end{question}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
+\end{center}
+\caption{The relationship between maternal and offspring corolla flare (flower
+  width) in P. viscosum. Redrawn from \citeauthor{galen:96}.} \label{fig:Galen_corolla}  %
+\end{figure}
+
+\begin{question}
+{\bf A)} In polygynous blackbird populations (i.e. males mate with
+several females), paternal half-sibs can be identified.  Suppose that
+the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and
+that the total phenotypic variance is 4 $cm^2$.  Use these data to
+estimate $h^2$ for tarsus length in this population. \\
+
+{\bf B)} Why might paternal half-sibs be preferable for measuring
+heritability than maternal half-sibs? 
+\end{question}
+
 Another way that we can estimate the narrow sense heritability is
 through the regression of child's phenotype on the parental mid-point
 phenotype. The parental mid-point phenotype is simple the average of
@@ -394,9 +385,7 @@ regression is
 \beta_{mid,kid}= \frac{Cov(X_{kid},X_{mid})}{Var(X_{mid})} = \frac{V_A}{V} = h^2
 \end{equation}
 i.e. the regression of the child's phenotype on the parental midpoint
-phenotype is an estimate of the narrow sense heritability. This is a
-common way to estimate heritability, although it doesn't bypass the
-need to control for environmental correlations between relatives. \\
+phenotype is an estimate of the narrow sense heritability. This way to estimating heritability has the problem of controlling for environmental correlations between relatives. But it's a useful way to think about heritability it'll be directly relevant to our discussion of the response to selection in the next chapter.\\
 
 Our regression allows us to attempt to predict the phenotype of the
 child given the phenotypes of the parents; how well we can do this depends on the
@@ -455,7 +444,7 @@ $A_{ij}= 2 F_{i,j}$ and $A_{ii}= 1$. Given the matrix $A$ we can estimate $V_A$.
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
-This is sometimes called the ``animal model''.
+This is sometimes called the ``animal model''. 
 
 
 
@@ -522,7 +511,7 @@ female phenotypes.
 
 \begin{marginfigure}[-40mm]
 \begin{center}
-\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.pdf}
+\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.png}
 \end{center}
 \caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  Coloured illustrations of British birds, and their eggs.
 London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
@@ -665,8 +654,7 @@ heterozygotes into homozygotes (11), who have the same mean phenotype.  \\
 \end{marginfigure}
 
 
-As as an example of this lets consider the genetics of sexual maturity
-in Atlantic Salmon. \graham{finish}
+As as an example of this lets consider the genetics of sexual maturity in Atlantic Salmon. \graham{finish}
 
 \begin{figure}
 \begin{center}
