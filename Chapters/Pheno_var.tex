@@ -193,6 +193,9 @@ V_A = \sum_{l=1}^L a_{l}^2 2 p_l(1-p_l)  \label{eqn:VA}
 where the $ 2 p_l(1-p_l)$ term follows the binomial sampling of two
 alleles per individual at each locus. \\
 
+\begin{question}
+You have two biallelic SNPs contributing to variance in human height. At the first you have an allele with an additive effect of $5$cm which is found at a frequency of $\nicefrac{1}{10000}$. At the second you have an allele you have an allele with an additive effect of $-0.1$ at 50\% frequency. Which SNP contributes more to the additive genetic variance? Explain the intuition of your answer.
+\end{question}
 \paragraph{An example of calculating polygenic scores.}
 Now we don't usually get to see the individual loci contributing to highly polygenic traits, and we only get to see the distribution of the trait in the population. However, with the advent of GWAS in human genetics we can see some of this using the many loci identified to date. Using the estimated effect sizes at each locus, each one of which is tiny, we can calculate the weight sum of an individual's genotype as in equation \ref{pheno_geno}. This weight sum is called the individual's polygenic score. To illustrate this we can take a set of 1700 SNPs, each chosen to the SNP with the strongest signal of association in 1700 roughly independent bins spaced across the genome. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individual's polygenic scores calculated using these 1700 SNPs. The The variance of these scores is $0.13$, the additive genetic variance calculated by equation \eqref{eqn:VA} is $0.135$, so the two are in good agreement.
 
