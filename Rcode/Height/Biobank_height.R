@@ -23,7 +23,7 @@ sim_up_UKbiobank<-replicate(1000,{
 
 layout(t(1:2))
 hist(colSums(sim_up_UKbiobank),xlab="Number of Alleles assoc. with increase height",cex.lab=1.4,cex.axis=1.2,main="",ylab="count",breaks=30,freq=FALSE)
-hist(sim.UKBB.heights, xlab="Height Polygenic Score",cex.lab=1.4,cex.axis=1.2,main="",ylab="count",breaks=30,freq=FALSE)
+hist(sim.UKBB.heights, xlab="Height Polygenic Score",cex.lab=1.4,cex.axis=1.2,main="",ylab="count",breaks=35,freq=FALSE)
 curve(dnorm(x,mean=mean(sim.UKBB.heights),sd=sqrt(var(sim.UKBB.heights))), add = TRUE, col = "red", lwd = 2)
  dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Biobank_height_dist.pdf")
  
