@@ -3,25 +3,17 @@
 \newthought{The distinction between genotype and phenotype} is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
 The genotype of an individual (the genome), for most purposes, is decided when
 the sperm fertilizes egg. The phenotype of an individual represents any
-measurable aspect of an organism. Your height, to the amount of
-RNA transcribed from a given gene, to what you ate last Tuesday; all
-of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
-developmental, and physiological or behavioural processes which interact with a myriad of environmental and
-stochastic factors. Honestly it boggles the mind how organisms work
-as well as they do, let alone that I managed to eat lunch last Tuesday. 
-
-\begin{marginfigure}
+measurable aspect of an organism. \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Quant_gen/Aspen_budset/Aspen_leaves.pdf}
 \end{center}
 \caption{{\it P. tremula}. Der baum. H. Schacht. 1860. BHL } \label{fig:Apsen_geno_pheno}
-\end{marginfigure}
+\end{marginfigure}   Your height, to the amount of
+RNA transcribed from a given gene, to what you ate last Tuesday; all
+of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
+developmental, and physiological or behavioural processes which interact with a myriad of environmental and
+stochastic factors. Honestly it boggles the mind how organisms work as well as they do, let alone that I managed to eat lunch last Tuesday. 
 
-There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simple way to measure this genotype-phenotype relationship is the calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}), the effect
-of a specific SNP on the phenotype is shown in
-in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait underlying local adaptation to varying growing season length. The SNP
-falls in the gene (PtFT2) that is known to play a strong role in flowering
-time regulation in other plants. 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Poplar_Aspen_budset_geno_pheno.pdf}
@@ -33,15 +25,21 @@ time regulation in other plants.
   Thanks to P{\"a}r Ingvarsson for the data. } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
 
+There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simple way to measure this genotype-phenotype relationship is the calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}), the effect
+of a specific SNP on the phenotype is shown in
+in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait underlying local adaptation to varying growing season length. The SNP
+falls in the gene (PtFT2) that is known to play a strong role in flowering
+time regulation in other plants. 
+
 
 
 One way for us to assess the relationship between
 genotype phenotype is to fit a linear regression, i.e. the best fitting linear line through the data, of
 phenotypes of our individual on the genotype at a particular SNP ($l$), i.e. fit the regression
 \begin{equation}
-X \sim a_l G_{l}
+X \sim \mu + a_l G_{l}
 \end{equation}
-where $X$ is a vector of the phenotypes of a set of individuals and $G_{l}$ is our vector of genotypes at locus $l$, with $G_{i,l}$ taking the value 0, 1, or 2 depending on whether our individual $i$ is homozygote, heterozygote, or the alternate homozygote at our locus of interest. The slope of this line ($a_l$) has the interpretation of being the average
+where $X$ is a vector of the phenotypes of a set of individuals and $G_{l}$ is our vector of genotypes at locus $l$, with $G_{i,l}$ taking the value 0, 1, or 2 depending on whether our individual $i$ is homozygote, heterozygote, or the alternate homozygote at our locus of interest. Here $\mu$ is our phenotypic mean. The slope of this regression line ($a_l$) has the interpretation of being the average
 effect of substituting a copy of allele $2$ for a copy of allele
 $1$. In our Aspen example the slope is $-13.6$, i.e. swopping a single $T$ for a $G$ allele
 moves the budset forward by $13.6$ days, with the $GG$ homozygote
@@ -203,7 +201,7 @@ Now we don't usually get to see the individual loci contributing to highly polyg
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
 \end{center}
-\caption{{\bf Left)} The distribution of the number of height-increasing alleles that individuals carry at 1700 SNPs associated with height in the UK Biobank, for a sample of 1000 individuals. {\bf right)} The distribution of the polygenic scores for these 1000 individuals. } \label{fig:Biobank_height_PGS}
+\caption{{\bf Left)} The distribution of the number of height-increasing alleles that individuals carry at 1700 SNPs associated with height in the UK Biobank, for a sample of 1000 individuals. {\bf right)} The distribution of the polygenic scores for these 1000 individuals. Plotted on top is a normal distribution with the same mean and variance. } \label{fig:Biobank_height_PGS}
 \end{figure}
  
 
@@ -360,7 +358,7 @@ what is the expected response in the next generation?
 \includegraphics[width= 0.5 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
 \end{center}
 \caption{The relationship between maternal and offspring corolla flare (flower
-  width) in P. viscosum. Redrawn from \citeauthor{galen:96}.} \label{fig:Galen_corolla}  %
+  width) in P. viscosum. Redrawn from \citeauthor{galen:96}.} \label{fig:Galen_corolla}  
 \end{figure}
 
 \begin{question}
@@ -458,10 +456,8 @@ induced effects (e.g. due to the effects of diet on multiple traits)
 and due to the expression of underlying genetic covariance between
 traits. In turn this genetic covariance can reflect pleiotropy, a
 mechanistic effect of an allele on multiple traits (e.g. variants that
-effect skin pigmentation often effect hair color) or the genetic
-linkage of loci independently affecting multiple traits. If we are
-interested in evolution over short time-scales we can (often) ignore
-the genetic basis of this correlation. 
+effect skin pigmentation often effect hair color), the genetic
+linkage of loci independently affecting multiple traits, or the affects of assortative mating. 
 
 Consider two traits $X_{1,i}$ and $X_{2,i}$ in an indivdual $i$, these could be
 say the individual's leg length and nose length. As before we can write
@@ -475,7 +471,11 @@ environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic vari
 ($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
 total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covariance between the traits ($V_{E,1,2}=Cov(X_{1,E}
 ,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
-=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two.
+=Cov(X_{1,A} ,X_{2,A} )$) between trait one and two. Thinking about this covariance arising due to pleiotropy, lets think about a set of $L$ SNPs contributing to our two traits. If the additive effect of an allele at the $i^{th}$ SNP is $\alpha_{i,1}$ and $\alpha_{i,2}$ on traits 1 and 2, then the additive covariance between our traits is
+\begin{equation}
+V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
+\end{equation}
+assuming our loci are in linkage disequilibrium. 
 
 We can store these values in a matrices 
 \begin{equation}
@@ -498,11 +498,14 @@ studying the covariance in different traits between relatives:
 \begin{equation}
 Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
 \end{equation}
+We can also talk about the genetic correlation between two phenotypes
+\begin{equation}
+r_g = \frac{V_{A,1,2}}{\sqrt{V_{A,1}V_{A,2}}}
+\end{equation}
+where $V_{A,1}$ and $V_{A,2}$ is the additive genetic variance for trait 1 and 2 respectively. this is a statement to what extent the  additive genetic variance in two traits is shared.   
 
-\graham{Added genetic correlation, needed for the stalk-eyed flies}
+One  type of  genetic covariance we often think about is the is covariance of male and female phenotypes. For example below is the relationship between the fore-head patch size for Pied fly-catchers fathers and their sons and daughters. The phenotype has been standardized to have variance $1$. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
 
-\gc{A simple example of a genetic covariance is the covariance of male and female phenotypes. For example below is the relationship between a Pied fly-catchersfath}
-\graham{add question estimating genetic coar/corr}
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
@@ -520,7 +523,11 @@ London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
                                 %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
 \end{marginfigure}
 
-
+\begin{question}
+Assume we can ignore the effect of the shared environment in our Pied fly-catcher example. \\
+{\bf A)} What is the additive genetic covariance between male-female patch size?\\
+{\bf B)} What is the additive genetic correlation of male and female path size? You can assume that the additive genetic variance in the same in males and females.
+\end{question}
 \subsection{Non-additive variation.}
 
 Up to now we've assumed that our alleles contribute to our phenotype in an
