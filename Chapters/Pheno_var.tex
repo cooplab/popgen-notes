@@ -448,7 +448,6 @@ for shared environments between particular individuals (e.g. a shared nest).
 This is sometimes called the ``animal model''. 
 
 
-
 \section{Multiple traits.}
 
 Traits often covary with each other, due to both environmentally
@@ -475,7 +474,15 @@ total covariance $V_{1,2}=Cov(X_{1},X_{2})$, the environmentally induced covaria
 \begin{equation}
 V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
 \end{equation}
-assuming our loci are in linkage disequilibrium. Th
+assuming our loci are in linkage disequilibrium. Thus the genetic correlation arises due to pleiotropy, because loci that tend to affect trait 1 also systematically affect trait 2.  
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height.pdf}
+\end{center}
+\caption{The additive effect sizes of loci associated with Age at Menarche (AAM) on Age at Menarche and Height. } \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
+\end{marginfigure}
 
 We can store these values in a matrices 
 \begin{equation}
@@ -491,7 +498,7 @@ V_{1,A} & V_{A,1,2} \\
 V_{A,1,2} & V_{2,A} \\
 \end{array} \right)  \label{G_matrix}
 \end{equation}
-we can generalize this to an abitrary number of traits.
+we can generalize this to an arbitrary number of traits.
 
 We can estimate these quantities, in a similar way to before, by
 studying the covariance in different traits between relatives: 
@@ -502,7 +509,7 @@ We can also talk about the genetic correlation between two phenotypes
 \begin{equation}
 r_g = \frac{V_{A,1,2}}{\sqrt{V_{A,1}V_{A,2}}}
 \end{equation}
-where $V_{A,1}$ and $V_{A,2}$ is the additive genetic variance for trait 1 and 2 respectively. this is a statement to what extent the  additive genetic variance in two traits is shared.   
+where $V_{A,1}$ and $V_{A,2}$ is the additive genetic variance for trait 1 and 2 respectively. this is a statement to what extent the  additive genetic variance in two traits is correlated.   
 
 One  type of  genetic covariance we often think about is the is covariance of male and female phenotypes. For example below is the relationship between the fore-head patch size for Pied fly-catchers fathers and their sons and daughters. The phenotype has been standardized to have variance $1$. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
 
