@@ -544,11 +544,11 @@ likewise for the other genotypes.
 We can think about the average
 (marginal) MC
 phenotype of an individual who received an allele 1 from their parent as the average of the MC phenotype for heterozgotes and 11 homozygotes, weighted by the probability that
-\ec{the individual receives an additional allele $1$ in present in these genotypes
+\ec{the individual has these genotypes, i.e. the probability they receive an additional allele $1$ or an allele $2$ from their other parent}:
 \begin{equation} 
   a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1},
 \end{equation}
-Similarly if your parent transmitted a 2 allele to you, your average
+Similarly, if your parent transmitted an 2 allele to you, your average
 MC phenotype would be
 \begin{equation}
   ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} 
@@ -564,7 +564,7 @@ MC phenotype would be
 %The additive MC genetic values (breeding values) of genotype 0, 1, and
 %2 are then
 
-Lets now consider the average phenotype of an offspring of each of our
+Let's now consider the average phenotype of an offspring of each of our
 three genotypes
 \begin{center}
 \begin{tabular}{cccc}
@@ -573,13 +573,13 @@ additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, &
 \end{tabular}
 \end{center}
 %
-i.e. mean phenotype of each genotypes' offspring
-averaged over across all possible matings to other individuals in the
+i.e. the mean phenotype of each genotypes' offspring
+averaged over all possible matings to other individuals in the
 population (assuming individuals mate at random). Theses are the
 additive MC genetic values (breeding values) of our genotypes. 
 Here we are simply adding up the additive contributions of the alleles present
-in each genotype. These are the genotypic values of the trait that would result
-taking only the additive effects of the components of the genotype.  
+in each genotype \ec{and ignoring any non-additive effects of genotype}. \erin{I removed this sentence, replacing it with the phrase in blue above: These are the genotypic values of the trait that would result
+taking only the additive effects of the components of the genotype.} 
 
 \begin{figure}
 \begin{center}
@@ -599,8 +599,8 @@ between the average MC phenotype and additive genetic value for each genotype. }
 \end{figure}
 
 
-To illustrate this in Figure \ref{fig:add_dom} we plot two different cases of dominance
-relationship, in the top row an additive polymorphism and in the second
+To illustrate this, in Figure \ref{fig:add_dom} we plot two different cases of dominance
+relationships; in the top row an additive polymorphism and in the second
 row a fully dominant allele. The additive genetic values of the genotypes are shown as red dots. Note that the additive values of the genotypes line up with
 the observed MC phenotypic means in the top row when our alleles interact in a
 completely additive manner. Our additive genetic values always fall along a
