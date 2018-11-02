@@ -86,10 +86,49 @@ generations ($R$) is proportional to the change caused by directional selection
 within a generation, and the strength of this relationship is
 determined by the narrow sense heritability. \\
 
-\graham{Lost the barncle question, put it back in.}
+%\graham{Lost the barncle question, put it back in.}
 
 
-\marginnote{
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.5 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
+\end{center}
+\caption{The relationship between maternal and offspring corolla flare (flower
+  width) in P. viscosum. Data from \citet{galen:96}. From \citeauthor{galen:96} data the covariance of mother and child is 1.3, while the variance of the mother is 2.8.} \label{fig:Galen_corolla}  
+\end{figure}
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
+\end{center}
+\caption{{\it Plemonium viscosum.}  Modified from Flowers of Mountain and Plain. New York :H.W. Wilson Co.,1920. \href{https://www.flickr.com/photos/biodivlibrary/8220461305/in/album-72157632108046380/}{BHL}. }
+\end{marginfigure}
+
+
+\begin{question}
+\citet{galen:96} explored selection on flower shape in
+{\it P. viscosum}.  She found that plants with larger corolla flare
+had more bumblebee visits, which resulted in higher seed set and a
+$17\%$ increase in corolla flare in the plants contributing to the
+next generation. Based on the data in Fig. \ref{fig:Galen_corolla}
+what is the expected response in the next generation? 
+\end{question}
+
+
+
+
+\paragraph{The long-term response to selection}
+If our selection pressure is sustained over many generations we can
+use our breeders equation to predict the response. If we are willing
+to assume that our heritability does not change and we maintain a constant selection
+gradient, then after $n$ generations our phenotype mean will have
+shifted 
+\begin{equation}
+n h^2 S
+\end{equation}
+i.e. our population will keep up a linear response to selection.
+
 \begin{question}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
@@ -106,27 +145,6 @@ selection within a generation. State your assumptions.\\
 
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
-}
-
-Using the fact that $h^2=V_A/V$ we can rewrite this in a different form as
-\begin{equation}
-R= V_A \frac{S}{V}
-\end{equation}
-i.e. our response to selection is the additive genetic variance of our
-trait ($V_A$) multiplied by the change within a generation as a
-fraction of the total phenotypic variance ($S/V$, sometimes called the
-the selection gradient $\beta$).\\
-
-\paragraph{The long-term response to selection}
-If our selection pressure is sustained over many generations we can
-use our breeders equation to predict the response. If we are willing
-to assume that our heritability does not change and we maintain a constant selection
-gradient, then after $n$ generations our phenotype mean will have
-shifted 
-\begin{equation}
-n h^2 S
-\end{equation}
-i.e. our population will keep up a linear response to selection.
 
 
 \paragraph{Alternative formulations of the Breeder's equation.}
@@ -179,7 +197,24 @@ R = \frac{V_A}{V}  Cov(X,w(X))
 \end{equation}
 we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
-that our child's phenotype is correlated with the parent phenotype.
+that our child's phenotype is correlated with the parent phenotype. 
+
+The phenotype-fitness covariance divided by the phenotpyic variance, $Cov(X,w(X))/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope, the fitness gradient and denote it by $\beta$. Then equivalently we can write breeders equation as
+\begin{equation}
+R= V_A \beta
+\end{equation}
+i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. 
+
+
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
+\end{center}
+\caption{} \label{fig:red_deer_fitness_grad}  
+\end{marginfigure}
+
 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
@@ -189,12 +224,12 @@ our change in the mean our multiple phenotypes within a generation as
 the vector $\bf{S}$ and our response across multiple generations as
 the vector $\bf{R}$. These two quantities are related by 
 \begin{equation}
-\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \bf{\beta}
+\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \mathbf{ \beta}
 \end{equation}
  where $\bf{V}$ and $\bf{G}$ are our matrices of the
  variance-covariance of phenotypes and additive genetic values
  (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
- $\bf{\beta}$ is a vector of selection gradients (i.e. the change
+ $\mathbf{\beta}$ is a vector of selection gradients (i.e. the change
  within a generation as a fraction of the total phenotypic variance). \cite{lande:79}
 To make this a bit more intuitive, consider two traits we are writing 
 \begin{eqnarray}
@@ -207,7 +242,7 @@ selection on other traits that covary with that trait.
 This offers a good way to think about how genetic trade offs play out
 over evolution over short time-scales.
 
-\begin{marginfigure}[-40mm]
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
 \end{center}
@@ -229,7 +264,7 @@ As an example of correlated responses to selection consider the  \citeauthor{wil
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/stalk_eyed_flies/stalk_eyed_flies_response.pdf}
 \end{center}
-\caption{ \citeauthor{wilkinson:93} selected two of populations for flies for
+\caption[][2cm]{ \citeauthor{wilkinson:93} selected two of populations for flies for
  increased and eye-stalk to body length ratio in males (mean shown as
  up triangles), and two for a
  decreased ratio (down triangles), by taking the top 10 males with the highest (lowest)
@@ -250,28 +285,54 @@ respectively. While the females from the up- and down-selected lines
 had means of $0.9$ and $0.82$. \\
 {\bf A)} \citeauthor{wilkinson:93} estimated that by selecting the top/bottom
 10 males he had on average shifted the mean body ratio by 0.024 within
-each generation. What is the male heritability of  mean eye-stalk to body ratio?
+each generation. What is the male heritability of eye-stalk to body-length ratio?
 
-{\bf B} Assume that the heritability of male and female phenotypes are
-equal.  Assuming that there is no direct
-selection on female boy-ratios in this experiment, i.e. that all of
-the response in female is due to correlated selection, can you
-estimate the genetic correlation? 
+{\bf B} Assume that the additive genetic variance of male and female phenotypes are
+equal and that there is no direct
+selection on female body-proportion in this experiment, i.e. that all of
+the response in female is due to correlated selection. Can you
+estimate the male-female genetic correlation of the eye-stalk ratio? 
 \end{question}
-\graham{Need to make sure that genetic corr. is defined and that they
-  have enough info.}
 
-\subsection{Some applications of the multivariate trait breeder's equation}
+
+\begin{question}
+You collect observations of red deer within a generation; recording an
+individual’s number of offspring and phenotypes, which are known to
+have additive genetic variation, and construct the plots shown in
+Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
+questions. For each question choose one of the bold options. Briefly justify each of your answers with reference to the breeder's
+equation and multi-trait breeder's equation. No calculations are required. \\
+{\bf A)}	Looking at just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf C)}	(3 Points) Looking at figures \ref{fig:red_deer_Q} A, B, and C in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+\end{question}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
+\end{center}
+\caption{ Observations of red deer within a generation; recording an
+individual’s number of offspring and phenotypes, which are known to
+have additive genetic variation. The figures left to right are A-C.} \label{fig:red_deer_Q}
+\end{figure}
+
+
+
+\section{Some applications of the multivariate trait breeder's equation}
+
+The multivariate breeders equation has a lot of different uses in understand the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
 
 \paragraph{Hamiliton's Rule and the evolution of altruistic and
   selfish behaviours}
 
-\graham{this is work in progress}
-Adaptative evolution should push the population towards acting in a way that
-maximizes their evolurionary fitness, subject to constraints. Yet individuals
-frequently behave in ways that sacrific their own fitness for the
-benefit of others. 
-Hamilton supplied the first general explanation of such altruism.
+
+Individuals frequently behave in ways that sacrifice their own fitness for the
+benefit of others, that selection favours such apparent acts of altruism is puzzling at first site. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general, evolutionary explanation of such altruism.
 His intuition was that while an individual is losing
 out of some reproductive output, the alleles underlying an altruistic behaviour
 can still spread in the population if this cost is outweighed by benefits gained 
@@ -285,11 +346,10 @@ Rule by thinking about the phenotypes of an individual's kin as
 genetically correlated phenotype.
 
 To do this we
-can follow Queller's (1992) treatment, to rederive Hamiliton's rule in
-a quantitative genetics framework (Hamilition original work did this in a
+can follow a simplified \citet{queller1992quantitative} treatment, to rederive Hamiliton's rule in a quantitative genetics framework (Hamiliton original work did this in a
 population genetics framework).
 
-So lets imagine that individuals interact in pairs, with our focal
+Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
 individual $i$ being paired with an individual $j$.  
 Imagine that individuals have two possible phenotypes $X=1$ or $0$,
 corresponding to providing or withholding some small act of `Altruism'
