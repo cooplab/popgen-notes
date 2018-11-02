@@ -7,12 +7,12 @@ variation.
 \item That this variation is heritable.
 \end{enumerate}
 Points 1 and 2 encapsulate our idea of Natural Selection, but evolution by natural
-selection will only occur if the 3rd condition is met. It is the
+selection will only occur if the 3rd condition is also met. It is the
 heritable nature of variation that couples change within a generation
-due to natural selection, to change across generations (evolutionary
+due to natural selection to change across generations (evolutionary
 change). \\
 
-Lets start by thinking about the change within a generation due
+Let's start by thinking about the change within a generation due
 to directional selection, where selection acts to change the mean
 phenotype within a generation. For example, a decrease in mean height within a
 generation, due to taller organisms having a lower chance of surviving
@@ -21,22 +21,22 @@ reproduction by $\mu_S$, i.e. after selection has acted, and our mean
 phenotype before selection acts by $\mu_{BS}$. This second quantity may be hard to
 measure, as obviously selection acts throughout the life-cycle, so it
 might be easier to think of this as the mean phenotype if selection
-hadn't acted. So the mean phenotype changes within a generation is $\mu_{S} - \mu_{BS}= S$.  \\
+hadn't acted. So the change in mean phenotype within a generation is $\mu_{S} - \mu_{BS}= S$.  \\
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/QT3.pdf}
 \end{center}
-\caption{{\bf Top.} Distribution of phenotype in parental population
+\caption{{\bf Top.} Distribution of a phenotype in the parental population
   prior to selection, $V_A=V_E=1$. {\bf Middle.} Only individuals in the top $10\%$
-  of the phenotypic distribution are selected to reproduce, the shift
-  in the phenotypic mean is $S$. {\bf Bottom.}  Phenotypical distribution of
-  children of the selected parents, the shift in the mean phenotype is
+  of the phenotypic distribution are selected to reproduce; the resulting shift
+  in the phenotypic mean is $S$. {\bf Bottom.}  Phenotypic distribution of
+  children of the selected parents; the shift in the mean phenotype is
 $R. $}
 \end{marginfigure}
 
-We are interested in predicting the distribution of phenotypes in next
-generation, in particular we are interested in the mean phenotype in
+We are interested in predicting the distribution of phenotypes in the next
+generation. In particular, we are interested in the mean phenotype in
 the next generation to understand how directional selection has
 contributed to evolutionary change. We'll denote the mean phenotype in
 offspring, i.e. the mean phenotype in the next generation before selection acts,
@@ -48,9 +48,9 @@ The mean phenotype in the next generation is
 \begin{equation}
 \mu_{NG} = \E \left( \E(X_{kid} | X_{mum},X_{dad}) \right)
 \end{equation}
-where the outer expectation is over the randomly mating of individuals
-who survive to reproduce. We can use eqn. \ref{predict_kid} to obtain
-an expression for this
+where the outer expectation is over \ec{possible pairs of randomly mating individuals
+who survive to reproduce}. We can use eqn. \ref{predict_kid} to obtain
+an expression for this expectation:
 \begin{equation}
 \mu_{NG} = \mu_{BS} +
 \beta_{mid,kid} ( \E(X_{mid}) - \mu_{BS})
@@ -60,12 +60,11 @@ an expression for this
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Breeders_eqn.pdf}
 \end{center}
-\caption{A visual representation of the Breeder's equation. Regression of parental mid-point phenotype on child's
-  phenotype ($V_A=V_E=1$). Under truncation selection only individuals
-  (red) with phenotypes $>1$ are bred.}
+\caption{A visual representation of the Breeder's equation. Regression of \ec{child's phenotype on parental mid-point phenotype} ($V_A=V_E=1$). Under truncation selection, only individuals
+  with phenotypes $>1$ (red) are bred.}
 \end{marginfigure}
 
-so to obtain $\mu_{NG}$ we need to compute $\E(X_{mid})$ the expected
+So to obtain $\mu_{NG}$ we need to compute $\E(X_{mid})$, the expected
 mid-point phenotype of pairs of individuals who survive to
 reproduce. Well this is just the expected phenotype in the individuals
 who survived to reproduce ($\mu_{S}$), so
@@ -80,11 +79,11 @@ h^2 (\mu_S - \mu_{BS}) = h^2 S \label{breeders_eqn}
 \end{equation}
 So our response to selection is proportional to our selection
 differential, and the constant of proportionality is the narrow sense
-heritability. This equation is sometimes termed the Breeders
+heritability. This equation is sometimes termed the Breeder's
 equation. It is a statement that the evolutionary change across
 generations ($R$) is proportional to the change caused by directional selection
-within a generation, and the strength of this relationship is
-determined by the narrow sense heritability. \\
+within a generation ($S$), and that the strength of this relationship is
+determined by the narrow sense heritability ($h^2$). \\
 
 %\graham{Lost the barncle question, put it back in.}
 
@@ -112,15 +111,15 @@ determined by the narrow sense heritability. \\
 had more bumblebee visits, which resulted in higher seed set and a
 $17\%$ increase in corolla flare in the plants contributing to the
 next generation. Based on the data in Fig. \ref{fig:Galen_corolla}
-what is the expected response in the next generation? 
+what is the expected response in the next generation?
 \end{question}
 
 
 
 
 \paragraph{The long-term response to selection}
-If our selection pressure is sustained over many generations we can
-use our breeders equation to predict the response. If we are willing
+If our selection pressure is sustained over many generations, we can
+use our breeder's equation to predict the response. If we are willing
 to assume that our heritability does not change and we maintain a constant selection
 gradient, then after $n$ generations our phenotype mean will have
 shifted 
@@ -133,7 +132,7 @@ i.e. our population will keep up a linear response to selection.
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
 we can see that the population rapidly adapted to their new
-conditions, within 6,000 years they evolved from an estimated mean weight of
+conditions. Within 6,000 years they evolved from an estimated mean weight of
 the population of 200kg to an estimated mean weight of 36kg (a 6 fold
 reduction)! You estimate that the generation time
 of red deer is 5 years and, from a current day population, that the narrow sense heritability of the
@@ -150,7 +149,7 @@ selection within a generation. State your assumptions.\\
 \paragraph{Alternative formulations of the Breeder's equation.}
 A change in mean phenotype within a generation occurs because of the
 differential fitness of our organisms. To think more carefully about this change within a
-generation lets think about a simple fitness model where our phenotype affects the
+generation, let's think about a simple fitness model where our phenotype affects the
 viability of our organisms (i.e. the probability they survive to
 reproduce). The probability that an individual has a phenotype $X$
 before selection is $p(X)$, so that the mean phenotype before
@@ -187,9 +186,9 @@ selection to zero, then
 \begin{equation}
 S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx
 \end{equation}
-if $\mu_S=0$.  Inspecting this more closely we can see that $S$ has
+if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?} Inspecting this more closely, we can see that $S$ has
 the form of a covariance between our phenotype $X$ and our fitness
-$w(X)$ ($Cov(X,w(X))$). Thus our change in mean phenotype is directly a measure of the
+$w(X)$ ($S = Cov(X, w(X))$). Thus our change in mean phenotype is directly a measure of the
 covariance of our phenotype and our fitness. Rewriting our breeder's
 equation using this observation we see
 \begin{equation}
@@ -197,30 +196,28 @@ R = \frac{V_A}{V}  Cov(X,w(X))
 \end{equation}
 we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
-that our child's phenotype is correlated with the parent phenotype. 
+that our child's phenotype is correlated with our parent's phenotype. 
 
-The phenotype-fitness covariance divided by the phenotpyic variance, $Cov(X,w(X))/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope, the fitness gradient and denote it by $\beta$. Then equivalently we can write breeders equation as
+The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X,w(X))/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the fitness gradient and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
 \begin{equation}
 R= V_A \beta
 \end{equation}
 i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. 
 
-
-
+As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} \erin{figure 5.5 is missing} the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width=0.9 \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
+%\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
 \end{center}
-\caption{} \label{fig:red_deer_fitness_grad}  
+\caption{Lifetime reproductive success (LRS) of male Red Deer as a function of their antler mass. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
-
 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
 We can generalize these results for multiple traits, to ask how selection on
 multiple phenotypes plays out over short time intervals. We'll write
-our change in the mean our multiple phenotypes within a generation as
+our change in the mean of our multiple phenotypes within a generation as
 the vector $\bf{S}$ and our response across multiple generations as
 the vector $\bf{R}$. These two quantities are related by 
 \begin{equation}
@@ -229,7 +226,7 @@ the vector $\bf{R}$. These two quantities are related by
  where $\bf{V}$ and $\bf{G}$ are our matrices of the
  variance-covariance of phenotypes and additive genetic values
  (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
- $\mathbf{\beta}$ is a vector of selection gradients (i.e. the change
+ $\mathbf{\beta}$ \erin{this is showing up as 'fi' for me -- can you check the symbol is displaying as you'd like?} is a vector of selection gradients (i.e. the change
  within a generation as a fraction of the total phenotypic variance). \cite{lande:79}
 To make this a bit more intuitive, consider two traits we are writing 
 \begin{eqnarray}
@@ -239,8 +236,36 @@ R_2 & = V_{A,2} \beta_2 + V_{A,1,2} \beta_1  \nonumber \\
 where the $1$ and $2$ index our two different traits. This is a
 statement that our response in any one phenotype is modified by
 selection on other traits that covary with that trait.
-This offers a good way to think about how genetic trade offs play out
-over evolution over short time-scales.
+This offers a good way to think about how genetic trade offs play out over short-term evolution.
+
+
+\begin{question}
+You collect observations of red deer within a generation, recording an
+individual's number of offspring and phenotypes for a number of traits which are known to
+have additive genetic variation. Using your data, you construct the plots shown in
+Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
+questions by choosing one of the bold options. Briefly justify each of your answers with reference to the breeder's
+equation and multi-trait breeder's equation. No calculations are required. \\
+{\bf A)}	Looking just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf C)}	Looking at figures \ref{fig:red_deer_Q} A, B, and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+\end{question}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
+\end{center}
+\caption{ Observations of red deer within a generation; recording an
+individual’s number of offspring and phenotypes, which are known to
+have additive genetic variation. The figures left to right are A-C.} \label{fig:red_deer_Q}
+\end{figure}
+
+
 
 \begin{marginfigure}
 \begin{center}
@@ -295,40 +320,13 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 \end{question}
 
 
-\begin{question}
-You collect observations of red deer within a generation; recording an
-individual’s number of offspring and phenotypes, which are known to
-have additive genetic variation, and construct the plots shown in
-Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
-questions. For each question choose one of the bold options. Briefly justify each of your answers with reference to the breeder's
-equation and multi-trait breeder's equation. No calculations are required. \\
-{\bf A)}	Looking at just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-
-{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-
-{\bf C)}	(3 Points) Looking at figures \ref{fig:red_deer_Q} A, B, and C in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-\end{question}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
-\end{center}
-\caption{ Observations of red deer within a generation; recording an
-individual’s number of offspring and phenotypes, which are known to
-have additive genetic variation. The figures left to right are A-C.} \label{fig:red_deer_Q}
-\end{figure}
-
 
 
 \section{Some applications of the multivariate trait breeder's equation}
 
 The multivariate breeders equation has a lot of different uses in understand the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
 
-\paragraph{Hamiliton's Rule and the evolution of altruistic and
-  selfish behaviours}
+\paragraph{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
 
 
 Individuals frequently behave in ways that sacrifice their own fitness for the
@@ -366,8 +364,8 @@ individual, with failing to provide this act has no cost. Receiving this
 altruistic act confers a fitness benefit $B$ (not receiving it has no benefit).
 Hamiliton's Rule states that such a trait will spread through the
 population if the average coefficient of relatedness between the
-interactiong individuals is $r$, the average number of alleles that
-our pairs of indviduals share identical by descent at a locus. We can express
+interaction individuals is $r$, the average number of alleles that
+our pairs of individuals share identical by descent at a locus. We can express
 Hamilton's rule as
 \begin{equation}
  C<rB
@@ -396,11 +394,11 @@ We can write the expected change in phenotype is
 \begin{equation}
 R = \beta_i V_A + \beta_j V_{A,i,j}
 \end{equation}
-Our alturistic phenotype is increasing in the population if $R>0$,
+Our altruistic phenotype is increasing in the population if $R>0$,
 i.e. if
 \begin{eqnarray}
- 0<& \beta_i V_A + \beta_j V_{A,i,j}  \nonumber  \\
--\beta_i < & \beta_j \frac{V_{A,i,j}}{V_A} 
+  \beta_i V_A + \beta_j V_{A,i,j} > 0  \nonumber  \\
+& \beta_j \frac{V_{A,i,j}}{V_A}  > -\beta_i 
 \end{eqnarray}
 So what's the average genetic covariance between
 individual $i$ and $j$'s alturistic phenotype? Well the covariance of
