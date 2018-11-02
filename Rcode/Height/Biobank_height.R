@@ -27,3 +27,10 @@ hist(sim.UKBB.heights, xlab="Height Polygenic Score",cex.lab=1.4,cex.axis=1.2,ma
 curve(dnorm(x,mean=mean(sim.UKBB.heights),sd=sqrt(var(sim.UKBB.heights))), add = TRUE, col = "red", lwd = 2)
  dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Biobank_height_dist.pdf")
  
+ 
+ 
+ UKBB<-read.table("~/Documents/50_irnt.gwas.imputed_v3.both_sexes.tsv.bgz",sep="\t",head=TRUE,as.is=TRUE)
+ my.locs<-sapply( UKBB$variant,function(myvar){strsplit(myvar,":")[[1]][1:2]})
+
+
+
