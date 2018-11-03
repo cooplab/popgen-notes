@@ -10,6 +10,8 @@ sim_UKbiobank<-replicate(1000,{
 })
 
 
+ Neale_height$beta <-  Neale_height$beta* 7
+
 sim.UKBB.heights <- colSums ( sim_UKbiobank * Neale_height$beta )
 
 Neale_height$up_allele_freq <- Neale_height$freq
