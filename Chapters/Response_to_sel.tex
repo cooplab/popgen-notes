@@ -48,8 +48,8 @@ The mean phenotype in the next generation is
 \begin{equation}
 \mu_{NG} = \E \left( \E(X_{kid} | X_{mum},X_{dad}) \right)
 \end{equation}
-where the outer expectation is over \ec{possible pairs of randomly mating individuals
-who survive to reproduce}. We can use eqn. \ref{predict_kid} to obtain
+where the outer expectation is over possible pairs of randomly mating individuals
+who survive to reproduce. We can use eqn. \ref{predict_kid} to obtain
 an expression for this expectation:
 \begin{equation}
 \mu_{NG} = \mu_{BS} +
@@ -60,7 +60,7 @@ an expression for this expectation:
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Breeders_eqn.pdf}
 \end{center}
-\caption{A visual representation of the Breeder's equation. Regression of \ec{child's phenotype on parental mid-point phenotype} ($V_A=V_E=1$). Under truncation selection, only individuals
+\caption{A visual representation of the Breeder's equation. Regression of child's phenotype on parental mid-point phenotype ($V_A=V_E=1$). Under truncation selection, only individuals
   with phenotypes $>1$ (red) are bred.}
 \end{marginfigure}
 
@@ -91,15 +91,15 @@ determined by the narrow sense heritability ($h^2$). \\
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.5 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
+\includegraphics[width= 0.6 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
 \end{center}
 \caption{The relationship between maternal and offspring corolla flare (flower
-  width) in P. viscosum. Data from \citet{galen:96}. From \citeauthor{galen:96} data the covariance of mother and child is 1.3, while the variance of the mother is 2.8.} \label{fig:Galen_corolla}  
+  width) in P. viscosum. Data from \citet{galen:96}. From \citeauthor{galen:96}'s data the covariance of mother and child is 1.3, while the variance of the mother is 2.8.} \label{fig:Galen_corolla}  
 \end{figure}
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
+\includegraphics[width=0.75\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
 \end{center}
 \caption{{\it Plemonium viscosum.}  Modified from Flowers of Mountain and Plain. New York :H.W. Wilson Co.,1920. \href{https://www.flickr.com/photos/biodivlibrary/8220461305/in/album-72157632108046380/}{BHL}. }
 \end{marginfigure}
@@ -186,7 +186,8 @@ selection to zero, then
 \begin{equation}
 S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx
 \end{equation}
-if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?} Inspecting this more closely, we can see that $S$ has
+%if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?} 
+Inspecting this more closely, we can see that $S$ has
 the form of a covariance between our phenotype $X$ and our fitness
 $w(X)$ ($S = Cov(X, w(X))$). Thus our change in mean phenotype is directly a measure of the
 covariance of our phenotype and our fitness. Rewriting our breeder's
@@ -204,11 +205,11 @@ R= V_A \beta
 \end{equation}
 i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. 
 
-As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} \erin{figure 5.5 is missing} the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
+As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \begin{marginfigure}
 \begin{center}
-%\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
 \end{center}
 \caption{Lifetime reproductive success (LRS) of male Red Deer as a function of their antler mass. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
@@ -216,28 +217,23 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
 We can generalize these results for multiple traits, to ask how selection on
-multiple phenotypes plays out over short time intervals. We'll write
-our change in the mean of our multiple phenotypes within a generation as
-the vector $\bf{S}$ and our response across multiple generations as
-the vector $\bf{R}$. These two quantities are related by 
-\begin{equation}
-\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \mathbf{ \beta}
-\end{equation}
- where $\bf{V}$ and $\bf{G}$ are our matrices of the
- variance-covariance of phenotypes and additive genetic values
- (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
- $\mathbf{\beta}$ \erin{this is showing up as 'fi' for me -- can you check the symbol is displaying as you'd like?} is a vector of selection gradients (i.e. the change
- within a generation as a fraction of the total phenotypic variance). \cite{lande:79}
-To make this a bit more intuitive, consider two traits we are writing 
+multiple phenotypes plays out over short time intervals. \cite{lande:79} Considering two traits we can write our responses in both traits as
 \begin{eqnarray}
 R_1 & = V_{A,1} \beta_1 + V_{A,1,2} \beta_2 \nonumber \\
 R_2 & = V_{A,2} \beta_2 + V_{A,1,2} \beta_1  \nonumber \\
 \end{eqnarray}
-where the $1$ and $2$ index our two different traits. This is a
-statement that our response in any one phenotype is modified by
-selection on other traits that covary with that trait.
-This offers a good way to think about how genetic trade offs play out over short-term evolution.
+where the $1$ and $2$ index our two different traits. Here $V_{A,1,2}$ is our additive covariance between our traits. Our selection gradient for trait 1, $\beta_1$, represents the change in fitness changing trait 1 alone holding everything else constant. This is a statement that our response in any one phenotype is modified by selection on other traits that covary with that trait. This offers a good way to think about how genetic trade offs play out over short-term evolution.
 
+We can also write this in matrix form. We can write
+our change in the mean of our multiple phenotypes within a generation as the vector $\bf{S}$ and our response across multiple generations as
+the vector $\bf{R}$. These two quantities are related by 
+\begin{equation}
+\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \boldsymbol{ \beta}
+\end{equation}
+ where $\bf{V}$ and $\bf{G}$ are our matrices of the
+ variance-covariance of phenotypes and additive genetic values
+ (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
+ $\boldsymbol{\beta}$ is a vector of selection gradients (i.e. the change within a generation as a fraction of the total phenotypic variance). 
 
 \begin{question}
 You collect observations of red deer within a generation, recording an
@@ -245,14 +241,14 @@ individual's number of offspring and phenotypes for a number of traits which are
 have additive genetic variation. Using your data, you construct the plots shown in
 Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
 questions by choosing one of the bold options. Briefly justify each of your answers with reference to the breeder's
-equation and multi-trait breeder's equation. No calculations are required. \\
+equation and multi-trait breeder's equation. \\
 {\bf A)}	Looking just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
 {\bf Insufficient information, increase, decrease.}\\
 
 {\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
 {\bf Insufficient information, increase, decrease.}\\
 
-{\bf C)}	Looking at figures \ref{fig:red_deer_Q} A, B, and C, in what direction do you expect male antler size to evolve? \erin{it looks like you took this from an old test -- nice Q! Do you want to give them sufficient information to calculate an answer for C since it's now homework?}\\
+{\bf C)}	Looking at figures \ref{fig:red_deer_Q} A, B, and C, in what direction do you expect male antler size to evolve? \\
 {\bf Insufficient information, increase, decrease.}\\
 \end{question}
 
@@ -261,35 +257,26 @@ equation and multi-trait breeder's equation. No calculations are required. \\
 \includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
 \end{center}
 \caption{ Observations of red deer within a generation; recording an
-individual's number of offspring and phenotypes, which are known to
-have additive genetic variation. The figures left to right are A-C.} \label{fig:red_deer_Q}
+individual's number of offspring and phenotypes (simulated data), which are known to
+have additive genetic variation. The figures left to right are A-C.  } \label{fig:red_deer_Q}
 \end{figure}
 
 
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
-\end{center}
-\caption{Stalk-eyed Flies ({\it Diopsidae}).  Diptera.
-van der Wulp. 1898. BHL} \label{fig:Stalk_eyed_flies}  
-\end{marginfigure}
-
 As an example of correlated responses to selection, consider the  \citeauthor{wilkinson:93} selection experiment on Stalk-eyed
- flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved
- amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
+ flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
  wild-caught flies and selected up and down on males eye-stalk to body
  size ratio for 10 generations (left plot in Figure
  \ref{fig:Stalk_eyed_response}). Despite the fact that he did not
  select on females, he saw a correlated response in the females from
  each of the lines (right plot), because of the genetic correlation
- between male and female body proportions. \erin{the picture of flies and the plot's caption are overlapping making it impossible to read the caption}
+ between male and female body proportions. 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/stalk_eyed_flies/stalk_eyed_flies_response.pdf}
 \end{center}
-\caption[][2cm]{ \citeauthor{wilkinson:93} selected two of populations for flies for
+\caption[][-1cm]{ \citeauthor{wilkinson:93} selected two of populations for flies for
  increased and eye-stalk to body length ratio in males (mean shown as
  up triangles), and two for a
  decreased ratio (down triangles), by taking the top 10 males with the highest (lowest)
@@ -300,7 +287,13 @@ As an example of correlated responses to selection, consider the  \citeauthor{wi
 } \label{fig:Stalk_eyed_response}   %\cite{potti:11} 
 \end{figure}
 
-
+\begin{marginfigure}[1cm]
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
+\end{center}
+\caption{Stalk-eyed Flies ({\it Diopsidae}).  Diptera.
+van der Wulp. 1898. BHL} \label{fig:Stalk_eyed_flies}  
+\end{marginfigure}
 \begin{question}
 
 At the end of ten generations in \citeauthor{wilkinson:93}'s experiment (Figure
@@ -323,45 +316,45 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 
 \section{Some applications of the multivariate trait breeder's equation}
 
-The multivariate breeders equation has a lot of different uses in understand the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
+The multivariate breeders equation has a lot of different uses in understanding the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
 
 \paragraph{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
 
 
 Individuals frequently behave in ways that sacrifice their own fitness for the
-benefit of others, that selection favours such apparent acts of altruism is puzzling at first site. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general, evolutionary explanation of such altruism.
+benefit of others. That selection favours such apparent acts of altruism is puzzling at first site. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism.
 His intuition was that while an individual is losing
 out of some reproductive output, the alleles underlying an altruistic behaviour
 can still spread in the population if this cost is outweighed by benefits gained 
 through the transmission of these alleles through a related individual (note that this means that the
-allele is not acting in an self sacrificing manner, even though
+allele is not acting in an self-sacrificing manner, even though
 individuals may as a result). 
 We can use our quantitative genetics framework to gain some simple
 intuition for when altruistic behaviours should evolve through kin
-selection. To do this we can derive a simple version of Hamilton's
+selection. To do this, we can derive a simple version of Hamilton's
 Rule by thinking about the phenotypes of an individual's kin as
-genetically correlated phenotype.
+genetically correlated phenotypes.
 
-To do this we
-can follow a simplified \citet{queller1992quantitative} treatment, to rederive Hamiliton's rule in a quantitative genetics framework (Hamiliton original work did this in a
+To do this, we
+can follow a simplified \citet{queller1992quantitative} treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original work did this in a
 population genetics framework).
 
 Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
 individual $i$ being paired with an individual $j$.  
 Imagine that individuals have two possible phenotypes $X=1$ or $0$,
 corresponding to providing or withholding some small act of `Altruism'
-(we could just as easily flip these labels and call them a unselfish
+(we could just as easily flip these labels and call them an unselfish
 act and a selfish act respectively). 
-Our pairs of individuals interacting could for example being siblings sharing a
+Our pairs of individuals interacting could, for example, be siblings sharing a
 nest. The altruistic trait could be as simple as growing at a
-slightly slower rates so as to reducing sibling-competition for food from
+slightly slower rate so as to reducing sibling-competition for food from
 parents, or more complicated acts of altruism such as foregoing their
 own reproduction so as to help their parents raise their siblings.
 
 Providing the altruistic act has a cost $C$ to the fitness of our
-individual, with failing to provide this act has no cost. Receiving this
+individual and failing to provide this act has no cost. Receiving this
 altruistic act confers a fitness benefit $B$ (not receiving it has no benefit).
-Hamiliton's Rule states that such a trait will spread through the
+Hamiliton's rule states that such a trait will spread through the
 population if the average coefficient of relatedness between the
 interaction individuals is $r$, the average number of alleles that
 our pairs of individuals share identical by descent at a locus. We can express
@@ -379,17 +372,17 @@ Hamilton's rule as
 
 
 
-To sketch a proof of this lets assume that our focal $i$ individual's relative fitness can be written as 
+To sketch a proof of this result, let's assume that our focal $i$ individual's relative fitness can be written as 
 \begin{equation}
 W(i,j)= W_0 + W_i +W_j
 \end{equation}
 where $W_i$ is the contribution of the fitness of the individual $i$ due
-to this phenotype, and $W_j$ is the contribution to our
-individual $i$'s fitness due to the $j$'s behaviour (i.e. phenotype).
-With the benefit $B$ and cost $C$ our $W(i,j)$ are depicted in
+to their own phenotype, and $W_j$ is the contribution to our
+individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. phenotype).
+With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in
 Figure \ref{fig:Hamilton_B_C}. 
 
-We can write the expected change in phenotype is 
+We can write the expected change in phenotype as 
 \begin{equation}
 R = \beta_i V_A + \beta_j V_{A,i,j}
 \end{equation}
@@ -401,10 +394,10 @@ i.e. if
 \end{eqnarray}
 So what's the average genetic covariance between
 individual $i$ and $j$'s alturistic phenotype? Well the covariance of
-the same phenotype between two individual's is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). our $F_{i,j}$ is the probability that an allele found in individual
-$i$ is identical by descent to an allele drawn from $j$, $2 F_{i,j}$
+the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). Our $F_{i,j}$ is the probability that an allele found in individual
+$i$ is identical by descent to an allele drawn from individual $j$. Therefore $2 F_{i,j}$
 can be interpreted as the average number of alleles shared between
-individuals $i$ and $j$ our re. So 
+individuals $i$ and $j$. So 
 \begin{eqnarray}
  -\beta_i < & \beta_j \frac{2 F_{i,j} V_A}{V_A} \nonumber  \\
 -\beta_i < & \beta_j 2 F_{i,j} \nonumber  \\
@@ -412,49 +405,49 @@ C < & r  B \\
 \end{eqnarray}
 
 
-\paragraph{Sexual selection and the evolution of mate preference by Indirect benefits. }
+\paragraph{Sexual selection and the evolution of mate preference by indirect benefits. }
 
 Organisms often put an enormous effort into attracting mates, sometimes at
 a considerable cost to their chances of survival. 
 
 One major reason why individuals are choosy about who they mate with is
 that it can directly impact their fitness. By choosing a mate with
-particular characteristics individuals can gain more parental care for
+particular characteristics, individuals can gain more parental care for
 their offspring, avoid parasites, or be choosing a mate with higher
-fertility. However, even in the absence of direct benefits selection
+fertility. However, even in the absence of direct benefits, selection
 can still indirectly favour the evolution of choosiness. These
-indirect benefits occur because as individuals can have higher fitness
-offspring by choosing a mate who's phenotype indicates high viability
-(the so-called good genes hypothesis), or by 
+indirect benefits occur because individuals can have higher fitness
+offspring by choosing a mate whose phenotype indicates high viability
+(the so-called good genes hypothesis), or by \ec{choosing a mate whose phenotype is simply attractive, and likely to produce similarly attractive offspring (the sexy sons hypothesis).} \erin{I attempted to finish this sentence for you .. it just ended partway through}
 
-We'll denote the display trait, e.g. tail length, in males by $\mars$ and the preference
+We'll denote a display trait, e.g. tail length, in males by $\mars$ and a preference
 trait in females by $\venus$. Our display trait is under direct selection in males, such that its response to selection can be written as
 \begin{equation}
 R_{\mars} = \beta_{\mars} V_{A, \mars}
 \end{equation}
 Let's assume that the female preference trait, the degree to which
 females are attracted to long tails, is not under direct
-selection $\beta_{\venus}=0$ then the response to selection of the
+selection $\beta_{\venus}=0$. Then the response to selection of the
 preference trait can be written as
 \begin{eqnarray}
 R_{\venus} &=\beta_{\venus}V_{A,\venus}  + \beta_{\mars} V_{A, \venus
   \mars}
 & = \beta_{\mars} V_{A, \venus  \mars}
 \end{eqnarray}
-so the female preference will respond to selection if it is
+So the female preference will respond to selection if it is
 genetically correlated with the male trait, i.e. if $V_{A, \venus
-  \mars}$. There's a number of different ways this genetic correlation could arise. The
+  \mars}$ \ec{is not zero}. There's a number of different ways this genetic correlation could arise; the
 simplest is that the loci underlying the male trait may have a
-pleiotropic effect on female preference, however, female preference
+pleiotropic effect on female preference. However, female preference
 may often have quite a distinct genetic basis from male display traits.
 
 A more general way in which trait-preference genetic correlations may
 arise is through assortative mating. As females vary in their
-tail-length preference, the ones will a preference for longer
+tail-length preference, the ones with a preference for longer
 tails will mate with long-tailed males and the opposite for females
 with a preference for shorter-tails. Therefore, a
 genetic correlation between mates display and preference traits will
-become established, see Figure \ref{fig:assort_mating_2_trait}. 
+become established (see Figure \ref{fig:assort_mating_2_trait}). 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
@@ -464,30 +457,30 @@ become established, see Figure \ref{fig:assort_mating_2_trait}.
 The males with the longer tails will also carry the alleles
 associated with the preference for longer tails, as their long-tailed
 dads tended to mate with females with a genetic preference for long
-tails. Similarly the the males with shorter tails will carry alleles associated with the preference for
-shorter tails. Thus if direct selection males with longer tails then
-the female preference for longer tails will increase as it is
-genetically correlated via assortative mating. 
+tails. Similarly, the the males with shorter tails will carry alleles associated with the preference for
+shorter tails. Thus if there is direct selection for males with longer tails, then
+the female preference for longer tails will increase too, as it is
+genetically correlated via assortative mating. \erin{I don't take away from this description that you can get runaway sexual selection without external directional selection for longer tails ... can you make that more clear? I think the problem is making the female trait a preference for short vs. long tails when maybe it should be presented as a preference for long tails vs. no preference so the males with longer tails get a boost from positive sexual selection. Also, why do you plot mean daughter's trait against mean son's trait and not, say, mean father's trait against mean daughter's trait or increase in population prevalence or correlation between male-female traits over time?}
 
 As an example of how selection on display traits can drive the
-evolution of preference traits, lets consider some data from guppies. Guppies ({\it Poecilia reticulata}) are a classic system for studying
+evolution of preference traits, let's consider some data from guppies. Guppies ({\it Poecilia reticulata}) are a classic system for studying
 the interplay of natural and sexual selection. In some populations of
-guppies, females show a preference for males with more orange colouration. \citeauthor{houde:94} established four replicated populations pairs of
+guppies, females show a preference for males with more orange colouration. \citeauthor{houde:94} established four replicate population pairs of
 guppies ({\it Poecilia reticulata}) and selected one of each pair for
-an increase or decreased orange coloration in males; selecting the top/bottom $20$ out of $50$
+an increased or decreased orange coloration in males, selecting the top/bottom $20$ out of $50$
 males. She randomly chose females from each population to form the next generation, and so did not
 exert direct selection on females. She measured the response to 
-selection on male colouration and female preference for orange,  left
+selection on male colouration and on female preference for orange (left
 and right panels of Figure \ref{fig:assort_mating_guppies}
-respectively. In the lines that were selected for more orange males.
+respectively). In the lines that were selected for more orange males \erin{this section needs completion}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/guppies_female_choice/guppies_female_choice.pdf}
 \end{center} \label{fig:assort_mating_guppies}
 \caption{Mean phenotypes for the two up- and two down-selected
-  populations of Guppies. Left panel: a response to selection was seen
-  due to the direct selection on male colouration. Right panel: a
+  populations of Guppies. Left panel: A response to selection was seen
+  due to the direct selection on male colouration. Right panel: An
   indirect, correlated response was also seen in female preference. Redrawn from \citeauthor{houde:94}.}
 \end{figure}
 
