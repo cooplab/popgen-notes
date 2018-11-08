@@ -1,12 +1,19 @@
-\chapter{One-locus models of selection}
+\chapter{One-Locus Models of Selection}
+\begin{quotation}
+"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and the growth a development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[…] The loss of Socrates’ genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death."
+\end{quotation}
 
-\subsection{Fitness}
+\paragraph{Fitness}
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
-Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. \\
+Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change.\\
+
 
 \subsection{Haploid selection model}
-We start out by modelling selection in a haploid model, as this is mathematically relatively simple. Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.\\
+We start out by modeling selection in a haploid model, as this is mathematically relatively simple.
+
+
+Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.\\
 
 Therefore, in the next generation, the absolute number of carriers of $A_1$ and $A_2$ are $P_{t+1} = W_1 P_t$ and $Q_{t+1} = W_2 Q_t$, respectively. The mean absolute fitness of the population at time $t$ is
 \begin{equation}
@@ -120,7 +127,7 @@ What is the selection coefficient associated with the resistance to antibiotics?
 \end{question}
 \end{tcolorbox}
 \paragraph{Haploid model with fluctuating selection}
-We can now consider the case where the fitnesses depend on time, and
+We can now consider the case where the fitnesses depend on time \citep{Dempster:55}, and
 say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
 generation $t$. The frequency of allele $A_1$ in generation $t+1$ is
 \begin{equation}
@@ -138,10 +145,8 @@ frequencies $p_t$ and $q_t$, then $\tau$ generations later,
 \end{equation}
 \\
 
-\graham{Dempster (1955) }
-
 The question of which allele is increasing or decreasing in frequency comes down
-to whether $\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)$ is
+to whether $\left(\prod_{i=t}^{\tau-1} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
 instead take the $\tau^{\mathrm{th}}$ root of it and consider
 \begin{equation}
@@ -155,6 +160,17 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 
 \subsection{Diploid model}
 We will now move on to a diploid model of a single locus with two segregating alleles.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\end{center}
+\caption{} \label{fig:LCT_freqs}
+\end{figure}
+
+
+
 We will assume that the difference in fitness between the three
 genotypes comes from differences in viability, i.e.\ differential
 survival of individuals from the formation of zygotes to reproduction.  
@@ -259,8 +275,7 @@ Ectodysplasin gene (EDA).  This allele is found as a standing variant at very lo
 a population of marine individuals carrying both the low- (L) and
 completely- plated (C) alleles. The introduced the offspring of this
 cross into four freshwater ponds and monitored genotype frequencies
-\sidenote{The actual dynamics observed by \citeauthor{Barrett:08} as
-  in the very young selection reverses direction}
+\sidenote{The actual dynamics observed by \citeauthor{Barrett:08} are more complicated as in the very young fish selection reverses direction.}
 over their life courses: 
 \begin{center}
 \begin{tabular}{lccc}
@@ -277,17 +292,16 @@ the population. We can also calculate the the relative fitness of each
 genotype by dividing through by the fitness of the fitest genotype,
 the heterozygote in this case (doing this cancels through
 $\Wbar$). The relative fitness of the $CC$ is $\sim 1/5$ of the
-heterozygote. This calculation does not rely on the genotype
-frequencie being at their HWE in the juveniles.
+heterozygote. Note that this calculation does not rely on the genotype frequencies being at their HWE in the juveniles.
 
 \begin{question}
 {\bf A} What is the frequency of the low-plated EDA allele ($L$) at the start
 of the stickleback experiment? \\
 {\bf B} What is the frequency in the adults? 
+
 \end{question}
 
 
-\begin{tcolorbox} 
 \begin{question}
 You have been studying an annual wildflower for many generations with two color morphs orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
 Heavy February rainfall creates optimal growing conditions for an
@@ -301,7 +315,7 @@ growing season.  \\
 have to assume to obtain this?\\
 {\bf B} What is the frequency of the white allele in the seeds forming the next generation?\\
 \end{question}
-\end{tcolorbox}
+
 
 The change in frequency from generation $t$ to $t+1$ is
 \begin{equation}
@@ -354,12 +368,12 @@ Thus, although selection acts on
 individuals, under this simple model, selection is acting to increase
 the mean fitness of the population. \sa{The rate of this increase is proportional to
 the variance in allele frequencies within the population ($p_tq_t$).}\\
-\begin{tcolorbox} 
+
 \begin{question}
 Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are
 equivalent. (Trickier question.)\\
 \end{question}
-\end{tcolorbox}
+
 So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
 
 %%Selection coeffs in diploid model
@@ -391,23 +405,10 @@ fitness between the two homozygotes, and $h$ is the
 dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozgyote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
 
 
-\gc{Yellow monkey flowers ({\it Mimulus guttatus}) have repeatedly adapted
-to the toxic soils found at copper mines throughout the Californian
-foothills in the past 150 years. Kevin Wright   }
+%\gc{Yellow monkey flowers ({\it Mimulus guttatus}) have repeatedly adapted
+%to the toxic soils found at copper mines throughout the Californian
+%foothills in the past 150 years. Kevin Wright   }
 
-
-%%%% Another possible fox image
-%%%  https://twitter.com/BioDivLibrary/status/1046777289416081408
-
-%%%%%%%%%%%%%%%%%%%%%FOXSES
-\begin{marginfigure}
-\begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
-\end{center}
-\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
-  and silver foxes from left to right. From ``The
-  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
-\end{marginfigure}
 
 
 %, of the $12$ and
@@ -424,14 +425,23 @@ where
 \wbar_t = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
-\begin{tcolorbox} 
+
 \begin{question}
 Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
 \end{question}
-\end{tcolorbox}
 
+%%%% Another possible fox image
+%%%  https://twitter.com/BioDivLibrary/status/1046777289416081408
 
-
+%%%%%%%%%%%%%%%%%%%%%FOXSES
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
+\end{center}
+\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
+  and silver foxes from left to right. From ``The
+  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
+\end{marginfigure}
 As an example of how dominance affects the trajectory of a real
 polymorphism we'll consider an example from a colour polymorphism in
 red foxes ({\it Vulpes vulpes}). There are three colour morphs of red foxes: silver, cross, and
@@ -445,12 +455,12 @@ result of this price difference silver foxes were hunted more
 intensely and declined as a proportion of the population in Eastern Canada, see Figure
 \ref{fig:Fox_morph_freqs}, as documented by \citeauthor{elton:42},
 from $16\%$ to $5\%$ from 1834 to 1937.
-\begin{marginfigure}
+\begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
 \end{center}
-\caption{Data from \citeauthor{elton:42}, redrawn from \citeauthor{Allendorf:09}.} \label{fig:Fox_morph_freqs}
-\end{marginfigure}
+\caption{The frequency of red, cross, and silver fox morphs over the decades in Eastern Canada. These data are well described by recessive selection acting against the silver fox morph. Data from \citet{elton:42}, redrawn from \citet{Allendorf:09}.} \label{fig:Fox_morph_freqs}
+\end{figure}
 \citeauthor{haldane:42} reanalyzed these data and showed that they
 were consistent with recessive selection acting against silver
 morph alone. Note how the heterozygotes (cross) decline somewhat as a

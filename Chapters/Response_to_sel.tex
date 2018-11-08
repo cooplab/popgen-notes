@@ -262,7 +262,6 @@ have additive genetic variation. The figures left to right are A-C.  } \label{fi
 \end{figure}
 
 
-
 As an example of correlated responses to selection, consider the  \citeauthor{wilkinson:93} selection experiment on Stalk-eyed
  flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
  wild-caught flies and selected up and down on males eye-stalk to body
@@ -313,63 +312,46 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 
 
 
-
 \section{Some applications of the multivariate trait breeder's equation}
 
 The multivariate breeders equation has a lot of different uses in understanding the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
 
 \paragraph{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
 
-
 Individuals frequently behave in ways that sacrifice their own fitness for the
-benefit of others. That selection favours such apparent acts of altruism is puzzling at first site. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism.
-His intuition was that while an individual is losing
-out of some reproductive output, the alleles underlying an altruistic behaviour
-can still spread in the population if this cost is outweighed by benefits gained 
-through the transmission of these alleles through a related individual (note that this means that the
-allele is not acting in an self-sacrificing manner, even though
-individuals may as a result). 
-We can use our quantitative genetics framework to gain some simple
-intuition for when altruistic behaviours should evolve through kin
-selection. To do this, we can derive a simple version of Hamilton's
-Rule by thinking about the phenotypes of an individual's kin as
-genetically correlated phenotypes.
-
-To do this, we
-can follow a simplified \citet{queller1992quantitative} treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original work did this in a
-population genetics framework).
+benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. \marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
+His intuition was that while an individual is losing out of some reproductive output, the alleles underlying an altruistic behaviour can still spread in the population if this cost is outweighed by benefits gained 
+through the transmission of these alleles through a related individual. Note that this means that the
+allele is not acting in an self-sacrificing manner, even though individuals may as a result. 
 
 Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
-individual $i$ being paired with an individual $j$.  
+individual $i$ being paired with an individual $j$. This could be pairs of siblings interacting.   
 Imagine that individuals have two possible phenotypes $X=1$ or $0$,
 corresponding to providing or withholding some small act of `Altruism'
 (we could just as easily flip these labels and call them an unselfish
 act and a selfish act respectively). 
 Our pairs of individuals interacting could, for example, be siblings sharing a
-nest. The altruistic trait could be as simple as growing at a
-slightly slower rate so as to reducing sibling-competition for food from
-parents, or more complicated acts of altruism such as foregoing their
-own reproduction so as to help their parents raise their siblings.
+nest. The altruistic trait could be as simple as growing at a slightly slower rate so as to reducing sibling-competition for food from
+parents, or more complicated acts of altruism such as children foregoing their own reproduction so as to help their parents raise their siblings.
 
-Providing the altruistic act has a cost $C$ to the fitness of our
-individual and failing to provide this act has no cost. Receiving this
-altruistic act confers a fitness benefit $B$ (not receiving it has no benefit).
-Hamiliton's rule states that such a trait will spread through the
-population if the average coefficient of relatedness between the
-interaction individuals is $r$, the average number of alleles that
-our pairs of individuals share identical by descent at a locus. We can express
-Hamilton's rule as
+Providing the altruistic act has a cost $C$ to the fitness of our individual and failing to provide this act has no cost. Receiving this altruistic act confers a fitness benefit $B$ over individuals who did not receive this act. \citeauthor{hamilton1964genetical}'s rule states that such a trait will spread through the population if 
 \begin{equation}
- C<rB
+ 2F B > C 
 \end{equation}
+where $F$ is the average kinship coefficient between the interacting individuals ($i$ and $j$), here $2F$ is the average number of alleles that
+our pairs of individuals share identical by descent at a locus. I.e. the altruistic behaviour will spread even if it is costly to the individual if it's cost is paid off by the benefit to sufficiently related individuals. 
+
+\marginnote{ Here we'll follow a simplified version of \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original work did this in a population genetics framework).}
+Where does this result come from, well we can use our quantitative genetics framework to gain some 
+intuition by deriving a simple version of Hamilton's Rule by thinking about the phenotypes of an individual's kin as genetically correlated phenotypes. 
+
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Response_to_sel/Hamiltons_rule_B_C.pdf}
 \end{center}
-\caption{ } \label{fig:Hamilton_B_C}
+\caption{{\bf Top)} The fitness of individual $i$ as a function of their behavioural phenotype, where altruistic/non-altruistic behavioural are encoded as $1$ and $0$ respectively. The fitness cost of behaving altruistically is $C$/ {\bf Bottom)} The fitness of our focal individual $i$ as a function of the behavioural phenotype of their interacting partner ($j$). Our focal individual gets an increase $B$ in fitness if their partner behaves altruistically.} \label{fig:Hamilton_B_C}
 \end{marginfigure}
-
 
 
 To sketch a proof of this result, let's assume that our focal $i$ individual's relative fitness can be written as 
@@ -379,30 +361,27 @@ W(i,j)= W_0 + W_i +W_j
 where $W_i$ is the contribution of the fitness of the individual $i$ due
 to their own phenotype, and $W_j$ is the contribution to our
 individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. phenotype).
-With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in
-Figure \ref{fig:Hamilton_B_C}. 
+With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:Hamilton_B_C}. 
 
-We can write the expected change in phenotype as 
+Following our multivariate breeders equation we can write the expected change of our behavioural phenotype as 
 \begin{equation}
-R = \beta_i V_A + \beta_j V_{A,i,j}
+R = \beta_i V_A + \beta_j V_{A,i,j},
 \end{equation}
-Our altruistic phenotype is increasing in the population if $R>0$,
-i.e. if
+our altruistic phenotype is increasing in the population if $R>0$, i.e. if 
+\begin{equation}
+  \beta_i V_A + \beta_j V_{A,i,j}  > 0 \end{equation}
+The slope $\beta_i$ of the regression of our focal individual's behavioural phenotype on fitness is proportional to $-C$. The slope $\beta_j$ of the regression of our interacting partner's phenotype on our focal individual's fitness is proportional to $B$. Therefore, our altruistic phenotype is increasing in the population if
 \begin{eqnarray}
-  \beta_i V_A + \beta_j V_{A,i,j} > 0  \nonumber  \\
-& \beta_j \frac{V_{A,i,j}}{V_A}  > -\beta_i 
+  \beta_i V_A + \beta_j V_{A,i,j} & > 0  \nonumber  \\
+ B \frac{V_{A,i,j}}{V_A} & >  C
 \end{eqnarray}
 So what's the average genetic covariance between
-individual $i$ and $j$'s alturistic phenotype? Well the covariance of
-the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). Our $F_{i,j}$ is the probability that an allele found in individual
-$i$ is identical by descent to an allele drawn from individual $j$. Therefore $2 F_{i,j}$
-can be interpreted as the average number of alleles shared between
-individuals $i$ and $j$. So 
+individual $i$ and $j$'s alturistic phenotype? Well it's the same behavioural phenotype in both individuals, the phenotypes are genetically correlated if our individuals are related to each other. The covariance of the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So our altruistic phenotype is increasing in the population if 
 \begin{eqnarray}
- -\beta_i < & \beta_j \frac{2 F_{i,j} V_A}{V_A} \nonumber  \\
--\beta_i < & \beta_j 2 F_{i,j} \nonumber  \\
-C < & r  B \\
+   & B\frac{2 F_{i,j} V_A}{V_A} > C \nonumber  \\
+  2 F_{i,j} B > C 
 \end{eqnarray}
+Seen from this perspective \citeauthor{hamilton1964genetical}'s rule is simply a statement that altruistic behaviours can spread via kin-selection, if the the average cost to an altruistic individual is paid back on average through the benefits of interacting with altruistic relatives (kin). 
 
 
 \paragraph{Sexual selection and the evolution of mate preference by indirect benefits. }
@@ -460,7 +439,12 @@ dads tended to mate with females with a genetic preference for long
 tails. Similarly, the the males with shorter tails will carry alleles associated with the preference for
 shorter tails. Thus if there is direct selection for males with longer tails, then
 the female preference for longer tails will increase too, as it is
-genetically correlated via assortative mating. \erin{I don't take away from this description that you can get runaway sexual selection without external directional selection for longer tails ... can you make that more clear? I think the problem is making the female trait a preference for short vs. long tails when maybe it should be presented as a preference for long tails vs. no preference so the males with longer tails get a boost from positive sexual selection. Also, why do you plot mean daughter's trait against mean son's trait and not, say, mean father's trait against mean daughter's trait or increase in population prevalence or correlation between male-female traits over time?}
+genetically correlated via assortative mating. 
+
+The selection for longer tails in males could come about because longer tails are correlated with higher male fitness
+
+
+\erin{I don't take away from this description that you can get runaway sexual selection without external directional selection for longer tails ... can you make that more clear? I think the problem is making the female trait a preference for short vs. long tails when maybe it should be presented as a preference for long tails vs. no preference so the males with longer tails get a boost from positive sexual selection. Also, why do you plot mean daughter's trait against mean son's trait and not, say, mean father's trait against mean daughter's trait or increase in population prevalence or correlation between male-female traits over time?}
 
 As an example of how selection on display traits can drive the
 evolution of preference traits, let's consider some data from guppies. Guppies ({\it Poecilia reticulata}) are a classic system for studying
