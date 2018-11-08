@@ -1,4 +1,4 @@
-\chapter{Phenotypic variation and resemblance between relatives.}
+\chapter{Phenotypic Variation and the Resemblance Between Relatives.}
 
 \newthought{The distinction between genotype and phenotype} is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
 The genotype of an individual (the genome), for most purposes, is decided when
@@ -192,8 +192,8 @@ where the $ 2 p_l(1-p_l)$ term follows from the binomial sampling of two alleles
 You have two biallelic SNPs contributing to variance in human height. At the first SNP you have an allele with an additive effect of $5$cm which is found at a frequency of $\nicefrac{1}{10,000}$. At the second SNP you have an allele with an additive effect of $-0.5$cm segregating at 50\% frequency. Which SNP contributes more to the additive genetic variance? Explain the intuition of your answer.
 \end{question}
 \paragraph{An example of calculating polygenic scores.}
-Now we don't usually get to see the individual loci contributing to highly polygenic traits. Instead, we only get to see the distribution of the trait in the population. However, with the advent of GWAS in human genetics we can see some of the underlying genetics using the many trait-associated loci identified to date. Using the estimated effect sizes at each locus, each one of which is tiny, we can calculate the weighted sum over an individual's genotype as in equation \ref{pheno_geno}. This weighted sum is called the individual's polygenic score. To illustrate how polygenic scores work, we can take a set of 1700 SNPs, each chosen as the SNP with the strongest signal of association with height in 1700 roughly independent bins spaced across the genome. The effects of these SNPs are tiny; the medium, absolute additive effect size is $0.07$cm. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individuals' polygenic scores calculated using these 1700 SNPs. The standard deviation of these polygenic scores $\sim 2$cm. 
-
+Now we don't usually get to see the individual loci contributing to highly polygenic traits. Instead, we only get to see the distribution of the trait in the population. However, with the advent of GWAS in human genetics we can see some of the underlying genetics using the many trait-associated loci identified to date. Using the estimated effect sizes at each locus, each one of which is tiny, we can calculate the weighted sum over an individual's genotype as in equation \ref{pheno_geno}. This weighted sum is called the individual's polygenic score. To illustrate how polygenic scores work, we can take a set of 1700 SNPs, each chosen as the SNP with the strongest signal of association with height in 1700 roughly independent bins spaced across the genome. The effects of these SNPs are tiny; the medium, absolute additive effect size is $0.07$cm. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individuals' polygenic scores calculated using these 1700 SNPs (simulated genotypes using the UKBB frequencies). The standard deviation of these polygenic scores $\sim 2$cm. 
+The individuals with higher polygenic scores for height are predicted to be taller than the individuals with lower polygenic scores. 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
@@ -271,7 +271,6 @@ the maternal and paternal allelic effects in our individuals. We can use our res
 the sharing of alleles between relatives to obtain these covariance terms.
 But before we write down the general case, let's quickly work through some
 examples. \\
-
 
 \paragraph{The covariance between identical twins}
 Let's first consider the case of a pair of identical twins from two
