@@ -1,8 +1,8 @@
 \chapter{One-Locus Models of Selection}
 \begin{quotation}
-"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and the growth a development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death."
+"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and the growth a development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
-
+  
 Individuals are temporary, their phenotypes are temporary, their genotypes are temporary. Sustained phenotypic evolutionary change to natural selection occur because of changes in the genetic composition of the population. To understand these changes we need to understand how the frequency of alleles  (genes) changes over time due natural selection.  
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
@@ -11,9 +11,8 @@ Differences in fitness can arise at any point during the life cycle. For instanc
 
 \subsection{Haploid selection model}
 We start out by modeling selection in a haploid model, as this is mathematically relatively simple.
-
-
 Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.\\
+
 
 Therefore, in the next generation, the absolute number of carriers of $A_1$ and $A_2$ are $P_{t+1} = W_1 P_t$ and $Q_{t+1} = W_2 Q_t$, respectively. The mean absolute fitness of the population at time $t$ is
 \begin{equation}
@@ -24,6 +23,16 @@ i.e.\ the sum of the fitness of the two types weighted by their
 relative frequencies. Note that the mean fitness depends on time, as
 it is a function of the allele frequencies, which are themselves time
 dependent. \\
+
+As an example a rapid response to selection on an allele in a haploid population we can consider some data on the evolution of drug resistant viruses. \citet{feder2017} studied viral dynamics in a  macaques infected with a strain of simian immunodeficiency virus that carry the HIV-1 reverse transcriptase coding region. Twelve weeks after infection the macaques were treated with an anti-retroviral drug that targeted the the virus' reverse transcriptase protein. The viral load of the macaque is shown as a black line in Figure \ref{fig:HIV_viral_freqs} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\end{center}
+\caption{} \label{fig:HIV_viral_freqs}
+\end{figure}
+
 
 The frequency of allele $A_1$ in the next generation is then given by
 \begin{equation}
