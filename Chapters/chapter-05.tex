@@ -3,10 +3,10 @@
 "Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
   
-Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. However, the genetic alleles that they transmit have permanence. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the allelic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
+Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. However, the alleles that individuals transmit across generations have permanence. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the allelic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
-Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change.\\
+Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change. In this chapter we'll study the dynamics of alleles at a single locus. In this chapter we'll ignore the effects of genetic drift, and just study the deterministic dynamics of selection. We'll return to discuss the interaction of selection and drift in the next chapter.\\
 
 
 \subsection{Haploid selection model}
@@ -24,7 +24,7 @@ relative frequencies. Note that the mean fitness depends on time, as
 it is a function of the allele frequencies, which are themselves time
 dependent. \\
 
-As an example of a rapid response to selection on an allele in a haploid population, we can consider some data on the evolution of drug resistant viruses. \citet{feder2017} studied viral dynamics in a macaque infected with a strain of simian immunodeficiency virus (SHIV) that carries the HIV-1 reverse transcriptase coding region. The viral load of the macaque's blood plasma is shown as a black line in Figure \ref{fig:HIV_viral_freqs}. Twelve weeks after infection, the macaque was treated with an anti-retroviral drug that targeted the the virus' reverse transcriptase protein. Note how the viral load initially starts to drop once the drug is administered, suggesting that the absolute fitness of the original strain is less than one ($W_{2}<1$) in the presence of the drug (as their numbers are decreasing). However, the viral population rebounds as a mutation  that confers drug resistance to the anti-retroviral drug arises in the SHIV and starts to spread. Viruses carrying this mutation (let's call them allele $1$) likely have absolute fitness $W_1>1$. The frequency of the drug-resistant allele is shown in red; it quickly spreads from being undetectable in week 13, to being fixed in the SHIV population in week 20.
+As an example of a rapid response to selection on an allele in a haploid population, we can consider some data on the evolution of drug resistant viruses. \citet{feder2017} studied viral dynamics in a macaque infected with a strain of simian immunodeficiency virus (SHIV) that carries the HIV-1 reverse transcriptase coding region. \marginnote{The main focus of \citeauthor{feder2017}'s work was modeling the complicated spatial dynamics of drug-resistant SHIV adaptation in different organ systems. } The viral load of the macaque's blood plasma is shown as a black line in Figure \ref{fig:HIV_viral_freqs}. Twelve weeks after infection, the macaque was treated with an anti-retroviral drug that targeted the the virus' reverse transcriptase protein. Note how the viral load initially starts to drop once the drug is administered, suggesting that the absolute fitness of the original strain is less than one ($W_{2}<1$) in the presence of the drug (as their numbers are decreasing). However, the viral population rebounds as a mutation  that confers drug resistance to the anti-retroviral drug arises in the SHIV and starts to spread. Viruses carrying this mutation (let's call them allele $1$) likely have absolute fitness $W_1>1$. The frequency of the drug-resistant allele is shown in red; it quickly spreads from being undetectable in week 13, to being fixed in the SHIV population in week 20.
 
 \begin{figure}
 \begin{center}
@@ -194,7 +194,7 @@ We will now move on to a diploid model of a single locus with two segregating al
 This continued expression of Lactase allows adults to break down Lactose, the main carbohydrate in milk, and so benefit nutritionally from milk-drinking. This seems to have offered a strong fitness benefit to individuals in pastoral populations. 
 
 
-With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in \ec{ancient} Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
+With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in ancient Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
 
 
 We will assume that the difference in fitness between the three
@@ -246,8 +246,7 @@ Therefore, the relative frequency of individuals with the three different genoty
 Absolute no. at birth & $Np_t^2$ & $N2p_tq_t$ & $Nq_t^2$\\
 Fitnesses & $W_{11}$ & $W_{12}$& $W_{22}$\\
 Absolute no.\ at reproduction & $NW_{11} p_t^2$ & $NW_{12} 2p_tq_t$& $N W_{22} q_t^2$\\
-Relative freq.\ at reproduction & $\frac{NW_{11} p_t^2}{N \Wbar} = \frac{W_{11}}{\Wbar} p_{t}^2$ & $\frac{NW_{12} 2p_tq_t}{N
-\Wbar} = \frac{W_{12}}{\Wbar} 2 p_{t} q_{t}$ & $\frac{N W_{22} q_t^2}{N\Wbar} = \frac{W_{22}}{\Wbar} q_{t}^2$\\
+Relative freq.\ at reproduction & $ \frac{W_{11}}{\Wbar} p_{t}^2$ & $ \frac{W_{12}}{\Wbar} 2 p_{t} q_{t}$ & $\frac{W_{22}}{\Wbar} q_{t}^2$\\
 \end{tabular}
 \end{center}
 \caption{Relative genotype frequencies after one episode of viability selection.} \label{dip_fitness_table}
@@ -278,13 +277,13 @@ the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{
 Each of our genotype frequencies is responding to selection in a
 manner that depends just on its fitness compared to the mean fitness
 of the population. For example, the frequency of the $11$ homozygotes
-increases from birth to adulthood in proportion to $nicefrac{W_{11}}{\Wbar}$. In
+increases from birth to adulthood in proportion to $\nicefrac{W_{11}}{\Wbar}$. In
 fact, we can estimate this fitness ratio for each genotype by comparing
 the frequency at birth compared to adults. As an example of this calculation, we'll
 look at some data from sticklebacks. 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Stickleback/Gasterosteus_aculeatus_1879.jpg}
+\includegraphics[width= 1.2 \textwidth]{illustration_images/single_locus_selection/Stickleback/Gasterosteus_aculeatus_1879.jpg}
 \end{center}
 \caption{Freshwater threespine Stickleback ({\it
     G. aculeatus}). British fresh-water fishes. Houghton W 1879. BHL.} \label{fig:stickleback}
@@ -447,13 +446,13 @@ where
 \end{equation}\\
 
 \begin{question}
-Through the Californian foothills the soils dumped from old copper and gold-mines are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings, he found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\$$ of the copper-tolerant seedlings survived to flower.\\
+Throughout the Californian foothills are old copper and gold-mines, which have dumped out soils that are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these harsh soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings, he found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\$$ of the copper-tolerant seedlings survived to flower.\\
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[]{illustration_images/single_locus_selection/Copperopolis/KeystoneCopperMineCopperopolisCalaverasCounty.jpg}
+\includegraphics[width = 1.2 \textwidth]{illustration_images/single_locus_selection/Copperopolis/KeystoneCopperMineCopperopolisCalaverasCounty.jpg}
 \end{center}
-\caption{.}
+\caption{Keystone Copper Mine 1866, Copperopolis, Calaveras County. }
   \label{fig:Copperopolis}
 \end{marginfigure}
 
