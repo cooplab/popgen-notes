@@ -1,9 +1,9 @@
 \chapter{One-Locus Models of Selection}
 \begin{quotation}
-"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and the growth a development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
+"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
   
-Individuals are temporary, their phenotypes are temporary, their genotypes are temporary. Sustained phenotypic evolutionary change to natural selection occur because of changes in the genetic composition of the population. To understand these changes we need to understand how the frequency of alleles  (genes) changes over time due natural selection.  
+Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the genetic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
 Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change.\\
@@ -24,17 +24,17 @@ relative frequencies. Note that the mean fitness depends on time, as
 it is a function of the allele frequencies, which are themselves time
 dependent. \\
 
-As an example a rapid response to selection on an allele in a haploid population we can consider some data on the evolution of drug resistant viruses. \citet{feder2017} studied viral dynamics in a  macaques infected with a strain of simian immunodeficiency virus that carry the HIV-1 reverse transcriptase coding region. Twelve weeks after infection the macaques were treated with an anti-retroviral drug that targeted the the virus' reverse transcriptase protein. The viral load of the macaque's blood plasma is shown as a black line in Figure \ref{fig:HIV_viral_freqs}. Note how the viral load starts to drop once the drug is administered. 
+As an example of a rapid response to selection on an allele in a haploid population, we can consider some data on the evolution of drug resistant viruses. \citet{feder2017} studied viral dynamics in a macaque infected with a strain of simian immunodeficiency virus (SHIV) that carries the HIV-1 reverse transcriptase coding region. The viral load of the macaque's blood plasma is shown as a black line in Figure \ref{fig:HIV_viral_freqs}. Twelve weeks after infection, the macaque was treated with an anti-retroviral drug that targeted the the virus' reverse transcriptase protein. Note how the viral load initially starts to drop once the drug is administered, suggesting that the absolute fitness of the original strain is less than one ($W_{2}<1$) in the presence of the drug (as their numbers are decreasing). However, the viral population rebounds as a mutation  that confers drug resistance to the anti-retroviral drug arises in the SHIV and starts to spread. Viruses carrying this mutation (let's call them allele $1$) likely have absolute fitness $W_1>1$. The frequency of the drug-resistant allele is shown in red; it quickly spreads from being undetectable in week 13, to being fixed in the SHIV population in week 20.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Feder_HIV/Feder_HIV.pdf}
 \end{center}
 \caption{} \label{fig:HIV_viral_freqs}
 \end{figure}
+The rapid spread of this drug-resistant allele through the population is driven by the much greater relative fitness of the drug-resistant allele over the original strain \ec{in the presence of the anti-retroviral drug}. 
 
-
-The frequency of allele $A_1$ in the next generation is then given by
+The frequency of allele $A_1$ in the next generation is given by
 \begin{equation}
 	\label{eq:eq:recHaplMod1}
 	p_{t+1} = \frac{P_{t+1}}{P_{t+1} + Q_{t+1}} = \frac{W_1 P_t}{W_1 P_t + W_2 Q_t}
@@ -42,14 +42,13 @@ The frequency of allele $A_1$ in the next generation is then given by
 	= \frac{W_1 p_t}{W_1 p_t + W_2 q_t} = \frac{W_1}{\Wbar_t} p_t.
 \end{equation}
 
-
 Importantly, eqn.\ (\ref{eq:eq:recHaplMod1}) tells us that the change in $p$ only depends on a ratio of fitnesses. Therefore, we need to specify fitness only up to an arbitrary constant. As long as we multiply all fitnesses by the same value, that constant will cancel out and eqn.\ (\ref{eq:eq:recHaplMod1}) will hold. Based on this argument, it is very common to scale absolute fitnesses by the absolute fitness of one of the genotypes, e.g.\ the most or the least fit genotype, to obtain relative fitnesses. Here, we will use $w_i$ for the relative fitness of genotype $i$. If we choose to scale by the absolute fitness of genotype $A_1$, we obtain the relative fitnesses $w_1 = W_1/W_1 = 1$ and $w_2 = W_2/W_1$.\\
 Without loss of generality, we can therefore rewrite eqn.\ (\ref{eq:eq:recHaplMod1}) as
 \begin{equation}
 	\label{eq:recHaplMod2}
 	p_{t+1} = \frac{w_1}{\wbar} p_t,
 \end{equation}
-dropping the dependence of the mean fitness on time in our notation, but remembering it.
+dropping the \ec{subscript $t$ for the} dependence of the mean fitness on time in our notation, but remembering it.
 The change in frequency from one generation to the next is then given by
 \begin{equation}
 \Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{w_1 - w_2}{\wbar} p_t q_t,
@@ -96,7 +95,7 @@ we are looking at the relative frequencies of two `populations' (of
 alleles $A_1$ and $A_2$) that are growing (or declining)
 exponentially, under the constraint that $p$ and $q$ always sum to 1. \\
 
-Moreover, eqn.\ \eqref{eq:estTau} for the time $\tau$ it takes for a certain change in frequency to occur becomes
+Moreover, eqn.\ \eqref{eq:estTau} for the \ec{number of generations} $\tau$ it takes for a certain change in frequency to occur becomes
 \begin{equation}
 	\label{eq:estTauExpl}
 	\tau = - \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(1-s\right).
@@ -115,7 +114,7 @@ fixation. Then, plugging these values into eqn.\ \eqref{eq:estTauExplSimpl}, we
 obtain
 
 \begin{align}
-  tau &= \frac{1}{s} \log\left( \frac{1 - \nicefrac{2}{N} +
+  \tau &= \frac{1}{s} \log\left( \frac{1 - \nicefrac{2}{N} +
       \nicefrac{1}{N^2}}{\nicefrac{1}{N^2}} \right) \nonumber \\
   &\approx \frac{1}{s} (\log(N) + \log(N-2)) \nonumber \\
   &\approx \frac{2}{s} \log(N)  \label{eq:fixTimeSimpl}
@@ -124,19 +123,27 @@ obtain
 where we make the approximations $N^2 - 2N + 1 \approx N^2 - 2N$ and later
 $N-2 \approx N$.
 
-\begin{tcolorbox}
+
 \begin{question}
-You are studying the frequency of antibiotic-resistant bacteria in a
-patient.  Before administering the antibiotic the frequency of the 
-resistance allele is $\nicefrac{1}{1000}$. You adminster the antibiotic,
-alarming just 8 days later you find the frequency of the 
-resistance allele to be $99\%$. Assume a generation time of $\nicefrac{1}{4}$ a day for
-these bacteria. \\
-What is the selection coefficient associated with the resistance to antibiotics?
+In our example of the evolution of drug resistance, the drug-resistant SHIV virus spread from undetectable frequencies to $\sim 65\%$ frequency by 16 weeks post infection. An estimated effective population size of SHIV is $1.5 \times 10^5$, and its generation time is $\sim 1$ day. Assuming that the mutation arose as a single copy allele very shortly the start of drug treatment at 12 weeks, what is the selection coefficient favouring the drug resistance allele?  
 \end{question}
-\end{tcolorbox}
+
+
+
+
+%\begin{question}
+%You are studying the frequency of antibiotic-resistant bacteria in a
+%patient.  Before administering the antibiotic the frequency of the 
+%resistance allele is $\nicefrac{1}{1000}$. You adminster the antibiotic,
+%alarming just 8 days later you find the frequency %of the 
+%resistance allele to be $99\%$. Assume a generation time of $\nicefrac{1}{4}$ a day for
+%these bacteria. \\
+%What is the selection coefficient associated with the resistance to antibiotics?
+%\end{question}
+
 \paragraph{Haploid model with fluctuating selection}
-We can now consider the case where the fitnesses depend on time \citep{Dempster:55}, and
+Selection pressures may change while a polymorphism persists in the population due to environmental changes. 
+We can use our haploid model to consider this case where the fitnesses depend on time \citep{Dempster:55}, and
 say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
 generation $t$. The frequency of allele $A_1$ in generation $t+1$ is
 \begin{equation}
@@ -168,16 +175,27 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 
 
 \subsection{Diploid model}
-We will now move on to a diploid model of a single locus with two segregating alleles.
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/cow_auroch/auroch.png}
+\end{center}
+\caption{} \label{fig:auroch}
+\end{marginfigure}
+
+We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, lets consider the evolution of Lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein Lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
+This continued expression of Lactase allows adults to break down Lactose, the main carbohydrate in milk, and so benefit nutritionally from milk-drinking. This seems to have offered a strong fitness benefit to individuals in pastoral populations. 
+
+
+With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in \ec{ancient} Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
 \end{center}
-\caption{} \label{fig:LCT_freqs}
+\caption{Frequency of the Lactase persistence allele in ancient and modern samples form Central Europe. Data compiled by \citet{marciniak2017} from various sources. Thanks to Stephanie Marciniak for sharing these data.} \label{fig:LCT_freqs}
 \end{figure}
-
 
 
 We will assume that the difference in fitness between the three
@@ -196,7 +214,7 @@ The mean fitness of the population of zygotes is then
 Again, this is simply the weighted mean of the genotypic fitnesses.
 \\
 
-How many zygotes of each of the three genotypes survive to reproduce?
+How many zygotes of each of the three genotypes survive to reproduce? \erin{plot needs caption and title}
 An individual of genotype $A_1A_1$ has a probability of $W_{11}$ of
 surviving to reproduce, and similarly for other genotypes. Therefore, the expected number of $A_1A_1$, $A_1A_2$, and $A_2A_2$ individuals who survive to reproduce is
 \begin{equation}
@@ -254,16 +272,16 @@ allele frequency among the reproducing individuals of the previous generation. H
 	p_{t+1} = \frac{W_{11} p_t^2 + W_{12} p_tq_t}{\Wbar}
 	\label{pgen_dip}.
 \end{equation}
-Note that, again, the absolute value of the fitnesses is irrelevant to
+\erin{it might help students understand this equation more to mention here that the expected 2 in 2pq is being cancelled out by the 1/2 for only one A1 allele in hets...or to just include that step though it's fairly trivial} Note that, again, the absolute value of the fitnesses is irrelevant to
 the frequency of the allele. Therefore, we can just as easily replace
 the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{ij}$ by $w_{ij} = W_{ij}/W_{11}$, for instance. \\
 
 Each of our genotype frequencies is responding to selection in a
 manner that depends just on its fitness compared to the mean fitness
-of the population. For example the frequency of the $11$ homozygotes
-increases from birth to adulthood in proportion to $W_{11}/Wbar$. In
-fact we can estimate this fitness ratio for each genotype by comparing
-the frequency at birth compared to adults. As an example of this we'll
+of the population. For example, the frequency of the $11$ homozygotes
+increases from birth to adulthood in proportion to $nicefrac{W_{11}}{\Wbar}$. In
+fact, we can estimate this fitness ratio for each genotype by comparing
+the frequency at birth compared to adults. As an example of this calculation, we'll
 look at some data from sticklebacks. 
 \begin{marginfigure}
 \begin{center}
@@ -272,17 +290,15 @@ look at some data from sticklebacks.
 \caption{Freshwater threespine Stickleback ({\it
     G. aculeatus}). British fresh-water fishes. Houghton W 1879. BHL.} \label{fig:stickleback}
 \end{marginfigure}
-Marine threespine stickleback ({\it Gasterosteus aculeatus}) have
+Marine threespine stickleback ({\it Gasterosteus aculeatus})
 independently colonized and adapted to many freshwater lakes
-as glaciers receded following the last ice age making them a
-wonderful system for studying the genetics of adaptation. In marine
-habitats most of the stickleback have armour plates to protect them
+as glaciers receded following the last ice age, making sticklebacks a wonderful system for studying the genetics of adaptation. In marine habitats, most of the stickleback have armour plates to protect them
 from predation, but freshwater populations repeatedly evolve the
 loss of armour plates due to selection on an allele at the
 Ectodysplasin gene (EDA).  This allele is found as a standing variant at very low frequency marine populations;
 \citeauthor{Barrett:08} took advantage of this fact and collected and bred
 a population of marine individuals carrying both the low- (L) and
-completely- plated (C) alleles. The introduced the offspring of this
+completely- plated (C) alleles. They introduced the offspring of this
 cross into four freshwater ponds and monitored genotype frequencies
 \sidenote{The actual dynamics observed by \citeauthor{Barrett:08} are more complicated as in the very young fish selection reverses direction.}
 over their life courses: 
@@ -297,22 +313,21 @@ rel. fitness ($W_{\bullet}/W_{12}$)  & 0.17 & 1.0 & 0.54 \\
 \end{center}
 The heterozygotes have increased in frequency dramatically in the
 population as their fitness is more than double the mean fitness of
-the population. We can also calculate the the relative fitness of each
-genotype by dividing through by the fitness of the fitest genotype,
+the population. We can also calculate the relative fitness of each
+genotype by dividing through by the fitness of the fittest genotype,
 the heterozygote in this case (doing this cancels through
 $\Wbar$). The relative fitness of the $CC$ is $\sim 1/5$ of the
 heterozygote. Note that this calculation does not rely on the genotype frequencies being at their HWE in the juveniles.
 
 \begin{question}
-{\bf A} What is the frequency of the low-plated EDA allele ($L$) at the start
-of the stickleback experiment? \\
+{\bf A} What is the frequency of the low-plated EDA allele ($L$) at the start of the stickleback experiment? \\
 {\bf B} What is the frequency in the adults? 
 
 \end{question}
 
 
 \begin{question}
-You have been studying an annual wildflower for many generations with two color morphs orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
+For many generations you have been studying an annual wildflower that has two color morphs, orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
 Heavy February rainfall creates optimal growing conditions for an
 exotic herbivorous beetle with a preference for orange-flowered
 individuals.  This year it arrives at your study site with a ravenous
@@ -346,7 +361,7 @@ We further note that the mean relative fitness can be expressed in terms of the 
 	\label{eq:meanFitInTermsOfMargFit}
 	\wbar = \wbar_1 p_t + \wbar_2 q_t,
 \end{equation}
-where, for notational simplicity, we have omitted the dependence of mean and marginal fitnesses on time.\\
+where, for notational simplicity, we have omitted \ec{subscript t for} the dependence of mean and marginal fitnesses on time.\\
 
 We can then rewrite eqn.\ \eqref{deltap_dip1} using $\wbar_1$ and $\wbar_2$ as
 \begin{equation}
@@ -366,7 +381,7 @@ We can also rewrite \eqref{deltap_dip1} as
 \Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp},
 \label{deltap_dip3}
 \end{equation}
-the demonstration of this we leave to the reader.
+the demonstration of which we leave to the reader.
 This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).
 %This form shows that
 %$\Delta p_t$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
@@ -398,8 +413,7 @@ So far, our treatment of the diploid model of selection has been in terms of gen
   \label{fig:diploid_traj}
 \end{marginfigure}
 
-Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$\.
-As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
+Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$. As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
 one we met in the haploid selection section, as follows:\\
 \begin{center}
 \begin{tabular}{lccc}
@@ -451,6 +465,12 @@ Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:di
   and silver foxes from left to right. From ``The
   larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
 \end{marginfigure}
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
+\end{center}
+\caption{The frequency of red, cross, and silver fox morphs over the decades in Eastern Canada. These data are well described by recessive selection acting against the silver fox morph. Data from \citet{elton:42}, redrawn from \citet{Allendorf:09}.} \label{fig:Fox_morph_freqs}
+\end{figure}
 As an example of how dominance affects the trajectory of a real
 polymorphism we'll consider an example from a colour polymorphism in
 red foxes ({\it Vulpes vulpes}). There are three colour morphs of red foxes: silver, cross, and
@@ -464,12 +484,6 @@ result of this price difference silver foxes were hunted more
 intensely and declined as a proportion of the population in Eastern Canada, see Figure
 \ref{fig:Fox_morph_freqs}, as documented by \citeauthor{elton:42},
 from $16\%$ to $5\%$ from 1834 to 1937.
-\begin{figure}
-\begin{center}
-  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
-\end{center}
-\caption{The frequency of red, cross, and silver fox morphs over the decades in Eastern Canada. These data are well described by recessive selection acting against the silver fox morph. Data from \citet{elton:42}, redrawn from \citet{Allendorf:09}.} \label{fig:Fox_morph_freqs}
-\end{figure}
 \citeauthor{haldane:42} reanalyzed these data and showed that they
 were consistent with recessive selection acting against silver
 morph alone. Note how the heterozygotes (cross) decline somewhat as a
@@ -504,12 +518,14 @@ to close to fixation ($p_{\tau} =1-1/(2N)$). Note again the difference
 by a factor of 2 due to the choice of parametrization. Also, the total
 number of alleles is $2N$ in the diploid model, rather than $N$, which
 explains another factor of 2 in the argument of the logarithm. More
-generally we can use this correspondance of the trajectory additive
+generally we can use this correspondence of the trajectory additive
 diploid model to the haploid model to understand how quickly allele
 frequencies should change given a selection coefficient between
 arbitrary frequencies.\\
 
+\begin{question}
 
+\end{question}
 %\begin{tcolorbox} 
 %\begin{question}
 %An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against homozygotes for the resistance allele.

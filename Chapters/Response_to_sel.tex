@@ -327,7 +327,7 @@ allele is not acting in an self-sacrificing manner, even though individuals may 
 Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
 individual $i$ being paired with an individual $j$. This could be pairs of siblings interacting.   
 Imagine that individuals have two possible phenotypes $X=1$ or $0$,
-corresponding to providing or withholding some small act of `Altruism'
+corresponding to providing or withholding some small act of `altruism'
 (we could just as easily flip these labels and call them an unselfish
 act and a selfish act respectively). 
 Our pairs of individuals interacting could, for example, be siblings sharing a
@@ -339,10 +339,10 @@ Providing the altruistic act has a cost $C$ to the fitness of our individual and
  2F B > C 
 \end{equation}
 where $F$ is the average kinship coefficient between the interacting individuals ($i$ and $j$), here $2F$ is the average number of alleles that
-our pairs of individuals share identical by descent at a locus. I.e. the altruistic behaviour will spread even if it is costly to the individual if it's cost is paid off by the benefit to sufficiently related individuals. 
+our pairs of individuals share identical by descent at a locus. So the altruistic behaviour will spread even if it is costly to the individual if its cost is paid off by the benefit to sufficiently related individuals. 
 
 \marginnote{ Here we'll follow a simplified version of \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original work did this in a population genetics framework).}
-Where does this result come from, well we can use our quantitative genetics framework to gain some 
+Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
 intuition by deriving a simple version of Hamilton's Rule by thinking about the phenotypes of an individual's kin as genetically correlated phenotypes. 
 
 
@@ -350,38 +350,38 @@ intuition by deriving a simple version of Hamilton's Rule by thinking about the 
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Response_to_sel/Hamiltons_rule_B_C.pdf}
 \end{center}
-\caption{{\bf Top)} The fitness of individual $i$ as a function of their behavioural phenotype, where altruistic/non-altruistic behavioural are encoded as $1$ and $0$ respectively. The fitness cost of behaving altruistically is $C$/ {\bf Bottom)} The fitness of our focal individual $i$ as a function of the behavioural phenotype of their interacting partner ($j$). Our focal individual gets an increase $B$ in fitness if their partner behaves altruistically.} \label{fig:Hamilton_B_C}
+\caption{{\bf Top)} The fitness of individual $i$ as a function of their behavioural phenotype, where altruistic/non-altruistic behavioural phenotypes are encoded as $1$ and $0$ respectively. The direct fitness cost of behaving altruistically is $C$. {\bf Bottom)} The fitness of our focal individual $i$ as a function of the behavioural phenotype of their interacting partner ($j$). Our focal individual gets an increase $B$ in fitness if their partner behaves altruistically.} \label{fig:Hamilton_B_C}
 \end{marginfigure}
 
 
-To sketch a proof of this result, let's assume that our focal $i$ individual's relative fitness can be written as 
+To sketch a proof of this result, let's assume that our focal $i$ individual's relative \erin{is this not absolute fitness?} fitness can be written as 
 \begin{equation}
 W(i,j)= W_0 + W_i +W_j
 \end{equation}
 where $W_i$ is the contribution of the fitness of the individual $i$ due
 to their own phenotype, and $W_j$ is the contribution to our
-individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. phenotype).
+individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. $j$'s phenotype).
 With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:Hamilton_B_C}. 
 
-Following our multivariate breeders equation we can write the expected change of our behavioural phenotype as 
+Following our multivariate breeder's equation, we can write the expected change of our behavioural phenotype as 
 \begin{equation}
 R = \beta_i V_A + \beta_j V_{A,i,j},
 \end{equation}
-our altruistic phenotype is increasing in the population if $R>0$, i.e. if 
+Our altruistic phenotype is increasing in the population if $R>0$, i.e. if 
 \begin{equation}
   \beta_i V_A + \beta_j V_{A,i,j}  > 0 \end{equation}
-The slope $\beta_i$ of the regression of our focal individual's behavioural phenotype on fitness is proportional to $-C$. The slope $\beta_j$ of the regression of our interacting partner's phenotype on our focal individual's fitness is proportional to $B$. Therefore, our altruistic phenotype is increasing in the population if
+The slope $\beta_i$ of the regression of our focal individual's behavioural phenotype on fitness is proportional to $-C$. The slope $\beta_j$ of the regression of our interacting partner's phenotype on our focal individual's fitness is proportional \erin{proportional by the same constant? I don't see this right away} to $B$. Therefore, our altruistic phenotype is increasing in the population if
 \begin{eqnarray}
   \beta_i V_A + \beta_j V_{A,i,j} & > 0  \nonumber  \\
  B \frac{V_{A,i,j}}{V_A} & >  C
 \end{eqnarray}
 So what's the average genetic covariance between
-individual $i$ and $j$'s alturistic phenotype? Well it's the same behavioural phenotype in both individuals, the phenotypes are genetically correlated if our individuals are related to each other. The covariance of the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So our altruistic phenotype is increasing in the population if 
+individual $i$ and $j$'s alturistic phenotype? Well it's the same behavioural phenotype in both individuals, so the phenotypes are genetically correlated if our individuals are related to each other. The covariance of the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So our altruistic phenotype is increasing in the population if 
 \begin{eqnarray}
    & B\frac{2 F_{i,j} V_A}{V_A} > C \nonumber  \\
   2 F_{i,j} B > C 
 \end{eqnarray}
-Seen from this perspective \citeauthor{hamilton1964genetical}'s rule is simply a statement that altruistic behaviours can spread via kin-selection, if the the average cost to an altruistic individual is paid back on average through the benefits of interacting with altruistic relatives (kin). 
+Seen from this perspective, \citeauthor{hamilton1964genetical}'s rule is simply a statement that altruistic behaviours can spread via kin-selection, if the the average cost to an altruistic individual is paid back on average through the benefits of interacting with altruistic relatives (kin). \erin{this phrasing is a little misleading because it's 'paid back' to the allele, but not to the individual. I'd suggest something like 'if the fitness cost of altruism to an allele is paid back on average through the benefits of interacting with altruistic relatives (kin).}
 
 
 \paragraph{Sexual selection and the evolution of mate preference by indirect benefits. }
