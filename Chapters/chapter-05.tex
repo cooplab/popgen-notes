@@ -174,13 +174,20 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 (at least in our simple deterministic model). \\
 
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\end{center}
+\caption{Frequency of the Lactase persistence allele in ancient and modern samples form Central Europe. Data compiled by \citet{marciniak2017} from various sources. Thanks to Stephanie Marciniak for sharing these data.} \label{fig:LCT_freqs}
+\end{figure}
+
 \subsection{Diploid model}
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/cow_auroch/auroch.png}
 \end{center}
-\caption{Auroch Cuvier, Frédéric Georges} \label{fig:auroch}
+\caption{Auroch. Dictionnaire des sciences naturelles. 1816 Cuvier, F.G.  Auroch are an extinct species of large wild cattle that cows were domesticated from. } \label{fig:auroch}
 \end{marginfigure}
 
 We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, lets consider the evolution of Lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein Lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
@@ -188,13 +195,6 @@ This continued expression of Lactase allows adults to break down Lactose, the ma
 
 
 With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in \ec{ancient} Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
-\end{center}
-\caption{Frequency of the Lactase persistence allele in ancient and modern samples form Central Europe. Data compiled by \citet{marciniak2017} from various sources. Thanks to Stephanie Marciniak for sharing these data.} \label{fig:LCT_freqs}
-\end{figure}
 
 
 We will assume that the difference in fitness between the three
@@ -466,7 +466,7 @@ Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:di
 \end{marginfigure}
 \begin{figure}
 \begin{center}
-  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
+  \includegraphics[width = 0.8 \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
 \end{center}
 \caption{The frequency of red, cross, and silver fox morphs over the decades in Eastern Canada. These data are well described by recessive selection acting against the silver fox morph. Data from \citet{elton:42}, redrawn from \citet{Allendorf:09}.} \label{fig:Fox_morph_freqs}
 \end{figure}
@@ -484,7 +484,7 @@ intensely and declined as a proportion of the population in Eastern Canada, see 
 \ref{fig:Fox_morph_freqs}, as documented by \citeauthor{elton:42},
 from $16\%$ to $5\%$ from 1834 to 1937.
 \citeauthor{haldane:42} reanalyzed these data and showed that they
-were consistent with recessive selection acting against silver
+were consistent with recessive selection acting against the silver
 morph alone. Note how the heterozygotes (cross) decline somewhat as a
 result of selection on the silver homozygotes, but overall the R
 allele is slow to respond to selection as it is `hidden' from
@@ -505,9 +505,9 @@ If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close t
 	\Delta p_t = \frac{1}{2} s p_t q_t .
 	\label{deltap_add_simpl}
 \end{equation}
-It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in diploid model instead, in which case the agreement with the haploid model would be perfect.\\
+It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained for the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \ref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes
+From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \ref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes
 \begin{equation}
 	\tau \approx \frac{4}{s} \log(2N)  \label{eq:diploid_fix_time}
 \end{equation}
@@ -519,12 +519,14 @@ number of alleles is $2N$ in the diploid model, rather than $N$, which
 explains another factor of 2 in the argument of the logarithm. More
 generally we can use this correspondence of the trajectory additive
 diploid model to the haploid model to understand how quickly allele
-frequencies should change given a selection coefficient between
-arbitrary frequencies.\\
+frequencies should change between arbitrary frequencies, given a selection coefficient.\\
 
 \begin{question}
-
+Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the very high pollution levels in the Houston shipping canal since the 1950s. One of the ways that they've adapted is through the deletion of their aryl hydrocarbon receptor (AHR) gene. Oziolor et al. estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation?
 \end{question}
+
+ \erin{Q not done at the time I read through. Done editing up to here.}
+
 %\begin{tcolorbox} 
 %\begin{question}
 %An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against homozygotes for the resistance allele.
