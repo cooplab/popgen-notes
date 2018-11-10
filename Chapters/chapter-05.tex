@@ -3,7 +3,7 @@
 "Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
   
-Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the genetic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
+Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. However, the genetic alleles that they transmit have permanence. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the allelic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
 Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change.\\
@@ -32,7 +32,7 @@ As an example of a rapid response to selection on an allele in a haploid populat
 \end{center}
 \caption{} \label{fig:HIV_viral_freqs}
 \end{figure}
-The rapid spread of this drug-resistant allele through the population is driven by the much greater relative fitness of the drug-resistant allele over the original strain \ec{in the presence of the anti-retroviral drug}. 
+The rapid spread of this drug-resistant allele through the population is driven by the much greater relative fitness of the drug-resistant allele over the original strain in the presence of the anti-retroviral drug. 
 
 The frequency of allele $A_1$ in the next generation is given by
 \begin{equation}
@@ -48,7 +48,7 @@ Without loss of generality, we can therefore rewrite eqn.\ (\ref{eq:eq:recHaplMo
 	\label{eq:recHaplMod2}
 	p_{t+1} = \frac{w_1}{\wbar} p_t,
 \end{equation}
-dropping the \ec{subscript $t$ for the} dependence of the mean fitness on time in our notation, but remembering it.
+dropping the subscript $t$ for the dependence of the mean fitness on time in our notation, but remembering it.
 The change in frequency from one generation to the next is then given by
 \begin{equation}
 \Delta p_t = p_{t+1} - p_t= \frac{ w_1 p_t}{ \wbar} - p_t = \frac{w_1 p_t - \wbar p_t}{\wbar} = \frac{w_1 p_t - (w_1 p_t + w_2 q_t) p_t}{\wbar} = \frac{w_1 - w_2}{\wbar} p_t q_t,
@@ -95,7 +95,7 @@ we are looking at the relative frequencies of two `populations' (of
 alleles $A_1$ and $A_2$) that are growing (or declining)
 exponentially, under the constraint that $p$ and $q$ always sum to 1. \\
 
-Moreover, eqn.\ \eqref{eq:estTau} for the \ec{number of generations} $\tau$ it takes for a certain change in frequency to occur becomes
+Moreover, eqn.\ \eqref{eq:estTau} for the number of generations $\tau$ it takes for a certain change in frequency to occur becomes
 \begin{equation}
 	\label{eq:estTauExpl}
 	\tau = - \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right) /  \log\left(1-s\right).
@@ -360,7 +360,7 @@ We further note that the mean relative fitness can be expressed in terms of the 
 	\label{eq:meanFitInTermsOfMargFit}
 	\wbar = \wbar_1 p_t + \wbar_2 q_t,
 \end{equation}
-where, for notational simplicity, we have omitted \ec{subscript t for} the dependence of mean and marginal fitnesses on time.\\
+where, for notational simplicity, we have omitted subscript t for the dependence of mean and marginal fitnesses on time.\\
 
 We can then rewrite eqn.\ \eqref{deltap_dip1} using $\wbar_1$ and $\wbar_2$ as
 \begin{equation}
@@ -401,17 +401,6 @@ So far, our treatment of the diploid model of selection has been in terms of gen
 
 %%Selection coeffs in diploid model
 \subsection{Diploid directional selection}
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/simple_diploid_trajs.png}
-\end{center}
-\caption{The trajectory of the frequency of allele $A_1$, starting
-  from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
-  different dominance coefficients. The recessive allele will
-  eventually fix in the population, but it takes a long time.}
-  \label{fig:diploid_traj}
-\end{marginfigure}
-
 Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$. As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
 one we met in the haploid selection section, as follows:\\
 \begin{center}
@@ -426,6 +415,16 @@ Here, the selection coefficient $s$ is the difference in relative
 fitness between the two homozygotes, and $h$ is the
 dominance coefficient. \sa{For selection to be directional, we require that $0 \leq h \leq 1$ holds. The dominance coefficient allows us to move between two extremes. One is when $h = 0$, such that allele $A_1$ is fully dominant and $A_2$ fully recessive. In this case, the heterozygote $A_1A_2$ is as fit as the $A_1A_1$ homozgyote genotype. The inverse holds when $h = 1$, such that allele $A_1$ is fully recessive and $A_2$ fully dominant.}\\
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/simple_diploid_trajs.png}
+\end{center}
+\caption{The trajectory of the frequency of allele $A_1$, starting
+  from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
+  different dominance coefficients. The recessive allele will
+  eventually fix in the population, but it takes a long time.}
+  \label{fig:diploid_traj}
+\end{marginfigure}
 
 %\gc{Yellow monkey flowers ({\it Mimulus guttatus}) have repeatedly adapted
 %to the toxic soils found at copper mines throughout the Californian
@@ -447,7 +446,20 @@ where
 \wbar_t = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
+\begin{question}
+Through the Californian foothills the soils dumped from old copper and gold-mines are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings, he found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\$$ of the copper-tolerant seedlings survived to flower.\\
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[]{illustration_images/single_locus_selection/Copperopolis/KeystoneCopperMineCopperopolisCalaverasCounty.jpg}
+\end{center}
+\caption{.}
+  \label{fig:Copperopolis}
+\end{marginfigure}
+
+{\bf A)} What is the selection coefficient acting against the on-copper-tolerant allele on the mine tailing?\\
+{\bf B)} The copper-tolerant allele is fairly dominant in its action on fitness. If we assume that $h=0.1$, what percentage of heterozygotes should survive to flower?
+\end{question}
 \begin{question}
 Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
 \end{question}
@@ -456,14 +468,7 @@ Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:di
 %%%  https://twitter.com/BioDivLibrary/status/1046777289416081408
 
 %%%%%%%%%%%%%%%%%%%%%FOXSES
-\begin{marginfigure}
-\begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
-\end{center}
-\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
-  and silver foxes from left to right. From ``The
-  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
-\end{marginfigure}
+
 \begin{figure}
 \begin{center}
   \includegraphics[width = 0.8 \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
@@ -485,7 +490,14 @@ intensely and declined as a proportion of the population in Eastern Canada, see 
 from $16\%$ to $5\%$ from 1834 to 1937.
 \citeauthor{haldane:42} reanalyzed these data and showed that they
 were consistent with recessive selection acting against the silver
-morph alone. Note how the heterozygotes (cross) decline somewhat as a
+morph alone. \begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
+\end{center}
+\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
+  and silver foxes from left to right. From ``The
+  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
+\end{marginfigure} Note how the heterozygotes (cross) decline somewhat as a
 result of selection on the silver homozygotes, but overall the R
 allele is slow to respond to selection as it is `hidden' from
 selection in the heterozygote state.
@@ -493,6 +505,7 @@ selection in the heterozygote state.
 \graham{Add selection lines or get students to do that as an exercise.}
 
 
+\paragraph{Directional selection on an additive allele.}
 A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to
 \begin{equation}
 	\Delta p_t = \frac{1}{2}\frac{s}{\wbar}p_tq_t .
@@ -507,19 +520,18 @@ If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close t
 \end{equation}
 It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. Similarly, eqn.\ \ref{eq:fixTimeSimpl} for the haploid model suggests that in the diploid model without dominance it takes
+From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. From this similarity, we can extrapolate from Equation \eqref{eq:estTauExplSimpl} to find the time it takes for our diploid, beneficial, additive allele ($A_1$) to move from frequency $p_0$ to $p_{\tau}$ as
+\begin{equation}
+	\tau \approx \frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right)
+\end{equation}
+generations, this just differs by a factor of $2$ from our haploid model. Using this result we can find the time it takes for our favourable, additive allele ($A_1$) to transit from its entry into the population ($p_0 =1/(2N)$)
+to close to fixation ($p_{\tau} =1-1/(2N)$) as 
 \begin{equation}
 	\tau \approx \frac{4}{s} \log(2N)  \label{eq:diploid_fix_time}
 \end{equation}
-generations for the favourable allele ($A_1$)
- to transit from its entry into the population ($p_0 =1/(2N)$)
-to close to fixation ($p_{\tau} =1-1/(2N)$). Note again the difference
-by a factor of 2 due to the choice of parametrization. Also, the total
-number of alleles is $2N$ in the diploid model, rather than $N$, which
-explains another factor of 2 in the argument of the logarithm. More
-generally we can use this correspondence of the trajectory additive
-diploid model to the haploid model to understand how quickly allele
-frequencies should change between arbitrary frequencies, given a selection coefficient.\\
+generations. Note the similarity to eqn.\ \ref{eq:fixTimeSimpl} for the haploid model, with a difference
+by a factor of 2 due to the choice of parametrization 
+(and that the number of alleles is $2N$ in the diploid model, rather than $N$). Doubling our selection coefficient, halves the time it takes for our allele to move through the population.\\
 
 \begin{marginfigure}
 \begin{center}
