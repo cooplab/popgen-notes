@@ -317,9 +317,9 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 The multivariate breeders equation has a lot of different uses in understanding the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
 
 \paragraph{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
-
+\marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
 Individuals frequently behave in ways that sacrifice their own fitness for the
-benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. \marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
+benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. 
 His intuition was that while an individual is losing out of some reproductive output, the alleles underlying an altruistic behaviour can still spread in the population if this cost is outweighed by benefits gained 
 through the transmission of these alleles through a related individual. Note that this means that the
 allele is not acting in an self-sacrificing manner, even though individuals may as a result. 
@@ -347,20 +347,18 @@ nest. The altruistic trait could be as simple as growing at a slightly slower ra
 parents, or more complicated acts of altruism such as children foregoing their own reproduction so as to help their parents raise their siblings.
 
 
-\marginnote{In the usual formulation of Hamilton's Rule our
-  $2F$ is replaced by the `Coefficient of relationship', which is the
-  proportion of alleles shared between the individuals. Here we use
-  two times the kinship coefficient to keep things inline with our 
-  notation for these chapters. Note that if our individuals are themselves inbred we need
-to do a little more careful to reconcile these two measures.} 
+
 Providing the altruistic act has a cost $C$ to the fitness of our individual and failing to provide this act has no cost. Receiving this altruistic act confers a fitness benefit $B$ over individuals who did not receive this act. \citeauthor{hamilton1964genetical}'s rule states that such a trait will spread through the population if 
 \begin{equation}
  2F B > C 
 \end{equation}
 where $F$ is the average kinship coefficient between the interacting
-individuals ($i$ and $j$), here $2F$ is the average proportion of
-alleles that our pairs of individuals share identical by descent at a
-locus. So the altruistic behaviour will spread even if it is costly to the individual if its cost is paid off by the benefit to sufficiently related individuals. 
+individuals ($i$ and $j$). In the usual formulation of Hamilton's Rule our $2F$ is replaced by the `Coefficient of relationship', which is the
+  proportion of alleles shared between the individuals. Here we use
+  two times the kinship coefficient to keep things inline with our 
+  notation for these chapters. Note that if our individuals are themselves inbred we need
+to do a little more careful to reconcile these two measures.
+So the altruistic behaviour will spread even if it is costly to the individual if its cost is paid off by the benefit to sufficiently related individuals. 
 
 As one example of kin-selection consider \citet{krakauer2005kin}'s work on
 co-operative courtship in wild turkeys ({\it Meleagris
@@ -410,9 +408,7 @@ With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:
 Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
 intuition by deriving a simple version of Hamilton's Rule by thinking
 about the phenotypes of an individual's kin as genetically correlated
-phenotypes. \marginnote{ Here we'll follow a simplified version of
-  \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's
-  rule in a quantitative genetics framework (Hamilton's original papers did this in a population genetics framework).}
+phenotypes. 
 
 
 Following our multivariate breeder's equation, we can write the expected change of our behavioural phenotype as 
@@ -434,9 +430,11 @@ constant of proportionality). Therefore, our altruistic phenotype is increasing 
 So what's the average genetic covariance between
 individual $i$ and $j$'s alturistic phenotype? Well it's the same behavioural phenotype in both individuals, so the phenotypes are genetically correlated if our individuals are related to each other. The covariance of the same phenotype between two individuals is just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So our altruistic phenotype is increasing in the population if 
 \begin{eqnarray}
-   & B\frac{2 F_{i,j} V_A}{V_A} > C \nonumber  \\
-  2 F_{i,j} B > C 
+   & B\frac{2 F_{i,j} V_A}{V_A} &> C \nonumber  \\
+  2 F_{i,j} B & > C 
 \end{eqnarray}
+\marginnote{ Here we've followed a simplified version of
+  \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original papers did this in a population genetics framework).}
 Seen from this perspective, \citeauthor{hamilton1964genetical}'s rule
 is simply a statement that altruistic behaviours can spread via
 kin-selection, if the average cost to an individual of carrying altruistic alleles is paid back through the average benefit of interacting with altruistic relatives (kin)
