@@ -567,7 +567,7 @@ Here, $s_1$ and $s_2$ are the differences between the relative fitnesses
 of the two homozygotes and the heterozygote. Note that to obtain
 relative fitnesses we have divided
 absolute fitness by the heterozygote fitness. We could use the
-same parameterization as in the model of directional selection, but the reparameterization we have chosen here makes the math prettier.\\
+same parameterization as in the model of directional selection, but the reparameterization we have chosen here makes the math easier.\\
 
 In this case, when allele $A_1$ is rare, it is often found in a
 heterozygous state and so it increases in frequency. However, when
@@ -576,7 +576,9 @@ the allele $A_2$ is often found in the heterozygote state; it is
 now $A_2$ that increases in frequency at the expense of allele
 $1$. Thus, at least in the deterministic model, neither allele can
 reach fixation and both alleles will be maintained as a balanced
-polymorphism in the population at an equilibrium frequency.\\
+polymorphism in the population at an equilibrium frequency. What's
+happening here is that the marginal fitness of the $1$ allele is
+greater when it's at low frequency in the population ($\bar{w}_1 > \bar{w}_2 $)
 
 We can solve for this equilibrium frequency by setting $\Delta p_t = 0$ in  eqn.\ \eqref{deltap_dip2}, 
 i.e.\ $p_tq_t (\wbar_1-\wbar_2)=0$. Doing so, we find that there are three equilibria, all of which are stable. Two of them are not very interesting ($p=0$ or $q=0$), but the third one is the polymorphic equilibrium,  where
@@ -592,18 +594,30 @@ of $A_1$ at which the mean fitness of the population is maximised.\\
 \begin{center}
   \includegraphics[width = \textwidth]{Rcode/Soay_Sheep/Hopping_sheep_all.pdf}
 \end{center}
-\caption{ } \label{fig:Soay_fitness}
+\caption{For the three Soay sheep genotypes the offspring per year  ({\bf left}) and probability of
+  surviving a year ({\bf middle}), the product of the two ({\bf
+    right}). Thanks to Susan Johnston for supplying these numbers from \citet{Johnston}.
+} \label{fig:Soay_fitness}
 \end{figure}
 
 
 One example of a polymorphism maintained by heterozygote advantage is
 found in Soay sheep, a population of feral sheep on the island of Soay
-(about 40 miles off the coast of Scotland).  A large-effect locus
-controlling horn size is polymorphic in this population, with two
-alleles Hop and Ho+ segregating. The Ho+ allele is associated with
+(about 40 miles off the coast of Scotland).  The male sheep use their horns to defend females during
+the rut.  A large-effect locus
+controlling much of the genetic variation for horn size is polymorphic nearly the RXFP2 gene in this population, with two
+alleles Ho$^p$ and Ho$^+$ segregating. The Ho$^+$ allele is associated with
 growing larger horns. While the Hop allele is associated with smaller
-horns, with a reasonable proportion of Hop homozygotes developing no
-horns at all. 
+horns, with a reasonable proportion of Ho$^p$ homozygotes developing no
+horns at all. \citet{Johnston} found that the Ho locus had substantial
+effect on male, but female, fitness (see Figure \citep{fig:Soay_fitness}). The male Ho$^p$ homozygotes have lower yearly reproductive
+success presumably due to the fact that they perform poorly in male-male
+competition (left plot Figure \ref{fig:Soay_fitness}). Conversely the male Ho$^{+}$ homozygotes had lower
+yearly survival  (middle plot Figure \ref{fig:Soay_fitness}), likely because they spend little time feeding during
+the rut and so lose substantial body weight. Thus both of the
+homozygoats suffer their own tradeoffs between viability and
+fecundity. As a result the Ho$^p$Ho$^+$ heterozygotes have the highest
+fitness  (right plot Figure \ref{fig:Soay_fitness}).  
 
 
 \paragraph{Underdominance.} Another case that is of potential interest is the case of fitness

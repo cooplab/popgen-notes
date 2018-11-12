@@ -347,7 +347,6 @@ nest. The altruistic trait could be as simple as growing at a slightly slower ra
 parents, or more complicated acts of altruism such as children foregoing their own reproduction so as to help their parents raise their siblings.
 
 
-
 Providing the altruistic act has a cost $C$ to the fitness of our individual and failing to provide this act has no cost. Receiving this altruistic act confers a fitness benefit $B$ over individuals who did not receive this act. \citeauthor{hamilton1964genetical}'s rule states that such a trait will spread through the population if 
 \begin{equation}
  2F B > C 
@@ -396,7 +395,10 @@ $\nicefrac{1}{2}$ sibs, or first cousins?
 \end{marginfigure}
 
 
-To sketch a proof of this result, let's assume that our focal $i$ individual's fitness can be written as 
+Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
+intuition by deriving a simple version of Hamilton's Rule by thinking
+about the phenotypes of an individual's kin as genetically correlated
+phenotypes. To sketch a proof of this result, let's assume that our focal $i$ individual's fitness can be written as 
 \begin{equation}
 W(i,j)= W_0 + W_i +W_j
 \end{equation}
@@ -404,10 +406,7 @@ where $W_i$ is the contribution of the fitness of the individual $i$ due
 to their own phenotype, and $W_j$ is the contribution to our
 individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. $j$'s phenotype).
 With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:Hamilton_B_C}. 
-Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
-intuition by deriving a simple version of Hamilton's Rule by thinking
-about the phenotypes of an individual's kin as genetically correlated
-phenotypes. 
+
 
 
 Following our multivariate breeder's equation, we can write the expected change of our behavioural phenotype as 

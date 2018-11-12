@@ -30,5 +30,6 @@ mtext(side=2,"Probability of surviving to the next year",line=3,cex=1.4)
  axis(side=1,at=c(1,2,3),labels=c("Ho+, Ho+","Hop,Ho+","Hop,Hop"),cex.axis=1.5,cex.lab=1.5)
 mtext(side=2,"Yearly Viability x Fecundity",line=3,cex=1.4)
 
-dev.copy2pdf(file="~/Downloads/Hopping_sheep_all.pdf")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Rcode/Soay_Sheep/Hopping_sheep_all.pdf")
+#dev.copy2pdf(file="~/Downloads/Hopping_sheep_all.pdf")
 
