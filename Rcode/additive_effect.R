@@ -8,10 +8,10 @@ plot.lm.genos<-function(a,p,dom.arrows=FALSE){
 	pop.mean<-mean(a[as.character(genos)])	
 	
 	#symbols(x=0:2,y=a-sum(a*HWE),circles=HWE,ylim=range(a-sum(a*HWE)))
-	plot(y=range(a)*c(.5,1.5)-pop.mean,x=c(-0.5,2.5),type="n",axes=FALSE)
+	plot(y=range(a)*c(.5,1.5)-pop.mean,x=c(-0.5,2.5),type="n",axes=FALSE,xlab="",ylab="")
 	box()
-	axis(2)
-	axis(1,at=c(0,1,2))
+	axis(2,cex.axis=1.2)
+	axis(1,at=c(0,1,2),cex.axis=1.2)
 	symbols(x=0:2,y=a-pop.mean,circles=3*sqrt(HWE)/(2*pi),bg=adjustcolor("blue",0.2),add=TRUE,inches=FALSE)  #ylim=range(a)*c(.2,1.8),xlim=c(-1,3)
 	points(x=0:2,y=a-pop.mean,pch=19,cex=1)
 	abline(lm((phenos-pop.mean)~genos),col="red",lwd=3)
@@ -46,14 +46,20 @@ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/additive_effe
 
 ####BALANCING SELECTION
 layout(t(1:3))
-par(mar=c(2,2,1,1))
+par(mar=c(4,4,1,1))
 
 a<-c(0.5,1,0.75)
 p.eq<-(1-a[1])/sum(1-a[c(1,3)])
 
 plot.lm.genos(a=a,p=0.1,dom.arrows=TRUE)
+legend(x="topleft",paste("p =",0.1),cex=1.4)
+mtext("Fitness",side=2,line=2.5,cex=1.4)
 plot.lm.genos(a=a,p=p.eq,dom.arrows=TRUE)
+my.eq<-format(p.eq,dig=2)
+legend(x="topleft", expression(paste("p =", p[eq])),cex=1.4)
+mtext("Genotype",side=1,line=2.5,cex=1.4)
 plot.lm.genos(a=a,p=0.9,dom.arrows=TRUE)
+legend(x="topleft",paste("p =",0.9),cex=1.4)
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/additive_effect_OverDom.pdf")
 
 
