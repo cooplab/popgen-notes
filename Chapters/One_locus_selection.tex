@@ -309,7 +309,7 @@ Juv./Adult ($W_{\bullet}/\Wbar$)  & 0.4 & 2.3 & 1.2 \\
 rel. fitness ($W_{\bullet}/W_{12}$)  & 0.17 & 1.0 & 0.54 \\
 \end{tabular}
 \end{center}
-The heterozygotes have increased in frequency dramatically in the
+\erin{I think the fitness calculated above in the 3rd row should be Adult/Juv. not Juv./Adult} The heterozygotes have increased in frequency dramatically in the
 population as their fitness is more than double the mean fitness of
 the population. We can also calculate the relative fitness of each
 genotype by dividing through by the fitness of the fittest genotype,
@@ -420,7 +420,7 @@ dominance coefficient. \sa{For selection to be directional, we require that $0 \
 \end{center}
 \caption{The trajectory of the frequency of allele $A_1$, starting
   from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
-  different dominance coefficients. The recessive allele will
+  different dominance coefficients. The recessive beneficial allele ($h=1$) will
   eventually fix in the population, but it takes a long time.}
   \label{fig:diploid_traj}
 \end{marginfigure}
@@ -442,11 +442,11 @@ We can then rewrite eqn.\ \eqref{deltap_dip2} as
 \end{equation}
 where
 \begin{equation}
-\wbar_t = 1-2p_tq_t sh-q_t^2s.
+\wbar = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
 \begin{question}
-Throughout the Californian foothills are old copper and gold-mines, which have dumped out soils that are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these harsh soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings, he found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\$$ of the copper-tolerant seedlings survived to flower.\\
+\erin{I took off the t subscript form w_bar to be consistent with equation 6.30} Throughout the Californian foothills are old copper and gold-mines, which have dumped out soils that are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these harsh soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings and found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\%$ of the copper-tolerant seedlings survived to flower.\\
 
 \begin{marginfigure}
 \begin{center}
@@ -456,7 +456,7 @@ Throughout the Californian foothills are old copper and gold-mines, which have d
   \label{fig:Copperopolis}
 \end{marginfigure}
 
-{\bf A)} What is the selection coefficient acting against the on-copper-tolerant allele on the mine tailing?\\
+{\bf A)} What is the selection coefficient acting against the non-copper-tolerant allele on the mine tailing?\\
 {\bf B)} The copper-tolerant allele is fairly dominant in its action on fitness. If we assume that $h=0.1$, what percentage of heterozygotes should survive to flower?
 \end{question}
 \begin{question}
@@ -519,18 +519,18 @@ If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close t
 \end{equation}
 It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. From this similarity, we can extrapolate from Equation \eqref{eq:estTauExplSimpl} to find the time it takes for our diploid, beneficial, additive allele ($A_1$) to move from frequency $p_0$ to $p_{\tau}$ as
+From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. From this similarity, we can extrapolate from Equation \eqref{eq:estTauExplSimpl} to find the time it takes for our diploid, beneficial, additive allele ($A_1$) to move from frequency $p_0$ to $p_{\tau}$:
 \begin{equation}
 	\tau \approx \frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right)
 \end{equation}
-generations, this just differs by a factor of $2$ from our haploid model. Using this result we can find the time it takes for our favourable, additive allele ($A_1$) to transit from its entry into the population ($p_0 =1/(2N)$)
-to close to fixation ($p_{\tau} =1-1/(2N)$) as 
+generations; this just differs by a factor of $2$ from our haploid model. Using this result we can find the time it takes for our favourable, additive allele ($A_1$) to transit from its entry into the population ($p_0 =1/(2N)$)
+to close to fixation ($p_{\tau} =1-1/(2N)$):
 \begin{equation}
 	\tau \approx \frac{4}{s} \log(2N)  \label{eq:diploid_fix_time}
 \end{equation}
 generations. Note the similarity to eqn.\ \ref{eq:fixTimeSimpl} for the haploid model, with a difference
 by a factor of 2 due to the choice of parametrization 
-(and that the number of alleles is $2N$ in the diploid model, rather than $N$). Doubling our selection coefficient, halves the time it takes for our allele to move through the population.\\
+(and that the number of alleles is $2N$ in the diploid model, rather than $N$). Doubling our selection coefficient halves the time it takes for our allele to move through the population.\\
 
 \begin{marginfigure}
 \begin{center}
@@ -588,25 +588,25 @@ same parameterization as in the model of directional selection, but the reparame
 
 In this case, when allele $A_1$ is rare, it is often found in a
 heterozygous state, while the $A_2$ allele is usually in the
-homozygote state and so the $A_1$ increases in frequency. However, when
-allele $A_1$ is common, it is often found in the homozygote state, while
-the allele $A_2$ is often found in the heterozygote state; it is
-now $A_2$ that increases in frequency at the expense of allele
-$1$. Thus, at least in the deterministic model, neither allele can
+homozygote state and so it increases in frequency. However, when
+allele $A_1$ is common, it is often found in a less fit homozygous state, while
+allele $A_2$ is often found in a heterozygous state; thus it is
+now allele $A_2$ that increases in frequency at the expense of allele
+$A_1$. Thus, at least in the deterministic model, neither allele can
 reach fixation and both alleles will be maintained as a balanced
 polymorphism in the population at an equilibrium frequency. 
 
 
 We can solve for this equilibrium frequency by setting $\Delta p_t = 0$ in  eqn.\ \eqref{deltap_dip2}, 
 i.e.\ $p_tq_t (\wbar_1-\wbar_2)=0$. Doing so, we find that there are three equilibria, all of which are stable. Two of them are not very interesting ($p=0$ or $q=0$), but the third one is the polymorphic equilibrium,  where
-$\wbar_1=\wbar_2$ holds.
+$\wbar_1-\wbar_2=0$ holds.
 Using our $s_1$ and $s_2$ parametrization above, we see that the marginal fitnesses of
 the two alleles are equal when
 \begin{equation}
 	p_e = \frac{s_2}{s_1+s_2}
 \end{equation}
 for the equilibrium frequency of interest. This is also the frequency
-of $A_1$ at which the mean fitness of the population is maximised. The
+of $A_1$ at which the mean fitness of the population is maximized. The
 highest possible fitness of the population would be achieved if every
 individual was a heterozygote, however, Mendelian segregation of alleles in the
 gametes of heterozygotes means that a sexual population can never
@@ -614,6 +614,7 @@ achieve a completely heterozygote population. This equilibrium
 frequency represents an evolutionary compromise between the advantages
 of the heterozygotes and the comparative costs of the two
 homozygotes.\\
+
 
 
 \begin{figure}
@@ -628,6 +629,7 @@ homozygotes.\\
 
 
 One example of a polymorphism maintained by heterozygote advantage is
+<<<<<<< HEAD
 a horn-size polymorphism found in Soay sheep, a population of feral sheep on the island of Soay
 (about 40 miles off the coast of Scotland).  The male sheep use their horns to defend females during
 the rut. \citet{johnston2013life} found a large-effect locus,  at the
@@ -711,6 +713,15 @@ linear regression of genotype on fitness is zero.
 
 
 
+%=======
+%found in Soay sheep, a population of feral sheep on the island of Soay
+%(about 40 miles off the coast of Scotland).  A large-effect locus
+%controlling horn size is polymorphic in this population, with two
+%alleles Hop and Ho+ segregating. The Ho+ allele is associated with
+%growing larger horns, while the Hop allele is associated with smaller
+%horns, with a reasonable proportion of Hop homozygotes developing no
+%horns at all. \ec{While the largest horned males have the highest fecundity, they are least likely to survive the winter, having expended a great deal of energy and time fighting other males over potential mates, while their lesser-horned peers fattened up for winter. Due to this trade-off between survival and fecundity, the heterozygotes with moderate sized horns have the highest fitness, and the Hop allele is maintained as a balanced polymorphism.} \erin{this paragraph was missing the end of the Soay sheep story so I've attempted to fill in..}
+%>>>>>>> a939a6300e85a26497ba60f58a276c880b4d0e99
 
 
 \paragraph{Underdominance.} Another case that is of potential interest is the case of fitness
@@ -739,14 +750,12 @@ stepwise fashion, i.e.\ not by a single mutation, in separate
 subpopulations. Now, heterozygote disadvantage will play a
 potential role in species maintenance, if isolation of the subpopulations is not complete.\\
 
-\begin{tcolorbox} 
 \begin{question}
 You are studying the polymorphism that affects flight speed in butterflies. The polymorphism does not appear to affect fecundity.  Homozygotes for the B allele are slow in flight and so only 40\% of them survive to have offspring. Heterozygotes for the polymorphism (Bb) fly quickly and have a 70\% probability of surviving to reproduce. The homozygotes for the alternative allele (bb) fly very quickly indeed, but often die of exhaustion, with only 10\% of them making it to reproduction.  \\
 {\bf A)} What is the equilibrium frequency of the B allele?\\
 {\bf B)} Calculate the marginal fitnesses of the B and the b allele at
 the equilbrium frequency. 
 \end{question}
-\end{tcolorbox}
 
 \paragraph{Diploid fluctuating fitness}
 
