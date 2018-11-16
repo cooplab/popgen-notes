@@ -584,7 +584,17 @@ Here, $s_1$ and $s_2$ are the differences between the relative fitnesses
 of the two homozygotes and the heterozygote. Note that to obtain
 relative fitnesses we have divided
 absolute fitness by the heterozygote fitness. We could use the
-same parameterization as in the model of directional selection, but the reparameterization we have chosen here makes the math easier.\\
+same parameterization as in the model of directional selection, but
+the reparameterization we have chosen here makes the math easier.\\
+
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/het_advant_traj.pdf}
+\end{center}
+\caption{ } \label{fig: het_advant_traj}
+\end{marginfigure}
+
 
 In this case, when allele $A_1$ is rare, it is often found in a
 heterozygous state, while the $A_2$ allele is usually in the
@@ -596,7 +606,12 @@ $A_1$. Thus, at least in the deterministic model, neither allele can
 reach fixation and both alleles will be maintained as a balanced
 polymorphism in the population at an equilibrium frequency. 
 
-
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/het_advant_dp_wbar.pdf}
+\end{center}
+\caption{ } \label{fig: het_advant_traj}
+\end{marginfigure}
 We can solve for this equilibrium frequency by setting $\Delta p_t = 0$ in  eqn.\ \eqref{deltap_dip2}, 
 i.e.\ $p_tq_t (\wbar_1-\wbar_2)=0$. Doing so, we find that there are three equilibria, all of which are stable. Two of them are not very interesting ($p=0$ or $q=0$), but the third one is the polymorphic equilibrium,  where
 $\wbar_1-\wbar_2=0$ holds.
@@ -659,8 +674,8 @@ Assume that the frequency of the Ho$^P$ allele is 10\%, that there are 1000 male
 {\bf A)} What is the expected number of males with each of the three genotypes in the population at birth? \\
 
 {\bf B)} Assume that a typical male individual of three different genotypes have the following probabilities of surviving to adulthood:
-\begin{tabular}[ccc]
-Ho$^+$ Ho$^+$ 	& Ho$^+$ Ho$^p$	& Ho$^p$ Ho$^p$\\
+\begin{tabular}{ccc}
+Ho$^{+}$ Ho$^{+}$ & Ho$^{+}$ Ho$^p$ & Ho$^p$ Ho$^p$\\
   0.5	 &	0.8	&	0.8
   \end{tabular}
 Making the assumptions from above,  how many males of each genotype
@@ -686,6 +701,7 @@ middle panel the frequency is set to the equilibrium frequency. } \label{fig:add
 \end{figure}
 
 
+%  https://commons.wikimedia.org/wiki/File:Island_of_St_kildA,_J_Norman_Heathcote,_1900.jpg
 
 To push our understanding of heterozygote advantage a little further, note that the 
 marginal fitnesses of our alleles are the additive effects of our
@@ -734,6 +750,20 @@ homozygotes. This can be parametrized as follows: \\
 	relative fitness (specific)  & $1+s_1$ & $1$ & $1+s_2$ \\
 \end{tabular}\\
 \end{center}
+
+
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Pseudacraea_eurytus/Pseudacraea_eurytus.JPG}
+\end{center}
+\caption{In {\it Pseudacraea eurytus} there are two homozygotes morphs that mimic
+ a different blue and orange butterfly; the heterozgote fails to mimic
+either successfully and so suffers a high rate of predation
+\citep{owen1972polymorphic}. From Illustrations of new species of
+exotic butterflies (1868) Hewitson.} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
+\end{marginfigure}
+
 
 This case also permits three equilibria, $p=0$, $p=1$, and a
 polymorphic equilibrium $p=p_U$. However,
