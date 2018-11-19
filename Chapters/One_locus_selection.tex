@@ -540,7 +540,7 @@ by a factor of 2 due to the choice of parametrization
 \end{marginfigure}
 
 \begin{question}
-Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the very high pollution levels in the Houston shipping canal since the 1950s. One of the ways that they've adapted is through the deletion of their aryl hydrocarbon receptor (AHR) gene. Oziolor et al. estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, ec{starting as a single copy in this population}?
+Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the very high pollution levels in the Houston shipping canal since the 1950s. One of the ways that they've adapted is through the deletion of their aryl hydrocarbon receptor (AHR) gene. Oziolor et al. estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, starting as a single copy in this population?
 \end{question}
 
 
@@ -780,7 +780,7 @@ fluctuating in frequency in response to temporally-varying selection are shown i
 lifespan of {\it Drosophila} we can see seasonally-varying
 selection. The first example is an inversion allele in {\it Drosophila pseudoobscura} populations. Throughout western North America, two orientations of the
 chromosome, two 'inversion alleles', exist: the Chiricahua and Standard
-alleles. \citet{dobzhansky1943,wright:46}
+alleles. \citet{dobzhansky1943} and \citet{wright:46}
 investigated the frequency of these inversion alleles over
 four years at a number of locations and found that their frequency
 fluctuated systematically over the seasons in response to
@@ -801,7 +801,7 @@ developmental time and fecundity, which could mediate the maintenance of this po
 \caption{{\bf Left)} Seasonal variation in the frequency of the `Standard' inversion allele in
   {\it Drosophila pseudoobscura} for three populations from Mount San
   Jacinto, CA. These frequencies are an average
-  over four years. Data from \ref{wright:46}. {\bf Right)} The
+  over four years. Data from \citet{wright:46}. {\bf Right)} The
   frequency of an allele at the Insulin-like Receptor gene over three
   years in {\it Drosophila melanogaster} samples from an Orchard in Pennsylvania. Data from \citet{paaby:14}.} \label{fig:Droso_fluct} 
 \end{figure}
@@ -1129,13 +1129,15 @@ low frequencies in the population, as long as they do not have too
 strong a deleterious effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
 \begin{question}
-Assume that a deleterious allele has a relative fitness $.99$ in
-heterozygotes and a relative fitness $0.2$. Assume that the
+\gc{Assume that a deleterious allele has a relative fitness $.99$ in
+heterozygotes and a relative fitness $0.2$ when present in the
+homozygote state.} Assume that the
 deleterious allele is at a frequency $10^{-3}$ at birth and the
 genotype frequencies follow from HWE:\\
 {\bf A)} What is the average fitness of an individual in the population
-due to this allele? \\
- {\bf B)} What is the fitness of the child of a full-sib mating? \\
+due to this\gc{ locus?} \\
+ {\bf B)} What is the average fitness of the child of a full-sib
+ mating \gc{due to this locus?} \\
 \end{question}
 \begin{figure}
 \begin{center}
@@ -1191,7 +1193,7 @@ The frequency of the deleterious allele is decreased due to
 the allele now being expressed in homozygotes, and therefore exposed
 to selection, more often due to inbreeding.  All else being equal,
 then populations with a high degree of inbreeding will purge their load. 
-
+\graham{Add plant eg of purging}
 \subsection{Migration--selection balance}
 Another reason for the persistence of deleterious alleles in a
 population is that there is a constant influx of maladaptive alleles
@@ -1320,6 +1322,7 @@ flow. What is the selection coefficient acting against the dark $D$ allele
 at the Tule mountain site? 
 \end{question}
 
+
 We can also extend these ideas beyond our discrete model to a model of a population spread out
 on a landscape where individuals migrate in a more continuous
 fashion. To take a simple case of this let's assume a one dimensional
@@ -1329,22 +1332,51 @@ transect through some environmental transition. Our individuals
 disperse to live on average $\sigma$ miles away from where they were
 born (we can think of this as our individuals migrating a random
 distance drawn from a normal distribution, with mean zero, and $\sigma$ being the standard
-deviation of this distribution). We'll think of a balletic model where
-our allele 1 has an selective advantage $s$ over allele $2$ to the east of our transition, and
-this flios to allele $2$ having this advantage west of the
-transition. 
+deviation of this distribution). \marginnote{``Upon an island hard to reach,
+the East Beast sits upon his beach.
+Upon the west beach sits the West Beast.
+Each beach beast thinks he's the best beast.'' --
+Theodor Seuss Geisel}    We'll think of a balletic model where
+the homozygotes for allele 1 has an additive selective advantage $s$
+over allele $2$ homozygotes to the east of our transition, left of
+zero in Figure \ref{fig:cline_main}. This flips to allele $2$ having this advantage west of the
+transition (right of zero). 
 
-To model our abrupt environmental
-transition we'll assume that
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{figures/equilib_cline.png}
+\end{center}
+\caption{An equilibrium cline in allele frequency. Our individuals
+  dispersal an average distance of $\sigma=1$km per generation, and our
+allele $2$ has a relative fitness of $1+s$ and $1-s$ on either side of
+the environmental change at $x=0$.} \label{fig:cline_main}
+\end{figure}
 
-$\gamma(x)= 1$ for
-$x<0$ and $\gamma(x)= -1$ for $x \geq 0$, i.e. our allele $2$ has a selective
-advantage at locations to the left of zero, while this allele is at a
-disadvantage to the right of zero. In this case we can get an equilibrium
-distribution of our two alleles were to the left of $zero$ our allele $2$ is at
+With this setup we get an get an equilibrium
+distribution of our two alleles were to the left of zero our allele $2$ is at
 higher frequency, while to the right of zero allele $1$ predominates. As we
 cross from the left to the right side of our range the frequency of our allele
-$2$ decreases in a smooth cline
+$2$ decreases in a smooth cline. The width of this cline, i.e. the
+geographic distance over which frequency change, depends on
+the relative strengths of dispersal and selection. If selection is
+strong compared to dispersal, then selection acts to remove maladaptive
+alleles much faster than migration acts to move alleles across the
+environmental transition. Thus the allele frequency transition would
+be very rapid as we move across the environmental transition. While, if individuals
+dispersal long distances, and selection is weak,  many alleles are being moved back and forth over the
+environmental transition much faster than selection can act against
+these alleles and so the cline would be very wide. 
+
+The width of our cline, i.e. over what distance do we make this shift
+from allele $2$ predominating to allele $1$,
+can be defined in a number of different ways. One simple way to define
+the cline width, which is easy to define but perhaps hard to measure accurately, is the slope (i.e. the
+tangent) of $q(x)$ at $x=0$. Under this definition the cline width is
+approximately
+\begin{equation}
+  0.6 \sigma/\sqrt{s}
+\end{equation}
+miles. 
 
 % \begin{question}
 % You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively) neutral biallelic markers the freshwater population has frequencies:\\
@@ -1489,10 +1521,10 @@ the cline width, which is easy to define but perhaps hard to measure accurately,
 tangent) of $q(x)$ at $x=0$. Under this definition the cline width is approximately $0.6
 \sigma/\sqrt{s}$.\\
 
-\paragraph{The rate of spatial spread of a beneficial allele.}
-Consider a beneficial mutation that has arisen in a specific spatial
-location and has begun to spread geographically. 
-\gc{FINISH THIS.}
+%\paragraph{The rate of spatial spread of a beneficial allele.}
+%Consider a beneficial mutation that has arisen in a specific spatial
+%location and has begun to spread geographically. 
+%\gc{FINISH THIS.}
 
 
 \newpage
