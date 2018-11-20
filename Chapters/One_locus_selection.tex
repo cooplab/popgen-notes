@@ -956,7 +956,7 @@ Mutation is constantly introducing new alleles into the
 population. Therefore, variation can be maintained within a
 population not only if selection is balancing (e.g.\ through heterozygote advantage or fluctuating selection over time, as we have seen in the previous section), but also due to a balance between
 mutation introducing deleterious alleles and selection acting to purge
-them from the population \citep{Haldane:37}. To study this balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
+these alleles from the population \citep{Haldane:37}. To study mutation-selection balance, we return to the model of directional selection, where allele $A_1$ is advantageous, i.e.
 \begin{center}
 \begin{tabular}{lccc}
 genotype & $A_1A_1$ & $A_1A_2$ & $A_2A_2$ \\
@@ -1006,11 +1006,11 @@ the reduction in relative fitness in the heterozygote ($hs$).}\\
 It is worth pointing out that the fitness of the $A_2A_2$ homozygote
 has not entered this calculation, as $A_2$ is so rare that it is hardly ever found in the 
 homozygous state. Therefore, if $A_2$ has any deleterious effect
-in a heterozygous state (i.e.\ if $h>0$) it is this effect that determines the
+in a heterozygous state (i.e.\ if $h>0$), it is this effect that determines the
 frequency at which $A_2$ is maintained in the population. Also, note that by
 writing the total change in allele frequency as $\Delta_M q_t + \Delta_S q_t
 $ we have implicitly assumed that we can ignore terms of order $\mu
-\times s$. That is, we have assumed that there is no interaction between mutation and selection. This assumption is valid given we assumed that both $\mu$ and $s$ are small.\\
+\times s$. That is, we have assumed that there is no interaction between mutation and selection.\erin{it's somewhat unclear what you mean by 'no interaction', my understanding is that we're saying that, for a single generation of selection, we don't need to think about selection against mutations arising in that same generation} This assumption is valid under our prior assumption that both $\mu$ and $s$ are small.\\
 
 
 If an allele is truly recessive (although few likely are), we have $h=0$, and
@@ -1041,13 +1041,13 @@ gene underlying this condition is $10^{-5}$. What is the relative fitness of het
 
 
 \paragraph{The genetic load of deleterious alleles}
-What effect do such deleterious mutations at mutation--selection balance have on the population? It is common to express this effect in terms of a reduction of the mean relative fitness of the population. For a single site at which a deleterious mutation is segregating at $q_e = \mu/(hs)$, the mean relative fitness is reduced to
+What effect do such deleterious mutations at mutation--selection balance have on the population? It is common to \ec{quantify} the effect of deleterious alleles in terms of a reduction of the mean relative fitness of the population. For a single site at which a deleterious mutation is segregating at frequency $q_e = \mu/(hs)$, the population mean relative fitness is reduced to
 \begin{equation}
 	\wbar = 1- 2p_e q_e hs - q_e^2s \approx 1-2\mu.
 \end{equation}
 Somewhat remarkably, the drop in mean fitness due to a site segregating
 at mutation--selection balance is independent of the selection coefficient against the
-heterozygote; it depends only on the mutation rate. Note that this applies only if the mutation is not totally recessive, i.e.\ if $h > 0$.
+heterozygote; it depends only on the mutation rate. \ec{Intuitively this is because, given a fixed mutation rate, less deleterious alleles can rise to a higher equilibrium frequency, and thus contribute the same total load as more deleterious (rarer) alleles, but this load is spread across more individuals in the population}. Note that this result applies only if the mutation is not totally recessive, i.e.\ if $h > 0$.
 
 A fitness reduction of $2\mu$ is very small, given that the
 mutation rate of a gene is likely $<10^{-5}$. However, if there are many loci
@@ -1056,11 +1056,11 @@ genetic load, a major cause of variation in fitness-related traits
 among individuals. For example, the human genome contains over twenty
 thousand genes, and many other functional regions, the vast majority
 of which will be subject to purifying selection against mutations that
-disrupt their function. In humans most loss of function (LOF) variants, which severely
+disrupt their function. In humans, most loss of function (LOF) variants, which severely
 disrupt a protein-coding gene, are found at low frequencies. However, each human genome typically carries over
 a hundred LOF variants \citep{macarthur:12,lek:16}. Not every LOF allele will be
-deleterious, some could even be advantageous, but the combined load of these
-LOF must on average lower our fitness, otherwise selection wouldn't be
+deleterious; some could even be advantageous. However, the combined load of these
+LOF alleles must on average lower our fitness, otherwise selection wouldn't be
 removing them from the population. Each one of us
 carries a unique set of these LOF alleles, usually in a heterozygous state. We differ slightly in how
 many of these alleles we carry. For example, the left side of Figure \ref{fig:LOF} shows
@@ -1076,23 +1076,23 @@ with more.
 \end{center}
 \caption{{\bf Left)} The distribution of LOF alleles in 769 individuals from the
   Genome of the Netherlands project. Data from
-  \citeauthor{francioli:14}. The average individual carries 144 LOF
+  \citeauthor{francioli:14}. The average individual (red line) carries 144 LOF
   alleles. {\bf Right)}. The relative fitness of individuals carrying
   these varying numbers  of LOF alleles, assuming multiplicative
   selection and a selection coefficient of $sh=10^{-2}$ acting against
   these alleles \citep{cassa2017}.} \label{fig:LOF} 
 \end{figure}
 
-How do these differences mount up? Well, if we are willing to assume
-that these differences interact multiplicatively, we can make some
+How do these differences \ec{across individuals in total LOF mutations} mount up? \erin{I'm going to assume 'mount up' is British for 'add up'} Well, if we are willing to assume
+that \ec{the fitness costs of deleterious alleles} interact multiplicatively, we can make some
 progress. If an individual who carries one LOF mutation has a fitness
 $1-hs$,  then an individual who's heterozygote for two LOF mutations would have
 fitness $(1-hs)^2$, and an individual who is heterozygote for $L$ LOF
 alleles would have fitness  $(1-hs)^L$. The right-hand side of Figure
 \ref{fig:LOF} shows the predicted fitness of individuals carrying
 varying number of LOF alleles, relative to the mean
-fitness of the sample, using this multiplicative model. Now we don't yet know how much lower the fitness of these
-individuals really is, nor how most of these alleles manifest their fitness
+fitness of the sample, using this multiplicative model. We don't yet know how much lower the fitness of these
+individuals really is, nor do we know how most of these LOF alleles manifest their fitness
 consequences through disease and other mechanisms.  However, it's a
 reasonable guess that this
 variation in LOF alleles, presumably maintained by mutation-selection balance, is
@@ -1124,7 +1124,7 @@ a major source of variation in fitness.
 \subsection{Inbreeding depression}
 All else being equal, eqn.\ \eqref{eqn:mut_sel_bal} suggests that mutations that have a smaller effect in the
 heterozygote can segregate at higher frequency under mutation--selection balance. As a consequence, alleles that have
-strongly deleterious effects in the homozygous state can segregate at
+strongly deleterious effects in the homozygous state can still segregate at
 low frequencies in the population, as long as they do not have too 
 strong a deleterious effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
@@ -1133,11 +1133,10 @@ alleles with recessive deleterious effects segregating within them.
 heterozygotes and a relative fitness $0.2$ when present in the
 homozygote state.} Assume that the
 deleterious allele is at a frequency $10^{-3}$ at birth and the
-genotype frequencies follow from HWE:\\
-{\bf A)} What is the average fitness of an individual in the population
-due to this\gc{ locus?} \\
+genotype frequencies follow from HWE. \ec{Only considering the fitness effects of this locus: }\\
+{\bf A)} What is the average fitness of an individual in the population? \\
  {\bf B)} What is the average fitness of the child of a full-sib
- mating \gc{due to this locus?} \\
+ mating? \\
 \end{question}
 \begin{figure}
 \begin{center}
@@ -1148,11 +1147,9 @@ due to this\gc{ locus?} \\
   family crosses.  Redrawn from \citeauthor{richards:00}. } \label{fig:Silene_inbreeding} 
 \end{figure}
 
-One consequence of segregating for low-frequency recessive deleterious alleles is that inbred individuals from usually outbred
-populations may have lower fitnesses than outbred
-individuals.  In typically outbred populations, the mean fitness of individuals
-decreases with the inbreeding coefficient, i.e.\ this so-called inbreeding depression
-is a common observation. This is wide-spread observation dates back to systematic
+One consequence of segregating for low-frequency recessive deleterious alleles is that \ec{inbreeding can reduce fitness}.  In typically outbred populations, the mean fitness of individuals
+decreases with the inbreeding coefficient, i.e. so-called 'inbreeding depression'
+is a common observation. This wide-spread observation dates back to systematic
 surveys of inbreeding depression by \citet{darwin:1876}.
 Inbreeding depression is likely primarily a consequence of being homozygous at many loci for
 alleles with recessive deleterious effects.
@@ -1191,16 +1188,16 @@ model, now with inbreeding, the equilibrium frequency is
 \end{equation}
 The frequency of the deleterious allele is decreased due to
 the allele now being expressed in homozygotes, and therefore exposed
-to selection, more often due to inbreeding.  All else being equal,
-then populations with a high degree of inbreeding will purge their load. 
+to selection, more often due to inbreeding.  Thus, all else being equal,
+populations with a high degree of inbreeding will purge their load. 
 \graham{Add plant eg of purging}
 \subsection{Migration--selection balance}
 Another reason for the persistence of deleterious alleles in a
 population is that there is a constant influx of maladaptive alleles
-from other populations where these alleles are locally adapted.
-This seems unlikely to be as broad an explanation for the
+from other populations where these alleles are locally adaptive.
+Migration--selection balance seems unlikely to be as broad an explanation for the
 persistence of deleterious alleles genome-wide as mutation-selection
-balance. However, a brief discussion of such alleles is worthwhile as
+balance. However, a brief discussion of such alleles is worthwhile, as
 it helps to inform our ideas about local adaptation.\\
 
 
@@ -1212,18 +1209,18 @@ it helps to inform our ideas about local adaptation.\\
   nordens flora  (1917).  Mentz, A \& Ostenfeld, C H.} \label{fig:Zinc_plant} 
 \end{marginfigure}
 
-Local adaptation can occur over a range of geographic scales. Local
+Local adaptation \erin{do you need to define local adaptation here?} can occur over a range of geographic scales. Local
 adaptation is relatively unimpeded by migration at broad
 geographically scales, where selection pressures change more slowly than distances
 over which individuals typically migrate over a number of
-generations. Adaptation can potentially occur on much finer geographic scales
-from kilometers down to meters in some species. On such scales
+generations. Adaptation can, however, potentially occur on much finer geographic scales,
+from kilometers down to meters in some species. On such small scales,
 dispersal is surely rapidly moving alleles between environments, but
-the adaptation is maintained by the continued action of selection. An
+local adaptation is maintained by the continued action of selection. An
 example of adaptation at fine-scales is shown in Figure
 \ref{fig:Zinc_mine} \graham{Fix axis on graph}. \citet{jain1966evolutionary}
 studied the patterns of heavy-metal resistance in plants
-on mine tailings and in nearby meadows, a set of classic studies of 
+on mine tailings and in nearby meadows, a set of classic studies of \ec{population differences maintained by local adaptation to different soils}.
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Anthoxanthum_mines_Jain_Bradshaw/Anthoxanthum_zinc.pdf}
@@ -1233,12 +1230,11 @@ odoratum} on and off of the Trelogan
 Mine, Flintshire, North Wales. Data from \citet{jain1966evolutionary}.} \label{fig:Zinc_mine} 
 \end{figure}
 Even at these very short geographically scales, over which seed and
-pollen will definitely move. we see strong local
-adaptation. Zinc-intolerant alleles are kept from growing on the
-zinc-heavy soils of the mine, and zinc-tolerant alleles likely prevented from spreading to
-the meadow by some tradeoff. 
+pollen will definitely move, we see strong local
+adaptation. Zinc-intolerant alleles are \ec{nearly absent from the mine tailings because they prevent plants} from growing on \ec{these}
+zinc-heavy soils; \ec{conversely, zinc-tolerant alleles do not spread into the meadow populations,  likely due to some trade-off or fitness cost of zinc-tolerance}.
 
-As a first pass at developing a model of local adaptation let's consider a haploid two allele model with
+As a first pass at developing a model of local adaptation, let's consider a haploid two-allele model with
 two different populations, see Figure \ref{fig:mig_sel_bal}, where the relative fitnesses of our alleles
 are as follows
 \begin{center}
@@ -1249,9 +1245,9 @@ population 1 & 1 & 1-s \\
 population 2 & 1-s & 1 \\
 \end{tabular}
 \end{center}
-As a simple model of migration lets suppose within a population a
+As a simple model of migration, let's suppose within a population a
 fraction of $m$ individuals are migrants from the other population,
-and $1-m$ individuals are from the same deme.\\
+and $1-m$ individuals are from the same population.\\
 \begin{marginfigure}
 \begin{center}
   \includegraphics[width = \textwidth]{figures/mig_sel_balance_haploid.pdf}
@@ -1259,8 +1255,8 @@ and $1-m$ individuals are from the same deme.\\
 \caption{Setup of a two-population haploid model of local adaptation.} \label{fig:mig_sel_bal} 
 \end{marginfigure}
 
-To quickly sketch a solution to this, we'll set up a situation analogous
-to our mutation-selection balance model. To do this let's assume that selection is strong compared to migration ($s \gg m$) then allele
+To quickly sketch \ec{an equilibrium} solution to this \ec{scenario}, we'll \ec{take an approach} analogous
+to our mutation-selection balance model. To do this, let's assume that selection is strong compared to migration ($s \gg m$), such that allele
 $1$ will be almost fixed in population $1$ and allele $2$ will be
 almost fixed in population $2$. If that is the case,
 migration changes the frequency of allele $2$ in population $1$ ($q_1$) by
@@ -1274,15 +1270,15 @@ population $1$ of
 \begin{equation}
 q_{e,1} = \frac{m}{s}
 \end{equation}
-so that migration is playing the role of mutation and so
-migration-selection balance (at least under strong selection) is
-analogous to mutation selection balance.\\
+Here, migration is playing the role of mutation and so
+migration--selection balance (at least under strong selection) is
+analogous to mutation--selection balance.\\
 
 We can use this same model by analogy for the case of
-migration-selection balance in a diploid model, in that case we replace
+migration--selection balance in a diploid model. For the diploid case, we replace
 our haploid $s$ by the cost to heterozygotes $hs$ from our directional
-selection model, to give the diploid
-migration selection balance frequency as
+selection model, resulting in a diploid
+migration--selection balance equilibrium frequency of
 \begin{equation}
 q_{e,1} = \frac{m}{hs}
 \end{equation}
@@ -1296,36 +1292,31 @@ q_{e,1} = \frac{m}{hs}
   locations. Data from \citet{hoekstra2004ecological}.} \label{fig:mig_sel_bal_mice} 
 \end{figure}
 
-As an example of fine-scale local adaptation due to a single locus
-consider the case of the Rock pocket mice adapting to lava flows. Throughout the deserts of the American
-southwest there are old lava flows, where the rocks and soils are much
+As an example of fine-scale local adaptation due to a single locus,
+consider the case of the rock pocket mice adapting to lava flows. Throughout the deserts of the American
+Southwest there are old lava flows, where the rocks and soils are much
 dark than the surrounding desert. Many populations of small animals
 that live on these flows have evolved darker pigmentation to be
-cryptic against this dark substrate to better avoid visual predators. 
-One example are the Rock pocket mice who live on the Pinacate
+cryptic against this dark substrate and better avoid visual predators. 
+One example \ec{of locally adapted prey} are the rock pocket mice who live on the Pinacate
 lava flow on the Arizona-Mexico border, studied by
-\citet{hoekstra2004ecological}. These mice have much darker, more melanic, pelts 
-than those who live on nearby rocky outcrops (see Figure \ref{fig:mig_sel_bal_mice}).   %https://hoekstra.oeb.harvard.edu/files/hoekstra/files/hoekstra2005vol.pdf 
+\citet{hoekstra2004ecological}. These mice have much darker, more melanic pelts 
+than \ec{the mice} who live on nearby rocky outcrops (see Figure \ref{fig:mig_sel_bal_mice}).   %https://hoekstra.oeb.harvard.edu/files/hoekstra/files/hoekstra2005vol.pdf 
 \citet{nachman2003genetic} determined that a dominant allele ($D$) at MC1R
-is the primary determinant on this Melanic phenotype. The frequency of
+is the primary determinant of this melanic phenotype. The frequency of
 this allele across study sites is shown in Figure
 \ref{fig:mig_sel_bal_mice}. \citet{hoekstra2004ecological} found that
-other, unlinked markers showed little differentiation over these populations,
-suggesting that the migration rate is high. 
+other, unlinked markers showed little differentiation over these populations, suggesting that the migration rate is high. 
 
 \begin{question}
 \citet{hoekstra2004ecological} found that the dark $D$ allele was at
-$3\%$ at the Tule Mountains study site. Using $F_{ST}$-based
+$3\%$ frequency at the Tule Mountains study site. Using $F_{ST}$-based
 approaches, for unlinked markers, they estimated that the per individual migration rate was $m=7.0 \times
-10^{-4}$ per generation between this site and the  Pinacate lava
-flow. What is the selection coefficient acting against the dark $D$ allele
-at the Tule mountain site? 
+10^{-4}$ per generation between this site and the  Pinacate lava flow. What is the selection coefficient acting against the dark $D$ allele at the Tule Mountains site? 
 \end{question}
 
 \paragraph{The width of a genetic cline.}
-We can also extend these ideas beyond our discrete model to a model of a population spread out
-on a landscape where individuals migrate in a more continuous
-fashion. To take a simple case of this let's assume a one dimensional
+We can also extend these ideas beyond our discrete model to a model of a population spread out on a landscape where individuals migrate in a more continuous fashion. For simplicity, let's assume a one dimensional
 habitat, where the habitat makes a sharp transition in the middle of
 our region. You could imagine this to be a set of populations sampled along a
 transect through some environmental transition. Our individuals
@@ -1336,11 +1327,10 @@ deviation of this distribution). \marginnote{``Upon an island hard to reach,
 the East Beast sits upon his beach.
 Upon the west beach sits the West Beast.
 Each beach beast thinks he's the best beast.'' --
-Theodor Seuss Geisel}    We'll think of a balletic model where
-the homozygotes for allele 1 has an additive selective advantage $s$
-over allele $2$ homozygotes to the east of our transition, left of
-zero in Figure \ref{fig:cline_main}. This flips to allele $2$ having this advantage west of the
-transition (right of zero). 
+Theodor Seuss Geisel}    We'll think of a \ec{bi-allelic} model where
+the homozygotes for allele 1 have an additive selective advantage $s$
+over allele $2$ homozygotes to the east of our habitat transition (left of
+zero in Figure \ref{fig:cline_main}). This flips to allele $2$ having the same advantage $s$ west of the transition (right of zero). 
 
 \begin{figure}
 \begin{center}
@@ -1353,31 +1343,31 @@ allele $2$ has a relative fitness of $1+s$ and $1-s$ on either side of
 the environmental change at $x=0$.} \label{fig:cline_main}
 \end{figure}
 
-With this setup we get an get an equilibrium
-distribution of our two alleles were to the left of zero our allele $2$ is at
+With this setup, we get an equilibrium
+distribution of our two alleles where to the left of zero our allele $2$ is at
 higher frequency, while to the right of zero allele $1$ predominates. As we
-cross from the left to the right side of our range the frequency of our allele
+cross from the left to the right side of our range, the frequency of our allele
 $2$ decreases in a smooth cline. The width of this cline, i.e. the
-geographic distance over which frequency change, depends on
+geographic distance over which the allele frequency changes, depends on
 the relative strengths of dispersal and selection. If selection is
 strong compared to dispersal, then selection acts to remove maladaptive
 alleles much faster than migration acts to move alleles across the
 environmental transition. Thus the allele frequency transition would
-be very rapid as we move across the environmental transition. While, if individuals
-dispersal long distances, and selection is weak,  many alleles are being moved back and forth over the
+be very rapid, \ec{and the cline narrow}, as we move across the environmental transition. In contrast, if individuals
+disperse long distances and selection is weak, many alleles are being moved back and forth over the
 environmental transition much faster than selection can act against
 these alleles and so the cline would be very wide. 
 
-The width of our cline, i.e. over what distance do we make this shift
-from allele $2$ predominating to allele $1$,
-can be defined in a number of different ways. One simple way to define
-the cline width, which is easy to define but perhaps hard to measure accurately, is the slope (i.e. the
-tangent) of $q(x)$ at $x=0$. Under this definition the cline width is
+The width of our cline, i.e. the distance over which we make this shift
+from allele $2$ to allele $1$ predominating,
+can be defined in a number of different ways. One way to define
+the cline width, which is simple to define but perhaps hard to measure accurately, is the slope (i.e. the
+tangent) of $q(x)$ at $x=0$. Under this definition, the cline width is
 approximately
 \begin{equation}
   0.6 \sigma/\sqrt{s}
 \end{equation}
-miles. The appendix below talks through the math underlying these
+miles. \erin{really, miles? lol very specific formula} The appendix below talks through the math underlying these
 ideas in more detail.
 
 % \begin{question}
