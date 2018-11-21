@@ -731,6 +731,8 @@ the marginal fitness of allele $A_2$ is higher than the marginal fitness of alle
 \bar{w}_2$, is there no additive genetic variance  ($V_A = 0$), as the linear regression of fitness on genotype is zero. 
 
 
+
+%%add Drosophila underdom. selection experiement http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
 \paragraph{Underdominance.} Another case that is of potential interest is the case of fitness
 underdominance, where the heterozygote is less fit than either of the two
 homozygotes. Underdominance can be parametrized as follows: \\
@@ -772,6 +774,24 @@ You are studying the polymorphism that affects flight speed in butterflies. The 
 {\bf A)} What is the equilibrium frequency of the B allele?\\
 {\bf B)} Calculate the marginal fitnesses \erin{unclear if you want the marginal absolute or relative fitnesses} of the B and the b allele at the equilibrium frequency. 
 \end{question}
+
+\begin{question}
+OPTIONAL trickier question.\\
+Imagine a randomly-mating population of hermaphrodites. In this
+population, a derived allele (D) segregates that distorts transmission
+in its favour over the ancestral allele (d) in the production of all
+the gametes of heterozygotes. The drive leads to a fraction $r$ of the gametes
+of heterozygotes (D/d) to carry the D allele ($r>0.5$). The D allele
+causes viability problems in the homozygous state, such that the
+relative fitnesses are $w_{dd}=1$, $w_{Dd}=1$, $w_{DD}=1-e$. The D allele
+is currently at frequency p in the population at birth. Assume that the
+population is very large and no mutation occurs:\\
+{\bf A)}	What is the frequency of the D allele in the next generation, before selection has had a chance to act?\\
+{\bf B)}	What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
+{\bf C)}	Imagine the cost of the driver were additive:
+$w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the driver invade the population? Can a polymorphic equilibrium be maintained?
+\end{question}
+
 
 \paragraph{Diploid fluctuating fitness}
 
@@ -933,40 +953,80 @@ and the higher geometric mean fitness of the heterozygotes.
 % 4.905354, 5, 4.802343
 
 
-\begin{question}
-\erin{I feel like this Q belongs up right after Q9 before the fluctuating selection section} OPTIONAL trickier question.\\
-Imagine a randomly-mating population of hermaphrodites. In this
-population, a derived allele (D) segregates that distorts transmission
-in its favour over the ancestral allele (d) in the production of all
-the gametes of heterozygotes. The drive leads to a fraction $r$ of the gametes
-of heterozygotes (D/d) to carry the D allele ($r>0.5$). The D allele
-causes viability problems in the homozygous state, such that the
-relative fitnesses are $w_{dd}=1$, $w_{Dd}=1$, $w_{DD}=1-e$. The D allele
-is currently at frequency p in the population at birth. Assume that the
-population is very large and no mutation occurs:\\
-{\bf A)}	What is the frequency of the D allele in the next generation, before selection has had a chance to act?\\
-{\bf B)}	What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
-{\bf C)}	Imagine the cost of the driver were additive:
-$w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the driver invade the population? Can a polymorphic equilibrium be maintained?
-\end{question}
-
 
 \paragraph{Negative frequency-dependent selection.}
-Our two alleles were maintained in the population by heterozygote
+\gc{Our two alleles were maintained in the population by heterozygote
 advantage as the common allele had a disadvantage compared to the
-other rarer allele.  Heterozygote advantage is just one example of
-negative frequency-dependent selection, where the fitness of an allele
-(or phenotype) decreases as it becomes more common in the population. 
-While cases of long-term heterozygote advantage may be somewhat rare in nature,
+other rarer allele. In our case of heterozygote advantage the
+relative fitnesses of our three genotypes were not a function of the
+other genotypes present in the population. However, there's a broader set of models where the relative fitness of a genotype depends on the
+genotypic composition of the population, this broad family of models
+are called frequency-dependent selection. Negative frequency-dependent selection, where the fitness of an allele
+(or phenotype) decreases as it becomes more common in the population,
+may act to maintain genetic and phenotypic diversity within
+populations. While cases of long-term heterozygote advantage may be somewhat rare in nature,
 negative frequency-dependent selection is likely a common form of
 balancing selection.
 
 One common mechanism that may create negative frequency-dependent
-selection is predator-prey or pathogen-host dynamics, where
+selection is the interaction between individuals within or among
+species. For example, in negative frequency-dependent dynamics can
+arise in predator-prey or pathogen-host dynamics, where
 alleles conferring common phenotypes are at a disadvantage because 
-predators or pathogens evolve or learn to \gc{XXX}
+predators or pathogens evolve or learn to counter the phenotypic effects of
+common alleles.}
 
-As one example of the 
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Elderflower_orchid/albumdesorchid1899corr_0209.jpg}
+\end{center}
+\caption{Elderflower orchid ({\it Dactylorhiza
+  sambucina}). Abbildungen der in Deutschland und den angrenzenden
+gebieten vorkommenden grundformen der orchideenarten (1904). Müller, W. } \label{fig:ElderflowerOrchid}  %Illustrations of the basic forms of orchid species found in Germany and neighboring areas
+\end{marginfigure}
+As one example of negative frequency-dependent selection consider the two flower colour morphs in the
+deceptive Elderflower orchid ({\it Dactylorhiza
+  sambucina}). There are populations of these orchid polymorphic for 
+yellow- and purple-flowered individuals throughout Europe, with the
+yellow flower corresponding to a recessive allele.\graham{check
+  recessive?} %http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
+Neither of
+these morphs provide any nectar or pollen reward to their bumblebee
+pollinators. These plants are typically pollinated by newly emerged
+bumblebees who are learning about which plants offer food rewards,
+with the bees alternating to try a different coloured flower if they
+find no food associated with a particular flower-colour morph \citep{smithson1997negative}. 
+\citet{gigord2001negative} explored whether this behaviour by bees
+could result in negative frequency dependent selection, by setting up
+experimental plots of the plants out in the field where their varied
+the frequency of the two morphs. Their measurements of the relative
+male and female reproductive success of the yellow morph
+are shown in Figure \ref{fig: Elderflower_orchids_fitness}. When the yellow morph is rare it has
+higher reproductive success than the purple morph as it receives a
+disproportionate number of visits from bumblebees that are dissatisfied
+with the purple flowers. This situation is reversed when the yellow
+morph becomes common in the population,now the purple morph
+outperforms the yellow morph. Therefore, both colour morphs are
+maintained in this population due to this negative freqeuncy-dependent
+selection. The yellow morph is found at 69\% in the populations in
+this region of France, consistent with the frequency where the two
+morphs are predicted to have equal fitness.
+
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids_fitness.pdf}
+\end{center}
+\caption{Measures relative male- and female- reproductive success of the yellow Elderflower orchid morph
+  as a function of the yellow morph in experimental plots. Male
+  reproductive success is measured in terms of the \% of pollinia
+  removed front a plant, female reproductive success is measured in terms of the
+  \% of stigmas receiving pollinia on a plant. These measures are made
+relative by divide the reproductive success of the yellow morph by the
+mean of the yellow and purple morph. Pollinia are the pollen masses of
+orchids, and other plants, where individual pollinium are transferred as a single unit by pollinators.} \label{fig: Elderflower_orchids_fitness}  
+\end{marginfigure}
+
 
 \subsection{Mutation--selection balance}
 %</source-file>
@@ -1118,7 +1178,6 @@ a major source of variation in fitness.
 
 %\begin{question}
 
-
 %\begin{tcolorbox} 
 %\begin{question}
 %You are studying an outbred population of mice living in a farmer’s field. Mutations occur at a gene called nurseryrhyme that cause a totally recessive form of blindness. These blind mice do not survive to reproduce as the farmer’s wife cuts off their tail (and other bits) with a carving knife. 
@@ -1187,6 +1246,8 @@ full-sibs, and of two generations of full-sib mating. He measured
 their germination success, which is plotted in Figure
 \ref{fig:Silene_inbreeding}. Note how the fitness of individuals
 declines with increased inbreeding. 
+
+\graham{Add decode figure?}
 
 \graham{Add discussion of human inbreeding, and fact that culturally
   we place too much emphasis on ill effects}
@@ -1316,7 +1377,7 @@ consider the case of the rock pocket mice adapting to lava flows. Throughout the
 Southwest there are old lava flows, where the rocks and soils are much
 dark than the surrounding desert. \begin{marginfigure}
 \begin{center}
-  \includegraphics[width = 0.8 \textwidth]{illustration_images/single_locus_selection/chaetodipus_pocket_mice/chaetodipus.png}
+  \includegraphics[width =  \textwidth]{illustration_images/single_locus_selection/chaetodipus_pocket_mice/chaetodipus.png}
 \end{center}
 \caption{Two species from the genus {\it Chaetodipus}, pocket mice,
   formally known as {\it Perognathus}. Wild animals of North America,
