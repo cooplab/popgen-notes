@@ -860,7 +860,7 @@ At the same time, if heterozygotes have higher geometric mean fitness than the $
 %(satisfying both \eqref{geometric_1wins} and
 %\eqref{geometric_2wins}).
 
-Intriguingly, we can thus have a balanced polymorphism even if the heterozygote is never the fittest genotype in any generation, if the heterozygote has a higher geometric mean fitness than either of the homozygotes. In this case, the polymorphism will remain balanced in the population, despite the fact that the heterozygote is never the fittest genotype.
+Intriguingly, we can thus have a balanced polymorphism even if the heterozygote is never the fittest genotype in any generation, as long as the heterozygote has a higher geometric mean fitness than either of the homozygotes. \ec{In this case, the heterozygote comes out ahead when we think about long-term fitness across heterogeneous environmental conditions, despite never being the fittest genotype in any particular environment.} \erin{replaced the sentence below with a new one above, hoping to reduce some of the repetition while still emphasizing the same concept}%In this case, the polymorphism will remain balanced in the population, despite the fact that the heterozygote is never the fittest genotype.
 
 %To see
 %this, consider the simple example, where there are two environments
@@ -873,7 +873,7 @@ Intriguingly, we can thus have a balanced polymorphism even if the heterozygote 
 %\end{tabular}\\
 
 
-As a toy example of this consider a plant population found in one of two different environments each
+As a toy example of this \ec{type of balanced polymorphism}, consider a plant population found in one of two different environments each
 generation. These occur randomly; $\nicefrac{1}{2}$ of time the population
 experiences the dry environment and with probability $\nicefrac{1}{2}$ it
 experiences the wet environment. The absolute fitnesses of the genotypes in the different environments
@@ -905,10 +905,10 @@ detailed analysis.}
 Let's write $w_{AA,\text{dry}}$ and $w_{AA,\text{wet}}$ for the fitnesses of the AA homozygote in the two environments. Then, if the
 two environments are equally common, $\prod_{i=0}^{t}w_{AA,i} \approx w_{AA,\text{dry}}^{\nicefrac{t}{2}}
 w_{AA,\text{wet}}^{\nicefrac{t}{2}}$ for large values of $t$. To
-obtain an estimate of this product normalized over the $t$ generations
-we can take the $t^{th}$ root to obtain the geometric mean fitness. Taking the $t^{th}$ root the geometric mean fitness of the AA allele  is $w_{AA,\text{dry}}^{\nicefrac{1}{2}}
+obtain an estimate of this product normalized over the $t$ generations,
+we can take the $t^{th}$ root to obtain the geometric mean fitness. Taking the $t^{th}$ root, \ec{we find} the geometric mean fitness of the AA allele  is $w_{AA,\text{dry}}^{\nicefrac{1}{2}}
 w_{AA,\text{wet}}^{\nicefrac{1}{2}}$. Doing this for each of our
-genotypes we find the geometric mean fitnesses of our alleles to be:
+genotypes, we find the geometric mean fitnesses of our alleles to be:
 \begin{center}
 \begin{tabular}{cccc} 
 & AA & Aa & aa \\
@@ -917,7 +917,7 @@ Geometric mean & 4.91 & 5.0 & 4.80\\
 \end{tabular}
 \end{center}
 i.e. the heterozygote has higher geometric mean fitnesses than either of
-the homozygotes, despite not being the fitest genotype in either
+the homozygotes, despite not being the fittest genotype in either
 environment (nor having the highest arithmetic mean fitness). So the $A_1$ allele can invade the population when it is rare as it spread thanks to the higher fitness of the heterozygotes. Similarly the $A_2$
 allele can invade the population when it is rare. Thus both alleles
 will persist in the population due to the environmental fluctuations,
@@ -933,7 +933,7 @@ and the higher geometric mean fitness of the heterozygotes.
 
 
 \begin{question}
-OPTIONAL trickier question.\\
+\erin{I feel like this Q belongs up right after Q9 before the fluctuating selection section} OPTIONAL trickier question.\\
 Imagine a randomly-mating population of hermaphrodites. In this
 population, a derived allele (D) segregates that distorts transmission
 in its favour over the ancestral allele (d) in the production of all
@@ -1149,8 +1149,8 @@ alleles with recessive deleterious effects segregating within them.
 \gc{Assume that a deleterious allele has a relative fitness $.99$ in
 heterozygotes and a relative fitness $0.2$ when present in the
 homozygote state.} Assume that the
-deleterious allele is at a frequency $10^{-3}$ at birth and the
-genotype frequencies follow from HWE. \ec{Only considering the fitness effects of this locus: }\\
+deleterious allele is at a frequency $10^{-3}$ at birth \erin{I'm not sure this is a problem per se, but I am only getting a difference in the 4th decimal place for A vs. B below due to the low frequency of this allele..w_bar in A is 0.9999792 and w_bar in B is 0.9997844} and the
+genotype frequencies follow from HWE. \ec{Only considering the fitness effects of this locus, and measuring fitness relative to the most fit genotype, answer the following questions: }\\
 {\bf A)} What is the average fitness of an individual in the population? \\
  {\bf B)} What is the average fitness of the child of a full-sib
  mating? \\
@@ -1363,7 +1363,7 @@ the environmental change at $x=0$.} \label{fig:cline_main}
 \end{figure}
 
 With this setup, we get an equilibrium
-distribution of our two alleles where to the left of zero our allele $2$ is at
+distribution of our two alleles, where to the left of zero our allele $2$ is at
 higher frequency, while to the right of zero allele $1$ predominates. As we
 cross from the left to the right side of our range, the frequency of our allele
 $2$ decreases in a smooth cline. The width of this cline, i.e. the
@@ -1407,14 +1407,14 @@ ideas in more detail.
 \subsection*{Appendix: Some theory of the spatial distribution of allele
 frequencies under deterministic models of selection}
 
-Imagine a continuous haploid population spread out along a line. Individuals
-disperse a random distance $\Delta x$ from its birthplace to the location where
+Imagine a continuous haploid population spread out along a line. Each individual
+disperses a random distance $\Delta x$ from its birthplace to the location where
 it reproduces, where $\Delta x$ is drawn from the probability density $g(~)$.
-To make life simple we will assume that $g(\Delta x)$ is normally distributed
-with mean zero and standard deviation $\sigma$, i.e. migration is unbiased an
+To make life simple, we will assume that $g(\Delta x)$ is normally distributed
+with mean zero and standard deviation $\sigma$, i.e. migration is unbiased and
 individuals migrate an average distance of $\sigma$. \\
 
-Our frequency of allele $2$ at time $t$ in the population at spatial location
+The frequency of allele $2$ at time $t$ in the population at spatial location
 $x$ is $q(x,t)$. Assuming that only dispersal occurs, how does our allele
 frequency change in the next generation? Our allele frequency in the next
 generation at location $x$ reflects the migration from different locations in
@@ -1424,7 +1424,7 @@ location $x+\Delta x$, such that the frequency of our allele at $x$ in the next
 generation is \begin{equation} q(x,t+1) = \int_{-\infty}^{\infty} g(\Delta
 x)q(x+\Delta x,t) d \Delta x.  \end{equation}
 
-To obtain $q(x+\Delta x,t)$, lets take a Taylor series expansion of $q(x, t)$
+To obtain $q(x+\Delta x,t)$, let's take a Taylor series expansion of $q(x, t)$:
 
 \begin{equation}
 q(x+\Delta x,t) = q(x,t) + \Delta x \frac{dq(x,t)}{dx}+ \tfrac{1}{2}(\Delta x)^2 \frac{d^2q(x,t)}{dx^2}+\cdots
@@ -1438,28 +1438,23 @@ q(x,t+1) = q(x,t) +\left( \int_{-\infty}^{\infty} \Delta x g(\Delta x)
   d \Delta x \right)  \frac{d^2q(x,t)}{dx^2}+\cdots
 \end{equation} 
 
-$g(~)$ has a mean of zero so $ \int_{-\infty}^{\infty} \Delta x g(\Delta x) d
-\Delta x =0$ and has variance $\sigma^2$ so $\int_{-\infty}^{\infty}(\Delta
-x)^2 g(\Delta x) d \Delta x = \sigma^2$ and all higher terms are zero (as all
-high moments of the normal are zero). Looking at the change in frequency
-$\Delta q(x,t) = q(x,t+1)-q(x,t)$ then 
+Because $g(~)$ has a mean of zero, $ \int_{-\infty}^{\infty} \Delta x g(\Delta x) d
+\Delta x =0$, and has because  $g(~)$ has variance $\sigma^2$,  $\int_{-\infty}^{\infty}(\Delta
+x)^2 g(\Delta x) d \Delta x = \sigma^2 $. \ec{All higher order terms in our Taylor series expansion cancel out} (as all high moments of the normal \ec{distribution} are zero). Looking at the change in allele frequency,
+$\Delta q(x,t) = q(x,t+1)-q(x,t)$, so
 
 \begin{equation}
 \Delta q(x,t) = \frac{\sigma^2}{2} \frac{d^2q(x,t)}{dx^2}
 \end{equation} 
 
-This is a diffusion equation, so that migration is acting to smooth
-out allele frequency differences with a diffusion constant
-of $\tfrac{\sigma^2}{2}$. This is exactly analogous to the equation
-describing how a gas diffuses out to equal density, as both particles
-in a gas and our individuals of type $2$ are performing Brownian
-motion (blurring our eyes and seeing time as continuous). \\
+This is a diffusion equation, so that migration is acting to smooth out allele frequency differences with a diffusion constant of $\tfrac{\sigma^2}{2}$. This is exactly analogous to the equation
+describing how a gas diffuses out to equal density, as both particles in a gas and our individuals of type $2$ are performing Brownian motion (blurring our eyes and seeing time as continuous). \\
 
 
 We will now introduce fitness differences into our model and set the relative
 fitnesses of allele $1$ and $2$ at location $x $ to be $1$ and $1+s\gamma(x)$.
-To make progress in this model we'll have to assume that selection isn't too
-strong i.e. $ s \gamma(x) \ll 1$ for all $x$. The change in
+To make progress in this model, we'll have to assume that selection isn't too
+strong, i.e. $ s \gamma(x) \ll 1$ for all $x$. The change in
 frequency of allele $2$ obtained within a generation due to selection is
 
 \begin{equation}
@@ -1467,11 +1462,11 @@ q^{\prime}(x,t) - q(x,t) \approx s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)
 \end{equation}
 
 i.e. logistic growth of our favoured allele at location $x$.  Putting our
-selection and migration terms together we find \begin{equation} q(x,t+1) -
+selection and migration terms together, we find \ec{the total change in allele frequency at location x in one generation is}\begin{equation} q(x,t+1) -
 q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)+\frac{\sigma^2}{2}
-\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP} \end{equation} in deriving this we
-have essentially assumed that migration acted upon our original frequencies
-before selection and in doing so have ignored terms of the order of $\sigma s$. 
+\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP} \end{equation}In deriving this result, we
+have essentially assumed that migration acted upon our original allele frequencies
+before selection, and in doing so have ignored terms of the order of $\sigma s$. 
 
 
 \begin{figure}
@@ -1486,15 +1481,15 @@ the environmental change at $x=0$.} \label{fig:cline}
 
 \paragraph{The cline in allele frequency associated with a sharp
   environmental transition.}
-To make progress lets consider a simple model of location adaptation where the
-environment abruptly changes. Specifically we assume that $\gamma(x)= 1$ for
+To make progress, let's consider a simple model of local adaptation where the
+environment abruptly changes. Specifically, we assume that $\gamma(x)= 1$ for
 $x<0$ and $\gamma(x)= -1$ for $x \geq 0$, i.e. our allele $2$ has a selective
 advantage at locations to the left of zero, while this allele is at a
 disadvantage to the right of zero. In this case we can get an equilibrium
-distribution of our two alleles were to the left of $zero$ our allele $2$ is at
+distribution of our two alleles, where to the left of zero our allele $2$ is at
 higher frequency, while to the right of zero allele $1$ predominates. As we
-cross from the left to the right side of our range the frequency of our allele
-$2$ decreases in a smooth cline.\\
+cross from the left to the right side of our range, the frequency of our allele
+$2$ decreases in a smooth cline. \erin{figure 6.25 is repeating figure 6.24.. }\\
 
 
 
@@ -1511,26 +1506,26 @@ $2$ decreases in a smooth cline.\\
 %derive this \gc{to be added}.\\
 
 Our equilibrium spatial distribution of allele frequencies can be found by
-setting the LHS of eqn. \eqref{eqn:fisherKPP} to zero to arrive at
+setting the left-hand side of eqn. \eqref{eqn:fisherKPP} to zero to arrive at
 \begin{equation}
 s\gamma(x) q(x) \left( 1 - q(x) \right) = - \frac{\sigma^2}{2} \frac{d^2q(x)}{dx^2}
 \end{equation}
 We then could solve this differential equation with appropriate boundary
 conditions ($q(-\infty)=1$ and $q(\infty) = 0$) to arrive at the
-appropriate functional form to our cline. While we won't go into the
+appropriate functional form for our cline. While we won't go into the
 solution of this equation here, we can note that by dividing our
-distance $x$ by $\ell=\sigma/\sqrt{s}$ we can remove the effect of our
+distance $x$ by $\ell=\sigma/\sqrt{s}$, we can remove the effect of our
 parameters from the above equation. This compound parameter $\ell$ is the characteristic
 length of our cline, and it is this parameter which determines over
 what geographic scale we change from allele $2$ predominating to
 allele $1$ predominating as we move across our environmental shift. \\
 
-The width of our cline, i.e. over what distance do we make this shift
-from allele $2$ predominating to allele $1$,
-can be defined in a number of different ways. One simple way to define
-the cline width, which is easy to define but perhaps hard to measure accurately, is the slope (i.e. the
-tangent) of $q(x)$ at $x=0$. Under this definition the cline width is approximately $0.6
-\sigma/\sqrt{s}$.\\
+%The width of our cline, i.e. over what distance do we make this shift
+%from allele $2$ predominating to allele $1$,
+%can be defined in a number of different ways. One simple way to define
+%the cline width, which is easy to define but perhaps hard to measure accurately, is the slope (i.e. the
+%tangent) of $q(x)$ at $x=0$. Under this definition the cline width is approximately $0.6
+%\sigma/\sqrt{s}$.\\
 
 %\paragraph{The rate of spatial spread of a beneficial allele.}
 %Consider a beneficial mutation that has arisen in a specific spatial
