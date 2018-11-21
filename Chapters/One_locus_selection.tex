@@ -348,6 +348,7 @@ To simplify this equation, we will first define two variables $\wbar_1$ and $\wb
 	\wbar_1 & = w_{11} p_t + w_{12} q_t, \\
 	\wbar_2 & =  w_{12} p_t+ w_{22} q_t.
 \end{eqnarray}
+\graham{Comment that these are the additive effects of our alleles}
 These are called the marginal fitnesses of allele $A_1$
 and $A_2$, respectively. They are so called as $\wbar_1$ is the
 average fitness of an allele $A_1$, i.e.\ the fitness of $A_1$ in a
@@ -1145,11 +1146,11 @@ low frequencies in the population, as long as they do not have too
 strong a deleterious effect in heterozygotes. Thus, outbred populations may have many
 alleles with recessive deleterious effects segregating within them.
 \begin{question}
-\gc{Assume that a deleterious allele has a relative fitness $.99$ in
+Assume that a deleterious allele has a relative fitness $.99$ in
 heterozygotes and a relative fitness $0.2$ when present in the
-homozygote state.} Assume that the
-deleterious allele is at a frequency $10^{-3}$ at birth \erin{I'm not sure this is a problem per se, but I am only getting a difference in the 4th decimal place for A vs. B below due to the low frequency of this allele..w_bar in A is 0.9999792 and w_bar in B is 0.9997844} and the
-genotype frequencies follow from HWE. \ec{Only considering the fitness effects of this locus, and measuring fitness relative to the most fit genotype, answer the following questions: }\\
+homozygote state. Assume that the
+deleterious allele is at a frequency $10^{-3}$ at birth and the
+genotype frequencies follow from HWE. Only considering the fitness effects of this locus, and measuring fitness relative to the most fit genotype, answer the following questions: \\
 {\bf A)} What is the average fitness of an individual in the population? \\
  {\bf B)} What is the average fitness of the child of a full-sib
  mating? \\
@@ -1163,7 +1164,7 @@ genotype frequencies follow from HWE. \ec{Only considering the fitness effects o
   family crosses.  Redrawn from \citeauthor{richards:00}. } \label{fig:Silene_inbreeding} 
 \end{figure}
 
-One consequence of segregating for low-frequency recessive deleterious alleles is that \ec{inbreeding can reduce fitness}.  In typically outbred populations, the mean fitness of individuals
+One consequence of segregating for low-frequency recessive deleterious alleles is that inbreeding can reduce fitness.  In typically outbred populations, the mean fitness of individuals
 decreases with the inbreeding coefficient, i.e. so-called 'inbreeding depression'
 is a common observation. This wide-spread observation dates back to systematic
 surveys of inbreeding depression by \citet{darwin:1876}.
@@ -1238,7 +1239,7 @@ local adaptation is maintained by the continued action of selection. An
 example of adaptation at fine-scales is shown in Figure
 \ref{fig:Zinc_mine} \graham{Fix axis on graph}. \citet{jain1966evolutionary}
 studied the patterns of heavy-metal resistance in plants
-on mine tailings and in nearby meadows, a set of classic studies of \ec{population differences maintained by local adaptation to different soils}.
+on mine tailings and in nearby meadows, a set of classic studies of population differences maintained by local adaptation to different soils.
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Anthoxanthum_mines_Jain_Bradshaw/Anthoxanthum_zinc.pdf}
@@ -1249,8 +1250,8 @@ Mine, Flintshire, North Wales. Data from \citet{jain1966evolutionary}.} \label{f
 \end{figure}
 Even at these very short geographically scales, over which seed and
 pollen will definitely move, we see strong local
-adaptation. Zinc-intolerant alleles are \ec{nearly absent from the mine tailings because they prevent plants} from growing on \ec{these}
-zinc-heavy soils; \ec{conversely, zinc-tolerant alleles do not spread into the meadow populations,  likely due to some trade-off or fitness cost of zinc-tolerance}.
+adaptation. Zinc-intolerant alleles are nearly absent from the mine tailings because they prevent plants from growing on these
+zinc-heavy soils; conversely, zinc-tolerant alleles do not spread into the meadow populations,  likely due to some trade-off or fitness cost of zinc-tolerance.
 
 As a first pass at developing a model of local adaptation, let's consider a haploid two-allele model with
 two different populations, see Figure \ref{fig:mig_sel_bal}, where the relative fitnesses of our alleles
@@ -1273,7 +1274,7 @@ and $1-m$ individuals are from the same population.\\
 \caption{Setup of a two-population haploid model of local adaptation.} \label{fig:mig_sel_bal} 
 \end{marginfigure}
 
-To quickly sketch \ec{an equilibrium} solution to this \ec{scenario}, we'll \ec{take an approach} analogous
+To quickly sketch an equilibrium solution to this scenario, we'll take an approach analogous
 to our mutation-selection balance model. To do this, let's assume that selection is strong compared to migration ($s \gg m$), such that allele
 $1$ will be almost fixed in population $1$ and allele $2$ will be
 almost fixed in population $2$. If that is the case,
@@ -1316,10 +1317,9 @@ Southwest there are old lava flows, where the rocks and soils are much
 dark than the surrounding desert. Many populations of small animals
 that live on these flows have evolved darker pigmentation to be
 cryptic against this dark substrate and better avoid visual predators. 
-One example \ec{of locally adapted prey} are the rock pocket mice who live on the Pinacate
+One example of such a locally adapted population are the rock pocket mice who live on the Pinacate
 lava flow on the Arizona-Mexico border, studied by
-\citet{hoekstra2004ecological}. These mice have much darker, more melanic pelts 
-than \ec{the mice} who live on nearby rocky outcrops (see Figure \ref{fig:mig_sel_bal_mice}).   %https://hoekstra.oeb.harvard.edu/files/hoekstra/files/hoekstra2005vol.pdf 
+\citet{hoekstra2004ecological}. These mice have much darker, more melanic pelts  than the mice who live on nearby rocky outcrops (see Figure \ref{fig:mig_sel_bal_mice}).   %https://hoekstra.oeb.harvard.edu/files/hoekstra/files/hoekstra2005vol.pdf 
 \citet{nachman2003genetic} determined that a dominant allele ($D$) at MC1R
 is the primary determinant of this melanic phenotype. The frequency of
 this allele across study sites is shown in Figure
@@ -1345,7 +1345,7 @@ deviation of this distribution). \marginnote{``Upon an island hard to reach,
 the East Beast sits upon his beach.
 Upon the west beach sits the West Beast.
 Each beach beast thinks he's the best beast.'' --
-Theodor Seuss Geisel}    We'll think of a \ec{bi-allelic} model where
+Theodor Seuss Geisel}    We'll think of a bi-allelic model where
 the homozygotes for allele 1 have an additive selective advantage $s$
 over allele $2$ homozygotes to the east of our habitat transition (left of
 zero in Figure \ref{fig:cline_main}). This flips to allele $2$ having the same advantage $s$ west of the transition (right of zero). 
@@ -1371,7 +1371,7 @@ the relative strengths of dispersal and selection. If selection is
 strong compared to dispersal, then selection acts to remove maladaptive
 alleles much faster than migration acts to move alleles across the
 environmental transition. Thus the allele frequency transition would
-be very rapid, \ec{and the cline narrow}, as we move across the environmental transition. In contrast, if individuals
+be very rapid, and the cline narrow, as we move across the environmental transition. In contrast, if individuals
 disperse long distances and selection is weak, many alleles are being moved back and forth over the
 environmental transition much faster than selection can act against
 these alleles and so the cline would be very wide. 
@@ -1439,7 +1439,7 @@ q(x,t+1) = q(x,t) +\left( \int_{-\infty}^{\infty} \Delta x g(\Delta x)
 
 Because $g(~)$ has a mean of zero, $ \int_{-\infty}^{\infty} \Delta x g(\Delta x) d
 \Delta x =0$, and has because  $g(~)$ has variance $\sigma^2$,  $\int_{-\infty}^{\infty}(\Delta
-x)^2 g(\Delta x) d \Delta x = \sigma^2 $. \ec{All higher order terms in our Taylor series expansion cancel out} (as all high moments of the normal \ec{distribution} are zero). Looking at the change in allele frequency,
+x)^2 g(\Delta x) d \Delta x = \sigma^2 $. All higher order terms in our Taylor series expansion cancel out (as all high moments of the normal distribution are zero). Looking at the change in allele frequency,
 $\Delta q(x,t) = q(x,t+1)-q(x,t)$, so
 
 \begin{equation}
@@ -1461,9 +1461,12 @@ q^{\prime}(x,t) - q(x,t) \approx s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)
 \end{equation}
 
 i.e. logistic growth of our favoured allele at location $x$.  Putting our
-selection and migration terms together, we find \ec{the total change in allele frequency at location x in one generation is}\begin{equation} q(x,t+1) -
+selection and migration terms together, we find the total change in allele frequency at location x in one generation is
+\begin{equation} q(x,t+1) -
 q(x,t) = s\gamma(x) q(x,t) \big( 1 - q(x,t) \big)+\frac{\sigma^2}{2}
-\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP} \end{equation}In deriving this result, we
+\frac{d^2q(x,t)}{dx^2} \label{eqn:fisherKPP} 
+\end{equation}
+In deriving this result, we
 have essentially assumed that migration acted upon our original allele frequencies
 before selection, and in doing so have ignored terms of the order of $\sigma s$. 
 
