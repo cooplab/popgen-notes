@@ -55,12 +55,12 @@ probability $P_k$), in which case with probability $p_L^k$  all of
 these copies eventually go extinct (e.g. Figure \ref{fig:Proof_of_pL_2s}D).
 \end{enumerate}
 summing over these probabilities we see that
-\begin{eqnarray}
+\begin{align}
 p_L &= \sum_{k=0}^{\infty} P_k p_L^{k}  \nonumber \\
 &=  \sum_{k=0}^{\infty} \frac{(1+s)^ke^{-(1+s)}}{k!} p_L^{k} \nonumber
 \\
 &= e^{-(1+s)} \left( \sum_{k=0}^{\infty} \frac{\left(p_L(1+s) \right)^k}{k!}  \right)
-\end{eqnarray}
+\end{align}
 well the term in the brackets is itself an exponential expansion, so
 we can rewrite this as
 \begin{equation}
@@ -90,7 +90,7 @@ population by mutation.\\
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s.png}
+\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s.pdf}
 \end{center}
 \caption{} \label{fig:Proof_of_pL_2s}
 \end{figure}
@@ -129,9 +129,19 @@ anyone of these standing pool of melanic alleles?
 \section{The interaction between genetic drift and weak selection.}
 For strongly selected alleles, once the allele has escaped initial
 loss at low frequencies, their path will be determined deterministically by their
-selection coefficients. However, if selection is weak the
+selection coefficients. However, if selection is weak compared to
+genetic drift the
 stochasticity of reproduction can play a role in the trajectory an
 allele takes even when it is common in the population.\\
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/drift_selection/DobPav/Drift_sel_Dobzhansky_Pavlovsky.pdf}
+\end{center}
+\caption{Data from \citet{dobzhansky1957experimental} } \label{fig:Dobzhansky_Pavlovsky}
+\end{figure}
+
 
 To see this lets think of our simple Wright-Fisher model (see R
 exercise). Each generation we allow a deterministic change in our
