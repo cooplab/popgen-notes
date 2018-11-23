@@ -5,11 +5,21 @@
 %one question'' `Do I feel lucky?' Well do ya, punk? '' -- Dirty Harry 
 %\end{quote}
 
+In the previous chapter we assumed that the selection acting on our
+alleles was strong enough that we could ignore the action of genetic
+drift in shaping allele frequency. However, genetic drift affects all
+alleles, and so in this chapter we explore the interaction of
+selection and drift. Strongly selected alleles can be
+lost from the population via drift when they are rare in the population. While both weakly
+beneficial and weakly deleterious alleles are subject to the random
+whims of genetic drift throughout their entire time in the
+population. 
+%In Chapter \ref{Chapter:Drift}
 
 \section{Stochastic loss of strongly selected alleles}
 
 % Fisher (1922, 1930) and Haldane (1927)
-Even strongly selected alleles can be lost from the population when
+Even strongly beneficial alleles can be lost from the population when
 they are sufficiently rare. This is because the number of offspring
 left by individuals to the next generation is fundamentally
 stochastic. A selection coefficient of s=$1\%$ is a strong
@@ -21,23 +31,19 @@ has on average $1\%$ more children could easily have zero offspring, leading to 
 of our allele before it ever get a chance to spread.\\
 
 To take a first stab at this problem lets think of a very large
-haploid population, and in order for this population to stay constant in size
-we'll assume that individuals without the selected mutation have on average one
-offspring per generation. While individuals with our selected allele
-have on average $1+s$ offspring per generation. We'll assume that the
-distribution of offspring number of an individual is Poisson
-distributed with this mean, i.e. the probability that an individual
-with the selected allele has $i$ children is
-\begin{equation}
-P_i= \frac{(1+s)^i e^{-(1+s)}}{i!}
-\end{equation}
-
-Consider starting from a single individual with the selected allele, and ask
+haploid population and consider starting from a single individual with the selected allele, and ask
 about the probability of eventual loss of our selected allele starting
 from this single copy ($p_L$). To derive this we'll make use of a
-simple argument (derived from branching processes). Our selected
+simple argument \citep[derived from branching processes][]{fisher1923xxi,haldane1927mathematical}. Our selected
 allele will be eventually lost from the population if every individual
 with the allele fails to leave descendants.
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s.pdf}
+\end{center}
+\caption{} \label{fig:Proof_of_pL_2s}
+\end{figure}
+Well we can think about different cases 
 \begin{enumerate}
 \item In our first generation
 with probability $P_0$ our individual leaves no copies of itself to
@@ -55,9 +61,23 @@ probability $P_k$), in which case with probability $p_L^k$  all of
 these copies eventually go extinct (e.g. Figure \ref{fig:Proof_of_pL_2s}D).
 \end{enumerate}
 summing over these probabilities we see that
-\begin{align}
-p_L &= \sum_{k=0}^{\infty} P_k p_L^{k}  \nonumber \\
-&=  \sum_{k=0}^{\infty} \frac{(1+s)^ke^{-(1+s)}}{k!} p_L^{k} \nonumber
+\begin{equation}
+  p_L &= \sum_{k=0}^{\infty} P_k p_L^{k}
+\end{equation}
+We'll now need to specific $P_k$, the probability that an individual
+carrying our selected allele has $k$ kinds. In order for this population to stay constant in size
+we'll assume that individuals without the selected mutation have on average one
+offspring per generation, while individuals with our selected allele
+have on average $1+s$ offspring per generation. We'll assume that the
+distribution of offspring number of an individual is Poisson
+distributed with mean $1+s$, i.e. the probability that an individual
+with the selected allele has $i$ children is
+\begin{equation}
+P_i= \frac{(1+s)^i e^{-(1+s)}}{i!}
+\end{equation}
+Substituting this into the above we see
+  \begin{align}
+p_k &=  \sum_{k=0}^{\infty} \frac{(1+s)^ke^{-(1+s)}}{k!} p_L^{k} \nonumber
 \\
 &= e^{-(1+s)} \left( \sum_{k=0}^{\infty} \frac{\left(p_L(1+s) \right)^k}{k!}  \right)
 \end{align}
@@ -86,25 +106,20 @@ p_F = 2s.
 \end{equation}
 Thus even an allele with a $1\%$ selection coefficient has a $98\%$
 probability of being lost when it is first introduced into the
-population by mutation.\\
+population by mutation. \\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s.pdf}
-\end{center}
-\caption{} \label{fig:Proof_of_pL_2s}
-\end{figure}
 
 %%consider reparameterizing 1+(1-hs)s
 We can also adapt this result to a diploid setting.
-Assuming that heterozygotes for the $1$ allele have $1+(1-h)s$ children, the
+Assuming that heterozygotes for the $1$ allele have $1+hs$ children, the
 probability of allele $1$ is not lost, starting from a single copy in
 the population, is
 \begin{equation}
-p_F = 2 (1-h)s \label{eqn:diploid_escape}
+p_F = 2 h s \label{eqn:diploid_escape}
 \end{equation}
 for $h>0$. Note this is a slightly different parameterization from
-our diploid model above.\\
+our diploid model above, here $h$ is the dominance of out selected
+allele with $h=1$ .\\
 
 
 \begin{tcolorbox} 
