@@ -13,7 +13,10 @@ selection and drift. Strongly selected alleles can be
 lost from the population via drift when they are rare in the population. While both weakly
 beneficial and weakly deleterious alleles are subject to the random
 whims of genetic drift throughout their entire time in the
-population. 
+population. Understanding the interaction of selection and genetic
+drift is key to understanding the extent to which small populations
+may be mutation-limited in their rate of adaptation, and how rates of
+molecular and genome evolution may differ across taxa.
 %In Chapter \ref{Chapter:Drift}
 
 \section{Stochastic loss of strongly selected alleles}
@@ -147,13 +150,24 @@ genetic drift the
 stochasticity of reproduction can play a role in the trajectory an
 allele takes even when it is common in the population.\\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{Journal_figs/drift_selection/DobPav/Drift_sel_Dobzhansky_Pavlovsky.pdf}
-\end{center}
-\caption{Data from \citet{dobzhansky1957experimental} } \label{fig:Dobzhansky_Pavlovsky}
-\end{figure}
-
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=\textwidth]{Journal_figs/drift_selection/DobPav/Drift_sel_Dobzhansky_Pavlovsky.pdf}
+% \end{center}
+% \caption{Data from \citet{dobzhansky1957experimental} } \label{fig:Dobzhansky_Pavlovsky}
+% \end{figure}
+% A classic case study of the interplay of genetic drift with selection is the
+%  {\it Drosophila pseudoobscura} experiments of
+% \citet{dobzhansky1957experimental}. \citeauthor{dobzhansky1957experimental} 
+% setup multiple large populations each with 4000 indviduals and
+% multiple small populations of 20
+% individuals. They initiated each of these populations with the `Pikes
+% Peak' (PP) inversion allele at $50\%$
+% frequency.
+% The PP allele was known to experience heterozygote advantage, with the
+% PP homozygotes being less fit than the alternate homozygotes. In all of the
+% large population cages moved relatively uniformly towards the
+% equilbrium frequency. However, due to geneti drift in  
 
 To see this lets think of our simple Wright-Fisher model (see R
 exercise). Each generation we allow a deterministic change in our
@@ -252,7 +266,7 @@ probability, as they only have to reach 2N to never be lost.
 
 \subsection{The fixation of slightly deleterious alleles.}
 From Figure \ref{fig:prob_fix_diffusion} we can see that weakly
-deleterious alleles can fix, especially in small populations.  To understand how
+deleterious alleles can also fix, especially in small populations.  To understand how
 likely it is that deleterious alleles accidently reach fixation by
 genetic drift, lets assume a diploid model with additive selection (with
 a selection coefficient of $-s$ against our allele $2$).  
@@ -267,11 +281,15 @@ this is because while deleterious mutations will never escape loss in
 infinite population, but they can become fixed in finite population by
 reach 2N copies. This is captured by the denominator of the fixation
 probability under the diffusion model, which that this increases the
-fixation prob. of alleles with |Ns|~1. The absorption of alleles at 2N
-copies can also be modeled in finite individual models (i.e. not the
-diffusion limit), but we will not go into that here. 
+fixation prob. of alleles with absolute values of selection coefficients where |Ns|~1.
 
+%The absorption of alleles at 2N
 
+%copies can also be modeled in finite individual models (i.e. not the
+%diffusion limit), but we will not go into that here. 
+
+The ability of a population to avoid fixing weakly deleterious
+mutations depends on the effective size of the population. 
 
 \begin{figure}
 \begin{center}
@@ -283,7 +301,7 @@ diffusion limit), but we will not go into that here.
 
 \begin{marginfigure}
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{figures/haldanes_sieve.png}
+    \includegraphics[width=0.6\textwidth]{figures/haldanes_sieve.png}
 \end{center}
 \caption{} \label{fig:haldanes_sieve}
 \end{marginfigure}
@@ -295,7 +313,6 @@ results we’ve developed in the last two chapters. \\
 {\bf B)} Haldane’s sieve is thought to be less important for adaptation from previously deleterious standing variation, than adaptation from new mutation. Can you explain the intuition behind of this idea?\\
 {\bf C)} Haldane’s sieve is likely to be less important in inbred,
 e.g. selfing, populations. Why is this? \\
-
 
 \end{question}
 
