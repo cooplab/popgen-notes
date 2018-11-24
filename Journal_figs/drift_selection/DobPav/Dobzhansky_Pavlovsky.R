@@ -16,7 +16,7 @@ legend(x="bottomleft",leg="Large Populations",cex=1.4,bty="n")
 
 plot(c(1,3),c(0,50),type="n",axes=FALSE,cex.lab=1.4,xlab="",ylab="")
 axis(2,cex.axis=1.2)
-axis(1,at=1:3,lab=c("Start","4 months","16 months"),cex.axis=1.2)
+axis(1,at=1:3,lab=c("Start","4 months","17 months"),cex.axis=1.2)
 apply(small_DobPav,1,function(timepoints){lines(c(50,timepoints),type="b")})
 legend(x="bottomleft",leg="Small Populations",cex=1.4,bty="n")
 
