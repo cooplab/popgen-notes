@@ -1149,19 +1149,19 @@ that, for truly recessive alleles,
 	q_e = \sqrt{\frac{\mu}{s}}.
 \end{equation}
 \graham{Add figure illustrating the freq as a function of h and s}
-
-\begin{question}
-Oblong-winged katydids ({\it Amblycorypha oblongifolia}) are usually
-% these are actually false katydid
-green. However, some are bright pink, thanks to an erythrism
-mutation (a nice example of early Mendelian reasoning in a wonderfully
-titled paper\cite{Wheeler:07}). \begin{marginfigure}
+\begin{marginfigure}
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/mutation_selection_balance/Pink_Katydid.png}
 \end{center}
 \caption{Oblong-winged katydid. Field book of insects. Lutz,
   F.E. 1918.} \label{fig:katydid}  
 \end{marginfigure}
+\begin{question}
+Oblong-winged katydids ({\it Amblycorypha oblongifolia}) are usually
+% these are actually false katydid
+green. However, some are bright pink, thanks to an erythrism
+mutation (a nice example of early Mendelian reasoning in a wonderfully
+titled paper\cite{Wheeler:07}). 
 This pink condition is thought to be due to
 a dominant mutation (\citet{Crew:13}). Assume that roughly
 one in ten thousand katydids is bright pink and that the mutation rate at the
@@ -1466,11 +1466,11 @@ deviation of this distribution). \marginnote{``Upon an island hard to reach,
 the East Beast sits upon his beach.
 Upon the west beach sits the West Beast.
 Each beach beast thinks he's the best beast.'' --
-Theodor Seuss Geisel}. If you've read this send Prof Coop a picture of
-the East and West Beast. We'll think of a bi-allelic model where
+Theodor Seuss Geisel}. We'll think of a bi-allelic model where
 the homozygotes for allele 1 have an additive selective advantage $s$
 over allele $2$ homozygotes to the east of our habitat transition (left of
-zero in Figure \ref{fig:cline_main}). This flips to allele $2$ having the same advantage $s$ west of the transition (right of zero). 
+zero in Figure \ref{fig:cline_main}). This flips to allele $2$ having the same advantage $s$ west of the transition (right of zero).  If you've read this send Prof Coop a picture of
+the East and West Beast.
 
 \begin{figure}
 \begin{center}
@@ -1478,7 +1478,7 @@ zero in Figure \ref{fig:cline_main}). This flips to allele $2$ having the same a
 \end{center}
 \caption{An equilibrium cline in allele frequency (the frequency of
   allele 2, $q(~)$ is shown). Our individuals
-  dispersal an average distance of $\sigma=1$km per generation, and our
+  dispersal an average distance of $\sigma=1$miles per generation, and our
 allele $2$ has a relative fitness of $1+s$ and $1-s$ on either side of
 the environmental change at $x=0$.} \label{fig:cline_main}
 \end{figure}
@@ -1487,7 +1487,9 @@ With this setup, we get an equilibrium
 distribution of our two alleles, where to the left of zero our allele $2$ is at
 higher frequency, while to the right of zero allele $1$ predominates. As we
 cross from the left to the right side of our range, the frequency of our allele
-$2$ decreases in a smooth cline. The width of this cline, i.e. the
+$2$ decreases in a smooth cline. The frequency of allele $2$, $q(~)$,
+is shown as a function of location along the cline for a variety of
+selection coefficients ($s$) in Figure \ref{fig:cline_main}. The width of this cline, i.e. the
 geographic distance over which the allele frequency changes, depends on
 the relative strengths of dispersal and selection. If selection is
 strong compared to dispersal, then selection acts to remove maladaptive
@@ -1505,10 +1507,29 @@ the cline width, which is simple to define but perhaps hard to measure accuratel
 tangent) of $q(x)$ at $x=0$. Under this definition, the cline width is
 approximately
 \begin{equation}
-  0.6 \sigma/\sqrt{s}
+  0.6 \sigma/\sqrt{s} \textrm{miles}.
 \end{equation}
-miles. \erin{really, miles? lol very specific formula} The appendix below talks through the math underlying these
+Thus the cline will be wider if individuals dispersal further, higher
+$\sigma$, and selection is weaker, smaller $s$. The appendix below talks through the math underlying these
 ideas in more detail.
+
+
+\citet{lenormand1999tracking} collected mosquito {\it Culex pipiens}
+in a north–south transect moving away from the Southern French
+coast. Near the coast pesticides are used, but areas just a few tens
+of km from the coast were untreated. 
+explored allele frequencies in 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Journal_figs/single_locus_selection/Culex_resistance/culex_resistance.pdf}
+\end{center}
+\caption{Allele frequency clines of two pesticide resistance alleles, at the Ace 1 and Ester genes, in the
+  mosquito {\it Culex pipiens}. The dotted line shows where we move from pesticide-treated to untreated
+ areas as we move away from the French coast. The dots show observed allele frequencies, the solid lines clines fit under a migration-selection
+  balance model of a cline. } \label{fig:cline_culex}
+\end{figure}
+
 
 % \begin{question}
 % You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of (putatively) neutral biallelic markers the freshwater population has frequencies:\\
