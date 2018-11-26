@@ -121,8 +121,71 @@ the population, is
 p_F = 2 h s \label{eqn:diploid_escape}
 \end{equation}
 for $h>0$. Note this is a slightly different parameterization from
-our diploid model above, here $h$ is the dominance of out selected
-allele with $h=1$ .\\
+our diploid model in the previous chapter, here $h$ is the dominance of our selected
+allele. Thus the probability that a beneficial allele is not lost depends just
+on the relative fitness advantage to heterozygote, this is because
+when the allele is rare it is usually present in heterozygotes and so
+its probability of escaping loss just depends on the fitness of these
+individuals compared to the ancestral allele (in an
+outbred population). \\
+
+\begin{figure}[ht]
+\begin{center}
+  \includegraphics[width=0.75 \textwidth]{Journal_figs/drift_selection/G6PD/G6pd_Howes_et_al_1475-2875-12-418-4.png} 
+\caption{ 
+{\bf Map of G6PD-deficiency allele frequencies across Asia.} 
+The pie chart shows the frequency of G6PD-deficiency alleles. 
+The size of the pie chart indicates the number of G6PD-deficient individuals sampled.
+Countries with endemic malaria are colored yellow. 
+Figure taken from \citet{Howes-g6pd-variants}
+\url{http://www.malariajournal.com/content/12/1/418}. 
+} \label{fig-G6PD-map}
+\end{center}
+\end{figure}
+
+Over roughly the past ten thousand years, adaptive alleles conferring resistance to malaria have arisen in a number of genes 
+and spread through human populations in areas where malaria is endemic
+\citep{Kwiatkowski:05}. One particularly impressive case of convergent evolution in response to
+selection pressures imposed by malaria are the numerous changes
+throughout the G6PD gene,
+with are at least 15 common variants that lower the activity of the
+enzyme having been described in Central and Eastern Asia alone \citep{Howes-g6pd-variants,Minucci-g6pd}. 
+These alleles are now found at a combined frequency of around 8\% frequency in malaria endemic areas,
+rarely exceeding 20\% \citep{Howes-g6pd-preval}. Whether these {\it all} confer resistance to malaria is unknown,
+but a number of these alleles have demonstrated effects against
+malaria and are thought to have a heterozygote selection coefficient
+of $>5\%$ favouring where malaria is endemic \citep{Ruwende-g6pd,tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd, Louicharoen-g6pd}. 
+
+With a 5\% advantage in heterozygotes, an G6PD allele present as a
+single copy would only have a 10\% probability of
+fixing in the population. If that's so, how come malaria adaptation has
+repeatedly occurred via changes at G6PD? Well, maybe adaptation didn't
+start from a single copy of the selected allele? How many copies of
+the G6PD-deficiency alleles would we expect in the population before
+selection pressures changed? 
+
+So in the absence of malaria these G6PD alleles are deleterious with
+carries suffering from G6PD deficiency,
+leading to hemolytic anemia when exposed to a variety of compounds, notably those present in fava beans.
+The selective cost of being G6PD ancestry must have been on order of
+$5\%$ or more and there's upward of one hundred bases where G6PD-deficiency alleles can arise, so assuming a mutation rate of $\approx 10^{-8}$ per base pair per
+generation,we can take as an order-of-magnitude estimate $\mu \approx
+10^{-6}$ per generation. Thus the frequency of the allele under
+mutation-selection balance is $\approx \nicefrac{10^{-6}}{0.05} 2
+\times 10^{-5}$. Assuming an effective population size of $2--20$ million
+individuals roughly five to ten thousand years ago that means that
+there would have fourty to four hundred copies of the G6PD-deficiency
+allele present in the population when selection pressures shifted. The
+chance that one of these newly adaptive alleles is lost
+is 90\%, the chance that they're all lost is $<0.9^{40}$, i.e. a
+greater than 90\% chance that adaptation would occur via one or more
+alleles at G6PD. How many alleles would escape drift? Well with $40--400$
+copies of the allele pre-malaria, and each of them having a $10\%$
+probability of escaping drift, we expect between $4$ and $40$ G6PD
+alleles to escape drift and contribute to adaptation.   
+
+
+
 
 
 \begin{question}
