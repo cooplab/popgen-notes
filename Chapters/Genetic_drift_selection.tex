@@ -40,12 +40,12 @@ from this single copy ($p_L$). To derive this we'll make use of a
 simple argument \citep[derived from branching processes][]{fisher1923xxi,haldane1927mathematical}. Our selected
 allele will be eventually lost from the population if every individual
 with the allele fails to leave descendants.
-\begin{figure}
+\begin{figure*}
 \begin{center}
-\includegraphics[width=\textwidth]{figures/Proof_of_pL_2s.pdf}
+\includegraphics[width=0.9 \textwidth]{figures/Proof_of_pL_2s.pdf}
 \end{center}
 \caption{} \label{fig:Proof_of_pL_2s}
-\end{figure}
+\end{figure*}
 Well we can think about different cases 
 \begin{enumerate}
 \item In our first generation
@@ -111,7 +111,20 @@ Thus even an allele with a $1\%$ selection coefficient has a $98\%$
 probability of being lost when it is first introduced into the
 population by mutation. \\
 
+If the mutation rate towards our advantagous allele is $\mu$, and there
+are $N$ individuals in our haploid, then $N \mu$ advantagous mutations are
+arising per generation.  Each of these has a probability $p_F$ of
+fixing. Thus the number of advantagous mutations
+arising generation that will fix in the population is $N \mu p_F$, and
+the waiting time for such a mutation to arise is the reciprocal of
+this $\nicefrac{1}{N\mu p_F}$. Thus in adapting to a novel selection
+pressure via new mutations, both the population size, the mutational
+target size, and the selective advantage matter. One reason why combinations of drugs
+are used against viruses like HIV and malaria is that, even if the viruses adapt to one
+of the drugs their viral load ($N$) is still low, making it very
+unlikely that they population manages to generate a second drug-resistant allele.
 
+\paragraph{Diploid model of stochastic loss of strongly selected alleles.}
 %%consider reparameterizing 1+(1-hs)s
 We can also adapt this result to a diploid setting.
 Assuming that heterozygotes for the $1$ allele have $1+hs$ children, the
@@ -129,9 +142,9 @@ its probability of escaping loss just depends on the fitness of these
 individuals compared to the ancestral allele (in an
 outbred population). \\
 
-\begin{figure}[ht]
+\begin{figure}
 \begin{center}
-  \includegraphics[width=0.75 \textwidth]{Journal_figs/drift_selection/G6PD/G6pd_Howes_et_al_1475-2875-12-418-4.png} 
+  \includegraphics[width=0.9 \textwidth]{Journal_figs/drift_selection/G6PD/G6pd_Howes_et_al_1475-2875-12-418-4.png} 
 \caption{ 
 {\bf Map of G6PD-deficiency allele frequencies across Asia.} 
 The pie chart shows the frequency of G6PD-deficiency alleles. 
@@ -149,12 +162,12 @@ and spread through human populations in areas where malaria is endemic
 selection pressures imposed by malaria are the numerous changes
 throughout the G6PD gene,
 with are at least 15 common variants that lower the activity of the
-enzyme having been described in Central and Eastern Asia alone \citep{Howes-g6pd-variants,Minucci-g6pd}. 
+enzyme having been described in Central and Eastern Asia alone \citep{Howes-g6pd-variants}. 
 These alleles are now found at a combined frequency of around 8\% frequency in malaria endemic areas,
 rarely exceeding 20\% \citep{Howes-g6pd-preval}. Whether these {\it all} confer resistance to malaria is unknown,
 but a number of these alleles have demonstrated effects against
 malaria and are thought to have a heterozygote selection coefficient
-of $>5\%$ favouring where malaria is endemic \citep{Ruwende-g6pd,tishkoff-g6pd,Slatkin-age-est,Saunders-g6pd, Louicharoen-g6pd}. 
+of $>5\%$ favouring where malaria is endemic \citep{Ruwende-g6pd,tishkoff-g6pd,Louicharoen-g6pd}. 
 
 With a 5\% advantage in heterozygotes, an G6PD allele present as a
 single copy would only have a 10\% probability of
@@ -163,6 +176,16 @@ repeatedly occurred via changes at G6PD? Well, maybe adaptation didn't
 start from a single copy of the selected allele? How many copies of
 the G6PD-deficiency alleles would we expect in the population before
 selection pressures changed? 
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width=\textwidth]{illustration_images/Genetic_drift_selection/Pythagoras_fava_beans/586px-Do_Not_Eat_Beans.jpg}
+\caption{
+Pythagoras's ``just say no to fava beans'' campaign. French early 16th Century. Woodner Collection, National Gallery of Art.
+Pythagoras prohibited the consumption of fava beans by his followers; perhaps because favaism, the anemia induced in G6PD-deficiency
+individuals by fava beans, is relatively common in Mediterranean due
+to adaptation to endemic malaria. } \label{fig:fava}
+\end{center}
+\end{marginfigure}
 
 So in the absence of malaria these G6PD alleles are deleterious with
 carries suffering from G6PD deficiency,
@@ -171,21 +194,23 @@ The selective cost of being G6PD ancestry must have been on order of
 $5\%$ or more and there's upward of one hundred bases where G6PD-deficiency alleles can arise, so assuming a mutation rate of $\approx 10^{-8}$ per base pair per
 generation,we can take as an order-of-magnitude estimate $\mu \approx
 10^{-6}$ per generation. Thus the frequency of the allele under
-mutation-selection balance is $\approx \nicefrac{10^{-6}}{0.05} 2
+mutation-selection balance is $\approx \nicefrac{10^{-6}}{0.05} =2
 \times 10^{-5}$. Assuming an effective population size of $2--20$ million
 individuals roughly five to ten thousand years ago that means that
 there would have fourty to four hundred copies of the G6PD-deficiency
 allele present in the population when selection pressures shifted. The
 chance that one of these newly adaptive alleles is lost
-is 90\%, the chance that they're all lost is $<0.9^{40}$, i.e. a
-greater than 90\% chance that adaptation would occur via one or more
+is $90\%$, the chance that they're all lost is $<0.9^{40}$, i.e. a
+greater than $90\%$ chance that adaptation would occur via one or more
 alleles at G6PD. How many alleles would escape drift? Well with $40--400$
 copies of the allele pre-malaria, and each of them having a $10\%$
 probability of escaping drift, we expect between $4$ and $40$ G6PD
-alleles to escape drift and contribute to adaptation.   
-
-
-
+alleles to escape drift and contribute to adaptation. We see $15$ G6PD
+common alleles in Eurasia so our simple model of adaptation from
+mutation-selection balance seems reasonable.  \marginnote{A full
+  analysis of this case requires modeling of G6PD's X chromosome
+  inheritance, and the randomnesss in the number of copies of the
+  allele present at mutation-selection balance \citep{ralph2015role}.} 
 
 
 \begin{question}
@@ -205,7 +230,32 @@ individuals, and is at mutation selection-balance, what is the probability that 
 anyone of these standing pool of melanic alleles?  
 \end{question}
 
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{figures/haldanes_sieve.png}
+\end{center}
+\caption{} \label{fig:haldanes_sieve}
+\end{marginfigure}
+
+\begin{question}
+`Haldane's sieve' is the name for the idea that the mutations that contribute to adaptation are likely to be dominant or at least co-dominant. \\
+{\bf A)} Briefly explain this argument with a verbal model relating to the
+results we’ve developed in the last two chapters. \\
+{\bf B)} Haldane’s sieve is thought to be less important for adaptation from previously deleterious standing variation, than adaptation from new mutation. Can you explain the intuition behind of this idea?\\
+{\bf C)} Haldane’s sieve is likely to be less important in inbred,
+e.g. selfing, populations. Why is this? \\
+
+\end{question}
+
+
 \section{The interaction between genetic drift and weak selection.}
+ \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=0.7 \textwidth]{illustration_images/Genetic_drift_selection/Isopod_Asellidae/20406697312_1a9aa75024_z.jpg}
+ \end{center}
+ \caption{cress bug ({\it Asellus aquaticus}) in the isopod family
+   {\it Asellidae}. Brehms Tierleben. Allgemeine kunde des Tierreichs (1911).  Brehm A.E.} \label{fig: asellid_isopod}
+ \end{marginfigure}
 For strongly selected alleles, once the allele has escaped initial
 loss at low frequencies, their path will be determined deterministically by their
 selection coefficients. However, if selection is weak compared to
@@ -215,19 +265,28 @@ sufficiently weak compared to genetic drift, then genetic drift will dominate th
 and they will behave like they're effectively neutral. Thus the extent
 to which selection can shape patterns of molecular evolution will
 depend on the relative strengths of selection and genetic drift.
+But how weak must selection on an allele be for drift to over power
+it? 
 
-
-Asellid isopods have repeatedly invaded subterranean ground water from
-surface water habitats many times. These ground water habitats are
-more resource poor and so may
-\citet{lefebure2017less} found \gc{that}
-
- \begin{figure}
+ \begin{marginfigure}
  \begin{center}
  \includegraphics[width=\textwidth]{Journal_figs/drift_selection/asellid_isopods_Nes/asellid_isopods_Nes.pdf}
  \end{center}
  \caption{} \label{fig: asellid_isopods_Nes}
- \end{figure}
+ \end{marginfigure}
+Changes in the effective population size of a species can have
+long-term consequences for genome-wide patterns evolution. Asellid isopods have repeatedly invaded subterranean, ground-water
+habitats from surface-water habitats many times. 
+\citet{lefebure2017less} found that genome-wide $\dNdS$ was
+systematically higher in the subterranean species compared to the
+ancestral surface habitat, and the genomes of these subterranean
+species were systematically bigger than their surface relatives. One
+possible explanation of this is that the long term effective population
+sizes of the subterranean species is lower and so these species are less able to
+prevent the fixation of mildly deleterious non-synonymous mutations,
+and also less able to prevent the accumulations of weakly deleterious, extraneous
+gneomic DNA. 
+
 
 % \begin{figure}
 % \begin{center}
@@ -251,20 +310,18 @@ more resource poor and so may
 %To see this lets think of our simple Wright-Fisher model (see R
 %exercise).
 
-Each generation we allow a deterministic change in our
+ To model selection and drift each generation we allow a deterministic change in our
 allele frequency, and then binomially sample two alleles for each of
-our offspring to construct our next generation.
-
-%%%%%Include this discussion of sampling back in our HWE section??
-%%%%%Next time
-
-So the expected change in our allele frequency within a generation is given just by our
-deterministic formula. To make things easy on our self lets assume an
+our offspring from the new frequency to construct our next
+generation. This is called the Wright-Fisher model. Our the expected change in our allele frequency within a generation is given just by our
+deterministic formula. To make things simpler let's assume a
 additive model, i.e. $h=1/2$, and that $s \ll 1$ so that $\wbar
-\approx 1$. This gives us
+\approx 1$. Using our directional selection model, from Chapter
+\ref{Chapter:OneLocusSelection}, and these approximations gives us
 \begin{equation}
 \E(\Delta p ) = \frac{s}{2} p(1-p) \label{eqn:WF_mean}
 \end{equation}
+As we binomial sample from our new frequency $p^{\prime}=$
 our variance in our allele frequency change is given by
 \begin{equation}
 Var(p^{\prime} - p) = Var(p^{\prime}) = \frac{p^{\prime}(1-p^{\prime})}{2N}
@@ -273,28 +330,29 @@ this variance in our allele frequency follows from the fact that we
 are binomially sampling $2N$ new alleles in the next
 generation from a frequency $p^{\prime}$. Denoting our count of allele $1$ by $i$ our
 \begin{equation}
-Var(p^{\prime} - p) = Var(\frac{i}{2N} - p) =  Var(\frac{i}{2N} ) =\frac{Var(i)}{(2N)^2}
+\textrm{Var} (p^{\prime} - p) = \textrm{Var} (\frac{i}{2N} - p) =  \textrm{Var} (\frac{i}{2N} ) =\frac{\textrm{Var} (i)}{(2N)^2}
 \end{equation}
-and from binomial sampling $Var(i) = 2N p^{\prime}(1-p^{\prime})$ and
+and from binomial sampling $\textrm{Var} (i) = 2N p^{\prime}(1-p^{\prime})$ and
 so we arrive at our answer. Assuming that $s \ll 1$, $p^{\prime}
 \approx p$, then in practice we can use
 \begin{equation}
-Var(\Delta p)  =Var(p^{\prime} - p) \approx \frac{p(1-p)}{2N}. \label{eqn:WF_var}
+\textrm{Var} (\Delta p)  =\textrm{Var} (p^{\prime} - p) \approx \frac{p(1-p)}{2N}. \label{eqn:WF_var}
 \end{equation}
 To get our first look at the relative effects of selection vs drift we
 can simply look at when our change in allele frequency caused
-selection within a generate is reasonably faithfully passed across
+selection within a generation is reasonably faithfully passed across
 the generations. In particular if our expected change in frequency is much
 great than the variance around this change, genetic drift will play
 little role in the fate of our selected allele (once the allele is not
 too rare within the population). When does selected
-dominant genetic drift? This will happen if $\E(\Delta p) \gg Var(\Delta p)$ when $Ns \gg 1$. Conversely any
+dominant genetic drift? This will happen if $\E(\Delta p) \gg \textrm{Var}(\Delta p)$ when $Ns \gg 1$. Conversely any
 hope of our selected allele following its deterministic path will be quickly undone if our change in allele frequencies due to selection is
-much less than the variance induced by drift. So if $Ns \ll 1$ then
+much less than the variance induced by drift. So if the absolute value
+of our population-size-scaled selection coefficient $| Ns| \ll 1$ then
 drift will dominate the fate of our allele. \\
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{figures/prob_fix_diffusion.png}
+\includegraphics[width=0.9 \textwidth]{figures/prob_fix_diffusion.png}
 \end{center}
 \caption{The probability of the fixation of a new mutation with
   selection coefficient $s$ ($h=1/2$) in a diploid population of effective
@@ -308,14 +366,14 @@ modeling. However, we can obtain the probability that under our diploid model, w
 probability of allele $1$ fixing within the population starting
 from a frequency $p$ is given by
 \begin{equation}
-\pi(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}} \label{eqn:prob_fixed}
+p_F(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}} \label{eqn:prob_fixed}
 \end{equation}
 the proof of this is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele will arrive in the population at frequency $p=1/(2N)$,
 then its probability of reaching fixation is
 \begin{equation}
-\pi \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
+p_F \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
 \end{equation}
-if $s \ll1$ but $Ns \gg 1$ then $\pi(\frac{1}{2N}) \approx s$, which
+if $s \ll1$ but $Ns \gg 1$ then $p_F(\frac{1}{2N}) \approx s$, which
 nicely gives
 us back our result that we obtained above
 (eqn. \eqref{eqn:diploid_escape}). Our probability of fixation
@@ -327,7 +385,7 @@ probability $1/(2N)$. \\
 
 In the case where $Ns$ close to $1$ then
 \begin{equation}
-\pi \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
+p_F \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
 this is greater than our result $p_F=s$ from the branching process
 argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. 
@@ -339,62 +397,92 @@ we only need to reach a size 2N individuals. Weakly beneficial
 mutations (Ns~1) are slightly more likely to fix than the s
 probability, as they only have to reach 2N to never be lost.
 
+If for selection to operate on an allele we need the selection coefficient to statisfy
+$|Ns|\gg 1$, then that holds if $|s|\gg \nicefrac{1}{N}$. 
+Well effective population sizes are often reasonably large, on the
+order of hundreds of thousands of millions of individuals, thus selection
+coefficients on the order of $10^{-5}$ to $10^{-6}$, i.e. selection
+equivalent to individuals have incredibly slight advantages in terms
+of the number of offspring they leave to the next generation.
+While fitness effect sizes of this size are usually unmeasurable,
+except in elegant experiments in microbes, they are visible to
+selection in large populations. Thus, if consistent selection pressures are exerted over long
+time periods,natural selection can potentially finely tune various
+aspects of an organism.
+
+As one example of this fine-tuning consider how carefully crafted the
+optomized the sequence of proteins is for translation. Due to the
+degeneracy of the protein code, multiple codons code for the same
+amino-acid. For example, there are six different codons that can code
+leucine. While these synonymous codons are equivalent at the protein
+level, cells do differ in the number of tRNAs molecules that bind
+these codons and so the efficacy and accuracy with which proteins can be
+translated and folded.  These slight differences in translation rates
+likely often correspond to tiny differences in fitness, do they
+matter? 
 
 %Well in small populations selected alleles spend a
 %somewhat shorter time segregating (especially at low frequencies), and so are
 %slightly less susceptible to genetic drift. \\
 
-\subsection{The fixation of slightly deleterious alleles.}
+\paragraph{The fixation of slightly deleterious alleles.}
 From Figure \ref{fig:prob_fix_diffusion} we can see that weakly
 deleterious alleles can also fix, especially in small populations.  To understand how
 likely it is that deleterious alleles accidently reach fixation by
-genetic drift, lets assume a diploid model with additive selection (with
-a selection coefficient of $-s$ against our allele $2$).  
+genetic drift, lets assume a diploid model with additive selection
+(with ma selection coefficient of $-s$ against our allele $2$).  
 If $N s \gg 1$ then our deleterious allele (allele $2$) can not possibly reach
 fixation. However, if $Ns$ is not large then
 \begin{equation}
-\pi \left( \frac{1}{2N} \right) \approx \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
+p_F \left( \frac{1}{2N} \right) \approx \frac{s}{e^{2Ns}-1} \label{eqn:fix_deleterious}
 \end{equation}
 for our deleterious allele. So deleterious alleles can fix within
 populations (albeit at a low rate) if $Ns$ is not too large. As above
 this is because while deleterious mutations will never escape loss in
 infinite population, but they can become fixed in finite population by
-reach 2N copies. This is captured by the denominator of the fixation
+reach $2N$ copies. This is captured by the denominator of the fixation
 probability under the diffusion model, which that this increases the
-fixation prob. of alleles with absolute values of selection coefficients where |Ns|~1.
+fixation prob. of alleles with absolute values of selection
+coefficients where $|Ns| \sim 1$.
+
+\begin{question}
+A mutation arises that lowers an individual’s relative fitness by
+$10^{−5}$. What is the probability that this mutation fixes in a
+population with effective size of $10^4$? what is the probability it
+fixes in a population of effective size  $10^6$? Describe the
+intuition of this result.
+\end{question}
+
+In a series of papers \citeauthor{ohta1973slightly}\cite{ohta1973slightly,ohta1987very}
+proposed the `nearly-neutral' theory of
+molecular evolution. She suggested that a reasonably fraction of newly
+arising functional mutations may have very weak selection
+coefficients, such that species with smaller effective population sizes may
+have a higher rates of fixation of very weakly deleterious
+alleles. In effect, her suggestion is that the constraint parameter
+$C$ of a functional region is not a fixed property but rather depends
+on the ability of the population to resist the influx of very weakly
+deleterious mutations. 
 
 %The absorption of alleles at 2N
 
 %copies can also be modeled in finite individual models (i.e. not the
 %diffusion limit), but we will not go into that here. 
 
-The ability of a population to avoid fixing weakly deleterious
-mutations depends on the effective size of the population. 
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/drift_selection/Galtier_dNdS/Galtier_dNdS.pdf}
 \end{center}
-\caption{Data from \citet{galtier2016adaptive} } \label{Galtier_dNdS}
+\caption{Data from 44 metazoan species. Each dot represents the
+  average of over many genes plotting $\dNdS$ against synonymous
+  diversity ($\pi_S$). Data from \citet{galtier2016adaptive} } \label{Galtier_dNdS}
 \end{figure}
 
-
-\begin{marginfigure}
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{figures/haldanes_sieve.png}
-\end{center}
-\caption{} \label{fig:haldanes_sieve}
-\end{marginfigure}
-
-\begin{question}
-`Haldane's sieve' is the name for the idea that the mutations that contribute to adaptation are likely to be dominant or at least co-dominant. \\
-{\bf A)} Briefly explain this argument with a verbal model relating to the
-results we’ve developed in the last two chapters. \\
-{\bf B)} Haldane’s sieve is thought to be less important for adaptation from previously deleterious standing variation, than adaptation from new mutation. Can you explain the intuition behind of this idea?\\
-{\bf C)} Haldane’s sieve is likely to be less important in inbred,
-e.g. selfing, populations. Why is this? \\
-
-\end{question}
+Across species genome-wide averages of $\dNdS$ do seem to be
+correlated with measures of the effective population size (such as
+synonymous diversity), see Figure \ref{Galtier_dNdS}. Suggesting that in species with smaller effective
+population sizes (lower $\pi_S$) proteins may be subject to lower degrees of
+constraint as very weakly deleterious mutations are able to fix. 
 
 
 
@@ -406,41 +494,41 @@ weakly selected alleles} \label{Section:fixation_weakly_sel}
 %Population. for abitrary dominance in diffusion.
 
 We'll let $P(\Delta p)$ be the probability that our allele frequency
-shifts by $\Delta p$ in the next generation. Using this we can write our probability $\pi(p)$ in terms of the probability of
+shifts by $\Delta p$ in the next generation. Using this we can write our probability $p_F(p)$ in terms of the probability of
 achieving fixation averaged over the frequency in the next generation
 \begin{equation}
-\pi(p)  = \int \pi(p+\Delta p) P(\Delta p) d(\Delta p) \label{eqn:prob_fix_diff_step1}
+p_F(p)  = \int p_F(p+\Delta p) P(\Delta p) d(\Delta p) \label{eqn:prob_fix_diff_step1}
 \end{equation}
 This is very similar to the technique that we used deriving our
 probability of escaping loss in a very large population above. \\
 
-So we need an expression for $\pi(p+\Delta p)$. To obtain this we'll
-do a Taylor series expansion of $\pi(p)$ assuming that $\Delta p $ is small
+So we need an expression for $p_F(p+\Delta p)$. To obtain this we'll
+do a Taylor series expansion of $p_F(p)$ assuming that $\Delta p $ is small
 \begin{equation}
-\pi(p+\Delta p) \approx \pi(p) + \Delta p \frac{d\pi(p)}{dp} + (\Delta p)^2
-\frac{d^2\pi(p)}{dp^2} (p)
+p_F(p+\Delta p) \approx p_F(p) + \Delta p \frac{dp_F(p)}{dp} + (\Delta p)^2
+\frac{d^2p_F(p)}{dp^2} (p)
 \end{equation}
 ignoring higher order terms.\\
 
 Taking the expectation over $\Delta p $ on both sides, as in
 eqn. \ref{eqn:prob_fix_diff_step1}, we obtain
 \begin{equation}
-\pi(p) = \pi(p) + \E(\Delta p) \frac{d\pi (p)}{dp} + \E((\Delta p)^2)
-\frac{d^2\pi(p)}{dp^2}
+p_F(p) = p_F(p) + \E(\Delta p) \frac{dp_F (p)}{dp} + \E((\Delta p)^2)
+\frac{d^2p_F(p)}{dp^2}
 \end{equation}
 
 Well $\E(\Delta p) = \frac{s}{2}p(1-p)$ and $Var(\Delta p)= \E((\Delta
 p)^2)-\E^2(\Delta p)$, so if $s \ll 1$ then $\E^2(\Delta p) \approx
 0$, and $\E(\Delta p)^2 = \frac{p(1-p)}{2N}$. This leaves us with
 \begin{equation}
-0= \frac{s}{2}p(1-p)\frac{d\pi (p) }{dp} + \frac{p(1-p)}{2N}
-\frac{d^2\pi (p) }{dp^2}
+0= \frac{s}{2}p(1-p)\frac{dp_F (p) }{dp} + \frac{p(1-p)}{2N}
+\frac{d^2p_F (p) }{dp^2}
 \end{equation}
-and we can specify the boundary conditions to be $\pi(1)=1$ and $\pi(0)=0$. 
+and we can specify the boundary conditions to be $p_F(1)=1$ and $p_F(0)=0$. 
 Solving this differential equation is somewhat involved process but in
 doing so we find that
 \begin{equation}
-\pi(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}}
+p_F(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}}
 \end{equation}
 This proof can be extended
 to alleles with arbitrary dominance, however, this does not lead to a
