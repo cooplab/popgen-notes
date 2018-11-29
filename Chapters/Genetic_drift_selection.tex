@@ -133,6 +133,7 @@ the population, is
 \begin{equation}
 p_F = 2 h s \label{eqn:diploid_escape}
 \end{equation}
+<<<<<<< HEAD
 for $h>0$. Note this is a slightly different parameterization from
 our diploid model in the previous chapter, here $h$ is the dominance of our selected
 allele. Thus the probability that a beneficial allele is not lost depends just
@@ -211,6 +212,11 @@ mutation-selection balance seems reasonable.  \marginnote{A full
   analysis of this case requires modeling of G6PD's X chromosome
   inheritance, and the randomnesss in the number of copies of the
   allele present at mutation-selection balance \citep{ralph2015role}.} 
+=======
+for $h>0$. \ec{Note this is a slightly different parameterization from
+our diploid model from before; here $h$ is the dominance of our positively selected
+allele, with $h=1$ corresponding to the full selective advantage expressed in an individual with only a single copy}.\\
+>>>>>>> 503e2316a33ebc1a874645beecd9e63e6d650f06
 
 
 \begin{question}
@@ -259,10 +265,10 @@ e.g. selfing, populations. Why is this? \\
 For strongly selected alleles, once the allele has escaped initial
 loss at low frequencies, their path will be determined deterministically by their
 selection coefficients. However, if selection is weak compared to
-genetic drift the stochasticity of reproduction can play a role in the trajectory an
+genetic drift, the stochasticity of reproduction can play a role in the trajectory an
 allele takes even when it is common in the population. If selection is
 sufficiently weak compared to genetic drift, then genetic drift will dominate the dynamics of alleles
-and they will behave like they're effectively neutral. Thus the extent
+and they will behave like they're effectively neutral. Thus, the extent
 to which selection can shape patterns of molecular evolution will
 depend on the relative strengths of selection and genetic drift.
 But how weak must selection on an allele be for drift to over power
@@ -312,9 +318,19 @@ gneomic DNA.
 
  To model selection and drift each generation we allow a deterministic change in our
 allele frequency, and then binomially sample two alleles for each of
+<<<<<<< HEAD
 our offspring from the new frequency to construct our next
 generation. This is called the Wright-Fisher model. Our the expected change in our allele frequency within a generation is given just by our
 deterministic formula. To make things simpler let's assume a
+=======
+our offspring to construct our next generation.
+
+%%%%%Include this discussion of sampling back in our HWE section??
+%%%%%Next time
+
+So the expected change in our allele frequency within a generation is given just by our
+deterministic formula. To make things easy on ourselves, let's assume an
+>>>>>>> 503e2316a33ebc1a874645beecd9e63e6d650f06
 additive model, i.e. $h=1/2$, and that $s \ll 1$ so that $\wbar
 \approx 1$. Using our directional selection model, from Chapter
 \ref{Chapter:OneLocusSelection}, and these approximations gives us
@@ -340,12 +356,21 @@ so we arrive at our answer. Assuming that $s \ll 1$, $p^{\prime}
 \end{equation}
 To get our first look at the relative effects of selection vs drift we
 can simply look at when our change in allele frequency caused
+<<<<<<< HEAD
 selection within a generation is reasonably faithfully passed across
 the generations. In particular if our expected change in frequency is much
 great than the variance around this change, genetic drift will play
 little role in the fate of our selected allele (once the allele is not
 too rare within the population). When does selected
 dominant genetic drift? This will happen if $\E(\Delta p) \gg \textrm{Var}(\Delta p)$ when $Ns \gg 1$. Conversely any
+=======
+selection within a generate is reasonably faithfully passed across
+the generations. In particular, if our expected change in frequency is much
+greater than the variance around this change, genetic drift will play
+little role in the fate of our selected allele (once the allele is not
+too rare within the population). When does selected
+dominant genetic drift? This will happen if $\E(\Delta p) \gg Var(\Delta p)$, i.e. when $Ns \gg 1$. Conversely any
+>>>>>>> 503e2316a33ebc1a874645beecd9e63e6d650f06
 hope of our selected allele following its deterministic path will be quickly undone if our change in allele frequencies due to selection is
 much less than the variance induced by drift. So if the absolute value
 of our population-size-scaled selection coefficient $| Ns| \ll 1$ then
@@ -368,7 +393,7 @@ from a frequency $p$ is given by
 \begin{equation}
 p_F(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}} \label{eqn:prob_fixed}
 \end{equation}
-the proof of this is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele will arrive in the population at frequency $p=1/(2N)$,
+The proof of this result is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele will arrive in the population at frequency $p=1/(2N)$,
 then its probability of reaching fixation is
 \begin{equation}
 p_F \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
@@ -379,15 +404,15 @@ us back our result that we obtained above
 (eqn. \eqref{eqn:diploid_escape}). Our probability of fixation
 (eqn. \eqref{eqn:new_mut_prob_fixed}) is plotted as a function of $s$
 and $N$ in Figure \ref{fig:prob_fix_diffusion}. To recover our neutral
-result we can take the
+result, we can take the
 limit $s \rightarrow 0$ to obtain our neutral fixation
 probability $1/(2N)$. \\
 
-In the case where $Ns$ close to $1$ then
+In the case where $Ns$ is close to $1$, then
 \begin{equation}
 p_F \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
-this is greater than our result $p_F=s$ from the branching process
+This is greater than our earlier result $p_F=s$ from the branching process
 argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. 
 Why is this?  The reason why is that $p_F$ is really the probability
 of “never being lost” in an infinitely large population. So to persist
@@ -428,9 +453,15 @@ matter?
 \paragraph{The fixation of slightly deleterious alleles.}
 From Figure \ref{fig:prob_fix_diffusion} we can see that weakly
 deleterious alleles can also fix, especially in small populations.  To understand how
+<<<<<<< HEAD
 likely it is that deleterious alleles accidently reach fixation by
 genetic drift, lets assume a diploid model with additive selection
 (with ma selection coefficient of $-s$ against our allele $2$).  
+=======
+likely it is that deleterious alleles accidentaly reach fixation by
+genetic drift, lets assume a diploid model with additive selection (with
+a selection coefficient of $-s$ against our allele $2$).  
+>>>>>>> 503e2316a33ebc1a874645beecd9e63e6d650f06
 If $N s \gg 1$ then our deleterious allele (allele $2$) can not possibly reach
 fixation. However, if $Ns$ is not large then
 \begin{equation}
