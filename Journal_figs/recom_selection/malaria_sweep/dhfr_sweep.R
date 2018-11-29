@@ -1,6 +1,6 @@
 library("latex2exp")
 
-dhfr<-read.csv(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Hitchhiking/malaria_sweep/dhfr_sweep.csv")
+dhfr<-read.csv(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/recom_selection//malaria_sweep/dhfr_sweep.csv")
 #plot(dhfr$dist_dhfr_kb,dhfr$het_non_sweep,type="b",pch=19,ylim=c(0,1))
 #points(dhfr$dist_dhfr_kb,dhfr$het_sweep,type="b")
 
@@ -25,5 +25,5 @@ my.genetic.dists<- abs(my.dists) /1500
 my.pred.pi<-regional.het*(1-exp(-my.genetic.dists*tau))
 
 lines(my.dists,my.pred.pi,lty=2)
-
-pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Hitchhiking/malaria_sweep/dhfr_sweep.pdf")
+legend(x="bottomright",lty=1:3,pch=c(19,NA,NA),legend=c("Observed","Fitted sweep","background levels"),cex=1.2)
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/recom_selection/malaria_sweep/dhfr_sweep.pdf")
