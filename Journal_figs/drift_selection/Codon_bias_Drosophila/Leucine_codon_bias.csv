@@ -1,0 +1,16 @@
+﻿organism,codon,,freq,,
+Drosophila,CTT,L,0.1,8.9,164079
+Drosophila,CTC,L,0.15,13.9,255170
+Drosophila,CTA,L,0.09,8.2,150674
+Drosophila,CTG,L,0.43,38.5,709057
+Drosophila,TTA,L,0.05,4.4,80654
+Drosophila,TTG,L,0.18,16,294929
+Yeast,TTA,L,0.28,26.4,149466
+Yeast,TTG,L,0.29,27.1,153307
+Yeast,CTT,L,0.13,12.2,68959
+Yeast,CTC,L,0.06,5.4,30501
+Yeast,CTA,L,0.14,13.4,75775
+Yeast,CTG,L,0.11,10.4,59027
+,,,,,
+,,,,,
+# https://www.genscript.com/tools/codon-frequency-table,,,,,
