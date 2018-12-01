@@ -268,7 +268,33 @@ the field (personal communication, Art. Shapiro). \\
 
 
 \subsection{The genome-wide effects of linked selection.}
+\gc{NEW STUFF HERE}
 
+To what extent are patterns of variation along the genome and
+  among species shaped by linked selection, such as selective sweeps? 
+We can hope to identify individual cases of strong selective sweeps
+along the genome, but how do they contribute to broader patterns of
+variation?
+
+ Two observations have puzzled population geneticists since the
+inception of molecular population genetics. The first is the relatively high
+level of genetic variation observed in most obligately sexual species.  
+The neutral theory of molecular evolution was developed in part to
+explain the high levels of diversity. As we saw in Chapter \ref{Chapter:Drift} 
+under a simple neutral model, with constant population size, we should expect the amount of neutral genetic
+diversity to scale with the product of the population size and
+mutation rate. The second observation, however, is the relatively narrow range 
+of polymorphism across species with vastly different census sizes \citep[see ][ for a recent review]{Leffler:12}. 
+As highlighted by \citet{Lewontin:74} in his discussion of the paradox
+of variation, this seemingly contradicts the prediction of the neutral theory that
+genetic diversity should scale with the census population size. There are a number of explanations for the discrepancy between genetic
+diversity levels and census population sizes. The first is that the effective size of the population ($N_e$) is
+often much lower than the census size, due to high variance in
+reproductive success and frequent bottlenecks (as discussed in  Chapter \ref{Chapter:Drift}). 
+The second major explanation, put forward by \citet{MaynardSmith:74},
+is that neutral levels of diversity are also systematically reduced by the effects of linked selection. 
+In large populations, selective sweeps and other forms of linked selection may come to dominate genetic drift as a
+source of stochasticity in allele frequencies, establishing an upper limit to levels of diversity \citep{Kaplan:89, Gillespie:00}. 
 
 \begin{figure}
 \begin{center}
@@ -282,6 +308,20 @@ the field (personal communication, Art. Shapiro). \\
   by fitting equation \eqref{eqn:pi_GW_HH} to this data 
  using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
 \end{figure}
+
+One strong line of evidence for the action of linked selection in reducing levels of
+polymorphism is the positive correlation between putatively
+neutral diversity and recombination seen in a number of species, as, all
+else being equal, linked selection should remove diversity more quickly in regions of low recombination 
+\citep{Aguade:89,Begun:92,Wiehe:93,Cutter:10,Hellmann:08,Cai:09,
+  cutter2013}. For example, in {\it Drosophila melanogaster} diversity
+levels are much lower in regions of low recombination, see
+Figure \ref{fig:GW_hitchhiking_reduction}. This pattern can not be
+explained by differences in mutation rate between low and high
+recombination regions as this pattern is not seen strongly in
+divergence data among species.
+
+
 
 
 
