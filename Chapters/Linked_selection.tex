@@ -1,40 +1,37 @@
 \chapter{The Effect of Linked Selection}
 
-Genetic drift is not the only source of randomness in the dynamics of
-alleles. An allele is present on a set of genetic background selected
-alleles, this background represents the random happenstance of
-mutation and recombination. 
 
-When a beneficial allele arises as via a single mutation, it arises on
-a particular genetic background, i.e. a particular haplotype (Figure \ref{fig:HIV_sweep}A). Imagine this mutation arising a region with no recombination, or in an
+Genetic drift is not the only source of randomness in the dynamics of
+alleles. An allele is present on a set of random genetic backgrounds. For example, when a beneficial allele arises via a single mutation, it arises on
+a particular genetic background, i.e. a particular haplotype (Figure \ref{fig:HIV_sweep}A). Imagine this mutation arising in a region with no recombination, or in an
 organism where genetic exchange is rare. If our beneficial allele
 becomes established in the population, i.e. escapes loss by genetic
-drift in those first few generation, it will start to increase in
-frequency rapidly. As it does so, so will the alleles that happened to
+drift in those first few generations, it will start to increase in
+frequency rapidly. As it rises in frequency, so will the alleles that happened to
 be present on the haplotype that the mutation arose on (if those
 other alleles are neutral or at least not too deleterious). These
-other alleles are getting to hitchhiking along. The alleles that are
-not on that background are swept out the population, so the net effect
+other alleles are getting to 'hitchhiking' along. The alleles that are
+not on that particular background are swept out of the population, so the net effect
 of this selective sweep is to remove genetic diversity from the
-population. Diversity will eventually recover as new mutations will
-arise and some will slowly drift up in frequency. But in the
-short-term selective sweeps remove genetic variation from
+population. Diversity will eventually recover, as new mutations
+arise and some slowly drift up in frequency. But in the
+short-term, selective sweeps remove genetic variation from
 populations. 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_sweep/HIV_no_recom_sweep.pdf}
 \end{center}
-\caption{{\bf A)} In the top panel a selected mutation (red dot) arises
-on a particular haplotype in the population. It sweeps to fixation
+\caption{{\bf A)} In the top panel, a selected mutation (red dot) arises
+on a particular haplotype in the population. It sweeps to fixation,
 carrying with it the haplotype on which it arose, middle panel,
-erasing the standinggenetic diversity in the region. The bottom panel
+erasing the standing genetic diversity in the region. The bottom panel
 is some time after the selective sweep when some new neutral alleles (green
 dots) have started to drift up in frequency. {\bf B)}  Top panel: HIV
 sequences from a patient at the start of drug treatment in the
 protease and retrotransposase coding regions. Bottom panel: A sample
-161 days later a drug resistant mutation has spread, the A
-$\rightarrow$ T in the 103 codon of retrotransposase. Each row is a haplotype,
+161 days later, after a drug resistant mutation has spread, the A
+$\rightarrow$ T in the $103^{rd}$ codon of retrotransposase. Each row is a haplotype,
 with the alleles present shown as coloured blocks. } \label{fig:HIV_sweep}
 \end{figure}
 
@@ -42,9 +39,8 @@ Pleuni Pennings has been working on visualizing selective sweeps in
 HIV. In Figure \ref{fig:HIV_sweep}B) we see a set of HIV haplotypes
 sampled from a patient before and after of a selective sweep of a
 drug-resistant mutation. The patient is taking a
-retrotransposase inhibtator (Efavirenz), but sadly within 161 days a
-drug-resistant mutation that changes the HIV retrotransposase ‏protein
-has arisen and spread. Note how a particular haplotype is now fixed in
+retrotransposase inhibitor (Efavirenz), but sadly within 161 days a
+drug-resistant mutation that changes the HIV retrotransposase protein has arisen and spread. Note how a particular haplotype is now fixed in
 the sample, and little genetic diversity remains, due to the
 hitchhiking effect of the strong
 selective sweep of this allele. 
@@ -56,21 +52,21 @@ selective sweep of this allele.
 \end{center}
 \caption{} \label{fig:no_recom_coal}
 \end{marginfigure}
-First lets imagine examining variation at a locus fully linked
+\ec{To better understand hitchhiking, first} let's imagine examining variation at a locus fully linked
 to our selected locus, just after our sweep reached fixation. Neutral alleles sampled at this locus
-must h trace their ancestral lineages back to the neutral
+must trace their ancestral lineages back to the neutral
 allele on whose background the selected allele initially arose (Figure
-\ref{fig:no_recom_coal}). As
-that neutral allele, which existed $\tau$ generations ago is the
-ancestor of the entire population at this locus. Our individuals who
+\ref{fig:no_recom_coal}). This is because
+that \ec{background} neutral allele, which existed $\tau$ generations ago, is the
+ancestor of the entire population at this \ec{fully linked} locus. Our individuals who
 carry the beneficial allele are, from the perspective of these two
-alleles, exactly like a rapidly expanding population. Therefore, our
-pair of neutral alleles sampled at our locus will be forced to
+alleles\erin{which two alleles, the beneficial and linked neutral alleles"}, exactly like a rapidly expanding population. Therefore, a
+pair of neutral alleles sampled at our \ec{linked neutral} locus will be forced to
 coalesce $\approx \tau$ generations ago. A newly derived allele with an additive selection coefficient $s$ will
-take a time $\tau \propto \log(N)/s$ generations to reach to fixation
+take a time $\tau \propto \log(N)/s$ \erin{it's diploid though right? why not just put in 4/s*log(2N)?} generations to reach to fixation
 within our population (see eqn. \eqref{eq:diploid_fix_time}). This is a very
 short-time scale compared to the average neutral coalescent time of
-$2N$ generations of a pair of alleles. Thus we expect little variation
+$2N$ generations for a pair of alleles. Thus we expect little variation,
 as few mutations will have arisen on these very short branches, and
 those that have done will likely be singletons in our sample. \\
 
@@ -88,11 +84,10 @@ carrying the selected allele, in individuals who are heterozygote for
 the selected allele. These recombination events allow alleles that
 were not present on the original selected haplotype to avoid being
 swept out of the population, and also decouple the selected allele
-somewhat from hitchhiking alleles preventing them from hitchhiking all
-the way to fixation. Far out from the selected site the recombination
-rate isd high enough that alleles that were present on the original
-background barely get to hitchike along as recombination breaks up
-their association with the selected allele very rapidly.
+somewhat from hitchhiking alleles, preventing \ec{many of} them from hitchhiking all
+the way to fixation. Far out from the selected site, the recombination
+rate is high enough that alleles that were present on the original
+background barely get to hitchhike along \ec{at all}, as recombination breaks up their association with the selected allele very rapidly.
 
 \begin{figure}
 \begin{center}
@@ -102,7 +97,7 @@ their association with the selected allele very rapidly.
 \end{figure}
 
 What do the coalesecent genealogies look like at loci various distances away from the
-selected site? Well close to the selected site all our alleles in the
+selected site? Well, close to the selected site all our alleles in the
 present day trace back to a most recent common ancestral allele
 present on that selected haplotype, and so are all forced to coalesce
 around $\tau$ generations ago (locus 1). Slightly further out from the selected
@@ -110,11 +105,11 @@ site (locus 2), we have lineages that don't trace their ancestry back
 to the original selected haplotype, but instead are descended from
 recombinant haplotypes that recombined onto the sweep (the haplotype 2 from the
 bottom). These lineages can coalesce neutrally with the other ancestral lineages
-over far deeper time scales, mutations on these deeper lineages
-corresponding to the standing diversity present in our population
+over far deeper time scales and mutations on these deeper lineages
+correspond to the standing diversity present in our population
 prior to the sweep. As we move even further out from the selected site
-(locus 3) we encounter more an more lineages descended from
-recombinant haplotypes that coalescent neutrally much deeper in time
+(locus 3), we encounter more and more lineages descended from
+recombinant haplotypes that coalesce neutrally much deeper in time than $\tau$, 
 allowing diversity to recover to background levels as we move away
 from the selected site.
 
@@ -136,30 +131,30 @@ has just gone to fixation. The recombination rate is $r_{BP}= 1\times
 \end{center}
 \caption{} \label{fig:no_recom_coal}
 \end{marginfigure}
-To model the expected pattern of diversity surrouding a selected site we can think about a pair
+To model the expected pattern of diversity surrounding a selected site, we can think about a pair
 of alleles sampled at a neutral locus a recombination distance $r$
 away from our selected site. Our pair of alleles will be forced to
 coalesce $\approx \tau$ generations if neither of them of are
 descended from recombinant haplotypes.\\
 
-We know that in the present day that our neutral lineage is linked to
+We know that in the present day our neutral lineage is linked to
 the selected allele. The probability that our lineage, in some
-generation $t$ back in time, is in a heterozygote is $1-X(t)$, the
-probability that a recombination occurs in that indvidual is $r$. So
+generation $t$ back in time, is in a heterozygote is $1-X(t)$, and the
+probability that a recombination occurs in that individual is $r$. So
 the probability that our neutral lineage is descended from a
 recombinant haplotype $t$ generations back is 
 \begin{equation}
 r (1-X(t))
 \end{equation}
-so the probability ($p_{NR}$) that our lineage is not descended from a
-recombinant haplotype in the
+So the probability ($p_{NR}$) that our lineage is not descended from a
+recombinant haplotype \ec{from a recombination event} in the
 $\tau$ generations it takes our selected allele to move through the
 population is
 \begin{equation}
 p_{NR}=\prod_{t=1}^{\tau} \big(1- r(1-X(j))\big)
 \end{equation}
-assuming that $r$ is small then $ \left(1- r(1-X(t))\right) \approx
-e^{-r(1-X(t))}$, such that
+Assuming that $r$ is small, then $ \left(1- r(1-X(t))\right) \approx
+e^{-r(1-X(t))}$,  such that
 \begin{equation}
 p_{NR}=\prod_{t=1}^{\tau} \left(1- r(1-X(t))\right) \approx \exp
 \left( -r\sum_{t=1}^{\tau}
@@ -167,22 +162,22 @@ p_{NR}=\prod_{t=1}^{\tau} \left(1- r(1-X(t))\right) \approx \exp
 \left( -r \tau (1-\widehat{X}) \right)
 \end{equation}
 where
-$\widehat{X}$ is the average frequency of the derived allele across the trajectory
+$\widehat{X}$ is the average frequency of the derived \ec{beneficial} allele across \ec{its} trajectory \ec{as it sweeps up in frequency}
 $\widehat{X} = \frac{1}{\tau}  \sum_{t=1}^{\tau}
- X(t)$. As our allele is additive its trajectory for frequencies
- $<0.5$ is the mirror image of its trajectory for frequency $>0.5$, therefore it
-average frequency $\widehat{X} =0.5$. So
+ X(t)$. As our allele is additive, its trajectory for frequencies
+ $<0.5$ is the mirror image of its trajectory for frequency $>0.5$, therefore its
+average frequency $\widehat{X} =0.5$. This simplifies our expression to
 \begin{equation}
 p_{NR} = e^{-r \tau/2 }.
 \end{equation}
 The probability that neither of our lineages is descended from a
-recombinant haplotype and hence are forced to coalesce is $p_{NR}^2$, assuming that
+recombinant haplotype and hence are forced to coalesce is $p_{NR}^2$ (assuming that
 they coalesce at a time close to $\tau$ so that they recombine
-independently of each other for times $< \tau$.\\
+independently of each other for times $< \tau$).\\
 
-If one or other of our lineages is descended from a recombinant haplotype it will take them on average
-$\approx 2N$ generations to find a common ancestor as we are back our
-neutral coalescent. Thus the expected time
+If one or other of our lineages is descended from a recombinant haplotype, it will take them on average
+$\approx 2N$ generations to find a common ancestor, as we are back to our
+neutral coalescent probabilities. Thus, the expected time
 till our pair of lineages find a common ancestor is
 \begin{equation}
 \E(T_2)  = \tau \times p_{NR}^2 +(1-p_{NR}^2) (\tau +2N) \approx
@@ -190,22 +185,22 @@ till our pair of lineages find a common ancestor is
 \end{equation}
 where this last approximation assumes that $\tau \ll 2N$. So the
 expected pairwise diversity for neutral alleles at a recombination
-distance $r$ away from the selected sweep  ($\pi_r$) is
+distance $r$ away from the selected sweep ($\pi_r$) is
 \begin{equation}
 \E(\pi_r) = 2\mu \E(T_2)  \approx \pi_0 \left(1-e^{-r\tau} \right) \label{eqn:pi_HH}
 \end{equation}
-so diversity increases as we move away from the selected site,
-slowly exponentially plauteuing to its neutral expectation $\pi_0$.\\
+So diversity increases as we move away from the selected site,
+slowly and exponentially plateauing to its neutral expectation $\pi_0$.\\
 
 The malaria pathogen ({\it Plasmodium falciparum}) has
 evolved drug resistance to anti-malaria drugs, often by changes at
-their dhfr gene. Figure \ref{fig:hitchhiking_malaria} shows levels of
+the dhfr gene. Figure \ref{fig:hitchhiking_malaria} shows levels of
 genetic diversity (heterozygosity) at a set of markers moving out from the dhfr gene in a
 set of  drug resistant malaria sequences collected in
 Thailand \citep{nash2005selection}. We see the characteristic dip in diversity around the gene,
 with zero diversity at a number of the loci very close to the gene,
 suggesting a strong selective sweep. Fitting our simple model of a
-sweep to this data,  we estimate that $\tau \approx 40$ generations
+sweep to this data,  we estimate that $\tau \approx 40$ generations,
 corresponding to the drug-resistance allele fixing in very short time period. 
 % these drug (Sulfadoxine–pyrimethamine) 
 
@@ -217,29 +212,32 @@ corresponding to the drug-resistance allele fixing in very short time period.
   surounding the dhfr gene in samples of drug-resistant malaria ({\it Plasmodium falciparum}) from
   Thailand. The dotted horizontal line gives the average level of
   heterozygosity found at these markers in a set of drug-resistant
-  malaria, we take this background as our $\pi_0$. Data from \citet{nash2005selection}. The dash line shows
+  malaria; we take this background as our $\pi_0$. Data from \citet{nash2005selection}. The dashed line shows
   our fitted hitchhiking model from equation \ref{eqn:pi_HH} with $\tau \approx 40$, fitted by
   non-linear least squares. } \label{fig:hitchhiking_malaria}
 \end{figure}
 
 
-To get a sense of the physical scale over which diversity is reduced
+To get a sense of the physical scale over which diversity is reduced,
 consider a region where recombination occurs at a rate $r_{BP}$ per
-base pair per generation, and our locus is $ \ell $ base pairs away from the
-selected site $r=r_{BP } \ell $ (where $r_{BP}  \ell  \ll 1$ so we don't need to
+base pair per generation, and a locus $ \ell $ base pairs away from the
+selected site, such that $r=r_{BP } \ell $ (where $r_{BP}  \ell  \ll 1$ so we don't need to
 worry about more than one recombination event occurring per
 generation). Typical
-recombination rates are on the order of $r_{BP} = 10^{-8}$, in Figure
+recombination rates are on the order of $r_{BP} = 10^{-8}$. In Figure
 \ref{fig:hitchhiking_reduction} we show the reduction in diversity,
 given by eqn. \eqref{eqn:pi_HH}, for two different selection coefficients.\\ 
 
-For our expected diversity levels to recover to $50\%$ of
+For our expected diversity level to recover to $50\%$ of
 its neutral expectation $\E(\pi_r)/\theta=0.5$, requires a physical
-distance $\ell^{*}$ such that $\log(0.5) = -r_{BP} \ell ^*\tau$ as using our
-expression for $\tau$ then $ \ell^* = \frac{-\log(0.5)}{r_{BP} \tau }$. As
+distance $\ell^{*}$ such that $\log(0.5) = -r_{BP} \ell ^*\tau$, \ec{and by re-arrangement,} 
+\begin{equation}
+\ell^* = \frac{-\log(0.5)}{r_{BP} \tau }.
+\end{equation}
+As
 $\tau$ depends inversely on the selection $s$ (eqn. \eqref{eq:diploid_fix_time}), the width of our trough of reduced diversity depends on $s/r_{BP}$.
-All else being equal we expect stronger sweeps or sweeps in regions of low
-recombination to have a larger hitchhiking effect. So that a selection coefficient of $s=0.1\%$ would reduce
+All else being equal, we expect stronger sweeps or sweeps in regions of low
+recombination to have a larger hitchhiking effect. For example, a selection coefficient of $s=0.1\%$ would reduce
 diversity over 10's of kb, while a sweep of $s=1\%$ would affect
 $\sim$100kb.   \\
 
