@@ -1,5 +1,10 @@
 \chapter{The Effect of Linked Selection}
 
+Genetic drift is not the only source of randomness in the dynamics of
+alleles. An allele is present on a set of genetic background selected
+alleles, this background represents the random happenstance of
+mutation and recombination. 
+
 When a beneficial allele arises as via a single mutation, it arises on
 a particular genetic background, i.e. a particular haplotype (Figure \ref{fig:HIV_sweep}A). Imagine this mutation arising a region with no recombination, or in an
 organism where genetic exchange is rare. If our beneficial allele
@@ -262,6 +267,24 @@ the field (personal communication, Art. Shapiro). \\
 \end{question}
 
 
+\subsection{The genome-wide effects of linked selection.}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figures/Genomewide_HH.png}
+\end{center}
+\caption{The relationship between (sex-averaged) recombination rate and synonymous
+  site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
+  using the data of Shapiro et al. 07 (kindly provided by Peter
+  Andolfatto, see Sella et al. 09 for details). The curve is the
+  predicted relationship between $\pi$ and recombination rate obtained
+  by fitting equation \eqref{eqn:pi_GW_HH} to this data 
+ using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
+\end{figure}
+
+
+
 \subsection{A simple recurrent model of selective sweeps}
 We sample a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
 sweeps are initiated within the population at some very low rate $\nu$
@@ -313,20 +336,6 @@ is
 \begin{equation}
 \E(\pi) = \theta \frac{r_{BP}}{\frac{4N\nu_{BP}}{ \tau}+r_{BP}} \label{eqn:pi_GW_HH}
 \end{equation}
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{figures/Genomewide_HH.png}
-\end{center}
-\caption{The relationship between (sex-averaged) recombination rate and synonymous
-  site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
-  using the data of Shapiro et al. 07 (kindly provided by Peter
-  Andolfatto, see Sella et al. 09 for details). The curve is the
-  predicted relationship between $\pi$ and recombination rate obtained
-  by fitting equation \eqref{eqn:pi_GW_HH} to this data 
- using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
-\end{figure}
 
 
 
