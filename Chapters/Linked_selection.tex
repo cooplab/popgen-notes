@@ -372,7 +372,7 @@ under a simple neutral model, with constant population size, we should expect th
 diversity to scale with the product of the population size and
 mutation rate. The second observation, however, is the relatively narrow range 
 of polymorphism across species with vastly different census sizes (see
-Figure \ref{fig:Leffer} and \citet{Leffler:12} for a recent review). 
+Figure \ref{fig:Leffer} and \citet{leffler:12} for a recent review). 
 As highlighted by \citet{Lewontin:74} in his discussion of the paradox
 of variation, this seemingly contradicts the prediction of the neutral theory that
 genetic diversity should scale with the census population size. There are a number of explanations for the discrepancy between genetic
@@ -390,7 +390,7 @@ source of stochasticity in allele frequencies, establishing an upper limit to le
 \end{center}
 \caption{The relationship between (sex-averaged) recombination rate and synonymous
   site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
-  using the data of Shapiro et al. 07 (kindly provided by Peter
+  using the data of \citep{Shapiro:07} (kindly provided by Peter
   Andolfatto, see Sella et al. 09 for details). The curve is the
   predicted relationship between $\pi$ and recombination rate obtained
   by fitting equation \eqref{eqn:pi_GW_HH} to this data 
@@ -432,7 +432,11 @@ differentiate among these different modes.
 
 
 \subsection{A simple recurrent model of selective sweeps}
-We sample a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
+To explain how a constant influx of sweeps could impact levels of
+diveristy here we will develop a model of recurrent
+selection. sweeps.
+
+Imagine we sample a a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
 sweeps are initiated within the population at some very low rate $\nu$
 per generation. The waiting time between sweeps
 at our locus is exponentially distributed $\sim Exp(\nu)$. Each sweep rapidly transits through the population in $\tau$
