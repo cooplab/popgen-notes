@@ -51,7 +51,7 @@ selective sweep of this allele.
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/Hitchhiking/No_recom_coal.pdf}
 \end{center}
-\caption{} \label{fig:no_recom_coal}
+\caption{The coalescent of 4 lineages, marked in blue, at a locus completed linked to our selected allele. The frequency trajectory of the selected allele $X(t)$ is shown in red.} \label{fig:no_recom_coal}
 \end{marginfigure}
 To better understand hitchhiking, first let's imagine examining variation at a locus fully linked
 to our selected locus, just after our sweep reached fixation. Neutral alleles sampled at this locus
@@ -60,8 +60,8 @@ allele on whose background the selected allele initially arose (Figure
 \ref{fig:no_recom_coal}). This is because
 that background neutral allele, which existed $\tau$ generations ago, is the
 ancestor of the entire population at this fully linked locus. Our individuals who
-carry the beneficial allele are, from the perspective of these two
-alleles\erin{which two alleles, the beneficial and linked neutral alleles"}, exactly like a rapidly expanding population. Therefore, a
+carry the beneficial allele are, from the perspective of these 
+alleles, experiencing a rapidly expanding population. Therefore, a
 pair of neutral alleles sampled at our linked neutral locus will be forced to
 coalesce $\approx \tau$ generations ago. A newly derived allele with an additive selection coefficient $s$ will
 take a time $\tau = 4\log(2N)/s$ generations to reach to fixation
@@ -75,7 +75,7 @@ those that have done will likely be singletons in our sample. \\
 \begin{center}
 \includegraphics[width= 0.5 \textwidth]{figures/Hitchhiking/recom_haps_sweep.pdf}
 \end{center}
-\caption{} \label{fig:sweep_haps}
+\caption{A cartoon depiction of a sweep of a red beneficial allele over three time points. The haplotype that the beneficial arose on by mutation is shown in black. The three vertical orange lines mark the loci shown in Figure \ref{fig:sweep_haps_coal}. Neutral alleles segregating prior to the sweep appear as white circles, new mutations after the sweep as green circles.} \label{fig:sweep_haps}
 \end{marginfigure}
 Now let's think about a sweep in a recombining region. Again the
 selected mutation arises on a particular haplotype, and it and its
@@ -93,7 +93,7 @@ background barely get to hitchhike along at all, as recombination breaks up thei
 \begin{center}
 \includegraphics[width= 0.9 \textwidth]{figures/Hitchhiking/recom_haps_coal_sweep.pdf}
 \end{center}
-\caption{} \label{fig:sweep_haps_coal}
+\caption{Coalescent genealogies at three loci different distances along the genome from a selective sweep. The locations of these three loci along the genome are marked in Figure \ref{fig:sweep_haps}. The selected mutation is shown in red. Lineages descended from recombination events during the sweep are marked in stars. Neutral mutations close to each of the loci are shown on the genealogy.} \label{fig:sweep_haps_coal}
 \end{figure}
 
 What do the coalesecent genealogies look like at loci various distances away from the
@@ -119,23 +119,23 @@ from the selected site.
 \end{center}
 \caption{The expected reduction in diversity compared to its neutral expectation as
 a function of the distance away from a site where a selected allele
-has just gone to fixation. The recombination rate is $r_{BP}= 1\times
+has just gone to fixation. The sweeps associated with two different strengths of selection are shown, corresponding to a short timescale ($\tau$) for the sweep and long one. The recombination rate is $r_{BP}= 1\times
 10^{-8}$.} \label{fig:hitchhiking_reduction}
 \end{figure}
 
 
+
+To model the expected pattern of diversity surrounding a selected site, we can think about a pair
+of alleles sampled at a neutral locus a recombination distance $r$
+away from our selected site. Our pair of alleles will be forced to
+coalesce $\approx \tau$ generations if neither of them of are
+descended from recombinant haplotypes.\\
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Hitchhiking/Recom_coal.pdf}
 \end{center}
 \caption{} \label{fig:no_recom_coal}
 \end{marginfigure}
-To model the expected pattern of diversity surrounding a selected site, we can think about a pair
-of alleles sampled at a neutral locus a recombination distance $r$
-away from our selected site. Our pair of alleles will be forced to
-coalesce $\approx \tau$ generations if neither of them of are
-descended from recombinant haplotypes.\\
-
 We know that in the present day our neutral lineage is linked to
 the selected allele. The probability that our lineage, in some
 generation $t$ back in time, is in a heterozygote is $1-X(t)$, and the
@@ -332,7 +332,7 @@ single copy mutation  (left panel, Figure \ref{fig:soft_sweep_haps}). However, w
 switches on, multiple mutations at the same gene
 may start to sweep, such that no one of these alleles sweeps
 to fixation (middle panel, Figure \ref{fig:soft_sweep_haps}). These sweeps involving multiple mutations significantly
-soften the impact \ec{of selection on genomic diversity}, and so are called 'soft sweeps'.
+soften the impact of selection on genomic diversity, and so are called 'soft sweeps'.
 
 \begin{figure}
 \begin{center}
@@ -420,9 +420,10 @@ haplotypes that carry deleterious alleles
 model. Below we'll discuss the background selection model and its
 basic predictions.
 
+%,Neher:13,Good:14
 More generally, a wide range of models of selection predict the removal of neutral
-diversity linked to selected sites. This is because \ec{the diversity-reducing effects of high variance in reproductive success are compounded over the generations when there is heritable variance in fitness} 
-\citep{Robertson:61,Santiago:95,Santiago:98,Barton:00,Neher:13,Good:14}. \erin{last two citations are appearing as ?'s} Many
+diversity linked to selected sites. This is because the diversity-reducing effects of high variance in reproductive success are compounded over the generations when there is heritable variance in fitness 
+\citep{Robertson:61,Santiago:95,Santiago:98,Barton:00}.  Many
 different modes of linked selection likely contribute to these
 genome-wide patterns of diversity; the present challenge is how to
 differentiate among these different modes.
@@ -438,7 +439,7 @@ sweeps are initiated within the population at some very low rate $\nu$
 per generation. The waiting time between sweeps
 at our locus is exponentially distributed $\sim Exp(\nu)$. Each sweep rapidly transits through the population in $\tau$
 generations, such that each sweep is finished long before the next
-sweep ($\tau \ll 1/\nu$). \\
+sweep ($\tau \ll \nicefrac{1}{\nu}$). \\
 
 As before, the chance that our neutral lineage fails to recombine
 off the sweep is $p_{NR}$, such that the probability that
