@@ -300,14 +300,14 @@ populations to look for evidence of sweeps occurring in one of the
 populations, e.g. alleles involved in local adaptation (see \ref{fig:local_sweep_haps}). The within population diversity ($H_S$)
 surrounding a local sweep is decreased, while the diversity among the
 populations is unaffected, thus local sweeps will result in a peak of
-$F_{ST}$ between weakly differentiated populations. 
+\fst between weakly differentiated populations. 
 
 \citet{hohenlohe2010population} studied genome-wide patterns of
-$F_{ST}$ between marine and freshwater populations of  threespine
+\fst between marine and freshwater populations of  threespine
 stickleback ({\it Gasterosteus aculeatus}). 
 Between marine populations they found no strong peaks of $F_{ST}$,
 however, between the marine and freshwater comparisons they found a
-number of high $F_{ST}$ peaks that were replicated over a number of
+number of high \fst  peaks that were replicated over a number of
 freshwater-marine comparisons. They identified a number of novel
 regions responsible for the adaptation of sticklebacks to freshwater
 environments and known loci. For example, the first peak of Linkage
@@ -317,14 +317,13 @@ armour plating in the freshwater environments.
 \begin{center}
 \includegraphics[width=0.7 \textwidth]{Journal_figs/recom_selection/Stickleback_FST/hohenlohe.png}
 \end{center}
-\caption{$F_{ST}$ across the stickleback genome, with colored bars indicating
+\caption{\fst across the stickleback genome, with colored bars indicating
   significantly elevated ($p \leq 10^{−5}$, blue; $p \leq 10^{−7}$,
   red) and reduced ($p \leq 10^{−5}$, green) values. The alternating
-  white and grey panels indicate different linkage groups. {\bf A)} $F_{ST}$
-  between two oceanic populations {\bf B)} Average $F_{ST}$ between a
+  white and grey panels indicate different linkage groups. {\bf A)} \fst
+  between two oceanic populations {\bf B)} Average \fst between a
   freshwater population and the two marine populations. } \label{fig:local_sweep_haps}
 \end{figure}
-
 
 
 \paragraph{Soft Sweeps from multiple mutations and standing variation.}
@@ -335,7 +334,6 @@ switches on, multiple mutations at the same gene
 may start to sweep such that no one of these alleles sweeps
 to fixation (middle panel, Figure \ref{fig:soft_sweep_haps}). These sweeps involving multiple mutations significantly
 soften the impact on diversity, and so are called soft sweeps.
-
 
 \begin{figure}
 \begin{center}
@@ -357,9 +355,6 @@ developments in this area.
 %For example recall the multiple mutations at G6PD
 %in the prior chapter. 
 
-
-
-
 \section{The genome-wide effects of linked selection.}
 
 To what extent are patterns of variation along the genome and
@@ -376,7 +371,8 @@ explain the high levels of diversity. As we saw in Chapter \ref{Chapter:Drift}
 under a simple neutral model, with constant population size, we should expect the amount of neutral genetic
 diversity to scale with the product of the population size and
 mutation rate. The second observation, however, is the relatively narrow range 
-of polymorphism across species with vastly different census sizes \citep[see ][ for a recent review]{Leffler:12}. 
+of polymorphism across species with vastly different census sizes (see
+Figure \ref{fig:Leffer} and \citet{{Leffler:12} for a recent review). 
 As highlighted by \citet{Lewontin:74} in his discussion of the paradox
 of variation, this seemingly contradicts the prediction of the neutral theory that
 genetic diversity should scale with the census population size. There are a number of explanations for the discrepancy between genetic
@@ -413,12 +409,33 @@ explained by differences in mutation rate between low and high
 recombination regions as this pattern is not seen strongly in
 divergence data among species.
 
+These patterns could reflect the action of selective sweeps happening
+recurrently along the genome. In the next section we'll present a model for how levels of
+genetic diversity should depend on recombination and the density of
+functional sites under a model of recurrent selective sweeps.
+However, other forms of linked selection can impact genetic
+diversity in similar ways. For example, linked genetic diversity is
+continuously lost from natural populations due to the removal of
+haplotypes that carry deleterious alleles
+\citep{Charlesworth:95,Hudson:95}, this is called background selection
+model. Below we'll discuss the background selection model and its
+basic predictions, 
+
+More generally, a wide range of models of selection predict the removal of neutral
+diversity linked to selected sites. This is because heritable variance in fitness
+leads the effect of high variance in reproductive success on
+levels of diversity to be compounded over generations
+\citep{Robertson:61,Santiago:95,Santiago:98,Barton:00,Gillespie_nonneutral,Gillespie:97,Neher:13,Good:14}. Many
+different modes of linked selection likely contribute to these
+genome-wide patterns of diversity, the challenge is now how to
+differentiate among these different modes.
+
 
 \subsection{A simple recurrent model of selective sweeps}
 We sample a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
 sweeps are initiated within the population at some very low rate $\nu$
 per generation. The waiting time between sweeps
-at our locus is exponential $\sim Exp(\nu)$. Each sweep rapidly transits through the population in $\tau$
+at our locus is exponentially distributed $\sim Exp(\nu)$. Each sweep rapidly transits through the population in $\tau$
 generations, such that each sweep is finished long before the next
 sweep ($\tau \ll 1/\nu$). \\
 
@@ -467,6 +484,8 @@ is
 \end{equation}
 
 
+\subsection{Background selection}
 
+% \citep{sella2009pervasive}
 
-%\citep{sella2009pervasive}
+For strongly deleterious alleles, this continuous loss acts primarily to increase the rate of genetic drift at markers closely linked to loci with high deleterious mutation rates \citep{Hudson:95b,Nordborg:96}. Therefore, this background selection model leads to a reduction in genetic diversity but no skew in the frequency spectrum. However, a skew towards rare neutral alleles can result if weakly deleterious mutations are incorporated into the model \citep{Nordborg:96, Gordo:02}.
