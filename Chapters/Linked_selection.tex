@@ -33,7 +33,7 @@ sequences from a patient at the start of drug treatment in the
 protease and retrotransposase coding regions. Bottom panel: A sample
 161 days later, after a drug resistant mutation has spread, the A
 $\rightarrow$ T in the $103^{rd}$ codon of retrotransposase. Each row is a haplotype,
-with the alleles present shown as coloured blocks. } \label{fig:HIV_sweep}
+with the alleles present shown as coloured blocks.Figure from \hyper{https://github.com/PenningsLab/ClonalInterferenceHIV}{Pleuni Pennings}} \label{fig:HIV_sweep}
 \end{figure}
 
 Pleuni Pennings has been working on visualizing selective sweeps in
@@ -53,18 +53,18 @@ selective sweep of this allele.
 \end{center}
 \caption{} \label{fig:no_recom_coal}
 \end{marginfigure}
-\ec{To better understand hitchhiking, first} let's imagine examining variation at a locus fully linked
+To better understand hitchhiking, first let's imagine examining variation at a locus fully linked
 to our selected locus, just after our sweep reached fixation. Neutral alleles sampled at this locus
 must trace their ancestral lineages back to the neutral
 allele on whose background the selected allele initially arose (Figure
 \ref{fig:no_recom_coal}). This is because
-that \ec{background} neutral allele, which existed $\tau$ generations ago, is the
-ancestor of the entire population at this \ec{fully linked} locus. Our individuals who
+that background neutral allele, which existed $\tau$ generations ago, is the
+ancestor of the entire population at this fully linked locus. Our individuals who
 carry the beneficial allele are, from the perspective of these two
 alleles\erin{which two alleles, the beneficial and linked neutral alleles"}, exactly like a rapidly expanding population. Therefore, a
-pair of neutral alleles sampled at our \ec{linked neutral} locus will be forced to
+pair of neutral alleles sampled at our linked neutral locus will be forced to
 coalesce $\approx \tau$ generations ago. A newly derived allele with an additive selection coefficient $s$ will
-take a time $\tau \propto \log(N)/s$ \erin{it's diploid though right? why not just put in 4/s*log(2N)?} generations to reach to fixation
+take a time $\tau = 4\log(2N)/s$ generations to reach to fixation
 within our population (see eqn. \eqref{eq:diploid_fix_time}). This is a very
 short-time scale compared to the average neutral coalescent time of
 $2N$ generations for a pair of alleles. Thus we expect little variation,
@@ -85,10 +85,9 @@ carrying the selected allele, in individuals who are heterozygote for
 the selected allele. These recombination events allow alleles that
 were not present on the original selected haplotype to avoid being
 swept out of the population, and also decouple the selected allele
-somewhat from hitchhiking alleles, preventing \ec{many of} them from hitchhiking all
-the way to fixation. Far out from the selected site, the recombination
+somewhat from hitchhiking alleles, preventing many of them from hitchhiking all the way to fixation. Far out from the selected site, the recombination
 rate is high enough that alleles that were present on the original
-background barely get to hitchhike along \ec{at all}, as recombination breaks up their association with the selected allele very rapidly.
+background barely get to hitchhike along at all, as recombination breaks up their association with the selected allele very rapidly.
 
 \begin{figure}
 \begin{center}
@@ -310,9 +309,8 @@ however, between the marine and freshwater comparisons they found a
 number of high $\fst$  peaks that were replicated over a number of
 freshwater-marine comparisons. They identified a number of novel
 regions responsible for the adaptation of sticklebacks to freshwater
-environments and known loci. For example, the first peak of Linkage
-Groups IV included the Ectodysplasin A (Eda), involved in the adaptive loss of
-armour plating in the freshwater environments.
+environments and also a number of loci previously identified in crosses between marine and freshwater populations. For example, the first peak of Linkage
+Group IV includes the Ectodysplasin A (Eda), a gene involved in the adaptive loss of armour plating in the freshwater environments.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.9 \textwidth]{Journal_figs/recom_selection/Stickleback_FST/hohenlohe.png}
@@ -387,12 +385,12 @@ source of stochasticity in allele frequencies, establishing an upper limit to le
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{figures/Genomewide_HH.png}
+\includegraphics[width=0.75\textwidth]{figures/Genomewide_HH.png}
 \end{center}
 \caption{The relationship between (sex-averaged) recombination rate and synonymous
   site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
   using the data of \citep{Shapiro:07} (kindly provided by Peter
-  Andolfatto, see Sella et al. 09 for details). The curve is the
+  Andolfatto, see \citet{sella2009pervasive} for details). The curve is the
   predicted relationship between $\pi$ and recombination rate obtained
   by fitting equation \eqref{eqn:pi_GW_HH} to this data 
  using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
@@ -435,7 +433,7 @@ differentiate among these different modes.
 \subsection{A simple recurrent model of selective sweeps}
 To explain how a constant influx of sweeps could impact levels of
 diveristy here we will develop a model of recurrent
-selection. sweeps.
+selective sweeps.
 
 Imagine we sample a a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
 sweeps are initiated within the population at some very low rate $\nu$
