@@ -191,13 +191,13 @@ distance $r$ away from the selected sweep ($\pi_r$) is
 \end{equation}
 So diversity increases as we move away from the selected site,
 slowly and exponentially plateauing to its neutral expectation $\pi_0$.\\
-\begin{figure}
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/hitchhiking/malaria/malaria.png}
 \end{center}
 \caption{Three species of malaria parasites ({\it Plasmodium}) in red
   blood cells. Animal parasites and human disease (1918). Chandler, A.C. } \label{fig:malaria}
-\end{figure}
+\end{marginfigure}
 The malaria pathogen ({\it Plasmodium falciparum}) has
 evolved drug resistance to anti-malaria drugs, often by changes at
 the dhfr gene. Figure \ref{fig:hitchhiking_malaria} shows levels of
@@ -244,7 +244,7 @@ distance $\ell^{*}$ such that $\log(0.5) = -r_{BP} \ell ^*\tau$, and by re-arran
 As
 $\tau$ depends inversely on the selection $s$ (eqn. \eqref{eq:diploid_fix_time}), the width of our trough of reduced diversity depends on $s/r_{BP}$.
 All else being equal, we expect stronger sweeps or sweeps in regions of low
-recombination to have a larger hitchhiking effect. For example, a selection coefficient of $s=0.1\%$ would reduce
+recombination to have a larger hitchhiking effect. For example, in a genomic region with a recombination rate $r_{BP}=10^{-8}$bp$^{01}$ a selection coefficient of $s=0.1\%$ would reduce
 diversity over 10's of kb, while a sweep of $s=1\%$ would affect
 $\sim$100kb.   \\
 
@@ -403,12 +403,12 @@ source of stochasticity in allele frequencies, potentially establishing an upper
  using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
 \end{figure}
 
+%Hellmann:08,, cutter2013
 One strong line of evidence for the action of linked selection in reducing levels of
 polymorphism is the positive correlation between putatively
 neutral diversity and recombination seen in a number of species, as, all
 else being equal, linked selection should remove diversity more quickly in regions of low recombination 
-\citep{Aguade:89,Begun:92,Wiehe:93,Cutter:10,Hellmann:08,Cai:09,
-  cutter2013}. For example, {\it Drosophila melanogaster} diversity
+\citep{Aguade:89,Begun:92,Wiehe:93,Cutter:10,Cai:09}. For example, {\it Drosophila melanogaster} diversity
 levels are much lower in genomic regions of low recombination (see
 Figure \ref{fig:GW_hitchhiking_reduction}). This pattern can not be
 explained by differences in mutation rate between low and high
@@ -464,7 +464,7 @@ lineages due to either a sweep or a neutral coalescent event is
 
 Now imagine that the sweeps don't occur at a fixed location with
 respect to our locus of interest, but now occur uniformly at random
-across our \ec{genome}. The sweeps are initiated at a very low rate of
+across our genome. The sweeps are initiated at a very low rate of
 $\nu_{BP}$ per basepair per generation. The rate of coalescent due to
 sweeps at a locus $\ell$ basepairs away from our neutral loci is
 $\nu_{BP} e^{-r_{BP} \ell \tau}$. If our neutral locus is in the
@@ -503,8 +503,8 @@ we discussed in Chapter \ref{Chapter:OneLocusSelection}, this results
 in a constant level of deleterious variation in the population. The
 constant selection against this deleterious variation has effects on diversity at linked
 sites. Each deleterious mutation arises at random on a haplotype in the
-population, \ec{and as selection purges this mutation, it removes with it any neutral alleles that were on this
-haplotype}. This constant removal of linked alleles from the population
+population, and as selection purges this mutation, it removes with it any neutral alleles that were on this
+haplotype. This constant removal of linked alleles from the population
 acts to reduce diversity in regions surrounding functional loci \citep{Hudson:95b,Nordborg:96}. 
 
 \begin{figure}
@@ -521,7 +521,7 @@ acts to reduce diversity in regions surrounding functional loci \citep{Hudson:95
   alleles. Figure modified from \citet{sella2009pervasive}} \label{fig:BGS_cartoon}
 \end{figure}
 The effects of background selection are more pronounced in regions of low recombination, where
-\ec{neutral} alleles are less able to recombine off the background of deleterious
+neutral alleles are less able to recombine off the background of deleterious
 alleles. Thus, under background selection, we also expect to see a
 reduction in diversity in regions of lower recombination. 
 
