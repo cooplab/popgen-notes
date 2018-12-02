@@ -162,16 +162,16 @@ p_{NR}=\prod_{t=1}^{\tau} \left(1- r(1-X(t))\right) \approx \exp
 \left( -r \tau (1-\widehat{X}) \right)
 \end{equation}
 where
-$\widehat{X}$ is the average frequency of the derived beneficial allele across \ec{its} trajectory as it sweeps up in frequency
+$\widehat{X}$ is the average frequency of the derived beneficial allele across its trajectory as it sweeps up in frequency,
 $\widehat{X} = \frac{1}{\tau}  \sum_{t=1}^{\tau}
  X(t)$. As our allele is additive, its trajectory for frequencies
- $<0.5$ is the mirror image of its trajectory for frequency $>0.5$, therefore its
+ $<0.5$ is the mirror image of its trajectory for frequencies $>0.5$, therefore its
 average frequency $\widehat{X} =0.5$. This simplifies our expression to
 \begin{equation}
 p_{NR} = e^{-r \tau/2 }.
 \end{equation}
 The probability that neither of our lineages is descended from a
-recombinant haplotype and hence are forced to coalesce is $p_{NR}^2$ (assuming that
+recombinant haplotype, and hence are forced to coalesce, is $p_{NR}^2$ (assuming that
 they coalesce at a time close to $\tau$ so that they recombine
 independently of each other for times $< \tau$).\\
 
@@ -254,14 +254,14 @@ roughly 200 kb in either direction for diversity levels to recover to
 50\% of genome-wide levels. \\
 
 Random facts: In all moths and butterflies only males recombine;
-chromosomes are transmitted without recombination in female. The
+chromosomes are transmitted without recombination in females. The
 recombination rate in males is 2.9 cM/Mb.  Peppered moths have an
 effective population size of roughly a hundred thousand
 individuals. Kettlewell used to eat moths when out collecting them in
 the field (personal communication, Art. Shapiro). \\
 {\bf A)} Briefly explain how this pattern offers further evidence that the melanic allele was favoured by selection.\\
-{\bf B)} Using this information what is your estimate as to the age of the allele?\\
-{\bf C)} What is your estimate of the selection coefficient favouring this melanic?
+{\bf B)} Using this information, and assuming the allele's effects on fitness are additive, what is your estimate of the age of the allele? \\
+{\bf C)} What is your estimate of the selection coefficient favouring this melanic allele?
 \end{question}
 
 
@@ -270,18 +270,18 @@ The primary signal of a recently completed selective sweep is the
 characteristic reduction in diversity surrounding the selected site.
 However, sweeps do leave other signals and these have also often been
 used to identify loci undergoing selection. 
-For example, neutral alleles further away from the selected site may not
-hitchhiking all of the way to fixation if recombination occurs during
-the sweep, which can lead to a transient excess of high-frequency
-derived alleles an intermediate distance away from the selected site
-after each sweep \citep{Fay:00,Przeworski:02,Kim:06}.
-Also as neutral diversity levels slowly recover through an influx of
-new mutations after the sweep there is a strong skew towards low
+For example, neutral alleles further away from the selected site may
+hitchhiking only part of the way to fixation if recombination occurs during
+the sweep, which can lead to an excess of high-frequency
+derived alleles at intermediate distances away from the selected site,
+a pattern lasting for a short time after a sweep \citep{Fay:00,Przeworski:02,Kim:06}.
+Also, as neutral diversity levels slowly recover through an influx of
+new mutations after a sweep, there is a strong skew towards low
 frequency derived alleles, a pattern that persists for many
 generations \citep{Braverman:95, Przeworski:02,Kim:06}. The excess of
 rare alleles, compared to a neutral model, can be captured by statistics such as Tajima's D (which
-we encountered back in our discussion of the neutral site eqn
-\ref{eqn_Tajimas_D}). Thus we can calculate Tajima's D from data in
+we encountered back in our discussion of the neutral site frequency eqn
+\ref{eqn_Tajimas_D}). Thus one way to look for loci that have undergone selective sweeps is to calculate Tajima's D from data in
 windows along the genome and look for
 strong departures from the null distribution.
 
@@ -296,21 +296,21 @@ strong departures from the null distribution.
 \end{figure}
 
 We can also use comparisons among multiple populations to look for evidence of sweeps occurring in one of the
-populations, for example to identify alleles involved in local adaptation (see \ref{fig:local_sweep_haps}). The within population diversity ($H_S$)
-surrounding a local sweep is decreased, while the diversity among the
-populations is unaffected. Thus local sweeps will result in a peak of
+populations, for example to identify alleles involved in local adaptation (see \ref{fig:local_sweep_haps}). A selective sweep will decrease the within-population diversity ($H_S$)
+surrounding the selected site, without affecting the diversity between different
+populations. Thus local sweeps create peaks of
 $\fst$ between weakly differentiated populations. 
 
 \citet{hohenlohe2010population} studied genome-wide patterns of
 $\fst$ between marine and freshwater populations of  threespine
 stickleback ({\it Gasterosteus aculeatus}). 
-Between marine populations they found no strong peaks of $\fst$,
+Between different marine populations, they found no strong peaks of $\fst$;
 however, between the marine and freshwater comparisons they found a
 number of high $\fst$  peaks that were replicated over a number of
 freshwater-marine comparisons. They identified a number of novel
 regions responsible for the adaptation of sticklebacks to freshwater
 environments and also a number of loci previously identified in crosses between marine and freshwater populations. For example, the first peak of Linkage
-Group IV includes the Ectodysplasin A (Eda), a gene involved in the adaptive loss of armour plating in the freshwater environments.
+Group IV includes Ectodysplasin A (Eda), a gene involved in the adaptive loss of armour plating in freshwater environments.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.9 \textwidth]{Journal_figs/recom_selection/Stickleback_FST/hohenlohe.png}
@@ -326,13 +326,13 @@ Group IV includes the Ectodysplasin A (Eda), a gene involved in the adaptive los
 
 
 \paragraph{Soft Sweeps from multiple mutations and standing variation.}
-In our sweep model above we assumed that selection favoured a
+In our sweep model above, we assumed that selection favoured a
 beneficial allele from the moment it entered the population as a
 single copy mutation  (left panel, Figure \ref{fig:soft_sweep_haps}). However, when a novel selection pressure
 switches on, multiple mutations at the same gene
-may start to sweep such that no one of these alleles sweeps
+may start to sweep, such that no one of these alleles sweeps
 to fixation (middle panel, Figure \ref{fig:soft_sweep_haps}). These sweeps involving multiple mutations significantly
-soften the impact on diversity, and so are called soft sweeps.
+soften the impact \ec{of selection on genomic diversity}, and so are called 'soft sweeps'.
 
 \begin{figure}
 \begin{center}
@@ -344,12 +344,12 @@ soften the impact on diversity, and so are called soft sweeps.
 Another way that the impact of a sweep can be softened is if our
 allele was segregating in the population for some time before it
 became beneficial. That additional time means that our allele can have
-recombined on to various haplotype backgrounds, such that when
-selection pressure switches the selected allele sweeps up in frequency
-multiple haplotypes (right panel, Figure \ref{fig:soft_sweep_haps}). 
+recombined onto various haplotype backgrounds, such that when
+selection pressures switch, the selected allele sweeps up in frequency on 
+multiple different haplotypes (right panel, Figure \ref{fig:soft_sweep_haps}). 
 Detecting and differentiating these different types of sweeps is an active area of
-empirical research and theory in population genomics see \citet{hermisson2017soft} for an overview of
-developments in this area.
+empirical research and theory in population genomics (see \citet{hermisson2017soft} for an overview of
+developments in this area).
 
 %For example recall the multiple mutations at G6PD
 %in the prior chapter. 
@@ -366,21 +366,21 @@ variation?
 inception of molecular population genetics. The first is the relatively high
 level of genetic variation observed in most obligately sexual species.  
 The neutral theory of molecular evolution was developed in part to
-explain the high levels of diversity. As we saw in Chapter \ref{Chapter:Drift} 
+explain these high levels of diversity. As we saw in Chapter \ref{Chapter:Drift}, 
 under a simple neutral model, with constant population size, we should expect the amount of neutral genetic
 diversity to scale with the product of the population size and
 mutation rate. The second observation, however, is the relatively narrow range 
 of polymorphism across species with vastly different census sizes (see
 Figure \ref{fig:Leffer} and \citet{leffler:12} for a recent review). 
 As highlighted by \citet{Lewontin:74} in his discussion of the paradox
-of variation, this seemingly contradicts the prediction of the neutral theory that
+of variation, this observation seemingly contradicts the prediction of the neutral theory that
 genetic diversity should scale with the census population size. There are a number of explanations for the discrepancy between genetic
 diversity levels and census population sizes. The first is that the effective size of the population ($N_e$) is
 often much lower than the census size, due to high variance in
 reproductive success and frequent bottlenecks (as discussed in  Chapter \ref{Chapter:Drift}). 
-The second major explanation, put forward by \citet{MaynardSmith:74},
+The second major explanation, \erin{this citation is coming through as a question mark in the text..} put forward by \citet{MaynardSmith:74},
 is that neutral levels of diversity are also systematically reduced by the effects of linked selection. 
-In large populations, selective sweeps and other forms of linked selection may come to dominate genetic drift as a
+In large populations, selective sweeps and other forms of linked selection may come to dominate over genetic drift as a
 source of stochasticity in allele frequencies, potentially establishing an upper limit to levels of diversity \citep{Kaplan:89, Gillespie:00}. 
 
 \begin{figure}
@@ -391,7 +391,7 @@ source of stochasticity in allele frequencies, potentially establishing an upper
   site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
   using the data of \citep{Shapiro:07} (kindly provided by Peter
   Andolfatto, see \citet{sella2009pervasive} for details). The curve is the
-  predicted relationship between $\pi$ and recombination rate obtained
+  predicted relationship between $\pi$ and recombination rate, obtained
   by fitting equation \eqref{eqn:pi_GW_HH} to this data 
  using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
 \end{figure}
@@ -401,9 +401,9 @@ polymorphism is the positive correlation between putatively
 neutral diversity and recombination seen in a number of species, as, all
 else being equal, linked selection should remove diversity more quickly in regions of low recombination 
 \citep{Aguade:89,Begun:92,Wiehe:93,Cutter:10,Hellmann:08,Cai:09,
-  cutter2013}. For example, in {\it Drosophila melanogaster} diversity
-levels are much lower in regions of low recombination, see
-Figure \ref{fig:GW_hitchhiking_reduction}. This pattern can not be
+  cutter2013}. For example, {\it Drosophila melanogaster} diversity
+levels are much lower in genomic regions of low recombination (see
+Figure \ref{fig:GW_hitchhiking_reduction}). This pattern can not be
 explained by differences in mutation rate between low and high
 recombination regions as this pattern is not seen strongly in
 divergence data among species.
@@ -416,23 +416,21 @@ However, other forms of linked selection can impact genetic
 diversity in similar ways. For example, linked genetic diversity is
 continuously lost from natural populations due to the removal of
 haplotypes that carry deleterious alleles
-\citep{Charlesworth:95,Hudson:95}, this is called background selection
+\citep{Charlesworth:95,Hudson:95}; this is called the 'background selection'
 model. Below we'll discuss the background selection model and its
-basic predictions, 
+basic predictions.
 
 More generally, a wide range of models of selection predict the removal of neutral
-diversity linked to selected sites. This is because heritable variance in fitness
-leads the effect of high variance in reproductive success on
-levels of diversity to be compounded over generations
-\citep{Robertson:61,Santiago:95,Santiago:98,Barton:00,Neher:13,Good:14}. Many
+diversity linked to selected sites. This is because \ec{the diversity-reducing effects of high variance in reproductive success are compounded over the generations when there is heritable variance in fitness} 
+\citep{Robertson:61,Santiago:95,Santiago:98,Barton:00,Neher:13,Good:14}. \erin{last two citations are appearing as ?'s} Many
 different modes of linked selection likely contribute to these
-genome-wide patterns of diversity, the challenge is now how to
+genome-wide patterns of diversity; the present challenge is how to
 differentiate among these different modes.
 
 
 \subsection{A simple recurrent model of selective sweeps}
 To explain how a constant influx of sweeps could impact levels of
-diveristy here we will develop a model of recurrent
+diversity, here we will develop a model of recurrent
 selective sweeps.
 
 Imagine we sample a a pair of neutral alleles at a locus a genetic distance $r$ away from a locus where
@@ -442,50 +440,49 @@ at our locus is exponentially distributed $\sim Exp(\nu)$. Each sweep rapidly tr
 generations, such that each sweep is finished long before the next
 sweep ($\tau \ll 1/\nu$). \\
 
-As before our chance that our neutral lineage fails to recombine
+As before, the chance that our neutral lineage fails to recombine
 off the sweep is $p_{NR}$, such that the probability that
-our pair of lineages are forced to coalesce by a sweep $e^{-r \tau}$. Our
+our pair of lineages are forced to coalesce by a sweep is $e^{-r \tau}$. Our
 lineages therefore have a very low probability
 \begin{equation}
 \nu e^{-r \tau}
 \end{equation}
-of being forced to coalesce by a sweep per generation. In addition of
-lineages can coalesce at a neutral rate of $1/(2N)$. Thus the average
+of being forced to coalesce by a sweep per generation. If our lineages do not coalesce due to a sweep, they coalesce at a neutral rate of $\nicefrac{1}{2N}$ per generation. Thus the average
 waiting time till a coalescent event between our neutral pair of
 lineages due to either a sweep or a neutral coalescent event is
 \begin{equation}
-\E(T_2) = \frac{1}{\nu e^{-r \tau} + 1/(2N)}
+\E(T_2) = \frac{1}{\nu e^{-r \tau} + \nicefrac{1}{2N}}
 \end{equation}
 
 Now imagine that the sweeps don't occur at a fixed location with
 respect to our locus of interest, but now occur uniformly at random
-across our sequence. The sweeps are initiated at a very low rate of
+across our \ec{genome}. The sweeps are initiated at a very low rate of
 $\nu_{BP}$ per basepair per generation. The rate of coalescent due to
 sweeps at a locus $\ell$ basepairs away from our neutral loci is
 $\nu_{BP} e^{-r_{BP} \ell \tau}$. If our neutral locus is in the
-middle of a chromosome that stretches $L$ basepairs in either direction
+middle of a chromosome that stretches $L$ basepairs in either direction,
 the total rate of sweeps per generation that force our pair of lineages to coalesce is
 \begin{equation}
 2\int_0^{L} \nu_{BP} e^{-r_{BP} \ell \tau} d \ell =
 \frac{2\nu_{BP}}{r_{BP} \tau} \left(1-e^{-r_{BP} \tau L} \right)
 \end{equation}
-so that if $L$ is very large ($r_{BP} \tau L \gg 1$) the rate of coalesce per
-generation due to sweeps is $\frac{2\nu_{BP}}{r_{BP} \tau}$. The total rate
+so that if $L$ is very large ($r_{BP} \tau L \gg 1$), the rate of coalescence per
+generation due to sweeps is $\nicefrac{2\nu_{BP}}{r_{BP} \tau}$. The total rate
 of coalescence for a pair of lineages per generation is then
 \begin{equation}
 \frac{2\nu_{BP}}{r_{BP} \tau}+\frac{1}{2N}
 \end{equation}
 So our average time till a pair of lineages coalesce is
 \begin{equation}
-\E(T_2) = \frac{1}{\frac{2\nu_{BP}}{r_{BP} \tau}+\frac{1}{2N}} = \frac{r_{BP}2N}{\frac{4N\nu_{BP}}{ \tau}+r_{BP}}
+\E(T_2) = \frac{1}{\nicefrac{2\nu_{BP}}{r_{BP} \tau}+\nicefrac{1}{2N}} = \frac{r_{BP}2N}{\nicefrac{4N\nu_{BP}}{ \tau}+r_{BP}}
 \end{equation}
 such that our expected pairwise diversity ($\pi=2\mu\E(T_2)$) in a region of
 recombination rate $r_{BP}$ that experiences sweeps at rate $\nu_{BP}$
 is  
 \begin{equation}
-\E(\pi) = \theta \frac{r_{BP}}{\frac{4N\nu_{BP}}{ \tau}+r_{BP}} \label{eqn:pi_GW_HH}
+\E(\pi) = \theta \frac{r_{BP}}{\nicefrac{4N\nu_{BP}}{ \tau}+r_{BP}} \label{eqn:pi_GW_HH}
 \end{equation}
-the expected diversity increases with $r_{BP}$ as higher recombination rates means a great likelihood of avoiding being forced to coalesce by a sweep, and decreases with $\nu_{BP}$ as a greater density of functional sites increases the chance of experiencing a nearby sweep. As we move to high $r_{Bp}$, assuming that $\nu_{BP}$ doesn't increase with $r_{BP}$ our level of diversity should plateau to $\theta$, the level of genetic diversity of a neutral site completely unlinked to selected loci. An example of fitting this curve to data is shown in Figure \ref{fig:GW_hitchhiking_reduction}. 
+The expected diversity increases with $r_{BP}$, as higher recombination rates decrease the likelihood of being forced to coalesce by a sweep. Expected diversity decreases with $\nu_{BP}$, as a greater density of functional sites increases the chance of experiencing a nearby sweep. As we move to high $r_{Bp}$, assuming that $\nu_{BP}$ doesn't increase with $r_{BP}$, our level of diversity should plateau to $\theta$, the level of genetic diversity of a neutral site completely unlinked to any selected loci. An example of fitting this curve to data is shown in Figure \ref{fig:GW_hitchhiking_reduction}. 
 %Assuming that the density of functional sites experiencing sweeps ($\nu+{BP}$) remains the same across recombination environments, i.e. that $r_{BP}$ and $\nu_{BP}$ are uncorrelated 
 
 \subsection{Background selection}
@@ -493,13 +490,13 @@ the expected diversity increases with $r_{BP}$ as higher recombination rates mea
 % \citep{sella2009pervasive}
 Populations experience a constant influx of
 deleterious alleles at functional loci, while selection acts to purge
-from the population maintaining levels of constraint at these loci. As
-we discussed in Chapter \ref{Chapter:OneLocusSelection} this results
+them from the population, maintaining levels of constraint at these loci. As
+we discussed in Chapter \ref{Chapter:OneLocusSelection}, this results
 in a constant level of deleterious variation in the population. The
 constant selection against this deleterious variation has effects on diversity at linked
 sites. Each deleterious mutation arises at random on a haplotype in the
-population, and as they are purged they remove with them the alleles that were on this
-haplotype. This constant removal of linked alleles from the population
+population, \ec{and as selection purges this mutation, it removes with it any neutral alleles that were on this
+haplotype}. This constant removal of linked alleles from the population
 acts to reduce diversity in regions surrounding functional loci \citep{Hudson:95b,Nordborg:96}. 
 
 \begin{figure}
@@ -508,17 +505,16 @@ acts to reduce diversity in regions surrounding functional loci \citep{Hudson:95
 \end{center}
 \caption{A cartoon depiction of a region for 10 haplotypes
   experiencing background selection. Neutral mutations are shown as
-  gray circles, and deleterious mutations in red. Over time
+  gray circles, and deleterious mutations in red. Over time,
   chromosomes carrying deleterious mutations are removed from the
   population, such that most individuals are descended from a subset of
-  chromosomes free of deleterious alleles (shown here as a pink
-  box). Mutation is constantly generating new deleterious alleles on
+  chromosomes free of deleterious alleles (highlighted here by orange boxes). Mutation is constantly generating new deleterious alleles on
   the background of chromosomes previously free of deleterious
   alleles. Figure modified from \citet{sella2009pervasive}} \label{fig:BGS_cartoon}
 \end{figure}
-This effect is more pronounced in regions of low recombination where
-alleles are less able to recombine off their background of deleterious
-alleles. Thus under background selection we also expect to see a
+The effects of background selection are more pronounced in regions of low recombination, where
+\ec{neutral} alleles are less able to recombine off the background of deleterious
+alleles. Thus, under background selection, we also expect to see a
 reduction in diversity in regions of lower recombination. 
 
 %For strongly deleterious alleles, this continuous loss acts primarily
