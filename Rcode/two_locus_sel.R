@@ -21,15 +21,16 @@ two.loc.sims<-function(p,w.mat,r){
 	return(cbind(p.array,d.array))
 }
 
-stack.freqs.plot<-function(p.out){
+stack.freqs.plot<-function(p.out,my.title=""){
 	stacked.freqs<-t(apply(p.out[,c("Ab","AB","ab","aB")],1,cumsum))
-	plot(stacked.freqs[,"Ab"],ylim=c(0,1),type="l",xlab="Generations",ylab="Frequencies",cex.lab=1.2)
+	plot(stacked.freqs[,"Ab"],ylim=c(0,1),type="l",xlab="Generations",ylab="Frequencies",cex.lab=1.4,cex.axis=1.2,main=my.title,cex.main=1.4)
 	my.x<-1:n.gens
 	x.polygon<-c(my.x,rev(my.x))
 	polygon(x=x.polygon,c(stacked.freqs[,"Ab"],rep(0,n.gens)),col="blue")
 	polygon(x=x.polygon,c(stacked.freqs[,"AB"],rev(stacked.freqs[,"Ab"])),col="purple")
 	polygon(x=x.polygon,c(stacked.freqs[,"AB"],rev(stacked.freqs[,"aB"])),col="white")
 	polygon(x=x.polygon,c(stacked.freqs[,"aB"],rev(stacked.freqs[,"ab"])),col="red")
+		
 }
 
 
@@ -50,42 +51,27 @@ stack.freqs.plot<-function(p.out){
 ###Neutral Hitchhiking
 n.gens<-500
 p<-  c(0.001,0.099,0,0.9); names(p)<-c("AB","Ab","aB","ab")
-#p<-  c(0.4,.1,.1,0.4); names(p)<-c("AB","Ab","aB","ab")
-#w.add<-c(1,1,1,1);names(w.add)<-names(p)
-
 w.add<-c(1,0.95,1,0.95);names(w.add)<-names(p)
 w.mat<-outer(w.add,w.add,FUN="+")
-
-layout(matrix(1:4,nrow=2,byrow=TRUE))
-par(mar=c(2,2,1,1))
-p.out<-two.loc.sims(p,w.mat,r=0.000)
-stack.freqs.plot(p.out)
-#plot(p.out[,"AB"]+p.out[,"Ab"],type="l",ylim=c(0,1))
-#lines(p.out[,"AB"]+p.out[,"aB"],col="red")
-
-p.out<-two.loc.sims(p,w.mat,r=0.0005)
-stack.freqs.plot(p.out)
+layout(t(1:3))
+par(mar=c(4,4,3,1))
+p.out<-two.loc.sims(p,w.mat,r=0.0005); stack.freqs.plot(p.out,my.title="r=0.0005")
 #plot(p.out[,"AB"]+p.out[,"Ab"],type="l",ylim=c(0,1))#lines(p.out[,"AB"]+p.out[,"aB"],col="red")
-
-p.out<-two.loc.sims(p,w.mat,r=0.005)
-stack.freqs.plot(p.out)
-#plot(p.out[,"AB"]+p.out[,"Ab"],type="l",ylim=c(0,1)); lines(p.out[,"AB"]+p.out[,"aB"],col="red")
-
-p.out<-two.loc.sims(p,w.mat,r=0.05)
-stack.freqs.plot(p.out)
-#plot(p.out[,"AB"]+p.out[,"Ab"],type="l",ylim=c(0,1));lines(p.out[,"AB"]+p.out[,"aB"],col="red")
-
+p.out<-two.loc.sims(p,w.mat,r=0.005); stack.freqs.plot(p.out,my.title="r=0.005")
+p.out<-two.loc.sims(p,w.mat,r=0.05);stack.freqs.plot(p.out,my.title="r=0.05")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/selection_recom_interaction/Neutral_Hitchhiking.pdf")
 
 ###Deleterious allele Hitchhiking
-n.gens<-750
+par(mar=c(4,4.1,3,1))
+n.gens<-1000
 p<-  c(0.001,0.099,0,0.9); names(p)<-c("AB","Ab","aB","ab")
 w.add<-c(0.97,0.93,1,0.95);names(w.add)<-names(p)
 w.mat<-outer(w.add,w.add,FUN="+")
 
 layout(t(1:3))
- p.out<-two.loc.sims(p,w.mat,r=0.00);stack.freqs.plot(p.out);
- p.out<-two.loc.sims(p,w.mat,r=0.00005);stack.freqs.plot(p.out);
- p.out<-two.loc.sims(p,w.mat,r=0.0002);stack.freqs.plot(p.out);
+ p.out<-two.loc.sims(p,w.mat,r=0.00);stack.freqs.plot(p.out,my.title="r=0.0");
+ p.out<-two.loc.sims(p,w.mat,r=0.000005);stack.freqs.plot(p.out,my.title="r=0.000005");
+ p.out<-two.loc.sims(p,w.mat,r=0.0002);stack.freqs.plot(p.out,my.title="r=0.0005");
 
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Deleterious_Hitchhiking.pdf")
 

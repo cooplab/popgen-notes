@@ -37,17 +37,27 @@ Generalizing this result, we write the change in \ec{any haplotype i from} our s
 \end{equation}
 where the coupling haplotypes 1 and 4 use $+D$ and repulsion haplotypes 2 and 3 use $-D$. \erin{I'm confused about the signs +/- here. For haplotype 1 above you used -rw14D but here you're saying it's +D. Also, why doesn't the sign of D itself take care of the +/- (I think this second part is just my own confusion, but the first part doesn't seem to match between the equation above and your text)} Note that the sum of these four $\Delta x_i$ is zero, as our haplotype frequencies sum to one.
 
-So the change in the frequency of a haplotype (e.g. AB, haplotype 1) is determined by the interplay of two factors: First, the extent to which  the marginal fitness of our haplotype is higher (or lower) than the mean fitness of the population (the magnitude and sign of $(\bar{w}_1-\bar{w})/\bar{w}$). Second, whether there is a deficit or any excess of our haplotype compared to linkage equilibrium (the magnitude and sign of $D$), modified by the strength of recombination. 
+So the change in the frequency of a haplotype (e.g. AB, haplotype 1) is determined by the interplay of two factors: First, the extent to which  the marginal fitness of our haplotype is higher (or lower) than the mean fitness of the population (the magnitude and sign of $(\bar{w}_1-\bar{w})/\bar{w}$). Second, whether there is a deficit or any excess of our haplotype compared to linkage equilibrium (the magnitude and sign of $D$), modified by the strength of recombination. This tension between selection promoting particular haplotypic combinations, and recombination breaking up overly common haplotypes is the key to a lot of interesting dynamics and evolutionary processes.
 
 \section{Types of interaction between selection and recombination}
 
 \paragraph{The hitchhiking of deleterious alleles}
-
 \begin{figure}
 \begin{center}
-  \includegraphics[width =  \textwidth]{figures/Deleterious_Hitchhiking_labeled.pdf}
+  \includegraphics[width = 0.9 \textwidth]{figures/selection_recom_interaction/Neutral_Hitchhiking_labeled.pdf}
 \end{center}
-\caption{} \label{fig:deleterious_HH}  %é
+\caption{A beneficial mutation $B$ arises on the background of a neutral allele whose initial frequency is $p_A=10\%$. The beneficial allele has a strong, additive selection coefficient of $hs=0.05$.} \label{fig:Neutral_HH}  %é
+\end{figure}
+Let's start by revisiting our neutral hitchhiking in this two locus setting in the previous chapter we saw that neutral alleles can hitchhike along with our selected allele if they are tightly linked enough. Figure \ref{fig:Neutral_HH}  shows the frequency trajectories of the various haplotypes for neutral allele ($A$) that is present at $10\%$ frequency in the population when our beneficial allele ($B$) arises on its background. When the recombination rate ($r$) is low between the loci, $A$ gets to hitchhike to high frequency, but for higher recombination rates it only gets dragged to intermediate frequencies. For the highest recombination rate shown ($r \approx s$) the neutral allele's dynamics ($p_{Ab}+p_{AB}$) are barely changed at all, as it recombines on and off the sweeping allele frequently and so barely perceives the sweep. 
+
+\paragraph{The hitchhiking of deleterious alleles}
+Deleterious alleles can also hitchike along with beneficial mutations if they are not too deleterious compared to the benefits offered by the selected allele. Again our allele $A$ is at $10\%$ frequency in the population in Figure \ref{fig:deleterious_HH}, but this time it is deleterious and so initially decreasing in frequency across the generations when the beneficial mutation ($B$) arises on its background. If the loci are tightly linked, and A were too deleterious, B would never get to take off in the population.   However, if the benefits of B outweighs the cost of A, even in the case of no recombination between our loci, allele $A$ gets to hitchhike to fixation and merely slows down $B$'s rate of increase and their combined fitness is reduced. With moderate amounts of recombination between the loci, our deleterious starts to hitchhike but before it can get to fixation the beneficial allele manages to recombine off its background. This recombinant aB haplotype, which has higher fittest as it lacks the deleterious allele, now sweeps through the population displacing the AB haplotype. For higher recombination events we have to wait less long for a recombination to breakup the hitchhiking deleterious allele, so the adaptive allele easily escapes its background.
+For the purposes of illustration here we've used a relatively common deleterious allele, but in reality these alleles will likely be often be rare in the population and at mutation selection balance. If they are rare it is likely that a beneficial mutation arises on a specific deleterious allele's background, but as we have seen there are likely going to be many rare deleterious alleles in the population so it is likely that a beneficial mutations may often have to contend with deleterious hitchhikers. 
+\begin{figure}
+\begin{center}
+  \includegraphics[width = 0.9 \textwidth]{figures/selection_recom_interaction/Deleterious_Hitchhiking.pdf}
+  \caption{} \label{fig:deleterious_HH}  %é
+  \end{center}
 \end{figure}
 
 
