@@ -70,7 +70,7 @@ w.mat<-outer(w.add,w.add,FUN="+")
 
 layout(t(1:3))
  p.out<-two.loc.sims(p,w.mat,r=0.00);stack.freqs.plot(p.out,my.title="r=0.0");
- p.out<-two.loc.sims(p,w.mat,r=0.000005);stack.freqs.plot(p.out,my.title="r=0.000005");
+ p.out<-two.loc.sims(p,w.mat,r=0.000005);stack.freqs.plot(p.out,my.title="r=0.000001");
  p.out<-two.loc.sims(p,w.mat,r=0.0002);stack.freqs.plot(p.out,my.title="r=0.0005");
 
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Deleterious_Hitchhiking.pdf")
@@ -130,7 +130,7 @@ w.mat
 }
 
 
-
+##################Two locus sims to show affect of recom in -ve freq dependent selection models to demo. supergenes
 
 p<-  c(0.001,0.099,0,0.9); names(p)<-c("AB","Ab","aB","ab")
 w.add<-c(0.97,0.93,1,0.95);names(w.add)<-names(p)

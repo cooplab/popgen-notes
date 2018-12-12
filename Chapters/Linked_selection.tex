@@ -292,7 +292,6 @@ we encountered back in our discussion of the neutral site frequency eqn
 windows along the genome and look for
 strong departures from the null distribution.
 
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5 \textwidth]{figures/Hitchhiking/two_pops_sweep.pdf}
@@ -362,7 +361,6 @@ developments in this area).
 %in the prior chapter. 
 
 \section{The genome-wide effects of linked selection.}
-
 To what extent are patterns of variation along the genome and
   among species shaped by linked selection, such as selective sweeps? 
 We can hope to identify individual cases of strong selective sweeps
@@ -399,8 +397,9 @@ source of stochasticity in allele frequencies, potentially establishing an upper
   using the data of \citep{Shapiro:07} (kindly provided by Peter
   Andolfatto, see \citet{sella2009pervasive} for details). The curve is the
   predicted relationship between $\pi$ and recombination rate, obtained
-  by fitting equation \eqref{eqn:pi_GW_HH} to this data 
- using non-linear least squares via the {\tt nls()} function in {\tt R}.} \label{fig:GW_hitchhiking_reduction}
+  by fitting the recurrent hitchhiking equation \eqref{eqn:pi_GW_HH} to this data 
+ using non-linear least squares via the {\tt nls()} function in {\tt
+   R}.} \label{fig:GW_hitchhiking_reduction}  %%Code source('~/Dropbox/Courses/Popgen_teaching_Notes/Rcode/Genomewide_HH.R')
 \end{figure}
 
 %Hellmann:08,, cutter2013
@@ -490,7 +489,31 @@ is
 \begin{equation}
 \E(\pi) = \theta \frac{r_{BP}}{\nicefrac{4N\nu_{BP}}{ \tau}+r_{BP}} \label{eqn:pi_GW_HH}
 \end{equation}
-The expected diversity increases with $r_{BP}$, as higher recombination rates decrease the likelihood of being forced to coalesce by a sweep. Expected diversity decreases with $\nu_{BP}$, as a greater density of functional sites increases the chance of experiencing a nearby sweep. As we move to high $r_{Bp}$, assuming that $\nu_{BP}$ doesn't increase with $r_{BP}$, our level of diversity should plateau to $\theta$, the level of genetic diversity of a neutral site completely unlinked to any selected loci. An example of fitting this curve to data is shown in Figure \ref{fig:GW_hitchhiking_reduction}. 
+The expected diversity increases with $r_{BP}$, as higher
+recombination rates decrease the likelihood of being forced to
+coalesce by a sweep. Expected diversity decreases with $\nu_{BP}$, as
+a greater density of functional sites increases the chance of
+experiencing a nearby sweep. As we move to high $r_{Bp}$, assuming
+that $\nu_{BP}$ doesn't increase with $r_{BP}$, our level of diversity
+should plateau to $\theta$, the level of genetic diversity of a
+neutral site completely unlinked to any selected loci. If we assume
+that our genome experiences a constant rate of sweeps of a given
+strength, i.e. that $\nicefrac{4N\nu_{BP}}{ \tau}$ is a constant, we can fit the
+variation in $\pi$ across regions that vary in their recombination
+rate, i.e. $r_{BP}$.  An example of fitting this curve to data from
+{\it Drosophila melanogaster} is shown in Figure
+\ref{fig:GW_hitchhiking_reduction}, see \citet{wiehe1993analysis} for
+an early example of fitting a similar recurrent hitchhiking model to such data. The parameter giving us this
+best-fitting curve is $\nicefrac{4N\nu_{BP}}{ \tau} approx 7 \times 10^{-9}$. With an
+  effect population size of a million  and assuming that the sweeps take
+  a thousand generations to reach fixation, we fnd this implies
+  $\nu_{BP} \approx 10^{-12}$. Thus a really low rate of
+  moderately strong sweeps, roughly one a megbase every million
+  generations,  is all we need to give this profound dip in regions
+  of low recombination. However, sweeps from positively selected
+  alleles are not the only cause of genome-wide signals of linked
+  selection selection against deleterious alleles can also drive these
+  patterns.    
 %Assuming that the density of functional sites experiencing sweeps ($\nu+{BP}$) remains the same across recombination environments, i.e. that $r_{BP}$ and $\nu_{BP}$ are uncorrelated 
 
 \subsection{Background selection}
@@ -505,7 +528,26 @@ constant selection against this deleterious variation has effects on diversity a
 sites. Each deleterious mutation arises at random on a haplotype in the
 population, and as selection purges this mutation, it removes with it any neutral alleles that were on this
 haplotype. This constant removal of linked alleles from the population
-acts to reduce diversity in regions surrounding functional loci \citep{Hudson:95b,Nordborg:96}. 
+acts to reduce diversity in regions surrounding functional loci
+\citep{Hudson:95b,Nordborg:96}, an effect known as background
+selection (BGS).
+
+What proportion of our haplotypes of our haplotypes are free of
+deleterious mutations in any given generation, and so free to
+contribute to future generations? Well under mutation-selection
+balance a constrained locus with a mutation rate $\mu$ towards
+deleterious alleles, which experience a selection coefficient of $sh$
+against them in heterozygotes, will result in $\nicefrac{\mu}{sh}$
+chromosomes carrying the deleterious allele. Thus for a neutral polymorphism
+completed linked to a constrained locus only
+$2N(1-\nicefrac{\mu}{sh})$ alleles get to contribution to future
+generations. Therefore, the level of pairwise diversity in a constant
+population due to BGS at such a locus will be
+\begin{equation}
+\E[\pi] = 2 \mu \times 2N(1-\nicefrac{\mu}{sh}) = \pi_0  (1-\nicefrac{\mu}{sh})
+\end{equation}
+where $\pi_0= 4N\mu$ the level of neutral pairwise diversity in the
+absence of linked selection.
 
 \begin{figure}
 \begin{center}
@@ -524,6 +566,200 @@ The effects of background selection are more pronounced in regions of low recomb
 neutral alleles are less able to recombine off the background of deleterious
 alleles. Thus, under background selection, we also expect to see a
 reduction in diversity in regions of lower recombination. 
+
+For a neutral locus that is a recombination fraction $r$ away from our
+locus subject to constraint, the level of diversity is
+\begin{equation}
+\E[\pi] = \pi_0  \left(1-\frac{\mu sh}{2(r+sh)^2} \right) \label{eqn:pi_loc_BGS}
+\end{equation}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/recom_selection/maize_dist_gene/Figure4_beissinger_A.pdf}
+\end{center}
+\caption{Relative diversity compared to the mean diversity in windows
+  $\ge 0.01$ cM as a function of the distance to the nearest gene.
+  See \citep{beissinger2016recent} for details. Figure under cc-by \url{https://github.com/RILAB/beissinger_ms} } \label{fig:BGS_maize}
+\end{marginfigure}
+thus as we move away from a locus experiencing purifiying selection,
+increasing $r$, diversity should recover. For example, moving away
+from a genic regions in the maize genome we see the average level of
+diversity recover. This occurs in both maize and teosinte, the wild
+progenitor of maize. The dip is perhaps stronger in teosinte, as the
+bottleneck in maize, and acceleration in the rate of genetic drift,
+may have somewhat released constraint on sites where very weakly deleterious
+alleles segregated previously at mutation selection balance. 
+
+More generally, if neutral locus is surrounded by $L$ loci
+experiencing purifying selection at recombination distances
+$r_1,\cdots,r_L$ then compounding equation \eqref{eqn:pi_loc_BGS}
+across these loci, the reduction is approximately
+\begin{equation}
+\E[\pi] = \pi_0  \prod_{i=1}^L \left(1-\frac{\mu sh}{2(r_L+sh)^2}
+\right) \approx \exp \left( \sum_{i=1}^L \frac{\mu sh}{2(r_i+sh)^2} \right) \label{eqn:pi_loc_BGS}
+\end{equation}
+To model an average neutral locus in a genomic region with a given recombination rate, we can imagine that our neutral locus is situated in the center of a large region with
+total recombination rate $R$ and total deleterious mutation rate $U$,
+where $U = \mu L$. Then our expression for diversity, equation \eqref{eqn:pi_loc_BGS}, simplies to 
+\begin{equation}
+\E[\pi] \approx \pi_0 \exp \left( \nicefrac{-U}{(sh+R)} \right)
+\approx \pi_0 \exp \left( \nicefrac{-U}{R} \right). \label{eqn:GW_BGS_1}
+\end{equation}
+in this last approximation we're assuming that we're looking at a
+large region, with $R \gg sh$ . Note that much like the genetic load,
+equation \eqref{eqn:mut_load}, this expression depends on only on the
+total deleterious mutation rate. The dependence on the selection
+coefficient drops out, as weakly selected mutations segregate in the population at higher
+frequencies but are removed from the population more slowly allowing
+more of the genome to recombine off the allele. \\
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Genomewide_BGS_HH.pdf}
+\end{center}
+\caption{The relationship between recombination rate and synonymous
+  site pairwise diversity ($\pi$) in {\it D. melanogaster}, as
+  in Figure \ref{fig:GW_hitchhiking_reduction}. The red curve is the
+  predicted relationship between $\pi$ and recombination rate, obtained
+  by fitting the BGS equation \eqref{eqn:GW_BGS} to this data  
+ using non-linear least squares via the {\tt nls()} function in {\tt
+   R}. The blue line is the hitchhiking equation line from Figure
+ \ref{fig:GW_hitchhiking_reduction}. } \label{fig:GW_BGS_reduction}
+\end{marginfigure}
+
+For a first go at fitting this to genome-wide data we could look at
+diversity in windows of length $W$bp (as in Figure \ref{fig:GW_BGS_reduction}). If we assume that there is a constant rate of
+deleterious mutation per base pair, $\mu_{BP}$ then $U=\mu_{BP}W$. While, if our genomic window has a
+recombination rate $r_{BP}$ per base-pair, our total genetic length is
+$R=r_{BP}W$. Doing this our window size cancels out of equation
+\eqref{eqn:GW_BGS_1} to give
+\begin{equation}
+  \E[\pi] \approx \pi_0 \exp \left(\nicefrac{-\mu_{BP}}{r_{bp}}
+  \right) \label{eqn:GW_BGS_2}
+ \end{equation}
+looking across windows that vary in their recombination rate,
+i.e. $r_{BP}$, we can fit equation \eqref{eqn:GW_BGS_2} to data to
+estimate $\mu_{BP}$. An example of doing this to data from {\it D. melanogaster}
+  is shown in Figure
+\ref{fig:GW_BGS_reduction}, yielding an estimate of the deleterious
+mutation rate of $\mu_{BP}\approx
+3.2 \times 10^{-9}$. This is roughly of the same order of the mutation
+rate per base in  {\it D. melanogaster}, and so is somewhat high as it
+would require most of the genome to be constrained but as a first
+prediction it's not terrible. Note how similar the fit is to a model of
+hitchhiking, suggesting that both BGS and hitchhiking are capable of explaining the
+broad relationship between diversity and recombination.
+
+%Our estimate
+%of the deleterious mutation rate ($\mu_{BP}$) from the is too high again
+%compatible with the idea that
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/recom_selection/McVicker_human_BGS/McVicker_human_BGS.pdf}
+\end{center}
+\caption{Observed (black line) and predicted pairwise diversity across
+  chromosome 1, from a background selection model that assumes a
+  uniform mutation rate (red line) or a mutation rate that varies with
+  local human/dog divergence (blue line). Figure from
+  \citep{Mcvicker:09} under a CC-BY license. } \label{fig:McVicker_BGS}
+\end{figure}
+
+As our annotation of functional regions of the genome so have our
+methods to infer background selection, a more rigorous version of this analysis today would include variation in coding density among
+windows into $\mu_{BP}$. With detailed gneomic annotations, showing
+coding regions and constrained non-coding regions we can also move
+beyond just analysing broad-scale patterns. For example,
+\citet{Mcvicker:09} fit a model of background selection to putatively
+neutral pairwise diversity along the human genome, using equation
+\ref{eqn:pi_loc_BGS} to estimate the effect of BGS at each locus
+weighting the genetic distance to all of the surrounding coding
+regions and constrained non-coding sites. This allowed
+\citet{Mcvicker:09} to estimate mutation rates and average selection
+coefficients acting against deleterious alleles in these regions of
+the genome. This best fitting model also allowed them to predict
+diversity levels along the genome, a section of this is shown in
+zfigure \ref{fig:McVicker_BGS}. Thus broad-scale features of
+polymorphism along the genome are described by background selection
+(or by linked selection more generally).
+
+The deleterious mutation rates estimated by \citet{Mcvicker:09} from
+fitting a model of BGS were again too high, as in the {\it Drosphila}
+example above, suggesting the BGS alone is not sufficient to
+explain all of the effect of linked selection. But how then do we go about distinguishing the impact of BGS from hitchhiking? 
+
+\paragraph{Distinguishing the impact of hitchiking from  background selection in
+  genome-wide data}
+
+To start to separate the effects of hitchhiking from background
+selection a variety of approaches have been taken. Much of the
+strongest evidence showinf the effects of both comes from
+\textit{Drosophila melanogaster} and we review some of that evidence here. 
+Hitchhiking is expected to have systematic effects of the neutral site
+frequency spectrum, distorting it towards rare minor alleles,
+(reflecting the slow recovery of diversity following the
+sweep. Therefore, we should expect a distortion of summary
+statistics such as Tajima's D in regions of low recombination if
+hitchhiking is contributing to the reduction in diversit in these
+regions \citep{Braverman:95, Przeworski:02,Kim:06}. In \textit{D. melanogaster}, where there is a greater skew towards rare
+alleles at putatively neutral sites in regions of low recombination
+\citep{Andolfatto:01,Shapiro:07}, see left panel of Figure
+\ref{fig:Tajimas_D_dN_pi}. However, while this skew isn't expected under
+simple models of strong background selection, other models of background selection
+can lead to such patterns. \graham{REFS}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/recom_selection/Andolfatto_subs_vs_dN/Tajimas_D_subs_vs_dN.pdf}
+\end{center}
+\caption{{\bf Left)} Average Tajima's D in genomic windows plotted
+  against their recombination rate in \textit{D. melanogaster}. Data
+  from \citet{Shapiro:07}. {\bf Right)} Synonymous pairwise diversity
+  in genomic windows  as a function of the density of non-synonymous
+  subsitutions in the window. Data from \citet{Andolfatto:07}. } \label{fig:Tajimas_D_dN_pi}
+\end{figure}
+\graham{Double check if Shapiro restricted the range on their recom rates}
+
+Another prediction of the hitchhiking model, where an allele sweeps to
+fixation, is that there should be a functional substitution associated with each
+sweep. Or to flip that around we might expect to see a greater impact
+of hitchhiking where there are more functional substitutions. 
+For example, regions surrounding non-synonymous substitutions should have lower levels of
+diversity, if a high fraction of non-synonymous substitutions are adapted. Again this pattern is seen in \textit{D. melanogaster}
+\citep{Andolfatto:07, Macpherson:07,Sattath:11}, right side of
+Figure \ref{fig:Tajimas_D_dN_pi}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/recom_selection/Elyashiv_around_subs/Elyashiv_around_subs.pdf}
+\end{center}
+\caption{ {\bf Left) }  Scaled synonymous pairwise diversity levels around non-synonymous
+  (NS) and synonymous (SYN) substitutions in {\it
+    D. melanogaster}. {\bf Right)} Predicted scaled diversity levels
+  around non-synonymous substitutions based on models including
+  background selection (BS), classic sweeps (CS) and both (BS \&
+  CS). Figure from \citet{elyashiv2014genomic}, under a CC-BY license.} \label{fig:Elyashiv_around_subs}
+\end{figure}
+
+Pushing this idea further we can look at the dip in diversity
+surrounding a non-synonymous substitution averaged across all the
+substitutions in the genome. \citet{elyashiv2016genomic} found a
+stronger dip in diversity around non-synonymous substitutions than
+synonymous substitutions \citep[see also
+][]{sattath2011pervasive}. Fitting a model of background selection and
+hitchiking to putative neutral diversity along the genome, extending
+the model of \citet{Mcvicker:09}, they found that
+the dip in diversity around synonymous substitutions comes mostly from
+BGS. But to fully explain the dip in diversity around synonymous
+substitutions a reasonable proportion of these non-synonymous
+substitutions have to have been accompanied by a classic (hard)
+sweep. The majority of these sweeps are estimated to be due to very
+weak selection, with selection coefficients $<10^{-4}$. Furthermore, \citet{elyashiv2014genomic}  estimated a
+ $77$ - $89\%$ reduction in neutral diversity due to selection on linked sites, and concluded that no genomic window was entirely
+free of the effect of selection. Thus linked selection has a profound
+effect in some species such as {\it Drosophila melanogaster}. 
+
+
+
+
 
 %For strongly deleterious alleles, this continuous loss acts primarily
 %to increase the variance of  at markers closely linked to loci with high deleterious mutation rates \citep{Hudson:95b,Nordborg:96}. Therefore, this background selection model leads to a reduction in genetic diversity but no skew in the frequency spectrum. However, a skew towards rare neutral alleles can result if weakly deleterious mutations are incorporated into the model \citep{Nordborg:96, Gordo:02}.
