@@ -536,14 +536,15 @@ from the pedigree.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{figures/FSJ_IBD.png}
+\includegraphics[width= 0.75 \textwidth]{figures/FSJ_IBD.pdf}
 \end{center}
 \caption[3cm]{Estimated coefficient
 of kinship from Florida Scrub Jays. Each point is a pair of
 individuals, plotted by their estimated IBD ($r_1$ and $r_2$) from their genetic data. The
 points are coloured by their known pedigree relationships. Note that
 most pairs have low kinship, and no recent genealogical relationship,
-and so appear as black points in the lower left corner. Thanks to Nancy Chen for supplying the data.} \label{fig:FSJ_IBD}  
+and so appear as black points in the lower left corner. Thanks to
+Nancy Chen for supplying the data. \gitcode{} } \label{fig:FSJ_IBD}  
 \end{figure}
 
 \paragraph{Sharing of genomic blocks among relatives.}
@@ -1287,7 +1288,7 @@ ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
 \end{center}
-    \caption[][-2cm]{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies}
+    \caption[][-0cm]{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
 \label{fig:Gwarbler_geo} 
 \end{figure}
 
@@ -1548,15 +1549,17 @@ haplotype as
 \end{equation}
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_time.pdf}
+\includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_time.pdf}  %https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R
 \end{center}
-\caption{The decay of LD from an initial value of $D_0=0.25$ over time (Generations) for a pair of loci a recombination fraction $r$ apart.}\label{fig:LD_time}
+\caption{The decay of LD from an initial value of $D_0=0.25$ over time
+  (Generations) for a pair of loci a recombination fraction $r$
+  apart. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}}\label{fig:LD_time}
 \end{marginfigure} 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_recom.pdf}
 \end{center}
-\caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci.} \label{fig:LD_recom}
+\caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}} \label{fig:LD_recom}
 \end{marginfigure} 
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
