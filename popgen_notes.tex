@@ -19,9 +19,9 @@
 \usepackage{nicefrac}
 \usepackage{csvsimple}
 %\usepackage[hypertexnames=false]{hyperref}
-%\hypersetup{colorlinks=true, urlcolor=blue, citecolor=black, linkcolor=black}
+\hypersetup{colorlinks=true, urlcolor=black, citecolor=black, linkcolor=black,linkbordercolor=black}
 %\usepackage[normalem]{ulem}
-\usepackage{tcolorbox}
+%\usepackage{tcolorbox}
 
 \newcommand{\ec}[1]{{\em \color{blue} #1}}
 
@@ -33,9 +33,9 @@
 \newcommand{\half}{\tfrac{1}{2}}
 
 %FOR compiling on xelatex 
-%\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
 %%comment out this line for overleaf
-%\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}} %%comment out this line for overleaf
+\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}} %%comment out this line for overleaf
 \usepackage[colorinlistoftodos  ,disable]{todonotes}  % ,disable  ,disable
 
 
@@ -49,6 +49,27 @@
 \newcommand{\Wbar}{\overline{W}}
 \newcommand{\dNdS}{\nicefrac{d_N}{d_S}}
 
+%\newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
+%Image from the Biodiversity Heritage Library. Contributed by [Holding Institution]. | www.biodiversitylibrary.org
+%Image from the Biodiversity Heritage Library. Contributed by [Holding
+%Institution]. licensed under CC BY 2.0
+
+\usepackage{caption}
+\newcommand{\BHLCC}[4]{\newline \noindent \tiny{#1 Image from the \href{#2}{Biodiversity
+      Heritage Library}. Contributed by #3. Licensed under CC
+    BY-#4. \par}} %\caption*{
+
+\newcommand{\BHLNKC}[3]{\newline \noindent  \tiny{#1 Image from the \href{#2}{Biodiversity
+      Heritage Library}. Contributed by #3. No known copyright restrictions.}}
+
+\newcommand{\BHLNC}[3]{\newline \noindent \tiny{#1 Image from the \href{#2}{Biodiversity Heritage Library}. Contributed by #3. Not in copyright.}}
+
+\newcommand{\IANC}[3]{\newline \noindent \tiny{#1 Image from the \href{#2}{Internet Archive}. Contributed by #3. No known copyright restrictions.}}
+
+
+\newcommand{\gitcode}[1]{Code \href{#1}{here}.}
+
+\newcommand{\PLOSccBY}{{licensed under CC BY 4.0}}
 
 
 \newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
