@@ -109,7 +109,7 @@ In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 inde
 \begin{center}
 \includegraphics[width= \textwidth]{figures/WF_loss_het/WF_loss_het_N50.pdf}
 \end{center}
-\caption{Change in allele frequency and loss of heterozygosity over time for 40 replicates. Simulations of genetic drift in a diploid population of 50 individuals, in the absence of new mutations. We start 40 independent, biallelic loci each with an initial allele at 30\% frequency. The left panel shows the allele frequency over time and the right panel shows the heterozygosity over time, with the mean decay matching eqn. \eqref{eqn:loss_het_discrete}.} \label{fig:LossHet_WF_N50}
+\caption{Change in allele frequency and loss of heterozygosity over time for 40 replicates. Simulations of genetic drift in a diploid population of 50 individuals, in the absence of new mutations. We start 40 independent, biallelic loci each with an initial allele at 30\% frequency. The left panel shows the allele frequency over time and the right panel shows the heterozygosity over time, with the mean decay matching eqn. \eqref{eqn:loss_het_discrete}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Genetic_drift/WF_loss_of_het.R}} \label{fig:LossHet_WF_N50}
 \end{figure} 
 
 
@@ -117,7 +117,7 @@ In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 inde
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Genetic_drift/smelt/20497452375_9be855d9ff_z.jpg}
 \end{center}
-\caption{Pond smelt ({\it Hypomesus olidus}), a close relative of delta smelt. Bulletin of the United States Fish Commission. 1906.} \label{fig:smelt}
+\caption{Pond smelt ({\it Hypomesus olidus}), a close relative of delta smelt. \BHLNC{Bulletin of the United States Fish Commission. 1906.}{https://archive.org/stream/bulletinofunited261906unit/\#page/270/mode/1up}{Smithsonian Libraries}} \label{fig:smelt}
 \end{marginfigure} 
 
 \begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
@@ -164,15 +164,15 @@ generation.  If you've read to here, please email Prof Coop a picture of JBS Hal
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Black_footed_ferrets/Black_footed_ferret.pdf}
 \end{center}
-\caption{The black-footed ferret ({\it M. nigripes}). Wild animals of North America, The National geographical
-  society, 1918. BHL} \label{fig:black_footed_ferret}  
+\caption{The black-footed ferret ({\it M. nigripes}). \BHLNC{Wild animals of North America, The National geographical
+  society, 1918.}{https://www.biodiversitylibrary.org/page/9727900\#page/179/mode/1up}{American Museum of Natural History Library}} \label{fig:black_footed_ferret}  
 \end{marginfigure} 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf}
 \end{center}
-\caption{Loss of heterozygosity in the Black-footed Ferrets in their declining population. Data from \citet{Wisely:02}.} \label{fig:LossHet_ferrets}  
+\caption{Loss of heterozygosity in the Black-footed Ferrets in their declining population. Numbers in brackets give estimated number of individuals alve at that time. Data from \citet{Wisely:02}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/black_footed_ferrets/black-footed-ferrets_He.R}} \label{fig:LossHet_ferrets}  
 \end{figure} 
 
 To see how a decline in population size can affect levels of
@@ -213,7 +213,7 @@ Next we're going to consider the amount of neutral polymorphism that can be main
 balance. A diploid population of 5 individuals. In the first generation
 everyone has the same allele (black). Each generation the transmitted allele
 can mutate and we generate a new colour. In the bottom plot, I trace the
-frequency of alleles in our population over time. The mutation rate we use is very high, simply to maintain diversity in this small population.} \label{fig:Mut_Sel_balance}
+frequency of alleles in our population over time. The mutation rate we use is very high, simply to maintain diversity in this small population. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:Mut_Sel_balance}
 \end{figure} 
 
 \paragraph{The neutral mutation rate.} 
@@ -357,7 +357,7 @@ a repeatedly bottlenecked population losing diversity at a fast rate.
 \caption{Loss of heterozygosity over time in a bottlenecking population. A diploid population of 10 individuals, that bottlenecks
   down to three individuals repeatedly. In the first generation, I colour every allele a different
 colour so we can track their descendants. There are no new
-  mutations.} \label{fig:LossHet_varying_pop}  
+  mutations. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:LossHet_varying_pop}  
 \end{figure} 
 
 
@@ -413,7 +413,7 @@ million. \\
 \caption{High variance on reproductive success increases the rate of genetic drift. A diploid population of 10 individuals, where the circled
   individuals have much higher reproductive success. In the first generation I colour every allele a different
 colour so we can track their descendants, there are no new
-  mutations.} \label{fig:LossHet_varying_RS}
+  mutations. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:LossHet_varying_RS}
 \end{figure} 
 
 Variance in reproductive success will also affect our effective
@@ -437,8 +437,8 @@ i.e. the rate of coalescence is the harmonic mean of the two sexes' population s
 \begin{center}
 \includegraphics[width= 0.7 \textwidth]{illustration_images/Genetic_drift/Hamadryas_baboon/Hamadryas_baboon.pdf}
 \end{center}
-\caption{Male Hamadryas baboons. Brehm's Tierleben. Brehm,
-  A.E. 1893. Up to ten females live in a harem with a single male.  %Brehm's animal life
+\caption{Male Hamadryas baboons. Up to ten females live in a harem with a single male.\BHLNC{Brehm's Tierleben (Brehm's animal life). Brehm,
+  A.E. 1893.}{https://archive.org/stream/brehmstierlebena001breh/\#page/181/mode/1up}{University of Illinois Urbana-Champaign}  %Brehm's animal life
 } \label{fig:Hamadryas_baboon}  
 \end{marginfigure} 
 
@@ -454,7 +454,7 @@ You are studying a population of 500 males and 500 females Hamadryas baboons. As
 {\bf B)} Do you expect the {\it ratio} of X-chromosome to autosomal diversity to be higher or lower in this species compared to a species where the sexes have more similar variance in reproductive success? Explain the intuition behind your answer.
  \end{question}
 
-
+\graham{Add X chromosome Ne?}
 \section{The Coalescent and patterns of neutral diversity}
 
 \begin{quote}
@@ -488,7 +488,7 @@ for an example of this.
   of an offspring (and the allele transmitted is indicated by a light
   grey line).  We track a
   pair of alleles, chosen in the present day, back 14 generations
-  until they find a common ancestor.} \label{fig:Coalescent_simulation}
+  until they find a common ancestor. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Coalescent_simulation}  %https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R
 \end{figure}
 
 The probability that a pair of alleles
@@ -557,7 +557,7 @@ Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:het
   \includegraphics[width =
   \textwidth]{illustration_images/Quant_gen/Grey_fox/14770789583_4db7ec5164_o.jpg}  %https://www.flickr.com/photos/internetarchivebookimages/14770789583/in/photolist-axdicF-ovfa8V-odM3sY-bCrnQ8-ovgYXn-tiQfMQ-odMpu5-x1xCJu-wQ7qT7-wE7kfs-xEZQd1-wK4YSh-ovWx4g-wpDZzF-xjvQ89-tHDjuS-w9Wit5-xEvyhH-xjCbKD-u4q3Qe
 \end{center}
-\caption{Gray Fox, {\it Urocyon cinereoargenteiis}. Pearson and Warren. Diseases and enemies of poultry. (1897) BHL.} 
+\caption{Gray Fox, {\it Urocyon cinereoargenteiis}. \BHLNC{Diseases and enemies of poultry. Pearson and Warren. (1897)}{https://archive.org/stream/diseasesenemieso00pearrich/diseasesenemieso00pearrich\#page/n663/mode/1up}{University of California Libraries}} 
 \end{marginfigure}
 
 
@@ -618,14 +618,14 @@ unlikely events. \\
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width = \textwidth]{figures/Coalescent_3.png}
+  \includegraphics[width = 0.75 \textwidth]{figures/Coalescent/Coal_three_lineages.pdf}
 \end{center}
 \caption{A simple simulation of the coalescent process for three
   lineages. We track the ancestry of 
   three modern-day alleles, the first pair (blue and purple) coalesce four generations back, after which  
   there are only two independent lineages we are tracking. This pair
   then coalesces twelve generations in the past. Note that different
-  random realizations of this process will differ from each other a lot.} \label{fig:Coalescent_simulation_3}
+  random realizations of this process will differ from each other a lot. The $T_{MRCA}$ is $T_3+T_2$. The total time in the tree is $T_{tot}=3T_3 + 2T_2= 25$ generations. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Coalescent_simulation_3}
 \end{figure}
 
 The probability that a specific pair of alleles find a common ancestor in the
@@ -655,7 +655,6 @@ can be ignored as they are vanishingly rare. Obviously in reasonable
 sample sizes there are many more triples (${i \choose 3}$) and higher order
 combinations than there are pairs (${i \choose 2}$), but if $i \ll N$ then we are safe to
 ignore these terms.
-
 
 
 When there are $i$ alleles, the probability that we wait until the
@@ -724,7 +723,7 @@ genealogy of our sample. \\
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Coalescent/Coal_w_muts.pdf}
 \end{center}
-\caption{A simple coalescent tree from a single coalescent simulation, tracing the genealogy of 4 alleles with mutational changes marked with dashes showing transitions away from the MRCA sequence (AGTTT) . The $T_{MRCA}$ is the sum of $T_4$, $T_3$, and $T_2$. The total time in the tree is $T_{tot}=4 T_4+2T_3 + 2T_2= 54$ generations. } \label{fig:Coal_w_muts}
+\caption{A simple coalescent tree from a single coalescent simulation, tracing the genealogy of 4 alleles with mutational changes marked with dashes showing transitions away from the MRCA sequence (AGTTT) . The $T_{MRCA}$ is $T_4+T_3+T_2$. The total time in the tree is $T_{tot}=4 T_4+3T_3 + 2T_2= 54$ generations. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R}  } \label{fig:Coal_w_muts}
 \end{figure}
 
 
@@ -889,7 +888,7 @@ more per segregating site than typical, thus increasing $\theta_{\pi}$ more than
 \end{center}
 \caption{Data from 202 genes from 14002 people of European ancestry (28004 alleles). Note
   the double log-scale. Redrawn from \citeauthor{nelson:12}. The red
-  line gives the neutral, constant population size estimate of the site frequency spectrum, our equation \eqref{eqn:neutral_freq_spec}, using a  $\theta$ estimated from $\pi$. Note how the non-synonymous changes are even more skewed towards rare alleles, that's likely due to selection against non-synonymous alleles acting to push them towards rare frequency.} \label{fig:Human_growth}
+  line gives the neutral, constant population size estimate of the site frequency spectrum, our equation \eqref{eqn:neutral_freq_spec}, using a  $\theta$ estimated from $\pi$. Note how the non-synonymous changes are even more skewed towards rare alleles, that's likely due to selection against non-synonymous alleles acting to push them towards rare frequency. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.R} } \label{fig:Human_growth}
 \end{marginfigure}
 We've already seen how changes in population size can change the rate
 at which heterozygosity is lost from the population (see the
@@ -911,7 +910,7 @@ comparison, the neutral frequency spectrum, eqn
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Growth_genealogy.pdf}
 \end{center}
-\caption{A realization of the coalescent process in a growing population. The population underwent a period of doubling every generation. The initial population size of just two individuals, maintained for a number of generations, is obviously highly unrealistic but serves our purpose.} \label{fig:Genealogy_growth}
+\caption{A realization of the coalescent process in a growing population. The population underwent a period of doubling every generation. The initial population size of just two individuals, maintained for a number of generations, is obviously highly unrealistic but serves our purpose. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R}  } \label{fig:Genealogy_growth}
 \end{figure*}
 
 Why is this? Well, these patterns are likely the result of the very recent
@@ -935,7 +934,7 @@ bottleneck is shown in Figure \ref{fig:Genealogy_crash}.
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Crash_genealogy.pdf}
 \end{center}
-\caption{A realization of the coalescent process in a bottlenecked population. Our population under went a bottleneck eight generations in the past.} \label{fig:Genealogy_crash}
+\caption{A realization of the coalescent process in a bottlenecked population. Our population under went a bottleneck eight generations in the past. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Genealogy_crash}
 \end{figure*}
 Looking at a sample of lineages drawn from the population today, if
 the bottleneck was somewhat recent ($\ll N_{\textrm{Big}}$ generations
@@ -955,7 +954,7 @@ blue and orange ancestral lineages in
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Mimulus_coalescent_times.pdf}
 \end{center}
 \caption[][-2cm]{Diversity along the Mimulus genome. Black dots give $\pi$ in 1kb windows between chromosomes sampled from two individuals, the red line is a
-  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$.} \label{fig:Mimulus_bottleneck}
+  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{} } \label{fig:Mimulus_bottleneck}
 \end{figure}
 \begin{marginfigure}[2cm]
 \begin{center}
