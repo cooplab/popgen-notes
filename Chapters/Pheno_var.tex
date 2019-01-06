@@ -393,7 +393,7 @@ phenotype.\\
  the caption of Figure \ref{fig:QT1}.We simulate the genotypes and
  phenotypes of the two parents, and then simulate the child's genotype
 following mendelian transmission. The blue line shows $x=y$ and the red
-line shows the best fitting linear regression line. }
+line shows the best fitting linear regression line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R} }
 \end{figure}
 
 More formally, the expected phenotype of the child given the parental
@@ -500,20 +500,25 @@ where $V_{A,1}$ and $V_{A,2}$ are the additive genetic variance for trait 1 and 
 
 One  type of  genetic covariance we often think about is the covariance of male and female phenotypes. For example, below is the relationship between the forehead patch size for Pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
 
+\graham{Need non-cross sex eg}
+
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
 \end{center}
 \caption{Relationship of standardized forehead patch size between
-  fathers and sons and daughters in  Pied fly-catchers. Datafrom \citeauthor{potti:11}.} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
+  fathers and sons and daughters in  Pied fly-catchers. Data from
+  \citeauthor{potti:11}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/Potti_Canal_2011_sex_cov.R}} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
 \end{figure}
 
 \begin{marginfigure}[-40mm]
 \begin{center}
-\includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.png}
+\includegraphics[width=0.9
+\textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.png}
 \end{center}
-\caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  Coloured illustrations of British birds, and their eggs.
-London :G.W. Nickisson,1842-1850. BHL} \label{fig:FlyCatcher}   %% not
+\caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  {Coloured
+    illustrations of British birds, and their eggs (1842-1850).
+London :G.W. Nickisson. }{https://www.biodiversitylibrary.org/page/40246319\#page/335/mode/1up}{Smithsonian Libraries}} \label{fig:FlyCatcher}   %% not
                                 %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
 \end{marginfigure}
 
