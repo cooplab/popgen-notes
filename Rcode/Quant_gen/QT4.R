@@ -1,7 +1,7 @@
-
+library("plotrix")
 
 ##Paste this in first
-genetic.covar<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cutoff=FALSE,ibd.prob,relly.type=""){
+genetic.covar<-function(L=20, environ.var,Num_inds=5000,print.slope=FALSE,sel.cutoff=FALSE,ibd.prob,relly.type=""){
 	##Quantitative genetics sims
 	allele.freq<-0.5   ###each locus is assumed to have the same allele frequencies. This is just to simplify the coding, in reality these results work when each locus has its own frequency (and the coding wouldn't be too much harder). 
 	 stopifnot(sum(ibd.prob)==1)
@@ -43,15 +43,17 @@ genetic.covar<-function(L=20, environ.var,Num_inds=1000,print.slope=FALSE,sel.cu
 	other.ind.additive.genetic<-other.ind.additive.genetic / sd(other.ind.additive.genetic)
 	other.pheno<- other.ind.additive.genetic + rnorm(Num_inds,sd=sqrt(environ.var))
 	other.pheno<-other.pheno-mean(other.pheno)
+	my.cov<-cov(ind.pheno,other.pheno);
 
 	plot(ind.pheno,other.pheno,xlab="Ind 1's phenotype",ylab="Ind 2's phenotype",cex=1.5,cex.axis=1.5,cex.main=1.5,cex.lab=1.5,
-	main=paste(relly.type,"L =",L,"VE=",environ.var,"VA=1",sep=", "))
+	main=paste(relly.type,"Cov=",format(my.cov,digit=3),sep=" "),col=adjustcolor("black",0.4)) #,"L =",L,"VE=",environ.var,"VA=1",sep=", "))
 	abline(h=0,col="grey",lwd=2)
 	abline(v=0,col="grey",lwd=2)
 	abline(lm(other.pheno~ind.pheno),col="blue",lwd=2)
 	abline(0,1,col="red",lwd=3,lty=2)
-	my.cov<-cov(ind.pheno,other.pheno);
-	text(x=min(ind.pheno)*.5,y=max(other.pheno)*.9,label=paste("Cov= ",format(my.cov,digit=3)),col="red",lwd=4,cex=1.5)
+ #	textbox(x=min(ind.pheno)*.5,y=max(other.pheno)*.9,textlist=c("Cov= ",format(my.cov,digit=3)),col="red"))
+ #legend(x="topleft",legend=paste("Cov= ",format(my.cov,digit=2)),col="red",lwd=4,cex=1.5,bg="white",pch=NA,lty=NA)
+	#text(x=min(ind.pheno)*.5,y=max(other.pheno)*.9,label=paste("Cov= ",format(my.cov,digit=3)),col="red",lwd=4,cex=1.5)
 	cat("pheno. covariance=",my.cov,"\n")
 	cat("Expected covar=",sum(ibd.prob*c(0,0.5,1)),"\n")
 	VA<-my.cov/sum(ibd.prob*c(0,0.5,1))
@@ -66,6 +68,6 @@ genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.5,0.5,0),relly.ty
 genetic.covar(L=100, environ.var=0.2,Num_inds=500,ibd.prob=c(0.75,0.25,0.0),relly.type="1st Cousins")
 
  
-
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Varying_rellys_phenos.pdf")
  
  

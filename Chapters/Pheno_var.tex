@@ -146,7 +146,7 @@ individual's biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
 and that the allele is at 50\% frequency. We assume that all of the
 alleles have equal effects and combine them additively together. We then add an environmental contribution, which is normally distributed with variance $0.05$. Note that in the left two pictures you can see peaks
 corresponding to different genotypes due to our low  environmental
-noise (in practice we can rarely see such peaks. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT1.R}} \label{fig:QT1}
+noise (in practice we can rarely see such peaks for real quantitative phenotypes). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT1.R}} \label{fig:QT1}
 \end{figure}
 \graham{Add IGF1 dog eg?}
 Note that as this is an additive model; we can decompose eqn. \ref{pheno_geno_environ} into the
@@ -248,13 +248,38 @@ Note that the heritability is a property of a sample from the population in a pa
 
 \subsection{The covariance between relatives}
 So we'll go ahead and calculate the covariance in phenotype between two individuals
-($1$ and $2$) who have phenotypes $X_1$ and $X_2$ respectively.
+($1$ and $2$) who have phenotypes $X_1$ and $X_2$ respectively. To
+think about imagine plotting the phenotypes of, say, sisters against
+each other. The x and y coordinates of each point will be the, say,
+heights of the pair of siblings. Do tall women tend to have tall
+sisters, do short women tend to have short sisters? How much do their
+phenotypes covary. If some of the variation in our phenotype is
+genetic we expect identical twins to resemble each other more than
+full siblings, who in turn will resemble each other more than
+half-sibs and so on out (see Figure \ref{fig:Varying_rellys_phenos}). Under our simple additive model of phenotypes we
+can write the covariance as 
 \begin{equation}
 Cov(X_1,X_2) =
 Cov\left((X_{1M}+X_{1P}+X_{1E}),((X_{2M}+X_{2P}+X_{2E}) \right)
 \end{equation}
 We can expand this out in terms of the covariance between the various
 components in these sums.\\
+
+ \begin{figure*}
+ \begin{center}
+ \includegraphics[width=\textwidth]{figures/Varying_rellys_phenos.pdf}
+ \end{center}
+ \caption{Covariance of phenotypes between pairs of individuals of a
+   given relatedness. Each point gives the phenotypes of a different
+   pair of individuals. The additive genetic variance is held constant
+   at $V_A=1$, such that the expected covariances ($2F_{1,2}V_A$)
+   should be $1$, $0.5$, $0.25$, and $0.125$ respectively din good agreement with
+   the empirical covariances reported in the title of each graph. The
+   data were simulated as described in
+ the caption of Figure \ref{fig:QT1}. The blue line shows $x=y$ and the red
+line shows the best fitting linear regression line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT4.R}}\label{fig:Varying_rellys_phenos}
+ \end{figure*}
+ 
 
 To make our task easier, we will make two commonly made assumptions:
 \begin{enumerate}
@@ -673,7 +698,7 @@ As as an example of how dominance and population allele frequencies can change t
   down by sex. 
 The area of each circle is proportional to the fraction of
 the population in each genotypic class. The regression between phenotype and additive genotype is
-  shown as a red line. Data from \citet{barson2015sex}.} \label{fig:salmon_add_dom} %The black vertical arrows show the difference
+  shown as a red line. Data from \citet{barson2015sex}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/salmon_age/Salmon_age.R}} \label{fig:salmon_add_dom} %The black vertical arrows show the difference
 %between the average MC phenotype and additive genetic value for each genotype. 
 \end{figure}
 
@@ -814,9 +839,9 @@ variance will depend on the epistatic relationships among loci.
 \begin{question}
 How could you use 1/2 sibs vs. full-sibs to estimate $V_D$? Why might
 this be difficult in practice? Why are identical vs. non-identical
-twins better suited for this? %\erin{I think this would be a better problem if we gave them numbers for covariances and asked them to estimate V dominance in the first part of this problem. }
+twins better suited for this? 
 \end{question}
-
+\erin{I think this would be a better problem if we gave them numbers for covariances and asked them to estimate V dominance in the first part of this problem. }
 \begin{question}
 Can you construct a case where $V_A=0$ and $V_D>0$? You need
 just describe it qualitatively; you don't need to work out the
