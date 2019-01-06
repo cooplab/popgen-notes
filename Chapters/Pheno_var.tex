@@ -7,7 +7,7 @@ measurable aspect of an organism. \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Quant_gen/Aspen_budset/Aspen_leaves.pdf}
 \end{center}
-\caption{{\it P. tremula}. Der baum. H. Schacht. 1860. BHL } \label{fig:Apsen_geno_pheno}
+\caption{European aspen {\it P. tremula}. \BHLNC{Der baum. H. Schacht. 1860. BHL}{https://archive.org/stream/derbaum00scha/\#page/n284/mode/1up}{The Library of Congress} } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}   Your height, to the amount of
 RNA transcribed from a given gene, to what you ate last Tuesday: all
 of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
@@ -22,7 +22,7 @@ stochastic factors. Honestly it boggles the mind how organisms work as well as t
   an individual. The horizontal lines give the budset mean for each
   genotype and the vertical lines show the inter-quartile range. The
   dotted line gives the linear regression of phenotype on genotype.
-  Thanks to P{\"a}r Ingvarsson for the data. } \label{fig:Apsen_geno_pheno}
+  Thanks to P{\"a}r Ingvarsson for sharing these data from  \citet{wang:18}. } \label{fig:Apsen_geno_pheno}
 \end{marginfigure}
 
 There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simple way to measure this genotype-phenotype relationship is to calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}); the effect
@@ -64,7 +64,7 @@ genome (a so-called Manhattan plot). Here's one from
   between genotype and budset in Aspen. Each dot represents the test at a single SNP,
   plotted at its physical coordinate in the genome. Different chromosomes
   are plotted in alternating colours. The SNPs surrounding the PtFT2
-  gene are shown in red.} \label{fig:Apsen_Manhattan}
+  gene are shown in red. From \citet{wang:18}, \PLOSccBY. } \label{fig:Apsen_Manhattan}
 \end{figure}
 The SNP with the most significant p-value is the PtFT2 SNP. Note
 that other SNPs in the surrounding region also light up as showing a
@@ -81,7 +81,7 @@ strength of their LD with the putatively functional SNP.
   \ref{fig:Apsen_Manhattan}). SNPs are now coloured by their $D\prime$
   value with the most significant SNP. $D\prime$ is the LD
   covariance between a pair of loci ($D$) normalized by
-  the largest value $D$ can take given the allele frequencies. This is Figure 2 from \citet{wang:18}. } \label{fig:Apsen_zoom_Manhattan}
+  the largest value $D$ can take given the allele frequencies. Figure from \citet{wang:18},  \PLOSccBY. } \label{fig:Apsen_zoom_Manhattan}
 \end{figure}
 Note how SNPs in strong LD with the functional allele (redder
 points) have more significant p-values. 
@@ -145,9 +145,10 @@ phenotype following equations \ref{pheno_geno} and \ref{pheno_geno_environ}. Spe
 individual's biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
 and that the allele is at 50\% frequency. We assume that all of the
 alleles have equal effects and combine them additively together. We then add an environmental contribution, which is normally distributed with variance $0.05$. Note that in the left two pictures you can see peaks
-corresponding to different genotypes due to our low  environmental noise (in practice we can rarely see such peaks.} \label{fig:QT1}
+corresponding to different genotypes due to our low  environmental
+noise (in practice we can rarely see such peaks. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT1.R}} \label{fig:QT1}
 \end{figure}
-
+\graham{Add IGF1 dog eg?}
 Note that as this is an additive model; we can decompose eqn. \ref{pheno_geno_environ} into the
 effects of the two alleles at each locus and rewrite
 it as
@@ -198,7 +199,15 @@ The individuals with higher polygenic scores for height are predicted to be tall
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Biobank_height_dist.pdf}
 \end{center}
-\caption{{\bf Left)} The distribution of the number of height-increasing alleles that individuals carry at 1700 SNPs associated with height in the UK Biobank, for a sample of 1000 individuals. {\bf right)} The distribution of the polygenic scores for these 1000 individuals. Plotted on top is a normal distribution with the same mean and variance. The empirical variance of these polygenic scores is $0.13$, the additive genetic variance calculated by equation \eqref{eqn:VA} is $0.135$, so the two are in good agreement. } \label{fig:Biobank_height_PGS}
+\caption{{\bf Left)} The distribution of the number of
+  height-increasing alleles that individuals carry at 1700 SNPs
+  associated with height in the UK Biobank, for a sample of 1000
+  individuals. {\bf right)} The distribution of the polygenic scores
+  for these 1000 individuals. Plotted on top is a normal distribution
+  with the same mean and variance. The empirical variance of these
+  polygenic scores is $0.13$, the additive genetic variance calculated
+  by equation \eqref{eqn:VA} is $0.135$, so the two are in good
+  agreement. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Height/Biobank_height.R} } \label{fig:Biobank_height_PGS}
 \end{figure}
  
 
@@ -332,9 +341,16 @@ variance to get $h^2$. \\
 %shared environmental effect is to use paternal half-sibs as they share a
 
 
-
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Quant_gen/red_winged_blackbirds/Red_wing_blackbirds.png}
+\end{center}
+\caption{Red-winged blackbird and Tricoloured Red-winged blackbirds
+  ({\t Agelaius phoeniceus} and {\it Agelaius tricolor}). \BHLNC{Bird-lore (1899). National Association of Audubon Societies for the Protection of Wild Birds and Animals.}{https://archive.org/stream/birdlore24nati/birdlore24nati\#page/n89/mode/1up}{American Museum of Natural History Library}}\label{fig:RW_blackbird}
+\end{marginfigure}
+ 
 \begin{question}
-{\bf A)} In polygynous blackbird populations (i.e. males mate with
+{\bf A)} In polygynous red-winged blackbird populations (i.e. males mate with
 several females), paternal half-sibs can be identified.  Suppose that
 the covariance of tarsus lengths among half-sibs is 0.25 $cm^2$ and
 that the total phenotypic variance is 4 $cm^2$.  Use these data to
@@ -450,7 +466,9 @@ assuming our loci are in linkage disequilibrium. Thus a genetic correlation aris
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height.pdf}
 \end{center}
-\caption{The additive effect sizes of loci associated with female Age at Menarche (AAM) and their effect size on Height in a European population. Data from \citet{pickrell2016detection}} \label{fig:AAM_height}   %\cite{potti:11} 
+\caption{The additive effect sizes of loci associated with female Age
+  at Menarche (AAM) and their effect size on Height in a European
+  population. Data from \citet{pickrell2016detection}. } \label{fig:AAM_height}   %\cite{potti:11} 
 \end{marginfigure}
 
 We can store our variance and covariance values in matrices, a way of gathering these terms that will be useful when we discuss selection: 

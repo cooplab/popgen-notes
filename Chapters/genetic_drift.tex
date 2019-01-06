@@ -814,7 +814,7 @@ We can use our coalescent process to find the expected number of
 derived alleles present $i$ times out of a sample size $n$, e.g. how many singletons ($i = 1$) do we
 expect to find in our sample? For example, in Figure \ref{fig:Coal_w_muts} in our sample of four sequences, there are 3 singletons and 2 doubletons. The number of sites with these different allele frequencies depends on the lengths of specific genealogical branches. A mutation that falls on a branch with $i$ descendants will create a derived allele with frequency $i$. For example, in our example tree  in Figure \ref{fig:Coal_w_muts}, the total number of generations where a mutation could arise and be a doubleton is $T_3+2T_2$, the total length of the branch ancestral to just the orange and red allele $(T_3+T_2)$ plus the branch ancestral to just the blue and purple allele $(T_2)$. 
 
-\begin{marginfigure}
+\begin{marginfigure}[-4cm]
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Genetic_drift/freq_spec_tree.pdf}
 \end{center}
@@ -954,14 +954,14 @@ blue and orange ancestral lineages in
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Mimulus_coalescent_times.pdf}
 \end{center}
 \caption[][-2cm]{Diversity along the Mimulus genome. Black dots give $\pi$ in 1kb windows between chromosomes sampled from two individuals, the red line is a
-  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{} } \label{fig:Mimulus_bottleneck}
+  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Mimulus_coalescent_times.R} } \label{fig:Mimulus_bottleneck}
 \end{figure}
 \begin{marginfigure}[2cm]
 \begin{center}
   \includegraphics[width = 0.75 \textwidth]{illustration_images/Genetic_drift/Mimulus/Mimulus.png}
 \end{center}
-\caption{{\it M. guttatus} by Pierre-Joseph
-  Redout\'e.} \label{fig:Human_growth}  %é
+\caption{Yellow Monkeyflower {\it M. guttatus}. \newline \noindent \tiny{ Choix des plus belles fleurs et des plus beaux fruits. Pierre-Joseph
+  Redout\'e. (1833). Contributed to \href{https://www.flickr.com/photos/swallowtailgardenseeds/14479197839/in/photolist-o4tF54-od9My9-odbSn4-r7eVtm-qrR4xf-x4XVdi-owo7PM-r5mart-roPqqi-owrprg-qsfzJv-wMDeSy-oupCu9-oeSX38-odaeHf-ovbTTS-roEdyK-tCQBqn-odwyWa-otAUPX-oePwpE-odca2V-tBxNdi-roL99F-odbN4q-ot1HNN-ouhP5r-odcvRH-oveh86-rpAnnD-roE9j9-rowiBc-osDEHS-od7QxD-oeQ9yS-odatza-ox9fq8-oujGWa-osBqTm-ovoAKj-r5qRxT-oeRVxu-oux9q2-tMvxm3-x5pLez-owuL1t-oePFVJ-ov1yHY-oeWskU-tmeZzB}{Flickr} by Swallowtail Garden Seeds. Public Domain.}} \label{fig:Human_growth}  %é
 \end{marginfigure}
 An example of this is shown Figure
 \ref{fig:Mimulus_bottleneck}, data from \citeauthor{brandvain:14}. {\it Mimulus nasutus} is a selfing
@@ -985,15 +985,15 @@ much more deeply in the ancestral {\it M. guttatus} population.
 \caption[][-2cm]{Data for polymorphism from Maize and Teosinite: 774
   genes redrawn from \citet{Wright:05}. {\bf Left)} Genetic  diversity levels in maize and and Teosinte samples at each of these genes.
 Note how diversity levels are lower in maize than teosinte, i.e. most
-points are below the red $x=y$ line.  
-. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards positive values. } \label{fig:maize_Tajimas_D}  %é
+points are below the red $x=y$ line. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards positive values. \gitcode{} } \label{fig:maize_Tajimas_D}  %é
 \end{figure}
+
 \begin{marginfigure}[4cm]
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
 \end{center}
-\caption{Maize ({\it Zea mays}.) Prof. Dr. Thomé's Flora von
-  Deutschland. 1886. Thomé, O. W. } \label{fig:maize}  %é
+\caption{Maize ({\it Zea mays}.) \BHLNC{Prof. Dr. Thomé's Flora von
+  Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
 \end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
 
 Mutations that arise on deeper lineages will be at intermediate frequency in our sample, and so mild bottlenecks
@@ -1006,11 +1006,8 @@ subsp. parviglumis}) roughly ten thousand years ago. We can see how the
  bottleneck associated with domestication has resulted in a loss of genetic diversity in maize, compared to teosinte, and the polymorphism that remains is somewhat skewed towards intermediate frequencies resulting in more positive values of Tajima's D.
 
 \begin{question}
-\citet{voight2005interrogating} sequenced 40 autosomal regions from 15 diploid samples of Hausa people from Yaounde, Cameroon. The average length of locus they sequenced for each region was $2365$bp. They found that the average number of segregating sites per locus was $S= 11.1$ and the average $\pi = 0.0011$ per base over the loci. Is Tajima's D positive or negative? 
+\citet{voight2005interrogating} sequenced 40 autosomal regions from 15 diploid samples of Hausa people from Yaounde, Cameroon. The average length of locus they sequenced for each region was $2365$bp. They found that the average number of segregating sites per locus was $S= 11.1$ and the average $\pi = 0.0011$ per base over the loci. Is Tajima's D positive or negative? Is a demographic model with a bottleneck or growth more consistent with this result?
 \end{question}
-
-
-
 
 
 
@@ -1045,7 +1042,7 @@ neutral alleles will fix by chance. \\
 \caption{Each allele initially present in a small diploid population is
   given a different colour so we can track their descendants over
   time. By the 9th generation, all of the alleles present in the
-  population can trace their ancestry back to the orange allele.} \label{fig:subs_simulation}
+  population can trace their ancestry back to the orange allele. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:subs_simulation}
 \end{figure}
 
 An allele which reaches fixation within a population is an ancestor to the
@@ -1147,21 +1144,22 @@ A number of observations follow under this model, from equation \eqref{eqn:molec
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_fig.pdf}
 \end{center}
-\caption{The numbers of substitutions between various pairs of groups, for three proteins, plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}. The number of observed amino-acid differences is corrected for multiple hits to obtain the corrected number of changes estimated to occur. The lines give the linear regression, constrained to pass through the origin, for each protein. The slope of the regression is given next to the protein name. } \label{fig:Dickerson_mole_clock}  
+\caption{The numbers of substitutions between various pairs of groups, for three proteins, plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}. The number of observed amino-acid differences is corrected for multiple hits to obtain the corrected number of changes estimated to occur. The lines give the linear regression, constrained to pass through the origin, for each protein. The slope of the regression is given next to the protein name. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_data.R} See \citep{robinson2016revisiting} who revisited this classic study and confirmed the conclusions.} \label{fig:Dickerson_mole_clock}  
 \end{figure}
 
-
-The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. See Figure \ref{fig:Dickerson_mole_clock} for an example using the data of \citet{dickerson1971structure}. If we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced less mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false, organisms with shorter generation times have somewhat higher mutation rates per year, and so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution. 
-
-
-
-
-\begin{marginfigure}
+\begin{marginfigure}[-1cm]
 \begin{center}
-\includegraphics[width=0.8 \textwidth]{figures/Genetic_drift/ILS/split_anc_pop.pdf}
+\includegraphics[width= 0.8 \textwidth]{illustration_images/Genetic_drift/rattlesnake/rattlesnake.jpg}
 \end{center}
-\caption{The genealogy of two alleles one sampled from population A and B. Mutations on the lineages are shown as dashes. The pair of alleles coalesce in the ancestral population of A and B. The two populations split $T_S$ generations ago, with no subsequent gene flow, but the two lineages must coalesce deeper in time. } \label{fig:split_anc_pop}  
-\end{marginfigure} 
+\caption{Eastern diamondback rattlesnake ({\it Crotalus adamanteus}. \BHLCC{North American herpetology. Holbrook, J. E. }{https://www.biodiversitylibrary.org/page/35765722\#page/120/mode/1up}{Smithsonian Libraries}{2.0} } \label{fig:rattlesnake}  
+\end{marginfigure}
+
+The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the Cytochrome c protein.
+While, humans and dog fish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question} 
+
+In equation \eqref{eqn:moleclock} we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced less mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false, organisms with shorter generation times have somewhat higher mutation rates per year, and so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution. \graham{I currently dont do generation time effect in that chapter, need to update}
+\graham{add side note on adjustment for multiple hits'}
+\graham{add note about fibrinogen having non-essential spacer pepitides}
 
 
 \paragraph{The contribution of ancestral polymorphism to divergence.} If we are considering $T$ to represent the divergence between long-separated species, then we can think of $T$ as the time that the
@@ -1179,6 +1177,14 @@ T = T_s + 2N_A.
 \end{equation}
 If our species split time is very large compared to $2N$ then we can think of $T$ as the split time. 
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.8 \textwidth]{figures/Genetic_drift/ILS/split_anc_pop.pdf}
+\end{center}
+\caption{The genealogy of two alleles one sampled from population A and B. Mutations on the lineages are shown as dashes. The pair of alleles coalesce in the ancestral population of A and B. The two populations split $T_S$ generations ago, with no subsequent gene flow, but the two lineages must coalesce deeper in time. } \label{fig:split_anc_pop}  
+\end{marginfigure} 
+
+\graham{update numbers in Q}
 %Our expected number of substitutions is scaling linearly with our species $T$ split time measured in generations.  
 
 %\erin{I think this last concept is hard and may be a bit confusing for students without some additional pictures or text} %\graham{lineup split time in this section w. FST section.}
@@ -1263,15 +1269,15 @@ the Enamlin gene from the study of \citet{Meredith:09}.
 \end{center}
 \caption{Examples of frameshift mutations (insertions blue, deletions
   red) and premature stop codons in Enamlin in Cetacea and
-  Xenarthra. Figure from \citeauthor{Meredith:09}} \label{fig:Enamlin_coding}  
+  Xenarthra. Figure from \citet{Meredith:09}, \PLOSccBY. } \label{fig:Enamlin_coding}  
 \end{figure} 
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/sloth/20423856040_6e4360df9c_z.jpg}   %https://www.biodiversitylibrary.org/page/39742681#page/1005/mode/1up
 \end{center}
-\caption{Two-toed sloth ({\it Choloepus hoffmanni}). An introduction
-  to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.} \label{fig:sloth}  
+\caption{Two-toed sloth ({\it Choloepus hoffmanni}). \BHLNC{An introduction
+  to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.}{https://archive.org/stream/chordates00rand/\#page/744/mode/1up}{University of Toronto} } \label{fig:sloth}  
 \end{marginfigure} 
 
 The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark {\it Orycteropus}) all lack  enamel on teeth. Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
@@ -1289,7 +1295,7 @@ frameshifts in Enamlin, and all of them carry premature stop codons
   teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
   Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white vertical bars on branches show frameshift
   mutations.  The numbers after taxon names indicate minimum number of
-  stop codons in the sequence divided by  the length of the sequence. Figure from \citeauthor{Meredith:09}} \label{fig:Enamlin_phylo}  
+  stop codons in the sequence divided by  the length of the sequence. Figure from \citet{Meredith:09}, \PLOSccBY.} \label{fig:Enamlin_phylo}  
 \end{figure} 
 
 The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin (red)
@@ -1347,8 +1353,8 @@ the rapid fixation of beneficial mutations due to positive selection is outweigh
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Yang_lysozyme/Yang_lysozyme.pdf}
 \end{center}
-\caption{A phylogram for the primate lysozyme gene, redrawn from
-  \citeauthor{Yang:98}. For each branch, the numbers give the estimated average
+\caption{A phylogram for the primate lysozyme gene, data from
+  \citet{Yang:98}. For each branch, the numbers give the estimated average
 number of non-synonymous to synonymous changes in the lysozyme protein.} \label{fig:lysozyme}  
 \end{figure} 
 
@@ -1356,16 +1362,16 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Genetic_drift/Colobus/19792029373_fcce706e67_k.jpg}
 \end{center}
-\caption{Abyssinian black-and-white colobus ({\it Colobus guereza}). Brehm's Tierleben,  Brehm,
-  A.E. 1893. A member of the leaf-eating Colobines.} \label{fig:Colobus}  
+\caption{Abyssinian black-and-white colobus ({\it Colobus guereza}). A member of the leaf-eating Colobines. \BHLNC{Brehm's Tierleben,  Brehm,
+  A.E. 1893.}{https://archive.org/stream/brehmstierlebena001breh/\#page/125/mode/1up}{University of Illinois Urbana-Champaign}} \label{fig:Colobus}  
 \end{marginfigure} 
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8  \textwidth]{illustration_images/Genetic_drift/Hoatzin/14747388314_85798ba97e_z.jpg}
 \end{center}
-\caption{ (hoatzin ({\it Opisthocomus hoazin}). A history of birds
-  Pycraft, W.P. 1910.  A leaf-eating bird.} \label{fig:hoatzin}  
+\caption{ (hoatzin ({\it Opisthocomus hoazin}). A leaf-eating bird. \BHLNC{A history of birds (1910)
+  Pycraft, W.P.}{https://archive.org/stream/historyofbirds00pycr/historyofbirds00pycr\#page/238/mode/1up}{ American Museum of Natural History Library}} \label{fig:hoatzin}  
 \end{marginfigure} 
 A classic example for looking at adaptive evolution using dN/dS is the
 evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}, see
@@ -1394,18 +1400,19 @@ Ratio & $P_N/P_S$ & $D_N/D_S$
 \end{tabular}
 \end{center}
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Coalescent/MK_tree.pdf}
+\end{center}
+\caption{An example ogene genealogy for a set of alleles sampled within a population and a single allele sampled from a distantly-related species.} \label{fig:MK_tree}
+\end{marginfigure}
+
 Under neutral theory, we expect a smaller number of non-synonymous to
 synonymous fixed differences ($D_N/D_S < 1$) and exactly the same
 expectation holds for polymorphism ($P_N/P_S$). Let's consider a gene with $L_S$ and $L_N$ sites where synonymous and non-synonymous mutations could arise respectively. 
 We can think of the underlying gene genealogy at our gene, see Figure \ref{fig:MK_tree}, with the total time on the coalescent genealogy within the species as $T_{tot}$ and the total time for fixed differences between our species as $T_{div}'$. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
 non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ non-synonymous fixed differences. We can then fill out the rest of our table as follows: 
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/Coalescent/MK_tree.pdf}
-\end{center}
-\caption{ } \label{fig:MK_tree}
-\end{marginfigure}
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -1416,19 +1423,35 @@ Syn. &    $\mu L_N T_{tot}$   &     $\mu L_S T_{div}'$  \\
 Ratio & $ L_N(1-C)/( L_S)$  & $ L_N (1-C) / ( L_S)$
 \end{tabular}
 \end{center}
-Therefore, we expect the ratio of non-synonymous to synonymous changes to be the same for polymorphism and divergence under a strict neutral model. We can test this expectation of equal ratios via the standard G-test of a $2
+Therefore, we expect the ratio of non-synonymous to synonymous changes to be the same for polymorphism and divergence under a strict neutral model. We can test this expectation of equal ratios via the standard tests of a $2
 \times 2$ table. If the ratio of $N/S$ is significantly higher for divergence than polymorphism we have evidence that non-synonymous substitutions are accumulating more rapidly than we would predict given levels of constraint alone.
 
-\graham{add  Adriana Briscoe butterfly eye eg}  %https://twitter.com/AdrianaBriscoe/status/1057205734407094272 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Genetic_drift/Limenitis_arthemis/Limenitis.png}
+\end{center}
+\caption{White admiral ({\it Limenitis arthemis}). \BHLNC{American entomology : a description of the insects of North American (1859). Say, T. }{https://www.biodiversitylibrary.org/page/9194935\#page/487/mode/1up}{Smithsonian Libraries}} \label{fig:Limenitis}
+\end{marginfigure}
+As example of a Mcdonald-Kreitman table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L Photopigment opsin in Admiral
+({\it Limenitis}) butterflies, responsible for colour vision in the long-wavelength part of the visual spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity of this opsin had shifted towards blue-shifted in its sensitivity in {\it L. archippus archippus} (viceroy) compared to {\it  L. arthemis astyanax}. To test whether this molecular evolution reflected positive selection they sequenced  24 {\it L. arthemis astyanax} individuals and one {\it  L. archippus archippus} sequence. They identified  11 polymorphic sites in  {\it L. arthemis astyanax} and 16 fixed differences, which break down as follows:
+\begin{center}
+\begin{tabular}{ccc}
+ & Poly. & Fixed  \\
+ \hline
+Non-Syn. &    $2$  &   $12$ \\
+Syn. &    $9$   &     $4$  \\
+Ratio & $\nicefrac{2}{9}$  & $\nicefrac{3}{1}$
+\end{tabular}
+\end{center}
+Note the strong excess of non-synonymous to synonymous divergence compared to polymorphism (p-value of $0.006$, Fisher's exact test), which is consistent with the gene evolving in an adaptive manner among the two species. We would expect roughly only $3$ non-synonymous substitutions out of 16 substitutions if the gene was evolving neutrally ($ 16 \times \nicefrac{2}{11}$). 
+
+% \graham{add  Adriana Briscoe butterfly eye eg}  %https://twitter.com/AdrianaBriscoe/status/1057205734407094272 
 
 \section{Neutral diversity and population structure}
-%%this section was moved from the coalescent chapter
-Up to now we have assumed that our alleles that we have modeled in the
-coalescent setting are drawn from a randomly mating population, such
-that any pair of lineages is equally likely to coalesce with each
+%% this section was moved from the coalescent chapter
+We've considered alleles drawn from a randomly-mating population, and divergence among alleles drawn from two distantly-related populations. 
+We'll now turn to consider divergence among more closely related populations. In thinking about the coalescent  within populations we made the assumption that any pair of lineages is equally likely to coalesce with each
 other. However, when there is population structure this assumption is violated. \\
-
-
 
 We have previously written the measure of population structure
 $\fst$ as
@@ -1450,7 +1473,7 @@ from both subpopulations.
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{figures/drift_split.png}
 \end{center}
-\caption{Change in allele frequencies following a population split.} \label{fig:drift_split}  
+\caption{Change in allele frequencies following a population split. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:drift_split}  
 \end{figure} 
 
 Consider a pair of alleles sampled within one of our
@@ -1513,7 +1536,7 @@ effective population sizes.
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/Genetic_drift/Orang/7971889392_d32b45668b_z.jpg}
 \end{center}
-\caption{Orangutan ({\it Pongo}). Brehms thierleben, allgemeine kunde des thierreichs. Brehm, A. E.} \label{fig:Orang}  
+\caption{Orangutan ({\it Pongo}). \BHLNC{Brehms thierleben, allgemeine kunde des thierreichs. Brehm, A. E.}{https://www.biodiversitylibrary.org/page/1008013\#page/114/mode/1up}{MBLWHOI Library}} \label{fig:Orang}  
 \end{marginfigure} 
 
 
@@ -1634,14 +1657,14 @@ tracing our allelic lineages from the top and bottom populations back through ti
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/no_ILS.pdf}
 \end{center}
-\caption{  } \label{fig:NoILS_poly} 
+\caption{An example of alleles assorting among three populations such that there is no incomplete lineage sorting. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R}} \label{fig:NoILS_poly} 
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ILS.pdf}
 \end{center}
-\caption{  } \label{fig:ILS_poly} 
+\caption{An example of alleles assorting among three populations leading to incomplete lineage sorting. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Loss_of_heterozyg_varying_pop.R} } \label{fig:ILS_poly} 
 \end{figure}
 
 
@@ -1673,7 +1696,8 @@ with the patterns of relatedness at a particular locus.
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Poephila_cincta_finch/Poephila_cincta_finch.png}
 \end{center}
 \caption{Banded Grass Finch ({\it P. cincta}). Illustration by
-  Elizabeth Gould. Birds of Australia Gould J. 1840. } \label{fig:Poephila_cincta} 
+  Elizabeth Gould.
+  \newline \noindent \tiny{Birds of Australia Gould J. 1840. CC BY 4.0 uploaded to \href{https://www.flickr.com/photos/vintage_illustration/41073432105/in/photolist-WpHYmR-WBF2Uc-Uoq2kW-QAW9bN-UL33uh-RmyMxt-PKmBjN-8xpKmQ-8xmHg2-H6mfAS-dVREvC-7Qepuh-222xkPQ-7QepzS-25zw6ak-W28Nyk-Qa6d32-ijh2uH-6V8Srd-25zw5ov-8xpKB7-nUQ33T-6V8TLy-nV88oH-25RuYmq-21TcFz1-R2Gdy4-GdWRgi-GdMmry-GdWAwD-9mjwfA-25oHWeJ-HMbQre-6CQWTH-7TjKu-e6SYV-25RuXU3-pdKtxc-9hYCzE-voj7Sj-zqSdQb-6SNmDE-a1datx-a1dasZ-PFfPXY-rR7QYw-GJ7rey-6SJmuB-7TjFh}{Flickr} by \url{rawpixel.com}.}} \label{fig:Poephila_cincta} 
 \end{marginfigure}
 
 As an empirical example of incomplete lineage sorting, let's consider the work of 
