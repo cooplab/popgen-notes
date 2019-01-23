@@ -1,4 +1,7 @@
 \chapter{The Response to Phenotypic Selection}
+\marginnote{See \citet{lewontin1970units}. Note that these
+  requirements are not specific to DNA, i.e. the concept of
+  evolution by natural selection is substrate independent. }
 Evolution by natural selection requires:
 \begin{enumerate}
 \item Variation in a phenotype
@@ -7,7 +10,11 @@ variation.
 \item That this variation is heritable.
 \end{enumerate}
 Points 1 and 2 encapsulate our idea of Natural Selection, but evolution by natural
-selection will only occur if the 3rd condition is also met. It is the
+selection will only occur if the 3rd condition is also
+met. \sidenote{Some people consider natural selection to only operate on heritable phenotype varation
+  and so require all three conditions to say that natural selection
+  occurs. This is mostly a semantic point, however, it is useful to be
+able to distinguish the action of selection from a possible response.} It is the
 heritable nature of variation that couples change within a generation
 due to natural selection to change across generations (evolutionary
 change). \\
@@ -32,7 +39,7 @@ hadn't acted. So the change in mean phenotype within a generation is $\mu_{S} - 
   of the phenotypic distribution are selected to reproduce; the resulting shift
   in the phenotypic mean is $S$. {\bf Bottom.}  Phenotypic distribution of
   children of the selected parents; the shift in the mean phenotype is
-$R. $}
+$R$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT3.R}}
 \end{marginfigure}
 
 We are interested in predicting the distribution of phenotypes in the next
@@ -61,7 +68,7 @@ an expression for this expectation:
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Breeders_eqn.pdf}
 \end{center}
 \caption{A visual representation of the Breeder's equation. Regression of child's phenotype on parental mid-point phenotype ($V_A=V_E=1$). Under truncation selection, only individuals
-  with phenotypes $>1$ (red) are bred.}
+  with phenotypes $>1$ (red) are bred. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R}}
 \end{marginfigure}
 
 So to obtain $\mu_{NG}$ we need to compute $\E(X_{mid})$, the expected
@@ -94,14 +101,18 @@ determined by the narrow sense heritability ($h^2$). \\
 \includegraphics[width= 0.6 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
 \end{center}
 \caption{The relationship between maternal and offspring corolla flare (flower
-  width) in P. viscosum. Data from \citet{galen:96}. From \citeauthor{galen:96}'s data the covariance of mother and child is 1.3, while the variance of the mother is 2.8.} \label{fig:Galen_corolla}  
+  width) in P. viscosum. From \citeauthor{galen:96}'s data the
+  covariance of mother and child is 1.3, while the variance of the
+  mother is 2.8. Data from \citet{galen:96}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Galen_flower_herit/Gallen_analysis.R}} \label{fig:Galen_corolla}  
 \end{figure}
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.75\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
 \end{center}
-\caption{{\it Polemonium viscosum.}  Modified from Flowers of Mountain and Plain. New York :H.W. Wilson Co.,1920. \href{https://www.flickr.com/photos/biodivlibrary/8220461305/in/album-72157632108046380/}{BHL}. }
+\caption{Sticky jacob's ladder ({\it Polemonium viscosum}). \BHLNC{Flowers of Mountain and
+    Plain (1920). Clements, E.}{https://www.biodiversitylibrary.org/page/40791993\#page/49/mode/1up}{New York Botanical Garden, Mertz Library}
+Cropped from original.}
 \end{marginfigure}
 
 
@@ -110,11 +121,34 @@ determined by the narrow sense heritability ($h^2$). \\
 {\it P. viscosum}.  She found that plants with larger corolla flare
 had more bumblebee visits, which resulted in higher seed set and a
 $17\%$ increase in corolla flare in the plants contributing to the
-next generation. Based on the data in Fig. \ref{fig:Galen_corolla}
+next generation. Based on the data in the caption of Figure \ref{fig:Galen_corolla}
 what is the expected response in the next generation?
 \end{question}
 
-
+To understand the genetic basis of the response to selection take a
+look at Figure \ref{Fig:Response_num_alleles}. The setup is the same as in our previous
+simulation figures.
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/QT3_w_genosums.pdf}
+\end{center}
+\caption{{\bf Top.} Distribution of the number of up alleles in the parental population
+  prior to selection (red), for the selected individuals the top
+  $10\%$ of the population (blue) {\bf Bottom.}  The same distribution
+for the offspring of the selected parents in the next generation
+(green). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT3.R}}  \label{Fig:Response_num_alleles}
+\end{figure}
+ The individuals who are selected to form our next generation carry
+ more alleles that increase the phenotype, in the current range of
+ environments currently experienced by the population. The average
+ individual before selection carried 100 of these `up' alleles, the average
+ individual surviving selection 108 `up' alleles. As individuals
+ faithfully transmit their alleles to the next generation the average
+ child of the selected parents carries 108 up alleles. Note that the
+ variance has changed little, the children have plenty of variation in
+ their genotype, such that selection can readily drive evolution in future generations. The average frequency of an `up' allele has changed
+ from $50\%$ to $54\%$. Our gains due to selection will be stably
+ inherited to future generations.
 
 
 \paragraph{The long-term response to selection}
@@ -127,7 +161,6 @@ shifted
 n h^2 S
 \end{equation}
 i.e. our population will keep up a linear response to selection.
-
 \begin{question}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
@@ -144,7 +177,6 @@ selection within a generation. State your assumptions.\\
 
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
-
 
 \paragraph{Alternative formulations of the Breeder's equation.}
 A change in mean phenotype within a generation occurs because of the

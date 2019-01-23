@@ -100,20 +100,23 @@ if(plot.geno){
 	layout(1:2)
 	sel.dad.genosum<-colSums(dad.geno[,top.sel.per.dads])
 	rand.dad.genosum<-colSums(dad.geno[,sample(top.sel.per.dads)])
-	hist(rand.dad.genosum,breaks=20,  col = rgb ( 1 , 0 , 0 , 0.4 ),xlim=c(min(rand.dad.genosum)-5,max(sel.dad.genosum)+5),ylim=c(0,160),xlab="Num. tall alleles", main="Parental generation",cex.lab=1.5)
+	hist(rand.dad.genosum,breaks=20,  col = rgb ( 1 , 0 , 0 , 0.4 ),xlim=c(min(rand.dad.genosum)-5,max(sel.dad.genosum)+5),ylim=c(0,160),xlab="Num. up alleles", main="Parental generation",cex.lab=1.5)
 	hist(sel.dad.genosum,breaks=20,  col =rgb ( 0 , 0 , 1 , 0.4 ),add=TRUE)
+	cat("Number up alleles in selected pars ",mean(colSums(dad.geno[,top.sel.per.dads])))
 	legend ( "topleft" , legend = c ( "All individuals" , "Selected parents" ) , pch = 15 , col = c ( rgb ( 1 , 0 , 0 , 0.4 )  , rgb ( 0 , 0 , 1 , 0.4 ) ) , bty = "n" , cex = 1.5 )
 	###hist of kids
-	hist(colSums(child.geno),breaks=20,  col =rgb ( 0 , 1 , 0 , 0.4 ),xlim=c(min(rand.dad.genosum)-5,max(sel.dad.genosum)+5),ylim=c(0,160),xlab="Num. tall alleles", main="Next generation",cex.lab=1.5)
+	hist(colSums(child.geno),breaks=20,  col =rgb ( 0 , 1 , 0 , 0.4 ),xlim=c(min(rand.dad.genosum)-5,max(sel.dad.genosum)+5),ylim=c(0,160),xlab="Num. up alleles", main="Next generation",cex.lab=1.5)
+	cat("Number up alleles in kids ",mean(colSums(child.geno)))
+
 	legend ( "topleft" , legend = c ( "Children" ) , pch = 15 , col = rgb ( 0 , 1 , 0 , 0.4 ), bty = "n" , cex = 1.5 )
 }
 }
 
 one.gen.sel(L=100,environ.var=1,sel=0.1,add.arrow=TRUE)
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Response_to_sel/QT3.pdf")
-pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT3_w_genosums.pdf")
+#pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT3_w_genosums.pdf")
 one.gen.sel(L=100,environ.var=1,sel=0.1,plot.geno=TRUE)
-dev.off()
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/QT3_w_genosums.pdf")
 
 #for(sel in c(0.1,0.4))
 #for(environ.var in c(.01,1,50)){
