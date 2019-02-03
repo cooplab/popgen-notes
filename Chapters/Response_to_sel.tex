@@ -410,7 +410,7 @@ displaying to females and defending the females from other groups of males. \beg
 \end{center}
 \caption{Turkey  ({\it Meleagris
   gallopavo}). \BHLNC{Bilder-atlas zur Wissenschaftlich-populären
-Naturgeschichte der Vögel in ihren sämmtlichen Hauptformen (1864). Wien,K.K. Hof}{https://www.biodiversitylibrary.org/page/33050564#page/199/mode/1up}{Smithsonian Libraries} } \label{fig:turkey}
+Naturgeschichte der Vögel in ihren sämmtlichen Hauptformen (1864). Wien,K.K. Hof}{https://www.biodiversitylibrary.org/page/33050564\#page/199/mode/1up}{Smithsonian Libraries} } \label{fig:turkey}
 \end{marginfigure}  These pairs are often full brothers ($F=0.25$),
 with the subordinate male often being the younger of the two. The
 subordinate male often loses out on mating opportunities over their
@@ -432,7 +432,14 @@ $\nicefrac{1}{2}$ sibs, or first cousins?
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Response_to_sel/Hamiltons_rule_B_C.pdf}
 \end{center}
-\caption{{\bf Top)} The fitness of individual $i$ as a function of their behavioural phenotype, where altruistic/non-altruistic behavioural phenotypes are encoded as $1$ and $0$ respectively. The direct fitness cost of behaving altruistically is $C$. {\bf Bottom)} The fitness of our focal individual $i$ as a function of the behavioural phenotype of their interacting partner ($j$). Our focal individual gets an increase $B$ in fitness if their partner behaves altruistically.} \label{fig:Hamilton_B_C}
+\caption{{\bf Top)} The fitness of individual $i$ as a function of
+  their behavioural phenotype, where altruistic/non-altruistic
+  behavioural phenotypes are encoded as $1$ and $0$ respectively. The
+  direct fitness cost of behaving altruistically is $C$. {\bf Bottom)}
+  The fitness of our focal individual $i$ as a function of the
+  behavioural phenotype of their interacting partner ($j$). Our focal
+  individual gets an increase $B$ in fitness if their partner behaves
+  altruistically. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/Hamilton_rule_B_C.R}} \label{fig:Hamilton_B_C}
 \end{marginfigure}
 
 
@@ -494,9 +501,9 @@ that surely lower the viability of their mates?
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/glow_worm/18011950889_b2a1a1323e_z.jpg}
 \end{center}
 \caption{Male (left) and female (right) common glow worm  ({\it Lampyris
-    noctiluca}). The animal kingdom : arranged after its organization;
+    noctiluca}). \BHLNC{The animal kingdom : arranged after its organization;
   forming a natural history of animals, and an introduction to
-  comparative anatomy. (1863) Cuvier, G. } \label{fig:glow_worms}
+  comparative anatomy. (1863) Cuvier, G.}{https://www.flickr.com/photos/internetarchivebookimages/18011950889/in/photolist-Uqr16w-UqqZZu-4VxYcU-ZiyCTu-8DEFyz-6pxZpd-ZiyCXC-yFyBF-GEoD6s-u3DKnd-6pxZrd-4q7euj-5KsWen-yqphkW-xvGrfw-ytA3rP-ybfeBA-yqi7oo-tFL3h3-xvJnrz-BPm4Jd-wLVg9F-trDXtp-wVbxw2-y6MpEq-BWCQVA-vb793E-tHGekh-u4av2t-oewQcC-ow671H-t6ZJg7-u4Ap1m-xntXw9-ovPEMu-u3DFws-vbeMw2-tHMJiY-u1FJpo-tLqTCw-fFFAEG-y1Pfmz-u1FHaE}{University of Toronto - Gerstein Science Information Centre} } \label{fig:glow_worms}
 \end{marginfigure}
 
 \begin{marginfigure}
@@ -504,14 +511,15 @@ that surely lower the viability of their mates?
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/glow_worm_flashes/glow_worm_flashes.pdf}
 \end{center}
 \caption{Female Glow worms who have the largest, and therefore
-  brightest, lanterns have the highest fecundity. Data from \citet{hopkins2015m}. } \label{fig:glow_worms_lantern}
+  brightest, lanterns have the highest fecundity. Data from
+  \citet{hopkins2015m}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/glow_worm_flashes/glow_worm_flashes.R} } \label{fig:glow_worms_lantern}
 \end{marginfigure}
 
 
 One major reason why individuals evolve to be choosy about who they mate with is that it can directly impact their fitness. By choosing a mate with
 particular characteristics, individuals can gain more parental care for
 their offspring, avoid parasites, or be choosing a mate with higher fertility. For example,  female glow-worms flash at night to attract males flying by. Females with larger, brighter lanterns have higher fecundity, so
-males with a preference for brighter flashes will gain a direct benefit to their own fitness. (Note that males will benefit even if these differences in female fecundity are entirely driven by differences in environment, and so none heritable.) Indeed male glow worms have evolved to be attracted to brighter
+males with a preference for brighter flashes will gain a direct benefit to their own fitness. (Note that males will benefit even if these differences in female fecundity are entirely driven by differences in environment, and so non-heritable.) Indeed male glow worms have evolved to be attracted to brighter
 flashing lures.  
 
 However, even in the absence of direct benefits of choice, selection can still indirectly favour the evolution of choosiness. These
@@ -545,7 +553,7 @@ may often have quite a distinct genetic basis from male display traits.
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
 \end{center} \label{fig:assort_mating_2_trait}
-\caption{}
+\caption{ \gitcode{}}
 \end{figure}
 
 A more general way in which trait-preference genetic correlations may arise is through assortative mating. As females vary in their
@@ -570,7 +578,8 @@ genetically correlated via assortative mating.
 \caption{Mean phenotypes for the two up- and two down-selected
   populations of Guppies. Left panel: A response to selection was seen
   due to the direct selection on male colouration. Right panel: An
-  indirect, correlated response was also seen in female preference. Data from \citet{houde:94}.}
+  indirect, correlated response was also seen in female
+  preference. Data from \citet{houde:94}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/guppies_female_choice/guppies_female_choice.R}}
 \end{figure}
 
 As an example of how direct selection on display traits can drive the
