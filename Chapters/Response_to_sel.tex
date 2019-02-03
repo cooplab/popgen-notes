@@ -231,6 +231,14 @@ we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with our parent's phenotype. 
 
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/red_deer/Red_deer.png}
+\end{center}
+\caption{Red deer ({\it Cervus elaphus}). \BHLCC{British
+    mammals. Thorburn, A. (1920)}{https://www.flickr.com/photos/biodivlibrary/21269550204}{Field Museum of Natural History Library}{2.0}} \label{fig:red_deer}  
+\end{marginfigure}
+
 The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X,w(X))/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the fitness gradient and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
 \begin{equation}
 R= V_A \beta
@@ -243,7 +251,10 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
 \end{center}
-\caption{Lifetime reproductive success (LRS) of male Red Deer as a function of their antler mass. Data from \citet{kruuk2002antler}, see the paper for discussion of the complexities of equating this selection gradient with the evolutionary response. } \label{fig:red_deer_fitness_grad}  
+\caption{Lifetime reproductive success (LRS) of male Red Deer as a
+  function of their antler mass. Data from \citet{kruuk2002antler},
+  see the paper for discussion of the complexities of equating this
+  selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
 
 \subsection{The response of multiple traits to selection, the
@@ -290,11 +301,12 @@ equation and multi-trait breeder's equation. \\
 \end{center}
 \caption{ Observations of red deer within a generation; recording an
 individual's number of offspring and phenotypes (simulated data), which are known to
-have additive genetic variation. The figures left to right are A-C.  } \label{fig:red_deer_Q}
+have additive genetic variation. The figures left to right are
+A-C. (Data are simulated.) } \label{fig:red_deer_Q}
 \end{figure}
 
 
-As an example of correlated responses to selection, consider the  \citeauthor{wilkinson:93} selection experiment on Stalk-eyed
+As an example of correlated responses to selection, consider the  \citet{wilkinson:93} selection experiment on Stalk-eyed
  flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
  wild-caught flies and selected up and down on males eye-stalk to body
  size ratio for 10 generations (left plot in Figure
@@ -313,17 +325,14 @@ As an example of correlated responses to selection, consider the  \citeauthor{wi
  decreased ratio (down triangles), by taking the top 10 males with the highest (lowest)
  ratio out of 50 measures. He also established two control populations
  (circles). He constructed each generation of females by sampling 10
- at random from each population.  
-
-} \label{fig:Stalk_eyed_response}   %\cite{potti:11} 
+ at random from each population.  Data from \citet{wilkinson:93}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/stalk_eyed_flies/Wilkinson_93_response_to_sel.R} } \label{fig:Stalk_eyed_response}   %\cite{potti:11} 
 \end{figure}
 
 \begin{marginfigure}[1cm]
 \begin{center}
 \includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
 \end{center}
-\caption{Stalk-eyed Flies ({\it Diopsidae}).  Diptera.
-van der Wulp. 1898. BHL} \label{fig:Stalk_eyed_flies}  
+\caption{Stalk-eyed Flies ({\it Diopsidae}).  \BHLNC{Diptera. van der Wulp. 1898.}{https://www.biodiversitylibrary.org/item/39414\#page/631/mode/1up}{Smithsonian Libraries}} \label{fig:Stalk_eyed_flies}  
 \end{marginfigure}
 \begin{question}
 
