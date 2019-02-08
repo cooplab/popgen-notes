@@ -184,7 +184,7 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 \caption{Frequency of the Lactase persistence allele in ancient and
   modern samples form Central Europe. Data compiled by
   \citet{marciniak2017} from various sources. Thanks to Stephanie
-  Marciniak for sharing these data. \gitcode{}} \label{fig:LCT_freqs}
+  Marciniak for sharing these data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Lactase_example/Lactase_plots.R}} \label{fig:LCT_freqs}
 \end{figure}
 
 \subsection{Diploid model}
@@ -193,7 +193,9 @@ in frequency if it has a higher geometric mean fitness than allele $A_2$
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/cow_auroch/auroch.png}
 \end{center}
-\caption{Auroch. Dictionnaire des sciences naturelles. 1816 Cuvier, F.G.  Auroch are an extinct species of large wild cattle that cows were domesticated from. } \label{fig:auroch}
+\caption{Auroch ({\it Bos primigenius}). Aurochs are an extinct species of large wild cattle that cows
+  were domesticated from. \IANC{Dictionnaire des sciences naturelles. 1816 Cuvier,
+  F.G. }{https://www.flickr.com/photos/internetarchivebookimages/20713828960/in/photolist-owtfpr-owkoQN-obMTQg-owc9mc-rgpdRz-otq59G-oeZFD1-ottAnF-otuXhK-odKHJY-oqYxSb-oviGuD-ytox4c-owa3cJ-yc73Ji-wtrahu-ouf1fo-wXHoQ6-t97h27-owfa8h-xisfNf-waBt8s-x8859A-xwY4eG-wpCm8P-oev6vL-oy1AhH-tNJj8g-xGgALJ-x2kj8g-xDphGC-oxvRgt-x8eFQp-xypMG5-wKqr2k-xnCp1u-xpC2zS-wt5Lpp-xUjHhG-wGJBAQ-wv5dnr-xqLVc3-wPhru1}{NCSU Libraries}} \label{fig:auroch}
 \end{marginfigure}
 
 We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, lets consider the evolution of Lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein Lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
@@ -292,7 +294,9 @@ look at some data from sticklebacks.
 \includegraphics[width= 1.2 \textwidth]{illustration_images/single_locus_selection/Stickleback/Gasterosteus_aculeatus_1879.jpg}
 \end{center}
 \caption{Freshwater threespine Stickleback ({\it
-    G. aculeatus}). British fresh-water fishes. Houghton W 1879. BHL.} \label{fig:stickleback}
+    G. aculeatus}). \BHLNC{British fresh-water fishes. Houghton W
+    1879.}{https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus_1879.jpg}{Ernst
+    Mayr Library, Harvard.}} \label{fig:stickleback}
 \end{marginfigure}
 Marine threespine stickleback ({\it Gasterosteus aculeatus})
 independently colonized and adapted to many freshwater lakes
@@ -428,7 +432,8 @@ dominance coefficient. \sa{For selection to be directional, we require that $0 \
 \caption{The trajectory of the frequency of allele $A_1$, starting
   from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
   different dominance coefficients. The recessive beneficial allele ($h=1$) will
-  eventually fix in the population, but it takes a long time.}
+  eventually fix in the population, but it takes a long
+  time. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel.R}}
   \label{fig:diploid_traj}
 \end{marginfigure}
 
@@ -459,7 +464,10 @@ Throughout the Californian foothills are old copper and gold-mines, which have d
 \begin{center}
 \includegraphics[width = 1.2 \textwidth]{illustration_images/single_locus_selection/Copperopolis/KeystoneCopperMineCopperopolisCalaverasCounty.jpg}
 \end{center}
-\caption{Keystone Copper Mine 1866, Copperopolis, Calaveras County. }
+\caption{Keystone Copper Mine 1866, Copperopolis, Calaveras
+  County. \newline \noindent \tiny{ Image from
+  \href{https://picryl.com/media/keystone-copper-mine-copperopolis-calaveras-county}{picryl}.
+Source Library of Congress, Public Domain. }}
   \label{fig:Copperopolis}
 \end{marginfigure}
 
@@ -479,7 +487,10 @@ Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:di
 \begin{center}
   \includegraphics[width = 0.8 \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
 \end{center}
-\caption{The frequency of red, cross, and silver fox morphs over the decades in Eastern Canada. These data are well described by recessive selection acting against the silver fox morph. Data from \citet{elton:42}, redrawn from \citet{Allendorf:09}.} \label{fig:Fox_morph_freqs}
+\caption{The frequency of red, cross, and silver fox morphs over the
+  decades in Eastern Canada. These data are well described by
+  recessive selection acting against the silver fox morph. Data from
+  \citet{elton:42}, compiled by \citet{Allendorf:09}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/silver_fox/fox_morphs.R}} \label{fig:Fox_morph_freqs}
 \end{figure}
 To see how dominance affects the trajectory of a real
 polymorphism, we'll consider an example from a colour polymorphism in
@@ -501,8 +512,9 @@ morph alone. \begin{marginfigure}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
 \end{center}
 \caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
-  and silver foxes from left to right. From ``The
-  larger North American mammals" Nelson, E.W., Fuertes, L.A. 1916.} \label{fig:Fox_morphs}
+  and silver foxes from left to right. \BHLNKC{The larger North American
+    mammals" Nelson, E.W., Fuertes,
+    L.A. 1916.}{https://www.flickr.com/photos/internetarchivebookimages/20578302420/in/photolist-wZ1CDZ-x4aTMj-tCTNnY-sFEbZG-xphfQ3-xmrbnA-xiXcDj-xejHVF-xtiB5G-xbxj1h-xsQdrP-wvPad5-xsFHvi-xqbZ1n-wsJA56-wrzbGj-xhvUJC-xgyia4-wYQ2pR-wXZf6j-wiuZ1t-wWKbS1-whsqaP-whio1h-xeiFTH-wWNQYe-xeiq1a-xdwa1s-wQExt6-x8BrsK-wPgGBE-w9DN9W-x75ojD-wP27dM-w9D6Ye-x6tXdt-wNRKTC-w9AXfX-x5rdVc-x25Puc-vvxmtP-tJ16gt-tAVz57-tmv9Zh-tCXVo2-owo4PL-oum6R1-oeCRWg-oeg5dH-ot9SVz}{Cornell University Library}} \label{fig:Fox_morphs}
 \end{marginfigure} Note how the heterozygotes (cross) decline somewhat as a
 result of selection on the silver homozygotes, but overall the R
 allele is slow to respond to selection as it is `hidden' from
@@ -543,7 +555,9 @@ by a factor of 2 due to the choice of parametrization
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/killifish/20974603315_1f9775189e_z.jpg}
 \end{center}
-\caption{Gulf killifish ({\it Fundulus grandis}) } \label{fig:killifish}
+\caption{Gulf killifish ({\it Fundulus grandis}). \BHLNKC{Distribution and
+    abundance of fishes and invertebrates in Gulf of Mexico
+    estuaries. Nelson D M and Pattillo M E}{https://www.flickr.com/photos/internetarchivebookimages/20974603315/in/photolist-xXsjPD-xXtgv2-xXtH6R-xXqWDP-wLTvyb-vNtwuV-w5YUE8-x3LoqL-w6oGAu-v8XTGY-xeLtHH-x55G1H-x3LEab-xqMKAg-wjksEw-x2brmo-w5hbhG-x2xSUG-wLUKE7-wLTSzb-yiwYWH-vNn18J-w5m7Hh-wLFFPg-w5Zyip-x547wa-wxjgKE-owf2BN-tryPJL-xERrRA-xfpKrJ-x4sNs6-x1sk9W-xec1S6-xEP4rE-x36kBN-waaBtg-wLf5jY-x29N9E-xB1126-tFDcgi-xjju3s-w6Fm6M-w3D8Ej-xzFCbj-xEZcSX-wLkVzJ-xrV46d-xJwuXV-x4tZjV}{MBLWHOI Library} } \label{fig:killifish}
 \end{marginfigure}
 
 \begin{question}
@@ -605,7 +619,7 @@ one simulation the allele is started from being rare in the population
 the other simulation the allele is almost
 fixed ($p=\nicefrac{999}{1000}$, dashed line). In both cases the
 frequency moves toward the equilibrium frequency. The red line shows
-the equilibrium frequency ($p_e$).} \label{fig:het_advant_traj}
+the equilibrium frequency ($p_e$). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_advant_traj}
 \end{marginfigure}
 
 
@@ -637,7 +651,7 @@ the two alleles are equal when
 frequency. Fitnesses as in Figure \ref{fig:het_advant_traj}. Note how the frequency change is positive below the
 equilibrium frequency ($p_e$) and negative above. {\bf Bottom)} Mean
 fitness ($\bar{w}$) as a function of the allele frequency. The red line shows
-the equilibrium frequency ($p_e$)} \label{fig:het_advant_dp_wbar}
+the equilibrium frequency ($p_e$). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_advant_dp_wbar}
 \end{marginfigure}
 for the equilibrium frequency of interest. This is also the frequency
 of $A_1$ at which the mean fitness of the population is maximized. The
@@ -655,9 +669,10 @@ homozygotes.\\
 \begin{center}
   \includegraphics[width = \textwidth]{Rcode/Soay_Sheep/Hopping_sheep_all.pdf}
 \end{center}
-\caption[][4cm]{For the three Soay sheep genotypes: the offspring per year  ({\bf left}), the probability of
+\caption[][5cm]{For the three Soay sheep genotypes: the offspring per year  ({\bf left}), the probability of
   surviving a year ({\bf middle}), and the product of the two ({\bf
-    right}). Thanks to Susan Johnston for supplying these simplified numbers from \citet{johnston2013life}.
+    right}). Thanks to Susan Johnston for supplying these simplified
+  numbers from \citet{johnston2013life}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Soay_Sheep/Soay_Sheep_fitness.R}
 } \label{fig:Soay_fitness}
 \end{figure}
 
@@ -677,8 +692,8 @@ effects on male, but not female, fitness (see Figure
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/mouflon/18195657882_eb207e4e9e_z.jpg}
 \end{center}
-\caption{Mouflon ({\it Ovis orientalis orientalis}). Animate
-  creation. (1898). Wood, J. G.  } \label{fig:Soay_fitness}
+\caption{Mouflon ({\it Ovis orientalis orientalis}). \BHLNC{Animate
+  creation. (1898). Wood, J. G.}{https://www.flickr.com/photos/internetarchivebookimages/18195657882/in/photolist-oeVkzm-oeVyZM-owqffV-otpyr4-abvEzA-osMSNY-vdEfRm-odZgfB-ot1epP-xvDeKd-yb3aL3-xRUfo4-owdr4T-wJhfme-xj57bn-xAzfXc-xiEcGn-sMnpMH-xP6U3J-w6Wm26-xuMUdr-tHTvam-w6aexB-oubB13-wYKiWR-xnrRBv-xptbR9-wYeGR2-xBHTk1-xvoaiK-xdb5i7-xst4MC-w3QTNe-x9SM4R-xnwGwR-xGd6Qk-xyfL9Q-w3QtPx-wYeJqe}{Smithsonian Libraries} } \label{fig:Soay_fitness}
 \end{marginfigure} The Ho$^p$ allele has a mostly recessive effect on
 male fecundity, with the Ho$^p$ homozygotes having lower yearly reproductive
 success presumably due to the fact that they perform poorly in male-male
@@ -723,7 +738,7 @@ additive genetic fitness of each genotype is shown as
  genotype is shown as a red line. The black vertical arrows show the
  difference between the average mean-centered phenotype and additive genetic value for each genotype.
 The left panel shows $p=0.1$ and the right panel shows $p=0.9$; in the
-middle panel the frequency is set to the equilibrium frequency. } \label{fig:additive_effect_OverDom}
+middle panel the frequency is set to the equilibrium frequency. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/additive_effect.R} } \label{fig:additive_effect_OverDom}
 \end{figure}
 
 
@@ -759,8 +774,8 @@ homozygotes. Underdominance can be parametrized as follows: \\
 \caption{In {\it Pseudacraea eurytus} there are two homozygotes morphs that mimic
  a different blue and orange butterfly; the heterozygote fails to mimic
 either successfully and so suffers a high rate of predation
-\citep{owen1972polymorphic}. From Illustrations of new species of
-exotic butterflies (1868) Hewitson.} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
+\citep{owen1972polymorphic}. \BHLNC{Illustrations of new species of
+exotic butterflies (1868) Hewitson.}{https://commons.wikimedia.org/wiki/File:Pseudacraea_eurytus.JPG}{Smithsonian Libraries}} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
 \end{marginfigure}
 
 Underdominance also permits three equilibria: $p=0$, $p=1$, and a
@@ -830,7 +845,8 @@ developmental time and fecundity, which could mediate the maintenance of this po
   Jacinto, CA. These frequencies are an average
   over four years. Data from \citet{wright:46}. {\bf Right)} The
   frequency of an allele at the Insulin-like Receptor gene over three
-  years in {\it Drosophila melanogaster} samples from an Orchard in Pennsylvania. Data from \citet{paaby:14}.} \label{fig:Droso_fluct} 
+  years in {\it Drosophila melanogaster} samples from an Orchard in
+  Pennsylvania. Data from \citet{paaby:14}. \gitcode{https://github.com/cooplab/popgen-notes/tree/master/Journal_figs/single_locus_selection/temporal_Droso_freq}} \label{fig:Droso_fluct} 
 \end{figure}
 
 To explore temporal fluctuations in fitness, we'll need to
@@ -1000,8 +1016,8 @@ the frequency of the two colour morphs. \begin{marginfigure}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Elderflower_orchid/albumdesorchid1899corr_0209.jpg}
 \end{center}
 \caption{Elderflower orchid ({\it Dactylorhiza
-  sambucina}). Abbildungen der in Deutschland und den angrenzenden
-gebieten vorkommenden grundformen der orchideenarten (1904). Müller, W. } \label{fig:ElderflowerOrchid}  %Illustrations of the basic forms of orchid species found in Germany and neighboring areas
+  sambucina}). \BHLNC{Abbildungen der in Deutschland und den angrenzenden
+gebieten vorkommenden grundformen der orchideenarten (1904). Müller, W.}{https://www.biodiversitylibrary.org/page/15349868\#page/126/mode/1up}{New York Botanical Garden} } \label{fig:ElderflowerOrchid}  %Illustrations of the basic forms of orchid species found in Germany and neighboring areas
 \end{marginfigure} Figure \ref{fig:Elderflower_orchids_fitness} shows their measurements of the relative
 male and female reproductive success of the yellow morph across these experimental plots. When the yellow morph is rare, it has
 higher reproductive success than the purple morph, as it receives a
@@ -1027,7 +1043,8 @@ morphs are predicted to have equal fitness.
 relative by dividing the reproductive success of the yellow morph by the
 mean of the yellow and purple morphs. Pollinia are the pollen masses of
 orchids, and other plants, where individual pollinium are transferred
-as a single unit by pollinators. Data from \citet{gigord2001negative}.} \label{fig:Elderflower_orchids_fitness}  
+as a single unit by pollinators. Data from
+\citet{gigord2001negative}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids.R}} \label{fig:Elderflower_orchids_fitness}  
 \end{figure}
 
 %The Independents are very aggressive toward each other, but tolerate

@@ -7,3 +7,15 @@ legend(x="topright",legend=c("Female (% pollinia deposited)", "Male (% pollinia 
 abline(h=1,col="grey",lwd=2)
 
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids_fitness.pdf")
+
+
+##yellow is thought to be recessive
+
+fitness_model<-lm(orchid$male_success~orchid$freq_yellow)$coeff
+
+new_fitnesses<-function(p){
+	wY<- fitness_model[1] + fitness_model[2]*p
+	wP<- 1
+	c(wY,wP,wP)
+}
+

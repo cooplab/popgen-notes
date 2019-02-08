@@ -51,3 +51,18 @@ abline(h= (1-w22)/((1-w11)+(1-w22)),col="red",lwd=2)
 
 
  dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/het_advant_traj.pdf")
+ 
+ 
+ 
+ 
+ layout(1)
+p<-1/1000
+my.p.traj<-p
+
+for(i in 1:150){
+	w<-new_fitnesses(p)
+	w11<-w[1];w12<-w[2];w22<-w[3]
+	p<-p+delta_p(p)
+	my.p.traj<-c(my.p.traj,p)
+}
+plot(my.p.traj,ylim=c(0,1),type="l",xlab="Generations",ylab="p",cex.axis=1.2,cex.lab=1.4,lwd=2)
