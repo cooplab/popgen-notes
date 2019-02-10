@@ -1,0 +1,10 @@
+
+rp_mice<-read.csv(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/single_locus_selection/Rock_Pocket_mice/Rock_pocket_mice.csv")
+plot(rp_mice$Melanic_freq,axes=FALSE,xlab="Location",ylab="Frequency",cex.lab=1.4,type="n")
+polygon(x=c(2.5,5.5,5.5,2.5),y=c(-0.1,-0.1,1.1,1.1),col="grey")
+points(rp_mice$Melanic_freq,type="b",pch=18,cex=1.5)
+points(rp_mice$MC1R_D_freq,type="b",pch=19,cex=1.5)
+axis(2,cex.lab=1.4,cex.axis=1.2)
+axis(1,at=1:nrow(rp_mice),lab=rp_mice$X,cex.lab=1.4,cex.axis=1.2)
+legend(x="bottomright",legend=c("Melanic Phenotype","MC1R D allele"),pch=c(18,19),cex=1.4,bg="white")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/single_locus_selection/Rock_Pocket_mice/Rock_pocket_mice.pdf")
