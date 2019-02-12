@@ -1,5 +1,5 @@
 
-fig.direct="~/Dropbox/Courses/PBGG_Core/Popgen_teaching_Notes/Figs/"
+fig.direct="~/Dropbox/Courses/Popgen_teaching_Notes/figures/"
 
 #############################
 ######## Parameters #########
@@ -31,3 +31,8 @@ dev.copy2eps(file=paste(fig.direct,"equilib_cline.eps",sep=""))
 
 plot(x,1-A(sigma,sel[2],x),type="l",col="red",lwd=2,xlab="Position x, km",ylab="Frequency of allele 2, q(x)")
 abline(a=0.5,b=-1.7*sigma/sqrt(sel[2]))
+gradient.at.origin<-((1-A(sigma,sel[2],x))[102]- (1-A(sigma,sel[2],x))[99])/(x[102]-x[99])
+abline(a=0.5,b=gradient.at.origin,lty=2,lwd=2)
+abline(v= floor((1 -0.5)/ gradient.at.origin),lty=2,lwd=2)
+ abline(v= ceiling((0 -0.5)/ gradient.at.origin),lty=2,lwd=2)
+ dev.copy2pdf(file=paste(fig.direct,"equilib_width_cline.pdf",sep=""))

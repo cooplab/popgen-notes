@@ -1536,11 +1536,20 @@ disperse long distances and selection is weak, many alleles are being moved back
 environmental transition much faster than selection can act against
 these alleles and so the cline would be very wide. 
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/equilib_width_cline.pdf}
+\end{center}
+\caption{An equilibrium cline in allele frequency from Figure
+  \ref{fig:cline_main}, $s=0.01$. Vertical lines show the cline width. The
+  diagonal line show the tangent to the cline at its midpoint. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/cline.R}} \label{fig:cline_tangent}
+\end{marginfigure}
 The width of our cline, i.e. the distance over which we make this shift
 from allele $2$ to allele $1$ predominating,
 can be defined in a number of different ways. One way to define
-the cline width, which is simple to define but perhaps hard to measure accurately, is the slope (i.e. the
-tangent) of $q(x)$ at $x=0$. Under this definition, the cline width is
+the cline width, which is simple to define but perhaps hard to measure
+accurately, is via the slope (i.e. the
+tangent) of $q(x)$ at $x=0$. See Figure \ref{fig:cline_tangent}. Under this definition, the cline width is
 approximately
 \begin{equation}
   0.6 \sigma/\sqrt{s} ~\textrm{miles},
@@ -1550,13 +1559,6 @@ dispersal distance ($\sigma$) in miles above. Thus the cline will be wider if in
 $\sigma$, and if selection is weaker, smaller $s$. The appendix below talks through the math underlying these
 ideas in more detail.
 
-
-\begin{marginfigure}[-3cm]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{illustration_images/single_locus_selection/Culex_pipiens/Culex_pipiens.png}
-\end{center}
-\caption{ mosquito ({\it Culex pipiens}). \BHLNC{Domestic mosquitoes (1939).  Bishopp, F. C.}{https://archive.org/stream/domesticmosquito186bish/\#page/3/mode/1up}{U.S. Department of Agriculture, National Agricultural Library}} \label{fig:culex}
-\end{marginfigure}
 
 \begin{figure}
 \begin{center}
@@ -1569,7 +1571,7 @@ ideas in more detail.
  collections over two summers, the frequencies of the alleles are
   substantially reduced in the winter due to the reduced use of
   pesticides. Data from
-  \citet{lenormand1999tracking}. \gitcode{}} \label{fig:cline_culex}
+  \citet{lenormand1999tracking}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Culex_resistance/culex_resistance.R}} \label{fig:cline_culex}
 \end{figure}
 
 
@@ -1582,7 +1584,14 @@ frequency near the coast but found that their frequencies declined rapidly
 moving inland. \citeauthor{lenormand1999tracking} fit migration-selection
 cline models to their data, similar to those in Figure \ref{fig:cline_main}, with the pesticide-resistance alleles having an
 selection advantage ($s$) in treated areas an a cost ($c$) in untreated areas (they didn't
-enforce the selective advantage and cost being symmetric). They
+enforce the selective advantage and cost being symmetric).
+\begin{marginfigure}[-3cm]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{illustration_images/single_locus_selection/Culex_pipiens/Culex_pipiens.png}
+\end{center}
+\caption{ mosquito ({\it Culex pipiens}). \BHLNC{Domestic mosquitoes (1939).  Bishopp, F. C.}{https://archive.org/stream/domesticmosquito186bish/\#page/3/mode/1up}{U.S. Department of Agriculture, National Agricultural Library}} \label{fig:culex}
+\end{marginfigure}
+They
 estimated that a higher selective advantage for the Ace 1 allele than
 Ester allele ($s=0.33$ and $s=0.19$  respectively) and a higher cost to the Ace 1 allele than
 Ester allele in untreated areas ($c=0.11$ and $c=07$
