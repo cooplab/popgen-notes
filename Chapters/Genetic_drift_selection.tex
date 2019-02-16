@@ -4,9 +4,10 @@
 \begin{quote}
  ``Natural selection is a mechanism for generating an exceedingly high
  degree of improbability.” --R.A. Fisher
-  % ``Did he fire six shots or only five? [...] you've got to ask yourself
+\end{quote}
+ % ``Did he fire six shots or only five? [...] you've got to ask yourself
 %one question'' `Do I feel lucky?' Well do ya, punk? '' -- Dirty Harry 
-%\end{quote}
+
 
 In the previous chapter we assumed that the selection acting on our
 alleles was strong enough that we could ignore the action of genetic
@@ -188,7 +189,7 @@ Pythagoras's ``just say no to fava beans'' campaign.
 Pythagoras prohibited the consumption of fava beans by his followers; perhaps because favaism, the anemia induced in G6PD-deficient
 individuals by fava beans, is relatively common in the Mediterranean due
 to adaptation to endemic malaria. French early 16th
-Century. Woodner Collection, National Gallery of Art. Public Domain, \href{https://en.wikipedia.org/wiki/Pythagoras#/media/File:Do_Not_Eat_Beans.jpg}{wikimedia}. } \label{fig:fava}
+Century. Woodner Collection, National Gallery of Art. Public Domain, \href{https://en.wikipedia.org/wiki/Pythagoras\#/media/File:Do_Not_Eat_Beans.jpg}{wikimedia}. } \label{fig:fava}
 \end{center}
 \end{marginfigure}
 
@@ -224,7 +225,7 @@ mutation-selection balance seems reasonable.  \marginnote{A full
 \caption{Haldane's sieve. To our knowledge Haldane never wore a sieve,
   but we assume he owned one. Sieve,
   \href{https://www.flickr.com/photos/fdctsevilla/4306301234/in/photostream/}{Flickr}
-  licensed under CC BY 2.0. Haldane, Public Domain \href{https://en.wikipedia.org/wiki/J._B._S._Haldane#/media/File:J._B._S._Haldane.jpg}{wikimedia}.} \label{fig:haldanes_sieve}
+  licensed under CC BY 2.0. Haldane, Public Domain \href{https://en.wikipedia.org/wiki/J._B._S._Haldane\#/media/File:J._B._S._Haldane.jpg}{wikimedia}.} \label{fig:haldanes_sieve}
 \end{marginfigure}
 
 \begin{question}
@@ -273,17 +274,17 @@ depend on the relative strengths of selection and genetic drift.
 But how weak must selection on an allele be for drift to overpower
 selection? And do these interactions between selection and drift have longterm consequences for genome-wide patterns evolution?
 
- \begin{marginfigure}
+ \begin{marginfigure}[-1cm]
  \begin{center}
  \includegraphics[width=\textwidth]{Journal_figs/drift_selection/asellid_isopods_Nes/asellid_isopods_Nes.pdf}
  \end{center}
  \caption{ Asellid isopods have repeatedly invaded subterranean, ground-water
 habitats from surface-water habitats, and leading to a
-genome-wide increase in $\dNdS$  and larger genomes \citep[Figure from ][comparing independent isopod species pairs]{lefebure2017less}. One
+genome-wide increase in $\dNdS$  and larger genomes \citep[Data from ][comparing independent isopod species pairs]{lefebure2017less}. One
 possible explanation of this is that the longterm effective population
 sizes of the subterranean species are lower and so these species are less able to
 prevent mildly deleterious alleles fixing, and also less able to prevent genome expansion from the accumulation of weakly deleterious, extraneous
-genomic DNA. } \label{fig: asellid_isopods_Nes}
+genomic DNA. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/asellid_isopods_Nes/asellid_isopods_Nes.R} } \label{fig: asellid_isopods_Nes}
  \end{marginfigure}
 
 
@@ -406,7 +407,7 @@ time periods, natural selection can potentially finely tune various aspects of a
 \includegraphics[width=\textwidth]{Journal_figs/drift_selection/Codon_bias_Drosophila/Leucine_codon_bias.pdf}
 \end{center}
 \caption{Data from {\it Drosophila melanogaster} on the frequency of
-  different codons for Leucine.} \label{fig:Leucine}
+  different codons for Leucine. Data from \href{https://www.genscript.com/tools/codon-frequency-table}{Genscript}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/Codon_bias_Drosophila/codon_bias.R}} \label{fig:Leucine}
 \end{marginfigure}
 As one example of this fine-tuning, consider how carefully crafted and optimized the sequence of codons is for translation. Due to the degeneracy of the protein code, multiple codons code for the same
 amino-acid. For example, there are six different codons that can code
@@ -421,8 +422,10 @@ matter?
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/drift_selection/Codon_bias_Drosophila/Drosophila_codon_bias_expression.pdf}
 \end{center}
-\caption{Data from {\it Drosophila melanogaster} on the codon bias for
-  different codons for Leucine.} \label{fig:Leucine}
+\caption{A measure of unequal codon frequencies (F) plotted in bins of
+    of gene expression (E) for genes across the {\it Drosophila
+      melanogaster} genome. Data from
+  \citet{hey2002interactions}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/Codon_bias_Drosophila/codon_bias.R}} \label{fig:gene_expression_codon_bias}
 \end{marginfigure}
 In many organisms there is a strong bias in the codons to encode
 particular amino-acids, see Figure \ref{fig:Leucine}, with the most
@@ -433,7 +436,7 @@ are often very similar for species that diverged over many tens of millions of y
 Compared to other genes, highly expressed genes show a strong bias towards using
 codons matching abundant tRNAs, consistent with the idea that the synonymous codon content of
 highly expressed genes is evolving to optimize their
-translation. These patterns likely represent the action of
+translation (see Figure \ref{fig:gene_expression_codon_bias} for an early example). These patterns likely represent the action of
 selection pressures that are incredibly weak on average, but that have played out
 over vast time-periods. 
 
