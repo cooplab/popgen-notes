@@ -22,7 +22,7 @@ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/prob_fix_diff
 my.s<-c(-1e-6,-1e-5,-1e-4,-1e-3,-1e-2)
 my.s<-c(my.s,-rev(my.s[-1]))
 N<-10^seq(1,7,length=100)
-plot(x=range(N),c(1e-5,1e5),log="xy",ylab=expression(paste(log[10]," Prob. of fixation, ",pi( 1/ 2*N[e]))),xlab=expression(paste(log[10](N[e])) ),type="n",axes=FALSE)
+plot(x=range(N),c(1e-5,1e5),log="xy",ylab=expression(paste(log[10]," Ratio of Prob. of fixation ", pi( 1/ 2*N[e]), " to Neutral Prob.")),xlab=expression(paste(log[10](N[e])) ),type="n",axes=FALSE) #/(1/2*N[e])))
 axis(1,at=10^(1:7),label=expression(10,10^2,10^3,10^4,10^5,10^6,10^7),cex.axis=1.2)
 axis(2,at=10^(c(-(5:1),0,1:5)),label=expression(10^{-5},10^{-4},10^{-3},10^{-2},10^{-1},1,10^{1},10^{2},10^{3},10^{4},10^{5}),cex.axis=1.2,las=2) #,1:5
 my.s.expression<-expression(-10^{-6},-10^{-5},-10^{-4},-10^{-3},-10^{-2},10^{-2},10^{-3},10^{-4},10^{-5})
