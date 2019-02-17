@@ -5,6 +5,7 @@
  ``Natural selection is a mechanism for generating an exceedingly high
  degree of improbability.” --R.A. Fisher
 \end{quote}
+
  % ``Did he fire six shots or only five? [...] you've got to ask yourself
 %one question'' `Do I feel lucky?' Well do ya, punk? '' -- Dirty Harry 
 
@@ -347,12 +348,13 @@ selection within a generate is reasonably faithfully passed down through the gen
 much less than the variance induced by drift. So if the absolute value of our population-size-scaled selection coefficient $| Ns| \ll 1$, then drift will dominate the fate of our allele. \\
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.9 \textwidth]{figures/prob_fix_diffusion.png}
+\includegraphics[width=0.9 \textwidth]{figures/prob_fix_diffusion.pdf}
 \end{center}
 \caption{The probability of the fixation of a new mutation with
   selection coefficient $s$ ($h=1/2$) in a diploid population of effective
   size $N_e$. The dashed line gives the infinite population
-  solution. The dots give the solution for $s \rightarrow 0$, i.e. the neutral case, where the probability of fixation is $1/(2N_e)$} \label{fig:prob_fix_diffusion}
+  solution. The dots give the solution for $s \rightarrow 0$, i.e. the
+  neutral case, where the probability of fixation is $1/(2N_e)$. \gitcode{}} \label{fig:prob_fix_diffusion}
 \end{figure}
 
 To make further progress on understanding the fate of alleles with
@@ -389,6 +391,18 @@ absorbed by the zero state. When the population size is finite, to fix
 we only need to reach a size 2N individuals. Weakly beneficial
 mutations (Ns~1) are slightly more likely to fix than the s
 probability, as they only have to reach 2N to never be lost.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{figures/prob_fix_diffusion_var_N.pdf}
+\end{center}
+\caption{The probability of the fixation of a new mutation with
+  selection coefficient $s$ ($h=1/2$) in a diploid population of effective
+  size $N_e$. The dashed line gives the infinite population
+  solution. The dots give the solution for $s \rightarrow 0$, i.e. the
+  neutral case, where the probability of fixation is $1/(2N_e)$. \gitcode{}} \label{fig:prob_fix_diffusion}
+\end{figure}
+
 
 If, for selection to operate on an allele, we need the selection coefficient to satisfy
 $|Ns|\gg 1$, then that holds if $|s|\gg \nicefrac{1}{N}$. 
