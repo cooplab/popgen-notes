@@ -5,7 +5,7 @@ plot(x=range(Galtier_dNdS$log10_piS),y=range(Galtier_dNdS$dNdS),type="n",
 xlab=TeX('$\\log_{10}(\\pi_S)$'),ylab="dN/dS",cex.lab=1.4,cex.axis=1.2,cex=1.2)
 
 points(x=Galtier_dNdS$log10_piS[Galtier_dNdS$comp=="invertebrates"], Galtier_dNdS$dNdS[Galtier_dNdS$comp=="invertebrates"],col=adjustcolor("black"),pch=19)
-
+#text(log10(1799	/268247),(7641/	1064230)/(16432/293023), "cuttlefish")
 
 points(x=Galtier_dNdS$log10_piS[Galtier_dNdS$comp=="vertebrates"], Galtier_dNdS$dNdS[Galtier_dNdS$comp=="vertebrates"],cex=1.2)
 legend(x="topright",legend=c("invertebrates","vertebrates"),pch=c(19,1),cex=1.2)

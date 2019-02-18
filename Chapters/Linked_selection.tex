@@ -4,7 +4,7 @@
 alleles. Alleles also experience random fluctuations in frequency due to
 the fact that they present on a set of random genetic backgrounds with
 different fitnesses. For example, when a beneficial allele arises via a single mutation, it arises on
-a particular genetic background, i.e. a particular haplotype (Figure \ref{fig:HIV_sweep}A). Imagine this mutation arising in a region with no recombination, or in an
+a particular genetic background, i.e. a particular haplotype (Figure \ref{fig:HIV_sweep}}A). Imagine this mutation arising in a region with no recombination, or in an
 organism where genetic exchange is rare. If our beneficial allele
 becomes established in the population, i.e. escapes loss by genetic
 drift in those first few generations, it will start to increase in
@@ -33,10 +33,11 @@ sequences from a patient at the start of drug treatment in the
 protease and retrotransposase coding regions. Bottom panel: A sample
 161 days later, after a drug resistant mutation has spread, the A
 $\rightarrow$ T in the $103^{rd}$ codon of retrotransposase. Each row is a haplotype,
-with the alleles present shown as coloured blocks. Figure from Pleuni Pennings.} \label{fig:HIV_sweep}  %\hyper{https://github.com/PenningsLab/ClonalInterferenceHIV}{
+with the alleles present shown as coloured blocks. Figure B from
+\citet{Williams548198}, \PLOSccBY.} \label{fig:HIV_sweep}  %\hyper{https://github.com/PenningsLab/ClonalInterferenceHIV}{
 \end{figure}
 
-Pleuni Pennings has been working on visualizing selective sweeps in
+\citet{Williams548198} have visualized selective sweeps in
 HIV. In Figure \ref{fig:HIV_sweep}B) we see a set of HIV haplotypes
 sampled from a patient before and after of a selective sweep of a
 drug-resistant mutation. The patient is taking a
@@ -120,7 +121,7 @@ from the selected site.
 \caption{The expected reduction in diversity compared to its neutral expectation as
 a function of the distance away from a site where a selected allele
 has just gone to fixation. The sweeps associated with two different strengths of selection are shown, corresponding to a short timescale ($\tau$) for the sweep and long one. The recombination rate is $r_{BP}= 1\times
-10^{-8}$.} \label{fig:hitchhiking_reduction}
+10^{-8}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Hitchhiking.R}} \label{fig:hitchhiking_reduction}
 \end{figure}
 
 
@@ -196,7 +197,7 @@ slowly and exponentially plateauing to its neutral expectation $\pi_0$.\\
 \includegraphics[width=\textwidth]{illustration_images/hitchhiking/malaria/malaria.png}
 \end{center}
 \caption{Three species of malaria parasites ({\it Plasmodium}) in red
-  blood cells. Animal parasites and human disease (1918). Chandler, A.C. } \label{fig:malaria}
+  blood cells. \BHLNC{Animal parasites and human disease (1918). Chandler, A.C.}{https://www.flickr.com/photos/internetarchivebookimages/20181659403/}{Cornell University Library} } \label{fig:malaria}
 \end{marginfigure}
 The malaria pathogen ({\it Plasmodium falciparum}) has
 evolved drug resistance to anti-malaria drugs, often by changes at
@@ -218,10 +219,11 @@ corresponding to the drug-resistance allele fixing in very short time period.
   surounding the dhfr gene in samples of drug-resistant malaria ({\it Plasmodium falciparum}) from
   Thailand. The dotted horizontal line gives the average level of
   heterozygosity found at these markers in a set of drug-resistant
-  malaria; we take this background as our $\pi_0$. Data from \citet{nash2005selection}. The dashed line shows
+  malaria; we take this background as our $\pi_0$. The dashed line shows
   our fitted hitchhiking model from equation \ref{eqn:pi_HH} with $\tau \approx 40$, fitted by
   non-linear least squares. The recombination rate in {\it P.
-    falciparum} is $r_{BP}\approx 10^{-6}$bp$^{-1}$.} \label{fig:hitchhiking_malaria}
+    falciparum} is $r_{BP}\approx 10^{-6}$bp$^{-1}$. Data from
+  \citet{nash2005selection}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/recom_selection/malaria_sweep/dhfr_sweep.R}} \label{fig:hitchhiking_malaria}
 \end{figure}
 
 
@@ -249,13 +251,19 @@ diversity over 10's of kb, while a sweep of $s=1\%$ would affect
 $\sim$100kb.   \\
 
 
+\begin{marginfigure}[5cm]
+\begin{center}\includegraphics[width= \textwidth]{illustration_images/hitchhiking/Pepper_moth/lespapillonsdans01robe_0375_trimmed.png}
+\end{center}
+\caption{peppered moth ({\it Biston betularia}), non-melanic morph \BHLNC{Les papillons
+    dans la nature (1934).Robert, P.-A. }{https://www.biodiversitylibrary.org/page/33080243\#page/367/mode/1up}{University of Illinois Urbana-Champaign} } \label{Peppered_moth}
+\end{marginfigure}
 \begin{question}
-A recently published study has identified the genetic basis of
-melanism in the pepper moth. This allele swept to fixation in northern
+\citet{van2011industrial} identified the genetic basis of
+melanism in the peppered moth ({\it Biston betularia}). This allele swept to fixation in northern
 parts of the UK; a classic case of adaptation to industrial pollution
-(made famous by the work of Kettlewell). The genetic basis of melanism
-is a transposable element (TE) inserted into a pigmentation gene. The
-investigators found that diversity is suppressed in a broad region
+(made famous by the work of \citeauthor{kettlewell1955selection}, see
+\citet{majerus2009industrial} and \citet{cook2012selective}). The genetic basis of melanism
+is a transposable element (TE) inserted into a pigmentation gene. \citeauthor{van2011industrial} found that diversity is suppressed in a broad region
 around the TE. Specifically, on the background of the TE, it takes
 roughly 200 kb in either direction for diversity levels to recover to
 50\% of genome-wide levels. \\
@@ -327,7 +335,7 @@ Group IV includes Ectodysplasin A (Eda), a gene involved in the adaptive loss of
   white and grey panels indicate different linkage groups. {\bf A)} $\fst$
   between two oceanic populations {\bf B)} Average $\fst$ between a
   freshwater population and the two marine populations. Figure and
-  caption text from \citet{hohenlohe2010population}.} \label{fig:local_sweep_haps}
+  caption text from \citet{hohenlohe2010population}, \PLOSccBY.} \label{fig:local_sweep_haps}
 \end{figure}
 
 
@@ -393,13 +401,12 @@ source of stochasticity in allele frequencies, potentially establishing an upper
 \includegraphics[width=0.75\textwidth]{figures/Genomewide_HH.png}
 \end{center}
 \caption{The relationship between (sex-averaged) recombination rate and synonymous
-  site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}
-  using the data of \citep{Shapiro:07} (kindly provided by Peter
-  Andolfatto, see \citet{sella2009pervasive} for details). The curve is the
+  site pairwise diversity ($\pi$) in {\it Drosophila melanogaster}. The curve is the
   predicted relationship between $\pi$ and recombination rate, obtained
   by fitting the recurrent hitchhiking equation \eqref{eqn:pi_GW_HH} to this data 
  using non-linear least squares via the {\tt nls()} function in {\tt
-   R}.} \label{fig:GW_hitchhiking_reduction}  %%Code source('~/Dropbox/Courses/Popgen_teaching_Notes/Rcode/Genomewide_HH.R')
+   R}.  Data from \citep{Shapiro:07}, kindly provided by Peter
+  Andolfatto, see \citet{sella2009pervasive} for details.\gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Genomewide_HH.R}} \label{fig:GW_hitchhiking_reduction}  %%Code source('~/Dropbox/Courses/Popgen_teaching_Notes/Rcode/Genomewide_HH.R')
 \end{figure}
 
 %Hellmann:08,, cutter2013
@@ -560,7 +567,7 @@ absence of linked selection.
   population, such that most individuals are descended from a subset of
   chromosomes free of deleterious alleles (highlighted here by orange boxes). Mutation is constantly generating new deleterious alleles on
   the background of chromosomes previously free of deleterious
-  alleles. Figure modified from \citet{sella2009pervasive}} \label{fig:BGS_cartoon}
+  alleles. Figure modified from \citet{sella2009pervasive}, \PLOSccBY.} \label{fig:BGS_cartoon}
 \end{figure}
 The effects of background selection are more pronounced in regions of low recombination, where
 neutral alleles are less able to recombine off the background of deleterious
@@ -587,7 +594,8 @@ alleles segregated previously at mutation-selection balance.
 \end{center}
 \caption{Relative diversity compared to the mean diversity in windows
   $\ge 0.01$ cM as a function of the distance to the nearest gene.
-  See \citep{beissinger2016recent} for details. Figure under cc-by \url{https://github.com/RILAB/beissinger_ms} } \label{fig:BGS_maize}
+  See \citep{beissinger2016recent} for details. Figure \PLOSccBY
+   \href{https://github.com/RILAB/beissinger_ms}{by Jeff Ross-Ibarra}.} \label{fig:BGS_maize}
 \end{marginfigure}
 More generally, if a neutral locus is surrounded by $L$ loci
 experiencing purifying selection at recombination distances
@@ -622,7 +630,7 @@ more of the genome to recombine off the deleterious background. \\
   by fitting the BGS equation \eqref{eqn:GW_BGS_1} to this data  
  using non-linear least squares via the {\tt nls()} function in {\tt
    R}. The blue line is the recurrent hitchhiking equation line from Figure
- \ref{fig:GW_hitchhiking_reduction}. } \label{fig:GW_BGS_reduction}
+ \ref{fig:GW_hitchhiking_reduction}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Genomewide_HH.R}} \label{fig:GW_BGS_reduction}
 \end{marginfigure}
 
 For a first go at fitting this to genome-wide data, we could look at
@@ -645,7 +653,7 @@ rate per base pair in  {\it D. melanogaster}, and so this deleterious mutation r
 would require most of the genome to be constrained, but as a first
 approximation it's not terrible. Note how similar the fit is to a model of
 hitchhiking, suggesting that both BGS and hitchhiking are capable of explaining the
-broad relationship between diversity and recombination seen in \it{D. melanogaster} and other species.
+broad relationship between diversity and recombination seen in {\it D. melanogaster} and other species.
 
 %Our estimate
 %of the deleterious mutation rate ($\mu_{BP}$) from the is too high again
@@ -659,7 +667,7 @@ broad relationship between diversity and recombination seen in \it{D. melanogast
   chromosome 1, from a background selection model that assumes a
   uniform mutation rate (red line) or a mutation rate that varies with
   local human/dog divergence (blue line). Figure from
-  \citep{Mcvicker:09} under a CC-BY license. } \label{fig:McVicker_BGS}
+  \citep{Mcvicker:09}, \PLOSccBY. } \label{fig:McVicker_BGS}
 \end{figure}
 
 As our annotations of functional regions of the genome have improved, so have our
@@ -712,7 +720,7 @@ can lead to such patterns. \graham{REFS}
   against their recombination rate in \textit{D. melanogaster}. Data
   from \citet{Shapiro:07}. {\bf Right)} Synonymous pairwise diversity
   in genomic windows  as a function of the density of non-synonymous
-  subsitutions in the window. Data from \citet{Andolfatto:07}. } \label{fig:Tajimas_D_dN_pi}
+  subsitutions in the window. Data from \citet{Andolfatto:07}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Genomewide_HH.R}} \label{fig:Tajimas_D_dN_pi}
 \end{figure}
 \graham{Double check if Shapiro restricted the range on their recom rates}
 
@@ -734,7 +742,7 @@ Figure \ref{fig:Tajimas_D_dN_pi}.
     D. melanogaster}. {\bf Right)} Predicted scaled diversity levels
   around non-synonymous substitutions based on models including
   background selection (BS), classic sweeps (CS) and both (BS \&
-  CS). Figure from \citet{elyashiv2016genomic}, under a CC-BY license.} \label{fig:Elyashiv_around_subs}
+  CS). Figure from \citet{elyashiv2016genomic}, \PLOSccBY.} \label{fig:Elyashiv_around_subs}
 \end{figure}
 
 Pushing this idea further, we can look at the dip in diversity
