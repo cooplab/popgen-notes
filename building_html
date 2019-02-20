@@ -1,0 +1,23 @@
+## Notes on Building the Site
+
+You need latexmk and pandoc. Then use:
+
+    $ make clean site
+
+`.eps` images will not work — be sure to convert all `.eps` files to `.png` and
+use the `.png` versions in LaTeX files.
+
+    $ find  . -name '*.eps' -type f | xargs -n1 -I{} basename {} .eps | xargs -n1 -I{} convert {}.eps {}.png
+
+Then to deploy, use:
+
+    $ make deploy
+
+This pushes `html/` with `git subtree`, e.g. like
+
+    $ git subtree push --prefix html upstream gh-pages
+
+For reference, [this](https://github.com/X1011/git-directory-deploy)
+`deploy.sh` is used to deploy to the `gh-pages` branch. I've modified this
+version accordingly (e.g. works with BSD `ls`, by using `-A` instead of
+`--almost-all`)
