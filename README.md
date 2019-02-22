@@ -1,5 +1,7 @@
 # Population Genetics Notes
 
+If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link}. I'm collecting this information in case it is useful in supporting future development of the notes.  
+
 This is the  latex source, images, and R code for the Population Genetics & Quantitative Genetics notes by Graham Coop. 
 
 Theses notes and the latex code are released under the Creative Commons Attribution 3.0 Unported License. So if you do reuse or repurpose them you don’t need my permission, you just need to acknowledge where you got them from. The R code associated with these notes are released under the MIT license. 
