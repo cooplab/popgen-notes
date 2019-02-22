@@ -1,6 +1,6 @@
 # Population Genetics Notes
 
-If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link}. I'm collecting this information in case it is useful in supporting future development of the notes.  
+If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link). I'm collecting this information in case it is useful in supporting future development of the notes.  
 
 This is the  latex source, images, and R code for the Population Genetics & Quantitative Genetics notes by Graham Coop. 
 
@@ -26,7 +26,7 @@ Kent Holsinger’s Notes: https://github.com/kholsinger/Lecture-Notes-in-Populat
 
 Joe Felsenstein’s book: http://evolution.genetics.washington.edu/pgbook/pgbook.html
 
-Walsh and Lynch pdfs: http://nitro.biosci.arizona.edu/zbook/NewVolume_2/newvol2.html
+Walsh and Lynch book pdfs: http://nitro.biosci.arizona.edu/zbook/book.html
 
 Graham Coop
 
