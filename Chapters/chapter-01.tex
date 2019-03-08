@@ -966,8 +966,12 @@ averaging $p_S$ across subpopulations (or our samples from sub-populations). For
 \end{equation}
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
-$i$. If the total population contains the subpopulation then $2p_Sq_S \leq
-2p_Tq_T$, and so $\fis \leq \fit$ and $\fst \geq 0$. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
+$i$. It follows that the  average heterozygosity of the
+sub-populations $\bar{H}_S  \leq
+H_T$, \sidenote[][-4cm]{This observation that the average
+  heterozygosity of the sub-populations must be less than of equal to
+  that of the total
+  population is called the Wahlund effect.} and so $\fst \geq 0$ and $\fis \leq \fit$. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above).
 \sidenote[][-2cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
 
@@ -1283,7 +1287,6 @@ from the total sample at random (rather than the covariance of alleles
 within a single individual). So by performing PCA on the data we are
 learning about the major (orthogonal) axes of the kinship matrix.    
 
- 
 
 As an example of the application of PCA, let's consider the case of the
 putative ring species in the Greenish warbler ({\it Phylloscopus
