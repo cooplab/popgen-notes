@@ -10,6 +10,8 @@ abline(h=1,col="grey",lwd=2)
 
 
 
+##Note that this model is not right as the freq. dependence comes from pollinator success, where her eit is modelled as viability. However, it serves to illustate the general principal
+
 ##yellow is thought to be recessive
 ##uses functions from 
 fitness_model<-lm((orchid$male_success+orchid$female)/2~orchid$freq_yellow)$coeff
