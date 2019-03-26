@@ -13,7 +13,7 @@ step<-8.5e-6
 alpha<-1.19e-3
 t<-stickleback_traj$generation
 expected.traj<-(1-exp(-alpha*t))*opt + exp(-alpha*t)*initial
-lines(expected.traj,-t)
+lines(expected.traj,-t,lty=2,lwd=2)
 z<-seq(0.6,1.4,length=100)
 	mtext(side=3,"Touching Pterygiophores",cex=1.4,line=2)
 	mtext(side=2,"Years",cex=1.4,line=2)
@@ -24,7 +24,7 @@ fitness.traj<-exp(-(stickleback_traj$touching_pterygiophores-opt)^2/2*omega)
 par(mar=c(3.1,3.1,1,0.5))
 plot(z,fitness.surf,lwd=2,type="l",axes=FALSE,xlim=c(0.6,1.42)) #type="l",
 axis(1)
-axis(2)
+axis(2,at=c(1,0.5))
 
 my.diff<-diff(fitness.traj) #stickleback_traj$touching)
 my.diff<-abs(my.diff)/max(abs(my.diff))

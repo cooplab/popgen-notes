@@ -192,6 +192,22 @@ selection within a generation. State your assumptions.\\
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
 
+\graham{add text}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
+\end{center}
+\caption{ } \label{fig:Geospiza_fortis}  
+\end{marginfigure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
+\end{center}
+\caption{ } \label{fig:Darwins_Finches_unpred}  
+\end{figure}
+
+
 \paragraph{Alternative formulations of the Breeder's equation.}
 A change in mean phenotype within a generation occurs because of the
 differential fitness of our organisms. To think more carefully about this change within a
@@ -219,7 +235,6 @@ which we'll call $\wbar$, i.e.
 \wbar =  
 \int_{-\infty}^{\infty} p(x) w(x) dx.
 \end{equation}
-
 
 Therefore, we can write the mean phenotype in those who survive to
 reproduce as
@@ -272,48 +287,73 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 \end{marginfigure}
 
 
-\subsection{BLAH}
+\paragraph{Stabilizing and Disruptive selection}
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
-\end{center}
-\caption{ } \label{fig:Geospiza_fortis}  
-\end{marginfigure}
+
+
+\paragraph{Fitness landscapes}
+
+\begin{equation}
+  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
+  \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
+\end{equation}
+
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.8 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
+\includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
 \end{center}
-\caption{ } \label{fig: Darwins_Finches_unpred}  
+\caption{ } \label{fig:fitness_landscape_1D}  
 \end{figure}
 
-
-\citet{bell2006inferring} provided a remarkable time-series of
-stickleback evolution from a fossil lake-bed in Nevada. The layers of sediment are layered each year allowing a very detailed
-time series to be obtained.
-.
-Fossil measurements in 250 year bins. Over 5000 fossils measured.
-
-\citet{hunt2008evolution} fitted a model of a population adapting to a
-local optimum to these data. 
 
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.png}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
 \end{center}
 \caption{ Photo: Peter J. Park} \label{fig: Stickleback_fossil_traj}  
 \end{marginfigure}
-
-
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
 \end{center}
-\caption{ } \label{fig: Stickleback_fossil_traj}  
+\caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
 \end{marginfigure}
+
+\citet{bell2006inferring} provided a remarkable time-series of
+stickleback evolution from a fossil lake-bed in Nevada. In this lake
+the layers of sediment are laid down each year allowing a very detailed
+time series with over five thousand fossils measured. The time-series
+documents the evolution towards a new set of optimum phenotypes in the
+fifteen thousand years after the initial invasion of the lake by a
+heavily armoured stickleback species. In Figure \ref{fig:
+  Stickleback_fossil_traj} the population mean number of
+touching pterygiophores, the bones supporting the dorsal spines,
+through the fossil record. Note how quickly the species evolves toward
+its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
+the population mean phenotype fluctuates about its new value.
+
+\citet{hunt2008evolution} fitted a model of a population adapting to a
+fitness landscape to these time-series data. They fitted a model with
+a single peak of mean fitness. Their fitted fitness
+surface is shown in the lower panel of Figure \ref{fig:
+  Stickleback_fossil_traj} . The arrows show the moves that the
+population mean phenotype is making on this inferred fitness
+surface. The population initially takes large steps up toward the peak
+of this surface and subsequently fluctuates around the peak. Under the
+interpretation that there is a single stationary peak these
+fluctuations represent genetic drift, with selection acting to restore
+the population towards this local optimum.
+
+
+\graham{Thinking of a marble
+rolling around in the bottom of a bowl
+You could think about the
+population phenotype as a marble rolling around  }
+
+
 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
