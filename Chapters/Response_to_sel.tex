@@ -249,12 +249,12 @@ S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx
 \end{equation}
 %if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?} 
 Inspecting this more closely, we can see that $S$ has
-the form of a covariance between our phenotype $X$ and our fitness
-$w(X)$ ($S = Cov(X, w(X))$). Thus our change in mean phenotype is directly a measure of the
+the form of a covariance between our phenotype $X$ and our relative fitness
+$w(X)$ ($S = Cov \left(X, \nicefrac{w(X)}{\wbar} \right)$). Thus our change in mean phenotype is directly a measure of the
 covariance of our phenotype and our fitness. Rewriting our breeder's
 equation using this observation we see
 \begin{equation}
-R = \frac{V_A}{V}  Cov(X,w(X))
+R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)
 \end{equation}
 we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
@@ -268,7 +268,7 @@ that our child's phenotype is correlated with our parent's phenotype.
     mammals. Thorburn, A. (1920)}{https://www.flickr.com/photos/biodivlibrary/21269550204}{Field Museum of Natural History Library}{2.0}} \label{fig:red_deer}  
 \end{marginfigure}
 
-The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X,w(X))/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the fitness gradient and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
+The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X, \nicefrac{w(X)}{\wbar} )/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the fitness gradient and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
 \begin{equation}
 R= V_A \beta
 \end{equation}
@@ -287,9 +287,6 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 \end{marginfigure}
 
 
-\paragraph{Stabilizing and Disruptive selection}
-
-
 
 \paragraph{Fitness landscapes}
 
@@ -298,13 +295,25 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
   \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
 \end{equation}
 
+\marginnote{ This follows from the fact that $\nicefrac{d \log
+    \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
+\bar{x}}$. We can then move the derivative inside the integral
+\begin{align}
+ \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
+                               \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
+ =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
+                             & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
+\end{align}
 
-\begin{figure}
+}
+
+
+\begin{figure*}
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
 \end{center}
 \caption{ } \label{fig:fitness_landscape_1D}  
-\end{figure}
+\end{figure*}
 
 
 
@@ -353,7 +362,12 @@ rolling around in the bottom of a bowl
 You could think about the
 population phenotype as a marble rolling around  }
 
+\paragraph{Stabilizing and Disruptive selection}
 
+
+%%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
+
+% https://www.flickr.com/photos/internetarchivebookimages/18429735991/
 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
