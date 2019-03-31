@@ -3,6 +3,7 @@
 par(mar=c(1,4,1,1))
 galls<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size.csv")
 
+
 d<-seq(5,40,length=1000)
 fitness.ind.surf<-0.21+0.42*exp(-0.5*((d-24.3)/3.84)^2)
 
@@ -11,6 +12,8 @@ wbar<-sapply(d,function(my.xbar){
 	mean(my.norm/mean(my.norm)*fitness.ind.surf)
 }
 )
+
+
 direct<-"~/Downloads/"
 file_prefix<-"gall_selection"
 my.mean<-15

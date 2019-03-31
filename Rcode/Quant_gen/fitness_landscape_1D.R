@@ -3,7 +3,7 @@ library("latex2exp")
 num.points<-10000
 layout((1:2),heights=c(0.1,0.9))
 
-x<-seq(1,20,length=num.points); y1<-dnorm(x,14,3.5)*1.8; y2<-dnorm(x,5,2); y3<-dnorm(x,19,sd=1)*0.3; 
+x<-seq(1,20,length=num.points); y1<-dnorm(x,14,3.5)*1.8; y2<-dnorm(x,5,2); y3<-dnorm(x,19,sd=1)*0.25; 
 my.y<-y1+y2+y3; 
 
 par(mar=c(0,3,0.1,1))

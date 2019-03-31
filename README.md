@@ -1,5 +1,7 @@
 # Population Genetics Notes
 
+A pdf of the notes can be downloaded from the [first release]()
+
 If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link). I'm collecting this information in case it is useful in supporting future development of the notes.  
 
 This is the  latex source, images, and R code for the Population Genetics & Quantitative Genetics notes by Graham Coop. 
