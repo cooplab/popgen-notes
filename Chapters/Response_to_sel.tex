@@ -197,7 +197,12 @@ selection within a generation. State your assumptions.\\
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
 \end{center}
-\caption{ } \label{fig:Geospiza_fortis}  
+\caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{The zoology of
+  the voyage of H.M.S. Beagle. Birds Part 3. (1841) Gould G. Edited by
+  Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
+}}
+
+ } \label{fig:Geospiza_fortis}  
 \end{marginfigure}
 
 \begin{figure}
@@ -288,85 +293,85 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 
 
 
-\paragraph{Fitness landscapes}
+% \paragraph{Fitness landscapes}
 
-\begin{equation}
-  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
-  \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
-\end{equation}
+% \begin{equation}
+%   R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
+%   \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
+% \end{equation}
 
-\marginnote{ This follows from the fact that $\nicefrac{d \log
-    \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
-\bar{x}}$. We can then move the derivative inside the integral
-\begin{align}
- \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
-                               \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
- =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
-                             & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
-\end{align}
+% \marginnote{ This follows from the fact that $\nicefrac{d \log
+%     \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
+% \bar{x}}$. We can then move the derivative inside the integral
+% \begin{align}
+%  \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
+%                                \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
+%  =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
+%                              & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
+% \end{align}
 
-}
+% }
 
-%\animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
-\end{center}
-\caption{ } \label{fig:fitness_landscape_1D}  
-\end{figure*}
+% %\animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
-\end{center}
-\caption{ Photo: Peter J. Park} \label{fig: Stickleback_fossil_traj}  
-\end{marginfigure}
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
-\end{center}
-\caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
-\end{marginfigure}
-
-\citet{bell2006inferring} provided a remarkable time-series of
-stickleback evolution from a fossil lake-bed in Nevada. In this lake
-the layers of sediment are laid down each year allowing a very detailed
-time series with over five thousand fossils measured. The time-series
-documents the evolution towards a new set of optimum phenotypes in the
-fifteen thousand years after the initial invasion of the lake by a
-heavily armoured stickleback species. In Figure \ref{fig:
-  Stickleback_fossil_traj} the population mean number of
-touching pterygiophores, the bones supporting the dorsal spines,
-through the fossil record. Note how quickly the species evolves toward
-its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
-the population mean phenotype fluctuates about its new value.
-
-\citet{hunt2008evolution} fitted a model of a population adapting to a
-fitness landscape to these time-series data. They fitted a model with
-a single peak of mean fitness. Their fitted fitness
-surface is shown in the lower panel of Figure \ref{fig:
-  Stickleback_fossil_traj} . The arrows show the moves that the
-population mean phenotype is making on this inferred fitness
-surface. The population initially takes large steps up toward the peak
-of this surface and subsequently fluctuates around the peak. Under the
-interpretation that there is a single stationary peak these
-fluctuations represent genetic drift, with selection acting to restore
-the population towards this local optimum.
+% \begin{figure*}
+% \begin{center}
+% \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
+% \end{center}
+% \caption{ } \label{fig:fitness_landscape_1D}  
+% \end{figure*}
 
 
-\graham{Thinking of a marble
-rolling around in the bottom of a bowl
-You could think about the
-population phenotype as a marble rolling around  }
+% \begin{marginfigure}
+% \begin{center}
+% \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
+% \end{center}
+% \caption{ Photo: Peter J. Park} \label{fig: Stickleback_fossil_traj}  
+% \end{marginfigure}
 
-\paragraph{Stabilizing and Disruptive selection}
+% \begin{marginfigure}
+% \begin{center}
+% \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
+% \end{center}
+% \caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
+% \end{marginfigure}
 
-goldenrod gall fly ({\it Eurosta solidaginis}), aka goldenrod ball
-gallmaker, 
+% \citet{bell2006inferring} provided a remarkable time-series of
+% stickleback evolution from a fossil lake-bed in Nevada. In this lake
+% the layers of sediment are laid down each year allowing a very detailed
+% time series with over five thousand fossils measured. The time-series
+% documents the evolution towards a new set of optimum phenotypes in the
+% fifteen thousand years after the initial invasion of the lake by a
+% heavily armoured stickleback species. In Figure \ref{fig:
+%   Stickleback_fossil_traj} the population mean number of
+% touching pterygiophores, the bones supporting the dorsal spines,
+% through the fossil record. Note how quickly the species evolves toward
+% its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
+% the population mean phenotype fluctuates about its new value.
+
+% \citet{hunt2008evolution} fitted a model of a population adapting to a
+% fitness landscape to these time-series data. They fitted a model with
+% a single peak of mean fitness. Their fitted fitness
+% surface is shown in the lower panel of Figure \ref{fig:
+%   Stickleback_fossil_traj} . The arrows show the moves that the
+% population mean phenotype is making on this inferred fitness
+% surface. The population initially takes large steps up toward the peak
+% of this surface and subsequently fluctuates around the peak. Under the
+% interpretation that there is a single stationary peak these
+% fluctuations represent genetic drift, with selection acting to restore
+% the population towards this local optimum.
+
+
+% \graham{Thinking of a marble
+% rolling around in the bottom of a bowl
+% You could think about the
+% population phenotype as a marble rolling around  }
+
+% \paragraph{Stabilizing and Disruptive selection}
+
+% goldenrod gall fly ({\it Eurosta solidaginis}), aka goldenrod ball
+% gallmaker, 
 
 %%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
 
