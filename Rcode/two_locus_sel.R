@@ -1,5 +1,7 @@
 
 
+library("sf")
+
 
 two.loc.sims<-function(p,w.mat,r){
 	stopifnot(sum(p)==1)
@@ -21,16 +23,33 @@ two.loc.sims<-function(p,w.mat,r){
 	return(cbind(p.array,d.array))
 }
 
+% https://stackoverflow.com/questions/52522872/r-sf-package-centroid-within-polygon
 stack.freqs.plot<-function(p.out,my.title=""){
 	stacked.freqs<-t(apply(p.out[,c("Ab","AB","ab","aB")],1,cumsum))
 	plot(stacked.freqs[,"Ab"],ylim=c(0,1),type="l",xlab="Generations",ylab="Frequencies",cex.lab=1.4,cex.axis=1.2,main=my.title,cex.main=1.4)
 	my.x<-1:n.gens
 	x.polygon<-c(my.x,rev(my.x))
+#	recover()
 	polygon(x=x.polygon,c(stacked.freqs[,"Ab"],rep(0,n.gens)),col="blue")
+ 	pol <-st_polygon(list(cbind(c(x.polygon,1), c(stacked.freqs[,"Ab"],rep(0,n.gens),stacked.freqs[,"Ab"][1]))))
+ 	centroid<-st_centroid(pol)
+	text(centroid[1],centroid[2],col="white","Ab",cex=1.4) 
+
 	polygon(x=x.polygon,c(stacked.freqs[,"AB"],rev(stacked.freqs[,"Ab"])),col="purple")
+ 	pol <-st_polygon(list(cbind(c(x.polygon,1), c(stacked.freqs[,"AB"],rev(stacked.freqs[,"Ab"]),stacked.freqs[,"AB"][1]))))
+ 	centroid<-st_centroid(pol)
+	text(centroid[1],centroid[2],col="white","AB",cex=1.4) 
+	
 	polygon(x=x.polygon,c(stacked.freqs[,"AB"],rev(stacked.freqs[,"aB"])),col="white")
-	polygon(x=x.polygon,c(stacked.freqs[,"aB"],rev(stacked.freqs[,"ab"])),col="red")
+	pol <-st_polygon(list(cbind(c(x.polygon,1) ,c(stacked.freqs[,"AB"],rev(stacked.freqs[,"aB"]),stacked.freqs[,"AB"][1]))))
+ 	centroid<-st_centroid(pol)
+	text(centroid[1],centroid[2],col="black","ab",cex=1.4) 
 		
+	polygon(x=x.polygon,c(stacked.freqs[,"aB"],rev(stacked.freqs[,"ab"])),col="red")
+	pol <-st_polygon(list(cbind(c(x.polygon,1) ,c(stacked.freqs[,"aB"],rev(stacked.freqs[,"ab"]),stacked.freqs[,"aB"][1]))))
+ 	centroid<-st_centroid(pol)
+	text(centroid[1],centroid[2],col="black","aB",cex=1.4) 
+
 }
 
 

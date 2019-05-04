@@ -200,16 +200,14 @@ selection within a generation. State your assumptions.\\
 \caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{The zoology of
   the voyage of H.M.S. Beagle. Birds Part 3. (1841) Gould G. Edited by
   Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
-}}
-
- } \label{fig:Geospiza_fortis}  
+}} \label{fig:Geospiza_fortis}  
 \end{marginfigure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
 \end{center}
-\caption{ } \label{fig:Darwins_Finches_unpred}  
+\caption{  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
 \end{figure}
 
 
@@ -293,24 +291,24 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
 
 
 
-% \paragraph{Fitness landscapes}
+\paragraph{Fitness landscapes}
 
-% \begin{equation}
-%   R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
-%   \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
-% \end{equation}
+\begin{equation}
+  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
+  \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
+\end{equation}
 
-% \marginnote{ This follows from the fact that $\nicefrac{d \log
-%     \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
-% \bar{x}}$. We can then move the derivative inside the integral
-% \begin{align}
-%  \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
-%                                \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
-%  =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
-%                              & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
-% \end{align}
+\marginnote{ This follows from the fact that $\nicefrac{d \log
+    \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
+\bar{x}}$. We can then move the derivative inside the integral
+\begin{align}
+ \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
+                               \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
+ =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
+                             & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
+\end{align}
 
-% }
+}
 
 % %\animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 

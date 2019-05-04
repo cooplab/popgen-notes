@@ -15,7 +15,7 @@ This follows from assuming that our haplotypes are brought together at random (H
 \begin{equation}
 x_1' = \frac{\big( w_{11} x_1^2 +	 \half w_{12} 2 x_1 x_2  + \half w_{13} 2x_1 x_3  +	 \half (1-r) w_{14} 2 x_1 x_4 + \half r w_{23} 2 x_2 x_3   \big)}{ \bar{w} } \label{eqn:hapfreq}
 \end{equation}
-Here, each of the HWE genotype frequencies (e.g. $2x_1x_2$) is weighted by its fitness relative to the mean fitness ($w_{ij}/\bar{w}$), and by its probability of transmitting the AB haplotype to the next generation. For example, $AB/Ab$ individuals (1/2) transmit the $AB$ haplotype only half the time. The final two terms include the recombination fraction ($r$). The first term involving recombination refers to the $AB/ab$ genotype (1/4), who with probability $(1-r)/2$ transmits a non-recombinant $AB$ haplotype to the gamete. Similarly, the second term refers to the  $Ab/aB$ genotype; a proportion $r/2$ of its gametes carry the recombinant $AB$ haplotype. 
+This is a bit of a mouthful, but each of the terms is easy to understand. Each of the HWE genotype frequencies (e.g. $2x_1x_2$) is weighted by its fitness relative to the mean fitness ($w_{ij}/\bar{w}$), and by its probability of transmitting the AB haplotype to the next generation. For example, $AB/Ab$ individuals (1/2) transmit the $AB$ haplotype only half the time. The final two terms include the recombination fraction ($r$). The first term involving recombination refers to the $AB/ab$ genotype (1/4), who with probability $(1-r)/2$ transmits a non-recombinant $AB$ haplotype to the gamete. Similarly, the second term refers to the  $Ab/aB$ genotype; a proportion $r/2$ of its gametes carry the recombinant $AB$ haplotype. 
 
 In the single locus case, we defined the marginal fitness of an allele. Here it will help us to define the marginal fitness of the $i^{th}$ haplotype:
 \begin{equation}
@@ -60,11 +60,10 @@ For the purposes of illustration here we've used a relatively common deleterious
   \end{center}
 \end{figure}
 
-
 \paragraph{Interference between favourable alleles.}
 
 HIV uses its reverse transcriptase (RT) gene to write itself from an RNA virus into its host's DNA, allowing HIV to hijack the hosts regulatory machinery, a critical part of its life cycle. 
-Efavirenz is an anti-HIV drug, which inhibits HIV's RT protein. \ec{Sadly, mutations are common in the RT HIV gene, and these mutations, in the presence of the drug, confer a profound fitness advantage, allowing them to spread through the HIV population in patients undergoing anti-HIV treatment. }
+Efavirenz is an anti-HIV drug, which inhibits HIV's RT protein. Sadly, mutations are common in the RT HIV gene, and these mutations, in the presence of the drug, confer a profound fitness advantage, allowing them to spread through the HIV population in patients undergoing anti-HIV treatment. 
 
 \begin{figure}
 \begin{center}
@@ -82,24 +81,68 @@ Efavirenz is an anti-HIV drug, which inhibits HIV's RT protein. \ec{Sadly, mutat
 
 
 
-\subsection{}
+\paragraph{An example of the costs of asexuality.}
 
 
 \begin{marginfigure}[-3cm]
 \begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/multiple_sel_loci/Evening_primrose/10575005313_f2c8839a80_k.jpg}
+  \includegraphics[width = \textwidth]{figures/Reciprocal_translocations_Hollister.pdf}
 \end{center}
-\caption{ Showy evening primrose ({\it Oenothera speciosa}). This species is the sexual species in the clade C2.  \BHLCC{Favourite flowers of garden and greenhouse (1896). Step, E. }{https://www.flickr.com/photos/61021753@N02/10575005313/}{Missouri Botanical Garden}{2.0} } \label{}  %é
+\caption{A schematic diagram of the karotype of an evening primrose. The two columns show a heterozygote individual's diploid chromosomal complement. Each chromosome is heterozygote for two different translocations. For example both the top-most chromosomes has one arm from chromosome 1, but the other arm is heterozygote for a large translocation from the ancestral chromsome 2 and 10. Due to these translocations the meiotic pairing form a complete ring of chromosomes, which prevent crossing over and independent segregation. Thanks to Jesse Hollister for this image. } \label{}  %é
 \end{marginfigure}
+
 In the Evening primrose genus ({\it Oenothera}), there are a number of young, independently-derived, asexual species. In each species this asexuality is due to a complicated series of reciprocal translocations which prevent recombination and segregation and ensure that every plant is permanently-heterozygote for these rearrangements due to lethality. This system is quite complicated, and super cool. We don't need to worry about the details but importantly each species is functionally asexual. \citet{hollister2014recurrent} sampled transcriptome data from across the Evening primrose clade, and took advantage of 7 independent, asexual-sexual sister pairs of species to examine the impact of the evolution of asexuality for molecular evolution.  
 \begin{figure}
 \begin{center}
   \includegraphics[width = 0.8 \textwidth]{Journal_figs/recom_selection/evening_primrose/evening_primrose_omega.pdf}
 \end{center}
-\caption[][2cm]{$\dNdS$ calculated on sexual (circles) and asexual (diamonds) lineages of each of seven sister pairs of species. Data from \citet{hollister2014recurrent}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/recom_selection/evening_primrose/evening_primrose_omega.R}| } \label{fig:evening_primrose_omega}  %é
+\caption[][4cm]{$\dNdS$ calculated on sexual (circles) and asexual (diamonds) lineages of each of seven sister pairs of species. Data from \citet{hollister2014recurrent}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/recom_selection/evening_primrose/evening_primrose_omega.R}| } \label{fig:evening_primrose_omega}  %é
 \end{figure}
 
 The $\dNdS$ for the sexual and asexual species for each of the seven pairs (C1-C7) is shown in Figure \ref{fig:evening_primrose_omega}. In every pair $\dNdS$ is higher in the asexual species. The genomes of the asexual species are evolving in a less constrained fashion, likely due to weakly deleterious mutations accumulating due to hitchhiking with beneficial alleles and the slow crank of Muller's ratchet. 
+\begin{marginfigure}[0cm]
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/multiple_sel_loci/Evening_primrose/10575005313_f2c8839a80_k.jpg}
+\end{center}
+\caption{ Showy evening primrose ({\it Oenothera speciosa}), the sexual species in the clade C2 from Figure \ref{fig:evening_primrose_omega}. \BHLCC{Favourite flowers of garden and greenhouse (1896). Step, E. }{https://www.flickr.com/photos/61021753@N02/10575005313/}{Missouri Botanical Garden}{2.0} } \label{}  %é
+\end{marginfigure}
+
+\paragraph{The maintainance of combinations of alleles in the face of recombination.}
+
+
+In some cases balancing selection may be attempting to maintain multiple combinations of alleles in the population that work well together. However, recombination may be constantly ripping those alleles away from each other making it difficult to maintain these alleles. This can select for the supression of recombination. Some of the most dramatic demonstrations of this tension involve the evolution of so-called super genes. We'll first consider the evolution of a mimicry supergene in {\it Heliconius numata} as an example of this.  
+
+Some of the most spectacular examples of M{\"u}llerian mimicry in the world are found in {\it Heliconius} butterflies. These butterflies are unpalatable to predators, and different species mimic each other so benefiting from not being eaten by predators, which rapidly learn to avoid all these species). In many of these species multiple mimicry morphs are found as we move across geographic space. In  {\it Heliconius numata} a number of different morphs mimic morphs from a distantly related {\it Melinaea} species. 
+
+\begin{figure} %[0cm]
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/recom_selection/H_numata/H_numata.pdf}
+\end{center}
+\caption{Five sympatric forms of {\it H. numata} from northern Peru, and their distantly related comimetic Melinaea species.  First row: {\it M. menophilus ssp. nov., M. ludovica ludovica, M. marsaeus rileyi, M. marsaeus mothone, and M. marsaeus phasiana}. Second row, {\it H. n. f. tarapotensis, H. n. f. silvana, H. n.f. aurora, H. n.f. bicoloratus, and H. n. f. arcuella}. Figure and caption from \citet{joron2006conserved} cropped, \PLOSccBY. } \label{}  %é
+\end{figure}
+
+To keep things relatively simple lets focus on two differences between  {\it silvana} and {\it  bicoloratus}, the yellow stripe on the top wing of {\it silvana} and the black bottom wing of  {\it  bicoloratus}. Lets imagine that these two differences are due to a simple two locus system. The first locus segregates for Y/y, where the Y allele encodes for a top-wing yellow band, and y encodes for the absence of the yellow band. The second locus segregates for B/b where B encodes for the bottom-wing being black, and b for the absence of black on the bottom wing. If Y is recessive and B is dominant, then the silvana phenotype corresponds to a YY bb genotype. Due to the dominance of the y and B alleles the bicoloratus phenotype can be achieved by various genotypes (Yy Bb, yy BB, Yy BB, yy Bb).  Both of these phenotypes offer an advantage as they mimic a {\it M. menophilus} model. But there are also genotypes that don't do as well; YY BB individuals have a yellow band and a black bottom and so don't do a great job mimicing anything and so will be eaten. Thinking about the  four possible haplotypes, y-B has high marginal fitness as due to its combo of dominant alleles it'll always produce a bicoloratus phenotype. Likewise the Y-b haplotype has high marginal fitness, as it does well in the homozygous state ({\it silvana} phenotype), and when it is paired with the y-B allele. However, the Y-B and y-b haplotypes fair less well as they carry two alleles that don't work well with each other and so are often individuals who suffer high rates of predation. 
+
+\begin{figure} %[0cm]
+\begin{center}
+ \includegraphics[width = \textwidth]{figures/selection_recom_interaction/H_numata_two_loc_freqs.pdf}
+\end{center}
+\caption{ } \label{fig:numata_two_loc_freqs}  %é
+\end{figure}
+
+If no recombination occurs between these loci ($r=0$, Figure \ref{fig:numata_two_loc_freqs}), then the Y-B and y-b are selected out of the population, and the y-B and and  Y-b can be stably maintained. However, when there's too much recombination between our loci (e.g. $r=0.4$, Figure \ref{fig:numata_two_loc_freqs}) the high-fitness haplotypes keep getting ripped apart by recombination and the Y-b is lost from the population as it's recessive advantage is lost as it's too often being broken up by recombination in heterozygotes.
+
+\paragraph{Supergenes to the rescue!}
+
+So our polymorphisms can only be maintained if they are tightly linked, i.eif these alleles arose at loci that are genetically close to each other. But how is it possible that these alleles arose close to each other? Well the trick is that they don't necessarily have to arise very close to each other. If such a system is polymorphic but being regularly broken up by recombination, a chromosomal inversion--the flipping around of a whole section of chromosome-- can arise and will supress recombination. Imagine that our two loci are far apart genetically, and a chromosomal inversion arises on the Y-b  background forming the b-Y haplotype. This inverted haplotype will not recombine with the y-B haplotype when it is present in a heterozygote, thus it is not broken down by recombination. This inverted haplotype, which enjoys the fitness benefits of the Y-b, can therefore replace the Y-b haplotype in the population. The two other low fitness haplotypes will disappear as they sre no longer being generated by recombination, leaving just the y-B and b-Y. \marginnote{\begin{quote}
+``coadapted combinations of several or many genes locked in inverted sections of chromosomes and therefore inherited as single units.''
+\citet{dobzhansky1970genetics} on supergenes. 
+\end{quote} }
+  The polymorphism system now behaves like alleles at a single locus, a super gene  (e.g. like $r=0$ in Figure \ref{fig:numata_two_loc_freqs}).
+
+  Now the {\it H. numata} system is vastly more complicated than our toy two locus system, presumably involving many changes and refinements, but the same principle holds \citep{joron2011chromosomal}. The differences between the different {\it H. numata} mimmicy morphs is found on a single chromosome, and the inheritance behaves as if controlled by a single locus (albeit with many alleles).  The {\it H. n. f. silvana} individuals carry a recessive haplotype of alleles that which is known to be locked together by a $\sim 400$kb inversion, that is a different chromosomal orientation from the {\it bicoloratus} allele (haplotype) which acts as a dominant allele. Other alleles at this same chromosomal region provide the genetic basis of the other morphs, and sometimes correspond to further inversions with a range of dominance relationships. 
+
+
 
 
 
