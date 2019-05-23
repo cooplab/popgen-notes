@@ -41,6 +41,8 @@ So the change in the frequency of a haplotype (e.g. AB, haplotype 1) is determin
 
 \section{Types of interaction between selection and recombination}
 
+\gc{To illustrate these ideas we make use of Muller diagrams \citep{muller1932some}, where we visualize the allele dynamics in terms of a plot of thestack frequencies over time.}
+
 \paragraph{The hitchhiking of deleterious alleles}
 \begin{figure}
 \begin{center}
@@ -60,25 +62,31 @@ For the purposes of illustration here we've used a relatively common deleterious
   \end{center}
 \end{figure}
 
-\paragraph{Interference between favourable alleles.}
 
-HIV uses its reverse transcriptase (RT) gene to write itself from an RNA virus into its host's DNA, allowing HIV to hijack the hosts regulatory machinery, a critical part of its life cycle. 
-Efavirenz is an anti-HIV drug, which inhibits HIV's RT protein. Sadly, mutations are common in the RT HIV gene, and these mutations, in the presence of the drug, confer a profound fitness advantage, allowing them to spread through the HIV population in patients undergoing anti-HIV treatment. 
+\begin{figure*}
+\begin{center}
+  \includegraphics[width = 0.8 \textwidth]{figures/selection_recom_interaction/Interference_w_haps.pdf}
+\end{center}
+\caption{Interference between two positively selected alleles. {\bf Left)} the red and blue (A and B) beneficial alleles arise on different haplotypes. They rise in frequency, but in the absence of recombination only one can fix. This is shown in a Muller diagram, where $p_{AB}$ is initially set to zero. {\bf Right)} In the presence of recombination the population can generate the recombinant (AB) haplotype, which can subsequently fix.} \label{fig:Interference}  %é
+\end{figure*}
+\paragraph{Clonal interference between favourable alleles.}
+When rates of sex and recombination are zero, or very low, positively selected alleles can prevent each other reach fixation and so the rate of adaptation can be slowed.
+In the absence of sex and recombination, when two positively selected alleles arise on different genetic backgrounds in the population they cannot both fix (left side of Figure \ref{fig:Interference}). They can initially increase in frequency, but neccessarily compete with each other when they become common. This is called selective interefence, or sometime clonal interference. If one of the alleles has a much larger selection coefficient it will fix, forcing the other allele from the population, but when they are relatively equally matched it may take some time for this situation to resolve itself resulting in a traffic jam in the population. Thus in an asexual adaptive alleles necessarily have to fix sequentually. However, with even a small amount of recombination beneficial alleles can recombine on to each others background, allowing them to fix in parallel (right side of  Figure \ref{fig:Interference}).   
+
+\begin{marginfigure}
+\begin{center}
+  \includegraphics[width =  \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_interference/Trimmed_HIV_interference}  %DdwdkVeVMAA7t-V.jpg}
+\end{center}
+\caption{HIV sequences from a patient over the course of drug treatment in the retrotransposase coding region. Figure cropped from \citet{Williams548198}, \PLOSccBY.} \label{fig:HIV_interference}  %é
+\end{marginfigure}
+Given the rapid evolution of HIV we can see interference taking place over very short time periods indeed. HIV uses its reverse transcriptase (RT) gene to write itself from an RNA virus into its host's DNA, allowing HIV to hijack the hosts regulatory machinery, a critical part of its life cycle. One of the early HIV drugs was Efavirenz, which inhibits HIV's RT protein. Sadly, mutations are common in the RT HIV gene, and these mutations, in the presence of the drug, confer a profound fitness advantage, allowing them to spread through the HIV population in patients undergoing anti-HIV treatment. In Figure \ref{fig:HIV_interference} we see that by day 224 after the start of drug treatment two different drug-resistance amino-acid changes beginning to spread within a patient (also shown as a Muller diagram in Figure \ref{fig:HIV_interference_M}). Because these alleles occur on different genetic backgrounds, with little chance for genetic exchange between them, they interfer in each other progress as they compete to fix within the population. Eventually the amino acid change at site 188 wins out. 
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width =  \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_interference/DdwdkVeVMAA7t-V.jpg}
+  \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_interference/DdweQyxU0AA7mXe.jpg}
 \end{center}
-\caption{Haplotype Figure thanks to Pleuni Pennings.} \label{fig:HIV_interference}  %é
+\caption{Muller plot of the drug resistance interference dynamics from Figure \ref{fig:HIV_interference}. Figure from \citet{Williams548198}, \PLOSccBY.} \label{fig:HIV_interference_M}  %é
 \end{figure}
-
-\begin{figure}
-\begin{center}
-  \includegraphics[width = 0.8 \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_interference/DdweQyxU0AA7mXe.jpg}
-\end{center}
-\caption{Muller plot Figure thanks to Pleuni Pennings.} \label{fig:HIV_interference_M}  %é
-\end{figure}
-
 
 
 \paragraph{An example of the costs of asexuality.}
@@ -143,18 +151,17 @@ So our polymorphisms can only be maintained if they are tightly linked, i.eif th
   Now the {\it H. numata} system is vastly more complicated than our toy two locus system, presumably involving many changes and refinements, but the same principle holds \citep{joron2011chromosomal}. The differences between the different {\it H. numata} mimmicy morphs is found on a single chromosome, and the inheritance behaves as if controlled by a single locus (albeit with many alleles).  The {\it H. n. f. silvana} individuals carry a recessive haplotype of alleles that which is known to be locked together by a $\sim 400$kb inversion, that is a different chromosomal orientation from the {\it bicoloratus} allele (haplotype) which acts as a dominant allele. Other alleles at this same chromosomal region provide the genetic basis of the other morphs, and sometimes correspond to further inversions with a range of dominance relationships. 
 
 
-
 \begin{figure} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Mimulus_inversion/annual_perennial_fitness.pdf}
 \end{center}
-\caption{{\bf Left)} A coastal perennial and an Inland annuals {\it Mimulus gutatus} \citet{lowry2010widespread}, image from \citet{lowry2010widespread} \PLOSccBY. {\bf Right)} A reciprocal transplant experiment showing that coastal perennial and an Inland annuals are locally adapted to their respective habitats. Data from  \citet{lowry2010widespread}, \gitcode{}.
+\caption{{\bf Left)} A coastal perennial and an Inland annuals {\it Mimulus gutatus} \citet{lowry2010widespread}, image from \citet{lowry2010widespread} \PLOSccBY. {\bf Right)} A reciprocal transplant experiment showing that coastal perennial and an Inland annuals are locally adapted to their respective habitats. Data from  \citet{lowry2010widespread}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/recom_selection/Mimulus_inversion/annual_perennial_fitness.R}. 
 }\label{fig:annual_perennial_fitness}
 \end{figure}
 
 
 \paragraph{Local Adaptation, Speciation, and Inversions.}
-Inversions are also thought to play an important role in local adaptation and speciation.
+Inversions have long been thought to play an important role in local adaptation and speciation.
 One example of an inversion underlying local adaptation occurs in {\it Mimulus gutatus},  in Western North America, where there are annual and perennial ecomorphs. 
 The perennial form grows in many places along the Pacific coast, and in other places with year around moisture; it invests a lot of resources in
 achieving large size and laying down resources for the next year, and as a result flowers late. The annual form grows inland, e.g. the California central valley,
@@ -181,21 +188,24 @@ introduced into each population by migration from the other. If an inversion ari
 \end{center}
 \caption{ {\it Volvox aureus}, Volvox are spherical, multicellular green algae. The surface is made up of a single layer of somatic cells (up to 50k cells) beating their flagella. Some species of Volvox have male and female gametes, being made in the germ cells (a and g respectively) in the middle of the sphere. Some Volvox have separate sexes, where different individuals produce male and female gametes.}
 \end{marginfigure}
-The production of different sized gametes (anisogamy) has arisen a number of times in multi-cellular life, with male and female gametes are defined by their relative sizes. The smaller, and often more mobile, gametes are defined male gametes  (e.g. sperm), while the larger, well provisioned, and often less mobile are defined as female gametes (e.g. egg cell). The evolution of anisogamy is thought to be due to disruptive selection due to a tradeoff pulling in opposite directions towards mobile gametes able to move further and in the opposite direction towards better provised gametes better able to build larger zygotes. In many organisms individuals can produce both male and female gametes, while some species have evolved separate sexes, likely in part as an inbreeding avoidance mechanism. There is huge diversity in sex determination mechanisms across the eukaryotic tree (Figure \ref {fig:Tree_of_sex}. This is all to say, that biology is wonderfully complicated. 
+The production of different sized gametes (anisogamy) has arisen a number of times in multi-cellular life, with male and female gametes are defined by their relative sizes. The smaller, and often more mobile, gametes are defined male gametes  (e.g. sperm), while the larger, well provisioned, and often less mobile are defined as female gametes (e.g. egg cell). The evolution of anisogamy is thought to be due to disruptive selection due to a tradeoff pulling in opposite directions towards mobile gametes able to move further and in the opposite direction towards better provised gametes better able to build larger zygotes. In many organisms individuals can produce both male and female gametes, while some species have evolved separate sexes, likely in part as an inbreeding avoidance mechanism. There is huge diversity in sex determination mechanisms across the eukaryotic tree (Figure \ref{fig:Tree_of_sex}. This is all to say, that biology is wonderfully complicated. 
 \begin{figure*} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Sex_determ_why_so_many_ways/Tree_of_sex.png}
-\end{center} \label{fig:Tree_of_sex}
-\caption{Diversity of sex determination systems for representative plant and animal clades. Figure and caption from \citet{bachtrog2014sex}, \PLOSccBY. }
+\end{center}
+\caption{Diversity of sex determination systems for representative plant and animal clades. Figure and caption from \citet{bachtrog2014sex}, \PLOSccBY. }  \label{fig:Tree_of_sex}
 \end{figure*}
 
 
-  \begin{marginfigure} %[0cm]
+In mammals, and many over systems with genetic sex determination, the genes responsible for sex determination lie on a pair of heteromorphic sex chromosomes, i.e. pair of chromosomes that are quite different in size. In mammals it is the male determining Y chromosome that has a very small gene content compared to the X chromosome (Figure \ref{fig:XY_ZW}). But in other groups such as birds, and some snakes, females carry a gene poor W with males being the homogametic sex, carrying two Zs.  If you are still reading send Graham a picture of Nettie Stevens, she discovered sex chromosomes in 1905 \citep{stevens1905studies}. These examples of heteromorphic sex chromosomes, and many others like them, are thought to have arisen from an ancestral pair of autosomes? What then explains their evolution?
+ \begin{marginfigure} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Sex_determ_why_so_many_ways/XY_ZW_cartoon.pdf}
 \end{center}
-\caption{Figure from \citet{bachtrog2014sex}, \PLOSccBY cropped from original. }
+\caption{Figure from \citet{bachtrog2014sex}, \PLOSccBY cropped from original. }  \label{fig:XY_ZW}
 \end{marginfigure}
+
+A broad explanation for the evolution of sex chromosome goes as follows:\\
 
 
 % https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001643
@@ -208,5 +218,9 @@ Males carrying the male-deleterious OB allele are rarely found, despite the alle
 \begin{center}
 \includegraphics[width = \textwidth]{figures/selection_recom_interaction/Cichlid_OB_sex_linkage.pdf}
 \end{center}
-\caption{}
+\caption{ \newline \noindent \tiny{Image credits: Blue mbuna Male  {\it L. fuelleborni} by \href{https://commons.wikimedia.org/wiki/File:Labeotropheus_fuelleborni_in_Botanic_garden_in_Teplice_(2).JPG}{Chmee2}; % ( {\it Labeotropheus fuelleborni}).
+  OB  Male {\it L. fuelleborni} by \href{https://de.wikipedia.org/wiki/Schabemund-Buntbarsch\#/media/File:Labeotropheus_fuelleborni_01.jpg}{Doronenko};
+  Brown ob  {\it Tropheops} female by \href{https://www.flickr.com/photos/52993488@N03/4890217915}{Alexandra Tyers};
+  Female  {\it L. fuelleborni} orange morph,  by \href{https://commons.wikimedia.org/wiki/File:Labeotropheus_fuelleborni1.jpg}{Mikko Stenberg} 
+}}
 \end{figure}
