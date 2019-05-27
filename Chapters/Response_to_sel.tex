@@ -244,6 +244,13 @@ reproduce as
 \begin{equation}
 \mu_S = \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx
 \end{equation}
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/red_deer/Red_deer.png}
+\end{center}
+\caption{Red deer ({\it Cervus elaphus}). \BHLCC{British
+    mammals. Thorburn, A. (1920)}{https://www.flickr.com/photos/biodivlibrary/21269550204}{Field Museum of Natural History Library}{2.0}} \label{fig:red_deer}  
+\end{marginfigure}
 
 If we mean center our population, i.e. set the phenotype before
 selection to zero, then
@@ -259,25 +266,6 @@ equation using this observation we see
 \begin{equation}
 R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)
 \end{equation}
-we see that the response to selection is due to the fact that our
-fitness (viability) of our organisms/parents covaries with our phenotype, and
-that our child's phenotype is correlated with our parent's phenotype. 
-
-\begin{marginfigure}
-  \begin{center}
-    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/red_deer/Red_deer.png}
-\end{center}
-\caption{Red deer ({\it Cervus elaphus}). \BHLCC{British
-    mammals. Thorburn, A. (1920)}{https://www.flickr.com/photos/biodivlibrary/21269550204}{Field Museum of Natural History Library}{2.0}} \label{fig:red_deer}  
-\end{marginfigure}
-
-The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X, \nicefrac{w(X)}{\wbar} )/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the fitness gradient and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
-\begin{equation}
-R= V_A \beta
-\end{equation}
-i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. 
-
-As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \begin{marginfigure}
 \begin{center}
@@ -289,77 +277,128 @@ As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad} 
   selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
 
+we see that the response to selection is due to the fact that our
+fitness (viability) of our organisms/parents covaries with our phenotype, and
+that our child's phenotype is correlated with our parent's phenotype. 
+
+The phenotype-fitness covariance divided by the phenotypic variance, $Cov(X, \nicefrac{w(X)}{\wbar} )/ V$, is the slope of the linear regression of phenotype on fitness. Let's call this slope the `fitness gradient' and denote it by $\beta$. Then, equivalently, we can write the breeder's equation as
+\begin{equation}
+R= V_A \beta
+\end{equation}
+i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. 
+
+As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 
+\graham{add pic of relationship between slope and S?}
 \paragraph{Fitness landscapes}
 
-\begin{equation}
-  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{z}} = V_A
-  \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
-\end{equation}
+  \begin{figure*}
+ \begin{center}
+ \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D_w_wbar.pdf}
+ \end{center}
+ \caption{ } \label{fig:fitness_landscape_1D_w_wbar}  
+ \end{figure*}
 
-\marginnote{ This follows from the fact that $\nicefrac{d \log
-    \wbar}{d \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{d \wbar}{d
-\bar{x}}$. We can then move the derivative inside the integral
+When we talk about evolution we often talk of a population
+exploring an adaptive landscape with natural selection pushing a population
+towards higher fitness states corresponding to peaks in this landscape
+(see e.g. Figure \ref{fig:fitness_landscape_1D}).  \graham{Simpson/Wright.}
+\citet{lande1976natural} found an evocative formulation of the
+Breeder's equation which aids our intuition of phenotypic fitness
+landscapes. \citeauthor{lande1976natural} showed that the response to
+selection ($R$) could be written in terms of the gradient (derivative) of the
+mean fitness ($\wbar$) of the population as a function of the mean phenotype:  
+\begin{equation}
+  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{x}}  %V_A
+ % \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
+\end{equation}
+\marginnote{ This follows from the fact that $\nicefrac{\partial \log
+    \wbar}{\partial \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{\partial
+    \wbar}{\partial \bar{x}}$. We can then move the derivative inside the integral
 \begin{align}
- \nicefrac{dp(x)}{d \bar{x}} &= \int_{-\infty}^{\infty}w(x)
-                               \nicefrac{d p(x)}{d \bar{x}}  dx \nonumber\\
- =\int_{-\infty}^{\infty}w(x)     \frac{(x-\bar{x})}{V}  dx
+ \nicefrac{\partial \wbar}{\partial \bar{x}} &= \int_{-\infty}^{\infty}w(x)
+                               \nicefrac{\partial p(x)}{\partial \bar{x}}  dx \nonumber\\
+& =\int_{-\infty}^{\infty}w(x)   \frac{(x-\bar{x})}{V}  dx  \nonumber\\
                              & = \nicefrac{cov(w(x),x) }{var(x)} \nonumber\\
 \end{align}
-
+which is $\beta$.
+\gc{FIX}
 }
+What does this mean? Well $\nicefrac{V_A}{\wbar}$ is always positive,
+so the direction our population responds to selection is
+predicted by the sign of the derivative. If increasing the mean
+phenotype of the population slightly would 
+increase mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
+>0$) our population will respond that generation by evolving toward
+higher values of the trait ($R>0$), left panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. Conversely if decreasing the
+population mean phenotype slightly would increase the mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
+<0$) the population will that generation evolve towards lower values
+of the phenotype, middle panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. \marginnote{\gc{CAVEATS}} Thus we can think of the population as evolving on
+an adaptive landscape where the elevation is given by the population mean
+fitness. Natural selection operates on the basis of individual-level
+fitness, but as a result of this our population is increasing in its
+average fitness, it is becoming more adapted.
 
+ \begin{figure*}
+ \begin{center}
+ \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
+ \end{center}
+ \caption{ } \label{fig:fitness_landscape_1D}  
+\end{figure*}
+
+What happens when it
+reaches the top? Well at the top of a peak $ \nicefrac{\partial
+  \wbar}{\partial \bar{x}}=0$, as it is a local maximum, and so
+$R=0$. Assuming that the relationship between fitness and phenotype
+stays constant, our population will stay at the top of the fitness
+peak. This view of natural selection does not imply that the population
+is evolving to the best possible state. Our population is just
+marching up the nearest hill of mean fitness, and may become trapped
+on a local peak (Figure \ref{fig:fitness_landscape_1D} ). 
+
+%but this isn't necessarily the highest fitness peak it's just
+%which ever one it started climbing.
 % %\animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 
+\begin{marginfigure}
+ \begin{center}
+ \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
+ \end{center}
+ \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig: Stickleback_fossil_traj}  
+\end{marginfigure}
 
-% \begin{figure*}
-% \begin{center}
-% \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
-% \end{center}
-% \caption{ } \label{fig:fitness_landscape_1D}  
-% \end{figure*}
+One nice potential example documenting adaptive evolution to a new
+fitness optimum is offered by a remarkable time-series of
+stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
+the layers of sediment are laid down each year allowing a very detailed
+time series with over five thousand fossils measured. The time-series
+documents the evolution towards a new set of optimum phenotypes in the
+fifteen thousand years after the initial invasion of the lake by a
+heavily armoured stickleback species. In Figure \ref{fig:
+  Stickleback_fossil_traj} the population mean number of
+touching pterygiophores, the bones supporting the dorsal spines,
+through the fossil record. Note how quickly the species evolves toward
+its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
+the population mean phenotype fluctuates about its new value.
 
-
-% \begin{marginfigure}
-% \begin{center}
-% \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
-% \end{center}
-% \caption{ Photo: Peter J. Park} \label{fig: Stickleback_fossil_traj}  
-% \end{marginfigure}
-
-% \begin{marginfigure}
-% \begin{center}
-% \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
-% \end{center}
-% \caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
-% \end{marginfigure}
-
-% \citet{bell2006inferring} provided a remarkable time-series of
-% stickleback evolution from a fossil lake-bed in Nevada. In this lake
-% the layers of sediment are laid down each year allowing a very detailed
-% time series with over five thousand fossils measured. The time-series
-% documents the evolution towards a new set of optimum phenotypes in the
-% fifteen thousand years after the initial invasion of the lake by a
-% heavily armoured stickleback species. In Figure \ref{fig:
-%   Stickleback_fossil_traj} the population mean number of
-% touching pterygiophores, the bones supporting the dorsal spines,
-% through the fossil record. Note how quickly the species evolves toward
-% its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
-% the population mean phenotype fluctuates about its new value.
-
-% \citet{hunt2008evolution} fitted a model of a population adapting to a
-% fitness landscape to these time-series data. They fitted a model with
-% a single peak of mean fitness. Their fitted fitness
-% surface is shown in the lower panel of Figure \ref{fig:
-%   Stickleback_fossil_traj} . The arrows show the moves that the
-% population mean phenotype is making on this inferred fitness
-% surface. The population initially takes large steps up toward the peak
-% of this surface and subsequently fluctuates around the peak. Under the
-% interpretation that there is a single stationary peak these
-% fluctuations represent genetic drift, with selection acting to restore
-% the population towards this local optimum.
-
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
+\end{center}
+\caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
+\end{marginfigure}
+\citet{hunt2008evolution} fitted a model of a population adapting to a
+fitness landscape, with a single peak, to these time-series data. Their fitted fitness
+surface is shown in the lower panel of Figure \ref{fig:
+  Stickleback_fossil_traj} . The arrows show the moves that the
+population mean phenotype is making on this inferred fitness
+surface. The population initially takes large steps up toward the peak
+of this surface and subsequently fluctuates around the peak. Under the
+interpretation that there is a single stationary peak these
+fluctuations represent genetic drift randomly knocking the population
+offer its optimum, with selection acting to restore
+the population towards this local optimum.
 
 % \graham{Thinking of a marble
 % rolling around in the bottom of a bowl

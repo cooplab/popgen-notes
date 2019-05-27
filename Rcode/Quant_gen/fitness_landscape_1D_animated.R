@@ -3,6 +3,22 @@ num.points<-1000
 x<-seq(-10,40,length=num.points); y1<-dnorm(x,14,3.5)*1.8; y2<-dnorm(x,5,2); y3<-dnorm(x,19,sd=1)*0.25; 
 my.y<-y1+y2+y3; 
 
+
+
+d<-x
+fitness.ind.surf<-y1
+sd<-2 #sd=4
+
+layout(matrix(1:6,nrow=2),heights=c(.4,0.9))
+par(mar=c(1,4,1,1))	
+plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=10,sd=2,xrange=c(5,25),wbar=NULL,add.legend=TRUE)
+par(mar=c(1,4,1,1))	
+plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=18,sd=2,xrange=c(5,25),wbar=NULL,add.legend=FALSE)
+par(mar=c(1,4,1,1))	
+plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=14,sd=2,xrange=c(5,25),wbar=NULL,add.legend=FALSE)
+
+ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/Response_to_sel/fitness_landscape_1D_w_wbar.pdf")
+
 d<-x
 fitness.ind.surf<-my.y
 sd<-2 #sd=4
@@ -31,6 +47,7 @@ par(mar=c(1,4,1,1))
 plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=5.6,sd=2,xrange=c(-5,25),wbar=NULL,add.legend=FALSE)
 par(mar=c(1,4,1,1))
 plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=20,sd=2,xrange=c(-5,25),wbar=NULL,add.legend=FALSE)
+
 
 
 gif.my.fitness<-function(d,fitness.ind.surf,n.gens=20,my.mean=18,sd=2,xrange=c(1,25),direct="~/Downloads/",file_prefix="selection_surf_1d"){
@@ -72,8 +89,8 @@ plot.fitness.landscape<-function( d=d,fitness.ind.surf=fitness.ind.surf,my.mean=
 	#	plot(galls,pch=19,xlab="Gall diameter",y="Proportion Surviving",cex.lab=1.4,cex.axis=1.2,cex=1.4,ylim=c(0,max(galls$proportion.surviving)))
 		
 		plot(d,fitness.ind.surf,xlim=xrange,lwd=3,type="l",xlab="",ylab="",axes=FALSE)
-		mtext("Fitness",side=2,line=1,cex=1.4)
-		mtext("Phenotype",side=1,line=1,cex=1.4)
+		mtext("Fitness (w)",side=2,line=1,cex=1.4)
+		mtext("Phenotype (x)",side=1,line=1,cex=1.4)
 		lines(d,wbar,lwd=2,lty=2)
 		this.one<-which(d[-length(d)]< my.mean & d[-1] > my.mean)
 		#abline(lm(galls$prop~galls$gall))
