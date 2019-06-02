@@ -7,15 +7,17 @@ birth_weight$total<-birth_weight$total_female + birth_weight$total_male;
 
 
 par(mar=c(4,4,1,4))
-barplot(height=birth_weight$total,offset=1,width=0.5,xlab="Birth Weight (lb)",ylab="Number of individuals",cex.lab=1.4,cex.axis=1.2)
+barplot(height=birth_weight$total,offset=1,width=0.5,xlab="",ylab="",cex.lab=1.4,cex.axis=1.2)
 axis(1);box()
+mtext("Number of individuals",side=2,line=2.5,cex=2)
+mtext("Birth Weight (lb)",side=1,line=2.5,cex=2)
 
 abline(v=sum((birth_weight$birth_weight+.5)*birth_weight$total)/sum(birth_weight$total),lwd=2)
 
 par(new=TRUE)
 plot(birth_weight$birth_weight,birth_weight$death/birth_weight$total,log="y",axes=FALSE,pch=19,xlab="",ylab="",cex=1.5)
 axis(4,cex.axis=1.2)
-mtext("Mortality",side=4,line=3,cex=1.4)
+mtext("Mortality",side=4,line=2.5,cex=2)
 birth_weight$death/birth_weight$total
 these<-(birth_weight$total>0 & birth_weight$death>0) & birth_weight$birth_weight>4
 
