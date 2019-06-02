@@ -368,25 +368,31 @@ on a local peak (Figure \ref{fig:fitness_landscape_1D} ).
  \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig: Stickleback_fossil_traj}  
 \end{marginfigure}
 
-One nice potential example documenting adaptive evolution to a new
+One nice example documenting adaptive evolution to a new
 fitness optimum is offered by a remarkable time-series of
 stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
 the layers of sediment are laid down each year allowing a very detailed
 time series with over five thousand fossils measured. The time-series
 documents the evolution towards a new set of optimum phenotypes in the
 fifteen thousand years after the initial invasion of the lake by a
-heavily armoured stickleback species. In Figure \ref{fig:
-  Stickleback_fossil_traj} the population mean number of
+heavily armoured stickleback species. In Figure \ref{fig:Stickleback_fossil_traj} the population mean number of
 touching pterygiophores, the bones supporting the dorsal spines,
 through the fossil record. Note how quickly the species evolves toward
-its new value, presumably an fitness optimum in their new environment, and the long time subsequent time interval over which
+its new value, presumably a fitness optimum in their new environment, and the long time subsequent time interval over which
 the population mean phenotype fluctuates about its new value.
 
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
 \end{center}
-\caption{Fossil measurements are in 250 year bins. } \label{fig: Stickleback_fossil_traj}  
+\caption{{\bf Top)} A time series of stickleback phenotypic evolution from the
+  fossil record. After a heavily armoured stickleback invades the lake
+  it quickly evolves towards touching pterygiophores (the bones
+  supporting the dorsal spines).  Fossil measurements means are
+  calculated in 250 year bins. {\bf Bottom)} How our population moves
+  on the Inferred fitness landscape. The arrows show each move made by
+  the population in the 250 intervals. Data from
+  \citet{bell2006inferring} and \citet{hunt2008evolution}  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_traj.R} } \label{fig: Stickleback_fossil_traj}  
 \end{marginfigure}
 \citet{hunt2008evolution} fitted a model of a population adapting to a
 fitness landscape, with a single peak, to these time-series data. Their fitted fitness
@@ -405,10 +411,28 @@ the population towards this local optimum.
 % You could think about the
 % population phenotype as a marble rolling around  }
 
-% \paragraph{Stabilizing and Disruptive selection}
+ \paragraph{Stabilizing and Disruptive selection}
 
-% goldenrod gall fly ({\it Eurosta solidaginis}), aka goldenrod ball
-% gallmaker, 
+Up to now we have just looked at directional selection, where
+selection acts to change the mean phenotype. However, we
+can also use quantitative genetic models to describe other modes of
+selection, which act on the variance.
+
+% https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1951.tb02469.x
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.pdf}
+\end{center}
+\caption{ \gitcode{} } \label{figBirth_weight}  
+\end{marginfigure}
+
+Under stablizing selection the individuals with extreme phenotypes in
+either tail have lower fitness. A classic case of stablizing selection
+is birth weight in humans. 
+ 
+ goldenrod gall fly ({\it Eurosta solidaginis}), aka the goldenrod
+ ball gallmaker (which is pretty great name).
 
 %%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
 
