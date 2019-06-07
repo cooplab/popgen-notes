@@ -411,6 +411,10 @@ the population towards this local optimum.
 % You could think about the
 % population phenotype as a marble rolling around  }
 
+%\paragraph{Different populations potentially sit on top of different
+  peaks in the fitness landscape}
+ % https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000529
+
  \paragraph{Stabilizing and Disruptive selection}
 
 Up to now we have just looked at directional selection, where
@@ -424,23 +428,47 @@ selection, which act on the variance.
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.pdf}
 \end{center}
-\caption{ \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/birth_weight/birth_weight_selection.R} } \label{figBirth_weight}  
+\caption{Bars show the totall number of births with different birth
+  weights (left axis)  Dots show the mortality probability for different
+  birth-weight bins (right axis). Data from \citet{karn1951birth}
+  Table 2 i \& ii, collapsing male and female births, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/birth_weight/birth_weight_selection.R} } \label{fig:Birth_weight}  
 \end{marginfigure}
 
-Under stablizing selection the individuals with extreme phenotypes in
-either tail have lower fitness. A classic case of stablizing selection
+Under stabilizing selection the individuals with extreme phenotypes in
+either tail have lower fitness, the result of which is to reduce the
+phenotypic variance within a generation. A classic case of stablizing selection
 is birth weight in humans \citep{karn1951birth}. Mary Karn collected
-data from nearly fourteen thousand pregnancies, recording the birth
-weight and mortality. 
- 
- goldenrod gall fly ({\it Eurosta solidaginis}), aka the goldenrod
+data for nearly fourteen thousand pregnancies from 1935-46 for birth
+weight and mortality. These data are replotted in Figure
+\ref{fig:Birth_weight}. The variance of all births is $1.575$lb$^2$, while in live births this
+was reduced to $1.26$lb$^2$, a 20\% reduction in variance due to
+stabilizing selection. It is worth noting, thaf this selection
+pressure has been greatly reduced over the decades in societies with
+access to good prenatal care \citep{ulizzi1992natural}.  %, a large effect of which has been to
+%reduce the variance in birth weights due to better nutrition
+
+%womb https://www.google.com/search?q=leonardo+da+vinci+baby&tbm=isch&source=iu&ictx=1&fir=pl1GYGee8iN0gM%253A%252CEdMTKcL8foK_hM%252C_&vet=1&usg=AI4_-kRCaAAUfKDX5AEtEm6lUZ5hjWMPlw&sa=X&ved=2ahUKEwjkluyapsniAhVWs54KHX7GBFsQ9QEwA3oECAMQCg#imgrc=W3ZPdyKQE9YkRM:&vet=1
+
+
+goldenrod gall fly ({\it Eurosta solidaginis}), aka the goldenrod
  ball gallmaker (which is pretty great name).
-
 %%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
-
 % https://www.flickr.com/photos/internetarchivebookimages/18429735991/
 %https://archive.org/stream/annualreport71newy/#page/196/mode/1up
 
+ 
+%black beelied seed cracker
+%https://sci-hub.tw/https://www.nature.com/articles/363618a0
+%https://www.flickr.com/photos/internetarchivebookimages/20416920856/in/photolist-otagrj-xVVxst-wRSxF1-x7b4fQ-x9uxzB
+%https://www.flickr.com/photos/internetarchivebookimages/14755609045/
+ 
+% Cross bill https://www.google.com/search?q=loxia+curvirostra+biodiversity+heritage+library&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjItfbRm87iAhUyMn0KHZDNDlIQ_AUIECgB&biw=1440&bih=726#imgrc=cfi-GvhZRX1zxM:
+% https://sci-hub.tw/https://www.jstor.org/stable/2937103?seq=1#metadata_info_tab_contents
+
+
+%file:///Users/gcoop/Downloads/calsbeek2008.pdf  disruptive selection
+%on leg length in anoles
+ 
 
 \subsection{The response of multiple traits to selection, the
   multivariate breeder's equation.}
@@ -672,6 +700,8 @@ kin-selection, if the average cost to an individual of carrying altruistic allel
 
 %\erin{this phrasing is a little misleading because it's 'paid back' to the allele, but not to the individual. I'd suggest something like 'if the fitness cost of altruism to an allele is paid back on average through the benefits of interacting with altruistic relatives (kin).
 
+
+% Special eg on kinship, good for other egs https://www.cell.com/current-biology/issue?pii=S0960-9822(18)X0012-8
 
 \paragraph{Sexual selection and the evolution of mate preference by indirect benefits. }
 

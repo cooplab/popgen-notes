@@ -9,7 +9,7 @@ birth_weight$total<-birth_weight$total_female + birth_weight$total_male;
 par(mar=c(4,4,1,4))
 barplot(height=birth_weight$total,offset=1,width=0.5,xlab="",ylab="",cex.lab=1.4,cex.axis=1.2)
 axis(1);box()
-mtext("Number of individuals",side=2,line=2.5,cex=2)
+mtext("Number of births",side=2,line=2.5,cex=2)
 mtext("Birth Weight (lb)",side=1,line=2.5,cex=2)
 
 abline(v=sum((birth_weight$birth_weight+.5)*birth_weight$total)/sum(birth_weight$total),lwd=2)
@@ -29,3 +29,16 @@ param.fit<-my.fit$m$getPars()
 lines(birth_weight$birth_weight,exp(param.fit["B"] * (birth_weight$birth_weight - param.fit["A"])^2 +param.fit["C"]) ,col="red",lwd=2)
 #abline(v=param.fit["A"],lwd=2,lty=2)
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.pdf")
+
+###numbers for reduction in variance
+
+##variance in live births
+a<-sum((birth_weight$birth_weight+.5)^2*(birth_weight$total-birth_weight$death))/sum(birth_weight$total-birth_weight$death) ##E(X^2)
+b<-(sum((birth_weight$birth_weight+.5)*(birth_weight$total-birth_weight$death))/sum(birth_weight$total-birth_weight$death))^2 ## E(X)^2
+print(a-b)
+
+#variance in all births
+c<-sum((birth_weight$birth_weight+.5)^2*birth_weight$total)/sum(birth_weight$total)
+d<-(sum((birth_weight$birth_weight+.5)*birth_weight$total)/sum(birth_weight$total))^2
+print(c-d)
+
