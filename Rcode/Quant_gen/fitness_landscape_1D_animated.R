@@ -67,8 +67,10 @@ gif.my.fitness<-function(d,fitness.ind.surf,n.gens=20,my.mean=18,sd=2,xrange=c(1
 	system(paste("convert -delay 200 $(ls -v ", direct, file_prefix,"*.png) ", direct,file_prefix, "output.gif",sep=""))
 }
 
-plot.fitness.landscape<-function( d=d,fitness.ind.surf=fitness.ind.surf,my.mean=20,sd=2,xrange=c(1,25),wbar=NULL,add.legend=TRUE){
+plot.fitness.landscape<-function( d=d,fitness.ind.surf=fitness.ind.surf,my.mean=20,sd=2,xrange=c(1,25),yrange=NULL,wbar=NULL,add.legend=TRUE,model="linear",pheno.lab="Phenotype (x)"){
 		if(is.null(wbar)) wbar<-calc.wbar(d=d,sd=sd,fitness.ind.surf=fitness.ind.surf)
+		if(is.null(yrange)) yrange<-range(fitness.ind.surf)
+		
 		my.norm<-dnorm(d,mean=my.mean,sd=sd)
 		plot(d,my.norm,xlim=xrange,type="l",axes=FALSE,ylab="")
 		mtext("Counts",side=2,line=1,cex=1.4)
@@ -86,23 +88,33 @@ plot.fitness.landscape<-function( d=d,fitness.ind.surf=fitness.ind.surf,my.mean=
 		
 		if(add.legend) legend(x="topright",pch=15,col=c(adjustcolor("red",.2),adjustcolor("red",.4)),legend=c("All","Survivors"),bg="white",cex=1.2,pt.cex=1.2)
 		par(mar=c(4,4,1,1))
-	#	plot(galls,pch=19,xlab="Gall diameter",y="Proportion Surviving",cex.lab=1.4,cex.axis=1.2,cex=1.4,ylim=c(0,max(galls$proportion.surviving)))
-		
-		plot(d,fitness.ind.surf,xlim=xrange,lwd=3,type="l",xlab="",ylab="",axes=FALSE)
-		mtext("Fitness (w)",side=2,line=1,cex=1.4)
-		mtext("Phenotype (x)",side=1,line=1,cex=1.4)
+
+		plot(d,fitness.ind.surf,xlim=xrange,ylim=yrange,lwd=3,type="l",xlab="",ylab="",axes=FALSE)
+		mtext("Fitness (w)",side=2,line=2,cex=1.4)
+		mtext(pheno.lab,side=1,line=2,cex=1.4)
 		lines(d,wbar,lwd=2,lty=2)
 		this.one<-which(d[-length(d)]< my.mean & d[-1] > my.mean)
-		#abline(lm(galls$prop~galls$gall))
+		
 		abline(v=my.old.mean)
 		my.probs<-dnorm(d,mean=my.mean,sd=sd)
 		num.entries<-length(d)
 		draws<-sample(1:num.entries,10000,replace=TRUE,prob=my.probs)
-		my.lm<-lm(fitness.ind.surf[draws]~d[draws])
-		#abline(my.lm,lty=1,col="red",lwd=2)
-		segments(x0=my.old.mean-2,y0=(my.old.mean-2)*my.lm$coeff[2]+my.lm$coeff[1],x1= my.old.mean+2, y1=(my.old.mean+2)*my.lm$coeff[2]+my.lm$coeff[1],col="red",lwd=2)
+		my.data<-d[draws]
+		#if(model=="linear") 
+		my.lm<-lm(fitness.ind.surf[draws]~my.data)
+		predict.range<-seq(my.old.mean-sd*2,my.old.mean+2*sd,length=100)
+		lines(predict.range,predict(my.lm,list(my.data=predict.range)),col="red",lwd=2)
 
+		
+		if(model=="quadratic"){ 
+			my.lm<-lm(fitness.ind.surf[draws]~my.data+I(my.data^2))
+			print(summary(my.lm))
+			predict.range<-seq(my.old.mean-sd*2,my.old.mean+2*sd,length=100)
+			lines(predict.range,predict(my.lm,list(my.data=predict.range)),col="red",lwd=3,lty=3)
+		}
 #		legend(x="bottomright",lty=c(1,2,1,NA),pch=c(rep(NA,3),19),col=c("black","black","red","black"),legend=c("Fitness","Mean Fitness","Selection differential","Data"),bg="white")
-		if(add.legend) legend(x="bottomright",lty=c(1,2,1),pch=c(rep(NA,3)),col=c("black","black","red"),legend=c("Fitness","Mean Fitness","Selection differential"),bg="white",cex=1.2,lwd=2)
+		if(add.legend & model!="quadratic") legend(x="bottomright",lty=c(1,2,1),pch=c(rep(NA,3)),col=c("black","black","red"),legend=c("Fitness","Mean Fitness","Selection differential"),bg="white",cex=1.2,lwd=2)
+		if(add.legend & model=="quadratic") legend(x="bottomright",lty=c(1,2,1,3),pch=c(rep(NA,3)),col=c("black","black","red","red"),legend=c("Fitness","Mean Fitness","Selection differential","Quadratic"),bg="white",cex=1.2,lwd=2)
+		
 		return(my.mean)
 }	

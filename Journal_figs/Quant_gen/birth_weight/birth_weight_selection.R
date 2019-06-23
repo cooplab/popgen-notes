@@ -3,6 +3,7 @@
 birth_weight<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.csv")
 birth_weight$death<-birth_weight$deaths_male + birth_weight$deaths_female; 
 
+ plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=10,sd=2,xrange=c(4,40),wbar=NULL,add.legend=TRUE)
 birth_weight$total<-birth_weight$total_female + birth_weight$total_male;
 
 

@@ -1,4 +1,14 @@
 
+ library(png)
+img<-readPNG("~/Dropbox/Courses/Popgen_teaching_Notes/illustration_images/Quant_gen/Pyrenestes_seedcracker/Pyrenestes_seedcracker_beaks.png"). #https://www.flickr.com/photos/internetarchivebookimages/20416920856/in/photolist-otagrj-xVVxst-wRSxF1-x7b4fQ-x9uxzB/
+layout(t(1:2))
+par(mar=c(4,4.1,1,1))
+plot.new()
+plot.window(0:1, 0:1)
+
+usr<-par("usr")  
+rasterImage(img, usr[1], usr[3], usr[2], usr[4])
+
 
 black_bellied<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Smith_black_bellied_seed_cracker/Smith_black_bellied.csv")
 
