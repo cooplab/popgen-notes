@@ -164,7 +164,7 @@ frequencies $p_t$ and $q_t$, then $\tau$ generations later,
 \end{equation}
 \\
 
-\graham{Add arg. about bet hedging? } %https://twitter.com/rlmcelreath/status/1129013411344453632
+
 
 The question of which allele is increasing or decreasing in frequency comes down
 to whether $\left(\prod_{i=t}^{\tau-1} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
@@ -173,10 +173,53 @@ instead take the $\tau^{\mathrm{th}}$ root of it and consider
 \begin{equation}
 \sqrt[\tau]{\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}}{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{2,i}}}.
 \end{equation}
-The term $\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}$ is the geometric mean fitness of allele
+The term
+\begin{equation}
+  \sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}  \label{hap_geo_fitness}
+\end{equation}
+  is the geometric mean fitness of allele
  $A_1$ over the $\tau$ generations past generation $t$. Therefore, allele $A_1$ will only increase
 in frequency if it has a higher geometric mean fitness than allele $A_2$
 (at least in our simple deterministic model). \\
+
+\paragraph{Evolution of bet hedging}
+Don't put your eggs in one basket. It makes a lot of sense to spread
+your bets. Financial advisors often advise you to diversify your
+portfolio, rather than placing all your investments in one stock. Even
+if that stock looks very strong, you can come a cropper that
+$\nicefrac{1}{20}$ times some particular part of the market
+crashes. Likewise, evolution can result in risk averse strategies. Some species of bird lay multiple eggs of nests; some
+plants don't put all of their energy into seeds for next year. It can
+even make sense to spread your bets even if that comes at am average cost.
+
+To see this lets think more about geometric fitness. We can write the
+fitness in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
+write your geometric fitness as
+\begin{equation}
+ \bar{g}= \sqrt[\tau]{\prod_{i=t}^{\tau-1} 1+s_i}  \label{hap_geo_fitness}
+  \end{equation}
+when we think about products it's often natural to take the $\log$ to
+turn it into a sum
+\begin{align}
+ \bar{g} =& \frac{1}{\tau} \sum_{i=t}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
+  = & \E \bigg[ \log \big( 1+s_i \big) \bigg]
+\end{align}
+equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i \big) \approx s_i -
+\nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and higher then this is
+\begin{align}
+  \bar{g} \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg] = \nonumber\\
+  =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
+\end{align}
+\graham{issue with $\E^2(s)$ here}
+So genotypes with high arthmetic mean fitness can be selected against,
+i.e. have low geometric mean fitness against, if their fitness has too
+high a variance across generations. 
+
+
+\graham{Add arg. about bet hedging? } %https://twitter.com/rlmcelreath/status/1129013411344453632
+% https://eebweb.arizona.edu/faculty/venable/pdfs/Gremer&Venable2014.pdf
+
+
 
 
 \begin{figure}
@@ -1602,6 +1645,11 @@ allele than the  Ace 1 allele. Despite these strong selection pressures we still
 over tens of kilometers because dispersal is relatively high ($\sigma=
 6.6$km per generation). 
 
+
+
+\paragraph{Hybrid zones in underdominant alleles}
+%https://sci-hub.tw/https://www.nature.com/articles/341497a0
+%http://evolution-textbook.org/content/free/figures/18_EVOW_Art/16_EVOW_CH18.jpg
 
 
 % \begin{question}

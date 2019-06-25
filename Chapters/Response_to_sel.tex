@@ -260,7 +260,8 @@ S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx = \E \left (X
 \end{equation}
 % if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?}
 where the final part follows from the fact that the integral is taking
-the mean of $X w(X)$ over the population. 
+the mean of $X w(X)$ over the population.
+
 As our phenotype is mean centered ($\E(X)=0$), we can see that $S$ has
 the form of a covariance between our phenotype $X$ and our relative fitness
 $w(X)$
@@ -274,9 +275,33 @@ equation using this observation we see
 \begin{equation}
 R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)  
 \end{equation}
-\graham{We could change this statement to just be about S, and then
-  issues about lack of response would be less hidden.}
 
+we see that the response to selection is due to the fact that our
+fitness (viability) of our organisms/parents covaries with our phenotype, and
+that our child's phenotype is correlated with our parent's phenotype. 
+
+\paragraph{Fisher's fundamental theorem of natural selection} 
+
+If we choose fitness to be our phenotype
+  ($X=\nicefrac{w(X)}{\wbar}$), then the response in fitness is
+\begin{align}
+  R &= \frac{V_A}{V}  Cov \left(\nicefrac{w(X)}{\wbar} ,
+  \nicefrac{w(X)}{\wbar} \right) = \frac{V_A}{V} V \nonumber\\
+  &=V_A
+\end{align}
+i.e. the response to selection is equal to the additive genetic
+variance for fitness. Or as Fisher put it
+\begin{quote}
+``The rate of increase in fitness of any organism at any time is equal
+to its genetic variance in fitness at that time.'' -\citet{fisher1930} (pg 37)
+\end{quote}
+Fisher called this `the fundamental theorem of natural
+selection'. Our proof here is just a sketch, and more formal
+approaches are needed to show it in generality. There has been much nashing of teeth over exactly how broadly this result holds, and exactly what
+Fisher meant \citep[see ][ for a recent overview]{ewens2010gene}. 
+% Ruth shaw FFTNS https://www.biorxiv.org/content/biorxiv/early/2019/04/07/601682.full.pdf
+% https://commons.wikimedia.org/wiki/File:A_guide_to_the_wild_flowers_(Plate_CXXV)_BHL23798491.jpg
+\paragraph{Fitness Gradients and linear regressions}
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
@@ -287,12 +312,8 @@ R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)
   selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
 
-we see that the response to selection is due to the fact that our
-fitness (viability) of our organisms/parents covaries with our phenotype, and
-that our child's phenotype is correlated with our parent's phenotype. 
-
 To understand this in more detail let imagine that we calculate the
-linear regression of an individual $i$'s phenotype ($X_i$) on fitness ($W_i$), i.e. 
+linear regression of an individual $i$'s mean-centered phenotype ($X_i$) on fitness ($W_i$), i.e. 
 \begin{equation}
 W_i \sim \beta X_i + \wbar \label{fitness_regression}
 \end{equation}  
@@ -321,7 +342,7 @@ i.e. we'll see a directional response to selection if there is a linear relation
    fitting linear approximation to the relationship between phenotype
    and fitness, eqn \eqref{{fitness_regression}}, whose slope is
    $\beta$. The top panel shows the distribution of the phenotype
-   before and after selection.} \label{fig:fitness_landscape_1D_w_wbar}  
+   before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}.} \label{fig:fitness_landscape_1D_w_wbar}  
  \end{figure*}
 
 When we talk about evolution we often talk of a population
@@ -372,7 +393,6 @@ average fitness, it is becoming more adapted.
  \end{center}
  \caption{} \label{fig:fitness_landscape_1D}  
 \end{figure*}
-
 What happens when it
 reaches the top? Well at the top of a peak $ \nicefrac{\partial
   \wbar}{\partial \bar{x}}=0$, as it is a local maximum, and so
@@ -468,11 +488,7 @@ This $\gamma$, the coefficient of the quadratic term in our model, is the
 quadratic selection gradient: the covariance of fitness and the squared
 deviation from the phenotypic mean ($\mu_{BS}$), i.e.
 \begin{equation}
-Cov\left(w(X), (X-\mu_{BS})^2 \right)
-\end{equation}
-
-\begin{equation}
-\gamma = \frac{Cov\left(w(X), (X-\mu_{BS})^2 \right)}{V_p^2}
+\gamma = \frac{Cov\left(w(X), (X-\mu_{BS})^2 \right)}{V^2}
 \end{equation}
 Our $\gamma$ describes the curvature of the fitness surface around the
 mean. \marginnote{Just like how $\beta$ could be interpreted
@@ -499,7 +515,7 @@ selection, increasing the variance. \graham{add refs about this not being suffic
 \caption{Bars show the totall number of births with different birth
   weights (left axis)  Dots show the mortality probability for different
   birth-weight bins (right axis). Data from \citet{karn1951birth}
-  Table 2 i \& ii, collapsing male and female births, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/birth_weight/birth_weight_selection.R} } \label{fig:Birth_weight}  
+  Table 2, collapsing male and female births, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/birth_weight/birth_weight_selection.R} } \label{fig:Birth_weight}  
 \end{marginfigure}
 
 Under stabilizing selection the individuals with extreme phenotypes in
@@ -592,7 +608,9 @@ is strong stabilizing selection, i.e. a quadratic term.
 \caption{Fitness surface for gall diameter in goldenrod
 ball gallmakers. The dots are the measured survival probabilities of
   different sized galls.The solid line is a fitted individual fitness
-  surface ($w(~)$).  Data from \citet{weis1990measuring} } \label{gall_size_stab}
+  surface ($w(~)$). Dotted line is $\wbar$ plotted as a function of
+  the population mean assuming a normal distribution with a standard
+  deviation of $2$mm. Data from \citet{weis1990measuring}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size_fitness_landscape.R}} \label{gall_size_stab}
 \end{figure*}
 
 
