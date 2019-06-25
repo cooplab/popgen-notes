@@ -201,13 +201,13 @@ write your geometric fitness as
 when we think about products it's often natural to take the $\log$ to
 turn it into a sum
 \begin{align}
- \bar{g} =& \frac{1}{\tau} \sum_{i=t}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
+ \log \big( \bar{g} \big) =& \frac{1}{\tau} \sum_{i=t}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
   = & \E \bigg[ \log \big( 1+s_i \big) \bigg]
 \end{align}
 equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i \big) \approx s_i -
 \nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and higher then this is
 \begin{align}
-  \bar{g} \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg] = \nonumber\\
+  \log \big( \bar{g}  \big) \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg]  \nonumber\\
   =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
 \end{align}
 \graham{issue with $\E^2(s)$ here}
