@@ -14,7 +14,6 @@ names(my.pch)<-c("A","B","C","D")
 grasshopper$location_unscaled<- grasshopper$location_scaled * cline.widths[grasshopper$transect]
 
 
-
 params<-nls(freq ~  1/(1+exp(-2*(location_unscaled-center)/width) ),data=grasshopper,start=list(width=800,center=0))
 params<- summary(params)$parameters[,1]
  

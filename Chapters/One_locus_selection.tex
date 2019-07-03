@@ -182,6 +182,18 @@ The term
 in frequency if it has a higher geometric mean fitness than allele $A_2$
 (at least in our simple deterministic model). \\
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\end{center}
+\caption{Frequency of the Lactase persistence allele in ancient and
+  modern samples form Central Europe. Data compiled by
+  \citet{marciniak2017} from various sources. Thanks to Stephanie
+  Marciniak for sharing these data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Lactase_example/Lactase_plots.R}} \label{fig:haploid_geo}
+\end{figure}
+
+
 \paragraph{Evolution of bet hedging}
 Don't put your eggs in one basket. It makes a lot of sense to spread
 your bets. Financial advisors often advise you to diversify your
@@ -245,7 +257,6 @@ high a variance across generations.
 
 We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, lets consider the evolution of Lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein Lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
 This continued expression of Lactase allows adults to break down Lactose, the main carbohydrate in milk, and so benefit nutritionally from milk-drinking. This seems to have offered a strong fitness benefit to individuals in pastoral populations. 
-
 
 With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in ancient Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
 
@@ -787,14 +798,13 @@ middle panel the frequency is set to the equilibrium frequency. \gitcode{https:/
 \end{figure}
 
 
-%  https://commons.wikimedia.org/wiki/File:Island_of_St_kildA,_J_Norman_Heathcote,_1900.jpg
-
 To push our understanding of heterozygote advantage a little further, note that the marginal fitnesses of our alleles are equivalent to the additive effects of our alleles on fitness. Recall from our discussion of non-additive variation (Section \ref{section:nonAddVar}) that the difference in the additive effects of the two alleles gives the slope of the regression of additive genotypes on fitness, and that there is additive variance in fitness
 when this slope is non-zero.  
 So what's happening here in our heterozygote advantage model is that the marginal fitness of the $A_1$ allele, the additive effect of allele $A_1$ on fitness, is greater than the marginal fitness of the $A_2$ allele ($\bar{w}_1 > \bar{w}_2 $) when $A_1$ is at low frequency in the population. In this case, the regression of fitness on the number of $A_1$ alleles in a genotype has a positive slope. This is true when the
 frequency of the $A_1$ allele is below the equilibrium frequency. If the frequency of $A_1$ is above the equilibrium frequency, then
 the marginal fitness of allele $A_2$ is higher than the marginal fitness of allele $A_1$ ($\bar{w}_1 < \bar{w}_2 $) and the regression of fitness on the number of copies of allele $A_1$ that individuals carry is negative. In both cases there is additive genetic variance for fitness ($V_A > 0$) and the population has a directional response. Only when the population is at its equilibrium frequency, i.e. when $\bar{w}_1 =
 \bar{w}_2$, is there no additive genetic variance  ($V_A = 0$), as the linear regression of fitness on genotype is zero. 
+
 
 
 
@@ -810,8 +820,6 @@ homozygotes. Underdominance can be parametrized as follows: \\
 	relative fitness (specific)  & $1+s_1$ & $1$ & $1+s_2$ \\
 \end{tabular}\\
 \end{center}
-
-
 \begin{marginfigure}[5cm]
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Pseudacraea_eurytus/Pseudacraea_eurytus.JPG}
@@ -823,17 +831,35 @@ either successfully and so suffers a high rate of predation
 exotic butterflies (1868) Hewitson.}{https://commons.wikimedia.org/wiki/File:Pseudacraea_eurytus.JPG}{Smithsonian Libraries}} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
 \end{marginfigure}
 
+
 Underdominance also permits three equilibria: $p=0$, $p=1$, and a
 polymorphic equilibrium $p=p_U$. However, now only the first two equilibria are stable, while the polymorphic
 equilibrium is unstable. If $p<p_U$, then $\Delta p_t $ is negative
 and allele $A_1$ will be lost, while if $p>p_U$, allele
 $A_1$ will become fixed.\\
 
-While underdominant alleles might not spread within populations (if $p_U \gg
-0$ and selection is reasonably strong), they are of interest in the
-study of speciation and hybrid zones. That is because alleles $A_1$
+
+While strongly-selected, underdominant alleles might not spread within populations (if $p_U \gg
+0$), they are of special interest in the study of speciation and hybrid zones. That is because alleles $A_1$
 and $A_2$ may have arisen in a stepwise fashion, i.e.\ not by a single
-mutation,  but in separate subpopulations. In this case, heterozygote disadvantage will play a potential role in species maintenance, if isolation of the subpopulations is not complete.\\
+mutation,  but in separate subpopulations. In this case, heterozygote disadvantage will play a potential role in species maintenance.\\
+
+      \begin{figure*}
+\begin{center}
+  \includegraphics[width = 0.8 \textwidth]{figures/het_disadvant_dp_wbar.pdf}
+\end{center}
+\caption{
+{\bf Left)} Two allele frequency trajectories of an $A_1$ allele subject to
+  heterzygote disadvantage ($w_{11}=1.1$, $w_{12}=1$, and
+  $w22=1.2$). The allele is started from just above and below the
+  equilibrium frequency, in both cases the frequency move away the equilibrium frequency. The red line shows
+the unstable equilibrium frequency ($p_e$). 
+  {\bf Middle)} The change in frequency of an allele with heterozygote
+  disadvantage within a generation ($\Delta p$) as a function of the allele
+frequency. Fitnesses as in Figure \ref{fig:het_advant_traj}. Note how the frequency change is negative below the
+equilibrium frequency ($p_e$) and positive above. {\bf Right)} Mean
+fitness ($\bar{w}$) as a function of the allele frequency. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_disadvant_dp_wbar}
+\end{figure*}
 
 \begin{question}
 You are studying the polymorphism that affects flight speed in butterflies. The polymorphism does not appear to affect fecundity.  Homozygotes for the B allele are slow in flight and so only 40\% of them survive to have offspring. Heterozygotes for the polymorphism (Bb) fly quickly and have a 70\% probability of surviving to reproduce. The homozygotes for the alternative allele (bb) fly very quickly indeed, but often die of exhaustion, with only 10\% of them making it to reproduction.  \\
@@ -1011,7 +1037,6 @@ allele can invade the population when it is rare. Thus both alleles
 will persist in the population due to the environmental fluctuations,
 and the higher geometric mean fitness of the heterozygotes. 
 
-\graham{Add comment about bet hedging?}
 
 %\erin{I think your solution calculations below switch wet and dry environments (wet has prob 2/3 occurring)}
 %> (6.25)^(1/3)*(3.85)^(2/3);(5)^(1/3)*(5)^(2/3);(3.75)^(1/3)*(6.15)^(2/3)
@@ -1127,7 +1152,7 @@ Independent allele.
     Friedrich Naumann (1780–1857). Public Domain,
     \href{https://en.wikipedia.org/wiki/Ruff\#/media/File:Philomachus_pugnax_naumann.jpg}{wikimedia}.}}}\label{fig:Ruff}  
 \end{figure}
-\erin{I changed the caption slightly} The genetic variation for these three morphs is potential maintained by
+The genetic variation for these three morphs is potential maintained by
 negative frequency-dependent selection, as all three male strategies
 are likely at an advantage when they are rare in the population. For
 example, while the Satellites mostly lose out on mating opportunities
@@ -1149,7 +1174,7 @@ system in response to pathogens, and are likely caught in an endless arms
 race with pathogens adapting to common MHC alleles, allowing rare MHC
 alleles to be favoured. Balancing selection at the MHC locus has maintained
 some polymorphisms for tens of millions of years, such that some of
-your MHC alleles may be genetically more closely related} to MHC alleles in other primates than they are to alleles in your
+your MHC alleles may be genetically more closely related to MHC alleles in other primates than they are to alleles in your
 close human friends. 
 
 \subsection{Mutation--selection balance}
@@ -1646,10 +1671,94 @@ over tens of kilometers because dispersal is relatively high ($\sigma=
 6.6$km per generation). 
 
 
-
-\paragraph{Hybrid zones in underdominant alleles}
+\paragraph{Hybrid zones}
 %https://sci-hub.tw/https://www.nature.com/articles/341497a0
 %http://evolution-textbook.org/content/free/figures/18_EVOW_Art/16_EVOW_CH18.jpg
+Local adaptation isn't the only way that selection can generate strong
+spatial patterns. We can also see strong selection-driven clines when partially-reproductively isolated species spread back in to
+secondary contact they can hybridize bringing alleles together
+that may not work well with each other. 
+One simple model of
+is to think about an under-dominant polymorphism, i.e. where the
+heterozygote has lower fitness. The two ancestral populations
+are alternatively fixed for the two fitter homozygote states,
+e.g. ancestral population 1 fixed $A_1A_1$ and ancestral population two the $A_2 A_2$. The
+hybrid population forming at the mating edge between the two ancestral populations has a
+high frequency of the less fit heterozygotes. Thus hybrids are at a
+disadvantage, potentially acting to keep the two populations from
+collapsing into each other.  
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75 \textwidth]{Journal_figs/single_locus_selection/grasshopper_cline_barton_hewitt/grasshopper_cline_barton_hewitt.pdf}
+\end{center}
+\caption{The frequency of the southern neo-X chromosome moving
+  along a valley transect (more southern locations to the right of the
+  graph). This represents data from four different
+  valleys in the French Alps over less then a kilometer, each point
+  represents a sample of 20 males. The red curve is the fitted cline
+  under a model of heterozygote disadvantage
+  \citep{bazykin1969hypothetical}. Data from
+  \citet{barton1981chromosomal},
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/grasshopper_cline_barton_hewitt/grasshopper_cline_barton_hewitt.R} } \label{fig:grasshopper_cline}
+\end{figure}
+
+%% https://commons.wikimedia.org/wiki/File:Brockhaus_and_Efron_Encyclopedic_Dictionary_b56_402-0.jpg
+\begin{marginfigure}[1cm]
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Grasshoppers/634px-Brockhaus_and_Efron_Encyclopedic_Dictionary_b56_402-0.jpg}
+\end{center}
+\caption{
+7. {\it Podisma pedestris}, a species
+of short-horned grasshoppers;  from a
+page illustrating {\it Orthoptera}.  
+\newline \noindent \tiny{Illustration from Brockhaus and Efron
+  Encyclopedic Dictionary (1890) Image \href{https://commons.wikimedia.org/wiki/File:Brockhaus_and_Efron_Encyclopedic_Dictionary_b56_402-0.jpg}{wikimedia},  public domain.}
+} \label{fig:grasshoppers}
+\end{marginfigure}
+
+%Brockhaus and Efron Encyclopedic Dictionary 
+Two previously isolated populations of the short-horned grasshopper {\it Podisma pedestris}
+have spread into secondary contact in the French Alps, probably after
+the last ice age. The population that has spread into the Alps from the south has a large section of novel X chromosome,
+due to a chromosomal fusion. This `neo-X' is absent in the populations
+that spread from the North into the Alps. The two populations meet in
+many valleys running through the Alps, and repeated form a narrow
+hybrid zone, with the frequency of the neo-X chromosome forming a very
+steep cline transitioning in frequency over a few hundred meters \citep{barton1981chromosomal}.
+One potential reason for this steep cline is that females who are
+heterozygous for the neo-X (neo-X/old-X) may have reduced fitness, consistent with
+an underdominant polymorphism. The neo-X allele cannot spread into the northern
+population as it cannot increase in frequency when rate. Conversely
+the northern population cannot displace the neo-X, as the old-X is at
+a disadvantage.  This spatial distribution at this locus is a tension zone between the
+two populations, where neither population can make ground on the other
+due to the low fitness of the hybrid.
+
+We can use our same continuous model of migration and selection to
+study this setup. Assuming that the homozygotes are equally fit, and
+that the heterozygotes relative fitness is reduced by a selection
+coefficent $s_h$, the width of the cline is
+\begin{equation}
+\frac{\sigma}{\sqrt{s_h}}
+ \end{equation}
+The stronger the selection the more abrupt the transition between the
+populations. These wingless grasshoppers move $\sigma \sim 20$ meters
+a generation. Thus a reduction in the relative fitness of the hybrid
+would be needed to explain this hybrid zone with a width of $\sim
+800$m. 
+
+More generally we can see tension zones arise when hybrids have reduced
+fitness compared to either species. For example, this can occur due to 
+be due to bad epistatic interactions between alleles from each
+species. If selection is strong enough on hybrids, often because many
+loci are involved in incompatibilities between the species, the entire
+genome can be tied up in a tension zone between the two species.  
+
+%Throughout
+%most of its range {\it Podisma pedestris} has an X chromosome-based sex
+%determination system. But the population
+
 
 
 % \begin{question}
@@ -1785,6 +1894,8 @@ parameters from the above equation. This compound parameter $\ell$ is the charac
 length of our cline, and it is this parameter which determines over
 what geographic scale we change from allele $2$ predominating to
 allele $1$ predominating as we move across our environmental shift. \\
+
+\paragraph{Cline arising from an underdominant polymorphism}
 
 %The width of our cline, i.e. over what distance do we make this shift
 %from allele $2$ predominating to allele $1$,
