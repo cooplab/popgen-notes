@@ -1,7 +1,7 @@
 \chapter{One-Locus Models of Selection}
 \label{Chapter:OneLocusSelection}
 \begin{quotation}
-"Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
+``Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
   
 Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. However, the alleles that individuals transmit across generations have permanence. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the allelic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
@@ -13,7 +13,6 @@ Differences in fitness can arise at any point during the life cycle. For instanc
 \subsection{Haploid selection model}
 We start out by modeling selection in a haploid model, as this is mathematically relatively simple.
 Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.\\
-
 
 Therefore, in the next generation, the absolute number of carriers of $A_1$ and $A_2$ are $P_{t+1} = W_1 P_t$ and $Q_{t+1} = W_2 Q_t$, respectively. The mean absolute fitness of the population at time $t$ is
 \begin{equation}
@@ -164,8 +163,6 @@ frequencies $p_t$ and $q_t$, then $\tau$ generations later,
 \end{equation}
 \\
 
-
-
 The question of which allele is increasing or decreasing in frequency comes down
 to whether $\left(\prod_{i=t}^{\tau-1} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
@@ -177,32 +174,60 @@ The term
 \begin{equation}
   \sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}  \label{hap_geo_fitness}
 \end{equation}
-  is the geometric mean fitness of allele
+\begin{margintable}
+  \begin{tabular}{lcc}
+    & $A_1$  & $A_2$\\
+    \hline
+    Dry & 2 & 1.57 \\
+    Wet &  1.16 & 1.57   \\
+    \hline
+    Arithmetic Mean & 1.58  & 1.57  \\
+    Geometric Mean & 1.52 & 1.57 
+  \end{tabular}
+  \caption{Fitnesses of two alleles in wet and dry years. Means calculated assuming
+    equal chances of wet and dry years. The geometric mean is
+    calculated as
+    $\sqrt{w_{\textrm{wet}}w_{\textrm{dry}}}$. Example numbers
+    taken from \citet{seger1987oxford}.} \label{Table:Geom_fitness}
+\end{margintable}
+
+is the geometric mean fitness of allele
  $A_1$ over the $\tau$ generations past generation $t$. Therefore, allele $A_1$ will only increase
 in frequency if it has a higher geometric mean fitness than allele $A_2$
-(at least in our simple deterministic model). \\
-
+(at least in our simple deterministic model). This implies that an allele with higher
+geometric mean fitness can even invade and spread to fixation if its
+(arithmetic) mean fitness is lower than the dominant type.  To see
+this consider two alleles that experience the fitnesses given in Table
+\ref{Table:Geom_fitness}. The allele $A_1$ does much better in
+dry years, but suffers in wet years; while the $A_2$ is generalist and
+is not affected by the variable environment. If there is an equal
+chance of a year being wet or dry, the $A_1$ allele has
+higher (arithmetic) mean fitness, but it will be replaced by the $A_2$
+allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fig:haploid_geo}). \\
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\includegraphics[width= \textwidth]{figures/Haploid_geom_traj.pdf}
 \end{center}
-\caption{Frequency of the Lactase persistence allele in ancient and
-  modern samples form Central Europe. Data compiled by
-  \citet{marciniak2017} from various sources. Thanks to Stephanie
-  Marciniak for sharing these data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Lactase_example/Lactase_plots.R}} \label{fig:haploid_geo}
+\caption{An example frequency trajectory of the $A_2$ allele under
+  variable environments (using the fitnesses from Table \ref{Table:Geom_fitness}). Dry years (generations) are shown in red, wet
+  years in white. Note how the $A_2$ allele decreases in frequency in
+  the dry years as $A_1$ has higher fitness, and yet the $A_2$ allele
+  still wins out. 
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Geometric_mean_fitness.R}} \label{fig:haploid_geo}
 \end{figure}
 
-
 \paragraph{Evolution of bet hedging}
-Don't put your eggs in one basket. It makes a lot of sense to spread
-your bets. Financial advisors often advise you to diversify your
+%https://twitter.com/rlmcelreath/status/1129013411344453632
+it makes a lot of sense to spread
+your bets; don't put your eggs in one basket. Financial advisors often advise you to diversify your
 portfolio, rather than placing all your investments in one stock. Even
 if that stock looks very strong, you can come a cropper that
 $\nicefrac{1}{20}$ times some particular part of the market
 crashes. Likewise, evolution can result in risk averse strategies. Some species of bird lay multiple eggs of nests; some
-plants don't put all of their energy into seeds for next year. It can
-even make sense to spread your bets even if that comes at am average cost.
+plants don't put all of their energy into seeds that will germinate next year. It can
+even make sense tohedge your bets even if that comes at an average
+cost \citep{seger1987oxford}.
 
 To see this lets think more about geometric fitness. We can write the
 fitness in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
@@ -225,14 +250,26 @@ equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i 
 \graham{issue with $\E^2(s)$ here}
 So genotypes with high arthmetic mean fitness can be selected against,
 i.e. have low geometric mean fitness against, if their fitness has too
-high a variance across generations. 
+high a variance across generations citep{gillespie1973natural,gillespie1977natural}. See our example
+above,  Table \ref{Table:Geom_fitness} and Figure \ref{fig:haploid_geo}).
+
+\gc{A classic example of bet hedging is in delayed seed germination \citep{cohen1966optimizing}.}
+%% Gremer seed germination https://onlinelibrary.wiley.com/doi/full/10.1111/ele.12241
 
 
-\graham{Add arg. about bet hedging? } %https://twitter.com/rlmcelreath/status/1129013411344453632
+%Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
+Bet hedging has been hypothesized in a range of organisms, with strong
+recent interest in micro-organisms. One potential example of
+bet-hedging occurs is the long latent phase of the Chicken Pox virus, varicella zoster
+virus. After it causes chicken pox it enters a latent phase, resides inactive in neurons in
+the spinal cord, only to emerge 5-40 years later to cause the disease
+shingles. It is hypothesized that the virus actively suppresses itself
+as a strategy to allow it to emerge at a later time point as insurance
+against there being no further susceptible hosts at the time of its
+first infection \citep{stumpf2002herpes}. 
+
 % https://eebweb.arizona.edu/faculty/venable/pdfs/Gremer&Venable2014.pdf
-
-
-
+%experimental evolution of bet-hedging http://www.indiana.edu/~curtweb/L567/readings/bet%20hedging%20evolution.pdf
 
 \begin{figure}
 \begin{center}
@@ -607,6 +644,8 @@ generations. Note the similarity to eqn.\ \ref{eq:fixTimeSimpl} for the haploid 
 by a factor of 2 due to the choice of parametrization 
 (and that the number of alleles is $2N$ in the diploid model, rather than $N$). Doubling our selection coefficient halves the time it takes for our allele to move through the population.\\
 
+
+% https://www.flickr.com/photos/internetarchivebookimages/17578330873/
 \begin{marginfigure}
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/killifish/20974603315_1f9775189e_z.jpg}
