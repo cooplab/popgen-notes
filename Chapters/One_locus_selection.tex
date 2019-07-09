@@ -1216,6 +1216,186 @@ some polymorphisms for tens of millions of years, such that some of
 your MHC alleles may be genetically more closely related to MHC alleles in other primates than they are to alleles in your
 close human friends. 
 
+
+\section{}
+
+
+We have seen that when selection acts in a simple manner it can act to
+increase the mean fitness of the population. However, when the
+absolute fitnesses of individuals are frequency dependent, e.g. depend
+on the strategies deployed by others in the population, natural
+selection is not garenteed to increase mean fitness. One place where
+this is particularly apparent is in the evolution of a 50/50 sex
+ratio. In fact as we'll see that selection can drive the evolution of
+traits that are actively harmful to the fitness of an individual, when
+selection acts below the level of an individual. 
+
+% https://archive.org/stream/aquaticlife51920baus/#page/113/mode/1up
+% https://archive.org/stream/aquaticlife51920baus/#page/114/mode/1up 
+
+%Bodmer and A. W. F. EDWARDS sex ratio https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1960.tb01735.x
+%% Edwards on history of sex ratio https://www.jstor.org/stable/pdf/10.1086/286141.pdf?refreqid=excelsior%3A18baef4f72dd7a97685efe161dc66711
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/platyfish/Poecilid_Hybrid}
+\end{center}
+\caption{
+  Poecilid Hybrid, {\it Xiphophorus helleri} $\times$ {\it Platypoecilus maculatus}.
+%Male and female platyfish ({\it Xiphophorus maculatus}), top and bottom.
+\BHLNC{Aquatic life, chapter by Curtis F.S. (1915)}{https://archive.org/stream/aquaticlife51920baus/\#page/113/mode/1up}{Harvard University, Museum of Comparative Zoology, Ernst Mayr Library}} \label{fig:platyfish}
+\end{marginfigure}
+
+In many species, regardless of the mechanism of sex determination, the sex ratio is close to 50/50. Yet this is far from the optimum sex ratio from the perspective of the population viability. In many species females are the limiting sex, investing more in gametes and (sometimes) more in parental care, thus a population having many females and few males would offer the fastest rate of population grow (i.e. the highest mean fit. 
+Imagine if the population sex ratio was strongly skewed towards females. A rare autosomal allele that caused a mother to produced sons would have high fitness, as the mother's sons would have high reproductive success in this population of most females. Thus our initially rare allele would initially increase in frequency.
+Conversely if the sex ratio was strongly skewed towards males, a rare autosomal allele that causes a mother to produce daughters would spread.
+So selection on autosomal alleles favours the production of the rare sex, a form of negative frequency dependence, this pushes the sex ratio away from being too skewed. Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
+The 50/50 sex ratio is an example of an Evolutionary stable strategy
+(ESS), described in more detail in Section \ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if all the members of a population adopt it, then no mutant strategy could invade the population under the influence of natural selection'' \citet{smith1982evolution}, pg 10.} %http://www.indiana.edu/~curtweb/L567/readings/JMS%20basic%20game%20theory.pdf
+Our population is held well away from its female-bias optimum for population grow as individual-level selection favours the production of the rarer sex, which results in a 50/50 sex ratio.
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.pdf}
+\end{center}
+\caption{\citet{basolo1994dynamics} explored sex ratio dynamics in platyfish ({\it Xiphophorus
+ maculatus}), which has manipulable sex ratio due to its three factor sex determination. She started two replicates with a strong female bias (black) and two replicates with strong male bias (white). In all four cases the sex ratio quickly oscillated to a 50/50 sex ratio.  Data from \citet{basolo1994dynamics}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.R}} \label{fig:sex_ratio}
+\end{marginfigure}
+
+%fig wasps https://science.sciencemag.org/content/228/4701/896
+% parasitic wasps https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1558-5646.1983.tb05520.x
+
+
+Now from the perspective of the autosomes a 50/50 sex ratio represents
+a stable strategy, but all is not harmonious in the genome. In
+systems with XY sex determination, male fertilization by Y-bearing sperm
+leads to sons, while male fertilization by X-bearing sperm leads to daughers. 
+From the viewpoint of the X chromosome the Y-bearing sperm, and a
+male's sons, are an evolutionary deadend. We can imagine a mutation
+arising on the X chromosome, that causes a poison to be released
+during gametogensis that kills Y-bearing sperm. This would cause much
+of the ejactulate of the males carrying this mutation to be X-bearing sperm, and so these males would have mostly
+daughters. Such an allele would potentially spread in the population
+as it is over transmitted through males, even if it somewhat reduced
+the fertility of the males. The spread of this allele would strongly
+bias the population sex ratio towards females. Such `selfish' X alleles turn out to be relatively common. They do not
+spread because they are good for the individual, they can often
+substantially low the fitness of the bearer, but rather they spread because
+they are favoured due to selection below the level of the individual.
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Winters_sex_ratio_drive/Winters_sex_ratio_drive_sperm.jpg}
+
+\end{center}
+\caption{{\bf Top)} Normally developing spermatids in {\it D.
+  simulans}. {\bf Bottom)}  Abnormally developing spermatids in a male
+expressing {\it dox}. The spermatids that look like
+  rice crispies carry the Y chromosome,  the normal, slender
+  spermatids are X-bearing spermatids.  Figure from
+  \citet{tao2007sex}, cropped, \PLOSccBY. } \label{fig:winters_sperm}
+\end{marginfigure}
+
+One example of a selfish X
+chromosome allele is the {\it Winters sex-ratio} system found in {\it Drosophila
+  simulans}, so named as it was found in flies collected around Winters, California (just a
+few miles down the road from Davis). In a cross the selfish X
+chromosome carrying males have  $>80\%$ daughters. The gene
+responsible, Dox ({\it Distorter on the X}), appears to be a transposition
+from a parental gene, and produces a transcript which targets a region
+on the $Y$ chromosome preventing the Y-bearing sperm from developing
+\citet[see Figure \ref{fig:winters_sperm} from][]{tao2007sexII}. 
+
+%https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050292#pbio-0050292-g005
+%https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050303
+
+  \begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Winters_sex_ratio_drive/Ferree_Barbash_dox_cartoon.png}
+\end{center}
+\caption{Mechanistic and Evolutionary Model for sex-ratio Distortion
+{\bf Left)} The X-linked Dox gene evolved to target the Y chromosome, blocking
+Y-bearing sperm from developing and so favouring its own
+transmission. {\bf Right)} Subsequently Dox was retrotransposed to an
+autosome forming the Nmy gene. Nmy was subsequently rearranged by a
+a small duplication, and now blocks the action of dox by the formation
+of a hairpin small interfering RNA. Figure from \citet{ferree2007distorted}, \PLOSccBY} \label{fig:dox_cartoon}
+\end{figure}
+
+The spread of such selfish sex chromosomes, distorting the sex ratio
+strongly away from 50/50, and can have profound effects for population
+growth rates.\sidenote{Indeed people have long discussed using
+selfish Y chromosomes, driving an over production of sons, for population control of malaria-spreading
+mosquitos. Natural selfish systems on the Y appear rare, likely
+because of its low gene content.} However, the other sex chromosome and autosomes are not helpless
+against the spread of selfish sex chromosome elements. In the case of
+a selfish X chromosome that has achieved appreciable frequency in the population, there will be a strong excess of females
+in the population, such that supressors of drive can arise on the autosomes
+and spread due the fact that they allele causes the male bearer to
+produces sons and so spread due to Fisherian sex-ratio advantage.
+This has happened in the case of the Winters sex chromosome system. An
+autosomal allele has spread through the population that supresses the
+selfish X chromosome, restoring the 50/50 sex ratio. Now the sex ratio
+distortor can only be found by crosses to naive populations, where the
+supressor has not spread yet. The autosomal supressor gene turns out to be
+a duplicate of the selfish dox gene,{\it NMY} (Not Much Yang), that moved to the
+autosome through retrotransposition and now blocks the action of dox
+through RNA-interference degradation of the dox transcript \citep[see
+][, see Figure \ref{fig:dox_cartoon}]{tao2007sex}.
+%https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004822
+
+\graham{Mention Y chromosome fighting back mouse eg?}
+
+  \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Hypolimnas_bolina/Hypolimnas_bolina.png}
+\end{center}
+\caption{male Eggspot butterfly ({\it Hypolimnas bolina}). \BHLNC{P. Cramer's Uitlandsche kapellen (1780)}{https://www.biodiversitylibrary.org/title/43777\#page/292/mode/1up}{Smithsonian Libraries} } \label{fig:Hypolimnas_bolina}
+\end{marginfigure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
+
+It's not just the sex chromosomes that get in on the act of the battle
+over sex ratios.  Numerous arthropods, including a high proportion of
+insects, are infected with the intracellular bacteria {\it
+  Wolbachia}, which are passed to offspring through the
+materal cytoplasm. As they are only transmitted by females, {\it
+  Wolbachia} increase their transmission in a variety of selfish ways
+including feminization of males and killing male embryos. In one
+dramatic case, a
+male-killing {\it Wolbachia} strain forced a sex ratio of 100 females
+to every 1 male in {\it Hypolimnas bolina} (eggspot butterflies)
+throughout Southeast Asia. This extreme sex ratio persisted for many decades,
+according to the analysis of museum collections from the late 19C,
+before the sex ratio was rapidly restored to 50/50 by the spread of an
+autosomal supressing allele. The autosomal supressor allele likely
+spread very rapidly
+
+
+\subsection{ESS for the sex ratio} \label{ESS_sex_Ratio}
+Let $R$ be the sources and $C_{\mars}$ and $C_{\venus}$ be the cost of
+producing a son and daughter respectively. If our focal mother directs
+$s$ of her effort towards sons and $(1-s)$ of her effort towards
+daughters, she'll produces $\frac{Rs}{C_{\mars}}$ sons and
+$\frac{R(1-s)}{C_{\venus}}$ daughters.  We will assume that the mean
+reproductive value of daugthers is $1$. Given this the reproductive
+value of sons is the average number of matings that a male will have,
+i.e. the ratio $\nicefrac{\# \textrm{~females}}{\# \textrm{~males}}$. So if the population has a sex ratio $s_p$, the fitness of our focal female is
+\begin{equation}
+W(s,s_p) = \left( \frac{R(1-s)}{C_{\venus}} \times 1 \right) +  \left( \frac{Rs}{C_{\mars}} \times  \frac{\nicefrac{R(1-s_p)}{C_{\venus}} }{\nicefrac{Rs_p}{C_{\mars}}} \right) \label{sex_ratio_focal}
+\end{equation}
+expressing fitness in terms the number of grandkids our focal female is expected to have.
+
+To find the ESS we want a sex ratio $s^*$ for the population that no mutant has higher fitness, i.e. $W(s^*,s^*)> W(s,s^*)$ for $s \neq s^*$, We can find this by
+\begin{equation}
+\left. \frac{\partial W(s,s_p)}{\partial s} \right\vert_{s^* = s=s_p} = 0
+\end{equation}
+taking the derivative of Eqn \ref{sex_ratio_focal} we obtain
+\begin{equation}
+\frac{\partial W(s,s_p)}{\partial s}  = - \frac{R}{C_{\venus}} +  \frac{R}{C_{\mars}} \left( \frac{\nicefrac{R(1-s_p)}{C_{\venus}} }{\nicefrac{Rs_p}{C_{\mars}}} \right) 
+\end{equation}
+setting $s^* = s=s_p$ and rearranging
+\begin{equation}
+\frac{R}{C_{\venus}} =  \frac{R}{C_{\mars}} \left( \frac{\nicefrac{R(1-s^*)}{C_{\venus}} }{\nicefrac{Rs^*}{C_{\mars}}} \right) 
+\end{equation}
+which is satisfied when $s^* = \nicefrac{1}{2}$, i.e. devoting equal resources to male and female offspring is the ESS, which corresponds to a 50/50 sex ratio if male and female offspring are equally costly. 
+
 \subsection{Mutation--selection balance}
 %</source-file>
 Mutation is constantly introducing new alleles into the
