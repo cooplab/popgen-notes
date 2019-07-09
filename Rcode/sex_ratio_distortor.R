@@ -13,7 +13,7 @@ w<-0.5*p^2
 x<-0.5*(1-p)
 y<-0.5*p
 
-a<-0.8  #1
+a<-0.8  #1t
 b<-0.8
 c<-0.8
 t<-0.99 #0.5
@@ -37,3 +37,5 @@ plot((0.5*freqs[,2] + freqs[,3] + 0.5*freqs[,5])/(freqs[,1]+freqs[,2] + freqs[,3
 ,type="l",lwd=2,xlab="Generations",ylab="Frequency",cex.lab=1.4,cex.axis=1.2)
 lines(rowSums(freqs[,4:5]),lty=2,lwd=2)
 legend(x="topleft",legend=c("Selfish X chr.","Males"),lty=c(1,2),lwd=2,cex=1.4)
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/sex_ratio_distortor.pdf")
+

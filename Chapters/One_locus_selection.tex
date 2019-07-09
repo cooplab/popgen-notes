@@ -1235,6 +1235,16 @@ selection acts below the level of an individual.
 
 %Bodmer and A. W. F. EDWARDS sex ratio https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1960.tb01735.x
 %% Edwards on history of sex ratio https://www.jstor.org/stable/pdf/10.1086/286141.pdf?refreqid=excelsior%3A18baef4f72dd7a97685efe161dc66711
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.pdf}
+\end{center}
+\caption{\citet{basolo1994dynamics} explored sex ratio dynamics in platyfish ({\it Xiphophorus
+ maculatus}), which has manipulable sex ratio due to its three factor sex determination. She started two replicates with a strong female bias (black) and two replicates with strong male bias (white). In all four cases the sex ratio quickly oscillated to a 50/50 sex ratio.  Data from \citet{basolo1994dynamics}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.R}} \label{fig:sex_ratio}
+\end{figure}
+
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/platyfish/Poecilid_Hybrid}
@@ -1252,17 +1262,22 @@ So selection on autosomal alleles favours the production of the rare sex, a form
 The 50/50 sex ratio is an example of an Evolutionary stable strategy
 (ESS), described in more detail in Section \ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if all the members of a population adopt it, then no mutant strategy could invade the population under the influence of natural selection'' \citet{smith1982evolution}, pg 10.} %http://www.indiana.edu/~curtweb/L567/readings/JMS%20basic%20game%20theory.pdf
 Our population is held well away from its female-bias optimum for population grow as individual-level selection favours the production of the rarer sex, which results in a 50/50 sex ratio.
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.pdf}
-\end{center}
-\caption{\citet{basolo1994dynamics} explored sex ratio dynamics in platyfish ({\it Xiphophorus
- maculatus}), which has manipulable sex ratio due to its three factor sex determination. She started two replicates with a strong female bias (black) and two replicates with strong male bias (white). In all four cases the sex ratio quickly oscillated to a 50/50 sex ratio.  Data from \citet{basolo1994dynamics}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Sex_ratio_basolo/Sex_ratio_basolo.R}} \label{fig:sex_ratio}
-\end{marginfigure}
+
 
 %fig wasps https://science.sciencemag.org/content/228/4701/896
 % parasitic wasps https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1558-5646.1983.tb05520.x
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/sex_ratio_distortor.pdf}
+
+\end{center}
+\caption{The increase in frequency of a sex-ratio distorting X allele in the population of
+  X chromosomes (solid line) and the frequeny of males in the
+  population. Males carrying the selfish X allele have $99\%$
+  daughters, and the selfish X allele reduces the viability of the
+  carries by $20\%$ in a dominant manner. The model set up as in \citet{edwards1961population}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/sex_ratio_distortor.R}} \label{fig:selfish_X_freqs}
+\end{figure}
 
 Now from the perspective of the autosomes a 50/50 sex ratio represents
 a stable strategy, but all is not harmonious in the genome. In
@@ -1274,8 +1289,8 @@ arising on the X chromosome, that causes a poison to be released
 during gametogensis that kills Y-bearing sperm. This would cause much
 of the ejactulate of the males carrying this mutation to be X-bearing sperm, and so these males would have mostly
 daughters. Such an allele would potentially spread in the population
-as it is over transmitted through males, even if it somewhat reduced
-the fertility of the males. The spread of this allele would strongly
+as it is over transmitted through males, even if it somewhat reduces
+the fitness of the individuals who carry it. The spread of this allele would strongly
 bias the population sex ratio towards females. Such `selfish' X alleles turn out to be relatively common. They do not
 spread because they are good for the individual, they can often
 substantially low the fitness of the bearer, but rather they spread because
@@ -1358,14 +1373,14 @@ insects, are infected with the intracellular bacteria {\it
 materal cytoplasm. As they are only transmitted by females, {\it
   Wolbachia} increase their transmission in a variety of selfish ways
 including feminization of males and killing male embryos. In one
-dramatic case, a
-male-killing {\it Wolbachia} strain forced a sex ratio of 100 females
+dramatic case, a male-killing {\it Wolbachia} strain forced a sex ratio of 100 females
 to every 1 male in {\it Hypolimnas bolina} (eggspot butterflies)
 throughout Southeast Asia. This extreme sex ratio persisted for many decades,
 according to the analysis of museum collections from the late 19C,
 before the sex ratio was rapidly restored to 50/50 by the spread of an
-autosomal supressing allele. The autosomal supressor allele likely
-spread very rapidly
+autosomal supressing allele. The autosomal supressor allele 
+spread very rapidly within populations taking just 5 years to spread
+through the population from 2001 to 2006. 
 
 
 \subsection{ESS for the sex ratio} \label{ESS_sex_Ratio}
