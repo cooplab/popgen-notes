@@ -219,14 +219,15 @@ allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fi
 
 \paragraph{Evolution of bet hedging}
 %https://twitter.com/rlmcelreath/status/1129013411344453632
-it makes a lot of sense to spread
-your bets; don't put your eggs in one basket. Financial advisors often advise you to diversify your
+Don't put your eggs in one basket, it makes a lot of sense to spread
+your bets. Financial advisors often advise you to diversify your
 portfolio, rather than placing all your investments in one stock. Even
 if that stock looks very strong, you can come a cropper that
 $\nicefrac{1}{20}$ times some particular part of the market
-crashes. Likewise, evolution can result in risk averse strategies. Some species of bird lay multiple eggs of nests; some
+crashes. Likewise, evolution can result in risk averse
+strategies. Some species of bird lay multiple nests of eggs; some
 plants don't put all of their energy into seeds that will germinate next year. It can
-even make sense tohedge your bets even if that comes at an average
+even make sense to hedge your bets even if that comes at an average
 cost \citep{seger1987oxford}.
 
 To see this lets think more about geometric fitness. We can write the
@@ -250,16 +251,45 @@ equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i 
 \graham{issue with $\E^2(s)$ here}
 So genotypes with high arthmetic mean fitness can be selected against,
 i.e. have low geometric mean fitness against, if their fitness has too
-high a variance across generations citep{gillespie1973natural,gillespie1977natural}. See our example
+high a variance across generations \citep{gillespie1973natural,gillespie1977natural}. See our example
 above,  Table \ref{Table:Geom_fitness} and Figure \ref{fig:haploid_geo}).
 
-A classic example of bet-hedging is in delayed seed germination in plants \citep{cohen1966optimizing}. In variable environments, such as deserts, it may make sense to spread your bets over years by having only a proportion of your seeds germinate in the first year. However, delaying germination can come at a cost due to seed mortality. \citet{gremer2014bet}, using data from a long-term study various species of Sonoran Desert winter annual plants were indeed pursuing adaptive bet-hedging strategies, with the plant species with the highest variation in per year yield had the lowest germination fraction per year. \citeauthor{gremer2014bet} showed that by having seed germination proportions $<1$ all of the species were achieving higher geometric fitness at the expense of arithmetic fitness in the variable desert environment.
+  \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/woolly_plantain/20771670485_fb7e476748_b.jpg}
+\end{center}
+\caption{Woolly plantain ({\it Plantago patagonica}). One of the
+  desert annuals shown to have a bet-hedging germination strategy by
+  \citet{gremer2014bet}. \BHLNC{An illustrated flora of the northern
+    United States, Canada and the British possessions, from
+    Newfoundland to the parallel of the southern boundary of Virginia,
+    and from the Atlantic Ocean westward to the 102d meridian (1913)  Britton, N.L.}{https://www.flickr.com/photos/internetarchivebookimages/20771670485/}{Cornell University Library}} \label{fig:Woolly_plantain}
+\end{marginfigure}
+
+A classic example of bet-hedging is in delayed seed germination in
+plants \citep{cohen1966optimizing}. In variable environments, such as
+deserts, it may make sense to spread your bets over years by having
+only a proportion of your seeds germinate in the first year. However,
+delaying germination can come at a cost due to seed
+mortality. \citet{gremer2014bet}, using data from a long-term study
+various species of Sonoran Desert winter showed that annual plants
+were indeed pursuing adaptive bet-hedging strategies.
+The plant species with the highest variation in among-year yield had
+the lowest germination fraction per year.  Further,
+\citeauthor{gremer2014bet} showed through modeling lifethat by having seed germination proportions $<1$ all of the species were achieving higher geometric fitness at the expense of arithmetic fitness in the variable desert environment.
 
   \begin{figure}
 \begin{center}
-%\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Gremer_hedging_example/Gremer_hedging_example.pdf}
 \end{center}
-\caption{  XXXX's arithmetic fitness is an increasing function of the proportion of seeds germinating, due to seeds not surviving a germination delay. However, the variance of fitness also increases with this proportion as they are more likely to have all of their seeds germinate in a bad year. Thus XXXX can achieve higher geometric fitness by only having a proportion of their seeds germinate. Thanks to Jenny Gremer for sharing these data} \label{fig:desert_bet_hedging}
+\caption{  {\it Plantago patagonica}'s arithmetic fitness is an
+  increasing function of the proportion of seeds germinating, due to
+  seeds not surviving a germination delay. However, the standard
+  deviation of fitness also increases with this proportion as they are
+  more likely to have all of their seeds germinate in a bad year. Thus
+  {\it Plantago patagonica}  can achieve higher geometric fitness by
+  only having a proportion of their seeds germinate. Thanks to Jenny
+  Gremer for sharing these data from \citet{gremer2014bet} } \label{fig:desert_bet_hedging}
 \end{figure}
 
 
@@ -269,7 +299,7 @@ A classic example of bet-hedging is in delayed seed germination in plants \citep
 %Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
 Delayed reproduction is also a common example of bet-hedging in
 micro-organisms. For example, the Chicken Pox virus, varicella zoster
-virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, resides inactive in neurons in
+virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, residing, inactive, in neurons in
 the spinal cord, only to emerge 5-40 years later to cause the disease
 shingles. It is hypothesized that the virus actively suppresses itself
 as a strategy to allow it to emerge at a later time point as insurance
