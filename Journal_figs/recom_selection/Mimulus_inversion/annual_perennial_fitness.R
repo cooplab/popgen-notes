@@ -1,6 +1,6 @@
 
- library(png)
-img<-readPNG("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/recom_selection/Mimulus_inversion/annual_perennial.png")
+ library(jpg)
+img<-readJPG("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/recom_selection/Mimulus_inversion/annual_perennial.png")
 layout(t(1:2))
 par(mar=c(4,4.1,1,1))
 plot.new()

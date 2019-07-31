@@ -4,8 +4,22 @@ par(mar=c(1,4,1,1))
 galls<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size.csv")
 
 
+##LOAD fitness_landscape_1D_animated.R
+
 d<-seq(5,40,length=1000)
 fitness.ind.surf<-0.21+0.42*exp(-0.5*((d-24.3)/3.84)^2)
+
+layout(matrix(1:4,nrow=2),heights=c(.4,0.9))
+plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=18,sd=2,xrange=range(galls$gall.diameter),yrange=range(galls$proportion.surviving),wbar=NULL,add.legend=TRUE,model="quadratic",pheno.lab="Gall size (mm)")
+
+points(galls,pch=19);
+plot.fitness.landscape(d=d,fitness.ind.surf=fitness.ind.surf,my.mean=24.2,sd=2,xrange=range(galls$gall.diameter),yrange=range(galls$proportion.surviving),wbar=NULL,add.legend=FALSE,model="quadratic",pheno.lab="Gall size (mm)")
+points(galls,pch=19)
+
+ dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size.pdf")
+
+###OLD CODE
+
 
 wbar<-sapply(d,function(my.xbar){
 	my.norm<-dnorm(d,mean=my.xbar,sd=4)
