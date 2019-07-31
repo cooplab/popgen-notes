@@ -27,20 +27,18 @@ individual (the individuals are diploid but were inbred so they're
 homozygous for their haplotype). Only sites that differ among
 individuals of the three species are shown. Site $834$ is an example
 of a polymorphism; some  {\it D. simulans} individuals carry a $C$
-allele while others have a $T$. {\emph Fixed differences}  are sites that differ between the species but are monomorphic within
+allele while others have a $T$. \emph{Fixed differences}  are sites that differ between the species but are monomorphic within
   the species. Site $781$ is an example of a fixed difference between
   {\it D. melanogaster} and the other two species.
-%JRI: need to define orthologous? haplotype?
-
 
 We can also annotate the alleles and loci in various ways. For example, position
 $781$ is a non-synonymous fixed difference. We call the less common
-allele at a polymorphism the  {\emph minor allele} and the common
-allele the {\emph major allele}, e.g. at site $1068$ the $T$ allele is the
+allele at a polymorphism the  \emph{minor allele} and the common
+allele the \emph{major allele}, e.g. at site $1068$ the $T$ allele is the
 minor allele in {\it D. melanogaster}. We call the more evolutionarily
-recent of the two alleles the {\emph derived allele} and the older of
-the two the {\emph ancestral allele}. The $T$ allele at site 1068 is
-the derived allele as the $C$ is found in both the other species,
+recent of the two alleles the \emph{derived allele} and the older of
+the two the \emph{ancestral allele}. We infer that the $T$ allele at site 1068 is
+the derived allele because the $C$ is found in both other species,
 suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
@@ -57,7 +55,7 @@ The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
 (a-l) are from {\it D. melanogaster};
-    the next columns (a-f) give sequences from {\it D. simulans}, and the final
+    the next columns (a-f) give sequences from \textit{D. simulans}, and the final
  set of columns (a-l ) from {\it D. yakuba}. The last column shows
  whether the difference is a non-synonymous (N) or synonymous (S) change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
@@ -65,9 +63,9 @@ the consensus are marked with a dash.  The first columns of sequence
 \end{table*}
 
 \begin{question}
-{\bf A)} How many segregating sites does the sample from {\it
+{\bf A)} How many segregating sites does the sample from \textit{
   D. simulans} have in the ADH gene?\\
-{\bf B)} How many fixed differences are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+{\bf B)} How many fixed differences are there between \textit{D. melanogaster} and \textit{D. yakuba}?
 %What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
 \end{question}
 
@@ -97,10 +95,10 @@ then just $q=1-p$.
 \paragraph{Nucleotide diversity ($\pi$)}
 One common measure of genetic diversity is the average number of single
 nucleotide differences between haplotypes chosen at random from a
-sample. This is called {\emph nucleotide diversity} and is often denoted by
+sample. This is called \emph{nucleotide diversity} and is often denoted by
 $\pi$.
 For example, we can calculate $\pi$ for our ADH locus from Table \ref{Table:ADH} above: we have
-6 sequences from {\it D. simulans}  (a-f), there's a total of 15 ways of pairing
+6 sequences from \textit{D. simulans}  (a-f), there's a total of 15 ways of pairing
 these sequences, and
 \begin{equation}
 \pi=\frac{1}{15} \big( (2 + 1 + 1 + 1 + 0 ) + (3 + 3 + 3 + 2 ) +(0 + 0 + 1) + (0 + 1) + (1)  \big)=1.2\overline{6}
@@ -111,7 +109,7 @@ and so on. \\
 
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
-to be a per site (or per base) measure. For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous). For synonymous site $\pi$, we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.{\sidenote{Technically we would need to divide by the total number of possible point mutations that would result in a synonymous change; this is because some mutational changes at a particular nucleotide will result in a non-synonymous or synonymous change depending on the base-pair change.}
+to be a per site (or per base) measure. For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in \textit{D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous). For synonymous site $\pi$, we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.{\sidenote{Technically we would need to divide by the total number of possible point mutations that would result in a synonymous change; this is because some mutational changes at a particular nucleotide will result in a non-synonymous or synonymous change depending on the base-pair change.}
 
 
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
@@ -123,16 +121,14 @@ number of segregating sites for the number of individuals sequenced (see eqn \eq
 \paragraph{The frequency spectrum.}
 We also often want to compile information about the frequency of
 alleles across sites.  We call alleles that are found once in a sample
-{\emph singletons}, alleles that are found twice in a sample {\emph
+\emph{singletons}, alleles that are found twice in a sample {\emph
   doubletons}, and so on. We count up the number of loci where an
 allele is found $i$ times out of $n$, e.g. how many singletons are
-there in the sample, and this is called the {\emph frequency
-  spectrum}. We'll want to do this in some consistent manner, so we
-often calculate the minor allele frequency spectrum, or the frequency
-spectrum of derived alleles.
+there in the sample, and this is called the \emph{frequency
+  spectrum}. We'll want to do this in some consistent manner, such as calculating the frequency spectrum of the minor allele or the derived allele.
 
 \begin{question}
-How many minor-allele singletons are there in {\it D. simulans} in the ADH region?
+How many minor-allele singletons are there in \textit{D. simulans} in the ADH region?
 \erin{students were confused whether you are defining 'minor allele' with reference to the species or to the whole group. There are no major allele singletons with reference to the individual species, but I think it's confusing because the only example of a minor allele given in the text by its definition is the 'minor allele in D. melanogaster' .. maybe it would be best to clarify in the question or just give an example of the minor allele in the whole sample instead.}
  \end{question}
 \paragraph{Levels of genetic variability across species.}
@@ -145,11 +141,12 @@ polymorphism may simply reflect a balance between genetic drift and
 mutation.
 The second observation is the relatively narrow range of
 polymorphism across species with vastly different census sizes. This
-observation represented a puzzle as Neutral theory predicts that
-levels of genetic diversity should scale population size. Much effort
+observation represented a puzzle as the Neutral theory predicts that
+levels of genetic diversity should scale with population size. Much effort
 in theoretical and empirical population genetics has been devoted to
 trying to reconcile models with these various observations. We'll
 return to discuss these ideas throughout our course.
+%Neutral
 
 \begin{marginfigure}[-1cm]
 \begin{center}
@@ -174,16 +171,17 @@ autosomal nucleotide diversity ($\pi$) for 167 species across 14 phyla from
 non-coding and synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
 $\pi$ in their survey was Lynx, with $\pi = 0.01\%$, i.e. only
 $1/10000$ bases differed between two sequences. In contrast, some of the highest levels of
-diversity were found in {\it Ciona savignyi}, Sea Squirts, where a remarkable
+diversity were found in {\textit{Ciona savignyi}, Sea Squirts, where a remarkable
 $1/12$ bases differ between pairs of sequences. This $800$-fold range of
 diversity seems impressive, but census population sizes have a much
 larger range.
+%JRI: I feel like an example of census size would be useful. the genus Cyclothone, which exists in the trillions, comes to mind as a surprising example that you could compare to like a coelocanth: https://commons.wikimedia.org/wiki/File:Wissenschaftliche_Ergebnisse_der_Deutschen_Tiefsee-Expedition_auf_dem_Dampfer_%22Valdivia%22_1898-1899_(Tafel_6)_(7413855904).jpg
 
 \begin{marginfigure}[2cm]
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
 \end{center}
-\caption{Eurasian Lynx ({\it Lynx lynx}). \BHLNKC{An introduction to the study
+\caption{Eurasian Lynx (\textit{Lynx lynx}). \BHLNKC{An introduction to the study
   of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.}{https://www.flickr.com/photos/internetarchivebookimages/20731949565/in/photolist-x5Jzv2-x6QVyp-xir9rH-wYHrQD-wPn1sP-w9PsqY-xDcqri-sMcQoB-trrkVd-x6Nx1H-wPea7N-sM28N9-tJ3zsp-xneVdx-wGJRtQ-xnfHZ8-wPfga7-xCUPrN-x7kXDV-xmAb9E-xm3x4k-xBoSKb-wGTgyB-xBoSbf-wGGvzA-xmzYTJ-oeKJcH-xA1Ffr-xA1Eji-xqWTQZ-xF4Lru-oxJfrH-x7ojSn-xra8zP-wGGibY-xgb21y-xY1jH9-xY1iyf-wGHxTS-wGQEoR-xmtPQh-x8uFKK-xdTkoU-wPggQf-wPfvHN-wPfc27-w9YnGF-wPeauS-wPiVxK-w6aiSi}{Cornell University Library}} \label{fig:Lynx}
 \end{marginfigure}
 
@@ -215,7 +213,7 @@ Note that we only need to assume random mating with respect to our focal allele 
 
 \begin{question}
 On the coastal islands of British Columbia there is a subspecies of
-black bear ({\it Ursus americanus kermodei}, Kermode's bear). Many members of this
+black bear (\textit{Ursus americanus kermodei}, Kermode's bear). Many members of this
 black bear subspecies are white; they're sometimes called spirit bears. These
 bears aren't hybrids with polar bears, nor are they albinos. They are
 homozygotes for a recessive change at the MC1R gene. Individuals who
@@ -242,12 +240,13 @@ $AA$ & $AG$ & $GG$ \\
 \end{center}
 What are the expected frequencies of the three genotypes under HWE?
 \end{question}
+%JRI: I think you mean under HW not HWE.  i think somewhere you should introduce HW in a parenthetical"Hard--Weinberg  (HW) proportions" etc. just to be abdunantly clear what the acronym means. also the ritland citation isn't showing year for some reason.
 
 
 See Figure \ref{fig:HWE_CEU_YRI} for a nice
-empirical demonstration of Hardy-Weinberg proportions. The mean
+empirical demonstration of Hardy--Weinberg proportions. The mean
 frequency of each genotype
-closely match their HW expectations, and much of the scatter of the
+closely matches its HW expectations, and much of the scatter of the
 dots around the expected line is due to our small sample size ($\sim
 60$ individuals). While HW often
 seems like a silly model, it often holds remarkably well within
@@ -266,24 +265,23 @@ in the genome.
   coloured points. The solid lines show the mean genotype frequency. The dashed lines show the
   predicted genotype frequency from Hardy--Weinberg
   equilibrium. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R} Blog
-  post on figure \href{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/}{here}. } \label{fig:HWE_CEU_YRI}  %See \href{blog
-                                %post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/}
+  post on figure \href{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}{here}. } \label{fig:HWE_CEU_YRI}  %See \href{blog
+                                %post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}
                                 %here on this plot.  https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R
 \end{figure}
-
 
 \begin{question}
 You are investigating a locus with three alleles, A, B, and C, with
 allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
-population is expected to be homozygotes under Hardy-Weinberg?
+population is expected to be homozygotes under Hardy--Weinberg?
 \end{question}
 
 Microsatellites are regions of the genome where individuals vary for
 the number of copies of some short DNA repeat that they carry. These
 regions are often highly variable across individuals, making them
 a suitable way to identify individuals from a DNA sample. This
-so-called DNA-fingerprinting has a range of applications from
-establishing paternity, identifying human remains, to matching
+so-called DNA fingerprinting has a range of applications from
+establishing paternity and identifying human remains to matching
 individuals to DNA samples from a crime scene. The FBI make use of the
 CODIS database\sidenote{CODIS: Combined DNA Index System}. The CODIS
 database contains the genotypes of over 13 million people, most of
@@ -300,7 +298,7 @@ and TH01) are shown in table \ref{table:CODIS_1} and
 \setlength{\tabcolsep}{.45\tabcolsep}
 \csvautobooktabular{Rcode/CODIS/D16S539_counts.csv}  \label{table:CODIS_1}
 \caption{ Data for 155 Europeans at the D16S539 microsatellite from
-  CODIS from \citeauthor{algee:16}. The top row gives the number of
+  CODIS from \citet{algee:16}. The top row gives the number of
   tetranucleotide repeats for each allele, the bottom row gives the
   sample counts.}
  }
@@ -770,7 +768,7 @@ heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
 
 \begin{question}
-  Suppose the following genotype frequencies were observed for an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele):
+  Suppose the following genotype frequencies were observed for an esterase locus in a population of \textit{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele):
 \begin{center}
 \begin{tabular}{ccc}
 \hline
