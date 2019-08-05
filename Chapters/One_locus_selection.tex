@@ -218,6 +218,11 @@ allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fi
 \end{figure}
 
 \paragraph{Evolution of bet hedging}
+
+%birds nest https://www.biodiversitylibrary.org/ia/Illustrationsne1Jone#page/11/mode/1up
+%% great tit nest https://archive.org/stream/britainsbirdsthe00thom/britainsbirdsthe00thom#page/n536/mode/1up
+%% blue tit nest https://www.flickr.com/photos/biodivlibrary/6025489801/
+
 %https://twitter.com/rlmcelreath/status/1129013411344453632
 Don't put your eggs in one basket, it makes a lot of sense to spread
 your bets. Financial advisors often advise you to diversify your
@@ -249,7 +254,7 @@ equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i 
   =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
 \end{align}
 \graham{issue with $\E^2(s)$ here}
-So genotypes with high arthmetic mean fitness can be selected against,
+So genotypes with high arithmetic mean fitness can be selected against,
 i.e. have low geometric mean fitness against, if their fitness has too
 high a variance across generations \citep{gillespie1973natural,gillespie1977natural}. See our example
 above,  Table \ref{Table:Geom_fitness} and Figure \ref{fig:haploid_geo}).
@@ -276,7 +281,11 @@ various species of Sonoran Desert winter showed that annual plants
 were indeed pursuing adaptive bet-hedging strategies.
 The plant species with the highest variation in among-year yield had
 the lowest germination fraction per year.  Further,
-\citeauthor{gremer2014bet} showed through modeling lifethat by having seed germination proportions $<1$ all of the species were achieving higher geometric fitness at the expense of arithmetic fitness in the variable desert environment.
+\citeauthor{gremer2014bet} showed through modeling life that by having
+per-year germination proportions $<1$ all of the species were
+achieving higher geometric fitness at the expense of arithmetic
+fitness in the variable desert environment. See Figure
+\ref{fig:desert_bet_hedging} for an example of bet hedging in Woolly plantain.
 
   \begin{figure}
 \begin{center}
@@ -295,7 +304,6 @@ the lowest germination fraction per year.  Further,
 
 %% Gremer seed germination https://onlinelibrary.wiley.com/doi/full/10.1111/ele.12241
 
-
 %Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
 Delayed reproduction is also a common example of bet-hedging in
 micro-organisms. For example, the Chicken Pox virus, varicella zoster
@@ -308,6 +316,9 @@ first infection \citep{stumpf2002herpes}.
 
 % https://eebweb.arizona.edu/faculty/venable/pdfs/Gremer&Venable2014.pdf
 %experimental evolution of bet-hedging http://www.indiana.edu/~curtweb/L567/readings/bet%20hedging%20evolution.pdf
+
+\graham{NOTE about how haploid model can be useful for thinking about
+  ESS }
 
 \begin{figure}
 \begin{center}
@@ -943,23 +954,6 @@ You are studying the polymorphism that affects flight speed in butterflies. The 
 {\bf B)} Calculate the marginal absolute fitnesses of the B and the b allele at the equilibrium frequency. 
 \end{question}
 
-\begin{question}
-OPTIONAL trickier question.\\
-Imagine a randomly-mating population of hermaphrodites. In this
-population, a derived allele (D) segregates that distorts transmission
-in its favour over the ancestral allele (d) in the production of all
-the gametes of heterozygotes. The drive leads to a fraction $r$ of the gametes
-of heterozygotes (D/d) to carry the D allele ($r>0.5$). The D allele
-causes viability problems in the homozygous state, such that the
-relative fitnesses are $w_{dd}=1$, $w_{Dd}=1$, $w_{DD}=1-e$. The D allele
-is currently at frequency p in the population at birth. Assume that the
-population is very large and no mutation occurs:\\
-{\bf A)}	What is the frequency of the D allele in the next generation, before selection has had a chance to act?\\
-{\bf B)}	What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
-{\bf C)}	Imagine the cost of the driver were additive:
-$w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the driver invade the population? Can a polymorphic equilibrium be maintained?
-\end{question}
-
 
 \paragraph{Diploid fluctuating fitness}
 
@@ -1296,7 +1290,13 @@ Imagine if the population sex ratio was strongly skewed towards females. A rare 
 Conversely if the sex ratio was strongly skewed towards males, a rare autosomal allele that causes a mother to produce daughters would spread.
 So selection on autosomal alleles favours the production of the rare sex, a form of negative frequency dependence, this pushes the sex ratio away from being too skewed. Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
 The 50/50 sex ratio is an example of an Evolutionary stable strategy
-(ESS), described in more detail in Section \ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if all the members of a population adopt it, then no mutant strategy could invade the population under the influence of natural selection'' \citet{smith1982evolution}, pg 10.} %http://www.indiana.edu/~curtweb/L567/readings/JMS%20basic%20game%20theory.pdf
+(ESS), described in more detail in Section
+\ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if
+  all the members of a population adopt it, then no mutant strategy
+  could invade the population under the influence of natural
+  selection'' \citet{smith1982evolution}, pg 10.\\ A version of this
+  sex ratio argument was first put forward by D{\"u}sing in 1884 and
+  popularized by \citet{fisher1930}, see \citet{edwards1998natural}. } %http://www.indiana.edu/~curtweb/L567/readings/JMS%20basic%20game%20theory.pdf
 Our population is held well away from its female-bias optimum for population grow as individual-level selection favours the production of the rarer sex, which results in a 50/50 sex ratio.
 
 %https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
@@ -1519,11 +1519,13 @@ Mitochondria genome may be a hotspot of alleles that are deleterious in males
 \newline \noindent \tiny{
  Painting from the Library and Archives Canada collection,
  \href{https://commons.wikimedia.org/wiki/File:Arrival_of_the_Brides_-_Eleanor_Fortescue-Brickdale.png}{Wikimedia},
- Public Domain.}} \label{fig:Hypolimnas_bolina}  %http://collectionscanada.gc.ca/pam_archives/index.php?fuseaction=genitem.displayItem&lang=fre&rec_nbr=2896937&rec_nbr_list=2896937
+ Public Domain.}} \label{fig:fille_du_roi}  %http://collectionscanada.gc.ca/pam_archives/index.php?fuseaction=genitem.displayItem&lang=fre&rec_nbr=2896937&rec_nbr_list=2896937
 \end{figure}
-One example of a male deleterious mitochondrial mutation in humans are
-the mutations that causes Leber’s `hereditary optic neuropathy' (LHON), which causes degeneration
-of the optic nerve and loss of vision in teenage males (which much
+% fille-du-roy
+% https://en.wikipedia.org/wiki/King%27s_Daughters#/media/File:Arrival_of_the_Brides_-_Eleanor_Fortescue-Brickdale.png 
+One example of a male-deleterious mitochondrial mutations underlying
+Leber’s `hereditary optic neuropathy' (LHON) in humans. LHON causes degeneration
+of the optic nerve and loss of vision in teenage males (with much
 lower penetrance in women). One such LHON mutation is present at low
 frequency in the Quebec population. The  Qu{\'e}b{\'e}cois population grew
 rapidly from a relatively small number of founders, leading to the
@@ -1537,14 +1539,13 @@ matrilineal line, and so identified all the individuals in the
 Qu{\'e}b{\'e}cois who carried this allele.
 There was no significant difference in the fitness of females who
 carried or didn't carry the mutation. In contrast, the fitness of male carriers of the mutation was only 65.3\% that of male non-carriers. 
-The mitochondria mutation has not changed frequency much over the past 290
+This mitochondria mutation has increased in frequency slightly over the past 290
 years, despite its strong effects in males, due to the fact that its effects have no consequence for female fitness.
 
 \begin{question}
 The frequency of the LHON allele was roughly $\nicefrac{1}{2000}$ in
 1669. If females suffered the same ill consequences as males what
 would be the frequency today? [assume there are $\sim$29 years a generation]
-years a generation, 
 \end{question}
 
 \begin{question}
@@ -1559,7 +1560,6 @@ population. Can you explain this idea?
 \end{center}
 \caption{male Eggspot butterfly ({\it Hypolimnas bolina}). \BHLNC{P. Cramer's Uitlandsche kapellen (1780)}{https://www.biodiversitylibrary.org/title/43777\#page/292/mode/1up}{Smithsonian Libraries} } \label{fig:Hypolimnas_bolina}
 \end{marginfigure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
-
 
 It's not just chromosomes that get in on the act of the battle
 of the sexes.  Numerous arthropods, including a high proportion of
@@ -1577,16 +1577,102 @@ autosomal suppressing allele. The autosomal supressor allele
 spread very rapidly within populations taking just 5 years to spread
 through the population from 2001 to 2006. 
 
+\paragraph{Autosomal selfish systems}
+Self genetic systems can also arise and cause genetic conflicts on the
+autosomes. The interests of autosomal alleles are usually relatively
+well aligned with promoting the fitness. However, these interests can
+diverge during meiosis and gametogenesis. After all, There are two
+alleles at each autosomal locus but only one of them will get passed
+to a child, therefore there can be competition between alleles in an
+individual to be transmitted gamete to the next generation (Figure \ref{fig:gametogenesis_male_female}).
 
-% fille-du-roy
-% https://en.wikipedia.org/wiki/King%27s_Daughters#/media/File:Arrival_of_the_Brides_-_Eleanor_Fortescue-Brickdale.png 
+  \begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/gametogenesis_male_female/gametogenesis_w_chr.pdf}
+\end{center}
+\caption{
+   The two copies of a chromosome are shown in red and blue through
+   the process of female and male meiosis and gametogenesis.  Crossovers are omitted to keep things simpler, they should occur between
+  at least one red and one blue chromosome. 
+Modified from original to include chromosomes transmitted.
+  \BHLNKC{
+Biology; the story of living things (1937).  Hunter, G.W., Walter
+H.E.}{https://archive.org/stream/biologystoryofli00hunt/\#page/429/mode/1up}{MBLWHOI Library} } \label{fig:gametogenesis_male_female}
+\end{figure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
 
-% mother's curse in people
+
+Male and female gametogenesis offer different opportunities for selfish
+systems. Just as how selfish X chromosome systems can spread by
+targeting sperm that carry the Y chromosome, selfish autosomal alleles
+can spread by targeting sperm carrying the other chromosome in
+heterozygotes. Both the Segregation Distortion allele and T-allele s in
+Drosophila and mouse respectively are selfish autosomal systems that
+game transmission in heterozygotes by killing off sperm that don't carry the allele in heterozygotes.
+
+%Spok asci killer system https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004387
+
+In females meiosis there is a unique opportunity for cheating. In male
+meiosis all four products of meiosis become gametes. 
+However, only 1 of the four products of female meiosis becomes the egg, the other 3 products
+are fated to become the polar bodies. Thus alleles can cheat in female meiosis by preferentially getting
+transmitted into the egg rather than the polar body. If an allele on
+red chromosome can manipulate any asymmetry of meioses so that i can be
+present in the egg $>50\%$ of the time it will be a transmission
+advantage in female heterozygotes. 
+
+ \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/autosomal_driver.pdf}
+\end{center}
+\caption{ } \label{fig:autosomal_driver}
+\end{marginfigure} 
+
+
+To see how such drivers can spread through the population lets
+consider the case of a population where an allele drives in both male
+and female gametogenesis. (Most selfish alleles will be sex-specific,
+but that makes the math a little more tricky.)
+Imagine a randomly-mating population of hermaphrodites. In this
+population, a derived allele (D) segregates that distorts transmission
+in its favour over the ancestral allele (d) in the production of all
+the gametes of heterozygotes. The drive leads to a fraction $\alpha$ of the gametes
+of heterozygotes (D/d) to carry the D allele ($alpha \geq 0.5$). The D allele
+causes viability problems such that the
+relative fitnesses are $w_{dd}=1$, $1 > w_{Dd} \geq w_{DD}$. If the D allele
+is currently at frequency p in the population at birth, its frequency
+at birth in the next generation will be
+\begin{equation}
+p^{\prime}=\frac{w_{DD}p^2 + w_{Dd} \alpha 2pq  }{\wbar} \label{eq:auto_driver}
+ \end{equation}
+when $\alpha=\nicefrac{1}{2}$, i.e. fair Mendelian transmission this is exactly the same as our directional selection, which results in our $D$
+allele being selected out of the population (blue line, Figure \ref{fig:autosomal_driver}). However, if
+$\alpha>\nicefrac{1}{2}$, i.e. our deleterious allele cheats, it can potentially
+increase in the population when it is rare (red and black lines,
+Figure \ref{fig:autosomal_driver})). However, the allele can become
+trapped in the population at a polymorphic equilibrium if its cost is
+sufficient in homozygotes. This is akin to the case of heterozygote
+advantage, but now our allele offers no advantage to heterozygote but
+has a self advantage in heterozygotes.
+
+\begin{question} (Tricker question)
+  Thinking of our autosomal driver from equation \ref{eq:auto_driver}.
+  {\bf B)}	Imagine the cost of the driver were additive, i.e.  $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the
+driver invade the population? Can a polymorphic equilibrium be maintained?\\
+{\bf A)}	Imagine the allele is completely recessive, i.e. $w_{dd}=w_{Dd}=1$. What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
+\end{question}
+
+Many of the known autosomal drive systems are polymorphic in
+populations, unable to reach fixation in the population due to their
+costs in homozygotes. It seems like that this represents an
+ascertainment bias, and that many over selfish systems, which had
+lower selective costs, have swept to
+fixation. 
+%mother's curse in people
 % https://www.theatlantic.com/science/archive/2017/09/how-a-fille-du-roy-brought-the-mothers-curse-to-canada/540153/
 
 % sperm and efgg production https://www.biodiversitylibrary.org/ia/cu31924001006851#page/60/mode/1up
 % https://archive.org/stream/embryologyofinse00joha/#page/4/mode/1up
-% https://archive.org/stream/biologystoryofli00hunt/#page/429/mode/1up
+% BEST ONE https://archive.org/stream/biologystoryofli00hunt/#page/429/mode/1up
 
 \subsection{Appendix: ESS for the sex ratio} \label{ESS_sex_Ratio}
 Let $R$ be the sources and $C_{\mars}$ and $C_{\venus}$ be the cost of
