@@ -7,7 +7,7 @@ If you use these notes and find them helpful please consider taking a moment to 
 This is the  latex source, images, and R code for the Population Genetics & Quantitative Genetics notes by Graham Coop. 
 
 Theses notes and the latex code are released under the Creative Commons Attribution 3.0 Unported License. So if you do reuse or repurpose them you don’t need my permission, you just need to acknowledge where you got them from. The R code associated with these notes are released under the MIT license. 
-There are still many typos in these notes, but I hope to fix them over time, and feel free to contact me or push to the git. 
+There are still many typos in these notes, but I hope to fix them over time, and feel free to contact me or make a pull request to the git. 
 
 This book was developed from my set of notes for the [Population Biology graduate group](http://www-eve.ucdavis.edu/eve/pbg/) core class (PBGG) and Undergraduate Population and Quantitative Genetics class (EVE102) at UC Davis. Thanks to the many
   students who've read these notes and suggested improvements. Thanks to Simon Aeschbacher, Vince Buffalo, and Erin Calfee who read
