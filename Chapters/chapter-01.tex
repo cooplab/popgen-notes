@@ -19,27 +19,26 @@ population. If there are multiple alleles in the population at a locus, we say
 that this locus is \emph{polymorphic} (this is sometimes referred to
 as a segregating site).
 
-Table \ref{Table:ADH} show a small stretch orthologous sequence for
+Table \ref{Table:ADH} shows a small stretch of orthologous sequence for
 the ADH locus from samples from {\it Drosophila melanogaster},  {\it D. simulans},
 and {\it D. yakuba}.  {\it D. melanogaster} and {\it D. simulans} are
 sister species and  {\it D. yakuba} is a close outgroup to the two.  Each column represents a single haplotype from an
 individual (the individuals are diploid but were inbred so they're
 homozygous for their haplotype). Only sites that differ among
 individuals of the three species are shown. Site $834$ is an example
-of a polymophism; some  {\it D. simulans} individuals carry a $C$
-allele while others have a $T$. {\emph Fixed differences}  are sites that differ between the species but are monomorphic within
+of a polymorphism; some  {\it D. simulans} individuals carry a $C$
+allele while others have a $T$. \emph{Fixed differences}  are sites that differ between the species but are monomorphic within
   the species. Site $781$ is an example of a fixed difference between
-  {\it D. melanogaster} and the other two species. 
-
+  {\it D. melanogaster} and the other two species.
 
 We can also annotate the alleles and loci in various ways. For example, position
 $781$ is a non-synonymous fixed difference. We call the less common
-allele at a polymorphism the  {\emph minor allele} and the common
-allele the {\emph major allele}, e.g. at site $1068$ the $T$ allele is the
+allele at a polymorphism the  \emph{minor allele} and the common
+allele the \emph{major allele}, e.g. at site $1068$ the $T$ allele is the
 minor allele in {\it D. melanogaster}. We call the more evolutionarily
-recent of the two alleles the {\emph derived allele} and the older of
-the two the {\emph ancestral allele}. The $T$ allele at site 1068 is
-the derived allele as the $C$ is found in both the other species,
+recent of the two alleles the \emph{derived allele} and the older of
+the two the \emph{ancestral allele}. We infer that the $T$ allele at site 1068 is
+the derived allele because the $C$ is found in both other species,
 suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
@@ -49,14 +48,14 @@ suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 \setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
-  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.  
+  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.
 The first column (pos.) gives the position in the gene; exon 2 begins at
 position $778$ and we've truncated the dataset at site $1175$.
 The second column gives the consensus nucleotide (con.), i.e. the most
 common base at that position; individuals with nucleotides that match
 the consensus are marked with a dash.  The first columns of sequence
 (a-l) are from {\it D. melanogaster};
-    the next columns (a-f) give sequences from {\it D. simulans}, and the final 
+    the next columns (a-f) give sequences from \textit{D. simulans}, and the final
  set of columns (a-l ) from {\it D. yakuba}. The last column shows
  whether the difference is a non-synonymous (N) or synonymous (S) change. }  % I've dropped the
                                 % heterozygote sites from D. yakuba.
@@ -64,9 +63,9 @@ the consensus are marked with a dash.  The first columns of sequence
 \end{table*}
 
 \begin{question}
-{\bf A)} How many segregating sites does the sample from {\it
-  D. simulans} have in the ADH gene?\\ 
-{\bf B)} How many fixed differences are there between {\emph D. melanogaster} and {\emph D. yakuba}?
+{\bf A)} How many segregating sites does the sample from \textit{
+  D. simulans} have in the ADH gene?\\
+{\bf B)} How many fixed differences are there between \textit{D. melanogaster} and \textit{D. yakuba}?
 %What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
 \end{question}
 
@@ -85,7 +84,7 @@ $f_{12} = N_{12}/N$, respectively. The frequency of allele $A_1$ in the
 population is then given by
 
 \begin{equation}
-  p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}. 
+  p = \frac{2 N_{11} + N_{12}}{2N} = f_{11} + \frac{1}{2} f_{12}.
 \end{equation}
 Note that this follows directly from how we count alleles given individuals'
 genotypes, and holds independently of Hardy--Weinberg proportions and
@@ -96,11 +95,11 @@ then just $q=1-p$.
 \paragraph{Nucleotide diversity ($\pi$)}
 One common measure of genetic diversity is the average number of single
 nucleotide differences between haplotypes chosen at random from a
-sample. This is called {\emph nucleotide diversity} and is often denoted by
-$\pi$. 
+sample. This is called \emph{nucleotide diversity} and is often denoted by
+$\pi$.
 For example, we can calculate $\pi$ for our ADH locus from Table \ref{Table:ADH} above: we have
-6 sequences from {\it D. simulans}  (a-f), there's a total of 15 ways of pairing
-these sequences, and 
+6 sequences from \textit{D. simulans}  (a-f), there's a total of 15 ways of pairing
+these sequences, and
 \begin{equation}
 \pi=\frac{1}{15} \big( (2 + 1 + 1 + 1 + 0 ) + (3 + 3 + 3 + 2 ) +(0 + 0 + 1) + (0 + 1) + (1)  \big)=1.2\overline{6}
 \end{equation}
@@ -110,7 +109,7 @@ and so on. \\
 
 Our $\pi$ measure will depend on the length of sequence it is calculated
 for. Therefore, $\pi$ is usually normalized by the length of sequence,
-to be a per site (or per base) measure. For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in {\it D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous). For synonymous site $\pi$, we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.{\sidenote{Technically we would need to divide by the total number of possible point mutations that would result in a synonymous change; this is because some mutational changes at a particular nucleotide will result in a non-synonymous or synonymous change depending on the base-pair change.} 
+to be a per site (or per base) measure. For example, our ADH sequence covers $397$bp of DNA and so $\pi = 1.2\overline{6}/397=0.0032$ per site in \textit{D. simulans} for this region. Note that we could also calculate $\pi$ per synonymous site (or non-synonymous). For synonymous site $\pi$, we would count up number of synonymous differences between our pairs of sequences, and then divide by the total number of sites where a synonymous change could have occurred.{\sidenote{Technically we would need to divide by the total number of possible point mutations that would result in a synonymous change; this is because some mutational changes at a particular nucleotide will result in a non-synonymous or synonymous change depending on the base-pair change.}
 
 
 \paragraph{Number of segregating sites.} Another measure of genetic variability is the total number of sites
@@ -122,33 +121,32 @@ number of segregating sites for the number of individuals sequenced (see eqn \eq
 \paragraph{The frequency spectrum.}
 We also often want to compile information about the frequency of
 alleles across sites.  We call alleles that are found once in a sample
-{\emph singletons}, alleles that are found twice in a sample {\emph
+\emph{singletons}, alleles that are found twice in a sample {\emph
   doubletons}, and so on. We count up the number of loci where an
 allele is found $i$ times out of $n$, e.g. how many singletons are
-there in the sample, and this is called the {\emph frequency
-  spectrum}. We'll want to do this in some consistent manner, so we
-often calculate the minor allele frequency spectrum, or the frequency
-spectrum of derived alleles.
+there in the sample, and this is called the \emph{frequency
+  spectrum}. We'll want to do this in some consistent manner, such as calculating the frequency spectrum of the minor allele or the derived allele.
 
 \begin{question}
-How many minor-allele singletons are there in {\it D. simulans} in the ADH region?
+How many minor-allele singletons are there in \textit{D. simulans} in the ADH region?
 \erin{students were confused whether you are defining 'minor allele' with reference to the species or to the whole group. There are no major allele singletons with reference to the individual species, but I think it's confusing because the only example of a minor allele given in the text by its definition is the 'minor allele in D. melanogaster' .. maybe it would be best to clarify in the question or just give an example of the minor allele in the whole sample instead.}
- \end{question} 
+ \end{question}
 \paragraph{Levels of genetic variability across species.}
 Two observations have puzzled population geneticists since the
 inception of molecular population genetics. The first is the relatively high
-level of genetic variation observed in most obligately sexual species.  
+level of genetic variation observed in most obligately sexual species.
 This first observation, in part, drove the development of the Neutral
 theory of molecular evolution, the idea that much of this molecular
 polymorphism may simply reflect a balance between genetic drift and
-mutation. 
+mutation.
 The second observation is the relatively narrow range of
 polymorphism across species with vastly different census sizes. This
-observation represented a puzzle as Neutral theory predicts that
-levels of genetic diversity should scale population size. Much effort
+observation represented a puzzle as the Neutral theory predicts that
+levels of genetic diversity should scale with population size. Much effort
 in theoretical and empirical population genetics has been devoted to
 trying to reconcile models with these various observations. We'll
 return to discuss these ideas throughout our course.
+%Neutral
 
 \begin{marginfigure}[-1cm]
 \begin{center}
@@ -173,16 +171,17 @@ autosomal nucleotide diversity ($\pi$) for 167 species across 14 phyla from
 non-coding and synonymous sites (Figure \ref{fig:Leffer}). The species with the lowest levels of
 $\pi$ in their survey was Lynx, with $\pi = 0.01\%$, i.e. only
 $1/10000$ bases differed between two sequences. In contrast, some of the highest levels of
-diversity were found in {\it Ciona savignyi}, Sea Squirts, where a remarkable
+diversity were found in {\textit{Ciona savignyi}, Sea Squirts, where a remarkable
 $1/12$ bases differ between pairs of sequences. This $800$-fold range of
 diversity seems impressive, but census population sizes have a much
-larger range.   
+larger range.
+%JRI: I feel like an example of census size would be useful. the genus Cyclothone, which exists in the trillions, comes to mind as a surprising example that you could compare to like a coelocanth: https://commons.wikimedia.org/wiki/File:Wissenschaftliche_Ergebnisse_der_Deutschen_Tiefsee-Expedition_auf_dem_Dampfer_%22Valdivia%22_1898-1899_(Tafel_6)_(7413855904).jpg
 
 \begin{marginfigure}[2cm]
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{illustration_images/alleles_genotypes/Lynx/20731949565_8a065700af_z.jpg}
 \end{center}
-\caption{Eurasian Lynx ({\it Lynx lynx}). \BHLNKC{An introduction to the study
+\caption{Eurasian Lynx (\textit{Lynx lynx}). \BHLNKC{An introduction to the study
   of mammals living and extinct. Flower, W.H. and Lydekker, R. 1891.}{https://www.flickr.com/photos/internetarchivebookimages/20731949565/in/photolist-x5Jzv2-x6QVyp-xir9rH-wYHrQD-wPn1sP-w9PsqY-xDcqri-sMcQoB-trrkVd-x6Nx1H-wPea7N-sM28N9-tJ3zsp-xneVdx-wGJRtQ-xnfHZ8-wPfga7-xCUPrN-x7kXDV-xmAb9E-xm3x4k-xBoSKb-wGTgyB-xBoSbf-wGGvzA-xmzYTJ-oeKJcH-xA1Ffr-xA1Eji-xqWTQZ-xF4Lru-oxJfrH-x7ojSn-xra8zP-wGGibY-xgb21y-xY1jH9-xY1iyf-wGHxTS-wGQEoR-xmtPQh-x8uFKK-xdTkoU-wPggQf-wPfvHN-wPfc27-w9YnGF-wPeauS-wPiVxK-w6aiSi}{Cornell University Library}} \label{fig:Lynx}
 \end{marginfigure}
 
@@ -214,11 +213,11 @@ Note that we only need to assume random mating with respect to our focal allele 
 
 \begin{question}
 On the coastal islands of British Columbia there is a subspecies of
-black bear ({\it Ursus americanus kermodei}, Kermode's bear). Many members of this
+black bear (\textit{Ursus americanus kermodei}, Kermode's bear). Many members of this
 black bear subspecies are white; they're sometimes called spirit bears. These
 bears aren't hybrids with polar bears, nor are they albinos. They are
 homozygotes for a recessive change at the MC1R gene. Individuals who
-are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.   
+are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
 
 \begin{marginfigure}
 \begin{center}
@@ -230,7 +229,7 @@ are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
 \end{marginfigure}
 
 Below are the genotype counts for the MC1R polymorphism in a
-sample of bears from British Columbia's island populations from \citeauthor{RITLAND:01}. 
+sample of bears from British Columbia's island populations from \citet{RITLAND:01}.
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -241,22 +240,23 @@ $AA$ & $AG$ & $GG$ \\
 \end{center}
 What are the expected frequencies of the three genotypes under HWE?
 \end{question}
+%JRI: I think you mean under HW not HWE.  i think somewhere you should introduce HW in a parenthetical"Hard--Weinberg  (HW) proportions" etc. just to be abdunantly clear what the acronym means. also the ritland citation isn't showing year for some reason.
 
 
 See Figure \ref{fig:HWE_CEU_YRI} for a nice
-empirical demonstration of Hardy-Weinberg proportions. The mean
+empirical demonstration of Hardy--Weinberg proportions. The mean
 frequency of each genotype
-closely match their HW expectations, and much of the scatter of the
+closely matches its HW expectations, and much of the scatter of the
 dots around the expected line is due to our small sample size ($\sim
 60$ individuals). While HW often
 seems like a silly model, it often holds remarkably well within
 populations. This is because individuals don't mate at random, but they
 do mate at random with respect to their genotype at most of the loci
-in the genome. 
+in the genome.
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png} 
+\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
 \end{center}
 \caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
   from the HapMap European (CEU)  and African (YRI) populations. Within
@@ -265,30 +265,29 @@ in the genome.
   coloured points. The solid lines show the mean genotype frequency. The dashed lines show the
   predicted genotype frequency from Hardy--Weinberg
   equilibrium. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R} Blog
-  post on figure \href{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/}{here}. } \label{fig:HWE_CEU_YRI}  %See \href{blog
-                                %post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-hardy-weinberg-eq/}
+  post on figure \href{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}{here}. } \label{fig:HWE_CEU_YRI}  %See \href{blog
+                                %post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}
                                 %here on this plot.  https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R
 \end{figure}
 
-
-\begin{question} 
+\begin{question}
 You are investigating a locus with three alleles, A, B, and C, with
 allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
-population is expected to be homozygotes under Hardy-Weinberg? 
+population is expected to be homozygotes under Hardy--Weinberg?
 \end{question}
 
 Microsatellites are regions of the genome where individuals vary for
 the number of copies of some short DNA repeat that they carry. These
 regions are often highly variable across individuals, making them
 a suitable way to identify individuals from a DNA sample. This
-so-called DNA-fingerprinting has a range of applications from
-establishing paternity, identifying human remains, to matching
+so-called DNA fingerprinting has a range of applications from
+establishing paternity and identifying human remains to matching
 individuals to DNA samples from a crime scene. The FBI make use of the
 CODIS database\sidenote{CODIS: Combined DNA Index System}. The CODIS
 database contains the genotypes of over 13 million people, most of
 whom have been convicted of a crime. Most of
 the profiles record genotypes at 13 microsatellite loci that are
-tetranucleotide repeats (since 2017, 20 sites have been genotyped). 
+tetranucleotide repeats (since 2017, 20 sites have been genotyped).
 
 The allele counts for two loci (D16S539
 and TH01) are shown in table \ref{table:CODIS_1} and
@@ -296,23 +295,23 @@ and TH01) are shown in table \ref{table:CODIS_1} and
 
 \begin{table}
 {\small
-\setlength{\tabcolsep}{.45\tabcolsep}  
+\setlength{\tabcolsep}{.45\tabcolsep}
 \csvautobooktabular{Rcode/CODIS/D16S539_counts.csv}  \label{table:CODIS_1}
 \caption{ Data for 155 Europeans at the D16S539 microsatellite from
-  CODIS from \citeauthor{algee:16}. The top row gives the number of
+  CODIS from \citet{algee:16}. The top row gives the number of
   tetranucleotide repeats for each allele, the bottom row gives the
   sample counts.}
- } 
+ }
 
 \end{table}
 \vspace*{1cm}
 \begin{table}
   {\small
-\setlength{\tabcolsep}{.45\tabcolsep}   
+\setlength{\tabcolsep}{.45\tabcolsep}
 \csvautobooktabular{Rcode/CODIS/TH01_counts.csv}  \label{table:CODIS_2}
 }
 
-\caption{Same as \ref{table:CODIS_1} but for the TH01 microsatellite. } 
+\caption{Same as \ref{table:CODIS_1} but for the TH01 microsatellite. }
 \end{table}
 
 \begin{question} \label{Q:CODIS}
@@ -331,8 +330,8 @@ community. Given that allele frequencies vary among populations, why would peopl
 %that a suspect's DNA would match a crime-scene sample if he were unrelated to anyone present at the crime scene
 \end{question}
 
-%\begin{question} 
-%Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele): 
+%\begin{question}
+%Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele):
 %\begin{center}
 %\begin{tabular}{|ccc|}
 %AA &	AB &	BB\\
@@ -381,7 +380,7 @@ to quantify the degree of kinship among individuals. \\
   can track them and recombinations between them across the
   generations. Notice that the identity by descent between the cousins persists for a long
 stretch of chromosome due to the limited number of generations for
-recombination.} \label{fig:IBD_cousins_chr_cartoon}  
+recombination.} \label{fig:IBD_cousins_chr_cartoon}
 \end{figure}
 
 We will define two alleles to be identical by descent (IBD) if they are
@@ -398,12 +397,12 @@ One summary of how related two individuals are is the probability that our pair
 of individuals share 0, 1, or 2 alleles identical by descent (see Figure
 \ref{fig:IBD_0_1_2}). We denote these probabilities by $r_0$, $r_1$, and $r_2$
 respectively. See Table \ref{table:IBDprobs} for some examples. We can also
-interpret these probabilities as genome-wide averages. For example, on average, at a quarter of all their autosomal loci 
+interpret these probabilities as genome-wide averages. For example, on average, at a quarter of all their autosomal loci
 full-sibs share zero alleles identical by descent.\\
 
 \begin{marginfigure}[-1cm]
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf} 
+\includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/IBD_0_1_2.pdf}
 \end{center}
 \caption{A pair of diploid individuals (X and Y) sharing 0, 1, or 2 alleles IBD
   where lines show the sharing of alleles by descent (e.g. from a
@@ -418,7 +417,7 @@ of kinship} of individuals $i$ and $j$, and denote it by $F_{ij}$. It is
 calculated as
 
 \begin{equation}
-F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2. 
+F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2.
 \label{eqn:coeffkinship}
 \end{equation}
 %
@@ -461,7 +460,7 @@ two individuals are both homozygous for allele 1? Well that's
 \begin{align}
   P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
   & + P(A_1 A_1 | \text{1 allele IBD}) P(\text{1 allele IBD})  \nonumber\\
-  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD}) 
+  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD})
 \end{align}
 Or, in our $r_0$, $r_1$, $r_2$ notation:
 \begin{align}
@@ -480,8 +479,8 @@ to be $A_1$ which happens with probability $p^2$, so $P(A_1 A_1 |
 \text{1 alleles IBD})=p \times p^2$. Finally, our pair of relatives can
 share two alleles IBD, in which case $P(A_1 A_1 | \text{2 alleles IBD})
 = p^2$, because if one of our individuals is homozygous for the $A_1$ allele,
-both individuals will be. Putting this all together our equation 
-\eqref{eqn:initial_relly_IBD_calc} becomes 
+both individuals will be. Putting this all together our equation
+\eqref{eqn:initial_relly_IBD_calc} becomes
 \begin{equation}
 P(A_1 A_2) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
 \end{equation}
@@ -493,7 +492,7 @@ We can write out terms like eq \eqref{eqn:IBD_relly_calc} for all of
 the possible configurations of genotype
 sharing/non-sharing between a pair of individuals. Based on this we can write down the expected number of
 polymorphic sites where our individuals are observed to share 0, 1, or 2
-alleles. 
+alleles.
 
 \begin{question}
 The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
@@ -506,7 +505,7 @@ suspect:\\
 
 {\bf B)} Assuming that they are full sibs.\\
 
-{\bf C)} Briefly explain your findings.  
+{\bf C)} Briefly explain your findings.
   \end{question}
 
  \begin{marginfigure}
@@ -516,10 +515,10 @@ suspect:\\
 \caption{Florida Scrub-Jays ({\it Aphelocoma coerulescens}). \BHLCC{The birds of America : from drawings made in the United
     States and their territories. 1880. Audubon
     J.J.}{https://www.biodiversitylibrary.org/page/40447048\#page/169/mode/1up}{Smithsonian
-    Libraries}{2.0} } \label{fig:FSJ}  
+    Libraries}{2.0} } \label{fig:FSJ}
 \end{marginfigure}
 
-  
+
 There's a variety of ways to estimate the relationships among
 individuals using genetic data.  An example of using allele sharing to identify relatives is offered by
 the work of Nancy Chen \citep[in collaboration with Stepfanie
@@ -547,7 +546,7 @@ individuals, plotted by their estimated IBD ($r_1$ and $r_2$) from their genetic
 points are coloured by their known pedigree relationships. Note that
 most pairs have low kinship, and no recent genealogical relationship,
 and so appear as black points in the lower left corner. Thanks to
-Nancy Chen for supplying the data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/FSJ_IBD/FSJ_IBD_plotting.R} } \label{fig:FSJ_IBD}  
+Nancy Chen for supplying the data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/FSJ_IBD/FSJ_IBD_plotting.R} } \label{fig:FSJ_IBD}
 \end{figure}
 
 \paragraph{Sharing of genomic blocks among relatives.}
@@ -555,23 +554,23 @@ Nancy Chen for supplying the data. \gitcode{https://github.com/cooplab/popgen-no
 \begin{center}
 \includegraphics[width= \textwidth]{figures/sharing_relatives/First_cousin_overlap.pdf}
 \end{center}
-\caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are 
+\caption[]{A simulation of sharing between first cousins. The regions of your grandmother's 22 autosomes that you inherited are
 coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations \href{https://gcbias.org/2013/12/02/how-many-genomic-blocks-do-you-share-with-a-cousin/}{here}.
-} \label{fig:first_cousin_IBD}  
+} \label{fig:first_cousin_IBD}
 \end{figure}
-We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother. 
+We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother.
 
 
 
 You and your first cousin will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous for different alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks, we can hope to identify unknown relatives in genotyping datasets. In fact, companies like 23\&me and Ancestry.com use signals of IBD to help identify family ties.
 
-As another example, consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and each of your third cousins each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin's genomes ($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins share blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.  
+As another example, consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and each of your third cousins each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin's genomes ($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins share blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/sharing_relatives/Third_cousin_overlap_1.png}
 \end{center}
-\caption[]{A simulation of sharing between third cousins, the details are the same as in Figure \ref{fig:first_cousin_IBD}.} \label{fig:third_cousin_IBD}  
+\caption[]{A simulation of sharing between third cousins, the details are the same as in Figure \ref{fig:first_cousin_IBD}.} \label{fig:third_cousin_IBD}
 \end{figure}
 
 
@@ -589,7 +588,7 @@ from some reference population.  \\
 \end{center}
 \caption{Alleles being transmitted through an inbred pedigree. The two sisters (mum and aunt) share two alleles identical by descent (IBD). The cousins share one
   allele IBD. The offspring of first cousins is homozygous by
-  descent at this locus.} \label{fig:IBD_cousins_cartoon}  
+  descent at this locus.} \label{fig:IBD_cousins_cartoon}
 \end{marginfigure}
 \graham{Change this to have squares and circles}
 When two related individuals produce an offspring, that individual can
@@ -660,23 +659,23 @@ genotype frequencies in the population follow from HW. We select two
 individuals at random to mate from this population. We then mate the children
 from this cross. What is the probability that the child from this full
 sib-mating is
-homozygous? 
+homozygous?
 \end{question}
 
 \paragraph{Multiple inbreeding loops in a pedigree.}
 Up to this point we have assumed that there is at most one inbreeding loop in the recent family history of our
   individuals, i.e. the parents of our inbred individual have at most one recent genealogical connection. However, an individual who has multiple inbreeding loops in their pedigree can be homozygous by
-  descent thanks to receiving IBD alleles via multiple different different loops. To calculate inbreeding in pedigrees of arbitrary complexity, we can extend 
+  descent thanks to receiving IBD alleles via multiple different different loops. To calculate inbreeding in pedigrees of arbitrary complexity, we can extend
  beyond our original relatedness coefficients $r_0$, $r_1$, and $r_2$ to account for
  higher order sharing of alleles IBD among relatives. For example,
  we can ask, what is the probability that \textit{both} of the alleles in the first individual
  are shared IBD with one allele in the second individual? There are
  nine possible relatedness coefficients in total to completely describe kinship between two diploid individuals, and we won't go in to them here
- as it's a lot to keep track of.  
+ as it's a lot to keep track of.
 However, we will show how we can calculate the inbreeding coefficient of an
 individual with multiple inbreeding loops more directly.\\
 
-%ut at loci where the ancestor is inbred you get two more options (C inherits maternal/B paternal or opp.) so the factor of 2 applies to fA as well and cancels out for both.} 
+%ut at loci where the ancestor is inbred you get two more options (C inherits maternal/B paternal or opp.) so the factor of 2 applies to fA as well and cancels out for both.}
 
 Let's say the parents of our inbred individual (B and C) have $K$ shared ancestors,
 i.e. individuals who appear in both B and C's recent family trees. We denote these shared ancestors by $A_1, \dots,A_K$, and we denote by $n$ the total number of individuals in the chain from B to C via ancestor $A_i$, including B, C, and $A_i$. For example, if B is C's aunt, then B and C share two ancestors, which are B's parents and, equivalently, C's grandparents. In this case, there are n=4 individuals from B to C through each of these two shared ancestor. In the general case, the kinship coefficient of B and C,
@@ -690,7 +689,7 @@ $\nicefrac{1}{2^{n_i}}$, a pair of alleles picked at random from B and C is desc
 $A_i$, in which case the alleles are IBD. \sidenote{For example, in the case of our aunt-nephew case, assuming that the aunt's two parents are their only recent shared ancestors, then $F = \nicefrac{1}{2^4}+\nicefrac{1}{2^4} = \nicefrac{1}{8}$, in agreement with the answer we would obtain from  eqn \eqref{eqn:coeffkinship}.} However, even if B inherits the maternal allele and C inherits the paternal allele of shared ancestor $A_i$, if $A_i$ was
 themselves inbred,  with probability $f_{A_i}$ those two
 alleles are themselves IBD. Thus a shared \textit{inbred} ancestor further increases
-the kinship of B and C. 
+the kinship of B and C.
 
 \begin{figure}
   \begin{center}
@@ -701,7 +700,7 @@ the kinship of B and C.
   Spain. Pedigree from
   \href{https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png}{wikimedia}
 drawn by \href{https://en.wikipedia.org/wiki/User:Lec_CRP1}{Lec CRP1},
-public domain.} \label{fig:Carlos_second_pedigree}  
+public domain.} \label{fig:Carlos_second_pedigree}
 \end{figure}
 \begin{marginfigure}
 \begin{center}
@@ -710,7 +709,7 @@ public domain.} \label{fig:Carlos_second_pedigree}
 %https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png
 \end{center}
 \caption{Charles the second of Spain (by Juan Carre\~{n}o de Miranda,
-  1685). \href{https://it.wikipedia.org/wiki/Carlo_II_di_Spagna\#/media/File:Juan_de_Miranda_Carreno_002.jpg}{Public Domain}.} \label{fig:Carlos_second}  
+  1685). \href{https://it.wikipedia.org/wiki/Carlo_II_di_Spagna\#/media/File:Juan_de_Miranda_Carreno_002.jpg}{Public Domain}.} \label{fig:Carlos_second}
 \end{marginfigure}
 Multiple inbreeding loops increase the probability that a child
 is homozygous by descent at a locus, which can be calculated simply by plugging in $F$, the child's
@@ -727,7 +726,7 @@ Spanish Habsburgs had long kept wealth and power within their family
 by arranging marriages between close kin. The pedigree of Charles II is shown in Figure \ref{fig:Carlos_second_pedigree}, and
 multiple inbreeding loops are apparent. For example, Phillip III,
 Charles II's grandfather and great-grandfather, was himself a child of
-an uncle-niece marriage.     
+an uncle-niece marriage.
 
 \citet{alvarez:09} calculated that Charles II had an inbreeding
 coefficient of $0.254$, equivalent to a full-sib mating,
@@ -745,7 +744,7 @@ infertility. \sidenote{Pedro Gargantilla, who performed Charles' autopsy, stated
   little unlikely. See
   \href{https://www.thevintagenews.com/2017/03/23/when-charles-ii-of-spain-died-the-autopsy-stated-that-his-body-did-not-contain-a-single-drop-of-blood-and-his-head-was-full-of-water/}{here}.
 } Thus plausibly the end of one of the great
-European dynasties came about through inbreeding. 
+European dynasties came about through inbreeding.
 
 \subsection{Calculating inbreeding coefficients from genetic data}
 
@@ -768,8 +767,8 @@ heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 \end{equation}
 Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
 
-\begin{question} 
-  Suppose the following genotype frequencies were observed for an esterase locus in a population of \emph{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele): 
+\begin{question}
+  Suppose the following genotype frequencies were observed for an esterase locus in a population of \textit{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele):
 \begin{center}
 \begin{tabular}{ccc}
 \hline
@@ -782,7 +781,7 @@ What is the estimate of the inbreeding coefficient at the esterase locus?
 \end{question}
 
 If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
-over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data. 
+over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.
 
 
 Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. \begin{marginfigure}
@@ -790,11 +789,11 @@ Genetic markers are commonly used to estimate inbreeding for wild and/or captive
   \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/grey_wolf/5988399184_0c36a8e51c_z.jpg}
 \end{center}
 \caption{Grey wolf ({\it Canis lupus}). \BHLNC{Dogs, jackals, wolves,
-    and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans}{https://www.biodiversitylibrary.org/page/17002968\#page/58/mode/1up}{University of Toronto - Gerstein Science Information Centre}} \label{fig:Grey_wolf}  
+    and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans}{https://www.biodiversitylibrary.org/page/17002968\#page/58/mode/1up}{University of Toronto - Gerstein Science Information Centre}} \label{fig:Grey_wolf}
 \end{marginfigure}
 They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five lobos in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average lobos individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the lobo is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question} 
+%{\bf Q}\arabic{Question} \refstepcounter{Question}
 
 %==Phenotypic resemblance between relatives ==
 %<source-file filename="Quantative_traits.tex" display="Quantative_traits.wrapped.latexml.xhtml">
@@ -821,7 +820,7 @@ red region.
   \begin{center}
     \includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
 \end{center}
-\caption{.} \label{fig:kid_first_cousins}  
+\caption{.} \label{fig:kid_first_cousins}
 \end{figure}
 The inbreeding coefficient of the child sets the proportion of their
 genome that will be in these autozygous segments. For example, a child
@@ -837,21 +836,21 @@ have a high inbreeding coefficient due to
 the combined effect of many small blocks of autozygosity. For example, Carlos the second had
 an inbreeding coefficient that is equivalent to that of the child of
 full-sibs, with a quarter of his genome expected to homozygous by
-descent, but this would be made up of many shorter blocks. 
-%With multiple rounds of inbreeding individuals can 
+descent, but this would be made up of many shorter blocks.
+%With multiple rounds of inbreeding individuals can
 
 We can hope to detect these blocks by looking for unusually long
 genomic runs of homozygosity (ROH) sites in an individual's genome. One way to
 estimate an individual's inbreeding coefficient is then to total up
 the proportion of an individual's genome that falls in such ROH
-regions. This estimate is called $F_{ROH}$. 
+regions. This estimate is called $F_{ROH}$.
 
   \begin{marginfigure}[-1cm]
   \begin{center}
     \includegraphics[width=
     \textwidth]{illustration_images/alleles_genotypes/english_bulldog/14752595581_4330377c97_z.jpg}
 \end{center}
-\caption{English bulldog. The dogs of Boytown. 1918.  Dyer, W. A.} \label{fig:dog_FOH}  
+\caption{English bulldog. The dogs of Boytown. 1918.  Dyer, W. A.} \label{fig:dog_FOH}
 \end{marginfigure}
 
 \graham{update to use figs from G3 Sam's article, and collapse to
@@ -864,12 +863,12 @@ ranging from 500kb up to many megabases.
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dogs_FROH.pdf}
 \end{center}
 \caption{The distribution  of $F_{ROH}$ of individuals from various
-  dog breeds from \citet{Sams:18}, \PLOSccBY.} \label{fig:dog_FOH}  
+  dog breeds from \citet{Sams:18}, \PLOSccBY.} \label{fig:dog_FOH}
 \end{figure}
 Figure
 \ref{fig:dog_FOH} shows the distribution of $F_{ROH}$ of individuals in each dog
 breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
-broken down by the length of ROH segments. 
+broken down by the length of ROH segments.
 
 Dog breeds have been subject
 to intense breeding that has resulted in high levels of inbreeding. Of the population samples examined, Doberman Pinschers have the highest levels of their genome in runs of
@@ -880,7 +879,7 @@ homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dog_FROH_dist.pdf}
 \end{center}
 \caption{Cumulative density of length of ROH length, measured in megabases (Mb) from \citet{Sams:18} for various
-  dog breeds (\PLOSccBY). Note that longer lengths of ROH are on the left of the plot.} \label{fig:dog_FOH_dist}  
+  dog breeds (\PLOSccBY). Note that longer lengths of ROH are on the left of the plot.} \label{fig:dog_FOH_dist}
 \end{figure}
 
 
@@ -892,7 +891,7 @@ mating among individuals. Individuals tend to mate with individuals
 from the same, or closely related sets of populations. This form of
 non-random mating is called population structure and can have profound
 effects on the distribution of genetic variation within and among
-natural populations.  
+natural populations.
 
 \subsection{Inbreeding as a summary of population structure.}
 It turns out that statements about inbreeding represent one natural
@@ -900,7 +899,7 @@ way way to summarize population structure. We defined inbreeding as having paren
 comparison to allele frequencies in the United Kingdom (UK), where I am from, my
 parents certainly are not two individuals drawn at random from the
 world-wide population. If we estimated my inbreeding coefficient $F$ using allele frequencies
-within the UK, it would 
+within the UK, it would
 be close to zero, but would likely be larger if we used world-wide
 frequencies. This is because there is a somewhat lower level of
 expected heterozygosity within the UK than in the human population across the world as a whole.\\
@@ -924,7 +923,7 @@ mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
 \caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
   alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
 by randomly drawing alleles from the sub-population (S),
-to that found in the total population (T). } \label{fig:FST_pig}  
+to that found in the total population (T). } \label{fig:FST_pig}
 \end{marginfigure}
 \begin{equation}
 \fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
@@ -980,12 +979,12 @@ $H_T$ with their averages across loci (as above).
 As an example of comparing a genome-wide estimate of $F_{ST}$ to that
 at individual loci we can look at some data from blue- and
 golden-winged warblers ({\it Vermivora cyanoptera} and {\it
-  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}). 
+  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}).
   \begin{marginfigure}
 \begin{center}
 \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/blue_golden_winged_warblers/The_warblers_of_North_America_6309257188.jpg}  %[width= \marginwidth]
 \end{center}
-\caption{Blue-, golden-winged, and Lawrence's warblers ({\it Vermivora}). \BHLNC{The warblers of North America. Chapman, F.M. 1907.}{https://www.biodiversitylibrary.org/page/9165714\#page/101/mode/1up}{American Museum of Natural History Library}} \label{fig:blue_golden_warblers}  
+\caption{Blue-, golden-winged, and Lawrence's warblers ({\it Vermivora}). \BHLNC{The warblers of North America. Chapman, F.M. 1907.}{https://www.biodiversitylibrary.org/page/9165714\#page/101/mode/1up}{American Museum of Natural History Library}} \label{fig:blue_golden_warblers}
 \end{marginfigure}
 These two species are spread across eastern
 Northern America, with the golden-winged warbler having a smaller, more
@@ -1003,17 +1002,17 @@ significant issue. \citeauthor{Toews:16} investigated the population
 genomics of these warblers, sequencing ten golden- and ten blue-winged
 warblers. They found very low divergence among these species, with a
 genome-wide $F_{ST}=0.0045$. In Figure \ref{fig:warbler_FST}, per SNP
-$F_{ST}$ is averaged in $2000$bp windows moving along the genome. 
+$F_{ST}$ is averaged in $2000$bp windows moving along the genome.
 \begin{figure*}
 \begin{center}
 \includegraphics[width = 0.8 \textwidth]{Journal_figs/alleles_genotypes/blue_golden_winged_warblers/GW_FST_warblers.png}  %[width= \marginwidth]
 \end{center}
-\caption{FST between blue- and golden-winged warbler population samples at SNPs across the genome. Each dot is a SNP, and SNPs are coloured alternating by scaffold. Thanks to David Toews for the figure. } \label{fig:warbler_FST}  
+\caption{FST between blue- and golden-winged warbler population samples at SNPs across the genome. Each dot is a SNP, and SNPs are coloured alternating by scaffold. Thanks to David Toews for the figure. } \label{fig:warbler_FST}
 \end{figure*}
 The average is very low, but some regions of very high $F_{ST}$ stand
 out. Nearly all of these regions correspond to large allele frequency
 difference at loci in, or close, to genes known to be involved in
-plumage colouration difference in other birds.  
+plumage colouration difference in other birds.
 To illustrate these frequency differences \citeauthor{Toews:16}
 genotyped a SNP in each of these high-$F_{ST}$ regions. Here's their
 genotyping counts from the SNP, segregating for an allele 1 and 2, in the {\it Wnt}
@@ -1024,7 +1023,7 @@ Species & 11 & 12 & 22\\
 \hline
 Blue-winged & 2 & 21 & 31\\
 Golden-winged & 48 & 12 & 1\\
-\hline   
+\hline
 \end{tabular}
 \end{center}
 
@@ -1089,23 +1088,23 @@ central, and eastern. Imagine that we have a chimpanzee, whose
 population of origin is unknown (e.g. it's from an illegal private
 collection). If we have genotyped a set of unlinked markers from a panel
 of individuals representative of these populations, we can calculate
-the probability that our chimp comes from each of these populations. \\   
+the probability that our chimp comes from each of these populations. \\
 
 We'll then briefly explain how to extend this idea
 to cluster a set of individuals into $K$ initially unknown populations. This
 method is a simplified version of what population genetics
-clustering algorithms such as STRUCTURE and ADMIXTURE do. \cite{pritchard:00,alexander:09} 
+clustering algorithms such as STRUCTURE and ADMIXTURE do. \cite{pritchard:00,alexander:09}
 
 \paragraph{A simple assignment method}
 
 We have genotype data from unlinked $S$ biallelic loci for $K$ populations. The
 allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by
 $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
-p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on. 
+p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on.
 
-You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$). 
+You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
 
-The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is 
+The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is
 \begin{equation}
   P(g_l | \textrm{pop k}) =
   \begin{cases}
@@ -1115,7 +1114,7 @@ p_{k,l}^2  & g_l=2
 \end{cases}
 \end{equation}
 
-Assuming that the loci are independent, the probability of the individual's genotype across all S loci, conditional on the individual coming from population $k$, is 
+Assuming that the loci are independent, the probability of the individual's genotype across all S loci, conditional on the individual coming from population $k$, is
 \begin{equation}
 P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}
 \end{equation}
@@ -1123,20 +1122,20 @@ P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \labe
 % TODO: deleted "new" in bayes -- this is confusing I think for students
 We wish to know the probability that this new individual comes from population
 $k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes'
-rule 
+rule
 
 \begin{equation}
  P(\textrm{pop k} | \textrm{ind.})  = \frac{P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})}{P(\textrm{ind.})}
 \end{equation}
-where 
+where
 \begin{equation}
 P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})
 \end{equation}
 is the normalizing constant. We interpret $P(\textrm{pop k})$ as the
 prior probability of the individual coming from population $k$, and unless
-we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.  
+we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.
 
-We interpret 
+We interpret
 \begin{equation}
  P(\textrm{pop k} | \textrm{ind.})
 \end{equation}
@@ -1146,8 +1145,8 @@ More sophisticated versions of this are now used to allow for hybrids,
 e.g, we can have a proportion $q_k$ of our individual's genome come
 from population $k$ and estimate the set of $q_k$'s.
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question}  
-\begin{question} 
+%{\bf Q}\arabic{Question} \refstepcounter{Question}
+\begin{question}
 
 Returning to our chimp example, imagine that we have genotyped a set of
 individuals from the Western and Eastern populations at two SNPs (we'll ignore
@@ -1175,9 +1174,9 @@ from the Western population and with probability $q_C=1-q_W$ they draw an
 allele from the Eastern population. What is the probability of our individual's
 genotype given $q_C$? \\
 
-{\bf Optional} You could plot this probability as a function of $q_W$. How does 
+{\bf Optional} You could plot this probability as a function of $q_W$. How does
 your plot change if our individual is heterozygous at both loci?
-\end{question} 
+\end{question}
 
 \paragraph{Clustering based on assignment methods}
 \graham{Possible to make figure showing structure converging?}
@@ -1186,15 +1185,15 @@ population, these ideas can be pushed to learn about how best to describe our
 genotype data in terms of discrete populations without assigning any of our
 individuals to populations {\it a priori}.  We wish to cluster our individuals
 into $K$ unknown populations. We begin by assigning our individuals at random
-to these $K$ populations. 
+to these $K$ populations.
 \begin{enumerate}
-\item Given these assignments we estimate the allele frequencies at all of our loci in each population. 
+\item Given these assignments we estimate the allele frequencies at all of our loci in each population.
 \item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
 \end{enumerate}
 We iterate steps 1 and 2 for many iterations (technically, this approach is known as \emph{Gibbs Sampling}). If the data is
 sufficiently informative, the assignments and allele frequencies will
 quickly converge on a set of likely population assignments and allele
-frequencies for these populations. 
+frequencies for these populations.
 \begin{figure}
 % TODO: MISSING FIGURE
 \includegraphics[width= \textwidth, height = 0.12 \textheight]{figures/Becquet_et_al_STRUCTURE_journal_pgen_0030066_g001.png}
@@ -1206,7 +1205,7 @@ vertical bar divided into four colours depicting the estimate of the fraction
 of ancestry that each individual draws from each of the four
 estimated populations  (\PLOSccBY). We can see that these four colours/populations correspond to: Red, central; blue, eastern; green,
 western; yellow, bonobo. } \label{fig:chimp_structure}
-%In their caption of this figure they say:  
+%In their caption of this figure they say:
 %{\it ``STRUCTURE Analysis, Blinded to Population Labels, Recapitulates the Reported Population Structure of the Chimpanzees
 %Individuals 76–-78 are reported hybrids. Only two individuals with a
 %$>5\%$ proportion of ancestry in more than one inferred cluster are wild
@@ -1221,29 +1220,29 @@ we are using the joint posterior of our allele frequencies and
 assignments. Programs like STRUCTURE, use this type of algorithm to
 cluster the individuals in an ``unsupervised'' manner (i.e. they work
 out how to assign individuals to an unknown set of populations).  See Figure \ref{fig:chimp_structure} for an example of
-Becquet {\it et al}  using STRUCTURE to determine the population structure of chimpanzees. 
+Becquet {\it et al}  using STRUCTURE to determine the population structure of chimpanzees.
 
-STRUCTURE-like methods have proven incredible popular and useful in examining population structure within species. However, the results of these methods are open to misinterpretation, see \citet{lawson:18} for a recent discussion. Two common mistakes are 1) taking the results of STRUCTURE-like approaches for some particular value of K and taking this to represent the best way to describe population-genetic variation. 2) Thinking that these clusters represent `pure' ancestral populations.  
+STRUCTURE-like methods have proven incredible popular and useful in examining population structure within species. However, the results of these methods are open to misinterpretation, see \citet{lawson:18} for a recent discussion. Two common mistakes are 1) taking the results of STRUCTURE-like approaches for some particular value of K and taking this to represent the best way to describe population-genetic variation. 2) Thinking that these clusters represent `pure' ancestral populations.
 
-There is no right choice of K, the number of clusters to partition into. There are methods of judging the `best' K by some statistical measure given some particular dataset, but that is not the same as saying this is the most meaningful level on which to summarize population structure in data. For example, running STRUCTURE on world-wide human populations for low value of K will result in population clusters that roughly align with continental populations \citep{rosenberg:02}. However, that does not tell us that assigning ancestral at the level of continents is a particularly meaningful way of partitioning individuals. Running the same data for higher value of K, or within continental regions, will result in much finer-scale partitioning of continental groups \citep{rosenberg:02,li:08}. No one of these layers of population structure identified is privileged as being more meaningful than another.  
+There is no right choice of K, the number of clusters to partition into. There are methods of judging the `best' K by some statistical measure given some particular dataset, but that is not the same as saying this is the most meaningful level on which to summarize population structure in data. For example, running STRUCTURE on world-wide human populations for low value of K will result in population clusters that roughly align with continental populations \citep{rosenberg:02}. However, that does not tell us that assigning ancestral at the level of continents is a particularly meaningful way of partitioning individuals. Running the same data for higher value of K, or within continental regions, will result in much finer-scale partitioning of continental groups \citep{rosenberg:02,li:08}. No one of these layers of population structure identified is privileged as being more meaningful than another.
 
-It is tempting to think of these clusters as representing ancestral populations, which themselves are  not the result of admixture. However, that is not the case, for example, running STRUCTURE on world-wide human data identifies a cluster that contains many European individuals, however, on the basis of ancient DNA we know that modern Europeans are a mixture of distinct ancestral groups.  
+It is tempting to think of these clusters as representing ancestral populations, which themselves are  not the result of admixture. However, that is not the case, for example, running STRUCTURE on world-wide human data identifies a cluster that contains many European individuals, however, on the basis of ancient DNA we know that modern Europeans are a mixture of distinct ancestral groups.
 
 \subsection{Principal components analysis}
 Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
   with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
 pioneered by Cavalli-Sforza and colleagues and now with large genotyping datasets, PCA has made come back. \cite{menozzi:78,patterson:06}
 % TODO: citations.
- 
+
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
 $i^{th}$ individual's genotype data at locus $\ell$ takes a value
 $g_{i,\ell}=0,1,\; \text{or} \; 2$ (corresponding to the number of copies of
 allele $A_1$ an individual carries at this SNP). We can think of this as a $N
-\times S$ matrix (where usually $N \ll S$). 
+\times S$ matrix (where usually $N \ll S$).
 
 Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
-\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{2 p_{\ell}(1-p_{\ell})}} \end{equation} 
+\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{2 p_{\ell}(1-p_{\ell})}} \end{equation}
 i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
 ($2p_{\ell}$) and divide through by the square root of the expected variance assuming that
@@ -1274,7 +1273,7 @@ here. There's a number of equivalent ways of thinking about what PCA
 is doing. One of these ways is to think that when we do PCA we are building the individual by individual
 covariance matrix and performing an eigenvalue decomposition of this
 matrix (with the eigenvectors being the PCs).  This individual by individual covariance matrix has entries
-the $[i,~j]$ given by 
+the $[i,~j]$ given by
 \begin{equation}
 \frac{1 }{S-1} \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
   2p_{\ell})}{2 p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
@@ -1285,7 +1284,7 @@ encountered in discussing $F$-statistics as correlations (equation
 between two individuals above that expected if they were both drawn
 from the total sample at random (rather than the covariance of alleles
 within a single individual). So by performing PCA on the data we are
-learning about the major (orthogonal) axes of the kinship matrix.    
+learning about the major (orthogonal) axes of the kinship matrix.
 
 
 As an example of the application of PCA, let's consider the case of the
@@ -1299,7 +1298,7 @@ ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
 \includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
 \end{center}
     \caption[][-0cm]{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
-\label{fig:Gwarbler_geo} 
+\label{fig:Gwarbler_geo}
 \end{figure}
 
 \begin{marginfigure}[0.1cm]
@@ -1329,7 +1328,7 @@ samples. You can already see a lot about population structure in this
 matrix. Note how the red and yellow samples, thought to be derived from
 the Eastern route around the Himalayas, have higher kinship with each
 other, and blue and the (majority) of the green samples, from the Western route, form a
-similarly close group in terms of their higher kinship. 
+similarly close group in terms of their higher kinship.
 \begin{figure}
 \begin{center}
 \includegraphics[width=
@@ -1345,7 +1344,7 @@ similarly close group in terms of their higher kinship.
 
 We can then perform PCA on this kinship matrix to identify the major
 axes of variation in the dataset. Figure \ref{fig:warbler_PCA} shows
-the samples plotted on the first two PCs. 
+the samples plotted on the first two PCs.
 \begin{figure}
 \begin{center}
 \includegraphics[width=
@@ -1361,10 +1360,10 @@ the samples plotted on the first two PCs.
 The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the hypothesis that the Greenish warblers speciated as they moved around the Himalayan
 plateau. However, as noted by \citet{alcaide:14}, it also suggests additional complications to the traditional view of these warblers as an unbroken ring species, a case of speciation by continuous geographic isolation. The {\it Ludlowi} subspecies shows a significant genetic break, with the southern most MN samples clustering with the {\it Trochiloides} subspecies, in both the PCA and kinship matrix (Figures \ref{fig:warbler_PCA} and \ref{fig:warbler_heat}), despite being much more geographically close to the other {\it Ludlowi} samples. This suggests that genetic isolation is not just a result of geographic distance, and other biogeographic barriers must be considered in the case of this broken ring species.
 
-Finally, while PCA is a wonderful tool for visualizing genetic data, care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations, pulling them genetically closer together and helping to form a genetic ring as well as a geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex geometric arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Inferring the geographical and population-genetic history of species requires the application of a range of tools; see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers. 
+Finally, while PCA is a wonderful tool for visualizing genetic data, care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations, pulling them genetically closer together and helping to form a genetic ring as well as a geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex geometric arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Inferring the geographical and population-genetic history of species requires the application of a range of tools; see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers.
 
 
-%For example, it would be tempting to see the U shape in the warbler example (Figure \ref{fig:warbler_PCA}) as representing a 
+%For example, it would be tempting to see the U shape in the warbler example (Figure \ref{fig:warbler_PCA}) as representing a
 % \label{fig:chimp_PCA}
 
 % % http://journals.plos.org/plosgenetics/article?id=10.1371%2Fjournal.pgen.0030066
@@ -1384,9 +1383,9 @@ locus, e.g. correlations within individuals (inbreeding) or between individuals
 (relatedness). We have seen how relatedness between parents affects the extent
 to which their offspring is inbred. We now turn to correlations between alleles
 at different loci.\\
-   
 
-\paragraph{Recombination} 
+
+\paragraph{Recombination}
 To understand correlations between loci we need to
 understand recombination a bit more carefully. Let us consider a heterozygous individual, containing $AB$ and $ab$ haplotypes.
 If no recombination occurs between our two loci in this individual, then these
@@ -1440,7 +1439,7 @@ part be due to the genetic linkage of these loci but does not
 necessarily imply this (e.g. genetically unlinked loci can be in LD
 due to population structure). \\
 
-\begin{question} 
+\begin{question}
 You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
 \begin{center}
 \begin{tabular}{|c|cccc|}
@@ -1485,7 +1484,7 @@ allowing high levels of LD to accumulate. Over large physical
 distances, away from the diagonal, there is lower $D^{\prime}$. This is
 especially notable in humans as there is an intense, human-specific recombination
 hotspot in this region, which is breaking down LD between opposite
-sides of this region. 
+sides of this region.
 
 Another common statistic for summarizing LD is $r^2$ which we write as
 \begin{equation}
@@ -1534,7 +1533,7 @@ alleles. Genetic drift will also generate LD, not because particular
 combinations of alleles are favoured, but simply because at random particular
 haplotypes can by chance drift up in frequency. Mixing between
 divergent populations can also generate LD, as we saw in the mouse
-question above. 
+question above.
 
 
 \paragraph{The decay of LD due to recombination}
@@ -1564,22 +1563,22 @@ haplotype as
 \caption{The decay of LD from an initial value of $D_0=0.25$ over time
   (Generations) for a pair of loci a recombination fraction $r$
   apart. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}}\label{fig:LD_time}
-\end{marginfigure} 
+\end{marginfigure}
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_recom.pdf}
 \end{center}
 \caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}} \label{fig:LD_recom}
-\end{marginfigure} 
+\end{marginfigure}
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
 increase if there is a deficit of $AB$ haplotypes within the
-population ($D<0$). Our LD in the next generation is 
+population ($D<0$). Our LD in the next generation is
 \begin{align}
-D^{\prime} & = p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\ 
+D^{\prime} & = p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\
 & = (p_{AB} + \Delta p_{AB}) - (p_{A} + \Delta p_{A})(p_{B} + \Delta p_{B}) \nonumber\\
 & = p_{AB} + \Delta p_{AB} - p_{A}p_{B} \nonumber\\
-& = (1-r) D 
+& = (1-r) D
 \end{align}
 where we can cancel out $\Delta p_{A}$ and $\Delta p_{B}$ above because recombination only changes haplotype, not allele, frequencies.
 So if the level of LD in generation $0$ is $D_0$, the level $t$
@@ -1589,13 +1588,13 @@ D_t=  (1-r)^t D_0
 \end{equation}
 Recombination is acting to decrease LD, and it does so
 geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
-approximate this by an exponential and say that   
+approximate this by an exponential and say that
 \begin{equation}
 D_t \approx  D_0 e^{-rt}  \label{eqn_LD_decay}
 \end{equation}\\
 
-%{\bf Q}\arabic{Question} \refstepcounter{Question}  
-\begin{question} 
+%{\bf Q}\arabic{Question} \refstepcounter{Question}
+\begin{question}
 You find a hybrid population between the two mouse subspecies
 described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
 \end{question}
@@ -1606,7 +1605,7 @@ described in the question above, which appears to be comprised of equal proporti
 \includegraphics[width=\textwidth]{illustration_images/alleles_genotypes/Neanderthal/14800262343_f21929987a_z.jpg}
 \end{center}
 \caption{The earliest discovered fossil of a Neanderthal, fragments of a skull found in a cave in the Neander Valley in Germany. \IANC{Man's place in nature. 1890. Huxley, T. H.}{https://archive.org/stream/mansplaceinnatur02huxl/mansplaceinnatur02huxl\#page/154/mode/1up}{The Library of Congress}} \label{fig:Neand_skull}
-\end{marginfigure} 
+\end{marginfigure}
 
 A particularly striking example of the decay of LD generated by
 the mixing of populations is offered by the LD created by the
@@ -1621,9 +1620,9 @@ carry a few percent of their genome derived from the Neanderthal
 genome, via interbreeding during this secondary contact. To date the timing of this
 interbreeding, \citet{Sankararaman:12} looked at the LD in modern
 humans between pairs of alleles found to be derived from the Neanderthal
-genome (and nearly absent from African populations). 
+genome (and nearly absent from African populations).
 In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci as a function of the genetic distance ($r$) between them, from
-the work of 
+the work of
 \citeauthor{Sankararaman:12}.
 \begin{figure}
 \begin{center}
@@ -1643,5 +1642,3 @@ associations. \marginnote{The calculation done by
   \citet{Sankararaman:12} is actually a bit more involved as they
 account for inhomogeneity in recombination rates and arrive at a date
 of  47,334 -- 63,146 years.}
-
-
