@@ -1,6 +1,7 @@
 
 
-track_lineages<-function(N.vec, n.iter, num.tracked, col.allele){
+track_lineages<-function(N.vec, n.iter, num.tracked, col.allele,return.tracked=FALSE){
+	offset<-0.2
 num.gens<-length(N.vec)
 for(iter in 1:n.iter){
 	N.max<-max(N.vec)
@@ -10,12 +11,13 @@ for(iter in 1:n.iter){
 	mtext(side=1,line=1,"Generations")
 	
 	track.this.allele<-vector("list", 2*N)
-	
+	track.this.allele.time<-list()
 	track.this.allele[sample(1:(2*N),num.tracked)]<-1:num.tracked
 	
 	track.this.allele.next.gen<-vector("list", 2*N.prev)
 	
 	for(i in num.gens:2){
+		if(return.tracked) track.this.allele.time[[i]]<-track.this.allele
 		N<-N.vec[i]
 		N.prev<-N.vec[i-1]
 		track.this.allele.next.gen<-vector("list", 2*N.prev)
@@ -50,12 +52,12 @@ for(iter in 1:n.iter){
 		
 	
  	}
-	
+	if(return.tracked) track.this.allele.time
 }
 
 
 N<-10
-offset<-0.2
+
 ###Track pairs
 pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/figures/pairwise_coalescent.pdf")
 track_lineages(N.vec=rep(10,20), n.iter=20, num.tracked=2, col.allele=c("red","blue"))
