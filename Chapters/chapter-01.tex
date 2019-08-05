@@ -415,6 +415,7 @@ alleles picked at random, one from each of the two different individuals $i$
 and $j$, are identical by descent. We call this quantity the \emph{coefficient
 of kinship} of individuals $i$ and $j$, and denote it by $F_{ij}$. It is
 calculated as
+%JRI: you come back to inbreeding later, but perhaps worth mentioning here that you are only considering outbred Individuals
 
 \begin{equation}
 F_{ij}= 0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2.
@@ -453,7 +454,7 @@ parent but not the other).
 
 Our $r$ coefficients are going to have various uses. For example, they allow us
 to calculate the probability of the genotypes of a pair of
-relatives. Consider a biallelic locus where allele 1 is
+relatives. Consider a biallelic locus where allele $A_1$ is
 at frequency $p$, and two individuals who have IBD allele sharing
 probabilities $r_0$, $r_1$, $r_2$. What is the overall probability that these
 two individuals are both homozygous for allele 1? Well that's
@@ -559,6 +560,7 @@ coloured red, those that your cousins inherited are coloured blue. In the third 
 } \label{fig:first_cousin_IBD}
 \end{figure}
 We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother.
+%JRI: text says ``Below'' but float ends up above
 
 
 
@@ -652,6 +654,7 @@ specify the genotype probabilities, as there are two parameters ($p$ and $F$)
 and two degrees of freedom (as $p$ and $q$ have to sum to one).
 Therefore, any combination of genotype frequencies at a biallelic site
 can be specified by a combination of $p$ and $F$.\\
+%JRI: unclear to me if this is useful. will readers understand parameter numbers/DF?
 
 \begin{question}
 The frequency of the $A_1$ allele is $p$ at a biallelic locus. Assume that our population is randomly mating and that the
@@ -708,7 +711,7 @@ public domain.} \label{fig:Carlos_second_pedigree}
   \textwidth]{illustration_images/alleles_genotypes/Carlos_second/378px-Juan_de_Miranda_Carreno_002.jpg}
 %https://commons.wikimedia.org/wiki/File:Carlos_segundo80.png
 \end{center}
-\caption{Charles the second of Spain (by Juan Carre\~{n}o de Miranda,
+\caption{Charles II of Spain (by Juan Carre\~{n}o de Miranda,
   1685). \href{https://it.wikipedia.org/wiki/Carlo_II_di_Spagna\#/media/File:Juan_de_Miranda_Carreno_002.jpg}{Public Domain}.} \label{fig:Carlos_second}
 \end{marginfigure}
 Multiple inbreeding loops increase the probability that a child
@@ -735,18 +738,22 @@ is expected to have been homozygous by descent for a full quarter of his
 genome. As we'll talk about later in these notes, this means that Charles
 may have been homozygous for a number of recessive disease alleles,
 and indeed he was a very sickly man who left no descendants due to his
-infertility. \sidenote{Pedro Gargantilla, who performed Charles' autopsy, stated
-  that his body "did not contain a single drop of blood; his heart was
+infertility. \sidenote{Pedro Gargantilla, who performed Charles's autopsy, stated
+  that his body ``did not contain a single drop of blood; his heart was
   the size of a peppercorn; his lungs corroded; his intestines rotten
   and gangrenous; he had a single testicle, black as coal, and his
-  head was full of water." While some of this description
+  head was full of water.'' While some of this description
   may refer to actual medical conditions, some of these details seem a
   little unlikely. See
   \href{https://www.thevintagenews.com/2017/03/23/when-charles-ii-of-spain-died-the-autopsy-stated-that-his-body-did-not-contain-a-single-drop-of-blood-and-his-head-was-full-of-water/}{here}.
 } Thus plausibly the end of one of the great
 European dynasties came about through inbreeding.
+%JRI: good idea to include links to potentially impermanent websites?
+
 
 \subsection{Calculating inbreeding coefficients from genetic data}
+
+%JRI: you transition from an individual's inbreeding coefficient here to using F as a population inbreeding parameter. i think some text explaining this change of scope might help
 
 If the observed heterozygosity in a population is $H_O$, and we assume that the
 generalized Hardy--Weinberg proportions hold, we can set $H_O$ equal to
@@ -833,7 +840,7 @@ cousins, for example.
 
 Individuals with multiple inbreeding loops in their family tree can
 have a high inbreeding coefficient due to
-the combined effect of many small blocks of autozygosity. For example, Carlos the second had
+the combined effect of many small blocks of autozygosity. For example, Charles II had
 an inbreeding coefficient that is equivalent to that of the child of
 full-sibs, with a quarter of his genome expected to homozygous by
 descent, but this would be made up of many shorter blocks.
@@ -869,6 +876,7 @@ Figure
 \ref{fig:dog_FOH} shows the distribution of $F_{ROH}$ of individuals in each dog
 breed for the X and autosome. In Figure \ref{fig:dog_FOH_dist} this is
 broken down by the length of ROH segments.
+%JRI: No text reference to this figure. Why show a bulldog and not a mix of dog breeds?
 
 Dog breeds have been subject
 to intense breeding that has resulted in high levels of inbreeding. Of the population samples examined, Doberman Pinschers have the highest levels of their genome in runs of
@@ -878,7 +886,7 @@ homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog
   \begin{center}
     \includegraphics[width= \textwidth]{figures/sharing_relatives/dog_FROH_dist.pdf}
 \end{center}
-\caption{Cumulative density of length of ROH length, measured in megabases (Mb) from \citet{Sams:18} for various
+\caption{Cumulative density of ROH length, measured in megabases (Mb) from \citet{Sams:18} for various
   dog breeds (\PLOSccBY). Note that longer lengths of ROH are on the left of the plot.} \label{fig:dog_FOH_dist}
 \end{figure}
 
@@ -886,7 +894,9 @@ homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog
 \section{Summarizing population structure}
 \newthought{Individuals rarely mate completely at random}; your parents
 weren't two Bilateria plucked at random from the tree of
-life. Even within species, there's often geographically-restricted
+life.
+%JRI: what's up with the newthought formatting? new here and not used in similar sections
+Even within species, there's often geographically-restricted
 mating among individuals. Individuals tend to mate with individuals
 from the same, or closely related sets of populations. This form of
 non-random mating is called population structure and can have profound
@@ -921,7 +931,7 @@ mating is $H_S = 2 p_S (1 - p_S)$. We will write $\fis$ as
 \includegraphics[width=\textwidth]{figures/Pop_struct/FST_hierarchy.pdf}  %
 \end{center}
 \caption{The hierarchical nature of F-statistics. The two dots within an individual represent the two
-  alleles at a locus for an individual $I$. We can compare the heterozygosity on individuals ($H_I$), to that found
+  alleles at a locus for an individual $I$. We can compare the heterozygosity in individuals ($H_I$), to that found
 by randomly drawing alleles from the sub-population (S),
 to that found in the total population (T). } \label{fig:FST_pig}
 \end{marginfigure}
@@ -979,7 +989,7 @@ $H_T$ with their averages across loci (as above).
 As an example of comparing a genome-wide estimate of $F_{ST}$ to that
 at individual loci we can look at some data from blue- and
 golden-winged warblers ({\it Vermivora cyanoptera} and {\it
-  V. chrysoptera} 1-2 \& 5-6 o, Figure  \ref{fig:blue_golden_warblers}).
+  V. chrysoptera} 1-2 \& 5-6 in Figure  \ref{fig:blue_golden_warblers}).
   \begin{marginfigure}
 \begin{center}
 \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/blue_golden_winged_warblers/The_warblers_of_North_America_6309257188.jpg}  %[width= \marginwidth]
@@ -997,8 +1007,8 @@ species. \graham{Add ref to Bateson book }
 % https://twitter.com/WTF_R_species/status/1046586267167854592 & https://twitter.com/davetoews/status/1046599444878282752
 The golden-winged warbler is listed as `threatened' under the Canadian
 endangered species act. The golden-winged warbler's habitat is under pressure from human activity
-and increased hybridization with the blue warbler, which is moving north into its range, also poses a
-significant issue. \citeauthor{Toews:16} investigated the population
+and increased hybridization with the blue-winged  warbler, which is moving north into its range, also poses a
+significant issue. \citet{Toews:16} investigated the population
 genomics of these warblers, sequencing ten golden- and ten blue-winged
 warblers. They found very low divergence among these species, with a
 genome-wide $F_{ST}=0.0045$. In Figure \ref{fig:warbler_FST}, per SNP
@@ -1011,8 +1021,8 @@ $F_{ST}$ is averaged in $2000$bp windows moving along the genome.
 \end{figure*}
 The average is very low, but some regions of very high $F_{ST}$ stand
 out. Nearly all of these regions correspond to large allele frequency
-difference at loci in, or close, to genes known to be involved in
-plumage colouration difference in other birds.
+differences at loci in, or close, to genes known to be involved in
+plumage colouration differences in other birds.
 To illustrate these frequency differences \citeauthor{Toews:16}
 genotyped a SNP in each of these high-$F_{ST}$ regions. Here's their
 genotyping counts from the SNP, segregating for an allele 1 and 2, in the {\it Wnt}
@@ -1036,6 +1046,8 @@ warblers compared to the combined sample.\\
 \end{question}
 
 \paragraph{Interpretations of F-statistics}
+
+%JRI: reqriting Fis as covariance is not obvious. could use more explanation. same with Fst as ratio of variances. not immediately obvious how you got there or why those are (co)variances
 
 Let us now return to Wright's definition of the $F$-statistics as correlations
 between random gametes, drawn from the same level $X$, relative to level $Y$.
@@ -1084,7 +1096,9 @@ Here we'll describe a simple probabilistic assignment to find the
 probability that an individual of unknown population comes from one of
 $K$ predefined populations. For example, there are three broad populations
 of common chimpanzee ({\it Pan troglodytes}) in Africa: western,
-central, and eastern. Imagine that we have a chimpanzee, whose
+central, and eastern.
+%JRI: pic of the subspecies would be fun
+Imagine that we have a chimpanzee whose
 population of origin is unknown (e.g. it's from an illegal private
 collection). If we have genotyped a set of unlinked markers from a panel
 of individuals representative of these populations, we can calculate
@@ -1103,6 +1117,7 @@ $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
 p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on.
 
 You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
+%JRI: is this formally the definition of a set? should if be $g_l={0,1,2}$ ?
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is
 \begin{equation}
@@ -1150,8 +1165,9 @@ from population $k$ and estimate the set of $q_k$'s.
 
 Returning to our chimp example, imagine that we have genotyped a set of
 individuals from the Western and Eastern populations at two SNPs (we'll ignore
-the central population to keep things simpler).  The frequency of the capital
-allele at two SNPs ($A/a$ and $B/b$) is given by
+the central population to keep things simpler).
+%JRI: in previous examples you use A1A2 not Aa. I would pick one convention and stick with it.
+The frequency of the capital allele at two SNPs ($A/a$ and $B/b$) is given by
 
 \begin{center}
 \begin{tabular}{|ccc|}
@@ -1220,18 +1236,18 @@ we are using the joint posterior of our allele frequencies and
 assignments. Programs like STRUCTURE, use this type of algorithm to
 cluster the individuals in an ``unsupervised'' manner (i.e. they work
 out how to assign individuals to an unknown set of populations).  See Figure \ref{fig:chimp_structure} for an example of
-Becquet {\it et al}  using STRUCTURE to determine the population structure of chimpanzees.
+\citeauthor{becquet:07} using STRUCTURE to determine the population structure of chimpanzees.
 
-STRUCTURE-like methods have proven incredible popular and useful in examining population structure within species. However, the results of these methods are open to misinterpretation, see \citet{lawson:18} for a recent discussion. Two common mistakes are 1) taking the results of STRUCTURE-like approaches for some particular value of K and taking this to represent the best way to describe population-genetic variation. 2) Thinking that these clusters represent `pure' ancestral populations.
+STRUCTURE-like methods have proven incredible popular and useful in examining population structure within species. However, the results of these methods are open to misinterpretation; see \citet{lawson:18} for a recent discussion. Two common mistakes are 1) taking the results of STRUCTURE-like approaches for some particular value of K and taking this to represent the best way to describe population-genetic variation. 2) Thinking that these clusters represent `pure' ancestral populations.
 
-There is no right choice of K, the number of clusters to partition into. There are methods of judging the `best' K by some statistical measure given some particular dataset, but that is not the same as saying this is the most meaningful level on which to summarize population structure in data. For example, running STRUCTURE on world-wide human populations for low value of K will result in population clusters that roughly align with continental populations \citep{rosenberg:02}. However, that does not tell us that assigning ancestral at the level of continents is a particularly meaningful way of partitioning individuals. Running the same data for higher value of K, or within continental regions, will result in much finer-scale partitioning of continental groups \citep{rosenberg:02,li:08}. No one of these layers of population structure identified is privileged as being more meaningful than another.
+There is no right choice of K, the number of clusters to partition into. There are methods of judging the `best' K by some statistical measure given some particular dataset, but that is not the same as saying this is the most meaningful level on which to summarize population structure in data. For example, running STRUCTURE on world-wide human populations for low value of K will result in population clusters that roughly align with continental populations \citep{rosenberg:02}. However, that does not tell us that assigning ancestry at the level of continents is a particularly meaningful way of partitioning individuals. Running the same data for higher value of K, or within continental regions, will result in much finer-scale partitioning of continental groups \citep{rosenberg:02,li:08}. No one of these layers of population structure identified is privileged as being more meaningful than another.
 
 It is tempting to think of these clusters as representing ancestral populations, which themselves are  not the result of admixture. However, that is not the case, for example, running STRUCTURE on world-wide human data identifies a cluster that contains many European individuals, however, on the basis of ancient DNA we know that modern Europeans are a mixture of distinct ancestral groups.
 
 \subsection{Principal components analysis}
 Principal component analysis (PCA) is a common statistical approach to visualize  high dimensional data, and used by many fields. The idea of PCA is to give a location to each individual data-point on each of a small number principal component axes. These PC axes are chosen to reflect major axes of variation in the data,
   with the first PC being that which explains largest variance, the second the second most, and so on. The use of PCA in population genetics was
-pioneered by Cavalli-Sforza and colleagues and now with large genotyping datasets, PCA has made come back. \cite{menozzi:78,patterson:06}
+pioneered by Cavalli-Sforza and colleagues and now with large genotyping datasets, PCA has made a comeback. \cite{menozzi:78,patterson:06}
 % TODO: citations.
 
 Consider a dataset consisting of N individuals at $S$ biallelic SNPs. The
@@ -1239,6 +1255,7 @@ $i^{th}$ individual's genotype data at locus $\ell$ takes a value
 $g_{i,\ell}=0,1,\; \text{or} \; 2$ (corresponding to the number of copies of
 allele $A_1$ an individual carries at this SNP). We can think of this as a $N
 \times S$ matrix (where usually $N \ll S$).
+%JRI: here you assume reader knows SNP/locus can be used interchangeably
 
 Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
 common to standardize the genotype in the following way \begin{equation}
@@ -1248,7 +1265,7 @@ at each SNP we center the genotypes by subtracting the mean genotype
 ($2p_{\ell}$) and divide through by the square root of the expected variance assuming that
 alleles are sampled binomially from the mean frequency ($\sqrt{2 p_{\ell}
   (1-p_{\ell})}$). Doing this to all of our genotypes, we form a data matrix (of
-  dimension $N \times S$). We can then perform principal components analysis of
+  dimension $N \times S$). We can then perform principal component analysis of
   this data matrix to uncover the major axes of genotype variance in our
   sample. Figure \ref{fig:chimp_PCA} shows a PCA from \citet{becquet:07} using the same chimpanzee data as in Figure \ref{fig:chimp_structure}.
 
@@ -1260,8 +1277,7 @@ alleles are sampled binomially from the mean frequency ($\sqrt{2 p_{\ell}
     \ref{fig:chimp_structure}. Here  \citet{becquet:07}  plot the location of each individual
     on the first two principal components (called eigenvectors) in the left
     panel, and on the second and third principal components (eigenvectors) in
-    the right panel (\PLOSccBY). PCA, The individuals
-      identified as all of one ancestry by STRUCTURE cluster together by population (solid circles). While the nine individuals identified by STRUCTURE as hybrids (open circles) are for the
+    the right panel (\PLOSccBY). In the PCA,  individuals identified as all of one ancestry by STRUCTURE cluster together by population (solid circles). While the nine individuals identified by STRUCTURE as hybrids (open circles) for the
       most part fall at intermediate locations in the PCA. There are two individuals
       (red open circles) reported as being of a particular population but that
       but appear to be hybrids.} \label{fig:chimp_PCA}
@@ -1291,8 +1307,8 @@ As an example of the application of PCA, let's consider the case of the
 putative ring species in the Greenish warbler ({\it Phylloscopus
   trochiloides}) species complex. This set of subspecies exists in a
 ring around the edge of the Himalayan plateau. \citet{alcaide:14}
-collected $95$ greenish warbler samples from $22$ sites around the
-ring, and the sampling locations are shown in figure \ref{fig:Gwarbler_geo}.
+collected $95$ Greenish warbler samples from $22$ sites around the
+ring, and the sampling locations are shown in Figure \ref{fig:Gwarbler_geo}.
 \begin{figure}
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.pdf}
@@ -1314,7 +1330,7 @@ thought that these warblers spread from the south, northward in two different di
 plateau, establishing populations along the western edge
 (green and blue populations) and the eastern edge (yellow and red
 populations). When they came into secondary contact
-in Siberia, they were reproductive isolated from one another, having
+in Siberia, they were reproductively isolated from one another, having
 evolved different songs and accumulated other reproductive barriers
 from each other as they spread independently north around the
 plateau, such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
