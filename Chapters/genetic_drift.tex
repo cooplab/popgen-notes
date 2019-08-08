@@ -219,11 +219,8 @@ frequency of alleles in our population over time. The mutation rate we use is ve
 \end{figure}
 
 \paragraph{The neutral mutation rate.}
-We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu_T$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is
-\begin{equation}
-\mu = (1-C) \mu_T
-\end{equation}
-This is the per generation rate.
+We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is $(1-C)\mu$. This is the per generation rate.
+%JRI: modified here to match notation later in chapter where you use $(1-C)\mu$ as the neutral rate
 
 \begin{question}
 It's worth taking a minute to get familiar with both how rare, and how common, mutation is. The per base pair mutation rate in humans is around $1.5 \times 10^{-8}$ per generation. That means, on average, we have to monitor a site for $\sim 66.6$ million transmissions from parent to child to see a mutation. Yet populations and genomes are big places, so mutations are common at these levels. \\
@@ -848,7 +845,7 @@ $T_2$ and our expected number of doubletons is $\E(S_i)
 =\theta/2$. Thus, there are on average half as many doubletons as singletons.
 
 Extending this logic to larger samples might be doable, but is tedious (I mean really tedious: for 10 alleles there are thousands of possible tree shapes and the task quickly gets impossible even computationally). A nice, relatively simple proof of the neutral site frequency spectrum is given by
-\citeauthor{Hudson:15}, but we won't give this here. The general form is:
+\citep{Hudson:15}, but we won't give this here. The general form is:
 \begin{equation}
 \E(S_i) = \frac{\theta }{i}   \label{eqn:neutral_freq_spec}
 \end{equation}
@@ -869,26 +866,26 @@ P(i |0<i<n) &=\frac{\E(S_i)}{\sum_{j=1}^{n-1} \E(S_j)} = \frac{\nicefrac{1}{i}}{
 \end{eqnarray}
 We can interpret this probability as the fraction of polymorphic sites we expect to find at a frequency $i/n$.
 
-\paragraph{tests based on the site frequency spectrum}
+\paragraph{Tests based on the site frequency spectrum}
 Population geneticists have proposed a variety of ways to test whether an observed site frequency spectrum conforms to its
-neutral, constant-population expectations. These tests are
+neutral, constant-size expectations. These tests are
 useful for detecting population size changes using data across many loci, or
 for detecting the signal of selection at individual loci. One of
-the first tests was proposed by \citeauthor{tajima:89}, and is called
+the first tests was proposed by \citep{tajima:89}, and is called
 Tajima's $D$. Tajima's $D$ is
 \begin{equation}
-  D = \frac{\theta_{\pi}-\theta_{W}}{C} \label{eqn_Tajimas_D}
+  D = \frac{\hat{\theta}_{\pi}-\hat{\theta}_{W}}{C} \label{eqn_Tajimas_D}
 \end{equation}
 where the numerator is the difference between the estimate of
 $\theta$ based on pairwise differences and that based on segregating
 sites. As these two estimators both have expectation $\theta$ under
-the neutral, constant-population model, the expectation of $D$ is zero. The denominator $C$ is a positive constant; it's the square-root of an estimatorof the variance of this difference under the constant population size, neutral model. This constant was chosen for $D$ to have mean zero and variance $1$ under the null model, so we can test for  departures from this simple null model.\\
+the neutral, constant-size model, the expectation of $D$ is zero. The denominator $C$ is a positive constant; it's the square-root of an estimatorof the variance of this difference under the constant population size, neutral model. This constant was chosen for $D$ to have mean zero and variance $1$ under the null model, so we can test for  departures from this simple null model.\\
 
-An excess of rare alleles compared to the constant-population, neutral
+An excess of rare alleles compared to the constant-size, neutral
 model will result in a negative Tajima's $D$, because each
 additional rare allele increases the number of segregating sites by
 $1$, but only has a small effect on the number of pairwise differences between samples.
-In contrast, a positive Tajima's $D$ reflects an excess of intermediate frequency alleles relative to the constant-population, neutral expectation. Alleles at intermediate-frequency increase pairwise diversity
+In contrast, a positive Tajima's $D$ reflects an excess of intermediate frequency alleles relative to the constant-size, neutral expectation. Alleles at intermediate-frequency increase pairwise diversity
 more per segregating site than typical, thus increasing $\theta_{\pi}$ more than $\theta_{W}$.
 
 \subsection{Demography and the coalescent}
@@ -899,13 +896,13 @@ more per segregating site than typical, thus increasing $\theta_{\pi}$ more than
 \end{center}
 \caption{Data from 202 genes from 14002 people of European ancestry (28004 alleles). Note
   the double log-scale. The red
-  line gives the neutral, constant population size estimate of the site frequency spectrum, our equation \eqref{eqn:neutral_freq_spec}, using a  $\theta$ estimated from $\pi$. Note how the non-synonymous changes are even more skewed towards rare alleles, that's likely due to selection against non-synonymous alleles acting to push them towards rare frequency. Data from \citet{nelson:12}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.R} } \label{fig:Human_growth}
+  line gives the neutral, constant population size estimate of the site frequency spectrum, our equation \eqref{eqn:neutral_freq_spec}, using a  $\theta$ estimated from $\pi$. Note how the non-synonymous changes are even more skewed towards rare alleles, likely due to selection against non-synonymous alleles preventing them from reaching high frequency. Data from \citet{nelson:12}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/human_pop_growth/Nelson_pop_growth.R} } \label{fig:Human_growth}
 \end{marginfigure}
 We've already seen how changes in population size can change the rate
 at which heterozygosity is lost from the population (see the
 discussion around eqn. \eqref{eqn:var_pop_coal}). If the population
 size in generation $i$ is $N_i$, the probability that a pair of
-lineages coalesce is $\nicefrac{1}{2N_i}$; this conforms to our
+lineages coalesce is $\nicefrac{1}{(2N_i)}$; this conforms to our
 intuition that if the population size is small, the rate at which
 pairs of lineages find their common ancestor is faster. We can potentially accommodate rapid random fluctuations in population size by simply using the effective population size $N_e$ in place of $N$. However,
 longer term more systematic changes in population size will distort
@@ -915,7 +912,7 @@ systematic ways.
 We can see how demography potentially distorts the observed frequency spectrum away from the neutral expectation in a very large sample of humans shown in Figure \ref{fig:Human_growth}. For
 comparison, the neutral frequency spectrum, eqn
 \eqref{eqn:neutral_freq_spec}, is shown as a red line. There are
-  vastly more rare alleles than expected under our neutral, constant-population-size model, but the neutral prediction and reality agree somewhat more for alleles that are more common.
+  vastly more rare alleles than expected under our neutral, constant-size-size model, but the neutral prediction and reality agree somewhat more for alleles that are more common.
 
 \begin{figure*}
 \begin{center}
@@ -923,6 +920,7 @@ comparison, the neutral frequency spectrum, eqn
 \end{center}
 \caption{A realization of the coalescent process in a growing population. The population underwent a period of doubling every generation. The initial population size of just two individuals, maintained for a number of generations, is obviously highly unrealistic but serves our purpose. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R}  } \label{fig:Genealogy_growth}
 \end{figure*}
+%JRI: I realize this contrasts with the later bottleneck figure, but I just don't like this one very much. I don't find it very useful as it's hard to distinguish the differences in rates of coalescence from stochastic differences in other similar figures. I'd be tempted to remove this but keep the later bneck paper. Perhaps if you want interestd students to be able to play with it link to a larger version or just the code?
 
 Why is this? Well, these patterns are likely the result of the very recent
 explosive growth in human populations. If the population has grown rapidly, then the pairwise-coalescent rate in the past may be much higher than the coalescent rate closer to the present. (see Figure \ref{fig:Genealogy_growth}).
@@ -932,7 +930,7 @@ population size. Humans are one example of this effect; there are $7$ billion
 of us alive today, but this is due to very rapid population growth
 over the past thousand to tens of thousands of years. Our level of
 genetic diversity is very much lower than you'd predict given our
-census size, reflecting our much smaller ancestral population. A second consequence of recent population expansion is that the deeper coalescent branches are much more squished together in time, compared to those in a constant population.  Mutations on deeper branches are the source of alleles at more intermediate frequencies, and so there are even fewer intermediate-frequency alleles
+census size, reflecting our much smaller ancestral population. A second consequence of recent population expansion is that the deeper coalescent branches are much more squished together in time compared to those in a constant-sized population.  Mutations on deeper branches are the source of alleles at more intermediate frequencies, and so there are even fewer intermediate-frequency alleles
 in growing populations. That's why there are so many rare alleles,
 especially singletons, in this large sample of Europeans.
 
@@ -964,7 +962,7 @@ blue and orange ancestral lineages in
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Mimulus_coalescent_times.pdf}
 \end{center}
-\caption[][-2cm]{Diversity along the Mimulus genome. Black dots give $\pi$ in 1kb windows between chromosomes sampled from two individuals, the red line is a
+\caption[][-2cm]{Diversity along a region of the Mimulus genome. Black dots give $\pi$ in 1kb windows between chromosomes sampled from two individuals, the red line is a
   moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Mimulus_coalescent_times.R} } \label{fig:Mimulus_bottleneck}
 \end{figure}
 \begin{marginfigure}[2cm]
@@ -972,12 +970,12 @@ blue and orange ancestral lineages in
   \includegraphics[width = 0.75 \textwidth]{illustration_images/Genetic_drift/Mimulus/Mimulus.png}
 \end{center}
 \caption{Yellow Monkeyflower {\it M. guttatus}. \newline \noindent \tiny{ Choix des plus belles fleurs et des plus beaux fruits. Pierre-Joseph
-  Redout\'e. (1833). Contributed to \href{https://www.flickr.com/photos/swallowtailgardenseeds/14479197839/in/photolist-o4tF54-od9My9-odbSn4-r7eVtm-qrR4xf-x4XVdi-owo7PM-r5mart-roPqqi-owrprg-qsfzJv-wMDeSy-oupCu9-oeSX38-odaeHf-ovbTTS-roEdyK-tCQBqn-odwyWa-otAUPX-oePwpE-odca2V-tBxNdi-roL99F-odbN4q-ot1HNN-ouhP5r-odcvRH-oveh86-rpAnnD-roE9j9-rowiBc-osDEHS-od7QxD-oeQ9yS-odatza-ox9fq8-oujGWa-osBqTm-ovoAKj-r5qRxT-oeRVxu-oux9q2-tMvxm3-x5pLez-owuL1t-oePFVJ-ov1yHY-oeWskU-tmeZzB}{Flickr} by Swallowtail Garden Seeds. Public Domain.}} \label{fig:Human_growth}  %é
+  Redout\'e. (1833). Contributed to \href{https://www.flickr.com/photos/swallowtailgardenseeds/14479197839/in/photolist-o4tF54-od9My9-odbSn4-r7eVtm-qrR4xf-x4XVdi-owo7PM-r5mart-roPqqi-owrprg-qsfzJv-wMDeSy-oupCu9-oeSX38-odaeHf-ovbTTS-roEdyK-tCQBqn-odwyWa-otAUPX-oePwpE-odca2V-tBxNdi-roL99F-odbN4q-ot1HNN-ouhP5r-odcvRH-oveh86-rpAnnD-roE9j9-rowiBc-osDEHS-od7QxD-oeQ9yS-odatza-ox9fq8-oujGWa-osBqTm-ovoAKj-r5qRxT-oeRVxu-oux9q2-tMvxm3-x5pLez-owuL1t-oePFVJ-ov1yHY-oeWskU-tmeZzB}{Flickr} by Swallowtail Garden Seeds. Public Domain.}} \label{fig:monkeyflower}  %é
 \end{marginfigure}
 An example of this is shown Figure
 \ref{fig:Mimulus_bottleneck}, data from \citeauthor{brandvain:14}. {\it Mimulus nasutus} is a selfing
 species that arose recently from an out-crossing progenitor {\it M.
-  guttatus}, and experienced a strong bottleneck. {\it M. guttatus} has a very high levels of genetic diversity
+  guttatus}, and experienced a strong bottleneck. {\it M. guttatus} has very high levels of genetic diversity
 ($\pi=4\%$ at synonymous sites), but {\it M. nasutus} has lost much
 of this diversity ($\pi =1\%$). Looking along the genome, between a
 pair of {\it M. guttatus} chromosomes, levels of
@@ -994,7 +992,7 @@ much more deeply in the ancestral {\it M. guttatus} population.
   \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/Maize_bottleneck/Wright_Tajima_D.pdf}
 \end{center}
 \caption[][-2cm]{Data for polymorphism from Maize and Teosinite: 774
-  genes from \citet{Wright:05}. {\bf Left)} Genetic  diversity levels in maize and and Teosinte samples at each of these genes.
+  loci from \citet{Wright:05}. {\bf Left)} Genetic  diversity levels in maize and and teosinte samples at each of these loci.
 Note how diversity levels are lower in maize than teosinte, i.e. most
 points are below the red $x=y$ line. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards positive values. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Maize_bottleneck/Wright_Tajima_D.R} } \label{fig:maize_Tajimas_D}  %é
 \end{figure}
@@ -1009,12 +1007,12 @@ points are below the red $x=y$ line. {\bf Right)} The distribution of Tajima's D
 
 Mutations that arise on deeper lineages will be at intermediate frequency in our sample, and so mild bottlenecks
 can lead to an excess of intermediate frequency alleles compared to
-the standard constant-population model. This can skew
-Tajima's D, see eqn \ref{eqn_Tajimas_D}, towards positive values and away from its expectation of
-zero . One example of this skew is shown in Figure
-\ref{fig:maize_Tajimas_D}. Maize ({\it (Zea mays} subsp.{\it mays}) was domesticated from its wild progenitor teosinte ({\it (Zea mays
+the standard constant-size model. This can skew
+Tajima's D (see eqn \ref{eqn_Tajimas_D}) towards positive values and away from its expectation of
+zero. One example of this skew is shown in Figure
+\ref{fig:maize_Tajimas_D}. Maize ({\it Zea mays} subsp. {\it mays}) was domesticated from its wild progenitor teosinte ({\it Zea mays
 subsp. parviglumis}) roughly ten thousand years ago. We can see how the
- bottleneck associated with domestication has resulted in a loss of genetic diversity in maize, compared to teosinte, and the polymorphism that remains is somewhat skewed towards intermediate frequencies resulting in more positive values of Tajima's D.
+ bottleneck associated with domestication has resulted in a loss of genetic diversity in maize compared to teosinte, and the polymorphism that remains is somewhat skewed towards intermediate frequencies resulting in more positive values of Tajima's D.
 
 \begin{question}
 \citet{voight2005interrogating} sequenced 40 autosomal regions from 15 diploid samples of Hausa people from Yaounde, Cameroon. The average length of locus they sequenced for each region was $2365$bp. They found that the average number of segregating sites per locus was $S= 11.1$ and the average $\pi = 0.0011$ per base over the loci. Is Tajima's D positive or negative? Is a demographic model with a bottleneck or growth more consistent with this result?
@@ -1086,17 +1084,17 @@ derive this result by letting $Ns \rightarrow 0$ in eqn.
 
 
 % TODO
-A newly arisen mutation only becomes a fixed difference if it is lucky
-enough to be the ancestor of the entire population. As we saw above, this occurs
-with probability $\nicefrac{1}{(2N)}$.
+%A newly arisen mutation only becomes a fixed difference if it is lucky
+%enough to be the ancestor of the entire population. As we saw above, this occurs
+%with probability $\nicefrac{1}{(2N)}$.
 
 How long does it take on average for
 such an allele to fix within our population? Well, in developing
 equation \eqref{TMRCA_neutral} we've seen that it takes $4N$
 generations for a large sample of alleles to all trace their ancestry back to a
 single most recent common ancestral allele. Any single-base pair change which arose as a single mutation at a locus, and fixed in the population, must have been present in the sequence transmitted by the most recent common ancestor of the population at that locus. Thus it must take roughly $4N$ generations
-for a neutral allele present in a single copy within the population to the
-ancestor of all alleles within our population.  This argument can be made more
+for a neutral allele present in a single copy within the population to fix.
+ This argument can be made more
 precise, but in general we would still find that it takes $\approx 4N$
 generations for a neutral allele to go from its introduction to fixation with
 the population.   \\
@@ -1113,7 +1111,7 @@ Lets assume, based on our discussion of the neutral theory of molecular evolutio
 region, highly deleterious mutations and neutral mutations. A fraction $C$ of
 all mutational changes are highly deleterious, and cannot possibly contribute
 to substitution nor polymorphism.  The other $1-C$ fraction
-of mutations are neutral. If our mutation rate is $\mu$ per transmitted allele
+of mutations are neutral. If our total mutation rate is $\mu$ per transmitted allele
 per generation, then a total of $2N \mu (1-C)$ neutral mutations enter our
 population each generation.\\
 
@@ -1146,27 +1144,36 @@ do not alter the probability of their transmission to the next generation, we
 are simply looking at the mutations that have occurred in $2T$ generations
 worth of transmissions. Thus the average number of neutral mutational
 differences separating our pair of species is simply $2\mu (1-C) T$.\\
+%JRI: this is a nice explanation that is not commonly given. Cool.
 
 \marginnote{\begin{quote}"functionally less important molecules or parts of a molecule
 evolve faster than more important ones." \end{quote} -- \citet{kimura1974some}}
-A number of observations follow under this model, from equation \eqref{eqn:moleclock}, the first is that a primary determinant of patterns of molecular evolution in a genomic region is the level of constraint ($C$). This pattern generally seems to hold empirically: non-coding regions often evolve more rapidly than coding regions; synonymous substitutions accumulate faster than nonsynonymous; nonsynonymous changes faster in less vital proteins than ones that are absolutely necessary for early development. Note that this is not a unique prediction of the neutral model, e.g. lower pleiotropy means that less constrained regions may be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
-
+A number of observations follow under this model, from equation \eqref{eqn:moleclock}. The first is that a primary determinant of patterns of molecular evolution in a genomic region is the level of constraint ($C$). This pattern generally seems to hold empirically: non-coding regions often evolve more rapidly than coding regions, synonymous substitutions accumulate faster than nonsynonymous, and nonsynonymous substitutions accumulate faster in less vital proteins than ones that are absolutely necessary for early development. Note that this is not a unique prediction of the neutral model, e.g. less constrained regions may also be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
+%JRI: removed mention of pleiotropy as we don't know what it is yet and as far as I can tell there's no mention in rest of book of how pleiotropy relates to constraint
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_fig.pdf}
 \end{center}
-\caption{The numbers of substitutions between various pairs of groups, for three proteins, plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}. The number of observed amino-acid differences is corrected for multiple hits to obtain the corrected number of changes estimated to occur. The lines give the linear regression, constrained to pass through the origin, for each protein. The slope of the regression is given next to the protein name. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_data.R} See \citep{robinson2016revisiting} who revisited this classic study and confirmed the conclusions.} \label{fig:Dickerson_mole_clock}
+\caption{The numbers of substitutions in three proteins, corrected for multiple hits, between various pairs of groups plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}.  The lines give the linear regression through the origin for each protein. The slope of the regression is given next to the protein name. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_data.R} See \citep{robinson2016revisiting} who revisited this classic study and confirmed the conclusions.} \label{fig:Dickerson_mole_clock}
 \end{figure}
 
-\begin{marginfigure}[-1cm]
+\begin{marginfigure}[]
 \begin{center}
-\includegraphics[width= 0.8 \textwidth]{illustration_images/Genetic_drift/rattlesnake/rattlesnake.jpg}
+\includegraphics[width= 0.7 \textwidth]{illustration_images/Genetic_drift/rattlesnake/rattlesnake.jpg}
 \end{center}
-\caption{Eastern diamondback rattlesnake ({\it Crotalus adamanteus}. \BHLCC{North American herpetology. Holbrook, J. E. }{https://www.biodiversitylibrary.org/page/35765722\#page/120/mode/1up}{Smithsonian Libraries}{2.0} } \label{fig:rattlesnake}
+\caption{Eastern diamondback rattlesnake ({\it Crotalus adamanteus}). \BHLCC{North American herpetology. Holbrook, J. E. }{https://www.biodiversitylibrary.org/page/35765722\#page/120/mode/1up}{Smithsonian Libraries}{2.0} } \label{fig:rattlesnake}
 \end{marginfigure}
 
-The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the Cytochrome c protein.
-While, humans and dog fish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
+\begin{marginfigure}[]
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Genetic_drift/dogfish/dogfish.jpg}
+\end{center}
+\caption{Spiny dogfish ({\it Squalus acanthias}). \newline \noindent \tiny{ \href{http://digitalcollections.nypl.org/items/510d47da-6930-a3d9-e040-e00a18064a99}{Rare Book Division, The New York Public Library. ``Squalus Acanthias, The Picked- Dog'' The New York Public Library Digital Collections. 1785 - 1797.}}}
+\label{fig:dogfish}
+\end{marginfigure}
+
+The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the Cytochrome c protein.
+While, humans and dogfish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
 
 In equation \eqref{eqn:moleclock} we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced less mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false, organisms with shorter generation times have somewhat higher mutation rates per year, and so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution. \graham{I currently dont do generation time effect in that chapter, need to update}
 \graham{add side note on adjustment for multiple hits'}
