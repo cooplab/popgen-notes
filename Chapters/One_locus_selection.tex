@@ -532,7 +532,7 @@ We can also rewrite \eqref{deltap_dip1} as
 \Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp},
 \label{deltap_dip3}
 \end{equation}
-the demonstration of which we leave to the reader.
+the demonstration of which we leave to the reader (see question below).
 This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).
 %This form shows that
 %$\Delta p_t$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
@@ -541,15 +541,22 @@ This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if 
 %population ($\frac{d \wbar}{dp}>1$).
 Thus, although selection acts on
 individuals, under this simple model, selection is acting to increase
-the mean fitness of the population. \sa{The rate of this increase is proportional to
-the variance in allele frequencies within the population ($p_tq_t$).}\\
+the mean fitness of the population. The rate of this increase is proportional to
+the variance in allele frequencies within the population
+($p_tq_t$). This formulation suggested to \citet{wright1932} the view of natural
+selection as moving populations up local fitness peaks, as we
+encountered in Section \ref{section:pheno_fitness_landscapes} in
+discussing phenotypic fitness peaks. Again this view of selection as
+maximizing mean fitness only holds true
+if the genotypic fitnesses are frequency independent, later in this
+chapter we'll discuss some important cases where that doesn't hold. \\
 
 \begin{question}
 Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are
 equivalent. (Trickier question.)\\
 \end{question}
 
-So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parametrizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
+So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parameterizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
 
 %%Selection coeffs in diploid model
 \subsection{Diploid directional selection}
@@ -715,6 +722,7 @@ Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the very high po
 %\end{question}
 %\end{tcolorbox}
 
+\section{Balancing selection and the selective maintenance of polymorphism.}
 Directional selection on genotypes is expected to remove variation
 from populations, yet we see plentiful phenotypic and genetic
 variation in every natural population. Why is this? Three broad
@@ -729,8 +737,9 @@ explanations for the maintenance of polymorphisms are
       a balance between selection removing variation and mutation
       constantly introducing new variation into the population. 
 \end{enumerate}
-We'll turn to these latter two explanations through the rest of the
-chapter. Note that theses explanations are not mutually exclusive, and each of them will explain some proportion of the variation. 
+We'll turn to these latter two explanations through this chapter and
+the next.
+Note that theses explanations are not mutually exclusive, and each of them will explain some proportion of the variation. 
 
 \subsection{Heterozygote advantage}
 One form of balancing selection occurs when the heterozygotes are fitter than either
@@ -1248,13 +1257,14 @@ your MHC alleles may be genetically more closely related to MHC alleles in other
 close human friends. 
 
 
-\section{}
+\section{Sex ratios, sex ratio distorters, and other selfish
+  elements. }
 
 We have seen that when selection acts in a simple manner it can act to
 increase the mean fitness of the population. However, when the
 absolute fitnesses of individuals are frequency dependent, e.g. depend
 on the strategies deployed by others in the population, natural
-selection is not garenteed to increase mean fitness. One place where
+selection is not guaranteed to increase mean fitness. One place where
 this is particularly apparent is in the evolution of a 50/50 sex
 ratio. In fact as we'll see that selection can drive the evolution of
 traits that are actively harmful to the fitness of an individual, when
@@ -1373,6 +1383,11 @@ female.
 
 \subsection{Selfish genetic elements and selection below the level of
   the individual.}
+
+This section will be somewhat of a rogues gallery tour of some of the various
+genetic conflicts that occur and selfish genetic elements that can
+arise.  
+
 
 \paragraph{Selfish sex chromosomes and sex ratio distortion}
 Now from the perspective of the autosomes a 50/50 sex ratio normally represents
@@ -1605,8 +1620,8 @@ Male and female gametogenesis offer different opportunities for selfish
 systems. Just as how selfish X chromosome systems can spread by
 targeting sperm that carry the Y chromosome, selfish autosomal alleles
 can spread by targeting sperm carrying the other chromosome in
-heterozygotes. Both the Segregation Distortion allele and T-allele s in
-Drosophila and mouse respectively are selfish autosomal systems that
+heterozygotes. Both the Drosophila Segregation Distortion allele and
+the mouse T-allele are selfish autosomal systems that
 game transmission in heterozygotes by killing off sperm that don't carry the allele in heterozygotes.
 
 %Spok asci killer system https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004387
@@ -1624,7 +1639,17 @@ advantage in female heterozygotes.
 \begin{center}
 \includegraphics[width= \textwidth]{figures/autosomal_driver.pdf}
 \end{center}
-\caption{ } \label{fig:autosomal_driver}
+\caption{
+The fate of an unfit transmission distorter allele. If transmission is
+fair ($\alpha =\nicefrac
+{1}{2}$) the allele is lost, but the stronger its drive in
+heterozygotes the fast its spread and the higher its final frequency
+in the population (black and red curves, $\alpha =0.7$ \& $0.9$
+respectively).  With fitnesses $w_{dd}=1$,
+$w_{Dd}=0.95$, and $ w_{DD}=0.1$. The dotted lines show the predicted
+equilibrium. 
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/autosomal_driver.R}
+} \label{fig:autosomal_driver}
 \end{marginfigure} 
 
 
@@ -1670,7 +1695,7 @@ fixation.
 %mother's curse in people
 % https://www.theatlantic.com/science/archive/2017/09/how-a-fille-du-roy-brought-the-mothers-curse-to-canada/540153/
 
-% sperm and efgg production https://www.biodiversitylibrary.org/ia/cu31924001006851#page/60/mode/1up
+% sperm and egg production https://www.biodiversitylibrary.org/ia/cu31924001006851#page/60/mode/1up
 % https://archive.org/stream/embryologyofinse00joha/#page/4/mode/1up
 % BEST ONE https://archive.org/stream/biologystoryofli00hunt/#page/429/mode/1up
 
@@ -1680,7 +1705,7 @@ producing a son and daughter respectively. If our focal mother directs
 $s$ of her effort towards sons and $(1-s)$ of her effort towards
 daughters, she'll produces $\frac{Rs}{C_{\mars}}$ sons and
 $\frac{R(1-s)}{C_{\venus}}$ daughters.  We will assume that the mean
-reproductive value of daugthers is $1$. Given this the reproductive
+reproductive value of daughters is $1$. Given this the reproductive
 value of sons is the average number of matings that a male will have,
 i.e. the ratio $\nicefrac{\# \textrm{~females}}{\# \textrm{~males}}$. So if the population has a sex ratio $s_p$, the fitness of our focal female is
 \begin{equation}
@@ -1702,5 +1727,3 @@ setting $s^* = s=s_p$ and rearranging
 \end{equation}
 which is satisfied when $s^* = \nicefrac{1}{2}$, i.e. devoting equal resources to male and female offspring is the ESS, which corresponds to a 50/50 sex ratio if male and female offspring are equally costly. 
 
-
-\newpage
