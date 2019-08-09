@@ -68,7 +68,7 @@ the consensus are marked with a dash.  The first columns of sequence
 {\bf B)} How many fixed differences are there between \textit{D. melanogaster} and \textit{D. yakuba}?
 %What is the per base divergence are there between {\emph D. melanogaster} and {\emph D. yakuba}?
 \end{question}
-
+%JRI: confusing because site 974 is tri-allelic so "fixed" for derived allele but...
 
 \section{Allele frequencies}
 Allele frequencies are a central unit of population genetics
@@ -129,6 +129,7 @@ there in the sample, and this is called the \emph{frequency
 
 \begin{question}
 How many minor-allele singletons are there in \textit{D. simulans} in the ADH region?
+%JRI: ambiguous. is the minor allele defined across all species or just within simulans?
 \erin{students were confused whether you are defining 'minor allele' with reference to the species or to the whole group. There are no major allele singletons with reference to the individual species, but I think it's confusing because the only example of a minor allele given in the text by its definition is the 'minor allele in D. melanogaster' .. maybe it would be best to clarify in the question or just give an example of the minor allele in the whole sample instead.}
  \end{question}
 \paragraph{Levels of genetic variability across species.}
@@ -434,7 +435,7 @@ Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
 \hline
 parent--child & 0 & 1 & 0 & \nicefrac{1}{4}\\
 full siblings & \nicefrac{1}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & \nicefrac{1}{4}\\
-Monzygotic twins  & 0 & 0 & 1  & \nicefrac{1}{2} \\
+Monozygotic twins  & 0 & 0 & 1  & \nicefrac{1}{2} \\
 $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \hline
 \end{tabular}
@@ -483,7 +484,7 @@ share two alleles IBD, in which case $P(A_1 A_1 | \text{2 alleles IBD})
 both individuals will be. Putting this all together our equation
 \eqref{eqn:initial_relly_IBD_calc} becomes
 \begin{equation}
-P(A_1 A_2) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
+P(A_1 A_1) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
 \end{equation}
 Note that for specific cases we could also calculate this by summing over all the
 possible genotypes their shared ancestor(s) had; however, that would be much more
@@ -503,6 +504,7 @@ from the crime scene; however, they could be a sibling.
 Calculate the joint probability of observing the genotype from the crime and our
 suspect:\\
 {\bf A)} Assuming that they share no close relationship.\\
+%JRI: pretty sure the answer key is wrong here. If we put your eact set of fractions into R we get 1.433992e-09 as the answer. So something is wrong somewhere in answer.
 
 {\bf B)} Assuming that they are full sibs.\\
 
@@ -1180,6 +1182,7 @@ Eastern  & $0.95$ & $0.2$ \\
 \hline
 \end{tabular}
 \end{center}
+%JRI: no answer to this question in answer key
 %
 {\bf A)} Our individual, whose origin is unknown, has the genotype $AA$ at the
 first locus and $bb$ at the second. What is the posterior probability that our
@@ -1416,6 +1419,7 @@ interested in relatively short regions such that recombination is relatively
 rare, and so we might think that $r=r_{BP}L \ll \frac{1}{2}$, where $r_{BP}$ is the
 average recombination rate (in Morgans) per base pair (typically $\sim 10^{-8}$ ) and L is
 the number of base pairs separating our two loci.\\
+%JRI: I think you'd be better to stick with A_1A_2 and B_1B_2 notation rather than AaBb. Ideally be consistent with this throughout the book, maybe with a sidenote the first time you do it saying something like "I use A_1A_2 but you will often see Aa. I do it this way as to avoid confusion about perceived dominance or ancestral state."
 
 \paragraph{Linkage disequilibrium}
 The (horrible) phrase linkage
@@ -1428,12 +1432,13 @@ frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus hapl
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
 We can define a covariance between the $A$ and $B$ alleles at our two loci as
+%JRI: sure, but a few lines above you define LD as a correlation so why are you showing us a covariance?
 \begin{equation}
 D_{AB} = p_{AB} - p_Ap_B
 \end{equation}
 and likewise for our other combinations at our two loci
 ($D_{Ab},~D_{aB},~D_{ab}$).
-Gametes with two similar case alleles (e.g. A and B, or a and b) are known as \emph{coupling} gametes, and those with different case alleles are known as repulsion gametes (e.g. a and B, or A and b). Then, we can think of $D$ as measuring the \emph{excess} of coupling to repulsion gametes.
+Gametes with two similar case alleles (e.g. A and B, or a and b) are known as \emph{coupling} gametes, and those with different case alleles are known as \emph{repulsion} gametes (e.g. a and B, or A and b). Then, we can think of $D$ as measuring the \emph{excess} of coupling to repulsion gametes.
 These $D$ statistics are all closely
 related to each other as $D_{AB} = - D_{Ab}$ and so on. Thus we only
 need to specify one $D_{AB}$ to know them all, so we'll drop the
@@ -1453,7 +1458,8 @@ loci are on the same chromosome). Linkage disequilibrium merely refers
 to the covariance between the alleles at different loci; this may in
 part be due to the genetic linkage of these loci but does not
 necessarily imply this (e.g. genetically unlinked loci can be in LD
-due to population structure). \\
+due to population structure). \\i
+%JRI: good explanation. at beginning of section you say LD is a horrible term but don't explain. tempted to move that comment here or move this explanation there, as otherwise it seems odd and alone
 
 \begin{question}
 You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
@@ -1489,7 +1495,7 @@ are very rare.} \label{fig:TAPS_hotspot}
 Our linkage  disequilibrium statistic $D$ depends strongly on the
 allele frequencies of the two loci involved. One common way to
 partially remove this dependence, and make it more comparable across
-loci, is to divide $D$ through by its the maximum possible value given
+loci, is to divide $D$ through by its  maximum possible value given
 the frequency of the loci. This normalized statistic is called
 $D^{\prime}$ and varies between $+1$ and $-1$. In Figure
 \ref{fig:TAPS_hotspot} there's an example of LD across the TAP2 region
@@ -1519,7 +1525,6 @@ fraction.   \\
 \end{marginfigure}
 
 
-
 Figure \ref{fig:Mouse_LD} shows $r^2$ for pairs of SNPs at
 various physical distances in two population samples of {\it Mus musculus
   domesticus}. Again LD is highest between physically close markers as LD is being generated faster than it can
@@ -1533,14 +1538,15 @@ since the cross was created.
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/alleles_genotypes/mouse_LD/mouse_LD_Laurie_et_al.png}
 \end{center}
-\caption{The decay of LD for autosomal SNP in {\it Mus musculus
+\caption{The decay of LD for autosomal SNPin {\it Mus musculus
   domesticus}, as measured by $r^2$, in a wild-caught mouse population
   from Arizona and a set of advanced-generation crosses between inbred lines of lab mice. Each dot gives the $r^2$ for a
   pair of SNPs a given physical distance apart, for a total of $\sim
-  3000$ SNPs. The solid black line gives the mean, the jagged the
+  3000$ SNPs. The solid black line gives the mean, the jagged red line the
   $95^{th}$ percentile, and the flat red line a cutoff for
   significant $LD$. From \citet{Laurie:07}, \PLOSccBY. } \label{fig:Mouse_LD}
 \end{figure}
+%JRI: what's "HS" in the figure on the right?
 
 
 \paragraph{The generation of LD.}
@@ -1550,13 +1556,13 @@ combinations of alleles are favoured, but simply because at random particular
 haplotypes can by chance drift up in frequency. Mixing between
 divergent populations can also generate LD, as we saw in the mouse
 question above.
-
+%JRI: super weird not to mention mutation as generating LD
 
 \paragraph{The decay of LD due to recombination}
 
-We will now examine what happens to LD over the generations if we
-only allow recombination to occur in a very large population (i.e. no
-genetic drift, i.e. the frequencies of our loci follow their expectations). To do so, consider the frequency of our $AB$ haplotype in the next generation,
+We will now examine what happens to LD over the generations if, in a very large population  (i.e. no genetic drift and frequencies of our loci thus follow their expectations), we
+only allow recombination to occur. 
+To do so, consider the frequency of our $AB$ haplotype in the next generation,
 $p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
 recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
 haplotypes recombining together to form $AB$ haplotypes. Thus in the
@@ -1586,6 +1592,7 @@ haplotype as
 \end{center}
 \caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}} \label{fig:LD_recom}
 \end{marginfigure}
+%JRI: shouldn't y-axis labels for both be \Delta D?
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
 there is an excess of $AB$ haplotypes within the population ($D>0$), and an
 increase if there is a deficit of $AB$ haplotypes within the
@@ -1614,8 +1621,7 @@ D_t \approx  D_0 e^{-rt}  \label{eqn_LD_decay}
 You find a hybrid population between the two mouse subspecies
 described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
 \end{question}
-
-%
+%JRI: assumes r from previous problem. would be clearer to mention this or give r. also just says "LD" but should be more specific that you mean D.
 \begin{marginfigure}[2cm]
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/alleles_genotypes/Neanderthal/14800262343_f21929987a_z.jpg}
@@ -1644,7 +1650,7 @@ the work of
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/alleles_genotypes/Neanderthal_LD/European_neanderthal_LD.pdf}
 \end{center}
-\caption{The LD between putative-Neanderthal alleles in a modern European population (the CEU sample from the 1000 Genomes Project). Each point represents the average D statistic between a pair of alleles at loci at a given genetic distance apart (as given on the x-axis and measured in centiMorgans (cM)). The putative Neanderthal alleles are alleles where the Neanderthal genome has a derived allele that is at very low frequency in an modern-human  West African population sample (thought to have little admixture from Neanderthals). The red line is the fit of an exponential decay of LD, using non-linear least squared (nls in R).}
+\caption{The LD between putative-Neanderthal alleles in a modern European population (the CEU sample from the 1000 Genomes Project). Each point represents the average D statistic between a pair of alleles at loci at a given genetic distance apart (as given on the x-axis and measured in centiMorgans (cM)). The putative Neanderthal alleles are alleles where the Neanderthal genome has a derived allele that is at very low frequency in a modern-human  West African population sample (thought to have little admixture from Neanderthals). The red line is the fit of an exponential decay of LD, using non-linear least squared (nls in R).}
 \label{fig:LD_Neanderthal}
 \end{figure}
 
@@ -1654,7 +1660,8 @@ generations, or about 35 thousand years (using a human generation time of 29
 years). Thus the LD in modern Eurasians, between alleles derived from
 the interbreeding with Neanderthals, represents over thirty thousand years of
 recombination slowly breaking down these old
-associations. \marginnote{The calculation done by
+associations. \sidenote{The calculation done by
   \citet{Sankararaman:12} is actually a bit more involved as they
 account for inhomogeneity in recombination rates and arrive at a date
 of  47,334 -- 63,146 years.}
+%JRI: /marginnote with no number used well for definitions. /sidenote should be used for comments about specific parts of the text
