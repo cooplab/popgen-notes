@@ -163,23 +163,26 @@ n h^2 S
 i.e. our population will keep up a linear response to selection.
 
 
-% \begin{marginfigure}
-% \begin{center}
-% \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M._exilis_skeletal.pdf}
-% \end{center}
-% \caption{It's not just deer that evolve to be small on islands,
-%  pygmy mammoths and elephants have evolved from large mainland species
-%  on numerous island. For example, the
-%   California Channel Islands were home to a dwarf mammoth until about 13,000 years
-%   ago. \newline \noindent \tiny{Santa
-%   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.}
-% }   \label{Fig:Response_num_alleles}
-% \end{marginfigure}
+% http://mooselab.cropsci.illinois.edu/longterm.html
+% https://www.ideals.illinois.edu/handle/2142/3525
+
+ \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M._exilis_skeletal.pdf} \end{center}
+ \caption{It's not just deer that evolve to be small on islands,
+  pygmy mammoths and elephants have evolved from large mainland species
+  on numerous islands. For example, the
+   California Channel Islands were home to a dwarf mammoth until about 13,000 years
+   ago. \newline \noindent \tiny{Santa
+   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.}
+ }   \label{Fig:Response_num_alleles}
+ \end{marginfigure}
 \begin{question}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
 we can see that the population rapidly adapted to their new
-conditions. Within 6,000 years they evolved from an estimated mean weight of
+conditions, perhaps due to selection for shorter reproductive times in
+the absence of predation. Within 6,000 years they evolved from an estimated mean weight of
 the population of 200kg to an estimated mean weight of 36kg (a 6 fold
 reduction)! You estimate that the generation time
 of red deer is 5 years and, from a current day population, that the narrow sense heritability of the
@@ -209,7 +212,6 @@ selection within a generation. State your assumptions.\\
 \end{center}
 \caption{  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
 \end{figure}
-
 
 \paragraph{Alternative formulations of the Breeder's equation.}
 A change in mean phenotype within a generation occurs because of the
@@ -330,7 +332,7 @@ R= V_A \beta
 i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \graham{add pic of relationship between slope and S?}
-\paragraph{Fitness landscapes}
+\subsection{Fitness landscapes}  \ref{section:pheno_fitness_landscapes}
 
   \begin{figure*}
  \begin{center}
@@ -345,8 +347,7 @@ i.e. we'll see a directional response to selection if there is a linear relation
    before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}.} \label{fig:fitness_landscape_1D_w_wbar}  
  \end{figure*}
 
-When we talk about evolution we often talk of a population
-exploring an adaptive landscape with natural selection pushing a population
+One common metaphor when talk about evolution is that of a population exploring an adaptive landscape with natural selection pushing a population
 towards higher fitness states corresponding to peaks in this landscape
 (see e.g. Figure \ref{fig:fitness_landscape_1D}).  \graham{Simpson/Wright.}
 \citet{lande1976natural} found an evocative formulation of the
@@ -457,8 +458,7 @@ the population towards this local optimum.
 % You could think about the
 % population phenotype as a marble rolling around  }
 
-%\paragraph{Different populations potentially sit on top of different
-  peaks in the fitness landscape}
+%\paragraph{Different populations potentially sit on top of different peaks in the fitness landscape}
  % https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000529
 
  \paragraph{Stabilizing and Disruptive selection}
@@ -727,6 +727,25 @@ the response in females is due to correlated selection. Can you
 estimate the male-female genetic correlation of the eye-stalk ratio? 
 \end{question}
 
+\begin{figure*}
+\begin{center} 
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Garter_snakes_Brodie/Garter_snakes_Brodie.pdf}
+\end{center}
+\caption{ {\bf Left)} The garter snake fitness surface estimated by \citet{brodie1992correlational}
+ lighter colours indicate higher
+ relative fitness. {\bf Middle)} The phenotypes of all of the snakes released
+   by Brodie, each dot is an individual. {\bf Right)} The phenotypes
+   of surviving snakes. Note how snakes in the top left and bottom
+   right corner are over represented in the survivors. Data from  \citet{brodie1992correlational}
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Garter_snakes_Brodie/Garter_snakes_Brodie.R}. } \label{fig:Garter_snakes_Brodie}
+\end{figure*} 
+
+%s, where the snakes with thehighest probability of survival perform uninterrupted flight if striped but flee evasivelyif spotted or unstriped.  
+
+% Eutaenia ordinoides
+% northwestern garter snake (Thamnophis ordinoides)
+%https://commons.wikimedia.org/wiki/File:The_natural_history_of_Washington_territory,_with_much_relating_to_Minnesota,_Nebraska,_Kansas,_Oregon,_and_California,_between_the_thirty-sixth_and_forty-ninth_parallels_of_latitude,_being_those_(14574590600).jpg
+
 \paragraph{Estimating multivariate selection gradients}
 We can estimate multivariate directional ($\beta$) and quadratic selection
 gradients ($\gamma$) just as we did for a single traits ($x_1$ and $x_2$), using linear
@@ -759,29 +778,16 @@ to monitor their fate.
 %, between the thirty-sixth and forty-ninth parallels of latitude, being those parts of the final reports on the survey of the Northern Pacific railroad route, containing the climate and physical geography, with full catalogues and descriptions of the plants and animals collected from 1853 to 1857
 \end{marginfigure}  Before releasing them he measured how stripey
 they were, and their behavioural tendency to reversals of direction
-during simulated flight from a predator flight. His quadratic fitness surface is shown in Figure
+during simulated flight from a predator. His quadratic fitness surface is shown in Figure
 \ref{fig:Garter_snakes_Brodie}, based on fitting the
 regression given by eqn \eqref{fitness_regression} to juvenile
 survival. He found that neither single trait directional of quadratic
 gradients were significant, ie there was no apparent selection on one 
 trait ignoring the other. However, there was a significant, negative
-covariance. The individuals with the highest chance of survival are
+covariance ($\gamma_{1,2}<0$). The individuals with the highest chance of survival are
 {\it either} highly striped and perform few reversals (top left
 corner), {\it or} have little striping but reverse course frequently
 (bottom right corner). 
-
-\begin{figure*}
-\begin{center} 
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Garter_snakes_Brodie/Garter_snakes_Brodie.pdf}
-\end{center}
-\caption{  } \label{fig:Garter_snakes_Brodie}
-\end{figure*} 
-
-%s, where the snakes with thehighest probability of survival perform uninterrupted flight if striped but flee evasivelyif spotted or unstriped.  
-
-% Eutaenia ordinoides
-% northwestern garter snake (Thamnophis ordinoides)
-%https://commons.wikimedia.org/wiki/File:The_natural_history_of_Washington_territory,_with_much_relating_to_Minnesota,_Nebraska,_Kansas,_Oregon,_and_California,_between_the_thirty-sixth_and_forty-ninth_parallels_of_latitude,_being_those_(14574590600).jpg
 
 \section{Some applications of the multivariate trait breeder's equation}
 
