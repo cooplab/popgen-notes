@@ -1175,7 +1175,9 @@ A number of observations follow under this model, from equation \eqref{eqn:molec
 The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the Cytochrome c protein.
 While, humans and dogfish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
 
-In equation \eqref{eqn:moleclock} we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced less mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false, organisms with shorter generation times have somewhat higher mutation rates per year, and so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution. \graham{I currently dont do generation time effect in that chapter, need to update}
+In equation \eqref{eqn:moleclock}, if we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced fewer mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false: organisms with shorter generation times have somewhat higher mutation rates per year so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. %If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution.
+%JRI: one to many cute send the prof a photo for a single chapter
+ graham{I currently dont do generation time effect in that chapter, need to update}
 \graham{add side note on adjustment for multiple hits'}
 \graham{add note about fibrinogen having non-essential spacer pepitides}
 
@@ -1194,7 +1196,7 @@ that our populations split cleanly with no subsequent gene flow, then
 T = T_s + 2N_A.
 \end{equation}
 If our species split time is very large compared to $2N$ then we can think of $T$ as the split time.
-
+%JRI: should clarify that above equation only holds only for two lineages. maybe add as a margin note
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{figures/Genetic_drift/ILS/split_anc_pop.pdf}
@@ -1210,10 +1212,10 @@ If our species split time is very large compared to $2N$ then we can think of $T
 
 
 \begin{question}
-For this, and the next question, assume that humans and chimp diverged
+For this, and the next question, assume that humans and chimps diverged
 %\graham{Update numbers?}
 around 5.5$\times 10^6$ years ago, have a generation time ~20 years, that the speciation occurred instantaneously in allopatry with no subsequent gene flow, and the ancestral effective population size of the human and chimp common ancestor population was 10,000 individuals.\\
-Nachman and Crowell sequenced 12 pseudogenes in human and chimp and found substitutions at 1.3\% of sites. \\
+Nachman and Crowell sequenced 12 pseudogenes in humans and chimps and found substitutions at 1.3\% of sites. \\
 {\bf A) } What is the mutation rate per site per generation at these genes?\\
 {\bf B)} All of the pseudogenes they sequenced are on the autosomes. What
 would your prediction be for pseudogenes on the X and Y chromosomes,
@@ -1228,13 +1230,13 @@ substitutions $\dNdS$}
 One common tool in molecular evolution is to compare the estimated number (or rates) of substitutions in different classes of genomic sites, for example the ratio of the number of non-synonymous to synonymous substitutions in a given gene. The simplest way to calculate $d_N$ is to
 count up the non-synonymous changes and divide by the total number of
 positions in the gene where a non-synonymous point mutation could occur. We
-can do likewise for synonymous changes $d_S$, and then take the ratio $\dNdS$. This is a helpful
-conceptual way to think about what $\dNdS$ represents, however, this
+can do likewise for synonymous changes $d_S$, and then take the ratio $\dNdS$.
+\siudenote{This
 ignores the fact that some changes are more likely to occur by
 mutation than others and also does not account for multiple hits (multiple mutations at the same bp position). Therefore, in
 practice the ratio $\dNdS$ is more typically calculated by model-based
 likelihood and bayesian methods
-that can account for these features.
+that can account for these features.}
 
 For the vast majority of protein-coding genes in the genome we see that $\dNdS < 1$. This observation is consistent with the view
 that non-synonymous sites are much more constrained than synonymous sites, i.e. that most non-synonymous mutations are deleterious and quickly removed from the population. If we are willing to make the assumption that all synonymous changes are
@@ -1271,7 +1273,9 @@ which serve as a clue .. for its derivation.''  -- \citet{darwin1859} pg. 455
 
 While most protein genes evolve under constraint, we can find examples of
 genes that are evolving in a less constrained manner. The simplest
-example of this is where the gene has lost function. Genes can lose function because of inactivating mutations that stop them being transcribed or translated into functional proteins. Such genes are called 'pseudogenes'. When a gene completely loses function there is no longer
+example of this is where the gene has lost function. Genes can lose function because of inactivating mutations that stop them being transcribed or translated into functional proteins. Such genes are called `pseudogenes'.
+%JRI: odd to define pseudogene here when you've used the term lots previously
+When a gene completely loses function there is no longer
 selection against non-synonynous changes and so such mutations are just as free
 to accumulate as synonymous changes, and so $\dNdS=1$.
 Pseudogenes are a wonderful example of the extension of Darwin's ideas about vestigial traits (`Rudimentary organs') to the DNA level;
@@ -1298,7 +1302,9 @@ the Enamlin gene from the study of \citet{Meredith:09}.
   to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.}{https://archive.org/stream/chordates00rand/\#page/744/mode/1up}{University of Toronto} } \label{fig:sloth}
 \end{marginfigure}
 
-The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark {\it Orycteropus}) all lack  enamel on teeth. Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
+The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark ({\it Orycteropus}) all lack  enamel on teeth.
+%JRI: i don't understand when you choose to capitalize parts of common names of species. Pygmy sperm whale but two-toed sloth. throughout chapters varies a lot
+Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
 for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
 range of species and found that none of the species with enamel have frameshift
 mutations in Enamlin, while 17/20 of species that lack enamel or teeth have
@@ -1311,10 +1317,11 @@ frameshifts in Enamlin, and all of them carry premature stop codons
 \end{center}
 \caption{The tooth symbol next to each taxon shows whether they have
   teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
-  Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white vertical bars on branches show frameshift
+  Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white  bars on branches show frameshift
   mutations.  The numbers after taxon names indicate minimum number of
   stop codons in the sequence divided by  the length of the sequence. Figure from \citet{Meredith:09}, \PLOSccBY.} \label{fig:Enamlin_phylo}
 \end{figure}
+%JRI: recommend removing or editing this. i had to zoom in a lot to figure out the teeth, the numbers aren't easy to read, etc.  not a helpful figure
 
 The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin (red)
 had $\dNdS = 1.02$, consistent with the gene evolving an unconstrained
@@ -1375,7 +1382,7 @@ the rapid fixation of beneficial mutations due to positive selection is outweigh
   \citet{Yang:98}. For each branch, the numbers give the estimated average
 number of non-synonymous to synonymous changes in the lysozyme protein.} \label{fig:lysozyme}
 \end{figure}
-
+%JRI: Angolan colobus missing numbers
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Genetic_drift/Colobus/19792029373_fcce706e67_k.jpg}
@@ -1388,14 +1395,14 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
 \begin{center}
 \includegraphics[width=0.8  \textwidth]{illustration_images/Genetic_drift/Hoatzin/14747388314_85798ba97e_z.jpg}
 \end{center}
-\caption{ (hoatzin ({\it Opisthocomus hoazin}). A leaf-eating bird. \BHLNC{A history of birds (1910)
+\caption{ (Hoatzin ({\it Opisthocomus hoazin}). A leaf-eating bird. \BHLNC{A history of birds (1910)
   Pycraft, W.P.}{https://archive.org/stream/historyofbirds00pycr/historyofbirds00pycr\#page/238/mode/1up}{ American Museum of Natural History Library}} \label{fig:hoatzin}
 \end{marginfigure}
-A classic example for looking at adaptive evolution using dN/dS is the
-evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}, see
-the phylogeny in Figure \ref{fig:lysozyme}. The lysozyme protein is
+A classic example for looking at adaptive evolution using $\dNdS$ is the
+evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}. The lysozyme protein is
 a key component for the breakdown of bacterial walls. It shows very
-fast protein evolution, notably on the lineages leading to apes (e.g. gibbons
+fast protein evolution (see
+the phylogeny in Figure \ref{fig:lysozyme}), notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
 these leaves by bacterial fermentation in their foregut, and then use lysozymes to break down the bacteria to extract energy from the
 leaves. In Colobines, the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
@@ -1429,7 +1436,9 @@ Under neutral theory, we expect a smaller number of non-synonymous to
 synonymous fixed differences ($D_N/D_S < 1$) and exactly the same
 expectation holds for polymorphism ($P_N/P_S$). Let's consider a gene with $L_S$ and $L_N$ sites where synonymous and non-synonymous mutations could arise respectively.
 We can think of the underlying gene genealogy at our gene, see Figure \ref{fig:MK_tree}, with the total time on the coalescent genealogy within the species as $T_{tot}$ and the total time for fixed differences between our species as $T_{div}'$. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
-non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ non-synonymous fixed differences. We can then fill out the rest of our table as follows:
+non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ non-synonymous fixed differences.
+%JRI: maybe specify derived non-syn fixed diffs? as fixed differences between species an accrue on branch leading to outgroup as well, so more time than just T_{div}
+We can then fill out the rest of our table as follows:
 
 
 \begin{center}
@@ -1437,7 +1446,7 @@ non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu 
  & Poly. & Fixed  \\
  \hline
 Non-Syn. &    $\mu L_N (1-C) T_{tot}$  &   $\mu L_N (1-C)  T_{div}'$ \\
-Syn. &    $\mu L_N T_{tot}$   &     $\mu L_S T_{div}'$  \\
+Syn. &    $\mu L_S T_{tot}$   &     $\mu L_S T_{div}'$  \\
 Ratio & $ L_N(1-C)/( L_S)$  & $ L_N (1-C) / ( L_S)$
 \end{tabular}
 \end{center}
@@ -1459,7 +1468,7 @@ Therefore, we expect the ratio of non-synonymous to synonymous changes to be the
 % \caption{White admiral ({\it Limenitis arthemis}). \BHLNC{American entomology : a description of the insects of North American (1859). Say, T. }{https://www.biodiversitylibrary.org/page/9194935\#page/487/mode/1up}{Smithsonian Libraries}} \label{fig:Limenitis}
 % \end{marginfigure}
 As example of a Mcdonald-Kreitman table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L Photopigment opsin in Admiral
-({\it Limenitis}) butterflies, responsible for colour vision in the long-wavelength part of the visual spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity of this opsin had shifted towards blue-shifted in its sensitivity in {\it L. archippus archippus} (viceroy) compared to {\it  L. arthemis astyanax}. To test whether this molecular evolution reflected positive selection they sequenced  24 {\it L. arthemis astyanax} individuals and one {\it  L. archippus archippus} sequence. They identified  11 polymorphic sites in  {\it L. arthemis astyanax} and 16 fixed differences, which break down as follows:
+({\it Limenitis}) butterflies, responsible for colour vision in the long-wavelength part of the visual spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity of this opsin had shifted towards blue in its sensitivity in {\it L. archippus archippus} (viceroy) compared to {\it  L. arthemis astyanax}. To test whether this molecular evolution reflected positive selection they sequenced  24 {\it L. arthemis astyanax} individuals and one {\it  L. archippus archippus} sequence. They identified  11 polymorphic sites in  {\it L. arthemis astyanax} and 16 fixed differences, which break down as follows:
 \begin{center}
 \begin{tabular}{ccc}
  & Poly. & Fixed  \\
@@ -1567,7 +1576,7 @@ effective population sizes.
 
 
 \begin{question}  %Pongo abelii (Sumatran) and Pongo pygmaeus
-  The genome-wide $F_{ST}$ between Bornean and Sumatran orang-utan species samples  ({\it Pongo pygmaeus} and {\it Pongo abelii}) is $\approx 0.37$ \citep{locke2011}, representing a deep population split between the species (potentially with little subsequent gene flow). Within the populations the genome-wide average Watterson's $\theta$ is $\theta_W=1.4$kb$^{-1}$, estimated from the number of segregating sites. Assume a generation time of 20 years, and a mutation rate of $2 \times 10^{-8}$ per base per generation. How far in the past did the two populations diverge?
+  The genome-wide $F_{ST}$ between Bornean and Sumatran orangutan species samples  ({\it Pongo pygmaeus} and {\it Pongo abelii}) is $\approx 0.37$ \citep{locke2011}, representing a deep population split between the species (potentially with little subsequent gene flow). Within the populations the genome-wide average Watterson's $\theta$ is $\theta_W=1.4$kb$^{-1}$, estimated from the number of segregating sites. Assume a generation time of 20 years, and a mutation rate of $2 \times 10^{-8}$ per base per generation. How far in the past did the two populations diverge?
 \end{question}
 %o understand this better we can make a simple
 %approximation based on our mutation rate being very low, such that
@@ -1616,6 +1625,7 @@ coalesces $t+1$ generations back on the island is
 \frac{1}{2N_I}(1-m)^{2(t+1)} \left(1-\frac{1}{2N_I} \right)^{t} \approx
 \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
 \end{equation}
+%JRI: this is a long scary-looking equation. i think it's pretty straightforward but even I was momentarily surprised by it. i think many readers will see it and tune out and not try to work through it. i suggest you keep it but spend a few sentences working through it (1-m) not migrating times prob. of coalesceing t gens, etc.
 with the approximation following from assuming that $m \ll 1$ \& $\frac{1}{(2N_I)}
 \ll 1$ (note that this is very similar to our derivation of
 heterozygosity above). The probability that our alleles coalesce before either one
@@ -1637,7 +1647,7 @@ happens with probability
 Conditional on one or other of our alleles migrating to the mainland, both of our alleles represent independent draws from the mainland and so differ from each other with probability $H_M$. Therefore, the level of
 heterozygosity on the island is given by
 \begin{equation}
-  H_I = \left(1 - \frac{\nicefrac{1}{(2N_I)}}{1/(2N_I) + 2m} \right)H_M
+  H_I = \left(1 - \frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} + 2m} \right)H_M
 \end{equation}
 So the reduction of heterozygosity on the island compared to the
 mainland is
@@ -1649,6 +1659,14 @@ key parameter here is the number individuals on the island replaced by immigrant
 
 We have framed this problem as being about the reduction in genetic diversity on the island compared to the mainland. However, if we consider collecting individuals on the island and mainland in proportion to their population
 sizes, the total level of heterozygosity would be $H_T=H_M$, as samples from our mainland would greatly outnumber those from our island. Therefore, considering the island as our sub-population, we have derived another simple model of $F_{ST}$.
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/stickleback/threespine.jpg}
+\end{center}
+\caption{Three-spined stickleback ({\it Gasterosteus aculeatus}).
+  \newline \noindent \tiny{Jordan, David Starr (1907) Fishes, New York City, NY: Henry Holt and Company. Image from  \href{https://commons.wikimedia.org/wiki/File:FMIB_51889_Three-spined_Stickleback,_Gasterosteus_aculeatus_L_Woods_Hole,_Mass.jpeg}{Wikimedia Commons} Public domain.}} \label{fig:stickle}
+\end{marginfigure}
 
 \begin{question}
 You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of putatively neutral biallelic markers the freshwater population has frequencies:\\
@@ -1664,19 +1682,19 @@ populations into the river?
 
 Because it can take a long time for an polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
 individual loci. In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
-we show a simulations of three populations where the bottom population splits off from the other two first, followed by the subsequent splitting of the the top and the middle populations. We start both simulations with a newly
+we show a simulation of three populations where the bottom population splits off from the other two first, followed by the subsequent splitting of the the top and the middle populations. We start both simulations with a newly
 introduced red allele being polymorphic in the combined ancestral population. The most likely fate of this allele is that it is
-quickly lost from the population, but sometimes the allele can drift up in frequency and be polymorphic when the populations split, as the alleles in our two figures have done. If the allele is lost/fixed in the descendant populations before the next population split, our allele
+quickly lost from the population, but sometimes the allele can drift up in frequency and be polymorphic when the populations split, as the allele in our two figures has done. If the allele is lost/fixed in the descendant populations before the next population split, our allele
 configuration will agree with the population tree, as it does in
 Figure  \ref{fig:NoILS_poly}, and so too the gene tree will agree with population tree (as shown in the left side of Figure \ref{fig:ILS_cartoon}).
-However, if the allele persists as a polymorphism in the ancestral population till the top and the middle
-populations split, then the allele can fix in one of these populations
-and not the other. Such an event can lead to a substitution pattern
+However, if the allele persists as a polymorphism in the ancestral population until the top and the middle
+populations split, then the allele could fix in one of these populations
+and not the other. Such an event leads to a substitution pattern
 that disagrees with the population tree, as in Figure \ref{fig:ILS_poly}.  If
 we were to construct a phylogeny using the variation at this site we would see a disagreement between the gene tree and population tree. In Figure \ref{fig:ILS_poly} an allele
 drawn from the top and the bottom populations are
 necessarily more closely related to each other than either is to an allele drawn from population 2;
-tracing our allelic lineages from the top and bottom populations back through time, they must coalesce with each other before we reach the point where the red mutation arose; in contrast, a lineage from the middle population cannot have coalesced with either other lineage until past the time the red mutation arose. An example of this 'incomplete lineage sorting' in terms of the underlying tree is shown on the right side of Figure \ref{fig:ILS_cartoon} .
+tracing our allelic lineages from the top and bottom populations back through time, they must coalesce with each other before we reach the point where the red mutation arose; in contrast, a lineage from the middle population cannot have coalesced with either other lineage until past the time the red mutation arose. An example of this `incomplete lineage sorting' in terms of the underlying tree is shown on the right side of Figure \ref{fig:ILS_cartoon}.
 
 
 \begin{figure}
@@ -1699,7 +1717,7 @@ tracing our allelic lineages from the top and bottom populations back through ti
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ILS_coal_cartoon.pdf}
 \end{center}
 \caption{The population tree of three populations ((A, B), C) is shown
-blocked out with black shapes. Two different coalescent trees are
+blocked out with black shapes. Two different coalescent trees
 relating a single allele drawn from A, B, and C are shown with thinner lines.} \label{fig:ILS_cartoon}
 \end{figure}
 
@@ -1727,8 +1745,8 @@ with the patterns of relatedness at a particular locus.
 \end{marginfigure}
 
 As an empirical example of incomplete lineage sorting, let's consider the work of
-\citeauthor{jennings:05} who sequenced a single allele from three
-different species of Australian grass finches (Poephila): two sister species
+\citet{jennings:05} who sequenced a single allele from three
+different species of Australian grass finches ({\it Poephila}): two sister species
 of long-tailed finches ({\it Poephila acuticauda} and {\it P. hecki})
 and the black-throated finch ({\it Poephila cincta}, see Figure \ref{fig:Poephila_cincta}). They collected
 sequence data for 30 genes, and constructed phylogenetic gene trees
@@ -1778,7 +1796,7 @@ We often want to test whether gene flow has occurred between populations. For ex
 that interbreeding between humans and Neanderthals occurred or demonstrate that
 gene flow occurred after two populations began to speciate.
 A broad range of methods have been designed to test for gene flow and
-to estimate gene flow rates, based on neutral expectations. Here we'll briefly just discuss one method based on
+to estimate gene flow rates based on neutral expectations. Here we'll briefly just discuss one method based on
 some simple coalescent ideas.  Above we assumed that gene-tree population-tree discordance was due to
 incomplete lineage sorting due to populations rapidly
 splitting. However, gene flow among populations can also lead to gene-tree discordance.
@@ -1795,11 +1813,12 @@ discordances manifest themselves.\\
 such that the lineages from A through C (nearly) always coalesce with each other before any coalesce with D. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
 ABBA or BABA mutational pattern shown at the bottom. } \label{fig:ABBA_BABA}
 \end{figure}
+%JRI: here and in text you refer to populations ABCD but figure is labelled ``species'' and 1234. I think ABCD for populations and AB for alleles is confusing. I don't know if you need A/B for alleles. Why not use A1A2 or just 1/2 as you have previously? sure you miss the fun mnemonic, but it's clearer for a novice reader
 
 Take a look at Figure \ref{fig:ABBA_BABA}. In both cases the lineages from A and B fail to coalesce in
 their initial shared ancestral population, and one or the other of them
 coalesces with the lineage from C before they coalesce with each other. Each option is equally
-likely; therefore the mutational patterns ABBA and BABA are equally likely to occur under ILS.  \sidenote{here we have to assume no structure in the ancestral population.}
+likely; therefore the mutational patterns ABBA and BABA are equally likely to occur under ILS.  \sidenote{Here we have to assume no structure in the ancestral population.}
 
 However, if gene flow occurs from population C into population B, in addition to ILS the lineage from B can more recently coalesce with the lineage from C, and so we should see more ABBAs than BABAs. To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
 $n_{BABA}$ and calculate
