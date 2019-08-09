@@ -13,21 +13,28 @@ lines(corn_LTS[,"YR"],corn_LTS[,"IRHO.1"],type="l",lty=3,lwd=3)
 
 corn.ids<-read.csv(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/LTINDIVIDUAL_EAR_DATA1896_2004A.csv",head=TRUE,as.is=TRUE,na.strings=".",comment.char = "#",skip=15)
 
-	my.breaks=seq(0,max(corn.ids[!is.na(corn.ids$IHO),"IHO"]),length=50)
-hist(corn.ids[corn.ids$Year=="1896" & corn.ids$INIHO==0 & !is.na(corn.ids$INIHO),"IHO"],breaks=my.breaks)
+	my.breaks=seq(0,max(corn.ids[!is.na(corn.ids$IHO),"IHO"]),length=35)
 
 system("rm ~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/gif_pngs/*")
 gif.dir<-"~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/gif_pngs/"
 gen<-1
 file.prefix<-"Illinois_up_oil_"
 for(year in seq(1896,2000,by=1)){
+if(sum(corn.ids$Year==year & !is.na(corn.ids$IHO))!=0){
 png(file=paste(gif.dir,file.prefix,year,".png",sep=""))	
 gen<-1+gen
-hist(corn.ids[corn.ids$Year==year & !is.na(corn.ids$IHO),"IHO"],breaks=my.breaks,freq=FALSE,ylim=c(0,1)) #ylim=c(0,30),
-#hist(corn.ids[corn.ids$Year==year & corn.ids$INIHO==1 & !is.na(corn.ids$INIHO),"IHO"],breaks=my.breaks,add=TRUE,col="blue",freq=FALSE)
+a<-hist(corn.ids[corn.ids$Year==year & !is.na(corn.ids$IHO),"IHO"],breaks=my.breaks,freq=FALSE,ylim=c(0,1),title=year,plot=FALSE) #ylim=c(0,30),
+b<-hist(corn.ids[corn.ids$Year==year & corn.ids$INIHO==1 & !is.na(corn.ids$INIHO),"IHO"],breaks=my.breaks,add=TRUE,col="blue",freq=FALSE,plot=FALSE)
+a$counts<-  a$counts*60/sum(a$counts)
+b$counts<-  b$counts*60/sum(a$counts)
+plot(a,ylim=c(0,40),main=year,,xlab="Oil content (%)",ylab="Num. inds",cex.axis=1.2,cex.lab=1.4,cex.main=1.4)
+legend(x="topright",fill=c("white","blue"),legend=c("All","Selected"),cex=1.2)
+plot(b,add=TRUE,ylim=c(0,40),col="blue")
 dev.off()
+
 }
-system(paste("convert -delay 20 $(ls -v ", gif.dir, file.prefix,"*.png) ", gif.dir,file.prefix, "output.gif",sep=""))
+}
+system(paste("convert -delay 30 $(ls -v ", gif.dir, file.prefix,"*.png) ", gif.dir,file.prefix, "output.gif",sep=""))
 
 
  tmp1<-cbind(corn.ids[!is.na(corn.ids$IHO),c("Year","IHO")],"IHO"); colnames(tmp1)<-c("Year","Oil","Exp")
@@ -35,7 +42,6 @@ system(paste("convert -delay 20 $(ls -v ", gif.dir, file.prefix,"*.png) ", gif.d
 tmp3<-cbind(corn.ids[!is.na(corn.ids$IRHO),c("Year","IRHO")],"IRHO"); colnames(tmp3)<-c("Year","Oil","Exp")
 pheno.sel<-rbind(tmp1,tmp2) #,tmp3)
 pheno.sel$Exp<-as.factor(pheno.sel$Exp)
-
 
 
 ggplot(pheno.sel, aes(x = Oil, y = Year,group=paste(Year,Exp),  fill=Exp)) + 
