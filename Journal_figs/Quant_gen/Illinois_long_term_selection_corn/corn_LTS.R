@@ -4,18 +4,32 @@
 #https://www.ideals.illinois.edu/handle/2142/3525
 
 corn_LTS<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/timmed_corn_LTS_table.csv",head=TRUE,as.is=TRUE,na.strings=".")
+
+##Oil means
 plot(corn_LTS[,"YR"],corn_LTS[,"IHO.1"],type="l",ylim=c(0,25),xlab="Year",ylab="% Oil content",cex.axis=1.2,cex.lab=1.4,lwd=2)
 abline(lm(corn_LTS[,"IHO.1"]~corn_LTS[,"YR"]),col="red",lwd=1.5)
 lines(corn_LTS[,"YR"],corn_LTS[,"ILO.1"],type="l",lty=2,lwd=2)
 
 lines(corn_LTS[,"YR"],corn_LTS[,"IRHO.1"],type="l",lty=3,lwd=2)
 lines(corn_LTS[,"YR"],corn_LTS[,"IRLO.1"],type="l",lty=4,lwd=2)
-dev.copy2pdf("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_means.pdf")
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_means.pdf")
+
+##Protein means
+
+plot(corn_LTS[,"YR"],corn_LTS[,"IHP.1"],type="l",ylim=c(0,25),xlab="Year",ylab="% Oil content",cex.axis=1.2,cex.lab=1.4,lwd=2)
+abline(lm(corn_LTS[,"IHP.1"]~corn_LTS[,"YR"]),col="red",lwd=1.5)
+lines(corn_LTS[,"YR"],corn_LTS[,"ILP.1"],type="l",lty=2,lwd=2)
+
+lines(corn_LTS[,"YR"],corn_LTS[,"IRHP.1"],type="l",lty=3,lwd=2)
+lines(corn_LTS[,"YR"],corn_LTS[,"IRLP.1"],type="l",lty=4,lwd=2)
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_means.pdf")
+
+####Plots for distribution of individuals
 
 corn.ids<-read.csv(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/LTINDIVIDUAL_EAR_DATA1896_2004A.csv",head=TRUE,as.is=TRUE,na.strings=".",comment.char = "#",skip=15)
 
 
-###ridge plot
+###ridge plot of distributions over time
 library("ggplot2")
 library("ggridges")
 
@@ -40,6 +54,7 @@ geom_density_ridges(alpha = .5,scale = 10, size = 0.25, rel_min_height = 0.03)+
   y="Year",
   title="Illinois long term selection experiment"
   )
+dev.copy2pdf("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_ggridges_distribution.pdf")
 
 
 ##Protein levels
@@ -63,6 +78,36 @@ geom_density_ridges(alpha = .5,scale = 10, size = 0.25, rel_min_height = 0.03)+
   title="Illinois long term selection experiment"
   )
 
+###Breeder's equation plot
+
+layout(1:2); 
+par(mar=c(3,3,1,1))
+year=1897
+all.inds<-corn.ids[corn.ids$Year==year & !is.na(corn.ids$IHO),"IHO"]
+sel.inds<-corn.ids[corn.ids$Year==year & corn.ids$INIHO==1 & !is.na(corn.ids$INIHO),"IHO"]
+kids<-corn.ids[corn.ids$Year==year+1 & !is.na(corn.ids$IHO),"IHO"]
+
+my.range<-range(c(all.inds,sel.inds,kids),na.rm=TRUE)
+
+a<-hist(all.inds,main=year,breaks=seq(my.range[1],my.range[2],length=20)) 
+ abline(v=mean(all.inds),col="black",lwd=2)
+ abline(v=mean(sel.inds),col="blue",lwd=2)
+b<-hist(sel.inds,breaks=a$breaks,add=TRUE,col="blue")
+
+	arrows(x0=mean(all.inds),x1=mean(sel.inds),y0=max(a$counts)*0.8,y1=max(a$counts)*0.8,col="blue",lwd=2,length=0.1,code=3)
+	text(x=(mean(all.inds)+mean(sel.inds))/2, y=max(a$counts)*0.9,"S",col="blue",cex=1.5)
+legend(x="topleft","Parental gen.",cex=1.4)
+
+c<-hist(kids,main="",breaks=a$breaks)
+ abline(v=mean(all.inds),col="black",lwd=2)
+ abline(v=mean(kids),col="red",lwd=2)
+ abline(v=mean(sel.inds),col="blue",lwd=2)
+
+	arrows(x0=mean(all.inds),x1=mean(kids),y0=max(c$counts)*0.8,y1=max(c$counts)*0.8,col="red",lwd=2,length=0.1,code=3)
+	text(x=(mean(all.inds)+mean(kids))/2, y=max(c$counts)*0.9,"R",col="red",cex=1.5)
+legend(x="topleft","Offspring gen.",cex=1.4)
+mtext(side=1,"Oil content (%)",line=2,cex=1.4)
+dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_breeders_eq.pdf")
 
 ###animation 
 my.breaks=seq(0,max(corn.ids[!is.na(corn.ids$IHO),"IHO"]),length=35)

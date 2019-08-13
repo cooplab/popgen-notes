@@ -1,0 +1,229 @@
+% \documentclass[11pt]{article}
+% \RequirePackage[font=small,labelfont=bf]{caption}
+% \RequirePackage{amsmath,amssymb,amsthm}
+% \usepackage{graphicx}
+% \usepackage{verbatim}
+%  \graphicspath{{figs/}} 
+%  \usepackage{wrapfig}
+% \headheight 0pt \headsep 0pt \oddsidemargin -0.45in \evensidemargin
+% -0.45in \textwidth 7.25in \textheight 9.5in \topmargin-0.4in
+% \input epsf
+% %\pagestyle{empty}
+% \begin{document}
+% \pagestyle{plain} \footskip 0.5in
+% \renewcommand{\thepage}{\arabic{page}}
+% \bibliographystyle{amsplain}
+% \renewcommand{\P}{\mathbb{P}}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\E}{\mathbb{E}}
+
+
+\chapter{An Introduction to Mathematical Concepts}
+%\title{Basic Mathematical Concepts for PBG 200A}
+%\author{Sebastian J. Schreiber and Graham Coop \\}
+%Now, in the first place I deny that the mathematical theory of population genetics is at all impressive, at least to a mathematician. On the contrary, Wright, Fisher, and I all
+\begin{quote}
+``Now, in the first place I deny that the mathematical theory of
+population genetics is at all impressive, [... We] made simplifying assumptions which allowed us to pose problems
+soluble by the elementary mathematics at our disposal, and even then
+did not always fully solve the simple problems we set ourselves. Our
+mathematics may impress zoologists but do not greatly impress
+mathematicians.''--\citeauthor{haldane1964defense} 
+\end{quote}\marginnote{From Haldane's entertaining response to Mayr's criticism of population genetics. 
+\cite{haldane1964defense}}
+
+%\maketitle
+Throughout these notes we make use of mathematical concepts, many of
+which are based in probability theory and statistics. Here we quickly
+review some of these concepts. This primer was original written by
+Sebastian Schreiber and myself for our Fall quarter of the PBG core
+(although I take full credit for any errors subsequently introduced).
+
+%While we might spend some time discussing them in lecture, it probably is a good idea to make sure that you are comfortable with these concepts and if not, talk to one of us about where to read about them online in more detail. 
+
+
+\section*{Calculus}
+
+The \emph{derivative} $f'(a)$ of a function $f(x)$ at $x=a$ represents
+the instantaneous rate of change of the function at $x=a$ or,
+equivalently, the slope of the graph of the function at $x=a$. A
+wonderful thing about derivatives is that they allow us to approximate
+complicated, nonlinear functions by linear functions. Namely, a
+\emph{first order approximation}\sidenote{This is called a first-order
+  Taylor Series. } of $f(x)$ at $x=a$ is given by 
+\[
+f(x) \approx f(a)+f'(a)(x-a) \mbox{ for $x$ near $a$}
+\]
+For example, this approximation yields (\texttt{verify this for yourself!!}) 
+\begin{eqnarray*}
+\exp(x)&\approx &1+x \mbox{ for $x$ near $0$}\\
+(1-x)^k &\approx & 1-k\,x \mbox{ for $x$ near $0$}
+\end{eqnarray*}
+When examining the effects of stochasticity on some process, it is useful to also have  \emph{second order approximations} (i.e. approximate the graph of a function with a parabola instead of a line): 
+\[
+f(x)\approx f(a)+f'(a)(x-a)+f''(a)(x-a)^2/2
+\]
+where $f''(a)$ denotes the  \emph{second derivative} of $f$ at $x=a$. The second derivative measures the rate at which the first derivative is changing i.e. the concavity/convexity of the function. This second order approximation is especially useful for the $\log$ function (\texttt{verify this for yourself!!}) and yields
+\[
+\log(1+x)\approx x-x^2/2 \mbox{ for $x$ near $0$}.
+\]
+
+Regarding  \emph{integrals} $\int_a^b f(x)\,dx$, just remember that
+they represent the \emph{signed area} ``under'' the graph of $y=f(x)$
+over the interval $[a,b]$. %It's often helpful to think about an
+integral as 
+
+
+\section*{Probability}
+
+\paragraph*{Random variables} A  \emph{random variable} $X$, roughly, is a variable that takes on values drawn randomly from some probability distribution (think of it as a person calling out numbers by drawing them randomly out of a hat with some distribution of numbered slips of paper).%\footnote{Really, to define a random variable, you need a probability space $(\Omega, \Sigma, \P)$ which consists of some event space $\Omega$, a $\sigma$-algebra $\Sigma$ of subsets of $\Omega$ (these correspond to possible events), and $\P$ a probability measure on $\Omega$. A random variable $X$ is a measurable function from $\Omega$  to $\R$. Its probability distribution is determined by $\P(X^{-1}(A))$ for measurable $A\subset \Omega$.}
+ For applications, there are typically two types of random variables, discrete and continuous.  \emph{Discrete random variables} take on a countable number of values, say $x_1,x_2,\dots$, with some probabilities $p_1,p_2,\dots$. We can denote this assumption as 
+\[
+\P[X=x_i]=p_i \mbox{ ``the probability that $X$ equals $x_i$ is $p_i$''}
+\]
+
+ \emph{Continuous random variables} take on a continuum of values are characterized by their  \emph{probability density function} $p(x)$ i.e. a function that satisfies $p(x)\ge 0$ for all $x$ and $\int_{-\infty}^\infty p(x)\,dx =1$. For these variables, 
+\[
+\P[a\le X\le b] = \int_a^b p(x)\,dx \mbox{ ``the probability that $X$ is interval $[a,b]$ equals the area under the curve $p(x)$ from $a$ to $b$''}
+\]
+
+\paragraph{Expectation of random variable} The  \emph{expectation of a random variable} is the point at which the distribution is ``balanced''. For discrete random variables it is given by 
+\[
+\E[X]=p_1x_1+p_2x_2+\dots + 
+\]
+According to Pascal, it is the excitement a gambler feels when placing a bet i.e. each term in the sum equals the probability of winning times the amount won. A more precise interpretation of the expectation is given by the law of large numbers described below. For a continuous random variable, 
+\[
+\E[X]=\int x\,p(x)\,dx.
+\]
+
+For any ``reasonable'' function, one can define $\E[f(X)]$ by % $f:\R\to\R$, 
+\[
+\E[f(X)]=p_1f(x_1)+p_2 f(x_2)+\dots
+\]
+for discrete random variables and 
+\[
+\E[f(X)]=\int f(x)p(x)\,dx
+\]
+for continuous random variables. 
+
+A particularly important choice of $f$ is $f(x)=(x-\mu)$ where $\mu=\E[X]$. In this case, 
+\[
+\sigma^2 = \E[(X-\mu)^2]= \E[X^2]-\mu^2
+\]
+is the  \emph{variance of $X$} which measures the mean deviation squared around the mean i.e. ``the spread around the mean''. $\sigma$ (i.e. the square root of the variance) is the standard deviation of $X$. 
+
+Another important choice of $f$ is $f(x)=\log x$. Provided that $X$ is positive, $\exp(\E[\log X])$ corresponds to the  \emph{geometric mean of $X$}. Alternatively $1/\E[1/X]$ corresponds to the \emph{harmonic mean of $X$}. 
+
+\subsection*{Discrete random variables}
+Important discrete random variables include
+\begin{description}
+\item[Binomial]  random variables count the number $X$ of heads when
+  flipping a coin $n$ times whose (biased) probability of being heads is $p$. In which case, 
+\begin{equation}
+  p_i = \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \qquad 0\le i \le n.
+\end{equation}
+For a binomial random variable, $\E[X]=np$. 
+
+\item[Geometric] random variables count how many flips $X$ you wait before seeing a heads on a coin with probability $p$ of being heads. In which case, 
+\[
+p_i =p (1-p)^{i-1} \qquad i=1,2,\dots
+\]
+For a geometric random variable $\E[X]=1/p$.
+
+\item[Poisson] random variable counts $i$ events that occurring in a
+  fixed interval of time or space ($t$), where $\lamda$ events are
+  expected in this interval, vwhere our events occur independently of
+  each other and location or time. In which case,
+ \begin{equation}
+p_i = \lambda^i e^{-lambda}/i!
+\end{equation}
+For a random Poisson variable $\E[X]=\lambda$. The form of this is less intuitive than that of the (say)
+ binomial. However, one way we can derive it is as the limiting case of the
+ binomial. Think of setting up a game of chance, where there's a very large number of coin
+ flips ($n \rightarrow \infty$), but you've set the chance of heads on a single
+ coin flip is very low ($p  \nicefrac{\lambda}{n} \rightarrow 0$,
+ where $\lambda$ is a constant).  Under these conditions you'd still
+ expect some heads ($np =\lambda$), and the distribution of the number
+ of heads is Poisson. To see this we subsitute
+ $p=\nicefrac{\lambda}{n}$ into our binomial probability and take
+ the limit as $n \to \infty$ 
+ \begin{align}
+   p_i &= \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \nonumber\\
+         &= \lim_{n\to\infty} \frac{n(n-1)\ldots
+         (n-k-1)}{i!} \left(  \frac{\lambda}{n}\right)^i \left(1-
+         \frac{\lambda}{n}\right)^{n-i} \nonumber\\
+   & = \lim_{n\to\infty} \frac{n^k}{i!} \frac{\lambda^k}{n^k} \left(
+     \frac{\lambda}{n}\right)^n \nonumber\\
+ &=  \lim_{n\to\infty} \frac{\lambda^k}{i!} e^{-\lambda}
+ \end{align}
+ \end{description}
+Therefore, the Poisson represents the limit represents the limit of
+the binomial. 
+\subsection*{Continuous random variables}
+Important continuous random variables include
+\begin{description}
+\item[Uniform] random variables correspond to ``randomly'' choosing a number in an interval, say $[a,b]$. The pdf for a uniform is 
+\[
+p(x)=\frac{1}{b-a} \mbox{ for }x\in[a,b]\mbox{ and } 0 \mbox{ otherwise.}
+\]
+For a uniform random variable $\E[X]=(a+b)/2$.
+\item[Exponential] random variables with rate parameter $\lambda>0$ correspond to the waiting time for an event which occurs with probability $\lambda \Delta t$ over a time interval of length $\Delta t$. For these random variables
+\[
+p(x)= \exp(-\lambda x)/\lambda \mbox{ for }x\ge 0 \mbox{ and } 0 \mbox{ otherwise.}
+\]
+For an exponential random variable $\E[X]=1/\lambda$. The Exponential
+distribution is the continuous time version of the Geometric
+distribution. 
+
+\item[Normal] random variables have the ``bell-shaped'' or ``Gaussian'' shaped distribution. They are characterized by two parameters, the mean $\mu$ and the standard deviation $\sigma$, and
+\[
+p(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp(-(x-\mu)^2/(2\sigma^2)).
+\]
+For a normal random variable $\E[X]=\mu$. 
+\end{description}
+
+\subsection*{Multiple random variables}
+
+\paragraph{Covariance and Independence} To fully specify multiple random variables, say $X$ and $Y$, one needs to know their joint distribution. For example, if $X$ and $Y$ are discrete random variables taking on the values $x_1,x_2,x_3,\dots$, then the joint distribution is given by 
+\[
+p_{i,j}=\P[X=x_i,Y=x_j] \mbox{ `` the probability that $X$ equals $x_1$ and $Y$ equals $x_2$''}
+\]
+Alternatively, if $X$ and $Y$ are continuous random variables, then the joint distribution is a function of the form $p(x,y)$ which satisfies 
+\[
+\P[a\le X\le b, c\le Y\le d]= \int_a^b \int_c^d p(x,y)\,dxdy
+\]
+
+Given any function $f(x,y)$ of $x$ and $y$, one can define the expectation $\E[f(X,Y)]$ by integrating with respect to the distribution. Namely, 
+\[
+\E[f(X,Y)]=\int \int f(x,y)p(x,y)\,dxdy \mbox{ for continuous case and } \sum_i \sum_j f(x_i,x_j) p_{i,j} \mbox{ in discrete case}
+\]
+
+The \emph{covariance} of  $X$ and $Y$ is given by 
+\[
+\E[(X-\mu_X)(Y-\mu_Y)]=\E[XY]-\mu_X\mu_Y
+\]
+$X$ and $Y$ are \emph{uncorrelated} if their covariance equals zero. Even stronger, $X$ and $Y$ are \emph{independent} if knowing something about one of the variables doesn't provide information about the other variable. It can be show, for example in the discrete case, this is equivalent to 
+\[
+\P[X=x_i\mbox{ and } Y=x_j]=\P[X=x_i]\P[Y=x_j]
+\] 
+for any $i,j$.  
+
+
+
+\paragraph{Law of Large Numbers} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$, then 
+\[
+\frac{X_1+\dots +X_n}{n} \to \mu \mbox{ as }n\to \infty \mbox{ with probability one.}
+\]
+Hence, LLN implies that if you repeat a bunch of experiments and take the average outcome from the experiments, the value you get is likely to be close the expected outcome of the experiment. 
+
+Of course, in the real world, we can only perform a finite number of experiments in which case it is useful to have a sense of how much variation there will be in the average outcome. The central theorem is the key tool for understanding this variation. 
+
+\paragraph{Central Limit Theorem} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$ and variance $\sigma^2$, then 
+\[
+\frac{X_1+\dots +X_n-\mu \,n }{\sqrt{n}\sigma} \to \mbox{ normal distribution with mean $0$ and variance $1$ as $n\to \infty$ }
+\]
+Hence, for $n$ large enough 
+$
+X_1+\dots+X_n 
+$
+is approximately normally distributed with mean $\mu\,n$ and variance $\sigma^2 n$. 

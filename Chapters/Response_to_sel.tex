@@ -125,6 +125,26 @@ next generation. Based on the data in the caption of Figure \ref{fig:Galen_corol
 what is the expected response in the next generation?
 \end{question}
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_breeders_eq.pdf}
+\end{center}
+\caption{{\bf Top.} Phenotypic distribution of oil content in corn in
+  1897, and the individuals who were selected to breed for the next
+  generation are marked in blue.   {\bf Bottom.} The distribution in the next generation. Data from the
+  Illinois selection experiment available \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}  \label{Fig:s}
+\end{marginfigure}
+
+If we know $R$ and $S$ we can estimate $h^2$. Heritabilities estimated
+like this are called `realized heritability'. 
+\begin{question}
+Estimates of the `realized heritability' can be produced in artificial selection experiments, see for example Figure \ref{Illinois_LTS_breeders_eq}.
+The mean oil content in 1897 was $4.78$, among the $24$ individuals
+chosen to breed to for the next generation the mean $5.2$. The
+offspring of these individuals in 1888 had a mean kernel oil content of
+$5.1$. What is the narrow sense realized heritability? 
+\end{question}
+
 To understand the genetic basis of the response to selection take a
 look at Figure \ref{Fig:Response_num_alleles}. The setup is the same as in our previous
 simulation figures.
@@ -147,11 +167,31 @@ for the offspring of the selected parents in the next generation
  child of the selected parents carries 108 up alleles. Note that the
  variance has changed little, the children have plenty of variation in
  their genotype, such that selection can readily drive evolution in future generations. The average frequency of an `up' allele has changed
- from $50\%$ to $54\%$. Our gains due to selection will be stably
- inherited to future generations.
+ from $50\%$ to $54\%$. Gains due to selection will be stably
+ inherited to future generations and can be compounded on generation
+ after generation if selection pressures were to remain constant.
 
 
-\paragraph{The long-term response to selection}
+
+ \begin{marginfigure}[4cm]
+ \begin{center}
+   \includegraphics[width = \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
+ \end{center}
+ \caption{Maize ({\it Zea mays}.) \BHLNC{Prof. Dr. Thomé's Flora von
+   Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
+ \end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
+
+ \paragraph{The long-term response to selection}
+   \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_means.pdf} \end{center}
+ \caption{The mean oil content of corn in the Illinois long term
+   selection experiment. Two populations were established in 1896 from
+ the same inital population. Two secondary populations were
+ established in 1948 where the direction of selection was reversed.
+ Linear fit to the up experiment shown as a red line. Data available \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}\label{Fig:Illinois_LTS_means}
+\end{marginfigure}
+
 If our selection pressure is sustained over many generations, we can
 use our breeder's equation to predict the response. If we are willing
 to assume that our heritability does not change and we maintain a constant selection
@@ -161,8 +201,26 @@ shifted
 n h^2 S
 \end{equation}
 i.e. our population will keep up a linear response to selection.
+ \begin{figure}
+ \begin{center}
+   \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_ggridges_distribution.pdf}\end{center}
+ \caption{Density plots showing the phenotypic distributions of the
+   up- and down-selection populations over time. Data available
+   \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}\label{Fig:Illinois_LTS_dists}
+ \end{figure}
+Therefore, long-term, consistent selection can drive impressive
+evolutionary change. On example of this comes a field experiment
+in Illinois, where plant breeders have systematically selected for
+higher and lower oil content in corn. For over a century, they have taking seeds from the plants
+in the extremes of the distribution and using them to form the next
+generation. They have achieved impressive long-term responses, pushing
+the population well beyond their initial range. They've established
+two secondary populations where the selection differential was reversed. In the up-selection population they have maintained an
+impressively linear increase in oil content (shown by red line), the
+response is linear at first in the down line but they quickly reach
+very low oil content.
 
-
+%%single episide of selection in cliff swallows https://www.jstor.org/stable/2411315?mag=driving-evolution-cliff-swallows&seq=1#metadata_info_tab_contents
 % http://mooselab.cropsci.illinois.edu/longterm.html
 % https://www.ideals.illinois.edu/handle/2142/3525
 
@@ -194,7 +252,6 @@ selection within a generation. State your assumptions.\\
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
 
-\graham{add text}
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
@@ -204,17 +261,33 @@ selection within a generation. State your assumptions.\\
   Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
 }} \label{fig:Geospiza_fortis}  
 \end{marginfigure}
+In wild populations, selection pressures are likely rarely sustained 
+for large numbers of generations. For example, the Grants' have
+measured phenotypic selection in Darwin's Finches over multiple
+decades on the island of Daphne Major and seen that
+selection pressures in the Medium ground-finch ({\it Geospiza fortis})
+have reversed a number of times over the years (Figure
+\ref{fig:Darwins_Finches_unpred}). 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width= 0.8 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
 \end{center}
-\caption{  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
+\caption[4cm]{{\bf Top)} Mean body size of the Medium ground-finch
+  population measured each year, the 1973 $95\%$ confidence intervals
+  are shown as horizontal bars. {\bf Bottom)} Standardized
+  selection differentials on body size. The statistical significant of
+  the selection differentials is shown, black points are $p<0.001$ and grey $p<0.05$.
+  Data from \citet{grant2002unpredictable} \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
 \end{figure}
 
-\paragraph{Alternative formulations of the Breeder's equation.}
-A change in mean phenotype within a generation occurs because of the
-differential fitness of our organisms. To think more carefully about this change within a
+%% Gingrich style data https://datadryad.org/resource/doi:10.5061/dryad.1tn7123?show=full
+%% https://datadryad.org/resource/doi:10.5061/dryad.7d580
+
+\section{Alternative formulations of the Breeder's equation.}
+So directional evolution occurs as selection drives a change in
+the mean phenotype within a generation. But how does this relate to
+the fitness of our organisms? To think more carefully about this change within a
 generation, let's think about a simple fitness model where our phenotype affects the
 viability of our organisms (i.e. the probability they survive to
 reproduce). The probability that an individual has a phenotype $X$
@@ -236,10 +309,8 @@ our phenotypic distribution integrates to one. The denominator also
 has the interpretation of being the mean fitness of the population,
 which we'll call $\wbar$, i.e.  
 \begin{equation}
-\wbar =  
-\int_{-\infty}^{\infty} p(x) w(x) dx.
+\wbar =  \int_{-\infty}^{\infty} p(x) w(x) dx.
 \end{equation}
-
 Therefore, we can write the mean phenotype in those who survive to
 reproduce as
 \begin{equation}
@@ -253,10 +324,10 @@ reproduce as
     mammals. Thorburn, A. (1920)}{https://www.flickr.com/photos/biodivlibrary/21269550204}{Field Museum of Natural History Library}{2.0}} \label{fig:red_deer}  
 \end{marginfigure}
 
-If we mean center our population, i.e. set the phenotype before
+If we mean center the distribution of phenotypes in our population, i.e. set the phenotype before
 selection to zero, then
 \begin{equation}
-S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx = \E \left (X
+S=\mu_S= \frac{1}{\wbar}\int_{-\infty}^{\infty} x p(x) w(x) dx = \E \left (X
   w(X) \right)
 \end{equation}
 % if $\mu_S=0$. \erin{do you mean $\mu_{BS}=0$?}
@@ -271,7 +342,8 @@ $w(X)$
   w(X) \right) -\E(X)\E(w(X)) =Cov \left(X, \nicefrac{w(X)}{\wbar} \right) \label{S_covar}
 \end{equation}
   Thus our change in mean phenotype is directly a measure of the
-covariance of our phenotype and our fitness. Rewriting our breeder's
+  covariance of our phenotype and our fitness. 
+  Rewriting our breeder's
 equation using this observation we see
 \begin{equation}
 R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)  
