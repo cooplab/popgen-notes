@@ -136,11 +136,12 @@ what is the expected response in the next generation?
 \end{marginfigure}
 
 If we know $R$ and $S$ we can estimate $h^2$. Heritabilities estimated
-like this are called `realized heritability'. 
+like this are called `realized heritability'. Estimates of the
+`realized heritability' can readily be produced in artificial selection experiments, see for example Figure \ref{Illinois_LTS_breeders_eq}.
 \begin{question}
-Estimates of the `realized heritability' can be produced in artificial selection experiments, see for example Figure \ref{Illinois_LTS_breeders_eq}.
-The mean oil content in 1897 was $4.78$, among the $24$ individuals
-chosen to breed to for the next generation the mean $5.2$. The
+  From the experiment shown in Figure \ref{Illinois_LTS_breeders_eq},
+  the mean corn oil content in 1897 was $4.78$, among the $24$ individuals
+chosen to breed to for the next generation the mean was $5.2$. The
 offspring of these individuals in 1888 had a mean kernel oil content of
 $5.1$. What is the narrow sense realized heritability? 
 \end{question}
@@ -152,7 +153,7 @@ simulation figures.
 \begin{center}
 \includegraphics[width=\textwidth]{figures/QT3_w_genosums.pdf}
 \end{center}
-\caption{{\bf Top.} Distribution of the number of up alleles in the parental population
+\caption[][4cm]{{\bf Top.} Distribution of the number of up alleles in the parental population
   prior to selection (red), for the selected individuals the top
   $10\%$ of the population (blue) {\bf Bottom.}  The same distribution
 for the offspring of the selected parents in the next generation
@@ -175,7 +176,7 @@ for the offspring of the selected parents in the next generation
 
  \begin{marginfigure}[4cm]
  \begin{center}
-   \includegraphics[width = \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
+   \includegraphics[width = 0.7 \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
  \end{center}
  \caption{Maize ({\it Zea mays}.) \BHLNC{Prof. Dr. Thomé's Flora von
    Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
@@ -204,8 +205,9 @@ i.e. our population will keep up a linear response to selection.
  \begin{figure}
  \begin{center}
    \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_ggridges_distribution.pdf}\end{center}
- \caption{Density plots showing the phenotypic distributions of the
-   up- and down-selection populations over time. Data available
+ \caption[][2cm]{Density plots showing the phenotypic distributions of the
+   up- and down-selection populations of the Illinois long term
+   selection experiment over time. Data available
    \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}\label{Fig:Illinois_LTS_dists}
  \end{figure}
 Therefore, long-term, consistent selection can drive impressive
@@ -224,16 +226,7 @@ very low oil content.
 % http://mooselab.cropsci.illinois.edu/longterm.html
 % https://www.ideals.illinois.edu/handle/2142/3525
 
- \begin{marginfigure}
- \begin{center}
- \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M_exilis_skeletal.pdf} \end{center}
- \caption{It's not just deer that evolve to be small on islands,
-  pygmy mammoths and elephants have evolved from large mainland species
-  on numerous islands. For example, the
-   California Channel Islands were home to a dwarf mammoth until about 13,000 years
-   ago. \newline \noindent \tiny{Santa
-   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth\#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.} }\label{Fig:Pygmy_mammoth}
- \end{marginfigure}
+
 \begin{question}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
@@ -244,6 +237,17 @@ the population of 200kg to an estimated mean weight of 36kg (a 6 fold
 reduction)! You estimate that the generation time
 of red deer is 5 years and, from a current day population, that the narrow sense heritability of the
 phenotype is 0.5.\\
+
+ \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M_exilis_skeletal.pdf} \end{center}
+ \caption{It's not just deer that evolve to be small on islands,
+  pygmy mammoths and elephants have evolved from large mainland species
+  on numerous islands. For example, the
+   California Channel Islands were home to a dwarf mammoth until about 13,000 years
+   ago. \newline \noindent \tiny{Santa
+   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth\#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.} }\label{Fig:Pygmy_mammoth}
+ \end{marginfigure}
 {\bf A)}	Estimate the mean change per generation in the mean body weight. \\
 
 {\bf B)}	Estimate the change in mean body weight caused by
@@ -252,19 +256,11 @@ selection within a generation. State your assumptions.\\
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
-\end{center}
-\caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{The zoology of
-  the voyage of H.M.S. Beagle. Birds Part 3. (1841) Gould G. Edited by
-  Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
-}} \label{fig:Geospiza_fortis}  
-\end{marginfigure}
+
 In wild populations, selection pressures are likely rarely sustained 
 for large numbers of generations. For example, the Grants' have
 measured phenotypic selection in Darwin's Finches over multiple
-decades on the island of Daphne Major and seen that
+decades on the island of Daphne Major. They have seen that
 selection pressures in the Medium ground-finch ({\it Geospiza fortis})
 have reversed a number of times over the years (Figure
 \ref{fig:Darwins_Finches_unpred}). 
@@ -281,13 +277,29 @@ have reversed a number of times over the years (Figure
   Data from \citet{grant2002unpredictable} \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
 \end{figure}
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
+\end{center}
+\caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{The zoology of
+  the voyage of H.M.S. Beagle. Birds Part 3. (1841) Gould G. Edited by
+  Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
+}} \label{fig:Geospiza_fortis}  
+\end{marginfigure}
 %% Gingrich style data https://datadryad.org/resource/doi:10.5061/dryad.1tn7123?show=full
 %% https://datadryad.org/resource/doi:10.5061/dryad.7d580
 
-\section{Alternative formulations of the Breeder's equation.}
+\section{Fitness and the Breeder's Equation.}
 So directional evolution occurs as selection drives a change in
-the mean phenotype within a generation. But how does this relate to
-the fitness of our organisms? To think more carefully about this change within a
+the mean phenotype within a generation. But precisely how does this relate to
+the natural-selection requirement that organisms vary in their
+fitness? Some different ways of formulating the Breeder's equation
+give us insight into the conditions for directional selection and the
+relationship to fitness landscapes.
+
+\subsection{Directional selection as the covariance between fitness and
+phenotype.}
+To think more carefully about this change within a
 generation, let's think about a simple fitness model where our phenotype affects the
 viability of our organisms (i.e. the probability they survive to
 reproduce). The probability that an individual has a phenotype $X$
@@ -309,7 +321,7 @@ our phenotypic distribution integrates to one. The denominator also
 has the interpretation of being the mean fitness of the population,
 which we'll call $\wbar$, i.e.  
 \begin{equation}
-\wbar =  \int_{-\infty}^{\infty} p(x) w(x) dx.
+\wbar =  \int_{-\infty}^{\infty} p(x) w(x) dx. \label{eqn:pheno_mean_fitness}
 \end{equation}
 Therefore, we can write the mean phenotype in those who survive to
 reproduce as
@@ -353,37 +365,8 @@ we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype is correlated with our parent's phenotype. 
 
-\paragraph{Fisher's fundamental theorem of natural selection} 
 
-If we choose fitness to be our phenotype
-  ($X=\nicefrac{w(X)}{\wbar}$), then the response in fitness is
-\begin{align}
-  R &= \frac{V_A}{V}  Cov \left(\nicefrac{w(X)}{\wbar} ,
-  \nicefrac{w(X)}{\wbar} \right) = \frac{V_A}{V} V \nonumber\\
-  &=V_A
-\end{align}
-i.e. the response to selection is equal to the additive genetic
-variance for fitness. Or as Fisher put it
-\begin{quote}
-``The rate of increase in fitness of any organism at any time is equal
-to its genetic variance in fitness at that time.'' -\citet{fisher1930} (pg 37)
-\end{quote}
-Fisher called this `the fundamental theorem of natural
-selection'. Our proof here is just a sketch, and more formal
-approaches are needed to show it in generality. There has been much nashing of teeth over exactly how broadly this result holds, and exactly what
-Fisher meant \citep[see ][ for a recent overview]{ewens2010gene}. 
-% Ruth shaw FFTNS https://www.biorxiv.org/content/biorxiv/early/2019/04/07/601682.full.pdf
-% https://commons.wikimedia.org/wiki/File:A_guide_to_the_wild_flowers_(Plate_CXXV)_BHL23798491.jpg
 \paragraph{Fitness Gradients and linear regressions}
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
-\end{center}
-\caption{Lifetime reproductive success (LRS) of male Red Deer as a
-  function of their antler mass. Data from \citet{kruuk2002antler},
-  see the paper for discussion of the complexities of equating this
-  selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
-\end{marginfigure}
 
 To understand this in more detail let imagine that we calculate the
 linear regression of an individual $i$'s mean-centered phenotype ($X_i$) on fitness ($W_i$), i.e. 
@@ -394,54 +377,96 @@ The best fitting slope of this regression ($\beta$), lets call it the
 `fitness gradient', is given by
 \begin{equation}
   \beta = Cov(X, \nicefrac{w(X)}{\wbar} )/ V  \label{beta_covar}
-  \end{equation}
- i.e. the fitness gradient is the covariance of phenotype-fitness
+\end{equation}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
+\end{center}
+\caption{Lifetime reproductive success (LRS) of male Red Deer as a
+  function of their antler mass. Data from \citet{kruuk2002antler},
+  see the paper for discussion of the complexities of equating this
+  selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
+\end{marginfigure}
+
+  i.e. the fitness gradient is the covariance of phenotype-fitness
  covariance divided by the phenotypic variance. Using this result we can rewrite the breeder's equation as
 \begin{equation}
-R= V_A \beta
+R= V_A \beta \label{eqn:R_beta}
 \end{equation}
 i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \graham{add pic of relationship between slope and S?}
-\subsection{Fitness landscapes}  \ref{section:pheno_fitness_landscapes}
 
-  \begin{figure*}
+\paragraph{Fisher's fundamental theorem of natural selection} 
+Finally how does the mean fitness of our population evolve? 
+If we choose relative fitness to be our phenotype
+  ($X=\nicefrac{w(X)}{\wbar}$), then the response in fitness is
+\begin{align}
+  R &= \frac{V_A}{V}  Cov \left(\nicefrac{w(X)}{\wbar} ,
+  \nicefrac{w(X)}{\wbar} \right) = \frac{V_A}{V} V \nonumber\\
+  &=V_A
+\end{align}
+i.e. the response to selection is equal to the additive genetic
+variance for relative fitness. Or as Fisher put it
+\begin{quote}
+``The rate of increase in fitness of any organism at any time is equal
+to its genetic variance in fitness at that time.'' -\citet{fisher1930} (pg 37)
+\end{quote}
+Fisher called this `the fundamental theorem of natural
+selection'. Our proof here is just a sketch, and more formal
+approaches are needed to show it in generality. There has been much nashing of teeth over exactly how broadly this result holds, and exactly what
+Fisher meant \citep[see ][ for a recent overview]{ewens2010gene}. 
+% Ruth shaw FFTNS https://www.biorxiv.org/content/biorxiv/early/2019/04/07/601682.full.pdf
+% https://commons.wikimedia.org/wiki/File:A_guide_to_the_wild_flowers_(Plate_CXXV)_BHL23798491.jpg
+
+\subsection{Directional Selection on Fitness Landscapes.}  \label{section:pheno_fitness_landscapes}
+
+ \begin{figure*}
  \begin{center}
- \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D_w_wbar.pdf}
+ \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
  \end{center}
- \caption{A population evolving on a (guassian) fitness surface. The
-   bottom panel shows the expected individual fitness ($w()$) and mean
-   fitess as a function of phenotype. The red line shows the best
-   fitting linear approximation to the relationship between phenotype
-   and fitness, eqn \eqref{{fitness_regression}}, whose slope is
-   $\beta$. The top panel shows the distribution of the phenotype
-   before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}.} \label{fig:fitness_landscape_1D_w_wbar}  
- \end{figure*}
+ \caption{An example of a fitness landscape, showing the mean fitness
+   of the population ($\wbar$) as a function of the mean phenotype of the
+   population ($\bar{z}$, \gc{Need
+   to change to $\bar{x}$}). The arrows show the expected direction of movement
+of our population on the fitness landscape, with natural selection moving
+our population toward local fitness optima. The coloured bar shows the
+derivative (slope) of the mean fitness with respect to mean
+phenotype (eqn. \eqref{eqn:pheno_fitness_landscape}). Red values are positive slopes corresponding to the population evolving
+towards the right of the page, blue is a negative slope with the
+population moving to the left. } \label{fig:fitness_landscape_1D}  
+\end{figure*}
 
-One common metaphor when talk about evolution is that of a population exploring an adaptive landscape with natural selection pushing a population
+One common metaphor when we talk about evolution is that of a population exploring an adaptive landscape with natural selection pushing a population
 towards higher fitness states corresponding to peaks in this landscape
 (see e.g. Figure \ref{fig:fitness_landscape_1D}).  \graham{Simpson/Wright.}
 \citet{lande1976natural} found an evocative formulation of the
 Breeder's equation which aids our intuition of phenotypic fitness
-landscapes.
-\marginnote{ This follows from the fact that we can then move the
-  derivative inside the integral of $\wbar$  %$\nicefrac{\partial \log\wbar}{\partial \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{\partial\wbar}{\partial \bar{x}}$.
-\begin{align}
+landscapes. \graham{need note about when this breaks down}
+\citeauthor{lande1976natural} showed that,
+if the phenotype is
+normally distributed, the response to
+selection ($R$) could be written in terms of the gradient (derivative) of the
+mean fitness ($\wbar$) of the population\sidenote[][3cm]{
+  This follows from the fact that we can then move the
+  derivative inside the integral of $\wbar$, eqn \eqref{eqn:pheno_mean_fitness}, %$\nicefrac{\partial \log\wbar}{\partial \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{\partial\wbar}{\partial \bar{x}}$.
+to write the new term in eqn \eqref{eqn:pheno_fitness_landscape} as 
+  \begin{align}
 \frac{1}{\wbar}  \frac{\partial \wbar}{\partial \bar{x}} &=
                                                                    \frac{1}{\wbar}
                                                                    \int_{-\infty}^{\infty}w(x)
                                \frac{\partial p(x)}{\partial \bar{x}}  dx \nonumber\\
 & =\int_{-\infty}^{\infty} \frac{w(x)}{\wbar}  \frac{(x-\bar{x})}{V}  dx  \nonumber\\
-                             & = \frac{cov(w(x),x) }{var(x)} 
+                             & = \frac{cov(w(x),x) }{var(x)} \label{eqn:proof_landscape}
 \end{align}
-which is $\beta$. The middle line holds when $p(x)$ is the normal distribution.
-} \graham{need note about when this breaks down}
-\citeauthor{lande1976natural} showed that, if the phenotype is
-normally distributed, the response to
-selection ($R$) could be written in terms of the gradient (derivative) of the
-mean fitness ($\wbar$) of the population as a function of the mean phenotype:  
+which is $\beta$, so that eqns \eqref{eqn:R_beta} and
+\eqref{eqn:pheno_fitness_landscape} are equivalent. For this equivalence
+to hold, in the first line we assume that $w(x)$ is not a function
+of $\bar{x}$, while the middle line is true when $p(x)$ is the normal distribution.
+}
+as a function of the mean phenotype:  
 \begin{equation}
-  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{x}}  %V_A
+  R = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{x}}  \label{eqn:pheno_fitness_landscape}  %V_A 
  % \frac{\partial \log \left(\wbar \right)}{\partial \bar{z}}
 \end{equation}
 
@@ -454,17 +479,27 @@ increase mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
 higher values of the trait ($R>0$), left panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. Conversely if decreasing the
 population mean phenotype slightly would increase the mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
 <0$) the population will that generation evolve towards lower values
-of the phenotype, middle panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. \marginnote{\gc{CAVEATS}} Thus we can think of the population as evolving on
+of the phenotype, middle panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. Thus we can think of the population as evolving on
 an adaptive landscape where the elevation is given by the population mean
 fitness. Natural selection operates on the basis of individual-level
 fitness, but as a result of this our population is increasing in its
-average fitness, it is becoming more adapted.
+average fitness, our population is becoming better adapted (we'll
+discuss the caveats of this interpretation below).
+
  \begin{figure*}
  \begin{center}
- \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D.pdf}
+ \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D_w_wbar.pdf}
  \end{center}
- \caption{} \label{fig:fitness_landscape_1D}  
-\end{figure*}
+ \caption{A population evolving on a (guassian) fitness surface. The
+   bottom panel shows the expected individual fitness ($w()$) and mean
+   fitess as a function of phenotype. The red line shows the best
+   fitting linear approximation to the relationship between phenotype
+   and fitness, eqn \eqref{fitness_regression}, whose slope is
+   $\beta$. The top panel shows the distribution of the phenotype
+   before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}.} \label{fig:fitness_landscape_1D_w_wbar}  
+ \end{figure*}
+ 
+
 What happens when it
 reaches the top? Well at the top of a peak $ \nicefrac{\partial
   \wbar}{\partial \bar{x}}=0$, as it is a local maximum, and so
@@ -479,27 +514,9 @@ on a local, but not global peak of fitness (see, for example Figure \ref{fig:fit
 
 % % \animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 
-\begin{marginfigure}
- \begin{center}
- \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
- \end{center}
- \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig: Stickleback_fossil_traj}  
-\end{marginfigure}
 
-One nice example documenting adaptive evolution to a new
-fitness optimum is offered by a remarkable time-series of
-stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
-the layers of sediment are laid down each year allowing a very detailed
-time series with over five thousand fossils measured. The time-series
-documents the evolution towards a new set of optimum phenotypes in the
-fifteen thousand years after the initial invasion of the lake by a
-heavily armoured stickleback species. In Figure \ref{fig:Stickleback_fossil_traj} the population mean number of
-touching pterygiophores, the bones supporting the dorsal spines,
-through the fossil record. Note how quickly the species evolves toward
-its new value, presumably a fitness optimum in their new environment, and the long time subsequent time interval over which
-the population mean phenotype fluctuates about its new value.
 
-\begin{marginfigure}
+\begin{marginfigure}[3cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
 \end{center}
@@ -510,20 +527,63 @@ the population mean phenotype fluctuates about its new value.
   calculated in 250 year bins. {\bf Bottom)} How our population moves
   on the Inferred fitness landscape. The arrows show each move made by
   the population in the 250 intervals. Data from
-  \citet{bell2006inferring} and \citet{hunt2008evolution}  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_traj.R} } \label{fig: Stickleback_fossil_traj}  
+  \citet{bell2006inferring} and \citet{hunt2008evolution}  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_traj.R} } \label{fig:Stickleback_fossil_traj}  
 \end{marginfigure}
+
+One dramatical example documenting adaptive evolution to a new
+fitness optimum is offered by a remarkable time-series of
+stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
+the layers of sediment are laid down each year allowing a very detailed
+time series with over five thousand fossils measured. The time-series
+documents the evolution towards a new set of optimum phenotypes in the
+fifteen thousand years after the initial invasion of the lake by a
+heavily armoured stickleback species. In Figure \ref{fig:Stickleback_fossil_traj} the population mean number of
+touching pterygiophores, the bones supporting the dorsal spines,
+through the fossil record (Figure \ref{fig:Stickleback_fossil}). Note how quickly the species evolves toward
+its new value, presumably a fitness optimum in their new environment, and the long time subsequent time interval over which
+the population mean phenotype fluctuates about its new value.
+
+
 \citet{hunt2008evolution} fitted a model of a population adapting to a
 fitness landscape, with a single peak, to these time-series data. Their fitted fitness
-surface is shown in the lower panel of Figure \ref{fig:
-  Stickleback_fossil_traj} . The arrows show the moves that the
+surface is shown in the lower panel of Figure \ref{fig:Stickleback_fossil_traj} . The arrows show the moves that the
 population mean phenotype is making on this inferred fitness
 surface. The population initially takes large steps up toward the peak
 of this surface and subsequently fluctuates around the peak. Under the
 interpretation that there is a single stationary peak these
 fluctuations represent genetic drift randomly knocking the population
 offer its optimum, with selection acting to restore
-the population towards this local optimum.
+the population towards this local optimum. \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
+ \end{center}
+ \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig:Stickleback_fossil}  
+\end{marginfigure}
 
+\paragraph{Issues with the Interpretation of Fitness Landscapes.}
+In practice, fitness landscapes may not be constant. The environment
+may be constantly changing so our population is constantly forced to run to keep
+up with the fitness peak. Indeed our environment may change so quickly
+that our population our population cannot keep up with the peak. Our
+population is still trying to increase its mean fitness, to `adapt', but
+the landscape itself is evolving.\sidenote[][1cm]{In
+the case of very rapid environmental change our population may slide
+further and further away the peak, and as a consequence its mean fitness
+decreases which may drive the population to extinction If our
+population drops below $\wbar<1$ for long enough. The conditions for
+extinction are an active area of research in the field of `Evolutionary rescue'.}
+More generally, for our fitness landscape result (eqn \eqref{eqn:proof_landscape}) to hold, and
+for us to be able to talk of our population attempting to evolve to
+higher mean fitness states,  we need the fitness of our phenotypes to be independent of the
+frequency of other phenotypes in the population. (This independence allows us to
+assume that the fitness of individuals is not a function of the mean
+phenotype, as needed in eqn \eqref{eqn:proof_landscape}).  The
+assumption of frequency independence may not hold when there is competition between individuals, e.g. for resources or
+mates, as then the fitness of an individual depends on the strategies pursued
+by other individuals in the populations. A classic example of this is
+the fact that sexual selection may drive our
+population towards pursing mate choice strategies that actively lower
+the mean fitness of the population. 
 % \graham{Thinking of a marble
 % rolling around in the bottom of a bowl
 % You could think about the
@@ -532,7 +592,7 @@ the population towards this local optimum.
 %\paragraph{Different populations potentially sit on top of different peaks in the fitness landscape}
  % https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000529
 
- \paragraph{Stabilizing and Disruptive selection}
+ \subsection{Stabilizing and Disruptive selection}
 
 Up to now we have just looked at directional selection, where
 selection acts to change the mean phenotype. However, we
@@ -553,7 +613,7 @@ fitness and and phenotype, $\beta$, we can summarize the variance
 reducing selection by including a quadratic term in the regression of
 fitness on phenotype
 \begin{equation}
-w_i \sim \beta x_i + \nicefrac{1}{2}  \gamma x_i^2  + \wbar \label{fitness_regression}
+w_i \sim \beta x_i + \nicefrac{1}{2}  \gamma x_i^2  + \wbar \label{fitness_regression_stab}
 \end{equation}
 This $\gamma$, the coefficient of the quadratic term in our model, is the
 quadratic selection gradient: the covariance of fitness and the squared
@@ -562,14 +622,15 @@ deviation from the phenotypic mean ($\mu_{BS}$), i.e.
 \gamma = \frac{Cov\left(w(X), (X-\mu_{BS})^2 \right)}{V^2}
 \end{equation}
 Our $\gamma$ describes the curvature of the fitness surface around the
-mean. \marginnote{Just like how $\beta$ could be interpreted
+mean. \marginnote[-1.5cm]{Just like how $\beta$ could be interpreted
 as the mean gradient of the fitness surface, our $\gamma$ is the
 mean curvature of the fitness surface
   \begin{equation}
 \gamma = \E \left[\nicefrac{\partial^2 w(x)}{\partial x^2}  \right] =
 \int \nicefrac{\partial^2 w(x)}{\partial x^2} p(x) dx
 \end{equation}
-
+\graham{Need to straighten out issues with mean fitness vs fitness in
+  these sections}
 }
 Values of $\gamma<0$  are consistent with stabilizing selection,
 reducing the variance. While values of $\gamma>0$ are consistent with disruptive
@@ -579,25 +640,26 @@ selection, increasing the variance. \graham{add refs about this not being suffic
 
 % https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1951.tb02469.x
 
-\begin{marginfigure}
+\begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.pdf}
+\includegraphics[width= 0.6 \textwidth]{Journal_figs/Quant_gen/birth_weight/Karn_Penrose_birth_weight.pdf}
 \end{center}
-\caption{Bars show the totall number of births with different birth
+\caption{Bars show the total number of births with different birth
   weights (left axis)  Dots show the mortality probability for different
-  birth-weight bins (right axis). Data from \citet{karn1951birth}
+  birth-weight bins (right axis), the red line shows a fitted
+  quadratic model to mortality. Data from \citet{karn1951birth}
   Table 2, collapsing male and female births, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/birth_weight/birth_weight_selection.R} } \label{fig:Birth_weight}  
-\end{marginfigure}
+\end{figure}
 
 Under stabilizing selection the individuals with extreme phenotypes in
 either tail have lower fitness, the result of which is to reduce the
-phenotypic variance within a generation. A classic case of stablizing selection
+phenotypic variance within a generation. A classic case of stabilizing selection
 is birth weight in humans \citep{karn1951birth}. Mary Karn collected
 data for nearly fourteen thousand pregnancies from 1935-46 for birth
 weight and mortality. These data are replotted in Figure
 \ref{fig:Birth_weight}. The variance of all births is $1.575$lb$^2$, while in live births this
 was reduced to $1.26$lb$^2$, a 20\% reduction in variance due to
-stabilizing selection. It is worth noting, thaf this selection
+stabilizing selection. It is worth noting, that this selection
 pressure has been greatly reduced over the decades in societies with
 access to good prenatal care \citep{ulizzi1992natural}.  %, a large effect of which has been to
 %reduce the variance in birth weights due to better nutrition
@@ -614,8 +676,7 @@ access to good prenatal care \citep{ulizzi1992natural}.  %, a large effect of wh
     which occur in the Ethiopian region. (1986) Sclater, W. L Plate by  H. Gr{\"o}nvold}{https://archive.org/stream/birdsofafricacom41shel/birdsofafricacom41shel\#page/n306/mode/1up}{Smithsonian Libraries} }  
 \end{marginfigure}
 In Central Africa, Black-bellied seedcrackers ({\it
-  P. ostrinus}) show remarkable size polymorphism in their
-beaks (Figure \ref{Black_bellied_seedcrackers_beaks}).  The small-beaked individuals feed on
+  P. ostrinus}) show disruptive selection on a remarkable beak-size polymorphism (Figure \ref{Black_bellied_seedcrackers_beaks}).  The small-beaked individuals feed on
 soft  seeds from one species of marsh sedge while the big-beaked
 individuals feed on hard seeds from another sedge, which
 requires ten times the force to crack.  \citet{smith1993disruptive}
@@ -635,7 +696,7 @@ almost $\times 2.5$ to $1.3$mm$^2$.
 \caption{ {\bf Left} An illustration of the the remarkable variation
   in beak size within Black-bellied seedcrackers ({\it  P.
     ostrinus}). {\bf Right} A histogram of a beak size measurement in
-  Black-bellied seedcrackers, all juvenilles are shown in white the
+  Black-bellied seedcrackers, all juveniles are shown in white, while the
   black bars show the survivors. The red curve shows the best fitting
   linear and quadratic model to the probability of survival, fitted
   using a binomial generalized linear models with a logit link function.  
@@ -653,7 +714,7 @@ ball gallmaker. See Figure \ref{gall_size_stab}. As it's wonderful name
 implies this insect lays its eggs in Goldenrod plants, and the larvae
 release chemicals forcing the plant to form a gall that forms a home
 for the larvae as they develop. While this seems like a pretty sweet
-deal for the larvae, it is not without its perils. \begin{marginfigure}
+deal for the larvae, it is not without its perils. \begin{marginfigure}[2cm]
 \begin{center}
 \includegraphics[width= 0.7 \textwidth]{illustration_images/Quant_gen/goldenrod_ball_gall_maker/goldenrod_ball_gall_maker.png}
 \end{center}
@@ -663,7 +724,7 @@ one on the right is cut to show a partial cross-section. \BHLNC{Annual report of
 \end{marginfigure}
 When the small, ball galls fall risk of parasitism from parasitoid
 wasps. This selection drives strong positive directional selection on
-gall size, with little stablizing selection, notice that the good
+gall size, with little stabilizing selection, notice that the good
 agreement between the linear selection gradient and the fit including
 a linear and quadratic term. However, bigger galls fall under the pall of predation from downy
 woodpeckers and black-capped chickadees, who seek out the tasty
@@ -672,17 +733,17 @@ the population quickly reaches this fitness peak. Once on this peak,
 there is no directional selection, i.e. no linear slope, but there
 is strong stabilizing selection, i.e. a quadratic term. 
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size.pdf}
 \end{center}
-\caption{Fitness surface for gall diameter in goldenrod
+\caption[2cm]{Fitness surface for gall diameter in goldenrod
 ball gallmakers. The dots are the measured survival probabilities of
-  different sized galls.The solid line is a fitted individual fitness
+bins of different sized galls.The solid line is a fitted individual fitness
   surface ($w(~)$). Dotted line is $\wbar$ plotted as a function of
   the population mean assuming a normal distribution with a standard
   deviation of $2$mm. Data from \citet{weis1990measuring}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size_fitness_landscape.R}} \label{gall_size_stab}
-\end{figure*}
+\end{figure}
 
 
 %%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
@@ -703,8 +764,7 @@ ball gallmakers. The dots are the measured survival probabilities of
 %on leg length in anoles
  
 
-\subsection{The response of multiple traits to selection, the
-  multivariate breeder's equation.}
+\section{The response of multiple traits to selection.}
 We can generalize these results for multiple traits, to ask how selection on
 multiple phenotypes plays out over short time intervals. \cite{lande:79} Considering two traits we can write our responses in both traits as
 \begin{eqnarray}
@@ -724,6 +784,8 @@ the vector $\bf{R}$. These two quantities are related by
  (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
  $\boldsymbol{\beta}$ is a vector of selection gradients (i.e. the change within a generation as a fraction of the total phenotypic variance). 
 
+\gc{Need to add example of using this.}
+ 
 \begin{question}
 You collect observations of red deer within a generation, recording an
 individual's number of offspring and phenotypes for a number of traits which are known to
@@ -820,15 +882,16 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 \paragraph{Estimating multivariate selection gradients}
 We can estimate multivariate directional ($\beta$) and quadratic selection
 gradients ($\gamma$) just as we did for a single traits ($x_1$ and $x_2$), using linear
-models. For example, for two traits we can write
+and quadratic models (in eqn \eqref{fitness_regression} and \eqref{fitness_regression_stab}). For example, for two traits we can write
 \begin{equation}
 w_i \sim \beta_1 x_{1,i} + \nicefrac{1}{2} \gamma_1 x_{1,i}^2 + \beta_2 x_{2,i} + \nicefrac{1}{2} 
-\gamma_2 x_{2,i}^2  + \gamma_{1,2} x_{1,i} x_{2,i}  + \wbar \label{fitness_regression}
+\gamma_2 x_{2,i}^2  + \gamma_{1,2} x_{1,i} x_{2,i}  + \wbar \label{fitness_regression_MV}
  \end{equation}
 where $\beta_1$ and $\gamma_1$ are the directional and quadratic
-selection gradients for trait one, and similarly for trait two. The
-covariance selection gradient between between traits is given by
-$\gamma_{1,2}$. 
+selection gradients for trait one, and similarly for trait two \citep{lande1983measurement}. The
+covariance selection gradient between traits is given by
+$\gamma_{1,2}$ . This technique for measuring multivariate selection is
+sometimes called `Lande-Arnold regression'.
 
 \citet{brodie1992correlational}'s work provides a nice example of
 selection on multiple predation-avoidance traits in northwestern garter snakes
@@ -847,11 +910,11 @@ to monitor their fate.
   G. }{https://commons.wikimedia.org/wiki/File:The_natural_history_of_Washington_territory,_with_much_relating_to_Minnesota,_Nebraska,_Kansas,_Oregon,_and_California,_between_the_thirty-sixth_and_forty-ninth_parallels_of_latitude,_being_those_(14574590600).jpg}{Smithsonian
   Libraries} } \label{fig:Garter_snake}
 %, between the thirty-sixth and forty-ninth parallels of latitude, being those parts of the final reports on the survey of the Northern Pacific railroad route, containing the climate and physical geography, with full catalogues and descriptions of the plants and animals collected from 185 to 1857
-\end{marginfigure}  Before releasing them he measured how stripey
+\end{marginfigure}  Before releasing them he measured how stripy
 they were, and their behavioural tendency to reversals of direction
 during simulated flight from a predator. His quadratic fitness surface is shown in Figure
 \ref{fig:Garter_snakes_Brodie}, based on fitting the
-regression given by eqn \eqref{fitness_regression} to juvenile
+regression given by eqn \eqref{fitness_regression_MV} to juvenile
 survival. He found that neither single trait directional of quadratic
 gradients were significant, ie there was no apparent selection on one 
 trait ignoring the other. However, there was a significant, negative
@@ -860,11 +923,15 @@ covariance ($\gamma_{1,2}<0$). The individuals with the highest chance of surviv
 corner), {\it or} have little striping but reverse course frequently
 (bottom right corner). 
 
+\gc{Add section of multivariate fitness landscapes}
+
 \section{Some applications of the multivariate trait breeder's equation}
 
-The multivariate breeders equation has a lot of different uses in understanding the response of multiple traits to selection. It also offers some insights into kin selection and sexual selection. We'll discuss these next.
+The multivariate breeders equation has a lot of different uses in
+understanding the response of multiple traits to selection. It also
+offers strong insights into the mechanistic underpinnings of kin selection and sexual selection. We'll discuss these next.
 
-\paragraph{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
+\subsection{Hamiliton's Rule and the evolution of altruistic and selfish behaviours}
 \marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
 Individuals frequently behave in ways that sacrifice their own fitness for the
 benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. 
@@ -986,7 +1053,8 @@ individual $i$ and $j$'s altruistic phenotype? Well it's the same behavioural ph
 
 Seen from this perspective, \citeauthor{hamilton1964genetical}'s rule
 is simply a statement that altruistic behaviours can spread via
-kin-selection, if the average cost to an individual of carrying altruistic alleles is paid back through the average benefit of interacting with altruistic relatives (kin)
+kin-selection, if the average cost to an individual of displaying an
+altruistic phenotype, i.e. carrying altruistic alleles, is paid back through the average benefit of interacting with altruistic relatives (kin).
 
 
 %\erin{this phrasing is a little misleading because it's 'paid back' to the allele, but not to the individual. I'd suggest something like 'if the fitness cost of altruism to an allele is paid back on average through the benefits of interacting with altruistic relatives (kin).
@@ -994,14 +1062,14 @@ kin-selection, if the average cost to an individual of carrying altruistic allel
 
 % Special eg on kinship, good for other egs https://www.cell.com/current-biology/issue?pii=S0960-9822(18)X0012-8
 
-\paragraph{Sexual selection and the evolution of mate preference by indirect benefits. }
+\subsection{Sexual selection and the evolution of mate preference by indirect benefits. }
 
 
 Organisms often put an enormous effort into finding and attracting mates, sometimes at
 a considerable cost to their chances of survival. Why are individuals so choosy about who they mate with, particularly when their choice seems to be based on elaborate characters and arbitrary displays
 that surely lower the viability of their mates?  
 
-\begin{marginfigure}
+\begin{marginfigure}[-8cm]
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/glow_worm/18011950889_b2a1a1323e_z.jpg}
 \end{center}
@@ -1011,7 +1079,7 @@ that surely lower the viability of their mates?
   comparative anatomy. (1863) Cuvier, G.}{https://www.flickr.com/photos/internetarchivebookimages/18011950889/in/photolist-Uqr16w-UqqZZu-4VxYcU-ZiyCTu-8DEFyz-6pxZpd-ZiyCXC-yFyBF-GEoD6s-u3DKnd-6pxZrd-4q7euj-5KsWen-yqphkW-xvGrfw-ytA3rP-ybfeBA-yqi7oo-tFL3h3-xvJnrz-BPm4Jd-wLVg9F-trDXtp-wVbxw2-y6MpEq-BWCQVA-vb793E-tHGekh-u4av2t-oewQcC-ow671H-t6ZJg7-u4Ap1m-xntXw9-ovPEMu-u3DFws-vbeMw2-tHMJiY-u1FJpo-tLqTCw-fFFAEG-y1Pfmz-u1FHaE}{University of Toronto - Gerstein Science Information Centre} } \label{fig:glow_worms}
 \end{marginfigure}
 
-\begin{marginfigure}
+\begin{marginfigure}[-2cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/glow_worm_flashes/glow_worm_flashes.pdf}
 \end{center}
