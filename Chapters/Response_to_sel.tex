@@ -1069,6 +1069,10 @@ Organisms often put an enormous effort into finding and attracting mates, someti
 a considerable cost to their chances of survival. Why are individuals so choosy about who they mate with, particularly when their choice seems to be based on elaborate characters and arbitrary displays
 that surely lower the viability of their mates?  
 
+% Slug mating https://commons.wikimedia.org/wiki/File:Limax_maximus_mating.jpg
+% https://www.flickr.com/photos/internetarchivebookimages/20406571412/
+% https://www.lastwordonnothing.com/2012/08/10/tgipf-slug-sex-redux/
+
 \begin{marginfigure}[-8cm]
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/glow_worm/18011950889_b2a1a1323e_z.jpg}
@@ -1102,6 +1106,20 @@ offspring by choosing a mate whose phenotype indicates high viability
 phenotype is simply attractive, and likely to produce similarly
 attractive offspring (the `runaway' or sexy sons hypothesis).
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
+\end{center} \label{fig:assort_mating_2_trait}
+\caption{{\bf Left)} Assortative mating between males and
+  females. Males vary in a display trait (e.g. tail length), females
+  vary in their preference for this trait. We see evidence of
+  assortative mating as females with a preference for a particular
+  value of the male trait tend to mate with those males. {\bf Right}) As both
+  male trait and female preference are genetic this establishes a
+  genetic correlation in the next generation. This is simulated data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT_cross_assortative_mating_2_kids.R}} \label{fig:assort_mating_2_trait}
+\end{figure}
+
+
 We'll denote a display trait, e.g. tail length, in males by $\mars$ and a preference
 trait in females by $\venus$. Our display trait is under direct selection in males, such that its response to selection can be written as
 \begin{equation}
@@ -1122,18 +1140,6 @@ genetically correlated with the male trait, i.e. if $V_{A, \venus
 simplest is that the loci underlying the male trait may have a
 pleiotropic effect on female preference. However, female preference
 may often have quite a distinct genetic basis from male display traits.
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Response_to_sel/Genetic_corr_assort_mating.pdf}
-\end{center} \label{fig:assort_mating_2_trait}
-\caption{{\bf Left)} Assortative mating between males and
-  females. Males vary in a display trait (e.g. tail length), females
-  vary in their preference for this trait. We see evidence of
-  assortative mating as females with a preference for a particular
-  value of the male trait tend to mate with those males. {\bf Right}) As both
-  male trait and female preference are genetic this establishes a
-  genetic correlation in the next generation. This is simulated data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT_cross_assortative_mating_2_kids.R}} \label{fig:assort_mating_2_trait}
-\end{figure}
 
 A more general way in which trait-preference genetic correlations may arise is through assortative mating. As females vary in their
 tail-length preference, the ones with a preference for longer
@@ -1145,7 +1151,7 @@ become established (see Figure \ref{fig:assort_mating_2_trait}).
 The males with the longer tails will also carry the alleles
 associated with the preference for longer tails, as their long-tailed
 dads tended to mate with females with a genetic preference for long
-tails. Similarly, the the males with shorter tails will carry alleles associated with the preference for
+tails. Similarly, the males with shorter tails will carry alleles associated with the preference for
 shorter tails. Thus if there is direct selection for males with longer tails, then
 the female preference for longer tails will increase too, as it is
 genetically correlated via assortative mating. 
