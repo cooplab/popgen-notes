@@ -4,10 +4,30 @@
 ``Socrates consisted of the genes his parents gave him, the experiences they and his environment later provided, and a growth and development mediated by numerous meals. For all I know, he may have been very successful in the evolutionary sense of leaving numerous offspring. His phenotype, nevertheless, was utterly destroyed by the hemlock and has never since been duplicated. The same argument holds also for genotypes. With Socrates' death, not only did his phenotype disappear, but also his genotype.[...] The loss of Socrates' genotype is not assuaged by any consideration of how prolifically he may have reproduced. Socrates' genes may be with us yet, but not his genotype, because meiosis and recombination destroy genotypes as surely as death." --\citet{Williams:66}
 \end{quotation}
   
-Individuals are temporary, their phenotypes are temporary, and their genotypes are temporary. However, the alleles that individuals transmit across generations have permanence. Sustained phenotypic evolutionary change due to natural selection occurs because of changes in the allelic composition of the population. To understand these changes, we need to understand how the frequency of alleles (genes) changes over time due to natural selection.  
+Individuals are temporary, their phenotypes are temporary, and their
+genotypes are temporary. However, the alleles that individuals
+transmit across generations have permanence. Sustained phenotypic
+evolutionary change due to natural selection occurs because of changes
+in the allelic composition of the population. To understand these
+changes, we need to understand how the frequency of alleles (genes)
+changes over time due to natural selection.  We'll also see that the
+because an individual's genotype is just a ephemeral collection of
+alleles that genetic conflicts can arise that actually lower the fitness of
+individuals. 
 
 As we have seen, natural selection occurs when there are differences between individuals in fitness. We may define fitness in various ways. Most commonly, it is defined with respect to the contribution of a phenotype or genotype to the next generation. 
-Differences in fitness can arise at any point during the life cycle. For instance, different genotypes or phenotypes may have different survival probabilities from one stage in their life to the stage of reproduction (viability), or they may differ in the number of offspring produced (fertility), or both. Here, we define the absolute fitness of a genotype as the expected number of offspring of an individual of that genotype. Differences in fitness among genotypes drive allele frequency change. In this chapter we'll study the dynamics of alleles at a single locus. In this chapter we'll ignore the effects of genetic drift, and just study the deterministic dynamics of selection. We'll return to discuss the interaction of selection and drift in the next chapter.\\
+Differences in fitness can arise at any point during the life
+cycle. For instance, different genotypes or phenotypes may have
+different survival probabilities from one stage in their life to the
+stage of reproduction (viability), or they may differ in the number of
+offspring produced (fertility), or both. Here, we define the absolute
+fitness of a genotype as the expected number of offspring of an
+individual of that genotype. Differences in fitness among genotypes
+drive allele frequency change. In this chapter we'll study the
+dynamics of alleles at a single locus. In this chapter we'll ignore
+the effects of genetic drift, and just study the deterministic
+dynamics of selection. We'll return to discuss the interaction of
+selection and drift in a couple of chapters.\\
 
 
 \subsection{Haploid selection model}
@@ -529,7 +549,7 @@ special case where $\wbar_1 = \wbar_2$ shortly).\\
 
 We can also rewrite \eqref{deltap_dip1} as
 \begin{equation}
-\Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp},
+\Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp}, 
 \label{deltap_dip3}
 \end{equation}
 the demonstration of which we leave to the reader (see question below).
@@ -671,6 +691,9 @@ selection in the heterozygote state.
 
 \graham{Add selection lines or get students to do that as an exercise.}
 
+
+%%dominant colour poly in owls
+%%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3105316/
 
 \paragraph{Directional selection on an additive allele.}
 A special case is when $h = 0.5$. This case is the case of no dominance, as the interaction among alleles with respect to fitness is strictly additive. Then, eqn.\ \eqref{deltap_direct} simplifies to
@@ -1260,12 +1283,18 @@ close human friends.
 \section{Sex ratios, sex ratio distorters, and other selfish
   elements. }
 
-We have seen that when selection acts in a simple manner it can act to
-increase the mean fitness of the population. However, when the
+We have seen that when selection acts on phenotypes and genotypes in a
+frequency-independent manner it can act to
+increase the mean fitness of the population, consist with our
+notation of selection driving our population to become better adapted
+to the environment (eqn. \eqref{eqn:pheno_fitness_landscape} and \eqref{deltap_dip3}). However, when the
 absolute fitnesses of individuals are frequency dependent, e.g. depend
 on the strategies deployed by others in the population, natural
-selection is not guaranteed to increase mean fitness. One place where
-this is particularly apparent is in the evolution of a 50/50 sex
+selection is not guaranteed to increase mean fitness. Nothing about
+the strategies pursued by the Ruffs above seems well suited to
+maximizing the future growth rate of the population. 
+One place where it particularly apparent that frequency dependence
+drives non-optimal solutions from the perspective of the population, is in the evolution of a 50/50 sex
 ratio. In fact as we'll see that selection can drive the evolution of
 traits that are actively harmful to the fitness of an individual, when
 selection acts below the level of an individual. 
@@ -1312,7 +1341,6 @@ Our population is held well away from its female-bias optimum for population gro
 %https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
 
 
-
 \paragraph{Adaptive adjustments to sex ratio in response to local mate
   competition.}
 
@@ -1354,7 +1382,7 @@ Life stages of Fig wasp ({\it Blastophaga psenes}, synonym {\it Blastophaga
 \end{marginfigure}
 
 Female wasps have control over the sex of their offspring, what's a
-wasp mamma to do, i.e. what is their optimal strategy? They have
+wasp mamma to do, i.e. what is their optimal strategy? Females have
 this degree of control as sex determination in wasps is haplo-diploid, with fertilized eggs
 developing as diploid females and unfertilized males; thus by choosing
 to lay fertilized eggs they can control their number of daughters. 
@@ -1384,9 +1412,16 @@ female.
 \subsection{Selfish genetic elements and selection below the level of
   the individual.}
 
-This section will be somewhat of a rogues gallery tour of some of the various
-genetic conflicts that occur and selfish genetic elements that can
-arise.  
+These ideas about individuals pursuing selfish strategies, which can
+lower the populations fitness, extends below the level of the individual. The alleles within an
+individual can sometimes pursue selfish strategies that
+actively harm the individuals that carry them. Here we'll take a tour
+of the rogues gallery of some the various
+genetic conflicts that occur and selfish genetic elements that exploit
+them. They're included in this chapter in part as much of the biology they can
+be understood from the perspective of the ideas developed here. But the main reason for talking about them is that they're an
+amazing slice of biology, that shows that the logic . %There's something deeply satisfying about
+%the idea that 
 
 
 \paragraph{Selfish sex chromosomes and sex ratio distortion}
@@ -1592,14 +1627,36 @@ autosomal suppressing allele. The autosomal supressor allele
 spread very rapidly within populations taking just 5 years to spread
 through the population from 2001 to 2006. 
 
-\paragraph{Autosomal selfish systems}
+\paragraph{Selfish Autosomal Systems}
 Self genetic systems can also arise and cause genetic conflicts on the
 autosomes. The interests of autosomal alleles are usually relatively
-well aligned with promoting the fitness. However, these interests can
-diverge during meiosis and gametogenesis. After all, There are two
+well aligned with promoting the fitness of the individual who carries them. However, these interests can
+diverge during meiosis and gametogenesis. After all, there are two
 alleles at each autosomal locus but only one of them will get passed
-to a child, therefore there can be competition between alleles in an
-individual to be transmitted gamete to the next generation (Figure \ref{fig:gametogenesis_male_female}).
+to a child, therefore there can be competition to be in gamete transmitted to the next generation.
+ \begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/ascus_spore_killer/Grognet_spore_killer.png}
+\end{center}
+\caption{
+Pictures of P. anserina asci from various crosses. The arrow in the
+SxT picture shows a rare  ascus carrying all four products of
+meiosis. Figure from \citet{grognet2014genes}, \PLOSccBY. 
+ } \label{fig:spore_killer}
+\end{figure}
+  
+
+The four products of meiosis in the fungus {\it Podospora anserina}
+are arrayed in the ascus\sidenote{from the Greek word askos meaning wineskin.}
+of the spores for the next generation. There is a polymorphism S/T at
+the Spok gene in this species. In
+spores from SxS and TxT individuals all four products are
+present. However, only two out of four spores are present in the
+$\sim 90\%$ of asci from SxT individuals \citep{grognet2014genes}. The T allele is releasing
+a toxin that poisons off the S carrying spores. The jury is still out
+on whether the T allele spread due to the advantage created by
+sabotaging its rival product of meiosis \citep{sweigart2019making}. However, in other systems it
+is clear that alleles have spread due to their selfish actions. 
 
   \begin{figure}
 \begin{center}
@@ -1616,8 +1673,9 @@ H.E.}{https://archive.org/stream/biologystoryofli00hunt/\#page/429/mode/1up}{MBL
 \end{figure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
 
 
-Male and female gametogenesis offer different opportunities for selfish
-systems. Just as how selfish X chromosome systems can spread by
+A number of well-established genetics systems illustrate how in
+animals and plants how Male and female gametogenesis offer different
+opportunities for selfish alleles (Figure \ref{fig:gametogenesis_male_female}). Just as how selfish X chromosome systems can spread by
 targeting sperm that carry the Y chromosome, selfish autosomal alleles
 can spread by targeting sperm carrying the other chromosome in
 heterozygotes. Both the Drosophila Segregation Distortion allele and
@@ -1703,9 +1761,9 @@ fixation.
 Let $R$ be the sources and $C_{\mars}$ and $C_{\venus}$ be the cost of
 producing a son and daughter respectively. If our focal mother directs
 $s$ of her effort towards sons and $(1-s)$ of her effort towards
-daughters, she'll produces $\frac{Rs}{C_{\mars}}$ sons and
-$\frac{R(1-s)}{C_{\venus}}$ daughters.  We will assume that the mean
-reproductive value of daughters is $1$. Given this the reproductive
+daughters, she'll produce $\frac{Rs}{C_{\mars}}$ sons and
+$\frac{R(1-s)}{C_{\venus}}$ daughters.  Let's assume that the mean
+reproductive value of daughters is $1$. Given this the average reproductive
 value of sons is the average number of matings that a male will have,
 i.e. the ratio $\nicefrac{\# \textrm{~females}}{\# \textrm{~males}}$. So if the population has a sex ratio $s_p$, the fitness of our focal female is
 \begin{equation}

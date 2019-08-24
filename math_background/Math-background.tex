@@ -17,11 +17,24 @@
 % \newcommand{\R}{\mathbb{R}}
 % \newcommand{\E}{\mathbb{E}}
 
+\setcounter{figure}{0}
+\setcounter{section}{0}
+\setcounter{equation}{0}
+\setcounter{chapter}{0}
+\renewcommand{\thechapter}{\Alph{chapter}.}
+\renewcommand{\theequation}{\Alph{chapter}.\arabic{equation}}
+\renewcommand{\thesection}{\Alph{chapter}.\arabic{section}}
+\renewcommand{\thefigure}{\Alph{chapter}.\arabic{figure}}
+
+%\renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+%\renewcommand{\thesection}{\Alph{section}}
 
 \chapter{An Introduction to Mathematical Concepts}
 %\title{Basic Mathematical Concepts for PBG 200A}
 %\author{Sebastian J. Schreiber and Graham Coop \\}
 %Now, in the first place I deny that the mathematical theory of population genetics is at all impressive, at least to a mathematician. On the contrary, Wright, Fisher, and I all
+\marginnote{From Haldane's entertaining response to Mayr's criticism of population genetics. 
+\cite{haldane1964defense}.}
 \begin{quote}
 ``Now, in the first place I deny that the mathematical theory of
 population genetics is at all impressive, [... We] made simplifying assumptions which allowed us to pose problems
@@ -29,8 +42,7 @@ soluble by the elementary mathematics at our disposal, and even then
 did not always fully solve the simple problems we set ourselves. Our
 mathematics may impress zoologists but do not greatly impress
 mathematicians.''--\citeauthor{haldane1964defense} 
-\end{quote}\marginnote{From Haldane's entertaining response to Mayr's criticism of population genetics. 
-\cite{haldane1964defense}}
+\end{quote}
 
 %\maketitle
 Throughout these notes we make use of mathematical concepts, many of
@@ -40,12 +52,18 @@ statistics and math topics are often excellent introductions, and
 worth consulting if you want to know more. This primer was originally written by
 Sebastian Schreiber and myself for our Fall quarter of the PBG core
 (although I take full credit for any errors subsequently introduced).
+Note that some of these concepts may go beyond what you have covered in previous
+courses . %I'll refer to this appendix when these concepts first come
+%up in the main body of the notes. \graham{T} 
 
 %While we might spend some time discussing them in lecture, it probably is a good idea to make sure that you are comfortable with these concepts and if not, talk to one of us about where to read about them online in more detail. 
 
 
 \section{Calculus}
-
+In evolutionary genetics we're often interested in how quantities
+change over time, and so we're interested in the rate of change over
+time. (This particular obsesssion is shared with much of
+science and so the concepts we make use of pop up in many other fields). 
 The \emph{derivative} $f'(a)$ of a function $f(x)$ at $x=a$ represents
 the instantaneous rate of change of the function, $\frac{df(x)}{dx}$, at $x=a$ or,
 equivalently, the slope of the graph of the function at $x=a$. The
@@ -110,18 +128,32 @@ complicated, nonlinear functions by linear functions (this is called a first-ord
    stop plotting the approximation a little away from the dot for easy
    of presentation. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{FigTaylor_1}
 \end{marginfigure}
-For example, this approximation yields (\texttt{you can verify this for yourself!}) 
-\begin{eqnarray}
-\exp(x)&\approx &1+x \mbox{ for $x$ near $0$}\\
-(1-x)^k &\approx & 1-k\,x \mbox{ for $x$ near $0$}
-\end{eqnarray}
-
 Returning to our car example, this corresponds to trying to guess the
 position of the car
 extrapolating from its current location and speed. We'll do well when
 the car is traveling at a relatively constant speed, i.e. isn't
 accelerating or deccelerating too fast. 
- 
+
+Two common first-order Taylor approximations that we'll encounter
+throughout the notes are
+\begin{eqnarray}
+\exp(x)&\approx &1+x \mbox{ for $x$ near $0$}  \label{eqn:Taylor_exp}\\
+(1-x)^k &\approx & 1-k\,x \mbox{ for $x$ near $0$}
+\end{eqnarray}
+ we'll also use the Taylor approximation given by eqn
+ \eqref{eqn:Taylor_exp} as a trick to write
+\begin{eqnarray}
+     (1+x)^L \approx  \exp\left( L x\right)  \mbox{ for $x$ near $0$,} \label{eqn:Taylor_geo} 
+\end{eqnarray}
+which allows
+ us to move from a geometric decay to an exponential decay. As a
+ generalization of this, we'll approximate the product 
+ \begin{eqnarray}
+   \prod_{i=1}^L (1+x_i) \approx  \exp\left( \sum_{i=1}^L x_i\right)
+                                   \mbox{if all $x_i$ are near $0$,} \label{eqn:Taylor_prod} 
+ \end{eqnarray}  
+which is useful as it allows us move from a product to thinking about
+a sum (where averages are easier to think about). 
 
  \begin{marginfigure}
  \begin{center}
@@ -144,11 +176,11 @@ where $f''(a)$ denotes the  \emph{second derivative} of $f$ at
 $x=a$. In our car example, this is equivalent to predicting the
 location of the car from its speed {\emph and} acceleration. 
 
-This second order approximation is especially useful for the $\log$ function and yields
+One place this second order approximation is useful is for the $\log$ function and yields
 \begin{equation}
 \log(1+x)\approx x-x^2/2 \mbox{ for $x$ near $0$}.
 \end{equation}
-(\texttt{you can verify this for yourself!})
+
 
 \subsection{Integrals} Regarding  \emph{integrals} $\int_a^b f(x)\,dx$, just remember that
 they represent the \emph{signed area} ``under'' the graph of $y=f(x)$
@@ -156,6 +188,17 @@ over the interval $[a,b]$. %It's often helpful to think about an
 %integral as 
 
 \section{Probability}
+Evolution is fundamentally a random process. Which individuals live,
+die, and reproduce in any given moment is far from predictable. The randomness of Mendelian transmission, what genetic material
+is transmitted to the next generation, reflects randomness at the
+molecular and cellular level. While this makes it impossible to
+predict the outcome for a given individual we can speak of average
+outcomes and the statistical properties of evolutionary
+processes. Indeed evolution is fundamentally a statistic process,
+evolution occurs because some types of individuals, and alleles, on
+average leave more offspring to subsequent generations. Thus to
+understand the details of models of evolutionary change we will have to understand something
+about probability and statistics. 
 
 \subsection{Random Variables} A  \emph{random variable} $X$, roughly,
 is a variable that takes on values drawn randomly from some
@@ -223,8 +266,8 @@ What is the probability $\P(\textrm{dog or cat})$?
 
 
 \paragraph{Conditional probability}
-We often want to know the probability of an event conditional on some
-other particular event, e.g. the probability of getting a cat toy
+We often want to know the \emph{conditional probability}, the probability of an event conditional on some
+other particular event. For example, the conditional probability of getting a cat toy
 given that I've pulled out an egg containing a dog (recall that ten of the hundred eggs contain both a dog and a cat toy.). 
 We write this as $\P(\textrm{cat} | \textrm{dog})$, where we read $|
 \textrm{dog}$ as `given dog' or `conditional on dog'.  The rule of conditional probabilities is that
@@ -251,9 +294,9 @@ these two ways of writing the same thing will come in useful in just a
 moment.
 
 The total probability of an event can be obtained by summing over
-all of the mutually independent ways that A can happen
+all of the $L$ mutually independent ways that A can happen
 \begin{equation}
-  \P(A)  = \sum_{i=1}^L \P(\textrm{A \& B$_i$}) = \sum_{i=1}^L \P(A | B_i) \P(B_i)  
+  \P(A)  = \sum_{i=1}^L \P(\textrm{A \& B$_i$}) = \sum_{i=1}^L \P(A | B_i) \P(B_i)  \label{eqn:law_tot_prob}
 \end{equation}
 where $B_1,~\cdots,~B_L$ give the mutually exclusive events
 that can occur alongside our event $B$. This is the \emph{law of total
@@ -264,7 +307,7 @@ a cat as
 \end{equation}
 
 \paragraph{Independence}
-Two events are independent of each other if
+Two events are \emph{independent} of each other if
 \begin{equation}
 \P(\textrm{A \& B}) = \P(A) \P(B) \label{eqn:basic_indie}
 \end{equation}
@@ -288,7 +331,7 @@ Rearranging eqn \eqref{eqn:two_joint_probs} we obtain
 \begin{equation}
 \P(B | A) =  \frac{\P(A | B) \P(B) }{\P(A)} \label{eqn:Bayes_Rule}
  \end{equation}
-Equation \eqref{eqn:Bayes_Rule} is also called ``Bayes' Rule" or ``Bayes' Theorem," and it  which allows us to reverse the variable we
+Equation \eqref{eqn:Bayes_Rule} is also called \emph{``Bayes' Rule"} or \emph{``Bayes' Theorem,"} and it  which allows us to reverse the variable we
 condition on. 
 \begin{question}
 Use Bayes' rule to calculate $\P(\textrm{dog} | \textrm{cat})$ from
@@ -296,17 +339,19 @@ the conditional probability you calculated in Question
 \ref{question:cond}.\\
  \end{question}
 
-\subsection*{Expectation of a Random Variable} The  \emph{expectation
+\marginnote{ According to Pascal, the expectation is the excitement a gambler feels when placing
+a bet i.e. each term in the sum equals the probability of winning
+times the amount won. Apparently Pascal knew some unusually rational gamblers.}
+\subsection*{Expectation of a Random Variable}
+
+The  \emph{expectation
   of a random variable} is the point at which the distribution is
 ``balanced''. For discrete random variables it is given by 
 \begin{equation}
 \mu = \E[X]=p_1x_1+p_2x_2+\dots + 
 \end{equation}
-the expectation of a random variable is the mean of the distribution.
-%According to Pascal, it is the excitement a gambler feels when placing
-%a bet i.e. each term in the sum equals the probability of winning
-%times the amount won.
-Our average outcome \footnote{Recalling that we compute average, the sample mean, of a set of numbers $X_1,\cdots,X_L$ as
+the expectation of a random variable is the mean of the distribution. 
+Our average outcome \sidenote{Recalling that we compute average, the sample mean, of a set of numbers $X_1,\cdots,X_L$ as
 \begin{equation}
 \bar{X} =\frac{1}{L} \sum_{i=1}^L X_i
 \end{equation}
@@ -342,11 +387,70 @@ $X$.\sidenote{We can compute the sample variance as
 %  &= \left( \frac{1}{L-1} \sum_{i=1}^L X_i^2 \right) - \bar{X}^2
   \end{align}
 }
+Note that the units of our variance will be the units of $X^2$,
+e.g. if $X$ is height measurements in cm the variance will have units
+cm$^2$. One reason that the standard deviation is a more intuitive
+than the variance is that its units are the same as $X$, e.g.  cms. 
+
 Another important choice of $f$ is $f(x)=\log x$. Provided that $X$ is positive, $\exp(\E[\log X])$ corresponds to the  \emph{geometric mean of $X$}. Alternatively $1/\E[1/X]$ corresponds to the \emph{harmonic mean of $X$}. 
 
-\graham{Add notes about linearity of expectation etc, affine rescaling mean
-  and variance. Summing of means and variances}
 
+\begin{question}
+Your friend offers you a wager on the outcome of one round of playing the
+fairground egg game. She'll give you: $\$1$ for a only dog, $\$2$ for
+a only cat
+$\$5$ for an egg with a cat and a dog, and $\$4$ for a
+lizard. However, she'll take $\$1$ from you if you get an empty
+egg. What is your expected payout?
+  \end{question}
+
+\paragraph{Some Useful Properties of Expectations.}
+One of most useful mathematical properties of the expectation is its
+linearity, in that the expectation of a linear function of random
+variables is the linear function applied to the expectation, i.e. 
+\begin{equation}
+\E[aX+bY+c]= a\E[X] + b \E[Y] +c \label{eqn:linearity_expectation}
+\end{equation}
+where $X$ and $Y$ are random variables, and $a$, $b$, and $c$ are
+constants. This holds regardless of whether $X$ and $Y$ are
+independent. Note, that our multipliers ($a$ \& $b$) must be constant, as
+this does not hold for the expectation of products of random
+variables. One sensible property of the linearity is the units of the
+mean is the same as our observation, for example if we change our measure height
+of adult height from inches to cm, the unit our mean also changes from
+inches to cm (as this change just involves multipling by a number). 
+
+Using our linearity of expectations, we can obtain an analogous result for the variance
+\begin{equation}
+Var[aX+bY+c]= a^2Var[X] + b^2 Var[Y] 
+\end{equation}
+this holds if $X$ and $Y$ are independent variables, if they are not
+we need to account for their covariance. Note that the constant $c$
+has disappeared as the variance is a statement about the spread of the
+points around the mean, and so it doesn't matter how we shift the
+mean. 
+
+We are often interested in the expectation of a random variable $X$
+conditional on some event $Y=y$, this \emph{conditional expectation} is
+\begin{equation}
+\E[X|Y=y] = \sum_{i=1}^L x_i \P(X=x_i|Y=y) 
+ \end{equation}
+summing over the $L $ possible values $X$ could take. For example, we could ask the expected payoff of your friend's wager
+conditional on knowing that you have an egg with a dog in it. With the
+analogous expression for continuous random variables replacing the sum
+with an integral.
+
+We can recover our total expectation from the conditional expectations
+by taking the sum of our conditional expectation over the values that
+$Y$ could take, weighting each by their probability
+\begin{equation} 
+\E[X] = \sum_{j=1}^M \E[X|Y=y_j] \P(Y=y_j)
+ \end{equation}
+this is the law of total expectation, the analog to the law of total
+probability (eqn \eqref{eqn:law_tot_prob}). We can write this law more
+generally as $\E \big[\E[X|Y]\big]$, i.e. we are taking the
+expectation of our conditional expectation over $Y$. 
+ 
 \subsection{Discrete Random Variable Distributions.}
 
  \begin{marginfigure}
@@ -411,29 +515,37 @@ p_i = \lambda^i e^{-\lambda}/i!
  \end{marginfigure}
  For a random Poisson variable $\E[X]=\lambda$.
 
- The form of this is less intuitive than that of the (say)
- binomial. However, one way we can derive it is as the limiting case of the
+ The form of this is less intuitive than that of the
+ binomial. However, the Poisson is actually a limiting case of the
  binomial. Think of setting up a game of chance, where there's a very large number of coin
  flips ($n \rightarrow \infty$), but you've set the chance of heads on a single
- coin flip is very low ($p  \nicefrac{\lambda}{n} \rightarrow 0$,
+ coin flip is very low ($p = \nicefrac{\lambda}{n} \rightarrow 0$,
  where $\lambda$ is a constant).  Under these conditions you'd still
  expect some heads ($np =\lambda$), and the distribution of the number
- of heads is Poisson. See Figure \ref{Fig:poisson} to see how well
- they match. To see this we substitute
+ of heads is Poisson.\sidenote{To see this we substitute
  $p=\nicefrac{\lambda}{n}$ into our binomial probability and take
  the limit as $n \to \infty$ 
  \begin{align}
    p_i &= \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \nonumber\\
          &= \lim_{n\to\infty} \frac{n(n-1)\ldots
-         (n-k-1)}{i!} \left(  \frac{\lambda}{n}\right)^i \left(1-
+         (n-i-1)}{i!} \left(  \frac{\lambda}{n}\right)^i \left(1-
          \frac{\lambda}{n}\right)^{n-i} \nonumber\\
-   & = \lim_{n\to\infty} \frac{n^k}{i!} \frac{\lambda^k}{n^k} \left(
-     \frac{\lambda}{n}\right)^n \nonumber\\
- &=  \lim_{n\to\infty} \frac{\lambda^k}{i!} e^{-\lambda}
+   & = \lim_{n\to\infty} \frac{n^i}{i!} \frac{\lambda^i}{n^i} \left(
+     1-\frac{\lambda}{n}\right)^n \nonumber\\
+ &=  \lim_{n\to\infty} \frac{\lambda^i}{i!} e^{-\lambda}
  \end{align}
- \end{description}
-Therefore, the Poisson represents the limit of
-the binomial. 
+The third line assumes that $n-i \approx n$, which holds for $n \gg
+i$, and uses our
+exponential approximation given by eqn \eqref{eqn:Taylor_geo}. 
+}  See Figure \ref{Fig:poisson} to see how well
+ they match. Therefore, the Poisson represents a limit of
+the binomial for rare events. 
+\end{description}
+
+%% Poisson horse kicks
+%% https://mindyourdecisions.com/blog/2013/06/21/what-do-deaths-from-horse-kicks-have-to-do-with-statistics/
+%% Bulmer data https://books.google.com/books?id=dh24EaSrmBkC&lpg=PA92&dq=prussian%20soldier%20horse%20deaths%20poisson&pg=PA92#v=onepage&q&f=false
+%% https://www.google.com/search?q=prussian+horse&tbm=isch&source=lnt&tbs=sur:fmc&sa=X&ved=0ahUKEwjf-ZvGgZfkAhUlO30KHYUlCeoQpwUIJA&biw=1522&bih=1109&dpr=1
 \subsection{Continuous Random Variable Distributions.}
 Important continuous random variables include
 \begin{description}
@@ -446,10 +558,12 @@ For a uniform random variable $\E[X]=(a+b)/2$.
 \begin{equation}
 p(x)= \lambda \exp(-\lambda x) \mbox{ for }x\ge 0 \mbox{ and } 0 \mbox{ otherwise.}
 \end{equation}
-For an exponential random variable $\E[X]=1/\lambda$. The Exponential
+For an exponential random variable $\E[X]=1/\lambda$. \marginnote{The Exponential
 distribution is the continuous-time version of the Geometric
 distribution. Informally this can be seen by considering the trials in
-the geometric distribution as narrow time-intervals and 
+the geometric distribution as corresponding to narrow time-intervals,
+where the probability of success is small. Then we can use our
+exponential approximation to the geometric probability (eqn \eqref{eqn:Taylor_geo}). }
 
 \item[Normal] random variables have the ``bell-shaped'' or ``Gaussian'' shaped distribution. They are characterized by two parameters, the mean $\mu$ and the standard deviation $\sigma$, and
 \begin{equation}
@@ -486,11 +600,32 @@ The \emph{covariance} of  $X$ and $Y$ is given by
 \E[(X-\mu_X)(Y-\mu_Y)]=\E[XY]-\mu_X\mu_Y. 
 \end{equation}
 $X$ and $Y$ are said to \emph{uncorrelated} if their covariance equals
-zero.If $X$ and $Y$ are independent, then they are guaranteed to be
+zero. If $X$ and $Y$ are independent, then they are guaranteed to be
 uncorrelated, but it is possible to construct $X$ and $Y$ to be
 uncorrelated but not independent. 
 
 
+\paragraph{Binary variable correlations}
+One application of our covariance formula is to two binary variables,
+for example taking values $A/a$ and $B/b$. Let's set $X=1$ if $A$, and
+$X=0$ otherwise, and $Y=1$ if $B$.  For example, you could imagine drawing
+a once from a deck of cards and $A$ being the event of drawing an
+queen or a jack, with $a$ being any other type of card, and $B$ being that the card is
+a heart and $b$ it being any other suit. So $XY=1$ if our card is a
+Queen or Jack of Hearts, and zero otherwise. Then
+\begin{eqnarray}
+  \E[XY] - \E[X]\E[Y] &= \P(X=A,~Y=B) -  \P(X=A) \P(Y=B)
+                        & p_{AB} - p_{A} p_{B}
+ \end{eqnarray}
+where $p_{AB}$ is the frequency of $AB$, eg. the proportion of cards
+that are the Queen or Jack of hearts in our deck, and $p_{A}$ is the
+(marginal) frequency of $B$, e.g. the proportion of Heart suite cards
+(and similarly for $p_{A}$).
+
+\begin{question}
+What is the covariance for $A$ and $B$ in our deck of cards example? 
+\end{question}
+  
 \paragraph{Sample Covariance and Correlation} 
 We can calculate the \emph{sample covariance} for $X$ and $Y$ of a set of observations
 of $X_1, \cdots, X_L$ and $Y_1, \cdots, Y_L$, where these observations
@@ -514,12 +649,14 @@ covary. Example datasets are shown in Figure \ref{Fig:Covar_egs}.
 To move covariances to a more understandable scale we can divide
 through by the product of the standard deviations
 \begin{equation}
-\rho_{XY} = \frac{{\sigma_{XY}}}{\sigma_{X} \sigma_{X}}
+Cor(X,~Y) =\rho_{XY} = \frac{{\sigma_{XY}}}{\sigma_{X} \sigma_{X}}  \label{eqn:def_corr}
 \end{equation}
 this is the \emph{correlation} of our variables $X$ and $Y$, if we
 calculate it for our sample it is our \emph{sample correlation}. A correlation can range between $1$,
 perfectly correlated, to $-1$ perfectly negatively correlated. If
 $\rho_{XY} =0$ the variables are said to be uncorrelated.
+
+
 
 \paragraph{Fitting a linear regression using least squares.}
 We often want to approximate the relationship between our two variables
@@ -583,9 +720,11 @@ where we minimize
 \end{equation}
 over our choices of parameters $\Omega$. Often there is no analytical
 solution, i.e. no equivalent of eqn. \ref{eqn:slope_linear_reg}, and
-the answer must be found computationally (with easy tools available in
+the answer must be found computationally exploring over choices of
+$\Omega$ (using tools available in
 R and other programming languages). Throughout the book we use
-non-linear least squares to fit various models to data. 
+non-linear least squares to fit various models to data.
+
 
 %It can be show, for example in the discrete case, this is equivalent to 
 %\begin{equation}
@@ -593,17 +732,37 @@ non-linear least squares to fit various models to data.
 %\end{equation}
 %for any $i,j$.
 
-\subsection*{Other useful results.}
+\paragraph{Useful Properties of Covariances.}
+Following from the linearity of expectation, eqn
+\eqref{eqn:linearity_expectation}, if we rescale $X$ to $mX+n$ and
+$Y$ to $oY+p$ then
+\begin{equation}
+Cov(mX+n,~oY+p) = (mo) Cov(X,Y) 
+\end{equation}
+Such linear transforms leaves our correlation unaffected, as it
+cancels out of the top and bottom of eqn \eqref{eqn:def_corr}. While
+it multiplies the linear slope by $\nicefrac{m}{o}$. Thus
+for our correlation it does not matter what units we measure $X$ and
+$Y$. While our linear slope is always in the units of
+\nicefrac{\textrm{units}(X)}{\textrm{units}(Y)}, for example
+$\nicefrac{\textrm{m}}{\textrm{s}}$ if we were predicting the
+distance (Y in meters) traveled by runners in time intervals ($Y$ seconds).
+
+\subsection*{Useful Limits.}
 \paragraph{Law of Large Numbers} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$, then 
 \begin{equation}
 \frac{X_1+\dots +X_n}{n} \to \mu \mbox{ as }n\to \infty \mbox{ with
   probability one.}
 \end{equation}
-Hence, LLN implies that if you repeat a bunch of experiments and take the average outcome from the experiments, the value you get is likely to be close the expected outcome of the experiment. 
+Hence, LLN implies that if you repeat a bunch of experiments and take
+the average outcome ($\bar{X}$) from the experiments, the value you get is likely to be close the expected outcome of the experiment. 
 
 Of course, in the real world, we can only perform a finite number of experiments in which case it is useful to have a sense of how much variation there will be in the average outcome. The central theorem is the key tool for understanding this variation. 
 
-\paragraph{Central Limit Theorem} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$ and variance $\sigma^2$, then 
+\paragraph{Central Limit Theorem} If $X_1,X_2,\dots$ are a sequence of
+independent random variables (i.e. ``the outcomes of a sequence of
+independent experiments) with common expectation $\mu= \E[X_i]$ and 
+variance $\sigma^2$, then 
 \begin{equation}
 \frac{X_1+\dots +X_n-\mu \,n }{\sqrt{n}\sigma} \to \mbox{ normal distribution with mean $0$ and variance $1$ as $n\to \infty$ }
 \end{equation}
@@ -611,4 +770,7 @@ Hence, for $n$ large enough
 $
 X_1+\dots+X_n 
 $
-is approximately normally distributed with mean $\mu\,n$ and variance $\sigma^2 n$. 
+is approximately normally distributed with mean $\mu\,n$ and variance
+$\sigma^2 n$. This is one of the reasons the normal distribution is so
+useful, many outcomes (e.g. phenotypes) have an approximately normal distribution as
+they are the combined outcome of many (somewhat) independent quantities.  
