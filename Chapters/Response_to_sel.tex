@@ -478,7 +478,9 @@ increase mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
 higher values of the trait ($R>0$), left panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. Conversely if decreasing the
 population mean phenotype slightly would increase the mean fitness ($ \nicefrac{\partial \wbar}{\partial \bar{x}}
 <0$) the population will that generation evolve towards lower values
-of the phenotype, middle panel of Figure \ref{fig:fitness_landscape_1D_w_wbar}. Thus we can think of the population as evolving on
+of the phenotype, middle panel of Figure
+\ref{fig:fitness_landscape_1D_w_wbar}. Thus, if selection pressures
+remain constant, we can think of the population as evolving on
 an adaptive landscape where the elevation is given by the population mean
 fitness. Natural selection operates on the basis of individual-level
 fitness, but as a result of this our population is increasing in its
@@ -490,7 +492,7 @@ discuss the caveats of this interpretation below).
  \includegraphics[width= 0.8 \textwidth]{figures/Response_to_sel/fitness_landscape_1D_w_wbar.pdf}
  \end{center}
  \caption{A population evolving on a (guassian) fitness surface. The
-   bottom panel shows the expected individual fitness ($w()$) and mean
+   bottom panel shows the expected individual fitness ($w(~)$) and mean
    fitess as a function of phenotype. The red line shows the best
    fitting linear approximation to the relationship between phenotype
    and fitness, eqn \eqref{fitness_regression}, whose slope is
@@ -500,7 +502,7 @@ discuss the caveats of this interpretation below).
  
 
 What happens when it
-reaches the top? Well at the top of a peak $ \nicefrac{\partial
+reaches the top of a peak? Well at the top of a peak $ \nicefrac{\partial
   \wbar}{\partial \bar{x}}=0$, as it is a local maximum, and so
 $R=0$. Assuming that the relationship between fitness and phenotype
 stays constant, our population will stay at the top of the fitness

@@ -1,16 +1,81 @@
 
-\chapter{Molecular Evolution and the Fixation of Neutral Alleles.}
+\chapter{The Population Genetics of Divergence and Molecular Substitution.}
 \begin{quote}
 ``history is just one damn thing after another'' -Arnold Toynbee
 \end{quote} %https://quoteinvestigator.com/2015/09/16/history/
 
 
-It is very unlikely that a rare
+There are over $30$ million base pair substitutions between human and chimpanzees,
+sites where humans carry one allele and chimp another at orthologous locations. These changes
+have occurred in the seven million years or so since human and chimp
+last shared a common ancestor. Other subsitutions are shared between
+ther sister species human and chimp to the exclusion of gorilla, yet
+others are shared with Gorilla. These substitutions represent changes
+at just a small percentage of sites genome-wide as we share the majority of our
+genome, our evolutionary history, and our biology with the
+other great apes. Each of the substitutions must have arisen as a single mutation in the
+population, spread through the population as a polymorphism before
+eventually reaching fixation. What forces drove the spread of these
+alleles?
+\begin{table*}
+\small{
+  \begin{tabular}{rl}
+%https://genome.ucsc.edu/cgi-bin/hgc?hgsid=751620175_qgtFpsA9hP8yVBVZ1ezZl3Iy3N1L&c=chr11&l=5242146&r=5242284&o=5242146&t=5242284&g=multiz30way&i=multiz30way
+%Alignment block 1 of 2 in window, 5242147 - 5242282, 136 bps 
+Human & \texttt{accacagcatttgttagttactgccaagaagcctgtatctgtagggtaaaatcctcgctgaagtgggttg}\\
+Chimp & \texttt{......................................g...........c...................}\\
+%Bonobo & \texttt{......................................g...........c...................}\\
+Gorilla & \texttt{..................................................cc..................}\\
+Orangutan & \texttt{.........c.........c..............................c...................}\\
+Gibbon & \texttt{...................c..............................---.................}\\
+%Rhesus macaque & \texttt{g.............gg...c..............................c..t.t..............}\\
+Crab-eating macaque & \texttt{g.............gg...c..............................c..t.t..............}\\
+  \end{tabular}
+  }
+\caption{Variable positions in a primate alignment of orthologous sequences
+  of a 136bp region. This region starts at position 5242147 of
+  chromosome 11, chosen pretty much at random from the UCSC browser. Dots indicate
+  positions where the other sequences carry the same base as the human
+reference sequence. } 
+\end{table*}
+%https://genome.ucsc.edu/cgi-bin/hgc?hgsid=751620175_qgtFpsA9hP8yVBVZ1ezZl3Iy3N1L&c=chr17&l=43084819&r=43084957&o=43084819&t=43084957&g=multiz30way&i=multiz30way
+% https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr11%3A5242147%2D5242284&hgsid=751620175_qgtFpsA9hP8yVBVZ1ezZl3Iy3N1L
+
+Many substitutions were driven by selection, as there has undoubtedly
+been a lot of adaptive phenotypic adaptive evolution on both the human
+and chimp lineage. However, these adaptive changes may be a small
+minority of all the subsitutions as many substitutions have occurred in
+non-coding DNA with no known functional effect. Thus it is reasonable
+starting position that the majority of substitutions genome-wide may well be
+neutral. 
+\marginnote{Many of the topics covered in this chapter also fall
+  within the field of `molecular evolution', which shares many of its
+  questions and tools with population genetics but often focuses on longer
+  time-scales of evolution using phylogenetic approaches. }
+How can we hope to identify regions undergoing adaptive divergence?
+How could we hope to address the claim that many amino-acid changing
+substitutions are also neutral, as posited by the Neutral theory of
+molecular evolution. One way forward is to understand what neutral theory predicts for the
+rate of molecular substition, and then develop ways to test
+these ideas.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/Genetic_drift/Huxley_mans_place/Huxley_Mans_Place_in_Nature.jpg}
+\end{center}
+\caption{Illustration by Benjamin Waterhouse Hawkins from Huxley's Evidence as to Man's Place in Nature (1863)} \label{fig:Huxley}
+\end{figure}
+
+
+\section{The Neutral Substitution process.} 
+So how then do neutral substitutions occur? It is very unlikely that a rare
 neutral allele accidentally drifts up to fixation; more likely, such an allele
 will be eventually lost from the population. However, populations experience a
 large and constant influx of rare alleles due to mutation, so even if it is
 very unlikely that an individual allele fixes within the population, some
-neutral alleles will fix by chance. \\
+neutral alleles will fix by chance. So we'll need to understand the
+probability that a neutral mutation fixes, and then how we can think
+about the rate of substitutions accumulate over time.\\
 
 
 %We'll first consider the probability that a neutral allele fixes
@@ -20,7 +85,7 @@ neutral alleles will fix by chance. \\
 %so for an allele to be fixed in the population it
 %must have been that allele
 
-\paragraph{Probability of the eventual fixation of a neutral allele}
+\subsection{probability of the eventual fixation of a neutral allele}
 % TODO: tried to clean up this section, needs more work
 \begin{figure}
 \begin{center}
@@ -59,8 +124,6 @@ derive this result by letting $Ns \rightarrow 0$ in eqn.
 \eqref{eqn:prob_fixed}, a result we'll encounter later.)
 
 
-
-
 % TODO
 %A newly arisen mutation only becomes a fixed difference if it is lucky
 %enough to be the ancestor of the entire population. As we saw above, this occurs
@@ -77,7 +140,7 @@ precise, but in general we would still find that it takes $\approx 4N$
 generations for a neutral allele to go from its introduction to fixation with
 the population.   \\
 
-\paragraph{Rate of substitution of neutral alleles}
+\subsection{Rate of substitution of neutral alleles}
 
 A substitution between populations that do not exchange gene flow is simply a
 fixation event within one population. The rate of substitution is therefore the
@@ -124,6 +187,7 @@ worth of transmissions. Thus the average number of neutral mutational
 differences separating our pair of species is simply $2\mu (1-C) T$.\\
 %JRI: this is a nice explanation that is not commonly given. Cool.
 
+\subsection{Implications for the Molecular Clock.}
 \marginnote{\begin{quote}"functionally less important molecules or parts of a molecule
 evolve faster than more important ones." \end{quote} -- \citet{kimura1974some}}
 A number of observations follow under this model, from equation \eqref{eqn:moleclock}. The first is that a primary determinant of patterns of molecular evolution in a genomic region is the level of constraint ($C$). This pattern generally seems to hold empirically: non-coding regions often evolve more rapidly than coding regions, synonymous substitutions accumulate faster than nonsynonymous, and nonsynonymous substitutions accumulate faster in less vital proteins than ones that are absolutely necessary for early development. Note that this is not a unique prediction of the neutral model, e.g. less constrained regions may also be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
@@ -190,7 +254,7 @@ If our species split time is very large compared to $2N$ then we can think of $T
 
 
 \begin{question}
-For this, and the next question, assume that humans and chimps diverged
+For this, and the next question, assume that humans and chimps split
 %\graham{Update numbers?}
 around 5.5$\times 10^6$ years ago, have a generation time ~20 years, that the speciation occurred instantaneously in allopatry with no subsequent gene flow, and the ancestral effective population size of the human and chimp common ancestor population was 10,000 individuals.\\
 Nachman and Crowell sequenced 12 pseudogenes in humans and chimps and found substitutions at 1.3\% of sites. \\
@@ -202,7 +266,8 @@ germline than in the male germline.
 \end{question}
 
 \section{Tests of molecular evolution.}
-
+One of the great appeals of neutral models is they offer a simple null
+for us to test real data against. 
 \subsection{Comparing the rates of non-synonymous to synonymous
 substitutions $\dNdS$}
 One common tool in molecular evolution is to compare the estimated number (or rates) of substitutions in different classes of genomic sites, for example the ratio of the number of non-synonymous to synonymous substitutions in a given gene. The simplest way to calculate $d_N$ is to

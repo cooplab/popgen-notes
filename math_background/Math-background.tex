@@ -48,13 +48,16 @@ mathematicians.''--\citeauthor{haldane1964defense}
 Throughout these notes we make use of mathematical concepts, many of
 which are based in probability theory and statistics. Here we briefly
 review some of these concepts. The wikipedia pages on
-statistics and math topics are often excellent introductions, and
+statistics and math topics are often excellent introductions and
 worth consulting if you want to know more. This primer was originally written by
 Sebastian Schreiber and myself for our Fall quarter of the PBG core
 (although I take full credit for any errors subsequently introduced).
-Note that some of these concepts may go beyond what you have covered in previous
-courses . %I'll refer to this appendix when these concepts first come
-%up in the main body of the notes. \graham{T} 
+Some of these concepts may go beyond what you have covered in previous
+courses. The notes do not rely on you knowing these results, but I'll refer to this appendix when these concepts first come
+up in the main body of the notes. To answer the questions in the first
+chapter you will need to know some basic rules of probability. So
+reviewing Sections \ref{Section_rules_prob} and \ref{Section_rv} below
+would be  a good place to start.
 
 %While we might spend some time discussing them in lecture, it probably is a good idea to make sure that you are comfortable with these concepts and if not, talk to one of us about where to read about them online in more detail. 
 
@@ -62,8 +65,8 @@ courses . %I'll refer to this appendix when these concepts first come
 \section{Calculus}
 In evolutionary genetics we're often interested in how quantities
 change over time, and so we're interested in the rate of change over
-time. (This particular obsesssion is shared with much of
-science and so the concepts we make use of pop up in many other fields). 
+time. This particular obsession is shared with much of
+science and so the concepts we make use of popup in many other fields. 
 The \emph{derivative} $f'(a)$ of a function $f(x)$ at $x=a$ represents
 the instantaneous rate of change of the function, $\frac{df(x)}{dx}$, at $x=a$ or,
 equivalently, the slope of the graph of the function at $x=a$. The
@@ -200,7 +203,9 @@ average leave more offspring to subsequent generations. Thus to
 understand the details of models of evolutionary change we will have to understand something
 about probability and statistics. 
 
-\subsection{Random Variables} A  \emph{random variable} $X$, roughly,
+\subsection{Random Variables} \label{Section_rv}
+
+A  \emph{random variable} $X$, roughly,
 is a variable that takes on values drawn randomly from some
 probability distribution.  There are two major types of random
 variables, discrete and continuous.  For a discrete random variable, think of it as a person calling out numbers
@@ -227,7 +232,7 @@ for example, we could ask the probability that a baby was born
 somewhere between
 midnight and 12.18am. 
 
-\subsection{Basic Rules of Probability}
+\subsection{Basic Rules of Probability} \label{Section_rules_prob}
 Imagine a fairground game where you reach into a box and pull out an
 egg. There are 100 eggs in the box, 67 of them are empty. Thirty three have a toy in them.
 There are eggs with a stuffed dog toy, eggs with a cat toy, eggs with
@@ -339,9 +344,7 @@ the conditional probability you calculated in Question
 \ref{question:cond}.\\
  \end{question}
 
-\marginnote{ According to Pascal, the expectation is the excitement a gambler feels when placing
-a bet i.e. each term in the sum equals the probability of winning
-times the amount won. Apparently Pascal knew some unusually rational gamblers.}
+
 \subsection*{Expectation of a Random Variable}
 
 The  \emph{expectation
@@ -349,7 +352,9 @@ The  \emph{expectation
 ``balanced''. For discrete random variables it is given by 
 \begin{equation}
 \mu = \E[X]=p_1x_1+p_2x_2+\dots + 
-\end{equation}
+\end{equation} \marginnote{ According to Pascal, the expectation is the excitement a gambler feels when placing
+a bet i.e. each term in the sum equals the probability of winning
+times the amount won. Apparently Pascal knew some unusually rational gamblers.}
 the expectation of a random variable is the mean of the distribution. 
 Our average outcome \sidenote{Recalling that we compute average, the sample mean, of a set of numbers $X_1,\cdots,X_L$ as
 \begin{equation}
