@@ -49,13 +49,13 @@ Throughout these notes we make use of mathematical concepts, many of
 which are based in probability theory and statistics. Here we briefly
 review some of these concepts. The wikipedia pages on
 statistics and math topics are often excellent introductions and
-worth consulting if you want to know more. This primer was originally written by
+worth consulting if you want to know more. Parts of this primer were originally written by
 Sebastian Schreiber and myself for our Fall quarter of the PBG core
 (although I take full credit for any errors subsequently introduced).
 Some of these concepts may go beyond what you have covered in previous
-courses. The notes do not rely on you knowing these results, but I'll refer to this appendix when these concepts first come
+courses. The notes do not rely on you knowing all of these results, but I'll refer to this appendix when these concepts first come
 up in the main body of the notes. To answer the questions in the first
-chapter you will need to know some basic rules of probability. So
+chapter you will need to know some basic rules of probability, so
 reviewing Sections \ref{Section_rules_prob} and \ref{Section_rv} below
 would be  a good place to start.
 
@@ -69,9 +69,8 @@ time. This particular obsession is shared with much of
 science and so the concepts we make use of popup in many other fields. 
 The \emph{derivative} $f'(a)$ of a function $f(x)$ at $x=a$ represents
 the instantaneous rate of change of the function, $\frac{df(x)}{dx}$, at $x=a$ or,
-equivalently, the slope of the graph of the function at $x=a$. The
-derivative is zero at local maxima and minima of the function,\sidenote{As
-  well as saddle points, but we'll not be too concerned about those.} see Figure \ref{Fig:derivative}.
+equivalently, the slope of the graph of the function at $x=a$. A
+derivative of zero indicates a local maxima, minima, or saddle point of the function see Figure \ref{Fig:derivative}.
     
 \begin{figure}
  \begin{center}
@@ -84,7 +83,7 @@ To give a physical example, imagine that the derivative of position with respect
 time gives the (instantaneous) speed of a car. Think of the top panel of Figure \ref{Fig:derivative}
 as showing a car driving up and down an
 alley, the page, with $f(x)$ giving the car's position at time $x$. The bottom panel
-shows the car's speed, with the sign (i.e. $\pm$) of the derivative giving the direction of
+shows the car's speed, with the sign (i.e. $+$ or $-$) of the derivative giving the direction of
 movement. Moving from left along the $x$ (time) axis, in time period A our car is moving up the alley (page), the speed is
 positive (i.e. $f'(a)>0$). In the time period B, the car is reversing down the alley, its speed is negative ($f'(a)<0$ ).  
 As we move from A to B the car is beginning to slow down, i.e. the derivative gets small
@@ -197,7 +196,7 @@ is transmitted to the next generation, reflects randomness at the
 molecular and cellular level. While this makes it impossible to
 predict the outcome for a given individual we can speak of average
 outcomes and the statistical properties of evolutionary
-processes. Indeed evolution is fundamentally a statistic process,
+processes. Indeed evolution is a statistical process,
 evolution occurs because some types of individuals, and alleles, on
 average leave more offspring to subsequent generations. Thus to
 understand the details of models of evolutionary change we will have to understand something
@@ -210,7 +209,8 @@ is a variable that takes on values drawn randomly from some
 probability distribution.  There are two major types of random
 variables, discrete and continuous.  For a discrete random variable, think of it as a person calling out numbers
 by drawing them randomly out of a hat with some distribution of
-numbered slips of paper. We use $X$ to think about the number that might be drawn (before it is drawn) and x to denote the number that is actually drawn.
+numbered slips of paper. We use uppercase $X$ to think about the
+number that might be drawn (before it is drawn) and lowercase $x$ to denote the number that is actually drawn.
 %\footnote{Really, to define a random variable, you need a probability space $(\Omega, \Sigma, \P)$ which consists of some event space $\Omega$, a $\sigma$-algebra $\Sigma$ of subsets of $\Omega$ (these correspond to possible events), and $\P$ a probability measure on $\Omega$. A random variable $X$ is a measurable function from $\Omega$  to $\R$. Its probability distribution is determined by $\P(X^{-1}(A))$ for measurable $A\subset \Omega$.}
 \emph{Discrete random variables} take on a countable number of values, say $x_1,x_2,\dots$, with some probabilities $p_1,p_2,\dots$. We can denote this assumption as 
 \[
@@ -234,7 +234,7 @@ midnight and 12.18am.
 
 \subsection{Basic Rules of Probability} \label{Section_rules_prob}
 Imagine a fairground game where you reach into a box and pull out an
-egg. There are 100 eggs in the box, 67 of them are empty. Thirty three have a toy in them.
+egg. There are 100 eggs in the box, 57 of them are empty. Forty three have a toy in them.
 There are eggs with a stuffed dog toy, eggs with a cat toy, eggs with
 a lizard toy, eggs with both a dog and cat toy in them. The counts of
 each type of egg are shown in Figure \ref{Fig:Venn_toys}.
@@ -244,7 +244,7 @@ each type of egg are shown in Figure \ref{Fig:Venn_toys}.
  \begin{center}
    \includegraphics[width=\textwidth]{math_background/dist_pics/Venn_toys.pdf}\end{center}
  \caption{Venn diagram of fairground game toys, there are a hundred
-   eggs in total, including 67 eggs with no prize that are not shown. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Math-background.R}}\label{Fig:Venn_toys}
+   eggs in total, including 57 eggs with no prize that are not shown. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Math-background.R}}\label{Fig:Venn_toys}
  \end{marginfigure}
 
 \begin{question}
@@ -255,14 +255,14 @@ what is the probability that you get an egg of that type? What do these probabil
 the probability of getting an egg with a dog in it {\it or} an egg without a dog in it. \\
 {\bf iii)} What's the probability of getting an egg with a dog in it {\it or} an egg with a lizard. \\
 \end{question}
-These questions above illustrate the principal that if events A \& B
+These questions above illustrate the principle that if events A \& B
 are mutually exclusive then $\P(\textrm{A or B}) = \P(A) + \P(B)$,
-following from these $\P(\textrm{A or not A}) = \P(A) + \P(not A) =
+following from these $\P(\textrm{A or not A}) = \P(\textrm{A}) + \P(\textrm{not A}) =
 1$. What is the probability of getting an egg with a dog {\it or} a
 cat?  Well, for events that are not mutually exclusive we need to
 discount the sum of the probabilities by their overlap, giving
 \begin{equation}
-\P(\textrm{A or B}) = \P(A) +\P(B) - \P(\textrm{A \& B}).
+\P(\textrm{A or B}) = \P(\textrm{A}) +\P(\textrm{B}) - \P(\textrm{A \& B}).
 \end{equation}
 We call $ \P(\textrm{A \& B}) $ the joint probability of A \& B.
 \begin{question}
@@ -277,7 +277,7 @@ given that I've pulled out an egg containing a dog (recall that ten of the hundr
 We write this as $\P(\textrm{cat} | \textrm{dog})$, where we read $|
 \textrm{dog}$ as `given dog' or `conditional on dog'.  The rule of conditional probabilities is that
 \begin{equation}
-\P(A | B) = \frac{\P(\textrm{A \& B} )}{P(B)}  \label{eqn:cond_prob}
+\P(\textrm{A} | \textrm{B}) = \frac{\P(\textrm{A \& B} )}{P(\textrm{B})}  \label{eqn:cond_prob}
 \end{equation}
 we can now answer
 \begin{question} \label{question:cond}
@@ -286,25 +286,25 @@ Explain the underlying intuition of your answer? \\
 \end{question}
 By rearranging eqn \eqref{eqn:cond_prob}, we obtain the rule that
 \begin{equation}
-\P(\textrm{A \& B}) = \P(A | B) \P(B) .
+\P(\textrm{A \& B}) = \P(\textrm{A} | \textrm{B}) \P(\textrm{B}) .
 \end{equation}
 Thus we can always obtain the joint probability of A \& B by
 multiplying the conditional probability by the probability of the
 event we are conditioning on. Equivalently, we could have computed the
 joint probability as
 \begin{equation}
-\P(\textrm{A \& B}) = \P(B | A) \P(A) .
+\P(\textrm{A \& B}) = \P(\textrm{B} | \textrm{A}) \P(\textrm{A}) .
 \end{equation}
 these two ways of writing the same thing will come in useful in just a
 moment.
 
 The total probability of an event can be obtained by summing over
-all of the $L$ mutually independent ways that A can happen
+all of the $L$ mutually exclusive ways that A can happen
 \begin{equation}
-  \P(A)  = \sum_{i=1}^L \P(\textrm{A \& B$_i$}) = \sum_{i=1}^L \P(A | B_i) \P(B_i)  \label{eqn:law_tot_prob}
+  \P(\textrm{A})  = \sum_{i=1}^L \P(\textrm{A \& B$_i$}) = \sum_{i=1}^L \P(\textrm{A} | \textrm{B}_i) \P(\textrm{B}_i)  \label{eqn:law_tot_prob}
 \end{equation}
-where $B_1,~\cdots,~B_L$ give the mutually exclusive events
-that can occur alongside our event $B$. This is the \emph{law of total
+where $\textrm{B}_1,~\cdots,~\textrm{B}_L$ give the mutually exclusive events
+that can occur alongside our event $\textrm{B}$. This is the \emph{law of total
   probability}. For example, we can write the probability of obtaining
 a cat as
 \begin{equation}
@@ -314,27 +314,27 @@ a cat as
 \paragraph{Independence}
 Two events are \emph{independent} of each other if
 \begin{equation}
-\P(\textrm{A \& B}) = \P(A) \P(B) \label{eqn:basic_indie}
+\P(\textrm{A \& B}) = \P(\textrm{A}) \P(\textrm{B}) \label{eqn:basic_indie}
 \end{equation}
 this requirement implies independence because the conditional and
-unconditional probabilities are equal, $P(A) = P(A | B)$, i.e. I learn
-nothing about the event $A$ from the event $B$ having occurred. 
+unconditional probabilities are equal, $P(\textrm{A}) = P(\textrm{A} | \textrm{B})$, i.e. I learn
+nothing about the event $\textrm{A}$ from the event $\textrm{B}$ having occurred. 
 For example, if I draw two eggs with replacement from the box the
 probability of getting a lizard then a dog is $\P(\textrm{lizard then} \& \textrm{dog}) =
-\P(\textrm{lizard}) \P( textrm{dog})$. 
+\P(\textrm{lizard}) \P(\textrm{dog})$. 
 
 
 \paragraph{Bayes Rule}
 We often want to reverse of conditional probability statements,
-i.e. turn the statement of $P(B | A)$ into the statement of $P(A |
-B)$. 
+i.e. turn the statement of $P(\textrm{B} | \textrm{A})$ into the statement of $P(\textrm{A} |
+\textrm{B})$. 
 We have two different ways of expressing the joint probability in terms of conditional probabilities. Because they each equal the joint probability, they are equal to each other, meaning
 \begin{equation}
-\P(B | A) \P(A) =  \P(A | B) \P(B) . \label{eqn:two_joint_probs}
+\P(\textrm{B} | \textrm{A}) \P(\textrm{A}) =  \P(\textrm{A} | \textrm{B}) \P(\textrm{B}) . \label{eqn:two_joint_probs}
  \end{equation}
 Rearranging eqn \eqref{eqn:two_joint_probs} we obtain 
 \begin{equation}
-\P(B | A) =  \frac{\P(A | B) \P(B) }{\P(A)} \label{eqn:Bayes_Rule}
+\P(\textrm{B} | \textrm{A}) =  \frac{\P(\textrm{A} | \textrm{B}) \P(\textrm{B}) }{\P(\textrm{A})} \label{eqn:Bayes_Rule}
  \end{equation}
 Equation \eqref{eqn:Bayes_Rule} is also called \emph{``Bayes' Rule"} or \emph{``Bayes' Theorem,"} and it  which allows us to reverse the variable we
 condition on. 
@@ -355,8 +355,7 @@ The  \emph{expectation
 \end{equation} \marginnote{ According to Pascal, the expectation is the excitement a gambler feels when placing
 a bet i.e. each term in the sum equals the probability of winning
 times the amount won. Apparently Pascal knew some unusually rational gamblers.}
-the expectation of a random variable is the mean of the distribution. 
-Our average outcome \sidenote{Recalling that we compute average, the sample mean, of a set of numbers $X_1,\cdots,X_L$ as
+The average outcome \sidenote{Recalling that we compute average, the sample mean, of a set of numbers $X_1,\cdots,X_L$ as
 \begin{equation}
 \bar{X} =\frac{1}{L} \sum_{i=1}^L X_i
 \end{equation}
@@ -468,7 +467,7 @@ expectation of our conditional expectation over $Y$.
 Important discrete random variables include
 \begin{description}
 \item[Binomial]  random variables count the number $X$ of heads when
-  flipping a coin $n$ times whose (biased) probability of being heads is $p$. In which case, 
+  flipping a coin $n$ times whose probability of being heads is $p$. In which case, 
 \begin{equation}
   p_i = \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \qquad 0\le i \le n.
 \end{equation}
@@ -482,7 +481,7 @@ the binomial distribution is $i \sim
 distributed as'' (we will use the notation as short hand for random
 variable in the notes).
 
-\item[Geometric] random variables count how many flips $X$ you wait before seeing a heads on a coin with probability $p$ of being heads. In which case, 
+\item[Geometric] random variables count the total number of flips $X$ before seeing a heads on a coin with probability $p$ of being heads. In which case, 
 \begin{equation}
 p_i =p (1-p)^{i-1} \qquad i=1,2,\dots
 \end{equation}

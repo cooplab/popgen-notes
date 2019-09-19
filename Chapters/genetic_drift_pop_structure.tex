@@ -296,15 +296,23 @@ pairwise-coalescent event there are are three possible pairs of lineages that co
 which (A \& C  and B \& C ) result in a discordant tree. So the
 probability that we get a coalescent tree that is discordant with the population tree is
 \begin{equation}
-\frac{2}{3} \left(1 - \nicefrac{1}{2N}\right)^{t_2-t_1}.
+\frac{2}{3} \left(1 - \nicefrac{1}{2N}\right)^{t_2-t_1}. \label{eqn:ILS_coal}
 \end{equation}
-Thus we should expect gene-tree population-tree discordance when populations split in rapid succession and/or population sizes are large.
+This equation allows us to relate the fraction of loci showing
+incomplete lineage sorting to the population genetics parameters of
+the ancestral population.
+%ancestral population
 \begin{question}
 Let's return to \citeauthor{jennings:05}'s Australian grass finches
 example. They estimated that the ancestral population size of our two
 long-tailed finches was four hundred thousand. What is your best
 estimate of the inter-speciation time, i.e. $t_2-t_1$?
 \end{question}
+
+The fraction of loci showing ILS, eqn \eqref{eqn:ILS_coal}, depends on the times between
+population splits ($t_2-t_1$) Thus we should expect gene-tree population-tree discordance when populations split in rapid succession and/or population sizes are large.
+
+
 
 \paragraph{Testing for gene flow.}
 

@@ -1,5 +1,26 @@
 \chapter{Interaction of Multiple Selected Loci}
+\gc{Still a work in progress}
+Selection doesn't act on loci in isolation. The fates of selected alleles along the genome can be correlated, due to linkage disequilibrium, particularly for those in tight linkage. In the prior chapter we looked into how selected loci affected neutral loci. Here we'll explore the interaction of multiple selected loci. 
 
+Throughout this chapter we'll see how multi-locus dynamics are key to understanding hypotheses about the evolutionary significance of sexual reproduction, as from a population genetic perspective the primary impact of sex is the independent assortment of chromosomes and recombination. Multi-locus dynamics are also often key to understanding how new species arise. From a population genetics perspective species are sets of traits and alleles held together by assortative mating and selection. 
+Models involving many selected loci can be very hard to analyze. Luckily for us many of the key insights of the interaction of selection and recombination can be understood in relatively intuitive terms, and demonstrated using two locus models. 
+
+\section{Why sex?}
+The vast majority of eukaryotic organisms reproduce sexually. Sexual reproduction, the fusion of two cells to form a zygote  ({\it syngamy}) followed by meiosis, represents an ancient feature of eukaryotes. However, the ubiquity of sex is not just due to sex being a fixed ancestral state of eukaryotes. Many eukaryotic species are not obligately sexual and can reproduce clonally (i.e. asexually), e.g. vegetative growth in plants. However, they will only do so for a few generations. There are even asexual vertebrate lineages. For example, there is a parthenogenic species of whiptail lizard ({\it Aspidoscelis uniparens}), where every individual in the species is female.  However, only a small fraction of  eukaryote species are obligate asexuals, and these species appear to be short-lived twigs on the eukaryotic tree of life. 
+Sex is confined to eukaryotes but most non-eukaryotic species have some form of genetic exchange where genetic material is acquired and incorporation into their genomes via a range of mechanisms. 
+
+\paragraph{The costs of sex.}
+Three broad costs of sex have often been hypothesized:
+\begin{enumerate}
+\item  Finding and attracting a mate are costly and may be impossible, and mating can be dangerous.
+\item  Why risk breaking it up a winning genotype? If you've managed to survive to reproduce you're genotype likely can't be a terrible fit to the environment. But if you engage in sexual reproduction, i.e. meiosis, you're shuffling up your genome with that of your partner. There's no guarantee that this new genotype will work well in the current environment. 
+\item The  {\emph two-fold cost of sex}. The offspring of sexual organisms have two parents. Therefore, sexual parents only contribute half of their genome to their offspring. While asexual organisms contribute their entire genome to the next generation. Thus a sexual organism has to have twice as many children to leave the same number of copies of their genome to the next generation. That might be doable if both sexual parents were equally committed to contributing to those offspring. However, that is rarely the case. This cost is sometimes called the {\emph two-fold cost of males}, as males often provide little in terms of resources to their children. Thus any allele that makes its host asexual should initially spread all else being equal. 
+\end{enumerate}
+Yet sex and other forms of genetic exchange persist, despite these short-term advantages to asexual reproduction. Indeed asexual lineages sometime arises and spread within sexual populations due to these advantages. 
+
+\paragraph{The benefits of sex.}
+
+\section{A two locus model of selection and recombination.}
 Consider two biallelic loci segregating for $A/a$ and $B/b$. There are four haplotypes, $AB$, $Ab$, $aB$, $ab$, which for simplicity we label 1-4. The frequency of our four haplotypes are $x_1$, $x_2$, $x_3$, and $x_4$. Each individual has a genotype consisting of two haplotypes; we label $w_{ij}$ the fitness of an individual with the genotype made up of haplotype $i$ and $j$ (we assume that $w_{ij}=w_{ji}$, i.e. there are no parent of origin effects). Assuming that these fitnesses reflect differences due to viability selection, and that individuals mate at random, we can write the following table of our genotype proportions after selection:\\
 \begin{center}
 \begin{tabular}{c|cccc}
@@ -21,7 +42,7 @@ In the single locus case, we defined the marginal fitness of an allele. Here it 
 \begin{equation}
 \bar{w}_i = \sum_{j=1}^4 w_{ij} x_j
 \end{equation}
-This is the fitness of the $i^{th}$ haplotype averaged over all of the \ec{diploid} genotypes it could occur in, weighted by their probability under random mating. Using this notation, and with some rearrangement of equation \eqref{eqn:hapfreq}, we obtain
+This is the fitness of the $i^{th}$ haplotype averaged over all of the diploid genotypes it could occur in, weighted by their probability under random mating. Using this notation, and with some rearrangement of equation \eqref{eqn:hapfreq}, we obtain
 \begin{equation}
 x_1' = \frac{x_1\bar{w}_1 - w_{14} r D}{\bar{w}}
 \end{equation}
@@ -31,19 +52,19 @@ We can then write the change in the frequency of our $1$ haplotype as
 \begin{equation}
 \Delta x_1= \frac{x_1(\bar{w}_1-\bar{w}) -r w_{14} D}{\bar{w}}
 \end{equation}
-Generalizing this result, we write the change in \ec{any haplotype i from} our set of four haplotypes as
+Generalizing this result, we write the change in any haplotype i from our set of four haplotypes as
 \begin{equation}
-\Delta x_i= \frac{x_i(\bar{w}_i-\bar{w}) \pm r w_{14} D}{\bar{w}}
+\Delta x_i= \frac{x_i(\bar{w}_i-\bar{w}) \pm r w_{14} D}{\bar{w}}  \label{eqn:two_loc_sel}
 \end{equation}
 where the coupling haplotypes 1 and 4 use $+D$ and repulsion haplotypes 2 and 3 use $-D$. \erin{I'm confused about the signs +/- here. For haplotype 1 above you used -rw14D but here you're saying it's +D. Also, why doesn't the sign of D itself take care of the +/- (I think this second part is just my own confusion, but the first part doesn't seem to match between the equation above and your text)} Note that the sum of these four $\Delta x_i$ is zero, as our haplotype frequencies sum to one.
 
 So the change in the frequency of a haplotype (e.g. AB, haplotype 1) is determined by the interplay of two factors: First, the extent to which  the marginal fitness of our haplotype is higher (or lower) than the mean fitness of the population (the magnitude and sign of $(\bar{w}_1-\bar{w})/\bar{w}$). Second, whether there is a deficit or any excess of our haplotype compared to linkage equilibrium (the magnitude and sign of $D$), modified by the strength of recombination. This tension between selection promoting particular haplotypic combinations, and recombination breaking up overly common haplotypes is the key to a lot of interesting dynamics and evolutionary processes.
 
 \section{Types of interaction between selection and recombination}
+Throughout the rest of the chapter we'll discuss some general forms to the interactions between selected loci and how recombination plays into either facilitating or hindering selection. 
+To illustrate these ideas we make use of Muller diagrams \citep{muller1932some}, where we visualize the allele dynamics in terms of a plot of the stack frequencies over time. All of our simulations use the same basic two locus dynamics given by eqn \eqref{eqn:two_loc_sel}. To keep things simpler we just discuss through the qualitative dynamics of these models, but many of these have been investigated in much more depth.
 
-\gc{To illustrate these ideas we make use of Muller diagrams \citep{muller1932some}, where we visualize the allele dynamics in terms of a plot of thestack frequencies over time.}
-
-\paragraph{The hitchhiking of deleterious alleles}
+\paragraph{The hitchhiking of neutral alleles}
 \begin{figure}
 \begin{center}
   \includegraphics[width = 0.9 \textwidth]{figures/selection_recom_interaction/Neutral_Hitchhiking_labeled.pdf}
@@ -91,7 +112,6 @@ Given the rapid evolution of HIV we can see interference taking place over very 
 
 \paragraph{An example of the costs of asexuality.}
 
-
 \begin{marginfigure}[-3cm]
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Reciprocal_translocations_Hollister.pdf}
@@ -115,8 +135,7 @@ The $\dNdS$ for the sexual and asexual species for each of the seven pairs (C1-C
 \caption{ Showy evening primrose ({\it Oenothera speciosa}), the sexual species in the clade C2 from Figure \ref{fig:evening_primrose_omega}. \BHLCC{Favourite flowers of garden and greenhouse (1896). Step, E. }{https://www.flickr.com/photos/61021753@N02/10575005313/}{Missouri Botanical Garden}{2.0} } \label{}  %é
 \end{marginfigure}
 
-\paragraph{The maintainance of combinations of alleles in the face of recombination.}
-
+\subsection{The maintenance of combinations of alleles in the face of recombination.} \label{epistasis_inversion}
 
 In some cases balancing selection may be attempting to maintain multiple combinations of alleles in the population that work well together. However, recombination may be constantly ripping those alleles away from each other making it difficult to maintain these alleles. This can select for the supression of recombination. Some of the most dramatic demonstrations of this tension involve the evolution of so-called super genes. We'll first consider the evolution of a mimicry supergene in {\it Heliconius numata} as an example of this.  
 
@@ -140,7 +159,7 @@ To keep things relatively simple lets focus on two differences between  {\it sil
 
 If no recombination occurs between these loci ($r=0$, Figure \ref{fig:numata_two_loc_freqs}), then the Y-B and y-b are selected out of the population, and the y-B and and  Y-b can be stably maintained. However, when there's too much recombination between our loci (e.g. $r=0.4$, Figure \ref{fig:numata_two_loc_freqs}) the high-fitness haplotypes keep getting ripped apart by recombination and the Y-b is lost from the population as it's recessive advantage is lost as it's too often being broken up by recombination in heterozygotes.
 
-\paragraph{Supergenes to the rescue!}
+\subsection{Supergenes to the rescue!} \label{Section:super_genes}
 
 So our polymorphisms can only be maintained if they are tightly linked, i.eif these alleles arose at loci that are genetically close to each other. But how is it possible that these alleles arose close to each other? Well the trick is that they don't necessarily have to arise very close to each other. If such a system is polymorphic but being regularly broken up by recombination, a chromosomal inversion--the flipping around of a whole section of chromosome-- can arise and will supress recombination. Imagine that our two loci are far apart genetically, and a chromosomal inversion arises on the Y-b  background forming the b-Y haplotype. This inverted haplotype will not recombine with the y-B haplotype when it is present in a heterozygote, thus it is not broken down by recombination. This inverted haplotype, which enjoys the fitness benefits of the Y-b, can therefore replace the Y-b haplotype in the population. The two other low fitness haplotypes will disappear as they sre no longer being generated by recombination, leaving just the y-B and b-Y. \marginnote{\begin{quote}
 ``coadapted combinations of several or many genes locked in inverted sections of chromosomes and therefore inherited as single units.''
@@ -161,66 +180,80 @@ So our polymorphisms can only be maintained if they are tightly linked, i.eif th
 
 
 \paragraph{Local Adaptation, Speciation, and Inversions.}
+\begin{marginfigure} %[0cm]
+\begin{center}
+\includegraphics[width = \textwidth]{figures/inversion_mig_sel_balance.pdf}
+\end{center}
+\caption{A two locus, two population migration-selection balance system. Two loci A and B segregate for an Inland and Coastal adapted alleles.} \label{two_locus_mig}
+\end{marginfigure}
 Inversions have long been thought to play an important role in local adaptation and speciation.
-One example of an inversion underlying local adaptation occurs in {\it Mimulus gutatus},  in Western North America, where there are annual and perennial ecomorphs. 
-The perennial form grows in many places along the Pacific coast, and in other places with year around moisture; it invests a lot of resources in
+One example of an inversion underlying local adaptation occurs in {\it Mimulus gutatus},  in Western North America, where there are annual and perennial ecomorphs with very different life history strategies (see Figure \ref{fig:annual_perennial_fitness}). The perennial form grows in many places along the Pacific coast, and in other places with year around moisture; it invests a lot of resources in
 achieving large size and laying down resources for the next year, and as a result flowers late. The annual form grows inland, e.g. the California central valley,
 where it has to invest all its effort in flowering rapidly before the long, hot, dry summer. Neither ecomorph does well in the other's environment. The perennials get crisped
 before they have a chance to flower, while the annuals suffer from high rates of herbivory and cannot tolerate the salt spray.
 \citet{lowry2010widespread} found that large inversion controled a lot of of the phenotypic variation in
 flowering time and a range of other morphological differences between these two morphs. They also showed that the inversion controled a reasonable proportion of the
 differences in fitness in the field, consistent with it underlying the fitness tradeoffs involved in local adaptation.
-\begin{marginfigure} %[0cm]
-\begin{center}
-\includegraphics[width = \textwidth]{figures/inversion_mig_sel_balance.pdf}
-\end{center}
-\caption{A two locus, two population migration-selection balance system. Two loci A and B segregate for an Inland and Coastal adapted alleles.}
-\end{marginfigure}
-Why would an inversion be involved in locking together local adapted alleles? The basic idea, like above, is an inversion can be selected for we have two (or more) loci segregating for locally adapted alleles. Locally advantagous haplotypes are in danger of being broken up by recombination with maladapted haplotypes, which are constantly being
+
+Why would an inversion be involved in locking together local adapted alleles? The basic idea, like above, is an inversion can be selected for we have two (or more) loci segregating for locally adapted alleles (Figure \ref{two_locus_mig}). Locally advantagous haplotypes are in danger of being broken up by recombination with maladapted haplotypes, which are constantly being
 introduced into each population by migration from the other. If an inversion arises that locks these alleles together in one population, it can be selected for as does not suffer the ill effects from recombination with migrating maladaptive haplotype. 
  
   % In this simple model of viability selection
-
-\subsection{Sex Chromosomes and the dynamics of selection and recombination.}
   \begin{marginfigure} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{illustration_images/multiple_sel_loci/volvox/volvox.jpg}
 \end{center}
-\caption{ {\it Volvox aureus}, Volvox are spherical, multicellular green algae. The surface is made up of a single layer of somatic cells (up to 50k cells) beating their flagella. Some species of Volvox have male and female gametes, being made in the germ cells (a and g respectively) in the middle of the sphere. Some Volvox have separate sexes, where different individuals produce male and female gametes.}
+\caption{ {\it Volvox aureus}, Volvox are spherical, multicellular green algae. The surface is made up of a single layer of somatic cells (up to 50k cells) beating their flagella. Some species of Volvox have individuals with both male and female gametes, being made here in the germ cells (a and g respectively) in the middle of the sphere. Some Volvox have separate sexes, where different individuals produce male and female gametes.}
 \end{marginfigure}
-The production of different sized gametes (anisogamy) has arisen a number of times in multi-cellular life, with male and female gametes are defined by their relative sizes. The smaller, and often more mobile, gametes are defined male gametes  (e.g. sperm), while the larger, well provisioned, and often less mobile are defined as female gametes (e.g. egg cell). The evolution of anisogamy is thought to be due to disruptive selection due to a tradeoff pulling in opposite directions towards mobile gametes able to move further and in the opposite direction towards better provised gametes better able to build larger zygotes. In many organisms individuals can produce both male and female gametes, while some species have evolved separate sexes, likely in part as an inbreeding avoidance mechanism. There is huge diversity in sex determination mechanisms across the eukaryotic tree (Figure \ref{fig:Tree_of_sex}. This is all to say, that biology is wonderfully complicated. 
+\subsection{Sex Chromosomes and the dynamics of selection and recombination.}
 \begin{figure*} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Sex_determ_why_so_many_ways/Tree_of_sex.png}
 \end{center}
 \caption{Diversity of sex determination systems for representative plant and animal clades. Figure and caption from \citet{bachtrog2014sex}, \PLOSccBY. }  \label{fig:Tree_of_sex}
 \end{figure*}
+The evolution of sex chromosomes and new systems of genetic sex determination provide a beautiful demonstration of the interplay of selection and recombination. But first it's worth taking a step back and thinking the difference between an species being sexual, having male and female gametes, and having separate sexes (i.e. males and females), and the mechanisms for determining the sexes. Many species are sexual but with no separate sexes or even male or female gametes. The production of different sized gametes (anisogamy) has arisen a number of times in multi-cellular life, with male and female gametes are defined by their relative sizes. The smaller, and often more mobile, gametes are defined male gametes  (e.g. sperm), while the larger, well provisioned, and often less mobile are defined as female gametes (e.g. egg cell). The evolution of anisogamy is thought to be due to disruptive selection due to a tradeoff pulling in opposite directions towards mobile gametes able to move further and in the opposite direction towards better provisioned gametes better able to build larger zygotes. In many organisms individuals can produce both male and female gametes, while some species have evolved separate sexes, likely in part as an inbreeding avoidance mechanism.There is huge diversity in sex determination mechanisms across the eukaryotic tree (Figure \ref{fig:Tree_of_sex}. This is all to say, that biology is wonderfully diverse and complicated.
 
+In mammals, and many other systems with genetic sex determination, the genes responsible for sex determination lie on a pair of heteromorphic sex chromosomes, i.e. pair of chromosomes that are quite different in size. In mammals where most males are XY and females XY. Where the male determining Y chromosome that has a very small gene content compared to the X chromosome (Figure \ref{fig:XY_ZW}). But in other groups such as birds, and some snakes, sex determination is a ZW system with females being ZW and males being ZZ. In those systems females carry a gene poor W with males being the homogametic sex, carrying two Zs.  If you are still reading send Graham a picture of Nettie Stevens, she discovered sex chromosomes in 1905 \citep{stevens1905studies}. These examples of heteromorphic sex chromosomes, and many others like them, are thought to have arisen from an ancestral pair of autosomes? What then explains their evolution? %The Y chromosome does not recombine over most its length with the X, and so most of the
 
-In mammals, and many over systems with genetic sex determination, the genes responsible for sex determination lie on a pair of heteromorphic sex chromosomes, i.e. pair of chromosomes that are quite different in size. In mammals it is the male determining Y chromosome that has a very small gene content compared to the X chromosome (Figure \ref{fig:XY_ZW}). But in other groups such as birds, and some snakes, females carry a gene poor W with males being the homogametic sex, carrying two Zs.  If you are still reading send Graham a picture of Nettie Stevens, she discovered sex chromosomes in 1905 \citep{stevens1905studies}. These examples of heteromorphic sex chromosomes, and many others like them, are thought to have arisen from an ancestral pair of autosomes? What then explains their evolution?
  \begin{marginfigure} %[0cm]
 \begin{center}
-\includegraphics[width = \textwidth]{Journal_figs/recom_selection/Sex_determ_why_so_many_ways/XY_ZW_cartoon.pdf}
+\includegraphics[width = \textwidth]{figures/neo_Y_evol.pdf}
 \end{center}
-\caption{Figure from \citet{bachtrog2014sex}, \PLOSccBY cropped from original. }  \label{fig:XY_ZW}
+\caption{A cartoon of formation of a neo-Y chromosome and subsequent suppression of recombination. A pair of orthologous automosomes is shown in the top most panel.  Sexually-antagonistic male-beneficial, female-detrimental alleles are shown as vertical lines. A newly arising dominant, male-determining allele is shown as a blue circle. The inversions are shown as brackets. The non-recombining region linked to the sex determining allele coloured red.}  \label{fig:neo_Y_evol}
+% sex symbols from https://commons.wikimedia.org/wiki/File:Gender_symbols_side_by_side_solid.svg
 \end{marginfigure}
 
-A broad explanation for the evolution of sex chromosome goes as follows:\\
+One broad explanation for the evolution of sex chromosome is illustrated in Figure \ref{fig:neo_Y_evol} and goes as follows:\\
+\begin{enumerate}
+\item There are a pair of ancestral autosomes with sexually-antagonistic male-beneficial, female-detrimental alleles segregating on them (the converse can occur but arent central to the evolution of Y chromosomes). These alleles can persist in the population for some time but are eventually lost due to their cost in females. 
+\item A dominant, male-determining allele arises on one of the chromosomes. Let's call this chromosome our proto-Y and the other our proto-X. All individuals who are heterozygous for the Proto-Y will be male, individuals who are homozygous for the proto-X. No individuals will be homozygous for the proto-Y, as individuals can receive at most one Proto-Y, that of their father. 
+\item Our sexually-antagonistic alleles benefit from being on the same chromosome as our male-determining allele as then they are guaranteed to be in males. However, if they recombine off the proto-Y on to the proto-X they are at a disadvantage.
+\item If an inversion arises on the background of the proto-Y chromosome it can lock together the male-determining allele and some of our sexually-antagonistic alleles. This inversion can initially spread as gains the benefit of the sexually-antagonistic alleles without the cost of recombination. This inversion can't spread to fixation as Fisherian selection on the sex ratio keeps it in check.
+\item Further inversions can potentially cement additional sexually-antagonistic alleles into tight linkage with the male-determining allele.
+\end{enumerate}
+Sex chromosomes, under this hypothesis, are super genes locking together sex determination and sexually-antagonistic alleles. Our male-beneficial, female-detrimental alleles work well on the background of the male-determining allele and poorly off it, that's exactly the supergene setup we encountered in Section \ref{Section:super_genes}. This sketch can be flipped to describe the evolution of ZY systems. 
 
-
-% https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001643
-
-In lake Malawi there are many very closely related cichlids species. In many of these species the males are brightly coloured to attracted females, while the females are often brown to help them avoid predators. In some of these species there is an alternative orange morph, called the marmalade cat morph, which are cryptic against the rocky bottom of the lake. This morph is due to a dominant \gc{(?)} mutation called OB at the pax7 \gc{(?)}, and the allele appears to shared across many of these species. This OB allele works well in females, however, in the males the OB allele disrupts their bright colouration. Thus the OB polymorphism is sexually antagonistic, i.e. it works well in females and poorly in males.
-
-Males carrying the male-deleterious OB allele are rarely found, despite the allele being common in females. Why is that? Well because the OB allele is tightly linked to a newly emerged female-determining allele (W), with males carrying two copies of the Z allele. Males usually are homozygous for the ob-Z haplotype, while females can being either orange (OB-W/ob-Z) or brown (ob-W/ob-Z). Recombination between these two loci seems to be very rare, and so the sexually antagnostic allele OB appears to be mainly female specific. An inversion on the Z background would lock together the 
 
 \begin{figure} %[0cm]
 \begin{center}
 \includegraphics[width = \textwidth]{figures/selection_recom_interaction/Cichlid_OB_sex_linkage.pdf}
 \end{center}
-\caption{ \newline \noindent \tiny{Image credits: Blue mbuna Male  {\it L. fuelleborni} by \href{https://commons.wikimedia.org/wiki/File:Labeotropheus_fuelleborni_in_Botanic_garden_in_Teplice_(2).JPG}{Chmee2}; % ( {\it Labeotropheus fuelleborni}).
+\caption{The sex-specific effects of the OB allele.  \newline \noindent \tiny{Image credits: Blue mbuna Male  {\it L. fuelleborni} by \href{https://commons.wikimedia.org/wiki/File:Labeotropheus_fuelleborni_in_Botanic_garden_in_Teplice_(2).JPG}{Chmee2}; % ( {\it Labeotropheus fuelleborni}).
   OB  Male {\it L. fuelleborni} by \href{https://de.wikipedia.org/wiki/Schabemund-Buntbarsch\#/media/File:Labeotropheus_fuelleborni_01.jpg}{Doronenko};
   Brown ob  {\it Tropheops} female by \href{https://www.flickr.com/photos/52993488@N03/4890217915}{Alexandra Tyers};
   Female  {\it L. fuelleborni} orange morph,  by \href{https://commons.wikimedia.org/wiki/File:Labeotropheus_fuelleborni1.jpg}{Mikko Stenberg} 
 }}
 \end{figure}
+
+A colourful example of the initial conditions for the evolution of a novel sex determination system is offered in lake Malawi there are many very closely related cichlids species \citep{roberts2009sexual}. In many of these species the males are brightly coloured to attracted females, while the females are often brown to help them avoid predators. In some of these species there is an alternative orange morph, called the marmalade cat morph, which are cryptic against the rocky bottom of the lake. This morph is due to a dominant \graham{double check} mutation called OB at the pax7, and the allele appears to shared across many of these species. This OB allele works well in females, however, in the males the OB allele disrupts their bright colouration. Thus the OB polymorphism is sexually antagonistic, i.e. it works well in females and poorly in males.
+
+Males carrying the male-deleterious OB allele are rarely found, despite the allele being common in females. Why is that? Well because the OB allele is tightly linked to a newly emerged female-determining allele (W), with males carrying two copies of the Z allele. Males usually are homozygous for the ob-Z haplotype, while females can being either orange (OB-W/ob-Z) or brown (ob-W/ob-Z). Recombination between these two loci seems to be very rare, and so the sexually antagonistic allele OB appears to be mainly female specific. Thus the spread of this sex determining allele has potentially helped resolve sexually-antagonism while it aided its own spread. An inversion on the Z background would lock together these two alleles, and spread.  
+
+\paragraph{The degradation of heterogametic sex chromosomes.} 
+Our inversions on the neo-Y chromosome have created a issue (or conversely the neo-W in ZW systems). The inverted block, containing the male-determining allele, is now inherited as a non-recombining haplotype. Why's that?  Well the inversion doesn't recombine in heterozygotes, and the neo-Y inversion region is only ever found in heterozygote males.\sidenote{This differs from the situation that most other non-sex chromosome inversions find themselves in as they homozygous some of the time and so experience recombination.} Thus the region of chromosome tied up within inversions is effectively asexual and subject to many of the issues that come along with that. The hitchhiking of deleterious alleles will be common and Muller's Rachet will begin to tick. Many mildly deleterious alleles will be allowed to fix through these mechanisms, leading to the accumulation of permature stop codons and silencing mutations in non-essential genes within the neo-Y inversion. The X chomosome will maintain copies of these genes, and sometimes the expression of these genes will have to be up-regulated in males to accommodate for the degradation of the Y based copy leading to lower dosage of these genes.\sidenote{Indeed in some heterogametic sex chromosome systems there are evolved dosage compensation systems that deal specifically with these issues. }  Transposable elements can also accumulate on the non-recombining section of the Y chromosome, some times in huge numbers, as the purging of these transposable elements will be inefficient in this region.  But there's little to stop the non-recombining section of neo-Y chromosome from expanding more due to the short-sighted selection for inversions that further tie up sexually-antagonistic alleles. Our non-recombining section of the Y chromosome maybe expanding to occupy more of the chromosome, as it is losing functional genes and bloating up with repeative DNA. Eventually much of what remains may be genes that are essential to male function, as is the case with old Y chromosomes such as humans. 
+
+%How quickly can this happen? 
+ 
+% https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001643
+

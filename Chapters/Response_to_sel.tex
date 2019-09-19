@@ -181,7 +181,7 @@ for the offspring of the selected parents in the next generation
    Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
  \end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
 
- \paragraph{The long-term response to selection}
+ \subsection{The Long-Term Response to Selection}
    \begin{marginfigure}
  \begin{center}
  \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_means.pdf} \end{center}
@@ -226,7 +226,7 @@ very low oil content.
 % https://www.ideals.illinois.edu/handle/2142/3525
 
 
-\begin{question}
+\begin{question} \label{question:red_deer}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record \cite{lister:89}
 we can see that the population rapidly adapted to their new
@@ -287,6 +287,91 @@ have reversed a number of times over the years (Figure
 \end{marginfigure}
 %% Gingrich style data https://datadryad.org/resource/doi:10.5061/dryad.1tn7123?show=full
 %% https://datadryad.org/resource/doi:10.5061/dryad.7d580
+
+
+
+Looking across the diversity of plants and animals we see huge changes
+in size and form, can the selection we see every day possibly explain
+these changes?
+
+
+To study this we need some measure of the rate of phenotypic
+change. \citep{haldane1949suggestions} proposed the rate of change from
+$X_1$ to $X_2$ in time interval $\Delta t$, measured in Millions of years, be quantified as
+\begin{equation}
+\frac{\log \left(\nicefrac{X_2}{X_1} \right) }{\Delta t}  = \frac{\log
+  \left(X_2 \right) -\log \left(X_1 \right)  }{\Delta t} 
+\end{equation}
+by expressing this the log of the ratio, we are looking at the
+proportional fold chan, which makes sense as a
+evolutionary change of 1cm in length is more impressive if you're a
+mouse than an elephant. By putting this on a $\log$-scale we are
+looking at the fold relative
+change \citeauthor{haldane1949suggestions} proposed that we call the
+units of this measure `the Darwin', with a one Darwin change
+corresponding to a $e\approx 2.71$
+fold change in a Million years, a two change corresponding to a
+$e^2\approx  7.34$ fold change in a Million years and so on. 
+
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/dog_whelks/dog_whelks.jpg}
+\end{center}
+\caption{Variation in Atlantic dog whelks ({\it Nucella lapillus}, synonym {\it Purrpura lapukkus})
+  along the coast of Great Britain.  \BHLNC{The Cambridge natural history, Molluscs and Brachiopods
+    (1895). Cooke AH, Shipley AE, Reed FRC.}{https://archive.org/stream/cambridgenatural03har/cambridgenatural03har\#page/89/mode/1up}{University of Toronto - Earth Sciences Library}} \label{fig:dg_whelks}  
+\end{marginfigure}
+
+
+\begin{question}
+Calculate the rate of change in body size in the Jersey red deer from
+Question \ref{question:red_deer} in Darwins. Do the same for the total
+change in corn oil content in the up lines in Figure \ref{Fig:Illinois_LTS_means}.
+  \end{question}
+
+\citet{gingerich1983rates} examined the absolute rate of phenotypic
+change in field study data and the fossil record, a dataset
+considerably expanded by \citet{uyeda2011million}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Uyeda_evol_rates/Uyeda_evol_rates.pdf}
+\end{center}
+\caption{} \label{fig:uyeda_gingerich}  
+\end{figure}
+Over short timescales we see incredibly rapid evolution, note the high
+rates on the left of Figure \ref{fig:uyeda_gingerich}.
+Following the invasion the green crab ({\it Carcinus maenas})
+drove the evolution of more robust shells in populations of Atlantic dog
+whelk ({\it Nucella lapillus}) in response to predation \citep{vermeij1982phenotypic}. For example, the shell lip thickness
+in the St. Andrews, New Brunswick population  had changed from 0.94mm
+to 1.44mm in just 25 years. That's a 50\% increase, and a rate of
+17060 Darwins. \graham{is time interval wrong its 1920 to 1963 in
+  Vermeij. }
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Triceratops/Triceratops_phylo.png}
+\end{center}
+\caption{The evolution of {\it Triceratops} from {\it Protoceratops},
+  see
+  \href{https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html}{here}
+  for a fun updated view of the {\it Coronosauria} phylogeny. \IANC{The dinosaur book : the ruling reptiles and their
+    relatives. (1951) Colbert, E.H.}{https://www.biodiversitylibrary.org/ia/bookruli00colb\#page/86/mode/1up}{American Museum of Natural History Library}} \label{fig:Triceratops_phyl}  
+\end{marginfigure}
+%% http://marsh.dinodb.com/marsh/Marsh%201891%20-%20Restoration%20of%20Triceratops%20(and%20Brontosaurus).pdf Marsh original pic of Triceratops
+%https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html
+
+However, when we observe phenotypic evolution over longer time is much
+slower. For example, {\it Triceratops} measured in an impressive 25.9–29.5 ft in length and evolved from a close
+relative of {\it Protoceratops}, which was a bit bigger than a sheep
+at $\sim$5.9 ft in about 7.5 million years
+\citep{colbert1948evolution}. However, that's only a phenotypic change
+of $0.143$ Darwins, its only a roughly four fold change in millions of
+years. These rates of change in Dinosaurs have nothing on our dog whelks, or any of the
+evolution we see on short time scale.    %https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html
+
+
+
 
 \section{Fitness and the Breeder's Equation.}
 So directional evolution occurs as selection drives a change in
