@@ -128,7 +128,8 @@ there in the sample, and this is called the \emph{frequency
   spectrum}. We'll want to do this in some consistent manner, such as calculating the frequency spectrum of the minor allele or the derived allele.
 
 \begin{question}
-How many minor-allele singletons are there in \textit{D. simulans} in the ADH region?
+How many minor-allele singletons are there in \textit{D. simulans} in
+the ADH region? [Defining minor allele just within \textit{D. simulans}.]
 %JRI: ambiguous. is the minor allele defined across all species or just within simulans?
 \erin{students were confused whether you are defining 'minor allele' with reference to the species or to the whole group. There are no major allele singletons with reference to the individual species, but I think it's confusing because the only example of a minor allele given in the text by its definition is the 'minor allele in D. melanogaster' .. maybe it would be best to clarify in the question or just give an example of the minor allele in the whole sample instead.}
  \end{question}
@@ -441,7 +442,8 @@ $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \end{tabular}
 \end{center}
 \caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
-identical by descent on the autosomes. $^{*}$Assuming this is the only close relationship the pair shares. } % doesn't this implicitly assume an infinite population?
+identical by descent on the autosomes. $^{*}$Assuming that our
+individuals are outbred and that this the only close relationship the pair shares. } % doesn't this implicitly assume an infinite population?
 \label{table:IBDprobs}
 \end{table}
 
@@ -496,7 +498,7 @@ sharing/non-sharing between a pair of individuals. Based on this we can write do
 polymorphic sites where our individuals are observed to share 0, 1, or 2
 alleles.
 
-\begin{question}
+\begin{question} [Trickier question.]
 The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
 D16S539 and 70/80 at TH01. The suspect is not a match to the DNA
 from the crime scene; however, they could be a sibling.
@@ -561,7 +563,8 @@ Nancy Chen for supplying the data. \gitcode{https://github.com/cooplab/popgen-no
 coloured red, those that your cousins inherited are coloured blue. In the third panel we show the overlapping genomic regions in purple, these regions will be IBD in you and your cousin. If you are full first cousins, you will also have shared genomic regions from your shared grandfather, not shown here. Details about how we made these simulations \href{https://gcbias.org/2013/12/02/how-many-genomic-blocks-do-you-share-with-a-cousin/}{here}.
 } \label{fig:first_cousin_IBD}
 \end{figure}
-We can more directly see the sharing of the genome among close relatives using high-density SNP genotyping arrays. Below we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother.
+We can more directly see the sharing of the genome among close
+relatives using high-density SNP genotyping arrays. In Figure \ref{fig:first_cousin_IBD} we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother.
 %JRI: text says ``Below'' but float ends up above
 
 
@@ -651,11 +654,11 @@ Table \ref{table:GeneralizedHWE}, which provides a generalization of the Hardy--
 proportions.\\
 
 
-Note that the generalized Hardy--Weinberg proportions completely
-specify the genotype probabilities, as there are two parameters ($p$ and $F$)
-and two degrees of freedom (as $p$ and $q$ have to sum to one).
-Therefore, any combination of genotype frequencies at a biallelic site
-can be specified by a combination of $p$ and $F$.\\
+%Note that the generalized Hardy--Weinberg proportions completely
+%specify the genotype probabilities, as there are two parameters ($p$ and $F$)
+%and two degrees of freedom (as $p$ and $q$ have to sum to one).
+%Therefore, any combination of genotype frequencies at a biallelic site
+%can be specified by a combination of $p$ and $F$.\\
 %JRI: unclear to me if this is useful. will readers understand parameter numbers/DF?
 
 \begin{question}
@@ -793,7 +796,7 @@ If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.
 
 
-Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. \begin{marginfigure}
+Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), also known as the lobo, a sub-species of gray wolf. \begin{marginfigure}[-2cm]
 \begin{center}
   \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/grey_wolf/5988399184_0c36a8e51c_z.jpg}
 \end{center}
@@ -1008,9 +1011,9 @@ actually found to just be hybrids between theses two
 species. \graham{Add ref to Bateson book }
 % https://twitter.com/WTF_R_species/status/1046586267167854592 & https://twitter.com/davetoews/status/1046599444878282752
 The golden-winged warbler is listed as `threatened' under the Canadian
-endangered species act. The golden-winged warbler's habitat is under pressure from human activity
-and increased hybridization with the blue-winged  warbler, which is moving north into its range, also poses a
-significant issue. \citet{Toews:16} investigated the population
+endangered species act as its habitat is under pressure from human
+activity and and due to increasing hybridization with the blue-winged  warbler, which is moving north into its range.
+\citet{Toews:16} investigated the population
 genomics of these warblers, sequencing ten golden- and ten blue-winged
 warblers. They found very low divergence among these species, with a
 genome-wide $F_{ST}=0.0045$. In Figure \ref{fig:warbler_FST}, per SNP
@@ -1019,7 +1022,7 @@ $F_{ST}$ is averaged in $2000$bp windows moving along the genome.
 \begin{center}
 \includegraphics[width = 0.8 \textwidth]{Journal_figs/alleles_genotypes/blue_golden_winged_warblers/GW_FST_warblers.png}  %[width= \marginwidth]
 \end{center}
-\caption{FST between blue- and golden-winged warbler population samples at SNPs across the genome. Each dot is a SNP, and SNPs are coloured alternating by scaffold. Thanks to David Toews for the figure. } \label{fig:warbler_FST}
+\caption[][-0.5cm]{FST between blue- and golden-winged warbler population samples at SNPs across the genome. Each dot is a SNP, and SNPs are coloured alternating by scaffold. Thanks to David Toews for the figure. } \label{fig:warbler_FST}
 \end{figure*}
 The average is very low, but some regions of very high $F_{ST}$ stand
 out. Nearly all of these regions correspond to large allele frequency
@@ -1320,14 +1323,7 @@ ring, and the sampling locations are shown in Figure \ref{fig:Gwarbler_geo}.
 \label{fig:Gwarbler_geo}
 \end{figure}
 
-\begin{marginfigure}[0.1cm]
-% TODO: MISSING FIGURE
-\includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/greenish_warbler/10036311396_14915d1715_z.jpg}
-  \caption{Greenish warbler, subspp. viridanus ({\it Phylloscopus
-      trochiloides viridanus}). \BHLNC{Coloured figures of the birds of the
-    British Islands. 1885. Lilford T. L. P..}{https://www.biodiversitylibrary.org/page/34576931\#page/147/mode/1up}{American Museum of Natural History Library} (Greenish warblers are
-    rare visitors to the UK.)}\label{fig:greenish_warbler}   %https://www.flickr.com/photos/biodivlibrary/10036311396/in/photolist-ghSHHE
-\end{marginfigure}
+
 It is
 thought that these warblers spread from the south, northward in two different directions around the inhospitable Himalayan
 plateau, establishing populations along the western edge
@@ -1348,12 +1344,21 @@ matrix. Note how the red and yellow samples, thought to be derived from
 the Eastern route around the Himalayas, have higher kinship with each
 other, and blue and the (majority) of the green samples, from the Western route, form a
 similarly close group in terms of their higher kinship.
+\begin{marginfigure}[-5cm]
+% TODO: MISSING FIGURE
+\includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/greenish_warbler/10036311396_14915d1715_z.jpg}
+  \caption{Greenish warbler, subspp. viridanus ({\it Phylloscopus
+      trochiloides viridanus}). \BHLNC{Coloured figures of the birds of the
+    British Islands. 1885. Lilford T. L. P..}{https://www.biodiversitylibrary.org/page/34576931\#page/147/mode/1up}{American Museum of Natural History Library} (Greenish warblers are
+    rare visitors to the UK.)}\label{fig:greenish_warbler}   %https://www.flickr.com/photos/biodivlibrary/10036311396/in/photolist-ghSHHE
+\end{marginfigure}
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=
   0.75 \textwidth]{figures/warbler_PCA_figs/warbler_heatmap.pdf}
   \end{center}
-    \caption{The matrix of kinship coefficients calcuated for the 95
+    \caption[][3cm]{The matrix of kinship coefficients calcuated for the 95
       samples of Greenish warblers. Each cell in the matrix gives the
       pairwise kinship coefficient calculated for a particular pair. Hotter colours indicating higher
       kinship. The x and y labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure. The rows and columns have been
