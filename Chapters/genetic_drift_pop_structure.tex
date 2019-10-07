@@ -1,10 +1,22 @@
 \chapter{Neutral Diversity and Population Structure.}
 %% this section was moved from the coalescent chapter
-We've considered alleles drawn from a randomly-mating population, and divergence among alleles drawn from two distantly-related populations.
-We'll now turn to consider divergence among more closely related populations. In thinking about the coalescent  within populations we made the assumption that any pair of lineages is equally likely to coalesce with each
-other. However, when there is population structure this assumption is violated. \\
 
-We have previously written the measure of population structure
+How does genetic differentiation build up between closely related
+populations? How does migration act to reduce differentiation? These
+questions are key to understand the conditions under which populations
+can start to genetically diverge from each other To answer these
+questions we'll first consider this in the context of neutral alleles, and then return
+to think about selection and differentiation in later chapters. 
+We've considered neutral alleles drawn from a randomly-mating population, and divergence among alleles drawn from two distantly-related populations.
+We'll now turn to consider divergence among more closely related
+populations. In thinking about the coalescent  within populations we
+made the assumption that any pair of lineages is equally likely to
+coalesce with each other. However, when there is population structure this assumption is violated. \\
+
+To develop models of about population structure we'll use the
+statistic $\fst$, which we introduced in Section \ref{section:F_stats}
+of discussion of summarizing
+population structure in allele frequencies. We have previously written the measure of population structure
 $\fst$ as
 \begin{equation}
 \fst = \frac{H_T-H_S}{H_T}
@@ -13,7 +25,7 @@ where $H_S$ is the probability that two alleles sampled at random from a
 subpopulation differ, and $H_T$ is the probability that two alleles
 sampled at random from the total population differ.
 
-\paragraph{A simple population split model}
+\section{A simple population split model}
 Imagine a population of constant size of $N_e$ diploid individuals that
 $T$ generations in the past split into two daughter populations (sub-populations)
 each of size $N_e$ individuals, which do not subsequently exchange
@@ -111,7 +123,7 @@ effective population sizes.
 %{\bf C)}	The gorilla lineage is an outgroup for large portions of the X chromosome, what is a plausible explanation for this finding?
 %\end{question}
 
-\paragraph{A simple model of migration between an island and the mainland.}
+\section{A simple model of migration between an island and the mainland.}
 We can also use the coalescent to think about patterns of
 differentiation under a simple model of migration-drift
 equilibrium. Let's consider a small island population that is relatively isolated
@@ -194,7 +206,7 @@ What is your estimate of the migration rate from the marine
 populations into the river?
 \end{question}
 
-\paragraph{Incomplete Lineage Sorting}
+\section{Incomplete Lineage Sorting}
 Finally we turn to the interaction of 
 Because it can take a long time for an polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
 individual loci. In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
@@ -352,3 +364,8 @@ $n_{BABA}$ and calculate
 This statistic will have expectation zero if the gene-tree discordance is due to ILS and will be skewed negative if gene flow
 occurred from C into B (and skewed positive if gene flow occurred from C into A).
 \graham{Add ABABA BABA egs}
+
+
+%% Isolation by distance
+% https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography
+%  Waldo Tobler, is "everything is related to everything else, but near things are more related than distant things."

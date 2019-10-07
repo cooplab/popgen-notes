@@ -62,7 +62,7 @@ would be  a good place to start.
 %While we might spend some time discussing them in lecture, it probably is a good idea to make sure that you are comfortable with these concepts and if not, talk to one of us about where to read about them online in more detail. 
 
 
-\section{Calculus}
+\section{Calculus} \label{section:calculus}
 In evolutionary genetics we're often interested in how quantities
 change over time, and so we're interested in the rate of change over
 time. This particular obsession is shared with much of
@@ -426,7 +426,7 @@ inches to cm (as this change just involves multipling by a number).
 
 Using our linearity of expectations, we can obtain an analogous result for the variance
 \begin{equation}
-Var[aX+bY+c]= a^2Var[X] + b^2 Var[Y] 
+Var[aX+bY+c]= a^2Var[X] + b^2 Var[Y] \label{eqn:general_var_decomp}
 \end{equation}
 this holds if $X$ and $Y$ are independent variables, if they are not
 we need to account for their covariance. Note that the constant $c$
@@ -576,7 +576,7 @@ p(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp(-(x-\mu)^2/(2\sigma^2)).
 For a normal random variable $\E[X]=\mu$. 
 \end{description}
 
-\subsection*{Multiple random variables}
+\subsection*{Multiple random variables} \label{section:multi_RV}
 
 \paragraph{Covariance and Independence} To fully specify multiple random variables, say $X$ and $Y$, one needs to know their joint distribution. For example, if $X$ and $Y$ are discrete random variables taking on the values $x_1,x_2,x_3,\dots$, then the joint distribution is given by 
 \begin{equation}
@@ -601,7 +601,7 @@ Given any function $f(x,y)$ of $x$ and $y$, one can define the expectation $\E[f
 
 The \emph{covariance} of  $X$ and $Y$ is given by 
 \begin{equation}
-\E[(X-\mu_X)(Y-\mu_Y)]=\E[XY]-\mu_X\mu_Y. 
+Cov(X,Y) = \E[(X-\mu_X)(Y-\mu_Y)]=\E[XY]-\mu_X\mu_Y. \label{eqn:def_covar}
 \end{equation}
 $X$ and $Y$ are said to \emph{uncorrelated} if their covariance equals
 zero. If $X$ and $Y$ are independent, then they are guaranteed to be
@@ -670,7 +670,7 @@ value. For example, think of a linear prediction of a child's weight from their 
 See Figure \ref{Fig:Regression_eg} for an example plot. To do this we can think of approximating the $Y_i$ that
 accompanies the $X_i$ value for the $i^{th}$ pair of data points by
 \begin{equation}
-Y_i \approx a+ b X_i 
+Y_i \approx a+ b X_i \label{eqn:def_linear_regression}
 \end{equation}
 where $a$ and $b$ are the intercept and slope of a line.
 
@@ -706,7 +706,7 @@ and $Y$ is a large proportion of the variance of $X$.
 This least squares fit is the solution to the linear regression
 \graham{Doc points out  The conditions here are the ones for it to be BLUE, which is hard to convey easily. (And tbh kind of misleading, since the form of "linearity" inherent in the "L" is actually super restrictive) Consistency is maybe easier to convey---you could say something about it being consistent under x,y circumstances.}
 \begin{equation}
-Y_i \sim a+ b X_i + \epsilon_i
+Y_i \sim a+ b X_i + \epsilon_i  
 \end{equation}
 where the errors ($\epsilon_i$) are uncorrelated across data points
 with an expectation of zero and constant but unknown variance. These
@@ -752,7 +752,7 @@ $Y$. While our linear slope is always in the units of
 $\nicefrac{\textrm{m}}{\textrm{s}}$ if we were predicting the
 distance (Y in meters) traveled by runners in time intervals ($Y$ seconds).
 
-\subsection*{Useful Limits.}
+\subsection*{Useful Limits.} \label{section:useful_limits}
 \paragraph{Law of Large Numbers} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$, then 
 \begin{equation}
 \frac{X_1+\dots +X_n}{n} \to \mu \mbox{ as }n\to \infty \mbox{ with
