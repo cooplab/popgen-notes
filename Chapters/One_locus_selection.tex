@@ -79,19 +79,18 @@ The change in frequency from one generation to the next is then given by
 recalling that $q_t = 1 - p_t$.\\
 
 Assuming that the fitnesses of the two alleles are constant over time,
-the number of the two allelic types $\tau$ generations after time $t$ are
-$P_{t+\tau} = (W_1)^{\tau} P_t$ and $Q_{t+\tau}=  (W_2)^{\tau} Q_t$, respectively. Therefore, the relative frequency of allele $A_1$ after $\tau$ generations past $t$ is
+the number of the two allelic types $\tau$ generations after time $0$ are
+$P_{\tau} = (W_1)^{\tau} P_0$ and $Q_{\tau}=  (W_2)^{\tau} Q_0$, respectively. Therefore, the relative frequency of allele $A_1$ after $\tau$ generations past $t$ is
 \begin{equation}
-	p_{t+\tau} = \frac{ (W_1)^{\tau} P_t}{ (W_1)^{\tau} P_t+(W_2)^{\tau} Q_t} = \frac{ (w_1)^{\tau} P_t}{ (w_1)^{\tau} P_t+(w_2)^{\tau} Q_t} = \frac{p_t}{p_t + (w_2/w_1)^{\tau} q_t},
+	p_{\tau} = \frac{ (W_1)^{\tau} P_0}{ (W_1)^{\tau} P_0+(W_2)^{\tau} Q_0} = \frac{ (w_1)^{\tau} P_0}{ (w_1)^{\tau} P_0+(w_2)^{\tau} Q_0} = \frac{p_0}{p_0 + (w_2/w_1)^{\tau} q_0},
 	\label{eq:haploid_tau_gen}
 \end{equation}
-where the last step includes dividing the whole term by $(w_1)^{\tau}$ and switching from absolute to relative allele frequencies.\\
-
-Rearranging eqn.\ \eqref{eq:haploid_tau_gen} and setting $t = 0$, we can work out the time $\tau$ for the frequency of $A_1$ to change from $p_0$ to $p_{\tau}$. First, we write
-\begin{equation}
-	p_{\tau} = \frac{p_0}{p_0 + (w_2/w_1)^{\tau} q_0}
-\end{equation}
-and rearrange this to obtain
+where the last step includes dividing the whole term by $(w_1)^{\tau}$ and switching from absolute to relative allele frequencies.
+%Rearranging eqn.\ \eqref{eq:haploid_tau_gen} and setting $t = 0$, we can work out the time $\tau$ for the frequency of $A_1$ to change from $p_0$ to $p_{\tau}$. First, we write
+%\begin{equation}
+%	p_{\tau} = \frac{p_0}{p_0 + (w_2/w_1)^{\tau} q_0}
+%\end{equation}
+Rearrange this to obtain
 \begin{equation}
 	\label{eq:estTau}
 	\frac{p_{\tau}}{q_{\tau}} = \frac{p_0}{q_0} \left(\frac{w_1}{w_2}\right)^{\tau}.
@@ -176,23 +175,23 @@ The ratio of the frequency of allele $A_1$ to that of allele $A_2$ in generation
 \begin{equation}
 \frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}.
 \end{equation}
-Therefore, if we think of the two alleles starting in generation $t$ at
-frequencies $p_t$ and $q_t$, then $\tau$ generations later,
+Therefore, if we think of the two alleles starting in generation $1$ at
+frequencies $p_1$ and $q_1$, then $\tau$ generations later,
 \begin{equation}
-\frac{p_{t+\tau}}{q_{t+\tau}} = \left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{t}}{q_{t}}.
+\frac{p_{\tau}}{q_{\tau}} = \left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{1}}{q_{1}}.
 \end{equation}
 \\
 
 The question of which allele is increasing or decreasing in frequency comes down
-to whether $\left(\prod_{i=t}^{\tau-1} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
+to whether $\left(\prod_{i=1}^{\tau} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
 $>1$ or $<1$. As it is a little hard to think about this ratio, we can
 instead take the $\tau^{\mathrm{th}}$ root of it and consider
 \begin{equation}
-\sqrt[\tau]{\left(\prod_{i=t}^{\tau-1} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}}{\sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{2,i}}}.
+\sqrt[\tau]{\left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}}{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{2,i}}}.
 \end{equation}
 The term
 \begin{equation}
-  \sqrt[\tau]{\prod_{i=t}^{\tau-1}w_{1,i}}  \label{hap_geo_fitness}
+  \sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}  \label{hap_geo_fitness}
 \end{equation}
 \begin{margintable}
   \begin{tabular}{lcc}
@@ -229,10 +228,11 @@ allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fi
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Haploid_geom_traj.pdf}
 \end{center}
-\caption{An example frequency trajectory of the $A_2$ allele under
-  variable environments (using the fitnesses from Table \ref{Table:Geom_fitness}). Dry years (generations) are shown in red, wet
-  years in white. Note how the $A_2$ allele decreases in frequency in
-  the dry years as $A_1$ has higher fitness, and yet the $A_2$ allele
+\caption{An example frequency trajectory of the $A_1$ allele under
+  variable environments (using the fitnesses from Table
+  \ref{Table:Geom_fitness}). Wet years (generations) are shown in red, dry
+  years in white. The environment flips at random each year.  Note how the $A_1$ allele increases in frequency in
+  the dry years as it has higher fitness, and yet the $A_2$ allele
   still wins out. 
   \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Geometric_mean_fitness.R}} \label{fig:haploid_geo}
 \end{figure}
@@ -256,19 +256,21 @@ even make sense to hedge your bets even if that comes at an average
 cost \citep{seger1987oxford}.
 
 To see this lets think more about geometric fitness. We can write the
-fitness in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
+relative fitness of an allele in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
 write your geometric fitness as
 \begin{equation}
- \bar{g}= \sqrt[\tau]{\prod_{i=t}^{\tau-1} 1+s_i}  \label{hap_geo_fitness}
+ \bar{g}= \sqrt[\tau]{\prod_{i=1}^{\tau-1} 1+s_i}  \label{hap_geo_fitness}
   \end{equation}
 when we think about products it's often natural to take the $\log$ to
 turn it into a sum
 \begin{align}
- \log \big( \bar{g} \big) =& \frac{1}{\tau} \sum_{i=t}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
+ \log \big( \bar{g} \big) =& \frac{1}{\tau} \sum_{i=1}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
   = & \E \bigg[ \log \big( 1+s_i \big) \bigg]
 \end{align}
 equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i \big) \approx s_i -
-\nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and higher then this is
+\nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and
+higher\sidenote{Here we're using a 2nd order Talyor approximation, see
+  math appendix eqn \eqref{eqn:Taylor_log_2nd}. } then this is
 \begin{align}
   \log \big( \bar{g}  \big) \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg]  \nonumber\\
   =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
@@ -327,7 +329,7 @@ fitness in the variable desert environment. See Figure
 %Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
 Delayed reproduction is also a common example of bet-hedging in
 micro-organisms. For example, the Chicken Pox virus, varicella zoster
-virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, residing, inactive, in neurons in
+virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, residing inactive in neurons in
 the spinal cord, only to emerge 5-40 years later to cause the disease
 shingles. It is hypothesized that the virus actively suppresses itself
 as a strategy to allow it to emerge at a later time point as insurance
@@ -446,7 +448,7 @@ the absolute fitnesses with the relative fitnesses. That is, we may replace $W_{
 
 Each of our genotype frequencies is responding to selection in a
 manner that depends just on its fitness compared to the mean fitness
-of the population. For example, the frequency of the $11$ homozygotes
+of the population. For example, the frequency of the $A_1A_1$ homozygotes
 increases from birth to adulthood in proportion to $\nicefrac{W_{11}}{\Wbar}$. In
 fact, we can estimate this fitness ratio for each genotype by comparing
 the frequency at birth compared to adults. As an example of this calculation, we'll
@@ -466,7 +468,7 @@ as glaciers receded following the last ice age, making sticklebacks a wonderful 
 from predation, but freshwater populations repeatedly evolve the
 loss of armour plates due to selection on an allele at the
 Ectodysplasin gene (EDA).  This allele is found as a standing variant at very low frequency marine populations;
-\citeauthor{Barrett:08} took advantage of this fact and collected and bred
+\citet{Barrett:08} took advantage of this fact and collected and bred
 a population of marine individuals carrying both the low- (L) and
 completely- plated (C) alleles. They introduced the offspring of this
 cross into four freshwater ponds and monitored genotype frequencies
@@ -490,25 +492,13 @@ $\Wbar$). The relative fitness of the $CC$ is $\sim 1/5$ of the
 heterozygote. Note that this calculation does not rely on the genotype frequencies being at their HWE in the juveniles.
 
 \begin{question}
-{\bf A} What is the frequency of the low-plated EDA allele ($L$) at the start of the stickleback experiment? \\
-{\bf B} What is the frequency in the adults? 
-
+{\bf A)} What is the frequency of the low-plated EDA allele ($L$) at the start of the stickleback experiment? \\
+{\bf B)} What is the frequency in the adults? 
+{\bf C)} Also calculate the frequency in adults using the relative
+fitnesses. 
 \end{question}
 
 
-\begin{question}
-For many generations you have been studying an annual wildflower that has two color morphs, orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
-Heavy February rainfall creates optimal growing conditions for an
-exotic herbivorous beetle with a preference for orange-flowered
-individuals.  This year it arrives at your study site with a ravenous
-appetite.  Only 50\% of orange-flowered individuals survive its wrath,
-while 90\% of white-flowered individuals survive until the end of the
-growing season.  \\
-%Additionally, surviving orange flowered individuals produce 80 seeds on average, while surviving white-flowered individuals produce 100 seeds on average. 
-{\bf A} What is the initial frequency of the white allele, and what do you
-have to assume to obtain this?\\
-{\bf B} What is the frequency of the white allele in the seeds forming the next generation?\\
-\end{question}
 
 
 The change in frequency from generation $t$ to $t+1$ is
@@ -552,7 +542,17 @@ We can also rewrite \eqref{deltap_dip1} as
 \Delta p_t =\frac{1}{2} \frac{p_tq_t}{\wbar} \frac{d \wbar}{dp}, 
 \label{deltap_dip3}
 \end{equation}
-the demonstration of which we leave to the reader (see question below).
+\marginnote{To see this is take
+\begin{align*}
+  \frac{d\bar{w}}{dp} &= \frac{d}{dp} \left( W_{11} p^2 + 2 W_{12} p \right. \nonumber\\
+   & \left. - 2 W_{12} p^2 + W_{22} -  2 W_{22} p +  W_{22} p^2\right) \nonumber\\
+  &= 2\left(w_{11} p + w_{12} - 2pw_{12} - w_{22} - w_{22} + w_{22} p\right)
+\end{align*}
+On expansion of $\bar{w}_1 - \bar{w}_2$, we see that it matched the terms in
+the parentheses in the expression above. Thus, we see that we can replace
+$\bar{w}_1 - \bar{w}_2$ with $\nicefrac{1}{2} \frac{d\bar{w}}{dp}$.
+}
+
 This form shows that the frequency of $A_1$ will increase ($\Delta p_t > 0$) if the mean fitness is an increasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}>0$). On the other hand, the frequency of $A_1$ will decrease ($\Delta p_t < 0$) if the mean fitness is a decreasing function of the frequency of $A_1$ (i.e.\ if $\frac{d \wbar}{dp}<0$).
 %This form shows that
 %$\Delta p_t$ in increase if $\frac{d \wbar}{dp}>1$, i.e. increasing the
@@ -571,15 +571,30 @@ maximizing mean fitness only holds true
 if the genotypic fitnesses are frequency independent, later in this
 chapter we'll discuss some important cases where that doesn't hold. \\
 
+%\begin{question}
+%Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are
+%equivalent. (Trickier question.)\\
+%\end{question}
+
 \begin{question}
-Show that eqns.\ \eqref{deltap_dip3} and \eqref{deltap_dip2} are
-equivalent. (Trickier question.)\\
+For many generations you have been studying an annual wildflower that has two color morphs, orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
+Heavy February rainfall creates optimal growing conditions for an
+exotic herbivorous beetle with a preference for orange-flowered
+individuals.  This year it arrives at your study site with a ravenous
+appetite.  Only 50\% of orange-flowered individuals survive its wrath,
+while 90\% of white-flowered individuals survive until the end of the
+growing season.  \\
+%Additionally, surviving orange flowered individuals produce 80 seeds on average, while surviving white-flowered individuals produce 100 seeds on average. 
+{\bf A)} What is the initial frequency of the white allele, and what do you
+have to assume to obtain this?\\
+{\bf B)} What is the frequency of the white allele in the seeds forming the next generation?\\
 \end{question}
 
-So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parameterizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
 
 %%Selection coeffs in diploid model
 \subsection{Diploid directional selection}
+So far, our treatment of the diploid model of selection has been in terms of generic fitnesses $w_{ij}$. In the following, we will use particular parameterizations to gain insight about two specific modes of selection: directional selection and heterozygote advantage.
+
 Directional selection means that one of the two alleles always has higher marginal fitness than the other one. Let us assume that $A_1$ is the fitter allele, so that $w_{11} \geq w_{12} \geq w_{22}$, and hence $\wbar_1 > \wbar_2$. As we are interested in changes in allele frequencies, we \sa{may use} relative fitnesses. We parameterize the reduction in relative fitness in terms of a selection coefficient, similar to the
 one we met in the haploid selection section, as follows:\\
 \begin{center}
@@ -656,14 +671,21 @@ Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:di
 \begin{center}
   \includegraphics[width = 0.8 \textwidth]{Journal_figs/single_locus_selection/silver_fox/fox_morph_freqs.pdf}
 \end{center}
-\caption{The frequency of red, cross, and silver fox morphs over the
+\caption[][3cm]{The frequency of red, cross, and silver fox morphs over the
   decades in Eastern Canada. These data are well described by
   recessive selection acting against the silver fox morph. Data from
   \citet{elton:42}, compiled by \citet{Allendorf:09}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/silver_fox/fox_morphs.R}} \label{fig:Fox_morph_freqs}
 \end{figure}
 To see how dominance affects the trajectory of a real
 polymorphism, we'll consider an example from a colour polymorphism in
-red foxes ({\it Vulpes vulpes}). There are three colour morphs of red foxes: silver, cross, and
+red foxes ({\it Vulpes vulpes}). \begin{marginfigure}\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
+\end{center}
+\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
+  and silver foxes from left to right. \BHLNKC{The larger North American
+    mammals" Nelson, E.W., Fuertes,
+    L.A. 1916.}{https://www.flickr.com/photos/internetarchivebookimages/20578302420/in/photolist-wZ1CDZ-x4aTMj-tCTNnY-sFEbZG-xphfQ3-xmrbnA-xiXcDj-xejHVF-xtiB5G-xbxj1h-xsQdrP-wvPad5-xsFHvi-xqbZ1n-wsJA56-wrzbGj-xhvUJC-xgyia4-wYQ2pR-wXZf6j-wiuZ1t-wWKbS1-whsqaP-whio1h-xeiFTH-wWNQYe-xeiq1a-xdwa1s-wQExt6-x8BrsK-wPgGBE-w9DN9W-x75ojD-wP27dM-w9D6Ye-x6tXdt-wNRKTC-w9AXfX-x5rdVc-x25Puc-vvxmtP-tJ16gt-tAVz57-tmv9Zh-tCXVo2-owo4PL-oum6R1-oeCRWg-oeg5dH-ot9SVz}{Cornell University Library}} \label{fig:Fox_morphs}
+\end{marginfigure}  There are three colour morphs of red foxes: silver, cross, and
 red (see Figure \ref{fig:Fox_morphs}), with this difference primarily
 controlled by a single polymorphism with genotypes RR, Rr, and rr respectively. The fur pelts of the silver morph
 fetched three times the price for hunters compared to cross (a smoky red) and red
@@ -676,15 +698,8 @@ intensely and declined as a proportion of the population in Eastern Canada, see 
 from $16\%$ to $5\%$ from 1834 to 1937.
 \citeauthor{haldane:42} reanalyzed these data and showed that they
 were consistent with recessive selection acting against the silver
-morph alone. \begin{marginfigure}
-\begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/fox_morphs/fox_morphs_silver_cross.png}
-\end{center}
-\caption{Three colour morphs in red fox {\it V. vulpes}, cross, red,
-  and silver foxes from left to right. \BHLNKC{The larger North American
-    mammals" Nelson, E.W., Fuertes,
-    L.A. 1916.}{https://www.flickr.com/photos/internetarchivebookimages/20578302420/in/photolist-wZ1CDZ-x4aTMj-tCTNnY-sFEbZG-xphfQ3-xmrbnA-xiXcDj-xejHVF-xtiB5G-xbxj1h-xsQdrP-wvPad5-xsFHvi-xqbZ1n-wsJA56-wrzbGj-xhvUJC-xgyia4-wYQ2pR-wXZf6j-wiuZ1t-wWKbS1-whsqaP-whio1h-xeiFTH-wWNQYe-xeiq1a-xdwa1s-wQExt6-x8BrsK-wPgGBE-w9DN9W-x75ojD-wP27dM-w9D6Ye-x6tXdt-wNRKTC-w9AXfX-x5rdVc-x25Puc-vvxmtP-tJ16gt-tAVz57-tmv9Zh-tCXVo2-owo4PL-oum6R1-oeCRWg-oeg5dH-ot9SVz}{Cornell University Library}} \label{fig:Fox_morphs}
-\end{marginfigure} Note how the heterozygotes (cross) decline somewhat as a
+morph alone. 
+Note how the heterozygotes (cross) decline somewhat as a
 result of selection on the silver homozygotes, but overall the R
 allele is slow to respond to selection as it is `hidden' from
 selection in the heterozygote state.
