@@ -725,7 +725,10 @@ If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close t
 \end{equation}
 It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
-From this analogy, we can borrow some insight we gained from the haploid model. Specifically, the trajectory of the frequency of allele $A_1$ in the diploid model without dominance follows a logistic growth curve similar to \eqref{eq:haploid_logistic growth}. From this similarity, we can extrapolate from Equation \eqref{eq:estTauExplSimpl} to find the time it takes for our diploid, beneficial, additive allele ($A_1$) to move from frequency $p_0$ to $p_{\tau}$:
+From this analogy, we can borrow some insight we gained from the
+haploid model. Specifically, the trajectory of the frequency of allele
+$A_1$ in the diploid model without dominance follows a logistic growth
+curve similar to eqn. \eqref{eq:haploid_logistic growth}. From this similarity, we can extrapolate from Equation \eqref{eq:estTauExplSimpl} to find the time it takes for our diploid, beneficial, additive allele ($A_1$) to move from frequency $p_0$ to $p_{\tau}$:
 \begin{equation}
 	\tau \approx \frac{2}{s} \log \left(\frac{p_{\tau} q_0}{q_{\tau} p_0}\right)
 \end{equation}
@@ -750,7 +753,10 @@ by a factor of 2 due to the choice of parametrization
 \end{marginfigure}
 
 \begin{question}
-Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the very high pollution levels in the Houston shipping canal since the 1950s. One of the ways that they've adapted is through the deletion of their aryl hydrocarbon receptor (AHR) gene. Oziolor et al. estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, starting as a single copy in this population?
+Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the
+very high pollution levels in the Houston shipping canal since the
+1950s. One of the ways that they've adapted is through the deletion of
+their aryl hydrocarbon receptor (AHR) gene. \citet{oziolor2019adaptive} estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, starting as a single copy in this population?
 \end{question}
 
 
@@ -777,7 +783,11 @@ explanations for the maintenance of polymorphisms are
 \end{enumerate}
 We'll turn to these latter two explanations through this chapter and
 the next.
-Note that theses explanations are not mutually exclusive, and each of them will explain some proportion of the variation. 
+Note that these explanations are not mutually exclusive. Each
+explanation will explain some proportion of the variation, and these
+proportions will differ over species and classes of polymorphism. A
+central challenge in population genomics is how we can do this in a
+systematic way. 
 
 \subsection{Heterozygote advantage}
 One form of balancing selection occurs when the heterozygotes are fitter than either
@@ -799,7 +809,7 @@ same parameterization as in the model of directional selection, but
 the reparameterization we have chosen here makes the math easier.\\
 
 
-\begin{marginfigure}[2cm]
+\begin{marginfigure}
 \begin{center}
   \includegraphics[width = \textwidth]{figures/het_advant_traj.pdf}
 \end{center}
@@ -860,7 +870,7 @@ homozygotes.\\
 \begin{center}
   \includegraphics[width = \textwidth]{Rcode/Soay_Sheep/Hopping_sheep_all.pdf}
 \end{center}
-\caption[][5cm]{For the three Soay sheep genotypes: the offspring per year  ({\bf left}), the probability of
+\caption[][6cm]{For the three Soay sheep genotypes: the offspring per year  ({\bf left}), the probability of
   surviving a year ({\bf middle}), and the product of the two ({\bf
     right}). Thanks to Susan Johnston for supplying these simplified
   numbers from \citet{johnston2013life}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Soay_Sheep/Soay_Sheep_fitness.R}
@@ -884,7 +894,7 @@ effects on male, but not female, fitness (see Figure
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/mouflon/18195657882_eb207e4e9e_z.jpg}
 \end{center}
 \caption{Mouflon ({\it Ovis orientalis orientalis}). \BHLNC{Animate
-  creation. (1898). Wood, J. G.}{https://www.flickr.com/photos/internetarchivebookimages/18195657882/in/photolist-oeVkzm-oeVyZM-owqffV-otpyr4-abvEzA-osMSNY-vdEfRm-odZgfB-ot1epP-xvDeKd-yb3aL3-xRUfo4-owdr4T-wJhfme-xj57bn-xAzfXc-xiEcGn-sMnpMH-xP6U3J-w6Wm26-xuMUdr-tHTvam-w6aexB-oubB13-wYKiWR-xnrRBv-xptbR9-wYeGR2-xBHTk1-xvoaiK-xdb5i7-xst4MC-w3QTNe-x9SM4R-xnwGwR-xGd6Qk-xyfL9Q-w3QtPx-wYeJqe}{Smithsonian Libraries} } \label{fig:Soay_fitness}
+  creation. (1898). Wood, J. G.}{https://www.flickr.com/photos/internetarchivebookimages/18195657882/in/photolist-oeVkzm-oeVyZM-owqffV-otpyr4-abvEzA-osMSNY-vdEfRm-odZgfB-ot1epP-xvDeKd-yb3aL3-xRUfo4-owdr4T-wJhfme-xj57bn-xAzfXc-xiEcGn-sMnpMH-xP6U3J-w6Wm26-xuMUdr-tHTvam-w6aexB-oubB13-wYKiWR-xnrRBv-xptbR9-wYeGR2-xBHTk1-xvoaiK-xdb5i7-xst4MC-w3QTNe-x9SM4R-xnwGwR-xGd6Qk-xyfL9Q-w3QtPx-wYeJqe}{Smithsonian Libraries} } \label{fig:Mouflon}
 \end{marginfigure} The Ho$^p$ allele has a mostly recessive effect on
 male fecundity, with the Ho$^p$ homozygotes having lower yearly reproductive
 success presumably due to the fact that they perform poorly in male-male
@@ -954,7 +964,7 @@ homozygotes. Underdominance can be parametrized as follows: \\
 	relative fitness (specific)  & $1+s_1$ & $1$ & $1+s_2$ \\
 \end{tabular}\\
 \end{center}
-\begin{marginfigure}[5cm]
+\begin{marginfigure}[2cm]
 \begin{center}
   \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Pseudacraea_eurytus/Pseudacraea_eurytus.JPG}
 \end{center}
@@ -1077,7 +1087,7 @@ The question now is whether allele $A_1$ will approach fixation in the populatio
 	\frac{p_{t+1}}{q_{t+1}} = \left( \prod_{i=0}^{t} \frac{w_{11,i}}{w_{12,i}}  \right) \frac{p_{0}}{q_{0}}.
 \end{equation}
 Now, for allele $A_1$to carry on increasing in frequency and to approach fixation, the $A_1A_1$ genotype has to be out-competing the heterozygotes. For allele $A_1$ to approach fixation, we need the geometric mean of $w_{11,i}$ to be greater than the geometric mean fitness of heterozygotes ($w_{12,i}$).
-At the same time, if heterozygotes have higher geometric mean fitness than the $A_1A_1$ homozygotes, then the $A_2$ allele will increase in frequency when it is rare. 
+If instead heterozygotes have higher geometric mean fitness than the $A_1A_1$ homozygotes, then the $A_2$ allele will increase in frequency when it is rare. 
 %Therefore, a balanced polymorphism can result when the heterozygote has higher geometric fitness than either of the homozygotes.\\
 
 %\begin{equation}
@@ -1193,9 +1203,7 @@ As one example of negative frequency-dependent selection, consider the two flowe
 deceptive Elderflower orchid ({\it Dactylorhiza
   sambucina}). Throughout Europe, there are populations of these orchids polymorphic for 
 yellow- and purple-flowered individuals, with the
-yellow flower corresponding to a recessive allele.\graham{check
-  recessive?} %http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
- Neither of
+yellow flower corresponding to a recessive allele. Neither of
 these morphs provide any nectar or pollen reward to their bumblebee
 pollinators. 
 Thus these plants are typically pollinated by newly emerged
@@ -1216,13 +1224,14 @@ maintained in this population, and presumably Europe-wide, due to this negative 
 selection. %The yellow morph is found at $\sim 69\%$ in the region of
 %France where this experiment was conducted, consistent with the frequency at which the two
 %morphs are predicted to have equal fitness.
-
+% \graham{check
+ % recessive?} %http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
 
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids_fitness.pdf}
 \end{center}
-\caption[][2cm]{{\bf Left)} Measures of the relative male- and female- reproductive success of the yellow Elderflower orchid morph
+\caption[][0cm]{{\bf Left)} Measures of the relative male- and female- reproductive success of the yellow Elderflower orchid morph
   as a function of the yellow morph in experimental plots. {\bf
     Right)} Two allele frequency trajectories of the Yellow allele
   subject to negative frequency scheme given in the left plot
@@ -1306,12 +1315,12 @@ to the environment (eqn. \eqref{eqn:pheno_fitness_landscape} and \eqref{deltap_d
 absolute fitnesses of individuals are frequency dependent, e.g. depend
 on the strategies deployed by others in the population, natural
 selection is not guaranteed to increase mean fitness. Nothing about
-the strategies pursued by the Ruffs above seems well suited to
+the strategies pursued by the Ruffs discussed above seems well suited to
 maximizing the future growth rate of the population. 
-One place where it particularly apparent that frequency dependence
-drives non-optimal solutions from the perspective of the population, is in the evolution of a 50/50 sex
-ratio. In fact as we'll see that selection can drive the evolution of
-traits that are actively harmful to the fitness of an individual, when
+One place where it is particularly apparent that frequency dependence
+drives non-optimal solutions from the perspective of the population is in the evolution of a 50/50 sex
+ratio. In fact as we'll see, selection can drive the evolution of
+traits that are actively harmful to the fitness of an individual when
 selection acts below the level of an individual. 
 
 % https://archive.org/stream/aquaticlife51920baus/#page/113/mode/1up
@@ -1339,10 +1348,18 @@ selection acts below the level of an individual.
 \BHLNC{Aquatic life, chapter by Curtis F.S. (1915)}{https://archive.org/stream/aquaticlife51920baus/\#page/113/mode/1up}{Harvard University, Museum of Comparative Zoology, Ernst Mayr Library}} \label{fig:platyfish}
 \end{marginfigure}
 
-In many species, regardless of the mechanism of sex determination, the sex ratio is close to 50/50. Yet this is far from the optimum sex ratio from the perspective of the population viability. In many species females are the limiting sex, investing more in gametes and (sometimes) more in parental care, thus a population having many females and few males would offer the fastest rate of population grow (i.e. the highest mean fit. 
-Imagine if the population sex ratio was strongly skewed towards females. A rare autosomal allele that caused a mother to produced sons would have high fitness, as the mother's sons would have high reproductive success in this population of most females. Thus our initially rare allele would initially increase in frequency.
+In many species, regardless of the mechanism of sex determination, the
+sex ratio is close to 50/50. Yet this is far from the optimum sex
+ratio from the perspective of the population viability. In many
+species females are the limiting sex, investing more in gametes and
+(sometimes) more in parental care. Thus a population having many
+females and few males would offer the fastest rate of population
+growth (i.e. the highest mean fitness). Why then is the sex ratio so
+often close to 50/50?
+Imagine if the population sex ratio was strongly skewed towards females. A rare autosomal allele that caused a mother to produced sons would have high fitness, as the mother's sons would have high reproductive success in this population of most females. Thus our initially rare allele would increase in frequency.
 Conversely if the sex ratio was strongly skewed towards males, a rare autosomal allele that causes a mother to produce daughters would spread.
-So selection on autosomal alleles favours the production of the rare sex, a form of negative frequency dependence, this pushes the sex ratio away from being too skewed. Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
+So selection on autosomal alleles favours the production of the rare
+sex, a form of negative frequency dependence, and this pushes the sex ratio away from being too skewed. Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
 The 50/50 sex ratio is an example of an Evolutionary stable strategy
 (ESS), described in more detail in Section
 \ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if
@@ -1351,7 +1368,7 @@ The 50/50 sex ratio is an example of an Evolutionary stable strategy
   selection'' \citet{smith1982evolution}, pg 10.\\ A version of this
   sex ratio argument was first put forward by D{\"u}sing in 1884 and
   popularized by \citet{fisher1930}, see \citet{edwards1998natural}. } %http://www.indiana.edu/~curtweb/L567/readings/JMS%20basic%20game%20theory.pdf
-Our population is held well away from its female-bias optimum for population grow as individual-level selection favours the production of the rarer sex, which results in a 50/50 sex ratio.
+%Our population is held well away from its female-bias optimum for population grow as individual-level selection favours the production of the rarer sex, which results in a 50/50 sex ratio.
 
 %https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
 
@@ -1362,10 +1379,10 @@ Our population is held well away from its female-bias optimum for population gro
 There are, however, situations where we see strong deviations away
 from a 50/50 sex ratio. This can represent an adaptive strategy to
 situations where individuals compete against relatives for access to resources or
-mating opportunities. to see this consider fig wasps. There are many
+mating opportunities. To see this consider fig wasps. There are many
 species of fig wasp, which form a tight pollination symbiosis with many species of 
-Fig. Wasp females enter the inverted fig flower structure, top right
-Figure \ref{fig:fig}, polliating the flowers. \begin{marginfigure}
+fig. Wasp females enter the inverted fig flower structure (top right
+Figure \ref{fig:fig}) pollinating the flowers. \begin{marginfigure}
   \begin{center}
     \includegraphics[width=
     \textwidth]{illustration_images/single_locus_selection/Fig_wasp/cropped_fig.png}  %https://www.flickr.com/photos/biodivlibrary/8050635507
@@ -1378,11 +1395,11 @@ can't lay in the female flowers that form the fruit we eat.
 \end{marginfigure}
  They lay their eggs in some of the
 flowers, which form galls in response.  The young, wingless, male
-wasps emerge from their galls first, Figure \ref{fig:fig_wasp}f, but
+wasps emerge from their galls first (Figure \ref{fig:fig_wasp}f) but
 they never leave the fig. Their only role in this is
-to fertilize the female wasps, Figure \ref{fig:fig_wasp}d, in the fig and then die. The female
-offspring, Figure \ref{fig:fig_wasp}a \& e, emerge in the fig just as the male fig flowers
-are emerging, the female wasps burrow out and and take the fig pollen with them as they fly off.
+to fertilize the female wasps (Figure \ref{fig:fig_wasp}d) in the fig and then die. The female
+offspring (Figure \ref{fig:fig_wasp}a \& e) emerge in the fig just as the male fig flowers
+are emerging. The female wasps burrow out and and take the fig pollen with them as they fly off.
 
 \begin{marginfigure}
   \begin{center}
@@ -1396,10 +1413,9 @@ Life stages of Fig wasp ({\it Blastophaga psenes}, synonym {\it Blastophaga
   Nurseries}{https://www.biodiversitylibrary.org/item/164893\#page/33/mode/1up}{National Agricultural Library, USDA}} \label{fig:fig_wasp}
 \end{marginfigure}
 
-Female wasps have control over the sex of their offspring, what's a
-wasp mamma to do, i.e. what is their optimal strategy? Females have
+Female wasps have control over the sex of their offspring but what is their optimal strategy? Females have
 this degree of control as sex determination in wasps is haplo-diploid, with fertilized eggs
-developing as diploid females and unfertilized males; thus by choosing
+developing as diploid females and unfertilized as males; by choosing
 to lay fertilized eggs they can control their number of daughters. 
 If a female wasp lays her eggs into a fig with no other eggs, her sons
 will mate with her daughters and then die. Thus a lone female can maximize
@@ -1417,7 +1433,7 @@ female.
 \includegraphics[width= \textwidth]{figures/sex_ratio_distortor.pdf}
 
 \end{center}
-\caption{The increase in frequency of a sex-ratio distorting X allele in the population of
+\caption[][3cm]{The increase in frequency of a sex-ratio distorting X allele in the population of
   X chromosomes (solid line) and the frequency of males in the
   population. Males carrying the selfish X allele have $99\%$
   daughters, and the selfish X allele reduces the viability of the
@@ -1433,28 +1449,28 @@ individual can sometimes pursue selfish strategies that
 actively harm the individuals that carry them. Here we'll take a tour
 of the rogues gallery of some the various
 genetic conflicts that occur and selfish genetic elements that exploit
-them. They're included in this chapter in part as much of the biology they can
+them. They're included in this chapter in part because much of their biology can
 be understood from the perspective of the ideas developed here. But the main reason for talking about them is that they're an
-amazing slice of biology, that shows that the logic . %There's something deeply satisfying about
+amazing slice of biology. %There's something deeply satisfying about
 %the idea that 
 
 
 \paragraph{Selfish sex chromosomes and sex ratio distortion}
-Now from the perspective of the autosomes a 50/50 sex ratio normally represents
-a stable strategy, but all is not harmonious in the genome. In
+From the perspective of the autosomes a 50/50 sex ratio normally represents
+a stable strategy, but all is not always harmonious in the genome. In
 systems with XY sex determination, male fertilization by Y-bearing sperm
 leads to sons, while male fertilization by X-bearing sperm leads to daughters. 
 From the viewpoint of the X chromosome the Y-bearing sperm, and a
 male's sons, are an evolutionary deadend. We can imagine a mutation
-arising on the X chromosome, that causes a poison to be released
+arising on the X chromosome that causes a poison to be released
 during gametogenesis that kills Y-bearing sperm. This would cause much
 of the ejaculate of the males carrying this mutation to be X-bearing sperm, and so these males would have mostly
 daughters. Such an allele would potentially spread in the population
 as it is over transmitted through males, even if it somewhat reduces
 the fitness of the individuals who carry it. The spread of this allele would strongly
-bias the population sex ratio towards females. Such `selfish' X alleles turn out to be relatively common. They do not
-spread because they are good for the individual, they can often
-substantially low the fitness of the bearer, but rather they spread because
+bias the population sex ratio towards females. Such `selfish' X
+alleles turn out to be relatively common, and they can often
+substantially low the fitness of the bearer. They do not spread because they are good for the individual but rather because
 they are favoured due to selection below the level of the individual.
 
 \begin{marginfigure}
@@ -1473,10 +1489,10 @@ expressing {\it dox}. The spermatids that look like
 One example of a selfish X
 chromosome allele is the {\it Winters sex-ratio} system found in {\it Drosophila
   simulans}, so named as it was found in flies collected around Winters, California (just a
-few miles down the road from Davis). In a cross the selfish X
-chromosome carrying males have  $>80\%$ daughters. The gene
-responsible, Dox ({\it Distorter on the X}), appears to be a transposition
-from a parental gene, and produces a transcript which targets a region
+few miles down the road from Davis). In crosses males carrying the selfish X
+chromosome have  $>80\%$ daughters. The gene
+responsible, {\it Dox} ({\it Distorter on the X}), is a gene
+duplicated by transposition and produces a transcript which targets a region
 on the $Y$ chromosome preventing the Y-bearing sperm from developing
 \citet[see Figure \ref{fig:winters_sperm} from][]{tao2007sexII}. 
 
@@ -1500,24 +1516,24 @@ loci uncovered in this system.} \label{fig:dox_cartoon}
 \end{figure}
 
 The spread of such selfish sex chromosomes, distorting the sex ratio
-strongly away from 50/50, and can have profound effects for population
+strongly away from 50/50, can have profound effects for population
 growth rates.\sidenote{Indeed people have long discussed using
 selfish Y chromosomes, driving an over production of sons, for population control of malaria-spreading
 mosquitos. Natural selfish systems on the Y appear rare, likely
 because of its low gene content.} However, the other sex chromosome and autosomes are not helpless
 against the spread of selfish sex chromosome elements. In the case of
 a selfish X chromosome that has achieved appreciable frequency in the population, there will be a strong excess of females
-in the population, such that suppressors of drive can arise on the autosomes
-and spread due the fact that they allele causes the male bearer to
-produces sons and so spread due to Fisherian sex-ratio advantage.
+in the population such that suppressors of drive can arise on the autosomes
+and spread due to the fact that they  cause the male bearer to
+produces some sons and so spread due to Fisherian sex-ratio advantage.
 This has happened in the case of the Winters sex chromosome system. An
 autosomal allele has spread through the population that suppresses the
 selfish X chromosome, restoring the 50/50 sex ratio. Now the sex ratio
 distorter can only be found by crosses to naive populations, where the
 supressor has not spread yet. The autosomal supressor gene turns out to be
-a duplicate of the selfish dox gene,{\it NMY} (Not Much Yang), that moved to the
+a duplicate of the selfish dox gene,{\it NMY} ({\it Not Much Yang}), that moved to the
 autosome through retrotransposition and now blocks the action of dox
-through RNA-interference degradation of the dox transcript \citep[see
+through RNA-interference degradation of the dox transcript \citep[
 ][, see Figure \ref{fig:dox_cartoon}]{tao2007sex}.
 %https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004822
 
@@ -1536,31 +1552,30 @@ through RNA-interference degradation of the dox transcript \citep[see
 
 
 Chromosomes transmitted maternally, i.e. only through mothers, also have divergent
-interests from the individual. Many plants are hermaphrodite producing
-both pollen and seeds. But from the perspective on the Mitochondria in
+interests from the individual. Many plants are hermaphrodites producing
+both pollen and seeds. But from the perspective of the Mitochondria in
 an individual, pollen is a waste of energy as the Mitochondria won't
 be transmitted through it. Thus a mutation that arises on the
-Mitochondria abolishing male sexual function, pollen, and shunting energy into
-other processes, can spread as this selfish outcome is favourable from the perspective
-of the mitochondrial allele.  \begin{marginfigure}
+Mitochondria abolishing male sexual function (pollen) and shunting energy into
+other processes can spread.  \begin{marginfigure}[-3cm]
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Silene_vulgaris/20184393949_9e22db5ff4_k.jpg}
 \end{center}
 \caption{Bladder Campion  ({\it Silene vulgaris}), on left, has both 
-hermaphrodite and female plants due to a CMS and nuclear
+hermaphrodite and female plants due to CMS and nuclear
 restorer polymorphisms \citep{charlesworth1998male}. ({\it
     S. nutans} on right) \BHLNC{Billeder af nordens flora
     (1917). Mentz, A}{https://archive.org/stream/billederafnorden02ment/\#page/n160/mode/1up}{The LuEsther T Mertz Library, the New York Botanical Garden} } \label{fig:Hypolimnas_bolina}
 \end{marginfigure}  % https://archive.org/stream/billederafnorden02ment/#page/n160/mode/1up
 
-The self spread of a CMS allele creates a population
+The self spread of a Cytoplasmic Male
+Sterility (CMS) allele creates a population
 of females and hermaphrodite plants (a gynodioecious population).
 %\sidenote{this mixed population is called a gynodioecious population},
 This strong excess of female plants in
 turn can select for the spread of autosomal suppressors of CMS that are
 favoured by producing the rarer gamete (pollen), and so restore the
-population to hermaphroditism.  The spread of such Cytoplasmic Male
-Sterility (CMS) alleles, and subsequent autosomal suppression, is thought to be common in hermaphrodite
+population to hermaphroditism.  The spread of such CMS alleles, and subsequent autosomal suppression, is thought to be common in hermaphrodite
 species and often uncovered in crosses between diverged hermaphrodite populations.
 The discovery or deliberate creation of CMS alleles in agricultural plants is
 prized because it gives breeders more control over hybridization as
@@ -1595,11 +1610,11 @@ lower penetrance in women). One such LHON mutation is present at low
 frequency in the Quebec population. The  Qu{\'e}b{\'e}cois population grew
 rapidly from a relatively small number of founders, leading to the
 prevalence of some disease mutations due to the founder effect. Thanks to the detailed
-genealogical records kept by French Canadian since the founding of
+genealogical records kept by French Canadians since the founding of
 Quebec, we know that nearly all the Qu{\'e}b{\'e}cois LHON alleles are
-descended from the mitochondria of a single woman, one of the fille du roi, who arrived in Quebec City
+descended from the mitochondria of a single woman, one of the {\it fille du roi}, who arrived in Quebec City
 in 1669 \citep{laberge2005fille}.  Using the genealogy, \citet{milot2017mother} tracked all
-of her mitochondrial descendents, individuals who's mother was in her
+of her mitochondrial descendents, individuals whose mothers were in her
 matrilineal line, and so identified all the individuals in the
 Qu{\'e}b{\'e}cois who carried this allele.
 There was no significant difference in the fitness of females who
@@ -1615,7 +1630,7 @@ would be the frequency today? [assume there are $\sim$29 years a generation]
 
 \begin{question}
 Kin selection has been proposed as a way that the male deleterious
-effects of mitochondrial mutation could be removed from the
+mitochondrial mutations could be removed from the
 population. Can you explain this idea?
 \end{question}  
 
@@ -1654,7 +1669,7 @@ to a child, therefore there can be competition to be in gamete transmitted to th
 \includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/ascus_spore_killer/Grognet_spore_killer.png}
 \end{center}
 \caption{
-Pictures of P. anserina asci from various crosses. The arrow in the
+Pictures of {\it P. anserina} asci from various crosses. The arrow in the
 SxT picture shows a rare  ascus carrying all four products of
 meiosis. Figure from \citet{grognet2014genes}, \PLOSccBY. 
  } \label{fig:spore_killer}
@@ -1679,8 +1694,7 @@ is clear that alleles have spread due to their selfish actions.
 \end{center}
 \caption{
    The two copies of a chromosome are shown in red and blue through
-   the process of female and male meiosis and gametogenesis.  Crossovers are omitted to keep things simpler, they should occur between
-  at least one red and one blue chromosome. 
+   the process of female and male meiosis and gametogenesis.  Crossovers are omitted to keep things simpler. 
 Modified from original to include chromosomes transmitted.
   \BHLNKC{
 Biology; the story of living things (1937).  Hunter, G.W., Walter
@@ -1688,8 +1702,8 @@ H.E.}{https://archive.org/stream/biologystoryofli00hunt/\#page/429/mode/1up}{MBL
 \end{figure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
 
 
-A number of well-established genetics systems illustrate how in
-animals and plants how Male and female gametogenesis offer different
+A number of well-established genetics systems illustrate in
+animals and plants how male and female gametogenesis offer different
 opportunities for selfish alleles (Figure \ref{fig:gametogenesis_male_female}). Just as how selfish X chromosome systems can spread by
 targeting sperm that carry the Y chromosome, selfish autosomal alleles
 can spread by targeting sperm carrying the other chromosome in
@@ -1704,8 +1718,8 @@ meiosis all four products of meiosis become gametes.
 However, only 1 of the four products of female meiosis becomes the egg, the other 3 products
 are fated to become the polar bodies. Thus alleles can cheat in female meiosis by preferentially getting
 transmitted into the egg rather than the polar body. If an allele on
-red chromosome can manipulate any asymmetry of meioses so that i can be
-present in the egg $>50\%$ of the time it will be a transmission
+a red chromosome (in top panel of Figure \ref{fig:gametogenesis_male_female}) can manipulate any asymmetry of meioses so that it can be
+present in the egg $>50\%$ of the time it will have a transmission
 advantage in female heterozygotes. 
 
  \begin{marginfigure}
@@ -1734,7 +1748,7 @@ Imagine a randomly-mating population of hermaphrodites. In this
 population, a derived allele (D) segregates that distorts transmission
 in its favour over the ancestral allele (d) in the production of all
 the gametes of heterozygotes. The drive leads to a fraction $\alpha$ of the gametes
-of heterozygotes (D/d) to carry the D allele ($alpha \geq 0.5$). The D allele
+of heterozygotes (D/d) to carry the D allele ($\alpha \geq 0.5$). The D allele
 causes viability problems such that the
 relative fitnesses are $w_{dd}=1$, $1 > w_{Dd} \geq w_{DD}$. If the D allele
 is currently at frequency p in the population at birth, its frequency
@@ -1761,9 +1775,9 @@ driver invade the population? Can a polymorphic equilibrium be maintained?\\
 
 Many of the known autosomal drive systems are polymorphic in
 populations, unable to reach fixation in the population due to their
-costs in homozygotes. It seems like that this represents an
-ascertainment bias, and that many over selfish systems, which had
-lower selective costs, have swept to
+costs in homozygotes. It seems likely that this represents an
+ascertainment bias, and that many other selfish systems that had
+lower selective costs have swept to
 fixation. 
 %mother's curse in people
 % https://www.theatlantic.com/science/archive/2017/09/how-a-fille-du-roy-brought-the-mothers-curse-to-canada/540153/
@@ -1773,12 +1787,12 @@ fixation.
 % BEST ONE https://archive.org/stream/biologystoryofli00hunt/#page/429/mode/1up
 
 \subsection{Appendix: ESS for the sex ratio} \label{ESS_sex_Ratio}
-Let $R$ be the sources and $C_{\mars}$ and $C_{\venus}$ be the cost of
+Let $R$ be the resources available to an individuals and $C_{\mars}$ and $C_{\venus}$ be the cost of
 producing a son and daughter respectively. If our focal mother directs
 $s$ of her effort towards sons and $(1-s)$ of her effort towards
 daughters, she'll produce $\frac{Rs}{C_{\mars}}$ sons and
 $\frac{R(1-s)}{C_{\venus}}$ daughters.  Let's assume that the mean
-reproductive value of daughters is $1$. Given this the average reproductive
+reproductive value of daughters is $1$. Given this, the average reproductive
 value of sons is the average number of matings that a male will have,
 i.e. the ratio $\nicefrac{\# \textrm{~females}}{\# \textrm{~males}}$. So if the population has a sex ratio $s_p$, the fitness of our focal female is
 \begin{equation}
@@ -1786,7 +1800,12 @@ W(s,s_p) = \left( \frac{R(1-s)}{C_{\venus}} \times 1 \right) +  \left( \frac{Rs}
 \end{equation}
 expressing fitness in terms the number of grandkids our focal female is expected to have.
 
-To find the ESS we want a sex ratio $s^*$ for the population that no mutant has higher fitness, i.e. $W(s^*,s^*)> W(s,s^*)$ for $s \neq s^*$, We can find this by
+To find the ESS we want a sex ratio $s^*$ for the population such that
+no mutant has higher fitness. We can write this as as the population
+having strategy $s_p=s^*$, and then seeing what choice of $s^*$ leads
+to $W(s^*,s^*)> W(s,s^*)$ for $s \neq s^*$, i.e. that no new
+strategy ($s$) has higher fitness than the ESS strategy $s*$. We can
+find this ESS $s^*$ by
 \begin{equation}
 \left. \frac{\partial W(s,s_p)}{\partial s} \right\vert_{s^* = s=s_p} = 0
 \end{equation}
