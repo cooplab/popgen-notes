@@ -1,25 +1,24 @@
 \chapter{Interaction of Multiple Selected Loci}
-\gc{Still a work in progress}
-Selection doesn't act on loci in isolation. The fates of selected alleles along the genome can be correlated, due to linkage disequilibrium, particularly for those in tight linkage. In the prior chapter we looked into how selected loci affected neutral loci. Here we'll explore the interaction of multiple selected loci. 
 
-Throughout this chapter we'll see how multi-locus dynamics are key to understanding hypotheses about the evolutionary significance of sexual reproduction, as from a population genetic perspective the primary impact of sex is the independent assortment of chromosomes and recombination. Multi-locus dynamics are also often key to understanding how new species arise. From a population genetics perspective species are sets of traits and alleles held together by assortative mating and selection. 
+Selection doesn't act on loci in isolation. The fates of selected alleles along the genome can be correlated, due to linkage disequilibrium, particularly for those in tight linkage. In the prior chapter we looked into how selected loci affected neutral loci. Here we'll explore the interaction of multiple selected loci. Throughout this chapter we'll see how multi-locus dynamics are key to understanding hypotheses about the evolutionary significance of sexual reproduction, as from a population genetic perspective the primary impact of sex is the independent assortment of chromosomes and recombination. Multi-locus dynamics are also often key to understanding how new species arise and are maintained. From a population genetics perspective, species are sets of traits and alleles held together by assortative mating and selection.
+
 Models involving many selected loci can be very hard to analyze. Luckily for us many of the key insights of the interaction of selection and recombination can be understood in relatively intuitive terms, and demonstrated using two locus models. 
 
 \section{Why sex?}
 The vast majority of eukaryotic organisms reproduce sexually. Sexual reproduction, the fusion of two cells to form a zygote  ({\it syngamy}) followed by meiosis, represents an ancient feature of eukaryotes. However, the ubiquity of sex is not just due to sex being a fixed ancestral state of eukaryotes. Many eukaryotic species are not obligately sexual and can reproduce clonally (i.e. asexually), e.g. vegetative growth in plants. However, they will only do so for a few generations. There are even asexual vertebrate lineages. For example, there is a parthenogenic species of whiptail lizard ({\it Aspidoscelis uniparens}), where every individual in the species is female.  However, only a small fraction of  eukaryote species are obligate asexuals, and these species appear to be short-lived twigs on the eukaryotic tree of life. 
-Sex is confined to eukaryotes but most non-eukaryotic species have some form of genetic exchange where genetic material is acquired and incorporation into their genomes via a range of mechanisms. 
+Sex is confined to eukaryotes but most non-eukaryotic species have some form of genetic exchange where genetic material is acquired and incorporation into their genomes via a range of mechanisms. These non-eukaryotic mechanisms often seem to have evolved in part because they facilitate genetic exchange 
 
 \paragraph{The costs of sex.}
 Three broad costs of sex have often been hypothesized:
 \begin{enumerate}
-\item  Finding and attracting a mate are costly and may be impossible, and mating can be dangerous.
-\item  Why risk breaking it up a winning genotype? If you've managed to survive to reproduce you're genotype likely can't be a terrible fit to the environment. But if you engage in sexual reproduction, i.e. meiosis, you're shuffling up your genome with that of your partner. There's no guarantee that this new genotype will work well in the current environment. 
+\item  {\emph The cost of mating}. Finding and attracting a mate are costly and may be impossible, and mating can be dangerous.
+\item  {\emph The cost of recombination.} Why risk breaking it up a winning genotype? If you've managed to survive to reproduce you're genotype likely can't be a terrible fit to the environment. But if you engage in sexual reproduction, i.e. meiosis, you're shuffling up your genome with that of your partner. There's no guarantee that this new genotype will work well in the current environment. 
 \item The  {\emph two-fold cost of sex} \citep{smith1971origin}. The offspring of sexual organisms have two parents. Therefore, sexual parents only contribute half of their genome to their offspring. While asexual organisms contribute their entire genome to the next generation. Thus a sexual organism has to have twice as many children to leave the same number of copies of their genome to the next generation. That might be doable if both sexual parents were equally committed to contributing to those offspring. However, that is rarely the case. This cost is sometimes called the {\emph two-fold cost of males}, as males often provide little in terms of resources to their children. Thus any allele that makes its host asexual should initially spread all else being equal. 
 \end{enumerate}
-Yet sex and other forms of genetic exchange persist, despite these short-term advantages to asexual reproduction. Indeed asexual lineages sometime arises and spread within sexual populations due to these advantages. 
+Yet sex and other forms of genetic exchange persist, despite these short-term advantages to asexual reproduction. Indeed asexual lineages often arise and spread within some sexual populations due to these advantages. 
 
 \paragraph{The benefits of sex.}
-Numerous benefits to sexual reproduction have been suggested. 
+Numerous benefits to sexual reproduction have been suggested. Throughout this chapter we'll encounter a range of models that touch on the advantages of sex. We'll see that selection allows beneficial alleles to shed their background of deleterious alleles as they sweep through the population. In the absence of sex and recombination, beneficial alleles can block each other's progression to fixation, so called `clonal interference'. A major advantage of sex is that beneficial alleles can be brought together on the same genetic background via recombination, allowing faster rates of adaptation.  
 
 \section{A two locus model of selection and recombination.}
 Consider two biallelic loci segregating for $A/a$ and $B/b$. There are four haplotypes, $AB$, $Ab$, $aB$, $ab$, which for simplicity we label 1-4. The frequency of our four haplotypes are $x_1$, $x_2$, $x_3$, and $x_4$. Each individual has a genotype consisting of two haplotypes; we label $w_{ij}$ the fitness of an individual with the genotype made up of haplotype $i$ and $j$ (we assume that $w_{ij}=w_{ji}$, i.e. there are no parent of origin effects). Assuming that these fitnesses reflect differences due to viability selection, and that individuals mate at random, we can write the following table of our genotype proportions after selection:\\
@@ -63,9 +62,9 @@ So the change in the frequency of a haplotype (e.g. AB, haplotype 1) is determin
 
 \section{Types of interaction between selection and recombination}
 Throughout the rest of the chapter we'll discuss some general forms to the interactions between selected loci and how recombination plays into either facilitating or hindering selection. 
-To illustrate these ideas we make use of Muller diagrams \citep{muller1932some}, where we visualize the allele dynamics in terms of a plot of the stack frequencies over time. All of our simulations use the same basic two locus dynamics given by eqn \eqref{eqn:two_loc_sel}. To keep things simpler we just discuss through the qualitative dynamics of these models, but many of these have been investigated in much more depth.
+To illustrate these ideas we make use of Muller diagrams \citep{muller1932some}, where we visualize the allele dynamics in terms of a plot of the stack frequencies over time. All of our simulations use the same basic two locus dynamics given by eqn \eqref{eqn:two_loc_sel}. To keep things simpler we just discuss through the qualitative dynamics of these models, but many of these models have been investigated in much more depth.
 
-\paragraph{The hitchhiking of neutral alleles}
+\subsection{The hitchhiking of neutral alleles}
 \begin{figure}
 \begin{center}
   \includegraphics[width = 0.9 \textwidth]{figures/selection_recom_interaction/Neutral_Hitchhiking_labeled.pdf}
@@ -74,7 +73,7 @@ To illustrate these ideas we make use of Muller diagrams \citep{muller1932some},
 \end{figure}
 Let's start by revisiting our neutral hitchhiking in this two locus setting in the previous chapter we saw that neutral alleles can hitchhike along with our selected allele if they are tightly linked enough. Figure \ref{fig:Neutral_HH}  shows the frequency trajectories of the various haplotypes for neutral allele ($A$) that is present at $10\%$ frequency in the population when our beneficial allele ($B$) arises on its background. When the recombination rate ($r$) is low between the loci, $A$ gets to hitchhike to high frequency, but for higher recombination rates it only gets dragged to intermediate frequencies. For the highest recombination rate shown ($r \approx s$) the neutral allele's dynamics ($p_{Ab}+p_{AB}$) are barely changed at all, as it recombines on and off the sweeping allele frequently and so barely perceives the sweep. 
 
-\paragraph{The hitchhiking of deleterious alleles}
+\subsection{The hitchhiking of deleterious alleles}
 Deleterious alleles can also hitchike along with beneficial mutations if they are not too deleterious compared to the benefits offered by the selected allele. Again our allele $A$ is at $10\%$ frequency in the population in Figure \ref{fig:deleterious_HH}, but this time it is deleterious and so initially decreasing in frequency across the generations when the beneficial mutation ($B$) arises on its background. If the loci are tightly linked, and A were too deleterious, B would never get to take off in the population.   However, if the benefits of B outweighs the cost of A, even in the case of no recombination between our loci, allele $A$ gets to hitchhike to fixation and merely slows down $B$'s rate of increase and their combined fitness is reduced. With moderate amounts of recombination between the loci, our deleterious starts to hitchhike but before it can get to fixation the beneficial allele manages to recombine off its background. This recombinant aB haplotype, which has higher fittest as it lacks the deleterious allele, now sweeps through the population displacing the AB haplotype. For higher recombination events we have to wait less long for a recombination to breakup the hitchhiking deleterious allele, so the adaptive allele easily escapes its background.
 For the purposes of illustration here we've used a relatively common deleterious allele, but in reality these alleles will likely be often be rare in the population and at mutation selection balance. If they are rare it is likely that a beneficial mutation arises on a specific deleterious allele's background, but as we have seen there are likely going to be many rare deleterious alleles in the population so it is likely that a beneficial mutations may often have to contend with deleterious hitchhikers. 
 \begin{figure}
@@ -91,7 +90,7 @@ For the purposes of illustration here we've used a relatively common deleterious
 \end{center}
 \caption{Interference between two positively selected alleles. {\bf Left)} the red and blue (A and B) beneficial alleles arise on different haplotypes. They rise in frequency, but in the absence of recombination only one can fix. This is shown in a Muller diagram, where $p_{AB}$ is initially set to zero. {\bf Right)} In the presence of recombination the population can generate the recombinant (AB) haplotype, which can subsequently fix.} \label{fig:Interference}  %é
 \end{figure*}
-\paragraph{Clonal interference between favourable alleles.}
+\subsection{Clonal interference between favourable alleles.}
 When rates of sex and recombination are zero, or very low, positively selected alleles can prevent each other reach fixation and so the rate of adaptation can be slowed.
 In the absence of sex and recombination, when two positively selected alleles arise on different genetic backgrounds in the population they cannot both fix (left side of Figure \ref{fig:Interference}). They can initially increase in frequency, but neccessarily compete with each other when they become common. This is called selective interefence, or sometime clonal interference. If one of the alleles has a much larger selection coefficient it will fix, forcing the other allele from the population, but when they are relatively equally matched it may take some time for this situation to resolve itself resulting in a traffic jam in the population. Thus in an asexual adaptive alleles necessarily have to fix sequentually. However, with even a small amount of recombination beneficial alleles can recombine on to each others background, allowing them to fix in parallel (right side of  Figure \ref{fig:Interference}).   
 
@@ -107,13 +106,43 @@ Given the rapid evolution of HIV we can see interference taking place over very 
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/recom_selection/Pleuni_HIV_interference/DdweQyxU0AA7mXe.jpg}
 \end{center}
-\caption{Muller plot of the drug resistance interference dynamics from Figure \ref{fig:HIV_interference}. Figure from \citet{Williams548198}, \PLOSccBY.} \label{fig:HIV_interference_M}  %é
+\caption[][3cm]{Muller plot of the drug resistance interference dynamics from Figure \ref{fig:HIV_interference}. Figure from \citet{Williams548198}, \PLOSccBY.} \label{fig:HIV_interference_M}  
 \end{figure}
 
+\subsection{Epistatic combinations of alleles and the cost of recombination.}
+%Love, love will tear us apart again
+Recombination comes at a cost. While recombination can bring beneficial combinations of alleles together, it will also tear them apart. To see this imagine a pair of alleles A and B at two loci that work very well together, and offer a fitness advantage over the ancestral combination of allele a and b. You could for example imagine that A and B are changes in a protein and its receptor, and that they offer a much more efficient signalling response. However, imagine that A doesn't work with b, nor does the allele a work well with B. You could imagine that perhaps that the protein made by allele A gums up the receptor b, and similarly for the other the other combination.
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/Epistasis_vs_recom.pdf}
+\end{center}
+\caption{} \label{fig Epistasis_vs_recom}  
+\end{figure}
 
-\paragraph{An example of the costs of asexuality.}
+The haplotype AB can spread from low frequency if recombination doesn't break it apart at too high a rate. When recombination rates are higher, recombination prevents either the A or the B allele from spreading because recombination swops the A allele from the B background onto the b background, where it suffers low fitness (and similarly for the B allele). The ab haplotype doesn't suffer the same consequence because it is in the majority, so when recombination occurs the a allele is usually recombined back on to the b background with no consequence. Thus recombination can prevent the spread of beneficial epistatic combinations of alleles. We'll look into this more when we discuss the evolution of recombination suppressors in Section \ref{epistasis_inversion}.
+
+\subsection{Muller's ratchet}
 
 \begin{marginfigure}[-3cm]
+\begin{center}
+  \includegraphics[width = 0.75 \textwidth]{illustration_images/multiple_sel_loci/ratchet/1200px-Sperrklinke_Schema.pdf}
+\end{center}
+\caption{A Ratchet. A cog (b)  with asymmetric teeth that can only turn one way as the pawl (a) prevents it turning the other way. \newline \noindent \tiny{Original sketch from Brockhaus Konversations-Lexikon, Vol. 10, 1894, page 420. Georg Wiora (reworked by Dr. Schorsch). From \href{https://commons.wikimedia.org/wiki/File:Sperrklinke\_Schema.jp2}{wikimedia}. Licensed under CC
+    BY-2.0 } } \label{Fig:Ratchet}  
+\end{marginfigure}
+There is a constant influx of deleterious mutations along any chromosome (red alleles in Figure \ref{Fig:Mullers_Ratchet}). In asexual populations, or regions of the genome lacking recombination, this leads to nearly inevitable decrease in fitness due to the loss of high fitness haplotypes from `Muller's ratchet' \citep{muller1964relation}.
+
+Different haplotypes vary in the number of deleterious alleles they carry. The haplotypes carrying the most deleterious alleles can  be lost by drift, and by selection acting against them, but haplotypes carrying high numbers of deleterious alleles are easily recreated by mutations. The converse can also happen, if the selection against these each deleterious alleles is relatively weak, the population can accidentally loose the haplotype carrying the least number of deleterious alleles (middle panel of Figure \ref{Fig:Mullers_Ratchet}). \begin{marginfigure}[0cm]
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/Mullers_Ratchet.pdf}
+\end{center}
+\caption{A cartoon of haplotypes at three time points showing the action of Muller's ratchet in an asexual population.} \label{Fig:Mullers_Ratchet}  
+\end{marginfigure} Once we have lost this haplotype it is hard to recreate, as that would require unlikely back mutations to remove the deleterious mutations from the population. Once we loose the least deleterious haplotype, we have ratcheted up the mean deleterious mutations in the population and ratcheted down the mean fitness of the population. This will keep happening, by chance we can keep loosing the haplotype with fewest deleterious alleles (bottom left panel of Figure \ref{Fig:Mullers_Ratchet}). Thus number of deleterious alleles carried in our asexual population will gradually increase. This may eventually doom asexual population to extinction, as their mean fitness declines over time.
+
+In a sexual population, the same process can start. We can loose by chance the haplotype with the fewest deleterious mutations (middle right panel of Figure \ref{Fig:Mullers_Ratchet}). However, recombination among deleterious haplotypes can recreate this haplotype carrying few deleterious alleles. Such a crossover is shown as a red X in the middle right panel of  Figure \ref{Fig:Mullers_Ratchet}, and the resulting recombinant haplotype few of deleterious is shown in the lower right panel. Therefore, Muller's ratchet doesn't tick forward in sexual populations, as even a small amount of recombination is enough to stop its progression.  
+\subsection{An example of the costs of asexuality.}
+
+\begin{marginfigure}[0cm]
 \begin{center}
   \includegraphics[width = \textwidth]{figures/Reciprocal_translocations_Hollister.pdf}
 \end{center}

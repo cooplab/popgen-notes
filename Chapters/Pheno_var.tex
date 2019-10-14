@@ -602,7 +602,7 @@ For example, assume your mother transmitted an allele 1 to you: with probability
 
 Now consider an autosomal biallelic locus $\ell$, with frequency $p$ for allele 1, and
 genotypes $0$, $1$, and $2$ corresponding to how many copies of allele
-1 individuals carry. We'll denote the mean phenotype of an individual
+$1$ individuals carry. We'll denote the mean phenotype of an individual
 with genotype $0$, $1$, and $2$ as $\overline{X}_{\ell,0}$,
 $\overline{X}_{\ell,1}$, $\overline{X}_{\ell,2}$ respectively. This mean is
 taking an average phenotype over all the environments and genetic backgrounds the alleles
@@ -633,8 +633,8 @@ MC phenotype would be
 %The additive MC genetic values (breeding values) of genotype 0, 1, and
 %2 are then
 
-Let's now consider the average phenotype of an offspring of each of our
-three genotypes
+Let's now consider the average phenotype of an offspring by how many
+copies of the allele $1$ they carry
 \begin{center}
 \begin{tabular}{cccc}
 genotype: & 0, & 1, & 2.\\
@@ -653,10 +653,11 @@ in each genotype and ignoring any non-additive effects of genotype.
 \begin{center}
 \includegraphics[width=\textwidth]{figures/additive_effect.pdf}
 \end{center}
-\caption{The average mean-centered (MC) phenotypes of each genotype. 
+\caption{The average mean-centered (MC) phenotypes plotted against the
+  number of allele $1$ carried (from $0$ for $22$ to $2$ for $11$). 
 {\bf Top Row:} Additive relationship between genotype and phenotype. 
 {\bf Bottom Row:} Allele 1 is dominant over allele 2, such that the
-heterozygote has the same phenotype as the $22$ genotype ($2$). 
+heterozygote has the same phenotype as the $11$ genotype. 
 The area of each circle is proportion to the fraction of
 the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
 One the left column $p=0.1$ and the right column is $p=0.9$.
@@ -711,7 +712,17 @@ heterozygotes into homozygotes (11), who have the same mean phenotype as each ot
 \end{marginfigure}
 
 
-As as an example of how dominance and population allele frequencies can change the additive effect of an allele, let's consider the genetics of the age of sexual maturity in Atlantic Salmon. A single allele of large effect segregates in Atlantic Salmon that influences the sexual maturation rate in salmon \citep{ayllon2015vgll3,barson2015sex}, and hence the timing of their return from the sea to spawn (sea age). The allele falls close to the autosomal gene VGLL3 \citep[variation at this gene in humans also influences the timing of puberty]{cousminer2013genome}. The left side of Figure \ref{fig:salmon_add_dom} shows the age at  sexual maturity in males. The allele (E) associated with slower sexual maturity is recessive in males. While the LL homozygotes mature on average a whole year later, the additive effect of the allele is weak while the L allele is rare in the population. The right panel shows the effect of the L allele in females. Note how the allele is much more dominant in females, and has a much more pronounced additive effect. The dominance of an allele is not a fixed property of the allele but rather a statement of the relationship of genotype to phenotype, such that the dominance relationship between alleles may vary across phenotypes and contexts (e.g. sexes). %\erin{there are no black vertical arrows as referred to in the caption for the salmon dominance figure} 
+As as an example of how dominance and population allele frequencies
+can change the additive effect of an allele, let's consider the
+genetics of the age of sexual maturity in Atlantic Salmon. A single
+allele of large effect segregates in Atlantic Salmon that influences
+the sexual maturation rate in salmon
+\citep{ayllon2015vgll3,barson2015sex}, and hence the timing of their
+return from the sea to spawn (sea age). The allele falls close to the
+autosomal gene VGLL3 \citep[variation at this gene in humans also
+influences the timing of puberty]{cousminer2013genome}. The left side
+of Figure \ref{fig:salmon_add_dom} shows the age at  sexual maturity
+in males. The L allele associated with slower sexual maturity is recessive in males. While the LL homozygotes mature on average a whole year later, the additive effect of the allele is weak while the L allele is rare in the population. The right panel shows the effect of the L allele in females. Note how the allele is much more dominant in females, and has a much more pronounced additive effect. The dominance of an allele is not a fixed property of the allele but rather a statement of the relationship of genotype to phenotype, such that the dominance relationship between alleles may vary across phenotypes and contexts (e.g. sexes). %\erin{there are no black vertical arrows as referred to in the caption for the salmon dominance figure} 
 
 
 
