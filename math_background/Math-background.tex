@@ -112,7 +112,7 @@ local maxima of the function, and negative for local minima of the function.
 
 
 %\marginnote{A Taylor series writes a function $$
-\subsection{Approximating functions by Taylor Series.}
+\subsection{Approximating functions by Taylor Series.} \label{Appendix:taylor_series}
 A wonderful thing about derivatives is that they allow us to approximate
 complicated, nonlinear functions by linear functions (this is called a first-order
   Taylor approximation). Namely, a
@@ -345,7 +345,7 @@ the conditional probability you calculated in Question
  \end{question}
 
 
-\subsection*{Expectation of a Random Variable}
+\subsection{Expectation of a Random Variable}\label{appendix:expectation}
 
 The  \emph{expectation
   of a random variable} is the point at which the distribution is
@@ -385,12 +385,15 @@ A particularly important choice of $f$ is $f(x)=(x-\mu)$. In this case,
 is the  \emph{variance of $X$} which measures the mean deviation
 squared around the mean i.e. ``the spread around the mean''. $\sigma$
 (i.e. the square root of the variance) is the standard deviation of
-$X$.\sidenote{We can compute the sample variance as
+$X$.
+We can compute the sample variance as
 \begin{align}
-  \widehat{\sigma^2}  &= \frac{1}{L-1} \sum_{i=1}^L (X_i - \bar{X})^2 % \nonumber\\
+  \widehat{\sigma^2}  &= \frac{1}{L-1} \sum_{i=1}^L (X_i -
+                        \bar{X})^2 \label{eqn:sample_var} % \nonumber\\
 %  &= \left( \frac{1}{L-1} \sum_{i=1}^L X_i^2 \right) - \bar{X}^2
   \end{align}
-}
+
+
 Note that the units of our variance will be the units of $X^2$,
 e.g. if $X$ is height measurements in cm the variance will have units
 cm$^2$. One reason that the standard deviation is a more intuitive
@@ -448,7 +451,7 @@ We can recover our total expectation from the conditional expectations
 by taking the sum of our conditional expectation over the values that
 $Y$ could take, weighting each by their probability
 \begin{equation} 
-\E[X] = \sum_{j=1}^M \E[X|Y=y_j] \P(Y=y_j)
+\E[X] = \sum_{j=1}^M \E[X|Y=y_j] \P(Y=y_j)  \label{eqn:tot_exptation_def}
  \end{equation}
 this is the law of total expectation, the analog to the law of total
 probability (eqn \eqref{eqn:law_tot_prob}). We can write this law more
@@ -469,7 +472,7 @@ Important discrete random variables include
 \item[Binomial]  random variables count the number $X$ of heads when
   flipping a coin $n$ times whose probability of being heads is $p$. In which case, 
 \begin{equation}
-  p_i = \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \qquad 0\le i \le n.
+  p_i = \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \qquad 0\le i \le n. \label{eqn:binomial_dist}
 \end{equation}
 For a binomial random variable, $\E[X]=np$ and
 $\sigma^2=np(1-p)$. Examples are shown in Figure \ref{Fig:binomial}, Note how the mass of the
@@ -483,7 +486,7 @@ variable in the notes).
 
 \item[Geometric] random variables count the total number of flips $X$ before seeing a heads on a coin with probability $p$ of being heads. In which case, 
 \begin{equation}
-p_i =p (1-p)^{i-1} \qquad i=1,2,\dots
+p_i =p (1-p)^{i-1} \qquad i=1,2,\dots \label{eqn:geometric_def}
 \end{equation}
     \begin{marginfigure}
  \begin{center}
@@ -536,7 +539,7 @@ p_i = \lambda^i e^{-\lambda}/i!
          \frac{\lambda}{n}\right)^{n-i} \nonumber\\
    & = \lim_{n\to\infty} \frac{n^i}{i!} \frac{\lambda^i}{n^i} \left(
      1-\frac{\lambda}{n}\right)^n \nonumber\\
- &=  \lim_{n\to\infty} \frac{\lambda^i}{i!} e^{-\lambda}
+ &=  \lim_{n\to\infty} \frac{\lambda^i}{i!} e^{-\lambda}  \label{eqn:bionom_to_poiss}
  \end{align}
 The third line assumes that $n-i \approx n$, which holds for $n \gg
 i$, and uses our
@@ -560,7 +563,8 @@ p(x)=\frac{1}{b-a} \mbox{ for }x\in[a,b]\mbox{ and } 0 \mbox{ otherwise.}
 For a uniform random variable $\E[X]=(a+b)/2$.
 \item[Exponential] random variables with rate parameter $\lambda>0$ correspond to the waiting time for an event which occurs with probability $\lambda \Delta t$ over a time interval of length $\Delta t$. For these random variables
 \begin{equation}
-p(x)= \lambda \exp(-\lambda x) \mbox{ for }x\ge 0 \mbox{ and } 0 \mbox{ otherwise.}
+p(x)= \lambda \exp(-\lambda x) \mbox{ for }x\ge 0 \mbox{ and } 0
+\mbox{ otherwise.}  \label{eqn:exp_rv_def}
 \end{equation}
 For an exponential random variable $\E[X]=1/\lambda$. \marginnote{The Exponential
 distribution is the continuous-time version of the Geometric
@@ -619,7 +623,7 @@ a heart and $b$ it being any other suit. So $XY=1$ if our card is a
 Queen or Jack of Hearts, and zero otherwise. Then
 \begin{eqnarray}
   \E[XY] - \E[X]\E[Y] &= \P(X=A,~Y=B) -  \P(X=A) \P(Y=B)
-                        & p_{AB} - p_{A} p_{B}
+                        & p_{AB} - p_{A} p_{B} \label{eqn:binary_covar}
  \end{eqnarray}
 where $p_{AB}$ is the frequency of $AB$, eg. the proportion of cards
 that are the Queen or Jack of hearts in our deck, and $p_{A}$ is the
@@ -629,7 +633,8 @@ that are the Queen or Jack of hearts in our deck, and $p_{A}$ is the
 \begin{question}
 What is the covariance for $A$ and $B$ in our deck of cards example? 
 \end{question}
-  
+
+\graham{Added thing 1 and thing2 eg?}
 \paragraph{Sample Covariance and Correlation} 
 We can calculate the \emph{sample covariance} for $X$ and $Y$ of a set of observations
 of $X_1, \cdots, X_L$ and $Y_1, \cdots, Y_L$, where these observations

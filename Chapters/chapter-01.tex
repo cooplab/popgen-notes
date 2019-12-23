@@ -198,6 +198,9 @@ is $p^2$. This probability is also the expected frequencies of the $A_1A_1$
 homozygote in the population. The expected frequency of the three possible
 genotypes are
 
+\marginnote{Throughout this chapter we'll be making use of the basic
+  rules of probability to find the probabilities of combinations of
+  events, e.g. the alleles found in an individual, see Appendix \ref{Section_rules_prob} for a refresher.}
 
 %\begin{table}[htp!]
 \begin{center}
@@ -221,7 +224,9 @@ bears aren't hybrids with polar bears, nor are they albinos. They are
 homozygotes for a recessive change at the MC1R gene. Individuals who
 are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
 
-\begin{marginfigure}
+\begin{marginfigure}    %%%New Kermode_bear
+                        %%%https://twitter.com/BioDivLibrary/status/1191354772034592774/photo/3
+                        %%%page 77 https://www.biodiversitylibrary.org/item/38166?utm_source=Twitter&utm_medium=social+media&utm_term=&utm_content=MBLWHOI&utm_campaign=Mammal+Monday#page/114/mode/1up
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/Kermode_bear/Kermode_bear.jpg}
 \end{center}
@@ -815,7 +820,6 @@ They were extirpated in the wild during the mid-1900s due to hunting, and the re
 
   \paragraph{Genomic blocks of homozygosity due to inbreeding.}
 
-
 As we saw above, close relatives are expected to share alleles IBD in
 large genomic blocks. Thus, when related individuals mate and transmit
 alleles to an inbred offspring, they transmit these alleles in big
@@ -832,7 +836,10 @@ red region.
   \begin{center}
     \includegraphics[width= 0.75 \textwidth]{figures/sharing_relatives/first_cousin_offspring.pdf}
 \end{center}
-\caption{.} \label{fig:kid_first_cousins}
+\caption{A pedigree showing the offspring of first cousins. The
+  chromosomes of their great-grandparents are coloured different colours
+so their transmission can be tracked. The child is homozygous by
+descent (HBD) for a section of the red chromosome.} \label{fig:kid_first_cousins}
 \end{figure}
 The inbreeding coefficient of the child sets the proportion of their
 genome that will be in these autozygous segments. For example, a child
@@ -982,10 +989,10 @@ where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$. It follows that the  average heterozygosity of the
 sub-populations $\bar{H}_S  \leq
-H_T$, \sidenote[][-4cm]{This observation that the average
+H_T$, and so $\fst \geq 0$ and $\fis \leq \fit$. This observation that the average
   heterozygosity of the sub-populations must be less than of equal to
   that of the total
-  population is called the Wahlund effect.} and so $\fst \geq 0$ and $\fis \leq \fit$. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
+  population is called the Wahlund effect. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above).
 \sidenote[][-2cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
 
@@ -1071,7 +1078,14 @@ pairs of alleles found in an individual, divided by the expected variance under
 binomial sampling. Thus, $F$-statistics can be understood as the correlation
 between alleles drawn from a population (or an individual) above that expected
 by chance (i.e.\ drawing alleles sampled at random from some broader
-population).\\
+population). \sidenote[][-2cm]{To see why the numerator of eqn
+  \eqref{eqn:Fascorr} is the covariance of a discrete
+  random variable see Appendix eqn. \eqref{eqn:binary_covar}, where we
+imagine that the random variable is $1$ if the alleles drawn from the
+population are the same
+and $0$ if not. The denominator is the binomial variance of a sample
+of two, and so our eqn is a covariance divided by a variance and so
+interpretable as a correlation (see eqn \eqref{eqn:def_corr})}\\
 
 We can also interpret $F$-statistics as proportions of variance explained by
 different levels of population structure. To see this, let us think about $\fst$ averaged over $K$
@@ -1079,15 +1093,19 @@ subpopulations, whose frequencies are $p_1,\dots,p_K$. The
 frequency in the total population is $p_T=\bar{p} = \nicefrac{1}{K} \sum_{i=1}^K p_i$.
 Then, we can
 write
-\begin{equation}
-\fst = \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
+\begin{align}
+\fst &= \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
 \bar{p}\bar{q}} = \frac{ \left(\frac{1}{K} \sum_{i=1}^K p_i^2 +
 \frac{1}{K} \sum_{i=1}^K q_i^2 \right) -  \bar{p}^2-\bar{q}^2 }{2
-\bar{p}\bar{q}} = \frac{\mathrm{Var}(p_1,\dots,p_K)}{\mathrm{Var}(\bar{p})},
+       \bar{p}\bar{q}}  \label{eqn:fst_var_middle}\\
+       &= \frac{\mathrm{Var}(p_1,\dots,p_K)}{\mathrm{Var}(\bar{p})},
 \label{eqn:F_as_propvar}
-\end{equation}
+\end{align}
 which shows that $\fst$ is the proportion of the variance explained by the
-subpopulation labels.
+subpopulation labels. \sidenote[][]{This follows because the
+  numerator, in step eqn \eqref{eqn:fst_var_middle}, 
+is the averaged squared frequency minus the squared frequency, i.e. the
+variance (see Appendix eqn \ref{eqn:sample_var}.}
 
 \subsection{Other approaches to population structure}
 
@@ -1151,7 +1169,8 @@ where
 \begin{equation}
 P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})
 \end{equation}
-is the normalizing constant. We interpret $P(\textrm{pop k})$ as the
+is the normalizing constant.\sidenote{See the Appendix
+  \eqref{eqn:Bayes_Rule} for more on Bayes' Rule} We can interpret $P(\textrm{pop k})$ as the
 prior probability of the individual coming from population $k$, and unless
 we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.
 
@@ -1191,7 +1210,8 @@ Eastern  & $0.95$ & $0.2$ \\
 first locus and $bb$ at the second. What is the posterior probability that our
 individual comes from the Western population versus Eastern chimp population?\\[1 em]
 %
-{\bf B)} (Trickier) Lets assume that our individual from part A is a hybrid. At each locus, with probability $q_W$ our individual draws an allele
+{\bf B)} (Trickier) Lets assume that our individual from part A is a
+hybrid (not necessarily an F1). At each locus, with probability $q_W$ our individual draws an allele
 from the Western population and with probability $q_E=1-q_W$ they draw an
 allele from the Eastern population. What is the probability of our individual's
 genotype given $q_W$? \\
@@ -1300,7 +1320,7 @@ the $[i,~j]$ given by
 \frac{1 }{S-1} \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
   2p_{\ell})}{2 p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
 \end{equation}
-Note that this is the covariance, and is very similar to those we
+Note that this is the sample covariance, and is very similar to those we
 encountered in discussing $F$-statistics as correlations (equation
 \eqref{eqn:Fascorr}), except now we are asking about the covariance
 between two individuals above that expected if they were both drawn
@@ -1435,8 +1455,13 @@ Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
 and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
-We can define a covariance between the $A$ and $B$ alleles at our two loci as
-%JRI: sure, but a few lines above you define LD as a correlation so why are you showing us a covariance?
+We can define a covariance between the $A$ and $B$ alleles at our two
+loci\sidenote{Here again we are making use of a covariance of discrete
+random variables, see Appendix eqn \eqref{eqn:binary_covar}, where the
+first variable is drawing haplotype with an $A$ at the first locus,
+and the second is drawing a B allele at the other locus.} as
+%JRI: sure, but a few lines above you define LD as a correlation so
+%why are you shis owing us a covariance?
 \begin{equation}
 D_{AB} = p_{AB} - p_Ap_B
 \end{equation}
@@ -1518,7 +1543,8 @@ r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
 \end{equation}
 As $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
 drawn at random from locus $A$, $r^2$ is the squared correlation
-coefficient.  Note that this $r$ in $r^2$ is NOT the recombination
+coefficient.\sidenote{See Appendix eqn \eqref{eqn:def_corr} for the
+  definition of a correlation coefficient.}  Note that this $r$ in $r^2$ is NOT the recombination
 fraction.   \\
 
 \begin{marginfigure}
