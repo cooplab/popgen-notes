@@ -84,7 +84,7 @@ strength of their LD with the putatively functional SNP.
 \caption{The Manhattan plot zoomed in on the top-hit (red SNPs from Figure
   \ref{fig:Apsen_Manhattan}). SNPs are now coloured by their $D\prime$
   value with the most significant SNP. $D\prime$ is the LD
-  covariance between a pair of loci ($D$) normalized by
+  covariance between a pair of loci ($D$, eqn \eqref{eqn:LD_def}) normalized by
   the largest value $D$ can take given the allele frequencies. Figure from \citet{wang:18},  \PLOSccBY. } \label{fig:Apsen_zoom_Manhattan}
 \end{figure}
 Note how SNPs in strong LD with the functional allele (redder
@@ -268,8 +268,16 @@ due to shared environmental effects. \\
 
 Note that the heritability is a property of a sample from the population in a particular set of environments at a particular time. Changes in the environment may change the phenotypic variance. Changes in the environment may also change how our genetic alleles are expressed through development and so change $V_A$. Thus estimates of heritability are not transferable across environments or populations. 
 
+
+
+ 
 \subsection{The covariance between relatives}
-So we'll go ahead and calculate the covariance in phenotype between two individuals
+People have long been fascinated by the resemblance between relatives,
+particularly twins (see Figure
+\ref{Fig:The_Cholmondeley_Ladies}). Families hold a special place in
+quantitative genetics, as remarkably we can use the
+resemblance between relatives to directly estimate the heritability
+and covariance of traits. To see this we can calculate the covariance in phenotype between two individuals
 ($1$ and $2$) who have phenotypes $X_1$ and $X_2$
 respectively.\sidenote{We'll be dealing with covariance a lot this
   chapter, see math appendix section \ref{section:multi_RV} for more background.} To
@@ -289,21 +297,24 @@ Cov\left((X_{1M}+X_{1P}+X_{1E}),((X_{2M}+X_{2P}+X_{2E}) \right)
 We can expand this out in terms of the covariance between the various
 components in these sums.\\
 
- \begin{figure*}
+\begin{figure}
  \begin{center}
- \includegraphics[width=\textwidth]{figures/Varying_rellys_phenos.pdf}
+ \includegraphics[width=\textwidth]{illustration_images/Quant_gen/Cholmondeley_Ladies/1024px-British_School_17th_century_-_The_Cholmondeley_Ladies_-_Google_Art_Project.jpg}
  \end{center}
- \caption{Covariance of phenotypes between pairs of individuals of a
-   given relatedness. Each point gives the phenotypes of a different
-   pair of individuals. The additive genetic variance is held constant
-   at $V_A=1$, such that the expected covariances ($2F_{1,2}V_A$)
-   should be $1$, $0.5$, $0.25$, and $0.125$ respectively din good agreement with
-   the empirical covariances reported in the title of each graph. The
-   data were simulated as described in
- the caption of Figure \ref{fig:QT1}. The blue line shows $x=y$ and the red
-line shows the best fitting linear regression line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT4.R}}\label{fig:Varying_rellys_phenos}
- \end{figure*}
- 
+
+  \caption{The Cholmondeley Ladies. Unknown British Painter, circa
+    1600. Inscription on bottom left of the painting ``Two Ladies of
+    the Cholmondeley Family, Who were born the same day, Married the
+    same day, And brought to Bed the same day.'' The ladies are
+    thought to be twin sisters, but there's a clue that they're not
+    identical twins. Can you spot it?
+    \newline \noindent  \tiny{  Image from
+      \href{https://commons.wikimedia.org/wiki/File:British_School_17th_century_-_The_Cholmondeley_Ladies_-_Google_Art_Project.jpg}{Wikimedia},
+      considered public domain in the United States, UK
+      \href{https://www.tate.org.uk/art/artworks/unknown-artist-britain-the-cholmondeley-ladies-t00069}{Tate}
+      \textcopyright Creative Commons
+      CC-BY-NC-ND (3.0 Unported)}} \label{Fig:The_Cholmondeley_Ladies}
+   \end{figure}
 
 To make our task easier, we will make two commonly made assumptions:
 \begin{enumerate}
@@ -330,6 +341,21 @@ the sharing of alleles between relatives to obtain these covariance terms.
 But before we write down the general case, let's quickly work through some
 examples. \\
 
+ \begin{figure*}
+ \begin{center}
+ \includegraphics[width=\textwidth]{figures/Varying_rellys_phenos.pdf}
+ \end{center}
+ \caption{Covariance of phenotypes between pairs of individuals of a
+   given relatedness. Each point gives the phenotypes of a different
+   pair of individuals. The additive genetic variance is held constant
+   at $V_A=1$, such that the expected covariances ($2F_{1,2}V_A$)
+   should be $1$, $0.5$, $0.25$, and $0.125$ respectively in good agreement with
+   the empirical covariances reported in the title of each graph. The
+   data were simulated as described in
+ the caption of Figure \ref{fig:QT1}. The blue line shows $x=y$ and the red
+line shows the best fitting linear regression line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT4.R}}\label{fig:Varying_rellys_phenos}
+ \end{figure*}
+ 
 \paragraph{The covariance between identical twins}
 Let's first consider the case of a pair of identical twins from two
 unrelated parents. Our pair of twins share their maternal and paternal
@@ -346,6 +372,13 @@ Cov(X_1,X_2) = Cov((X_{1M},X_{2M})+Cov(X_{1P},X_{2P}) = 2Var(X_{1M})
 Now in general identical twins are not going to be super helpful for
 us in estimating $h^2$, because under models with non-additive effects, identical twins will have higher covariance than we'd expect just based on the alleles they share. This is because identical twins don't just share alleles, they share their entire genotypes, and thus 
 resemble each other in phenotype also because of shared dominance effects. \\
+ \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.pdf}
+ \end{center}
+ \caption{A measure of body fat in pairs of Monozygotic (MZ) and
+   Dizygotic (DZ) twins. Data from \citet{faith1999evidence}, }\label{fig:twins_body_fat}
+ \end{marginfigure}
 
 %% twin bmis https://sci-hub.tw/https://pediatrics.aappublications.org/content/104/1/61.figures-only?sso=1&sso_redirect_count=1&nfstatus=401&nftoken=00000000-0000-0000-0000-000000000000&nfstatusdescription=ERROR%3a+No+local+token
 

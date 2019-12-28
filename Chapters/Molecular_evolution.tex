@@ -194,13 +194,23 @@ differences separating our pair of species is simply $2\mu (1-C) T$.\\
 \subsection{Implications for the Molecular Clock.}
 \marginnote{\begin{quote}"functionally less important molecules or parts of a molecule
 evolve faster than more important ones." \end{quote} -- \citet{kimura1974some}}
-A number of observations follow under this model, from equation \eqref{eqn:moleclock}. The first is that a primary determinant of patterns of molecular evolution in a genomic region is the level of constraint ($C$). This pattern generally seems to hold empirically: non-coding regions often evolve more rapidly than coding regions, synonymous substitutions accumulate faster than nonsynonymous, and nonsynonymous substitutions accumulate faster in less vital proteins than ones that are absolutely necessary for early development. Note that this is not a unique prediction of the neutral model, e.g. less constrained regions may also be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
+A number of observations follow under this model, from equation
+\eqref{eqn:moleclock}. The first is that a primary determinant of
+patterns of molecular evolution in a genomic region is the level of
+constraint ($C$). This pattern generally seems to hold empirically:
+non-coding regions often evolve more rapidly than coding regions,
+synonymous substitutions accumulate faster than nonsynonymous, and
+nonsynonymous substitutions accumulate faster in less vital proteins
+than ones that are absolutely necessary for early development. For
+example, Fibrinopeptides evolve in a less constrained manner than the
+Cytochrome c gene, see Figure \ref{fig:Dickerson_mole_clock}. Note
+that this constraint prediction is not a unique prediction of the neutral model, e.g. less constrained regions may also be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
 %JRI: removed mention of pleiotropy as we don't know what it is yet and as far as I can tell there's no mention in rest of book of how pleiotropy relates to constraint
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_fig.pdf}
 \end{center}
-\caption{The numbers of substitutions in three proteins, corrected for multiple hits, between various pairs of groups plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}.  The lines give the linear regression through the origin for each protein. The slope of the regression is given next to the protein name. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_data.R} See \citep{robinson2016revisiting} who revisited this classic study and confirmed the conclusions.} \label{fig:Dickerson_mole_clock}
+\caption[][-2cm]{The numbers of substitutions in three proteins, corrected for multiple hits, between various pairs of groups plotted against the time these groups shared a common ancestor in the fossil record. Data from  \citet{dickerson1971structure}.  The lines give the linear regression through the origin for each protein. The slope of the regression is given next to the protein name. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Molecular_clock_Dickerson/Dickerson_1979_mole_clock_data.R} See \citep{robinson2016revisiting} who revisited this classic study and confirmed the conclusions.} \label{fig:Dickerson_mole_clock}
 \end{figure}
 
 \begin{marginfigure}
@@ -352,43 +362,76 @@ the Enamlin gene from the study of \citet{Meredith:09}.
 The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark ({\it Orycteropus}) all lack  enamel on teeth.
 %JRI: i don't understand when you choose to capitalize parts of common names of species. Pygmy sperm whale but two-toed sloth. throughout chapters varies a lot
 Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
-for examples).  \citeauthor{Meredith:09} sequenced Enamlin across a
+for examples).  \citet{Meredith:09} sequenced Enamlin across a
 range of species and found that none of the species with enamel have frameshift
 mutations in Enamlin, while 17/20 of species that lack enamel or teeth have
-frameshifts in Enamlin, and all of them carry premature stop codons
-(Figure \ref{fig:Enamlin_phylo}).
+frameshifts in Enamlin, and all of them carry premature stop codons. 
+%(Figure \ref{fig:Enamlin_phylo}).
+
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width= \textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin_phylo.pdf}
+%\end{center}
+%\caption{The tooth symbol next to each taxon shows whether they have
+ % teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
+ % Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white  bars on branches show frameshift
+ % mutations.  The numbers after taxon names indicate minimum number of
+ % stop codons in the sequence divided by  the length of the sequence. Figure from \citet{Meredith:09}, \PLOSccBY.} \label{fig:Enamlin_phylo}
+%\end{figure}
+%JRI: recommend removing or editing this. i had to zoom in a lot to figure out the teeth, the numbers aren't easy to read, etc.  not a helpful figure
+
+ \citet{Meredith:09} found that the branches of the Enamlin phylogeny with a functional Enamlin gene %(black) 
+had an estimated $\dNdS= 0.51$, consistent with the protein
+evolving in a constrained manner. In contrast, the branches with a
+pseudogenized Enamlin % (red)
+had $\dNdS = 1.02$, consistent with the gene evolving a completely unconstrained
+way. The branches where the gene was likely transitioning from a functional
+to non-function state, i.e. pre-mutation % (blue)
+and mixed, %purple),
+had intermediate values of
+$\dNdS=0.83-0.98$, consistent with a transition from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin_phylo.pdf}
+\includegraphics[width=\textwidth]{Journal_figs/genetic_drift/Enamelin/Aardvark_pseudogene.png}
 \end{center}
-\caption{The tooth symbol next to each taxon shows whether they have
-  teeth with enamel, lack enamel, or lack teeth. Branches of the phylogeny are coloured by whether their
-  Enamlin is functional (black), pre-mutation (blue), mixed (purple), or pseudogenic (red). The black and white  bars on branches show frameshift
-  mutations.  The numbers after taxon names indicate minimum number of
-  stop codons in the sequence divided by  the length of the sequence. Figure from \citet{Meredith:09}, \PLOSccBY.} \label{fig:Enamlin_phylo}
+\caption{ A synthetic interpretation of the history of enamel
+  degeneration in {\it Tubulidentata} (the order of aardvarks) based on fossils,
+  phylogenetics, molecular clocks, frameshift mutations, and $\dNdS
+$  ratios. The oldest fossil aardvarks are {\it O. minutus} (19 mya) from the
+  early Miocene of Kenya and also lack enamel.  Figure \& caption modified from
+  \citet{Meredith:09}, \PLOSccBY. } \label{fig:Aardvark_pseudogene}
 \end{figure}
-%JRI: recommend removing or editing this. i had to zoom in a lot to figure out the teeth, the numbers aren't easy to read, etc.  not a helpful figure
 
-The branches of the Enamlin phylogeny with a functional Enamlin gene (black) had an estimated $\dNdS= 0.51$, consistent with the protein evolving in a constrained manner. In contrast, the branches with a pseudogenized Enamlin (red)
-had $\dNdS = 1.02$, consistent with the gene evolving an unconstrained
-way. The branches where the gene was likely transitioning from a functional
-to non-function state, i.e. pre-mutation (blue) and mixed (purple), had intermediate values of
-$\dNdS=0.83-0.98$, consistent with a transition from a constrained to unconstrained mode of protein evolution somewhere along these branches of the phylogeny.
+\begin{question}
+The Enamlin gene was pseudogenized somewhere along the branch leading to
+Aardvarks ({\it Orycteropus afer}), see Figure
+\ref{fig:Aardvark_pseudogene}. \citet{Meredith:09} estimated that this
+branch has a $\dNdS=0.75$\\
+{\bf A)} Calculate the average constraint against amino-acid changes
+on this branch.\\
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/aardvark/20514695666_5a22b53b8c_h.jpg}
+\end{center}
+\caption{Aardvarks (Cape ant-eater, {\it Orycteropus afer}) \BHLNC{Cassell's natural history ( 1896 ).  Duncan, P. M.}{https://www.flickr.com/photos/internetarchivebookimages/20514695666/in/photolist-xfPbiq-xUcng7-xCyGQA-xdRRQ3-wPMGZr-tFgYfN-wPMPkT-tDahHQ-xuc4KM-xKR4u3-xUkupQ-w88zeU-xMia2r-sp4Aq5-x1wNyZ-xMi46D-tDaCr7-sJE2X4-tFB8Lc-wHWiNj-tp8AUk-tFvh4R-xu3M7w-toUVwN-wYWgVi-w34vHn-x9xAfL-wWhnso-ovvmHE-tG5AgB-xdUzWD-y82dEG-xCA7kx-xV5xWg-wYc33H-wYbFdX-wYbBMP-xUcjpL-xKQjHw-xJmBQU-xKPwEQ-xLEzv4-xu3wHJ-xLEg9V-xnA6Lr-x684wQ-wZNgpq-wYcVbh-wZtb3F-wYbJLh}{NCSU Libraries}} \label{fig:Aardvark}
+\end{marginfigure}
 
-%\begin{question}
-%Enamlin was pseudogenized somewhere along the branch leading to
-%Aardvarks ({\it Orycteropus}). This branch has $\dNdS=0.75$
+{\bf B)} Aardvarks last shared a common ancestor
+with {\it Afrosoricida} (golden moles, tenrecs) and {\it Macroscelidea} (elephant
+shrews) around $\sim 75.1$ million years ago in the Cretaceous. Assume
+that for the portion of the branch while
+Enamlin was functional $\dNdS = 0.51$  and
+after it was pseudogenized there was no constaint (i.e. $\dNdS = 1$). Based on the branch's average $\dNdS=0.75$, can
+you estimate the time at which Enamlin was pseudogenized? (I.e. when
+is the star in Figure \ref{fig:Aardvark_pseudogene}?)
 % https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000634#pgen.1000634.s007
 %dawn pangloin
 %https://commons.wikimedia.org/wiki/File:Eomanis_waldi_4.jpg
 %% aadvark https://www.flickr.com/photos/internetarchivebookimages/20514695666/in/photolist-xfPbiq-xUcng7-xCyGQA-xdRRQ3-wPMGZr-tFgYfN-wPMPkT-tDahHQ-xuc4KM-xKR4u3-xUkupQ-w88zeU-xMia2r-sp4Aq5-x1wNyZ-xMi46D-tDaCr7-sJE2X4-tFB8Lc-wHWiNj-tp8AUk-tFvh4R-xu3M7w-toUVwN-wYWgVi-w34vHn-x9xAfL-wWhnso-ovvmHE-tG5AgB-xdUzWD-y82dEG-xCA7kx-xV5xWg-wYc33H-wYbFdX-wYbBMP-xUcjpL-xKQjHw-xJmBQU-xKPwEQ-xLEzv4-xu3wHJ-xLEg9V-xnA6Lr-x684wQ-wZNgpq-wYcVbh-wZtb3F-wYbJLh
 %%% w1 t/T + w2(T-t)/T = wT
 %% https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000634#pgen.1000634.s007
-
-
-
-%\end{question}
+\end{question}
 \paragraph{Adaptive evolution and $\dNdS$.}
 Clearly genes are not only subject to neutral and deleterious mutations; beneficial mutations must also arise and fix from from time to time.
 Let's assume that a fraction $B$ of non-synonymous mutations that arise are
@@ -403,7 +446,7 @@ dN=2T (1-C - B) \mu  + 2T \times (2 N \mu B) \times  f_B
 non-synonymous substitutions will have accumulated.
 Then
 \begin{equation}
-\dNdS = (1-C-B) +  2 N B f_B
+\dNdS = (1-C-B) +  2 N B f_B \label{eqn:dNDS_C_B}
 \end{equation}
 assuming again that all synonymous mutations are neutral. Note that this means that our estimates of $C$ using $1-\dNdS$ will be
 a  lower bound on the true constraint if even a small fraction of
@@ -501,12 +544,6 @@ Therefore, we expect the ratio of non-synonymous to synonymous changes to be the
 \times 2$ table. If the ratio of $N/S$ is significantly higher for divergence than polymorphism we have evidence that non-synonymous substitutions are accumulating more rapidly than we would predict given levels of constraint alone.
 
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Basilarchia_arthemis_archippus/Basilarchia_arthemis_archippus.png}
-\end{center}
-\caption{White admiral ({\it Limenitis arthemis}) and Viceroy ({\it Limenitis archippus}).  {\it Basilarchia} is the old genus that these two species were originally placed in. Viceroy and Monarch butterflies are M\"ullerian mimics. \BHLNC{Field book of insects (1918). Lutz, F.E. . illustrations by Edna L. Beutenm\"uller. }{https://www.flickr.com/photos/biodivlibrary/6244367298/in/photolist-avN2o3-avN1Eo-avN2gy-avN39b-avN1R9-avN2Hf-avN2CJ-avN2Um-avN1VS-avN3hU-avN2us-avN21m}{MBLWHOI Library}} \label{fig:Limenitis}
-\end{marginfigure}
 
 % \begin{marginfigure}
 % \begin{center}
@@ -514,8 +551,23 @@ Therefore, we expect the ratio of non-synonymous to synonymous changes to be the
 % \end{center}
 % \caption{White admiral ({\it Limenitis arthemis}). \BHLNC{American entomology : a description of the insects of North American (1859). Say, T. }{https://www.biodiversitylibrary.org/page/9194935\#page/487/mode/1up}{Smithsonian Libraries}} \label{fig:Limenitis}
 % \end{marginfigure}
-As example of a Mcdonald-Kreitman table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L Photopigment opsin in Admiral
-({\it Limenitis}) butterflies, responsible for colour vision in the long-wavelength part of the visual spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity of this opsin had shifted towards blue in its sensitivity in {\it L. archippus archippus} (viceroy) compared to {\it  L. arthemis astyanax}. To test whether this molecular evolution reflected positive selection they sequenced  24 {\it L. arthemis astyanax} individuals and one {\it  L. archippus archippus} sequence. They identified  11 polymorphic sites in  {\it L. arthemis astyanax} and 16 fixed differences, which break down as follows:
+As example of a Mcdonald-Kreitman (MK) table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L Photopigment opsin in Admiral
+({\it Limenitis}) butterflies, responsible for colour vision in the
+long-wavelength part of the visual
+spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity
+of this opsin had shifted towards blue in its sensitivity in {\it
+  L. archippus archippus} (viceroy) compared to {\it  L. arthemis
+  astyanax}. To test whether this molecular evolution reflected
+positive selection they sequenced  24 {\it L. arthemis astyanax}
+individuals and one {\it  L. archippus archippus} sequence. They
+identified  11 polymorphic sites in  {\it L. arthemis astyanax} and 16
+fixed differences, which break down as follows:
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Basilarchia_arthemis_archippus/Basilarchia_arthemis_archippus.png}
+\end{center}
+\caption{White admiral ({\it Limenitis arthemis}) and Viceroy ({\it Limenitis archippus}).  {\it Basilarchia} is the old genus that these two species were originally placed in. Viceroy and Monarch butterflies are M\"ullerian mimics. \BHLNC{Field book of insects (1918). Lutz, F.E. . illustrations by Edna L. Beutenm\"uller. }{https://www.flickr.com/photos/biodivlibrary/6244367298/in/photolist-avN2o3-avN1Eo-avN2gy-avN39b-avN1R9-avN2Hf-avN2CJ-avN2Um-avN1VS-avN3hU-avN2us-avN21m}{MBLWHOI Library}} \label{fig:Limenitis}
+\end{marginfigure}
 \begin{center}
 \begin{tabular}{ccc}
  & Poly. & Fixed  \\
@@ -525,7 +577,26 @@ Syn. &    $9$   &     $4$  \\
 Ratio & $\nicefrac{2}{9}$  & $\nicefrac{3}{1}$
 \end{tabular}
 \end{center}
-Note the strong excess of non-synonymous to synonymous divergence compared to polymorphism (p-value of $0.006$, Fisher's exact test), which is consistent with the gene evolving in an adaptive manner among the two species. We would expect roughly only $3$ non-synonymous substitutions out of 16 substitutions if the gene was evolving neutrally ($ 16 \times \nicefrac{2}{11}$).
+Note the strong excess of non-synonymous to synonymous divergence
+compared to polymorphism (p-value of $0.006$, Fisher's exact test),
+which is consistent with the gene evolving in an adaptive manner among
+the two species. We would expect roughly only $3$ non-synonymous
+substitutions out of 16 substitutions if the gene was evolving
+neutrally ($ 16 \times \nicefrac{2}{11}$). 
+%We can then estimate the proportion of 
+
 
 % \graham{add  Adriana Briscoe butterfly eye eg}  %https://twitter.com/AdrianaBriscoe/status/1057205734407094272
 
+
+% We can push these ideas from the MK test further and try to estimate
+% the proportion of subsitutions driven by positive selection.
+% As in our simple model for the expected $\dNdS$, eqn \ref{eqn:dNDS_C_B},  we'll assume that there's only three
+% classes of mutations, strongly deleterious, neutral, and
+% beneficial. That gave us 
+
+% Lets call this proportion $\alpha$, and our estimate of this quantity as 
+% \begin{equation}
+% \hat{\alpha} = 1 - \frac{D_S}{D_N}\frac{P_N}{P_S}
+% \end{equation}
+% To see why this is an estimate of the proportion of  Assume that there
