@@ -259,7 +259,7 @@ To see this lets think more about geometric fitness. We can write the
 relative fitness of an allele in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
 write your geometric fitness as
 \begin{equation}
- \bar{g}= \sqrt[\tau]{\prod_{i=1}^{\tau-1} 1+s_i}  \label{hap_geo_fitness}
+ \bar{g}= \sqrt[\tau]{\prod_{i=1}^{\tau-1} 1+s_i}  \label{hap_geo_fitness_bh}
   \end{equation}
 when we think about products it's often natural to take the $\log$ to
 turn it into a sum
@@ -1475,7 +1475,7 @@ alleles turn out to be relatively common, and they can often
 substantially low the fitness of the bearer. They do not spread because they are good for the individual but rather because
 they are favoured due to selection below the level of the individual.
 
-\begin{marginfigure}
+\begin{marginfigure}[-3cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Winters_sex_ratio_drive/Winters_sex_ratio_drive_sperm.jpg}
 
@@ -1559,17 +1559,7 @@ both pollen and seeds. But from the perspective of the Mitochondria in
 an individual, pollen is a waste of energy as the Mitochondria won't
 be transmitted through it. Thus a mutation that arises on the
 Mitochondria abolishing male sexual function (pollen) and shunting energy into
-other processes can spread.  \begin{marginfigure}[-3cm]
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Silene_vulgaris/20184393949_9e22db5ff4_k.jpg}
-\end{center}
-\caption{Bladder Campion  ({\it Silene vulgaris}), on left, has both 
-hermaphrodite and female plants due to CMS and nuclear
-restorer polymorphisms \citep{charlesworth1998male}. ({\it
-    S. nutans} on right) \BHLNC{Billeder af nordens flora
-    (1917). Mentz, A}{https://archive.org/stream/billederafnorden02ment/\#page/n160/mode/1up}{The LuEsther T Mertz Library, the New York Botanical Garden} } \label{fig:Hypolimnas_bolina}
-\end{marginfigure}  % https://archive.org/stream/billederafnorden02ment/#page/n160/mode/1up
-
+other processes can spread. 
 The self spread of a Cytoplasmic Male
 Sterility (CMS) allele creates a population
 of females and hermaphrodite plants (a gynodioecious population).
@@ -1577,7 +1567,17 @@ of females and hermaphrodite plants (a gynodioecious population).
 This strong excess of female plants in
 turn can select for the spread of autosomal suppressors of CMS that are
 favoured by producing the rarer gamete (pollen), and so restore the
-population to hermaphroditism.  The spread of such CMS alleles, and subsequent autosomal suppression, is thought to be common in hermaphrodite
+population to hermaphroditism.   \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Silene_vulgaris/20184393949_9e22db5ff4_k.jpg}
+\end{center}
+\caption{Bladder Campion  ({\it Silene vulgaris}), on left, has both 
+hermaphrodite and female plants due to CMS and nuclear
+restorer polymorphisms \citep{charlesworth1998male}. ({\it
+    S. nutans} on right) \BHLNC{Billeder af nordens flora
+    (1917). Mentz, A}{https://archive.org/stream/billederafnorden02ment/\#page/n160/mode/1up}{The LuEsther T Mertz Library, the New York Botanical Garden} } \label{fig:Bladder_Campion}
+\end{marginfigure}  % https://archive.org/stream/billederafnorden02ment/#page/n160/mode/1up
+ The spread of such CMS alleles, and subsequent autosomal suppression, is thought to be common in hermaphrodite
 species and often uncovered in crosses between diverged hermaphrodite populations.
 The discovery or deliberate creation of CMS alleles in agricultural plants is
 prized because it gives breeders more control over hybridization as

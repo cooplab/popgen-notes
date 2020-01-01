@@ -138,7 +138,7 @@ what is the expected response in the next generation?
 \caption{{\bf Top.} Phenotypic distribution of oil content in corn in
   1897, and the individuals who were selected to breed for the next
   generation are marked in blue.   {\bf Bottom.} The distribution in the next generation. Data from the
-  Illinois selection experiment available \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}  \label{Illinois_LTS_breeders_eq}
+  Illinois selection experiment available \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}  \label{Fig:Illinois_LTS_breeders_eq}
 \end{marginfigure}
 
 If we know $R$ and $S$ we can estimate $h^2$. Heritabilities estimated
@@ -221,7 +221,7 @@ Therefore, long-term, consistent selection can drive impressive
 evolutionary change. One example of this comes from a field experiment
 in Illinois, where plant breeders have systematically selected for
 higher and lower oil content in corn (see our previous Figure
-\ref{Illinois_LTS_breeders_eq} for one generation of up selection). For over a century, they have taking seeds from the plants
+\ref{Fig:Illinois_LTS_breeders_eq} for one generation of up selection). For over a century, they have taking seeds from the plants
 in the extremes of the distribution and using them to form the next
 generation. They have achieved impressive long-term responses, pushing
 the population distributions well beyond their initial range (Figure \ref{Fig:Illinois_LTS_dists}.. They've established
@@ -499,6 +499,13 @@ around eqn \ref{eqn:def_linear_regression} for more on linear regression, lets c
 \begin{equation}
   \beta = Cov(X, \nicefrac{w(X)}{\wbar} )/ V  \label{beta_covar}
 \end{equation}
+
+  i.e. the fitness gradient is the phenotype-fitness
+ covariance divided by the phenotypic variance. Using this result we can rewrite the breeder's equation as
+\begin{equation}
+R= V_A \beta \label{eqn:R_beta}
+\end{equation}
+i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 \begin{marginfigure}[2cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.pdf}
@@ -508,13 +515,6 @@ around eqn \ref{eqn:def_linear_regression} for more on linear regression, lets c
   see the paper for discussion of the complexities of equating this
   selection gradient with the evolutionary response. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/red_deer_selection_gradient/selection_grad_deer.R}. } \label{fig:red_deer_fitness_grad}  
 \end{marginfigure}
-
-  i.e. the fitness gradient is the phenotype-fitness
- covariance divided by the phenotypic variance. Using this result we can rewrite the breeder's equation as
-\begin{equation}
-R= V_A \beta \label{eqn:R_beta}
-\end{equation}
-i.e. we'll see a directional response to selection if there is a linear relationship of phenotype on fitness, and if there is additive genetic variance for the phenotype. As one example of a fitness gradient, in Figure \ref{fig:red_deer_fitness_grad}  the lifetime reproductive success (LRS) of male Red Deer is plotted against the weight of their antlers. The red line gives the linear regression of fitness (LRS) on antler mass and the slope of this line is the fitness gradient ($\beta$). 
 
 \graham{add pic of relationship between slope and S?}
 
@@ -548,8 +548,7 @@ Fisher meant \citep[see ][ for a recent overview]{ewens2010gene}.
  \end{center}
  \caption{An example of a fitness landscape, showing the mean fitness
    of the population ($\wbar$) as a function of the mean phenotype of the
-   population ($\bar{z}$, \gc{Need
-   to change to $\bar{x}$}). The arrows show the expected direction of movement
+   population ($\bar{x}$. The arrows show the expected direction of movement
 of our population on the fitness landscape, with natural selection moving
 our population toward local fitness optima. The coloured bar shows the
 derivative (slope) of the mean fitness with respect to mean
@@ -638,20 +637,6 @@ on a local, but not global peak of fitness (see, for example Figure \ref{fig:fit
 
 % % \animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 
-
-One dramatic example documenting adaptive evolution to a new
-fitness optimum is offered by a remarkable time-series of
-stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
-the layers of sediment are laid down each year allowing a very detailed
-time series with over five thousand fossils measured. The time-series
-documents the evolution towards a new set of optimum phenotypes in the
-fifteen thousand years after the initial invasion of the lake by a
-heavily armoured stickleback species. In Figure \ref{fig:Stickleback_fossil_traj} the population mean number of
-touching pterygiophores, the bones supporting the dorsal spines,
-through the fossil record (Figure \ref{fig:Stickleback_fossil}). Note how quickly the species evolves toward
-its new value, presumably a fitness optimum in their new environment, and the long subsequent time interval over which
-the population mean phenotype fluctuates about its new value.
-
 \begin{marginfigure}[3cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
@@ -666,6 +651,25 @@ the population mean phenotype fluctuates about its new value.
   \citet{bell2006inferring} and \citet{hunt2008evolution}  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_traj.R} } \label{fig:Stickleback_fossil_traj}  
 \end{marginfigure}
 
+One dramatic example documenting adaptive evolution to a new
+fitness optimum is offered by a remarkable time-series of
+stickleback evolution from a fossil lake-bed in Nevada \citep{bell2006inferring}. In this lake
+the layers of sediment are laid down each year allowing a very detailed
+time series with over five thousand fossils measured. The time-series
+documents the evolution towards a new set of optimum phenotypes in the
+fifteen thousand years after the initial invasion of the lake by a
+heavily armoured stickleback species. In Figure \ref{fig:Stickleback_fossil_traj} the population mean number of
+touching pterygiophores, the bones supporting the dorsal spines,
+through the fossil record (Figure \ref{fig:Stickleback_fossil}). Note how quickly the species evolves toward
+its new value, presumably a fitness optimum in their new environment, and the long subsequent time interval over which
+the population mean phenotype fluctuates about its new value.
+\begin{marginfigure}
+ \begin{center}
+ \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
+ \end{center}
+ \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig:Stickleback_fossil}  
+\end{marginfigure}
+
 \citet{hunt2008evolution} fitted a model of a population adapting to a
 fitness landscape, with a single peak, to these time-series data. Their fitted fitness
 surface is shown in the lower panel of Figure \ref{fig:Stickleback_fossil_traj} . The arrows show the moves that the
@@ -675,12 +679,8 @@ of this surface and subsequently fluctuates around the peak. Under the
 interpretation that there is a single stationary peak these
 fluctuations represent genetic drift randomly knocking the population
 off its optimum, with selection acting to restore
-the population towards this local optimum. \begin{marginfigure}
- \begin{center}
- \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
- \end{center}
- \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig:Stickleback_fossil}  
-\end{marginfigure}
+the population towards this local optimum.
+
 
 \paragraph{Issues with the interpretation of fitness landscapes.}
 In practice, fitness landscapes may not be constant. The environment
@@ -688,12 +688,14 @@ may be constantly changing so our population is constantly forced to change to k
 up with the fitness peak. Indeed our environment may change so quickly
 that our population cannot keep up with the peak. Our
 population is still trying to increase its mean fitness, to `adapt', but
-the landscape itself is evolving.\sidenote[][1cm]{In
+the landscape itself is evolving.%\sidenote[][1cm]{
+  In
 the case of very rapid environmental change our population may slide
 further and further away the peak, and as a consequence its mean fitness
 decreases which may drive the population to extinction if our
 population drops below $\wbar<1$ for long enough. The conditions for
-extinction are an active area of research in the field of `Evolutionary rescue'.}
+extinction are an active area of research in the field of
+`Evolutionary rescue'. %}
 More generally, for our fitness landscape result (eqn \eqref{eqn:pheno_fitness_landscape}) to hold, and
 for us to be able to talk of our population attempting to evolve to
 higher mean fitness states,  we need the fitness of our phenotypes to be independent of the

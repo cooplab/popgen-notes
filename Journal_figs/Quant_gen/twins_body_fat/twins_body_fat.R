@@ -3,7 +3,7 @@ data fromhttps://sci-hub.tw/https://pediatrics.aappublications.org/content/104/1
 twins<-read.csv("/Users/gcoop/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.csv")
 
 plot(twins$MZ_twin_1,twins$MZ_twin_2,cex=1.5,col="black",pch=19,
-     xlab="Twin A (PBF)",ylab="Twin B (PBF)",cex.lab=1.4,cex.axis=1.2,xlim=c(0,70),ylim=c(0,70))
+     xlab="Twin 1 (PBF)",ylab="Twin 2 (PBF)",cex.lab=1.4,cex.axis=1.2,xlim=c(0,70),ylim=c(0,70))
 abline(lm(twins$MZ_twin_2~ twins$MZ_twin_1),lwd=2)
 
 points(twins$DZ_twin_1,twins$DZ_twin_2,cex=1.5)

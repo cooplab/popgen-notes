@@ -238,7 +238,13 @@ results we've developed in the last two chapters. \\
 e.g. selfing, populations. Why is this? \\
 
 \end{question}
-
+ \begin{marginfigure}
+ \begin{center}
+ \includegraphics[width=0.7 \textwidth]{illustration_images/Genetic_drift_selection/Isopod_Asellidae/20406697312_1a9aa75024_z.jpg}
+ \end{center}
+ \caption{cress bug ({\it Asellus aquaticus}) in the isopod family
+   {\it Asellidae}. \BHLNC{Brehms Tierleben. Allgemeine kunde des Tierreichs (1911).  Brehm A.E.}{https://www.flickr.com/photos/internetarchivebookimages/20406697312/}{Smithsonian Libraries}} \label{fig: asellid_isopod}
+ \end{marginfigure}
 \begin{question}
 Melanic squirrels suffer a higher rate of predation (due to hawks) than normally pigmented squirrels. Melanism is due to a dominant, autosomal mutation. The frequency of melanic squirrels at birth is $4 \times 10^{-5}$.\\
 
@@ -256,13 +262,7 @@ individuals, and is at mutation-selection balance, what is the probability that 
 
 
 \section{The interaction between genetic drift and weak selection.}
- \begin{marginfigure}
- \begin{center}
- \includegraphics[width=0.7 \textwidth]{illustration_images/Genetic_drift_selection/Isopod_Asellidae/20406697312_1a9aa75024_z.jpg}
- \end{center}
- \caption{cress bug ({\it Asellus aquaticus}) in the isopod family
-   {\it Asellidae}. \BHLNC{Brehms Tierleben. Allgemeine kunde des Tierreichs (1911).  Brehm A.E.}{https://www.flickr.com/photos/internetarchivebookimages/20406697312/}{Smithsonian Libraries}} \label{fig: asellid_isopod}
- \end{marginfigure}
+
 For strongly selected alleles, once the allele has escaped initial
 loss at low frequencies, its path will be determined deterministically by its
 selection coefficients. However, if selection is weak compared to
@@ -388,9 +388,9 @@ Why is this?  The reason why is that $p_F$ is really the probability
 of "never being lost" in an infinitely large population. So to persist
 indefinitely, the allele has to escape loss permanently, by never being
 absorbed by the zero state. When the population size is finite, to fix
-we only need to reach a size 2N individuals. Weakly beneficial
-mutations (Ns~1) are slightly more likely to fix than the s
-probability, as they only have to reach 2N to never be lost.
+we only need to reach a size $2N$ individuals. Weakly beneficial
+mutations ($Ns \sim 1$) are slightly more likely to fix than the s
+probability, as they only have to reach $2N$ to never be lost.
 
 \begin{figure}
 \begin{center}
@@ -401,7 +401,7 @@ probability, as they only have to reach 2N to never be lost.
   probability ($\nicefrac{1}{2N_e}$) as a function of the effective
   size $N_e$. The selection coefficient is shown next to the
   line. Note how quickly the probabilities move away from the
-  neutral expectation as $N_es$ moves passed $1$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion}
+  neutral expectation as $N_es$ moves passed $1$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion_2}
 \end{figure}
 
 
@@ -411,7 +411,8 @@ Well, effective population sizes are often reasonably large, on the
 order of hundreds of thousands or millions of individuals, thus selection
 coefficients on the order of $10^{-5}$ to $10^{-6}$ can be effectively selected upon, i.e. selection
 equivalent to individuals have incredibly slight advantages in terms
-of the number of offspring they leave to the next generation.
+of the number of offspring they leave to the next generation (see
+Figure \ref{fig:prob_fix_diffusion_2}). 
 While we are incapable of detecting measuring all but the large fitness effect sizes,  
 except in some elegant experiments (e.g. in microbes), such small effects are visible to
 selection in large populations. Thus, if consistent selection pressures are exerted over long
@@ -524,7 +525,7 @@ deleterious mutations.
 \begin{center}\includegraphics[width= \textwidth]{illustration_images/Genetic_drift_selection/Coquerels_sifaka/Coquerels_sifaka.jpg}
 \end{center}
 \caption{Coquerel's Sifaka ({\it Propithecus coquereli}). \BHLCC{A
-    hand-book to the primates (1894). Forbes, H. O.}{https://www.flickr.com/photos/biodivlibrary/6029124104}{Smithsonian Libraries}{2.0} } \label{Cuttlefish}
+    hand-book to the primates (1894). Forbes, H. O.}{https://www.flickr.com/photos/biodivlibrary/6029124104}{Smithsonian Libraries}{2.0} } \label{Sifakas}
 \end{marginfigure}
 
 

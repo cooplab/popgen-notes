@@ -7,7 +7,7 @@ measurable aspect of an organism. \begin{marginfigure}
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Quant_gen/Aspen_budset/Aspen_leaves.pdf}
 \end{center}
-\caption{European aspen {\it P. tremula}. \BHLNC{Der baum. H. Schacht. 1860. BHL}{https://archive.org/stream/derbaum00scha/\#page/n284/mode/1up}{The Library of Congress} } \label{fig:Apsen_geno_pheno}
+\caption{European aspen {\it P. tremula}. \BHLNC{Der baum. H. Schacht. 1860. BHL}{https://archive.org/stream/derbaum00scha/\#page/n284/mode/1up}{The Library of Congress} } \label{fig:Apsen}
 \end{marginfigure}   Your height, to the amount of
 RNA transcribed from a given gene, to what you ate last Tuesday: all
 of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
@@ -357,7 +357,8 @@ line shows the best fitting linear regression line. \gitcode{https://github.com/
  \end{figure*}
  
 \paragraph{The covariance between identical twins}
-Let's first consider the case of a pair of identical twins from two
+Let's first consider the case of a pair of identical twins, monzygotic
+twins, from two
 unrelated parents. Our pair of twins share their maternal and paternal
 allele identical by descent ($X_{1M}=X_{2M}$ and $X_{1P}=X_{2P}$). As their maternal and
 paternal alleles are not correlated draws from the population,
@@ -369,16 +370,32 @@ eqn. \ref{cov_rels_1} is
 Cov(X_1,X_2) = Cov((X_{1M},X_{2M})+Cov(X_{1P},X_{2P}) = 2Var(X_{1M})
 = V_A
 \end{equation}
-Now in general identical twins are not going to be super helpful for
-us in estimating $h^2$, because under models with non-additive effects, identical twins will have higher covariance than we'd expect just based on the alleles they share. This is because identical twins don't just share alleles, they share their entire genotypes, and thus 
-resemble each other in phenotype also because of shared dominance effects. \\
+To calculate the narrow sense heritability we could then in principal divide the
+covariance of our pairs of MZ  twins (MZ$_1$ and MZ$_2$) by the trait variance to give
+\begin{equation}
+h^2 = \frac{Cov(\text{MZ}_1, \text{MZ}_2) }{V} =
+\rho_{\text{MZ}}
+\end{equation}
+where $\rho_{\text{MZ}}$ is the correlation of pairs of MZ twins (see
+Appendix eqn \eqref{eqn:def_corr} for more on correlations).
+For example, we could estimate the heritability of a measure of body
+from the MZ correlation in Figure \ref{fig:twins_body_fat}. In general, this simple estimator isn't great as the correlation of
+identical twins includes the effects of the shared family
+environment of the twins (i.e. $Cov(X_{1E},X_{2E})$).
  \begin{marginfigure}
  \begin{center}
  \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.pdf}
  \end{center}
  \caption{A measure of body fat in pairs of Monozygotic (MZ) and
-   Dizygotic (DZ) twins. Data from \citet{faith1999evidence}, }\label{fig:twins_body_fat}
+   Dizygotic (DZ) twins. Our sample  correlations are
+   $\hat{\rho}_{\text{MZ}}=0.72$ and $\hat{\rho}_{\text{MZ}}=0.10$. Data from \citet{faith1999evidence}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.R}}\label{fig:twins_body_fat}
  \end{marginfigure}
+Moreover, it can
+be inflated by non-additive effects as identical twins don't just share alleles, they share their entire genotypes, and thus 
+resemble each other in phenotype also because of shared dominance
+effects (we'll discuss non-additive effects in Section \ref{section:nonAddVar}). Better twin-based estimates of heritability are commonly
+used based on the comparison of MZ vs twins that bypass some of these issues.\\
+
 
 %% twin bmis https://sci-hub.tw/https://pediatrics.aappublications.org/content/104/1/61.figures-only?sso=1&sso_redirect_count=1&nfstatus=401&nftoken=00000000-0000-0000-0000-000000000000&nfstatusdescription=ERROR%3a+No+local+token
 
@@ -514,8 +531,11 @@ $A_{ij}= 2 F_{i,j}$ and $A_{ii}= 1$. Given the matrix $A$ we can estimate $V_A$.
 also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
-This approach is sometimes called the ``animal model''. 
+This approach is sometimes called the ``animal model'', and is widely
+used to in modern quantitative gentics to estimate genetic variances and heritabilitie. 
 
+
+%% plot of covariance of human traits for different relationships https://www.nature.com/articles/s41539-017-0005-6/figures/1
 
 \section{Multiple traits}
 

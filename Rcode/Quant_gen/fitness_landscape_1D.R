@@ -16,12 +16,12 @@ my.diff<-diff(log(my.y))
 zrange<-c(-max(abs(my.diff)),max(abs(my.diff)))
 
 image(x=x[-num.points],z=t(rbind(my.diff,my.diff)),zlim=zrange,col=my.palette(240),axes=FALSE,xlim=range(x),xaxs="i")
-mtext(side=2,TeX("$\\frac{1}{\\bar{W}} \\times \\frac{\\partial \\bar{W}}{\\partial \\bar{z}}$"),las=2,padj=0.6)
+mtext(side=2,TeX("$\\frac{1}{\\bar{W}}  \\frac{\\partial \\bar{W}}{\\partial \\bar{x}}$"),las=2,padj=0.6)
 
 par(mar=c(2,3,0.1,1))
 plot(x,my.y,type="l",lwd=2,xlim=range(x),axes=FALSE,ylim=c(0,max(my.y)),xaxs="i")
 mtext(expression(bar(W)),side=2,line=1.5,cex=1.4) #TeX("Mean Fitness $\bar{W}$"),side=2)
-mtext(expression(bar(z)),side=1,line=1,cex=1.4) #TeX("Mean Fitness $\bar{z}$"),side=1)
+mtext(expression(bar(x)),side=1,line=1,cex=1.4) #TeX("Mean Fitness $\bar{z}$"),side=1)
 axis(side=1,label=FALSE,at=c(1,6,16,21))
 axis(side=2,label=FALSE)
 

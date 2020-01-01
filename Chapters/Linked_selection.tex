@@ -130,12 +130,16 @@ To model the expected pattern of diversity surrounding a selected site, we can t
 of alleles sampled at a neutral locus a recombination distance $r$
 away from our selected site. Our pair of alleles will be forced to
 coalesce $\approx \tau$ generations if neither of them of are
-descended from recombinant haplotypes.\\
+descended from recombinant haplotypes (Left side of Figure \ref{fig:recom_coal}).\\
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Hitchhiking/Recom_coal.pdf}
 \end{center}
-\caption{} \label{fig:no_recom_coal}
+\caption{{\bf Left)} two lineages coalesce roughly $\tau$ generations
+  ago as they are both descended from the selected haplotypes. {\bf Right)}
+One of our two lineages is descended from the selected haplotype but
+the other is descended from a recombinant on to the sweep. The pair on
+the right coalesce much deeper back in time.} \label{fig:recom_coal}
 \end{marginfigure}
 We know that in the present day our neutral lineage is linked to
 the selected allele. The probability that our lineage, in some
@@ -178,7 +182,7 @@ independently of each other for times $< \tau$).\\
 
 If one or other of our lineages is descended from a recombinant haplotype, it will take them on average
 $\approx 2N$ generations to find a common ancestor, as we are back to our
-neutral coalescent probabilities. Thus, the expected time
+neutral coalescent probabilities (Right side of Figure \ref{fig:local_sweep_haps}). Thus, the expected time
 till our pair of lineages find a common ancestor is
 \begin{equation}
 \E(T_2)  = \tau \times p_{NR}^2 +(1-p_{NR}^2) (\tau +2N) \approx
@@ -317,7 +321,7 @@ $\fst$ between weakly differentiated populations.
 
 \citet{hohenlohe2010population} studied genome-wide patterns of
 $\fst$ between marine and freshwater populations of  threespine
-stickleback ({\it Gasterosteus aculeatus}). 
+stickleback ({\it Gasterosteus aculeatus}), plotted in Figure \ref{fig:local_sweep_stickleback}. 
 Between different marine populations, they found no strong peaks of $\fst$;
 however, between the marine and freshwater comparisons they found a
 number of high $\fst$  peaks that were replicated over a number of
@@ -335,7 +339,7 @@ Group IV includes Ectodysplasin A (Eda), a gene involved in the adaptive loss of
   white and grey panels indicate different linkage groups. {\bf A)} $\fst$
   between two oceanic populations {\bf B)} Average $\fst$ between a
   freshwater population and the two marine populations. Figure and
-  caption text from \citet{hohenlohe2010population}, \PLOSccBY.} \label{fig:local_sweep_haps}
+  caption text from \citet{hohenlohe2010population}, \PLOSccBY.} \label{fig:local_sweep_stickleback}
 \end{figure}
 
 
@@ -577,7 +581,7 @@ reduced diversity in regions of lower recombination.
 For a neutral locus that is a recombination fraction $r$ away from a
 locus subject to constraint, the level of diversity is
 \begin{equation}
-\E[\pi] = \pi_0  \left(1-\frac{\mu sh}{2(r+sh)^2} \right) \label{eqn:pi_loc_BGS}
+\E[\pi] = \pi_0  \left(1-\frac{\mu sh}{2(r+sh)^2} \right) \label{eqn:pi_loc_BGS_1}
 \end{equation}
 
 As we move away from a locus experiencing purifying selection, \erin{where does eq 8.15 and in particular the squared denominator come from?}
@@ -599,7 +603,7 @@ alleles segregated previously at mutation-selection balance.
 \end{marginfigure}
 More generally, if a neutral locus is surrounded by $L$ loci
 experiencing purifying selection at recombination distances
-$r_1,\cdots,r_L$, then compounding equation \eqref{eqn:pi_loc_BGS}
+$r_1,\cdots,r_L$, then compounding equation \eqref{eqn:pi_loc_BGS_1}
 across these loci, the expected reduced diversity is approximately
 \begin{equation}
 \E[\pi] = \pi_0  \prod_{i=1}^L \left(1-\frac{\mu sh}{2(r_L+sh)^2}
