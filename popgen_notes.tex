@@ -152,6 +152,21 @@ https://github.com/cooplab/popgen-notes/ and again are under a Creative Commons 
 \begin{fullwidth}
 ~\vfill
 \thispagestyle{empty}
+
+% r.7 dedication
+%\cleardoublepage
+~\vfill
+\begin{doublespace}
+\noindent\fontsize{16}{18}\selectfont\itshape   %{18}{22}\selectfont\itshape
+\nohyphenation
+\begin{center}
+Dedicated to my parents, partner, and children. Thank you for teaching me the
+true joy of descent with modification.
+\end{center}
+\end{doublespace}
+\vfill
+\vfill
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 %Copyright \copyright\ \the\year\
@@ -199,7 +214,19 @@ https://github.com/cooplab/popgen-notes/ and again are under a Creative Commons 
 %\include{chapter-07}
 \include{Chapters/Linked_selection}
 \include{Chapters/multi_locus_sel}
+
+\setcounter{figure}{0}
+\setcounter{section}{0}
+\setcounter{equation}{0}
+\setcounter{chapter}{0}
+\renewcommand{\thechapter}{\Alph{chapter}.}
+\renewcommand{\theequation}{\Alph{chapter}.\arabic{equation}}
+\renewcommand{\thesection}{\Alph{chapter}.\arabic{section}}
+\renewcommand{\thefigure}{\Alph{chapter}.\arabic{figure}}
+
 \include{math_background/Math-background}
+
+\renewcommand{\thechapter}{}  %{\Alph{chapter}.}
 \bibliography{popgen_notes}
 
 \end{document}
