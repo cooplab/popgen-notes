@@ -476,14 +476,12 @@ regression is
 i.e. the regression of the child's phenotype on the parental midpoint
 phenotype is an estimate of the narrow sense
 heritability.\sidenote{See math appendix eq
-  \eqref{eqn:slope_linear_reg} for more on regression slopes.} This way of estimating heritability has the problem of not controlling for environmental correlations between relatives. But it's a useful way to think about heritability and will be directly relevant to our discussion of the response to selection in the next chapter.\\
+  \eqref{eqn:slope_linear_reg} for more on regression slopes.} 
 
-Our regression allows us to attempt to predict the phenotype of the
-child given the phenotypes of the parents; how well we can do this depends on the
-slope. If the slope is close to zero then the parental phenotypes hold no
-information about the phenotype of the child, while if the slope is
-close to one then the parental mid-point is a good guess at the child's
-phenotype.\\
+This way of estimating heritability has the problem of not controlling for
+environmental correlations between parent and offspring, which can
+inflate our estimates of heritability. But it's a useful way to think about heritability and will be directly relevant to our discussion of the response to selection in the next chapter.\\
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/QT2.pdf}
@@ -494,8 +492,18 @@ phenotype.\\
  the caption of Figure \ref{fig:QT1}.We simulate the genotypes and
  phenotypes of the two parents, and then simulate the child's genotype
 following mendelian transmission. The blue line shows $x=y$ and the red
-line shows the best fitting linear regression line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R} }
+line shows the best fitting linear regression
+line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R}
+} \label{fig:midpar}
 \end{figure}
+
+Our regression allows us to attempt to predict the phenotype of the
+child given the phenotypes of the parents; how well we can do this depends on the
+slope. See Figure \ref{fig:midpar} for examples. If the slope is close to zero then the parental phenotypes hold no
+information about the phenotype of the child, while if the slope is
+close to one then the parental mid-point is a good guess at the child's
+phenotype.\\
+
 
 More formally, the expected phenotype of the child given the parental
 phenotypes is
@@ -513,8 +521,8 @@ narrow sense heritability. \\
 \end{center}
 \caption{Parent-midpoint offspring regression for beak depth and
   tarsus length in song sparrows. The red line shows the best fitting
-  slope, whose slope is reported on the graph. The grey line is the
-  $x=y$ line. Data from \citet{smith1979heritability}, }
+  slope, whose slope is reported on the graph. Note that this The grey line is the
+  $x=y$ line. Data from \citet{smith1979heritability}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}}
 \end{figure}
 
 
@@ -544,7 +552,7 @@ also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
 This approach is sometimes called the ``animal model'', and is widely
-used to in modern quantitative gentics to estimate genetic variances and heritabilitie. 
+used to in modern quantitative gentics to estimate genetic variances and heritabilities. 
 
 
 %% plot of covariance of human traits for different relationships https://www.nature.com/articles/s41539-017-0005-6/figures/1
@@ -613,7 +621,17 @@ r_g = \frac{V_{A,1,2}}{\sqrt{V_{A,1}V_{A,2}}}
 \end{equation}
 where $V_{A,1}$ and $V_{A,2}$ are the additive genetic variance for trait 1 and 2 respectively. Here, $r_g$ tells us to what extent the additive genetic variance in two traits is correlated.   
 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf}
+\end{center}
+\caption{Relationship \gitcode{}} \label{fig:Frog_genetic_corr}   %\cite{potti:11} 
+\end{figure}
+
+
 One  type of  genetic covariance we often think about is the covariance of male and female phenotypes. For example, below is the relationship between the forehead patch size for Pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
+
+
 
 \graham{Need non-cross sex eg}
 
