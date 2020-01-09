@@ -399,18 +399,125 @@ used based on the comparison of MZ vs twins that bypass some of these issues.\\
 
 %% twin bmis https://sci-hub.tw/https://pediatrics.aappublications.org/content/104/1/61.figures-only?sso=1&sso_redirect_count=1&nfstatus=401&nftoken=00000000-0000-0000-0000-000000000000&nfstatusdescription=ERROR%3a+No+local+token
 
-\paragraph{The covariance in phenotype between mother and child}
-
-
-If a mother and father are unrelated individuals (i.e. are two
+\paragraph{The covariance in phenotype between parent and child}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Quant_gen/song_sparrow/birdbiographies00ball_0165.jpg}
+\end{center}
+\caption{Song sparrow ({\it Melospiza melodia}). ``He is the most
+  incurable optimist of my acquaintance''.
+  \BHLNC{Bird biographies (1923). Ball, A.E. illustrations by Horsfall R.B.}{https://www.biodiversitylibrary.org/page/7282967\#page/163/mode/1up}{American Museum of Natural History Library}
+} \label{fig:song_sparrow}
+\end{marginfigure}
+Children resemble their (biological) parents, that's because children inherit their genomes from
+their parents (putting aside shared environments for the moment). If a mother and father are unrelated individuals (i.e. are two
 random draws from the population) then this mother and her child share
-one allele IBD at each locus (i.e. $r_1=1$ and $r_0=r_2=0$). Half the
-time our mother (ind 1) transmits her paternal allele to the child (ind 2), in which
+one allele IBD at each locus (i.e. $r_1=1$ and $r_0=r_2=0$). Lets
+assume that our mother (ind 1) transmits her paternal allele to the child (ind 2), in which
 case $X_{P1}=X_{M2}$, and so $Cov(X_{P1},X_{M2})=Var(X_{P1})$, and all
-the other covariances in eqn. \ref{cov_rels_1} are zero. The other half of the time she transmits her maternal allele to the child, in which case
-$Cov(X_{M1},X_{M2})=Var(X_{M1})$ and all the other terms are zero. By this
+the other covariances in eqn. \ref{cov_rels_1} are zero. We'd also
+arrive at this result if we thought of the mother transmitting her own
+maternal allele. By this
 argument, $Cov(X_1,X_2) = \half Var(X_{M1}) + \half Var(X_{P1}) = \half
-V_A$. \\
+V_A$. \\  %The other half of the time she transmits her maternal allele to the child, in which case
+%$Cov(X_{M1},X_{M2})=Var(X_{M1})$ and all the other terms are zero. 
+
+We can estimate the narrow sense heritability through the regression of child's phenotype on the parental mid-point
+phenotype. The parental mid-point phenotype is simply the average of
+the mum and dad's phenotype. See Figure \ref{fig:song_sparrow_herit}
+for an example from Song sparrows. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.pdf}
+\end{center}
+\caption{Parent-midpoint offspring regression for beak depth and
+  tarsus length in song sparrows. The red line shows the best fitting
+  slope, whose slope is reported on the graph. Note that this The grey line is the
+  $x=y$ line. Data from \citet{smith1979heritability},
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}} \label{fig:song_sparrow_herit}
+\end{figure}
+
+We denote the child's phenotype by $X_{kid}$ and mid-point
+phenotype by $X_{mid}$, so that if we take the regression $X_{kid} \sim X_{mid}$ this
+regression has slope $\beta = Cov(X_{kid},X_{mid})/Var(X_{mid})$.
+The covariance of $Cov(X_{kid},X_{mid})=\half
+V_A$, and $Var(X_{mid}) = \half V$, as by taking the average of the
+parents we have halved the variance, such that the slope of the
+regression is
+\begin{equation}
+\beta_{mid,kid}= \frac{Cov(X_{kid},X_{mid})}{Var(X_{mid})} = \frac{V_A}{V} = h^2
+\end{equation}
+i.e. the regression of the child's phenotype on the parental midpoint
+phenotype is an estimate of the narrow sense
+heritability.\sidenote{See math appendix eq
+  \eqref{eqn:slope_linear_reg} for more on regression slopes.} If much
+of the phenotypic variation is due to the (additive) differences in
+genotypes among individuals ($h^2 \approx 1$), then children will closely resemble their
+parents. Conversely if much of the variation is environmental  ($h^2 \approx 0$), and
+there is no shared environment between parent and child, children will
+not resemble their parents. 
+
+This way of estimating heritability has the problem of not controlling for
+environmental correlations between parent and offspring, which can
+inflate our estimates of heritability (as we will mistake
+environmentally mediated resemblance for genetics). Raising the
+organisms in the lab could remove much of the potential for shared
+environment between parent and offspring, but it also removes much of the
+environmental variation and we (as evolutionary geneticists) are usually not primarily interested in knowing
+the heritability in the lab bur rather out in the real world and so we
+don't want to  eliminate. In some organisms,
+notably plants, we can begin to sidestep these issues by raising offspring
+in a common set of randomized field conditions (a so called ``common
+garden'').  
+
+Despite its issues this measure of heritability is useful, it'll 
+be directly relevant to our discussion of the response to selection in
+the next chapter. That's because our regression allows us to attempt to predict the phenotype of the
+child given the phenotypes of the parents; how well we can do this depends on the
+slope. See Figure \ref{fig:midpar} for examples. If the slope is close to zero then the parental phenotypes hold no
+information about the phenotype of the child, while if the slope is
+close to one then the parental mid-point is a good guess at the child's
+phenotype. As we will see, natural selection will only efficiently
+drive evolution if children resemble their parents.\\
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/QT2.pdf}
+\end{center}
+\caption{Regression of child's phenotype of the parental mid-point phenotype. The three panels show decreasing levels of environmental
+  variance ($V_E$) holding the additive genetic variance constant ($V_A=1$). 
+ In these figures, we simulate $100$ loci, as described in
+ the caption of Figure \ref{fig:QT1}.We simulate the genotypes and
+ phenotypes of the two parents, and then simulate the child's genotype
+following mendelian transmission. The blue line shows $x=y$ and the red
+line shows the best fitting linear regression
+line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R}
+} \label{fig:midpar}
+\end{figure}
+
+
+
+
+Thinking abour our prediction of child's phenotpye more formally, the expected phenotype of the child given the parental
+phenotypes is
+\begin{equation}
+\E(X_{kid} | X_{mum},X_{dad}) = \mu +
+\beta_{mid,kid}(X_{mid} - \mu) =\mu + h^2(X_{mid} - \mu)  \label{predict_kid}
+\end{equation}
+which follows from the definition of linear regression. So to find the
+child's predicted phenotype, we simply take the mean phenotype and add on the difference between our parental mid-point and the population mean, multiplied by our
+narrow sense heritability. \\
+
+
+
+
+
+\begin{question}
+Briefly explain what Galton meant by 'regression towards
+mediocrity', and why he observed this pattern in light of Mendelian inheritance.
+\end{question}
 
 
 
@@ -418,7 +525,7 @@ V_A$. \\
 additive model}
 
 
-The two examples above make clear that to understand the covariance between
+The above examples above make clear that to understand the covariance between
 phenotypes of relatives, we simply need to think about the alleles they
 share IBD. Consider a pair of relatives ($1$ and $2$) with a probability $r_0$,
 $r_1$, and $r_2$ of sharing zero, one, or two alleles IBD
@@ -459,81 +566,9 @@ heritability than maternal half-sibs?
 \caption{Red-winged blackbird and Tricoloured Red-winged blackbirds
   ({\t Agelaius phoeniceus} and {\it Agelaius tricolor}). \BHLNC{Bird-lore (1899). National Association of Audubon Societies for the Protection of Wild Birds and Animals.}{https://archive.org/stream/birdlore24nati/birdlore24nati\#page/n89/mode/1up}{American Museum of Natural History Library}}\label{fig:RW_blackbird}
 \end{marginfigure}
-\paragraph{Parent-midpoint offspring regression} 
-Another way that we can estimate the narrow sense heritability is
-through the regression of child's phenotype on the parental mid-point
-phenotype. The parental mid-point phenotype is simply the average of
-the mum and dad's phenotype. We denote the child's phenotype by $X_{kid}$ and mid-point
-phenotype by $X_{mid}$, so that if we take the regression $X_{kid} \sim X_{mid}$ this
-regression has slope $\beta = Cov(X_{kid},X_{mid})/Var(X_{mid})$.
-The covariance of $Cov(X_{kid},X_{mid})=\half
-V_A$, and $Var(X_{mid}) = \half V$, as by taking the average of the
-parents we have halved the variance, such that the slope of the
-regression is
-\begin{equation}
-\beta_{mid,kid}= \frac{Cov(X_{kid},X_{mid})}{Var(X_{mid})} = \frac{V_A}{V} = h^2
-\end{equation}
-i.e. the regression of the child's phenotype on the parental midpoint
-phenotype is an estimate of the narrow sense
-heritability.\sidenote{See math appendix eq
-  \eqref{eqn:slope_linear_reg} for more on regression slopes.} 
-
-This way of estimating heritability has the problem of not controlling for
-environmental correlations between parent and offspring, which can
-inflate our estimates of heritability. But it's a useful way to think about heritability and will be directly relevant to our discussion of the response to selection in the next chapter.\\
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/QT2.pdf}
-\end{center}
-\caption{Regression of child's phenotype of the parental mid-point phenotype. The three panels show decreasing levels of environmental
-  variance ($V_E$) holding the additive genetic variance constant ($V_A=1$). 
- In these figures, we simulate $100$ loci, as described in
- the caption of Figure \ref{fig:QT1}.We simulate the genotypes and
- phenotypes of the two parents, and then simulate the child's genotype
-following mendelian transmission. The blue line shows $x=y$ and the red
-line shows the best fitting linear regression
-line. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT2.R}
-} \label{fig:midpar}
-\end{figure}
-
-Our regression allows us to attempt to predict the phenotype of the
-child given the phenotypes of the parents; how well we can do this depends on the
-slope. See Figure \ref{fig:midpar} for examples. If the slope is close to zero then the parental phenotypes hold no
-information about the phenotype of the child, while if the slope is
-close to one then the parental mid-point is a good guess at the child's
-phenotype.\\
-
-
-More formally, the expected phenotype of the child given the parental
-phenotypes is
-\begin{equation}
-\E(X_{kid} | X_{mum},X_{dad}) = \mu +
-\beta_{mid,kid}(X_{mid} - \mu) =\mu + h^2(X_{mid} - \mu)  \label{predict_kid}
-\end{equation}
-which follows from the definition of linear regression. So to find the
-child's predicted phenotype, we simply take the mean phenotype and add on the difference between our parental mid-point and the population mean, multiplied by our
-narrow sense heritability. \\
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.pdf}
-\end{center}
-\caption{Parent-midpoint offspring regression for beak depth and
-  tarsus length in song sparrows. The red line shows the best fitting
-  slope, whose slope is reported on the graph. Note that this The grey line is the
-  $x=y$ line. Data from \citet{smith1979heritability}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}}
-\end{figure}
-
-
-
-\begin{question}
-Briefly explain what Galton meant by 'regression towards
-mediocrity', and why he observed this pattern in light of Mendelian inheritance.
-\end{question}
 
 \paragraph{Estimating additive genetic variance across a variety of
-  different relationships.}
+  different relationships (The animal model).}
 
 In many natural populations we may have access to individuals with a
 range of different relationships to each other (e.g. through monitoring
@@ -558,14 +593,14 @@ used to in modern quantitative gentics to estimate genetic variances and heritab
 %% plot of covariance of human traits for different relationships https://www.nature.com/articles/s41539-017-0005-6/figures/1
 
 \section{Multiple traits}
-
 Traits often covary with each other, both due to environmentally
 induced effects (e.g. due to the effects of diet on multiple traits)
 and due to the expression of underlying genetic covariance between
 traits. Genetic covariance, in turn, can reflect pleiotropy, a
 mechanistic effect of an allele on multiple traits (e.g. variants that
 affect skin pigmentation often affect hair color), the genetic
-linkage of loci independently affecting multiple traits, or the effects of assortative mating. 
+linkage of loci independently affecting multiple traits, or the
+effects of assortative mating. 
 
 Consider two traits $X_{1,i}$ and $X_{2,i}$ in an individual $i$. These traits could be,
 say, the individual's leg length and nose length. As before, we can write
@@ -582,8 +617,13 @@ total covariance between trait one and trait two, $V_{1,2}=Cov(X_{1},X_{2})$, as
 \begin{equation}
 V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
 \end{equation}
-assuming our loci are in linkage disequilibrium. Thus a genetic correlation arises due to pleiotropy, because loci that tend to affect trait 1 also systematically affect trait 2. For example, alleles associated with later Age at Menarche (AAM) in European females also tend to be positively associated with height (see Figure \ref{fig:AAM_height}), thereby creating a genetic correlation between AAM and height. 
-
+assuming our loci are in linkage disequilibrium. Thus a genetic
+correlation arises due to pleiotropy, because loci that tend to affect
+trait 1 also systematically affect trait 2. For example, alleles
+associated with later Age at Menarche (AAM) in European women also
+tend to be positively associated with height (see Figure
+\ref{fig:AAM_height}), thereby creating a genetic correlation between
+AAM and height. 
 
 \begin{marginfigure}
 \begin{center}
@@ -615,19 +655,62 @@ studying the covariance in different traits between relatives:
 \begin{equation}
 Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
 \end{equation}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Hyla_versicolor/Hyla_versicolor.jpg}
+\end{center}
+\caption{Grey treefrog
+  ({\it Hyla versicolor})
+  \wikimedia{Historia Natural, tomo V ``Reptiles y peces'' (1874) Juan Vilanova y Piera,  p. 156. 
+  }{https://commons.wikimedia.org/wiki/Category:Hyla_arboricola\#/media/File:Hyla_arboricola_and_Hyla_versicolor.jpg}{Dorieo}{Cropped. Public
+  Domain}} \label{fig:Hyla_versicolor}   
+\end{marginfigure}  %% right book ref https://books.google.com/books?id=f6lrVNHsNUcC&pg=PP7&lpg=PP7&dq=Juan+Vilanova+y+Piera+y+otros,+Historia+Natural,+tomo+V+%22Reptiles+y+peces%22&source=bl&ots=QzpSB7umN_&sig=ACfU3U3cE95FUKtWlt_PpgE-wCTmwHSMnw&hl=en&sa=X&ved=2ahUKEwiw392pq_LmAhXDqp4KHRrNDLgQ6AEwDXoECAoQBA#v=onepage&q=Juan%20Vilanova%20y%20Piera%20y%20otros%2C%20Historia%20Natural%2C%20tomo%20V%20%22Reptiles%20y%20peces%22&f=false
+An example of phenotype and genetic covariance are shown on the left
+and right of Figure \ref{fig:Frog_genetic_corr} respectively. Gray
+treefrogs ({\it Hyla versicolor}) chorus to attract mates. Their call
+is made up of a trill, a note rapidly pulsed a number of times, that
+is then repeated after some
+period. Female frogs prefer males who make a lot of calls and where each
+of those calls have a large number
+of pulses. However, doing both is be very energetic, and so
+there is potentially a tradeoff between the two aspects of males frog
+calls. Indeed \citet{welch2014multivariate} found
+in lab-reared male frogs that the pulse number and the time period between
+calls were positively correlated, left side of Figure \ref{fig:Frog_genetic_corr}, i.e. individuals were investing
+their energy in making either few highly pulsed calls or many calls
+with few pulses. This phenotypic covariance reflects underlying a
+genetic covariance between theses two frog call
+characteristics (right side  Figure \ref{fig:Frog_genetic_corr}). Fathers whose sons have calls with highly pulsed
+calls also have sons whose calls are more spaced apart.
+
+%% Hyla
+%https://www.flickr.com/photos/internetarchivebookimages/18193065982/in/photolist-tHEdFq-w6oVxt-w7uzuh-wYEMiJ-wM1ydg-tDzszv-wM68MH-w7zib5-x4zbJZ-x3NmSS-toJn5T-ymBaUK-x2gbjQ-tHGbU5-w7zFrh-wDq3dw-wpp5b5-x3GxoJ-xieMpX-x52jC8-x3JEB7-x2b6Bo-w7tkef-wLSL61-toKL3z-w7Ekq4-tFd8h6-vdPjbF-x4sbkM-wLSNwy-wM1vjR-truv4Z-w7CJTR-w7Bk7p-xjs4Gw-tHH1k7-xCgp7d-wLTGnA-xAeJRf-sJnrKP-tFB9xC-wLuk1W-w7tDKd-x15TQs-wLWVow-toz9Lb-xBEY7g-xhGSS2-x15Vsq-x56QhF
+%% https://www.flickr.com/photos/internetarchivebookimages/20225306138/in/photolist-tJ4Rn4-xu7KMN-x4sHmz-x29vVY-xgVebh-wLukBA-xx36Hr-uyhbMs-wLYycD-x1cYNP-wkFrYW-wLSya7-wEMZoc-wLsZrX-x16hfW-x3cPhW-xDWcZt-xmB6i6-wvustq-xqaxeV-xoyLPh-x79DmT-x79CR4-wrM4wH-x72MZu-wYAHWG-xfDTP6-xfDTkv-xfDSSX-wXogss-xeYxDi-x8acmV-wb8XiL-wQEAzM-x5QBpL-wb8Gsd-wQwQbj-x71pJS-wQacmE-x6X6Si-wPeYSN-x4w3xq-wJ7vQC-w4EZxA-otAReB-oeFYJM-ovuHRw-otT3ar-otAQJZ-otAQmV
+% https://upload.wikimedia.org/wikipedia/commons/c/c8/Hyla_arboricola_and_Hyla_versicolor.jpg
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf}
+\end{center}
+\caption{Phenotypic and Genetic correlations in male grey treeforg
+  ({\it Hyla versicolor}) calls. On the left each male is shown as a
+  dot, recording their inter-call period and the number of pulses in each call. One
+  the right each dot corresponds to a father with the mean of sons
+  for both phenotypes. Data from \citet{welch2014multivariate} downloaded from
+\href{https://datadryad.org/stash/dataset/doi:10.5061/dryad.40sj6}{dryad}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_Hyla_versicolor.R}} \label{fig:Frog_genetic_corr}  
+\end{figure}
+% https://commons.wikimedia.org/wiki/File:Hyla_arboricola_and_Hyla_versicolor.jpg
+
+
+
 We can also talk about the genetic correlation between two phenotypes
 \begin{equation}
 r_g = \frac{V_{A,1,2}}{\sqrt{V_{A,1}V_{A,2}}}
 \end{equation}
 where $V_{A,1}$ and $V_{A,2}$ are the additive genetic variance for trait 1 and 2 respectively. Here, $r_g$ tells us to what extent the additive genetic variance in two traits is correlated.   
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf}
-\end{center}
-\caption{Relationship \gitcode{}} \label{fig:Frog_genetic_corr}   %\cite{potti:11} 
-\end{figure}
 
+
+  
 
 One  type of  genetic covariance we often think about is the covariance of male and female phenotypes. For example, below is the relationship between the forehead patch size for Pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
 
