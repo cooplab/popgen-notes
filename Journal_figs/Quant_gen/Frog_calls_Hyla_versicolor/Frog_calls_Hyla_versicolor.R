@@ -9,10 +9,10 @@ kids<-frogs[frogs$sire!=600 & frogs$dam!=600,]
 
 layout(t(1:2))
 plot(kids$CP,kids$PN,pch=19,
-     col=adjustcolor("black",0.3),xlab="Call period (sec)", ylab="Pulse Number",cex=1.4,cex.lab=1.4,cex.axis=1.2,log="xy")
+     col=adjustcolor("black",0.3),xlab="Call period (sec)", ylab="Pulse Number",cex=1.4,cex.lab=1.5,cex.axis=1.2,log="xy")
 
 plot(tapply(kids$CP,kids$sire,mean),tapply(kids$PN,kids$sire,mean),log="xy",pch=19,
-     col=adjustcolor("black",0.7),xlab="Son Call period (sec)", ylab="Son Pulse Number",cex=1.4,cex.lab=1.4,cex.axis=1.2)
+     col=adjustcolor("black",0.7),xlab="Son Call period (sec)", ylab="Son Pulse Number",cex=1.5,cex.lab=1.4,cex.axis=1.2)
 
 dev.copy2pdf(file="/Users/gcoop/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf")
 
