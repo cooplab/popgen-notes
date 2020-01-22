@@ -26,7 +26,8 @@
 \hypersetup{  colorlinks=false,% hyperlinks will be black
   linkbordercolor=red,% hyperlink borders will be red
   citebordercolor=blue,
-  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+  pdfborderstyle={/S/U/W 1}, % border style will be underline of width 1pt
+  hypertexnames=false   %TO fix issue of TOC renew chapter issue https://tex.stackexchange.com/questions/231361/table-of-contents-labels-not-directing-hyperlinks-to-correct-page
 }  %{colorlinks=true, urlcolor=black, citecolor=black, linkcolor=black,linkbordercolor=black}
 %\usepackage[normalem]{ulem}
 %\usepackage{tcolorbox}
@@ -230,7 +231,7 @@ true joy of descent with modification.
 
 \include{math_background/Math-background}
 
-\renewcommand{\thechapter}{}  %{\Alph{chapter}.}
+%\renewcommand{\thechapter}{}  %{\Alph{chapter}.}
 \bibliography{popgen_notes}
 
 \end{document}
