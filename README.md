@@ -1,6 +1,6 @@
 # Population Genetics Notes
 
-A pdf of the notes can be downloaded from the [second release (v1.1)](https://github.com/cooplab/popgen-notes/releases)
+A pdf of the notes can be downloaded from the [second release (v1.1)](https://github.com/cooplab/popgen-notes/releases). Please use that as a stable release. If you want to use a beta version, which will be more up to date but subject to change use the [release_popgen_notes.pdf](https://github.com/cooplab/popgen-notes/blob/master/release_popgen_notes.pdf).
 
 If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link). I'm collecting this information in case it is useful in supporting future development of the notes.  
 
