@@ -34,7 +34,7 @@ Dt<- D0 *(1-my.r)^ts[i]
 lines(my.r,Dt,col=cols[i],lwd=3)
 })
 
- legend(x="topright",lty=1,col=cols,legend=paste("r =",r),cex=1.4,lwd=3)
+ legend(x="topright",lty=1,col=cols,legend=paste("t =",ts),cex=1.4,lwd=3)
  
  
  
