@@ -30,6 +30,10 @@ Joe Felsenstein’s book: http://evolution.genetics.washington.edu/pgbook/pgbook
 
 Walsh and Lynch book pdfs: http://nitro.biosci.arizona.edu/zbook/book.html
 
+Shiny apps for teaching popgen
+Kent Holsinger’s  https://kholsinger.github.io/PopGen-Shiny/
+CJ Battey's https://twitter.com/cj_battey/status/1240386237715922947
+Silas Tittes https://github.com/silastittes/shiny_popgen
 Graham Coop
 
 
