@@ -427,8 +427,112 @@ relatedness was maximized among siblings.
 
 
 %%
+\paragraph{Other forms of alturism}
+Kin-selection can favour altruism because individuals carrying
+altruistic alleles interact with other \emph{ related} individuals who tend to display altruistic phenotypes and so gain an advantage. However, there are other ways that altruistic behaviours can spread than just through the interactions with kin.
 
-\input{Chapters/Notes_on_new_sections/alt_alturism}
+There's an inherent problem with co-operation among non-relatives. Cheaters often win.  To see the quandary of co-operation lets consider the classic prisoner's dilemma. Imagine that two members of a gang are caught by the police, there's not enough evidence to get them on the main charge but they will be convicted of a lesser charge. They face a year in prison each on the lesser charge. The police offer each prisoner a deal, testify against your codefendant and we'll drop all charges against you, your codefendant will get three years.  If they both choose to sell out they'll each get two years. The best-combined outcome for the defendants is to co-operate with each other and keep silent, they'll each serve a year. However, the defendants can not confer, and each has no way to know if the other has squealed and ratted him out. The rational choice in this one-off interaction is to sell out your fellow prisoner. There are many situations like this where an interaction between individuals has the best outcome if they work together. However, as individuals could cheat on the interaction, the rational outcome may be to not co-operate. To place this in an evolutionary setting, we could imagine that the fitness of organisms in a population depended on their strategies in a one-off prisoner's dilemma game, e.g. pairing individuals at random. In such settings, a cheating individual would have higher fitness than an altruist, and so the population would evolve to all cheat.  Yet cooperation between non-relatives has evolved many times. 
+
+%% %for diagonal slash table https://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells
+\begin{table}
+\begin{tabular}{l|*{2}{c}}\hline
+  & Silent (Co-operates) & Confesses (Cheats)\\ \hline
+Silent (Co-operates)  & 1,~1 & 3,~0 \\  %& \backslashbox{1}{1} & \backslashbox{3}{0} \\
+Confesses (Cheats) & 0,~3 & 2,~2\\      %\backslashbox{0}{3} & \backslashbox{2}{2} \\
+\end{tabular}
+\caption{The prisoner's  dilemma. Rows prisoner 1's choice, columns prisoner 2's choice. each cell gives time served by prisoner 1 and 2.}
+\end{table}
+
+The key factor leading to non-cooperative behaviour in this prisoner's
+dilemma was the one-off nature of the interaction. The optimum
+strategy changes when our partners face this situation together
+multiple times, e.g. if our gang members being hauled in regularly
+over the years in their lives in crime. Intuitively, if one of our
+prisoners knows that her fellow gang member didn't betray her last
+time then you might expect that she would be more inclined to trust
+them and not betray them this time. This setup is called the iterative
+prisoner dilemma, with our prisoners facing the `game' with the costs
+and benefits repeatedly with knowledge of how the other player behaved
+on previous rounds of the game.  in this iterated setting, a simple
+`tit-for-tat'  strategy is possible \citep{axelrod1981evolution}. Players following this strategy
+starts the game by cooperating, and then copy the other prisoner's
+strategy from the last move (if the other prisoner cooperated last time
+they cooperate this time, and similarly for cheating). Imagine again
+our population of organisms that are now randomly paired to play
+iterated games for their fitness. If many individuals in the
+population play a tit-for-tat strategy, a cheating individual in this
+population has lower fitness than a tit-for-tat
+individual. Individuals playing a tit-for-tat strategy do not
+cooperate with cheaters, and so pay little relative cost for
+interacting with these individuals, but they gain the benefits of
+cooperation with other altruistic individuals. Thus `reciprocal
+altruism', where individuals provide costly aid to individuals they
+expect will reciprocate at some future date, can evolve \citep{trivers1971evolution}. Note that there's nothing truly altruistic about reciprocal
+altruism, the interacting individuals are simply acting to increase their direct
+fitness across their lifetimes and as such the interaction is mutually beneficial. Thus some
+prefer the name `reciprocity' rather than `reciprocal altruism'.
+
+We can use our Hamilton's rule framework to understand the evolution
+of reciprocal altruism in more detail \citep{queller2011expanded}. The
+only requirements for Hamilton's rule to predict the spread of an
+altruistic behaviour is that
+\begin{eqnarray}
+ B \frac{V_{A,i,j}}{V_A} & >  C  \nonumber \\
+ B \frac{Cov(X_i,X_j)}{V_A} & >  C  
+\end{eqnarray}
+As in eqn. \eqref{eqn:Covar_Hamilton} where now we've written out
+$V_{A,i,j}$ as a covariance between the behavioural phenotype of our
+focal individual $i$ and the interacting individuals $j$.
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/vampire_bat/Vampire_bat_rotated.png}
+\end{center}
+\caption{common vampire bat ({\it Desmodus rotundus}). This \href{https://www.biodiversitylibrary.org/page/40299740\#page/274/mode/1up}{one} was
+  caught on Darwin's horse during his travels in Chile. \BHLNC{The zoology of the voyage of H.M.S. Beagle ... during
+    the years 1832-1836 (1838). Owen R, Darwin,C}{https://www.biodiversitylibrary.org/page/40299839\#page/372/mode/1up}{Natural History Museum Library, London} } \label{fig:vampire_bat}  
+\end{marginfigure}
+
+So we need a sufficiently positive level of covariance between the
+altruistic behaviour of individual $i$ and that of the interacting
+individuals to outweigh the costs, i.e. altruists interact
+sufficiently often with altruists to allow altruistic individuals who are paying costs to on average
+receive the fitness benefits from other individuals.  Under kin-selection models, this positive covariance comes from the positive
+genetic covariance interacting with family members. However, this positive covariance can also arise
+if altruists display context-dependent strategies, such as tit-for-tat, where they are only
+altruistic towards individuals who haven't cheated them recently in the
+past \citep{queller2011expanded}. 
+
+We find altruism in some seemingly strange places. Vampire bats ({\it Desmodontinae}), as their name suggests, feed only on the blood of other animals. 
+However, blood is not quite the superfood that Dracula would have you
+believe. Blood is mostly water. Flying is incredibly energetic, and
+so the bats have to consume half their body weight in blood a night and
+will quickly die if they go without a meal. It is often hard to find
+enough blood a night, and so who miss out on feeding only survive by
+other bats sharing their blood meals. Vampire bats do share their
+meals with their kin, but also with unrelated individuals. As
+predicted by reciprocal altruism they tend to share with individuals
+who have previously shared foods with them, thus the food sharing can be
+seen as an adaptive behaviour \cite{wilkinson1984reciprocal,carter2013food}.  
+
+
+
+% https://www.biodiversitylibrary.org/page/40299839?utm_source=Twitter&utm_medium=social%20media&utm_campaign=Bat%20Week&utm_content=NHM%20London#page/373/mode/1up caught on Darwin's horse
+% https://books.google.com/books?id=QiYTCgAAQBAJ&pg=RA1-PA2&lpg=RA1-PA2&dq=vampire+bat+Horse+darwin&source=bl&ots=rtqY4WgFoa&sig=ACfU3U3gwoxqkPp3syYUKqWo8Cv2r4jfOA&hl=en&sa=X&ved=2ahUKEwiZv5-lrdDoAhWPs54KHf8DD4oQ6AEwGHoECAwQKQ#v=onepage&q=vampire%20bat%20Horse%20darwin&f=false
+% https://commons.wikimedia.org/wiki/File:FMIB_47241_Vampire_Bat_(Desmodus_d%27orbignyi)_Caught_on_Back_of_Darwin%27s_Horse,_near_Coquimbo.jpeg
+
+
+%ncbi.nlm.nih.gov/pmc/articles/PMC3574350/
+% https://s3.amazonaws.com/academia.edu.documents/31158927/Wilkinson84.pdf?response-content-disposition=inline%3B%20filename%3DReciprocal_food_sharing_in_the_vampire_b.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWOWYYGZ2Y53UL3A%2F20191104%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191104T203417Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3ce7b468da6f6db9bd8b272eb208635e297c4601999f3d2436554eaa9d0a9eca
+
+
+
+%%% Cleaner fish
+%% https://www.flickr.com/photos/biodivlibrary/7044673785/in/photolist-Kzvtcm-KvrHAP-Kzwng1-KzvWcU-w3ZipX-x8gRz2-bJvN5R-wXDjvj-u4L29W-whbRHV-x7J95K
+
+% Green beards
+% https://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2009.00842.x
+% https://www.nature.com/articles/29064
 
 \subsection{Sexual selection and the evolution of mate preference by indirect benefits. }
 
