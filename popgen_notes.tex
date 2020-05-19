@@ -5,6 +5,8 @@
 \usepackage{url}
 % \usepackage[authoryear]{natbib}
 
+\usepackage{multicol} %%For eqn sheet https://tex.stackexchange.com/questions/152093/troubles-with-a-two-column-document-using-tufte-handout
+
 \usepackage{graphicx}
 \usepackage{animate}  %https://help.geogebra.org/topic/how-to-include-animated-gif-in-latex-pdf
 
@@ -120,6 +122,7 @@
 
 \definecolor{rev1}{rgb}{1, 0, 0}
 
+
 \begin{document}
 
 \title{Population and\newline Quantitative \newline Genetics}
@@ -205,6 +208,7 @@ true joy of descent with modification.
 
 %\linenumbers
 %\modulolinenumbers[2]
+\include{math_background/Equation_sheet}
 
 %\newpage
 \include{Chapters/intro}
