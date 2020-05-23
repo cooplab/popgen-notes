@@ -1,0 +1,27 @@
+Equation	;	ref.	;	Equation	;	ref.
+ Relatedness (Inbreeding) coefficient 	;	blah	;	 Generalized HWE	;	blah
+ $F_{ij}= 0 \times r_0 + (\nicefrac{1}{4}) r_1  + (\nicefrac{1}{2}) r_2$	;	\eqref{eqn:coeffkinship_step}	;	$(1-F) p^2 + F p (1-F) 2pq   (1-F) q^2 + F q$	;	\eqref{table:GeneralizedHWE}
+	;		;		;	
+F statistics	;	a	;	b	;	c
+$\fst =1-\frac{H_S}{H_T}$	;	\eqref{eqn:FST}.	;	$\fit =1-\frac{H_I}{H_T},~~\fis =1-\frac{H_I}{H_S}$	;	\eqref{eqn:FIT}, ~ \eqref{eqn:FIS}
+	;		;		;	
+Relationship among F statistics	;		;	Linkage disequilibrium (LD)	;	~
+$(1-\fit) =(1-\fis)(1-\fst)$	;	\eqref{eqn:F_relationships}	;	$D = p_{AB} - p_Ap_B $	;	\eqref{eqn:LD_def}
+	;		;		;	
+Decay of LD	;		;	Decay of Heterozygosity	;	~
+ $D_t=  (1-r)^t D_0 \approx D_0 e^{-rt}$	;	\eqref{eqn_LD_decay}	;	  $H_t = \left(1-\frac{1}{2N_e} \right)^tH_0 \approx H_0 e^{-\nicefrac{t}{2N_e}}$	;	\eqref{eqn:loss_het_discrete}
+	;		;		;	
+Equilibrium level of neutral polymorphism	;	\eqref{eqn:hetero}	;	Coalescent time and time to MRCA	;	~
+  $H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  $	;	~	;	$\E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =4N_e(1-1/n) $	;	~
+	;		;		;	
+Pairwise diversity \& number of segregating sites	;	~	;	Expectation of $\dNdS$	;	\eqref{eqn:dNDS_C_B}
+$\E[\pi] = 4N_e\mu ,~~~~ \E[S] = 4N_e\mu \sum_{k=n}^2 \frac{1}{k-1} $	;		;	$\dNdS = (1-C-B) +  2 N B f_B $	;	~
+	;		;		;	
+Model-based $\fst$ expectations.	;	~	;	Phenotypic covariance between relatives ($i$ \& $j$)	;	~
+  $\fst = \frac{ T}{ T + 4N_e }, ~~~~F_{IM} = \frac{1}{1 + 4N_I m} $	;	\eqref{eqn:FST_split},  \eqref{eqn:FIM}	;	$Cov(X_1,X_2)  = 2F_{1,2} V_A + r_2 V_D~~~\textrm{if } V_D>0$	;	~
+	;		;		;	
+Cross trait ($1$ \& $2$) covariance between relatives	;	~	;	Breeder's equation	;	~
+$Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}$	;	~	;	$R = h^2 S = V_A \beta = \frac{V_A}{\wbar} \frac{\partial \wbar}{\partial \bar{x}} $	;	\eqref{breeders_eqn}, \eqref{eqn:R_beta}, \eqref{eqn:pheno_fitness_landscape} 
+	;		;		;	
+Multi-variate breeders equation	;	~	;	Hamilton's Rule 	;	~
+$\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \boldsymbol{ \beta} $	;	\ref{eqn:MV_breeders_eqn}	;	$ 2 F_{i,j} B > C$	;	\eqref{eqn:Hamiltons_rule}
