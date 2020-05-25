@@ -209,8 +209,8 @@ populations into the river?
 \end{question}
 
 \section{Incomplete Lineage Sorting}
-Finally we turn to the interaction of 
-Because it can take a long time for an polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
+Finally we turn to the interaction of the coalescent and speciation. %%this is a guess
+Because it can take a long time for a polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
 individual loci. In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
 we show a simulation of three populations where the bottom population splits off from the other two first, followed by the subsequent splitting of the the top and the middle populations. We start both simulations with a newly
 introduced red allele being polymorphic in the combined ancestral population. The most likely fate of this allele is that it is
@@ -351,18 +351,18 @@ discordances manifest themselves.\\
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ABBA_BABA_coal.pdf}
 \end{center}
-\caption{ In both the left and and right trees ILS has occurred between our single lineages sampled from populations A, B, and C. Imagine that population D is a somewhat distant outgroup
-such that the lineages from A through C (nearly) always coalesce with each other before any coalesce with D. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
+\caption{ In both the left and and right trees ILS has occurred between our single lineages sampled from populations 1, 2, and 3. Imagine that population 4 is a somewhat distant outgroup
+such that the lineages from 1 through 3 (nearly) always coalesce with each other before any coalesce with 4. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
 ABBA or BABA mutational pattern shown at the bottom. } \label{fig:ABBA_BABA}
 \end{figure}
 %JRI: here and in text you refer to populations ABCD but figure is labelled ``species'' and 1234. I think ABCD for populations and AB for alleles is confusing. I don't know if you need A/B for alleles. Why not use A1A2 or just 1/2 as you have previously? sure you miss the fun mnemonic, but it's clearer for a novice reader
 
-Take a look at Figure \ref{fig:ABBA_BABA}. In both cases the lineages from A and B fail to coalesce in
+Take a look at Figure \ref{fig:ABBA_BABA}. In both cases the lineages from 1 and 2 fail to coalesce in
 their initial shared ancestral population, and one or the other of them
-coalesces with the lineage from C before they coalesce with each other. Each option is equally
+coalesces with the lineage from 3 before they coalesce with each other. Each option is equally
 likely; therefore the mutational patterns ABBA and BABA are equally likely to occur under ILS.  \sidenote{Here we have to assume no structure in the ancestral population.}
 
-However, if gene flow occurs from population C into population B, in addition to ILS the lineage from B can more recently coalesce with the lineage from C, and so we should see more ABBAs than BABAs. To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
+However, if gene flow occurs from population 3 into population 2, in addition to ILS the lineage from 2 can more recently coalesce with the lineage from 3, and so we should see more ABBAs than BABAs. To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
 $n_{BABA}$ and calculate
 \begin{equation}
 \frac{n_{ABBA}-n_{BABA}}{n_{ABBA}+n_{BABA}}
