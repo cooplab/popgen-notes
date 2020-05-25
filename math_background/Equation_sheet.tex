@@ -1,0 +1,44 @@
+% \usepackage{multicol} %%For eqn sheet https://tex.stackexchange.com/questions/152093/troubles-with-a-two-column-document-using-tufte-handout
+
+
+%\d% ocumentclass[12pt,twocolumn]{article}
+% % \usepackage{nicefrac}
+% %  \usepackage{amsmath}
+% %   \usepackage{amsfonts}
+% %   \usepackage{amssymb}
+% %   \usepackage[dvipsnames]{xcolor}
+% % \newcounter{question}[section]   %%modified from https://www.sharelatex.com/learn/Counters
+% % %\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
+% %  %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+% % \newcommand{\E}{\mathbb{E}}
+% % \renewcommand{\P}{\mathbb{P}}
+% % \newcommand{\half}{\tfrac{1}{2}}
+
+%\newcommand{\wbar}{\overline{w}}
+% New commands added by Simon:
+%\newcommand{\fis}{F_{\mathrm{IS}}}
+%\newcommand{\fit}{F_{\mathrm{IT}}}
+%\newcommand{\fst}{F_{\mathrm{ST}}}
+%\newcommand{\Wbar}{\overline{W}}
+
+%\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
+ %  \textbf{Question~\thequestion. #1} \rmfamily}{\medskip} 
+
+
+%\begin{document}
+\section*{Equation Sheet}
+\begin{table*}
+% \begin{tabular}{llll}
+ % \csvreader[separator=semicolon]{math_background/Equation_sheet.txt} 
+%\end{tabular}
+   \csvautobooktabular[separator=semicolon]{math_background/Equation_sheet.txt}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
+  % https://tex.stackexchange.com/questions/324777/one-of-the-fields-in-the-csv-read-by-csvreader-has-a-lot-of-comma
+\end{table*}  %, table head=\hline, table foot=\hline
+
+%\newpage 
+%\begin{multicols}{2}
+
+%\end{multicols} 
+
+
+%\end{document}

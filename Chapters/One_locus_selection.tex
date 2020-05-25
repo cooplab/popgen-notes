@@ -111,11 +111,11 @@ Solving this for $\tau$ yields
 In practice, it is often helpful to parametrize the relative fitnesses $w_i$ in a specific way. For example, we may set $w_1 = 1$ and $w_2 = 1 - s$, where $s$ is called the selection coefficient. Using this parametrization, $s$ is simply the difference in relative fitnesses between the two alleles. Equation \eqref{eq:haploid_tau_gen} becomes
 \begin{equation}
 	\label{eq:haploid_tau_gen_expl}
-	p_{t+\tau} = \frac{p_{t}}{p_{t} + q_{t} (1 - s)^{\tau}},
+	p_{\tau} = \frac{p_{0}}{p_0 + q_0 (1 - s)^{\tau}},
 \end{equation}
 as $w_2 / w_1 = 1 - s$. Then, if $s \ll 1$, we can approximate $(1-s)^{\tau}$ in the denominator by $\exp(-s\tau)$ to obtain
 \begin{equation} \label{eq:haploid_logistic growth}
-	p_{t+\tau} \approx \frac{p_t}{p_t + q_t e^{-s\tau}}.
+	p_{\tau} \approx \frac{p_0}{p_0 + q_0 e^{-s\tau}}.
 \end{equation}
 This equation takes the form of a logistic function. That is because
 we are looking at the relative frequencies of two `populations' (of
@@ -849,7 +849,7 @@ $\wbar_1-\wbar_2=0$ holds.
 Using our $s_1$ and $s_2$ parametrization above, we see that the marginal fitnesses of
 the two alleles are equal when
 \begin{equation}
-	p_e = \frac{s_2}{s_1+s_2}
+	p_e = \frac{s_2}{s_1+s_2} \label{eqn:het_ad_eq}
   \end{equation}
       \begin{marginfigure}
 \begin{center}
