@@ -27,12 +27,14 @@
 
 %\begin{document}
 \section*{Equation Sheet}
-\begin{table*}
+\begin{table*}[!htbp]
 % \begin{tabular}{llll}
  % \csvreader[separator=semicolon]{math_background/Equation_sheet.txt} 
 %\end{tabular}
-   \csvautobooktabular[separator=semicolon]{math_background/Equation_sheet.txt}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
+{\small
+  \csvautobooktabular[separator=semicolon]{math_background/Equation_sheet.txt}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
   % https://tex.stackexchange.com/questions/324777/one-of-the-fields-in-the-csv-read-by-csvreader-has-a-lot-of-comma
+}
 \end{table*}  %, table head=\hline, table foot=\hline
 
 %\newpage 
