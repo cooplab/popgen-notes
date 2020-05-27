@@ -529,7 +529,7 @@ population as %\erin{I added subscript 2 to all the T's, which I think is approp
 \E(S_2) &= \sum_{t=0}^{\infty} \E(S_2 | T_2=t) P(T_2=t) \nonumber\\
 & =\sum_{t=0}^{\infty} 2 \mu t P(T_2=t) \nonumber\\
 & =2\mu \E(T_2)  \nonumber\\
-& = 4 \mu N
+& = 4 \mu N 
 \end{align}
 this makes use of the law of total expectation (see Appendix eqn \eqref{eqn:tot_exptation_def}) to average which generation our pair of sequences coalesce in. 
 %As our expected coalescent time is $2N$ generations (which follows from the expected value of exponential distributions), the expected
@@ -549,7 +549,7 @@ differences between a pair of sequences. In the previous chapter we denote the o
 sites separating a pair of sequences as $\pi$ (we usually average this over a
 number of pairs of sequences for a region). Therefore, under our simple, neutral, constant population-size model we expect
 \begin{equation}
-\E(\pi) = 4 N \mu = \theta
+\E(\pi) = 4 N \mu = \theta \label{eqn:pi_expectation}
 \end{equation}
 So we can get an empirical estimate of $\theta$ from
 $\pi$, let's call this $\widehat{\theta}_{\pi}$, by setting $\widehat{\theta}_{\pi}=\pi$., i.e. our observed level of pairwise genetic diversity.  If we
@@ -815,7 +815,7 @@ segregating in our sample ($S$) is Poisson with mean $\mu T_{tot}$. Thus the
 expected number of segregating  sites in a sample of size $n$ is
 \begin{equation}
 \E(S) = \mu \E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N\mu }{i} = \theta
-\sum_{i=n-1}^1 \frac{1}{i}
+\sum_{i=n-1}^1 \frac{1}{i} \label{eqn:seg_sites}
 \end{equation}
 Note that this is growing with the sample size $n$, albeit very slowly (roughly at the rate of the $\log$ of the sample size).
 We can use this formula to derive another estimate of the population scaled mutation rate $\theta$, by setting our observed number of segregating sites in a sample ($S$) equal to this expectation. We'll call this estimator $\widehat{\theta}_W$:

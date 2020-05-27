@@ -480,10 +480,10 @@ despite the 2m allele being common in the population \citep[data from
 ][ table S1]{tuttle2016divergence}.
 
 \begin{marginfigure}
-\begin{center}   %% https://www.audubon.org/birds-of-america/white-throated-sparrow
+\begin{center}   %% 
   \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/Sparassis_crispa/Sparassis_crispa_cauliflower_mushroom}
 \end{center}
-\caption{Cauliflower mushrooms ({\it Sparassis crispa}) parasite tree roots and form these
+\caption{Cauliflower mushrooms ({\it Sparassis crispa}) parasitize tree roots and form these
   amazing, edible fruiting bodies,which can weigh in at up to 30lb and
   apparently tastes like noodles. In a collection of 18 fruiting
   bodies from a {\it Sparassis} population, all individuals were heterozygote for mating type and 17 different mating types were genetically
@@ -865,7 +865,7 @@ Let's say the parents of our inbred individual (B and C) have $K$ shared ancesto
 i.e. individuals who appear in both B and C's recent family trees. We denote these shared ancestors by $A_1, \dots,A_K$, and we denote by $n$ the total number of individuals in the chain from B to C via ancestor $A_i$, including B, C, and $A_i$. For example, if B is C's aunt, then B and C share two ancestors, which are B's parents and, equivalently, C's grandparents. In this case, there are n=4 individuals from B to C through each of these two shared ancestor. In the general case, the kinship coefficient of B and C,
 i.e. the inbreeding coefficient of their child, is
 \begin{equation}
- F = \sum_{i=1}^K \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big)
+ F = \sum_{i=1}^K \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big) \label{eqn:inbreeding_over_ancs}
 \end{equation}
 where $f_{A_i}$ is the inbreeding coefficient of the ancestor
 $A_i$. What's happening here is that we sum over all the mutually-exclusive paths in the pedigree through which B and C can share an allele IBD. With probability

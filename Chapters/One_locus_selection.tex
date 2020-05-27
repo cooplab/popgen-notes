@@ -31,6 +31,12 @@ selection and drift in a couple of chapters.\\
 
 
 \subsection{Haploid selection model}
+\begin{quotation}
+``The dream of every cell is to become two cells.'' -- Francois Jacob.
+ \end{quotation} 
+
+
+ 
 We start out by modeling selection in a haploid model, as this is mathematically relatively simple.
 Let the number of individuals carrying alleles $A_1$ and $A_2$ in generation $t$ be $P_t$ and $Q_t$. Then, the relative frequencies at time $t$ of alleles $A_1$ and $A_2$ are $p_t = P_t / (P_t + Q_t)$ and $q_t = Q_t / (P_t + Q_t) = 1 - p_t$. Further, assume that individuals of type $A_1$ and $A_2$ on average produce $W_1$ and $W_2$ offspring individuals, respectively. We call $W_i$ the absolute fitness.\\
 
@@ -105,11 +111,11 @@ Solving this for $\tau$ yields
 In practice, it is often helpful to parametrize the relative fitnesses $w_i$ in a specific way. For example, we may set $w_1 = 1$ and $w_2 = 1 - s$, where $s$ is called the selection coefficient. Using this parametrization, $s$ is simply the difference in relative fitnesses between the two alleles. Equation \eqref{eq:haploid_tau_gen} becomes
 \begin{equation}
 	\label{eq:haploid_tau_gen_expl}
-	p_{t+\tau} = \frac{p_{t}}{p_{t} + q_{t} (1 - s)^{\tau}},
+	p_{\tau} = \frac{p_{0}}{p_0 + q_0 (1 - s)^{\tau}},
 \end{equation}
 as $w_2 / w_1 = 1 - s$. Then, if $s \ll 1$, we can approximate $(1-s)^{\tau}$ in the denominator by $\exp(-s\tau)$ to obtain
 \begin{equation} \label{eq:haploid_logistic growth}
-	p_{t+\tau} \approx \frac{p_t}{p_t + q_t e^{-s\tau}}.
+	p_{\tau} \approx \frac{p_0}{p_0 + q_0 e^{-s\tau}}.
 \end{equation}
 This equation takes the form of a logistic function. That is because
 we are looking at the relative frequencies of two `populations' (of
@@ -493,7 +499,7 @@ heterozygote. Note that this calculation does not rely on the genotype frequenci
 
 \begin{question}
 {\bf A)} What is the frequency of the low-plated EDA allele ($L$) at the start of the stickleback experiment? \\
-{\bf B)} What is the frequency in the adults? 
+{\bf B)} What is the frequency in the adults? \\
 {\bf C)} Also calculate the frequency in adults using the relative
 fitnesses. 
 \end{question}
@@ -611,7 +617,7 @@ dominance coefficient. \sa{For selection to be directional, we require that $0 \
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width=\textwidth]{figures/simple_diploid_trajs.png}
+\includegraphics[width=1.2 \textwidth]{figures/simple_diploid_trajs.png}
 \end{center}
 \caption{The trajectory of the frequency of allele $A_1$, starting
   from $p_{0}=0.01$, for a selection coefficient $s=0.01$ and three
@@ -843,7 +849,7 @@ $\wbar_1-\wbar_2=0$ holds.
 Using our $s_1$ and $s_2$ parametrization above, we see that the marginal fitnesses of
 the two alleles are equal when
 \begin{equation}
-	p_e = \frac{s_2}{s_1+s_2}
+	p_e = \frac{s_2}{s_1+s_2} \label{eqn:het_ad_eq}
   \end{equation}
       \begin{marginfigure}
 \begin{center}
@@ -1769,10 +1775,11 @@ advantage, but now our allele offers no advantage to heterozygote but
 has a self advantage in heterozygotes.
 
 \begin{question} (Tricker question)
-  Thinking of our autosomal driver from equation \ref{eq:auto_driver}.
-  {\bf B)}	Imagine the cost of the driver were additive, i.e.  $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the
+  With reference to of our autosomal driver from equation
+  \ref{eq:auto_driver}.\\
+  {\bf A)}	Imagine the cost of the driver were additive, i.e.  $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the
 driver invade the population? Can a polymorphic equilibrium be maintained?\\
-{\bf A)}	Imagine the allele is completely recessive, i.e. $w_{dd}=w_{Dd}=1$. What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
+{\bf B)}	Imagine the allele is completely recessive, i.e. $w_{dd}=w_{Dd}=1$. What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
 \end{question}
 
 Many of the known autosomal drive systems are polymorphic in

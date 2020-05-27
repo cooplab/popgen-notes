@@ -685,7 +685,7 @@ AAM and height.
   population. Data from \citet{pickrell2016detection}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height_pickrell.R}} \label{fig:AAM_height}   
 \end{marginfigure}
 
-We can store our variance and covariance values in matrices, a way of gathering these terms that will be useful when we discuss selection: 
+We can `store' our variance and covariance values in matrices, a way of gathering these terms that will be useful when we discuss selection: 
 \begin{equation}
 \bf{V}= \left( \begin{array}{cc} 
 V_{1} & V_{1,2} \\
@@ -704,7 +704,7 @@ Here we've shown the matrices for two traits, but we can generalize this to an a
 We can estimate these quantities, in a similar way as before, by
 studying the covariance in different traits between relatives: 
 \begin{equation}
-Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2}
+Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2} \label{eqn:genetic_covar_rellys}
 \end{equation}
 \begin{marginfigure}
 \begin{center}
@@ -1028,7 +1028,7 @@ non-additivity. Specifically, our equation for the covariance among a
 general pair of relatives
 (eqn. \ref{additive_covar_general_rellys} for additive variation) becomes
 \begin{equation}
- Cov(X_1,X_2) = 2 F_{1,2} V_A + r_2 V_D
+ Cov(X_1,X_2) = 2 F_{1,2} V_A + r_2 V_D \label{eqn:relly_covar_add_dom}
 \end{equation}
 where $r_2$ is the probability that the pair of individuals share 2
 alleles identical by descent, making the same assumptions (other than additivity) that we made in deriving
