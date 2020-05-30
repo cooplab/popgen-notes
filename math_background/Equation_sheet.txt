@@ -12,7 +12,7 @@ Decay of LD		;	Decay of Heterozygosity	~
  $D_t=  (1-r)^t D_0$	,~~\eqref{eqn_LD_decay}	;	  $H_t = \left(1-\frac{1}{2N_e} \right)^tH_0$	,~~\eqref{eqn:loss_het_discrete}
 		;		
 Equilibrium level of neutral heterozygosity		;	Coalescent time and time to MRCA	~
-  $H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  $,~~\eqref{eqn:hetero}	;	$\E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =4N_e(1-1/n) $	~
+  $H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  $,~~\eqref{eqn:hetero}	;	$\E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =4N_e(1-1/n) $,~\eqref{eqn:E_T_i} \eqref{TMRCA_neutral}
 		;		
 Number pairwise diffs. \& segregating sites	~	;	Expectation of $\dNdS$	
 $\E[\pi] = 4N_e\mu ,~~ \E[S] = 4N_e\mu \sum_{k=n}^2 \frac{1}{k-1} $,~~\eqref{eqn:pi_expectation},~\eqref{eqn:seg_sites};	$\dNdS = (1-C-B) +  2 N B f_B $	,~~\eqref{eqn:dNDS_C_B}
