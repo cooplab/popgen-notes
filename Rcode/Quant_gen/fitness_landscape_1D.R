@@ -7,7 +7,7 @@ x<-seq(1,20,length=num.points); y1<-dnorm(x,14,3.5)*1.8; y2<-dnorm(x,5,2); y3<-d
 my.y<-y1+y2+y3; 
 
 par(mar=c(0,3,0.1,1))
-my.palette<-colorRampPalette(c("blue","white","red"))
+my.palette<-co98iug myjg6ui78A1QnlorRampPalette(c("blue","white","red"))
 my.diff<-diff(log(my.y))
 
 # plot(my.diff, (1/my.y[-length(my.y)])*diff(my.y)). ##if you're interested to see that two statements are equal
