@@ -219,6 +219,69 @@ corner), {\it or} have little striping but reverse course frequently
 %Drosophila life history chapter
 %https://www.genetics.org/content/214/1/3
 
+
+In the last chapter we saw that we can often think of our population moving across a mean fitness landscape. Selection on a single trait corresponding to our population taking steps that climb the nearest fitness peak. Similarly our multi-trait response to selection (often) can be thought of as our population climbing a mean fitness landscape (see Figure \ref{fig:MV_fitness_landscape}). However, the path our population takes now depends crucially on genetic correlations.
+
+Previously we saw that our single trait selection gradient can be
+writen as $\beta= \nicefrac{1}{\wbar} \nicefrac{\partial \wbar}{\partial \bar{x}} $ (if XXX). This holds for each of our traits and so we can rewrite our two trait breeders' equation (eqn \eqref{eqn:2D_breeders_eqn}) as
+\begin{eqnarray}
+R_1 & = \frac{V_{A,1}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_1}} + \frac{ V_{A,1,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_2}}  \nonumber \\
+R_2 & = \frac{V_{A,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_2}}   +  \frac{ V_{A,1,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_1}}\label{eqn:2D_fitness_breeders_eqn}
+\end{eqnarray}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Response_to_sel/fitness_landscape_2D.pdf}
+\end{center}
+\caption{Paths taken on a two dimensional mean fitness landscape with
+  no genetic correlation between our two traits ({\bf Left}) and a
+  strong positive correlation ({\bf right}). Our
+  population begins at one of four different starting positions
+  (A-D), with each arrow marks a single generation's step (calculated
+  deterministically using eqn
+  \eqref{eqn:2D_fitness_breeders_eqn}). The scatter plot in the lower
+  left corner illustrates the genetic correlation between the two traits.} \label{fig:MV_fitness_landscape} 
+\end{figure*}
+
+If there is no additive genetic correlation between the traits ($
+V_{A,1,2}=0$, left panel of Figure \ref{fig:MV_fitness_landscape} )
+then our population is just evolving towards its local fitness peak.
+It does so like an overly enthusiastic hill climber walking up the
+nearest hill it finds, barely moving at all on the flat parts, but
+sprinting quickly up the steeper parts till it comes to a stop at the
+top of the hill. If our population is unlucky enough to find itself on
+the slopes of a hill that is not the highest peak our population will
+adapt and climb that hill but it will not reach the global optimum
+(e.g. path A). With $V_{A,1,2}=0$  our per-generation step size for each trait being independent of
+each other. 
+
+The story can be quite different if there's strong genetic correlation
+between the two phenotypes (Right side Figure
+\ref{fig:MV_fitness_landscape}), now the path taken by our population
+is biased towards being strong along the axes of the genetic
+correlation. Sometimes the genetic correlation can aid the progression
+up the hill when the genetic correlation aligns with the slope
+(e.g. paths A and B) as
+selection on one phenotype boosts selection on the other
+phenotype. However, genetic correlations can force the population to
+take strange paths up towards fitness peaks and the going can be slow
+when the path up to the peak lies along an axis perpendicular to the
+covariance in our traits (latter parts of path C \& D)
+In some cases the population can even evolve to an entirely different
+peak due to genetic correlations (compare path D in left and
+right panels). 
+
+
+
+
+Ideas about adaptive fitness landscapes are key to understanding the role of ecology in speciation. Species can be kept distinct in the face of interbreeding if hybrids between the species are poorly adapted to either niche of the parental species (a so called extrinsic postzygotic barrier to successful hybridization). From a fitness landscape perspective this corresponds to species occupying different fitness peaks, such that the hybrids between the two populations, who will be intermediate in phenotype, so fall in the valley between the peaks, i.e. have low fitness. 
+
+%%McBride surfaces https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000529
+%Euphydryas editha https://upload.wikimedia.org/wikipedia/commons/2/22/Seitz.jpg
+
+% Long term divergence and G
+% https://onlinelibrary.wiley.com/doi/full/10.1002/evl3.72  https://datadryad.org/stash/dataset/doi:10.5061/dryad.pt2g084
+
 \section{Some applications of the multivariate trait breeder's equation}
 
 The multivariate breeders equation has a lot of different uses in
