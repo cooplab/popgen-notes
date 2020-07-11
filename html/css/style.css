@@ -2,7 +2,7 @@
 
 body {
   font-family: "Alegreya Sans", Helvatica, sans-serif;
-  width: 60%;
+  max-width: 18cm; // Roughly the width of an A4 paper - margins
   margin-left: auto;
   margin-right: auto;
 }
