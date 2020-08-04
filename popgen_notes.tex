@@ -32,7 +32,6 @@
   hypertexnames=false   %TO fix issue of TOC renew chapter issue https://tex.stackexchange.com/questions/231361/table-of-contents-labels-not-directing-hyperlinks-to-correct-page
 }  %{colorlinks=true, urlcolor=black, citecolor=black, linkcolor=black,linkbordercolor=black}
 %\usepackage[normalem]{ulem}
-%\usepackage{tcolorbox}
 
 %\usepackage{lineno}  %%line numbering
 
@@ -57,6 +56,7 @@
 
 
 %\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{multirow}
 
 \newcommand{\wbar}{\overline{w}}
 % New commands added by Simon:
@@ -98,12 +98,28 @@
 
 \newcounter{question}[chapter]  %[section]   %%modified from https://www.sharelatex.com/learn/Counters
 
+%https://tex.stackexchange.com/questions/428652/newenvironment-for-tcolorbox-and-lstlisting
+\usepackage[most]{tcolorbox} %\usepackage{tcolorbox}
 
-\newenvironment{question}[1][]{\refstepcounter{question}\par\medskip
-  \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
+%mybox
+\newtcolorbox[use counter=question]{question}[1]{colback=red!5!white,
+colframe=red!75!black,fonttitle=\bfseries, 
+title= Question~\thequestion. #1}
 
-%\newenvironment{question}[1][]{\refstepcounter{question}\par   \begin{tcolorbox}
- %   \medskip \textbf{Question~\thequestion. #1}\rmfamily}{\medskip} \end{tcolorbox}
+%\newtcbox{\mybox}[1]{colback=red!5!white,
+%colframe=red!75!black,fonttitle=\bfseries,
+%title= Question~\thequestion. #1}
+
+%\newenvironment{question}[1][] {\refstepcounter{question}\par\medskip
+ % \textbf{Question~\thequestion. #1} \rmfamily}{\medskip}
+
+%\newenvironment{question}[1][] {\refstepcounter{question}\par   \begin{tcolorbox}
+ %   \medskip
+  %  \textbf{Question~\thequestion. #1}\rmfamily \end{tcolorbox} 
+%}{ \medskip}  %\end{tcolorbox} 
+
+%\tcolorboxenvironment{question}{colback=red!5!white,
+%colframe=red!75!black}
 
 \setcounter{secnumdepth}{2}
 

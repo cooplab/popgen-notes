@@ -77,7 +77,7 @@ the consensus are marked with a dash.  The first columns of sequence
   \label{Table:ADH}
 \end{table*}
 
-\begin{question}
+\begin{question}{}
 {\bf A)} How many segregating sites does the sample from \textit{
   D. simulans} have in the ADH gene?\\
 {\bf B)} How many fixed differences are there between \textit{D. melanogaster} and \textit{D. yakuba}?
@@ -142,7 +142,7 @@ allele is found $i$ times out of $n$, e.g. how many singletons are
 there in the sample, and this is called the \emph{frequency
   spectrum}. We'll want to do this in some consistent manner, such as calculating the frequency spectrum of the minor allele or the derived allele.
 
-\begin{question}
+\begin{question}{}
 How many minor-allele singletons are there in \textit{D. simulans} in
 the ADH region? [Defining minor allele just within \textit{D. simulans}.]
 %JRI: ambiguous. is the minor allele defined across all species or just within simulans?
@@ -231,16 +231,6 @@ $p^2$ & $2pq$ & $q^2$ \\
 Note that we only need to assume random mating with respect to our focal allele in order for these expected frequencies to hold in the zygotes forming the next generation. Evolutionary forces, such as selection, change allele frequencies within generations, but do not change this expectation for new zygotes, as long as $p$ is the frequency of the $A_1$ allele in the population at the time when gametes fuse.
 %\erin{I wasn't sure what contrast you were getting at here, so may not be a good edit}
 
-\begin{question}
-On the coastal islands of British Columbia there is a subspecies of
-black bear (\textit{Ursus americanus kermodei}, Kermode's bear). Many members of this
-black bear subspecies are white; they're sometimes called spirit bears. These
-bears aren't hybrids with polar bears, nor are they albinos. They are
-homozygotes for a recessive change at the MC1R gene. Individuals who
-are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
-
-
-
 \begin{marginfigure}    %%%New Kermode_bear
                         %%%https://twitter.com/BioDivLibrary/status/1191354772034592774/photo/3
                         %%%page 77 https://www.biodiversitylibrary.org/item/38166?utm_source=Twitter&utm_medium=social+media&utm_term=&utm_content=MBLWHOI&utm_campaign=Mammal+Monday#page/114/mode/1up
@@ -258,6 +248,13 @@ are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
  % hemisphere. 1942. Glover A.}{https://www.biodiversitylibrary.org/page/20699033\#page/160/mode/1up}{Prelinger
 %  Library} } \label{fig:Kermodes_bear}
 \end{marginfigure}
+\begin{question}{}
+On the coastal islands of British Columbia there is a subspecies of
+black bear (\textit{Ursus americanus kermodei}, Kermode's bear). Many members of this
+black bear subspecies are white; they're sometimes called spirit bears. These
+bears aren't hybrids with polar bears, nor are they albinos. They are
+homozygotes for a recessive change at the MC1R gene. Individuals who
+are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
 
 Below are the genotype counts for the MC1R polymorphism in a
 sample of bears from British Columbia's island populations from \citet{RITLAND:01}.
@@ -301,7 +298,7 @@ in the genome.
                                 %here on this plot.  https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R
 \end{figure}
 
-\begin{question}
+\begin{question}{}
 You are investigating a locus with three alleles, A, B, and C, with
 allele frequencies $p_A$, $p_B$, and $p_C$. What fraction of the
 population is expected to be homozygotes under Hardy--Weinberg?
@@ -345,21 +342,25 @@ and TH01) are shown in table \ref{table:CODIS_1} and
 \caption{Same as \ref{table:CODIS_1} but for the TH01 microsatellite. }
 \end{table}
 
-\begin{question} \label{Q:CODIS}
+\begin{question}{} \label{Q:CODIS}
 You extract a DNA sample from a crime scene. The genotype is 100/80 at the
 D16S539 locus and 70/93 at TH01.\\
 
 {\bf A)} You have a suspect in custody. Assuming this suspect is innocent and of European ancestry, what is the probability
 that their genotype would match this profile by chance (a false-match probability)?\\
-{\bf B)} The FBI uses $\geq 13$ markers. Why is this higher number
+{\bf B)} The FBI uses $\geq$ 13 markers. Why is this higher number
 necessary to make the match statement convincing evidence in court?\\
 {\bf C)}  An early case that triggered debate among forensic geneticists was a crime among the Abenaki, a Native American community in
-Vermont \citep[see ][ for discussion]{lewontin:94}. There was a DNA sample from the crime scene, and the
+Vermont \citep[see][for discussion]{lewontin:94}. There was a DNA sample from the crime scene, and the
 perpetrator was thought likely to be a member of the Abenaki
 community. Given that allele frequencies vary among populations, why would people be concerned about using data from a non-Abenaki population to compute a false match probability?
 %---that is, the probability
 %that a suspect's DNA would match a crime-scene sample if he were unrelated to anyone present at the crime scene
 \end{question}
+
+%\begin{mybox}{Hello there}
+%This is my own box with a mandatory title.
+%\end{mybox}
 
 %\begin{question}
 %Suppose the following genotype frequencies were observed for at an esterase locus in a population of Drosophila (A denotes the “fast” allele and B denotes the “slow” allele):
@@ -618,12 +619,12 @@ individuals are outbred and that this the only close relationship the pair share
 \label{table:IBDprobs}
 \end{table*}
 
-\begin{question}
+\begin{question}{}
   What are $r_0$, $r_1$, and $r_2$ for $\nicefrac{1}{2}$ sibs? ($\nicefrac{1}{2}$ sibs share one
 parent but not the other).
 \end{question}
 
-\begin{question}
+\begin{question}{}
   Explain in words why $ P(\text{I\&J IBD} |~ \text{i\&j  2 IBD}) = \nicefrac{1}{2}$.
 \end{question}
 
@@ -674,7 +675,7 @@ sharing/non-sharing between a pair of individuals. Based on this we can write do
 polymorphic sites where our individuals are observed to share 0, 1, or 2
 alleles.
 
-\begin{question} [Trickier question.]
+\begin{question}{ (Trickier question.)}
 The genotype of our suspect in Question \ref{Q:CODIS} turns out to be 100/80 for
 D16S539 and 70/80 at TH01. The suspect is not a match to the DNA
 from the crime scene; however, they could be a sibling.
@@ -836,7 +837,7 @@ proportions.\\
 %can be specified by a combination of $p$ and $F$.\\
 %JRI: unclear to me if this is useful. will readers understand parameter numbers/DF?
 
-\begin{question}
+\begin{question}{}
 The frequency of the $A_1$ allele is $p$ at a biallelic locus. Assume that our population is randomly mating and that the
 genotype frequencies in the population follow from HW. We select two
 individuals at random to mate from this population. We then mate the children
@@ -954,7 +955,7 @@ heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
 \end{equation}
 Hence, $\hat{F}$ quantifies the deviation due to inbreeding of the observed heterozygosity from the one expected under random mating, relative to the latter.
 
-\begin{question}
+\begin{question}{}
   Suppose the following genotype frequencies were observed for an esterase locus in a population of \textit{Drosophila} (A denotes the ``fast" allele and B denotes the ``slow" allele):
 \begin{center}
 \begin{tabular}{ccc}

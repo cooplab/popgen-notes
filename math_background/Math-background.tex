@@ -43,8 +43,7 @@ which are based in probability theory and statistics. Here we briefly
 review some of these concepts. The wikipedia pages on
 statistics and math topics are often excellent introductions and
 worth consulting if you want to know more. Parts of this primer were originally written by
-Sebastian Schreiber and myself for our Fall quarter of the PBG core
-(although I take full credit for any errors subsequently introduced).
+Sebastian Schreiber and myself.
 Some of these concepts may go beyond what you have covered in previous
 courses. The notes do not rely on you knowing all of these results, but I'll refer to this appendix when these concepts first come
 up in the main body of the notes. To answer the questions in the first
@@ -59,23 +58,30 @@ would be  a good place to start.
 In evolutionary genetics we're often interested in how quantities
 change over time, and so we're interested in the rate of change over
 time. This particular obsession is shared with much of
-science and so the concepts we make use of popup in many other fields. 
+science and so the concepts we make use of appear in many other fields. 
 The \emph{derivative} $f'(a)$ of a function $f(x)$ at $x=a$ represents
 the instantaneous rate of change of the function, $\frac{df(x)}{dx}$, at $x=a$ or,
 equivalently, the slope of the graph of the function at $x=a$. A
-derivative of zero indicates a local maxima, minima, or saddle point of the function see Figure \ref{Fig:derivative}.
+derivative of zero indicates a local maxima, minima, or saddle point
+of the function. An example is shown in Figure \ref{Fig:derivative},
+note how each maxima/minima of $f(x)$ corresponds to a value of zero
+of $f'(a)$.
     
 \begin{figure}
  \begin{center}
-   \includegraphics[width=0.7 \textwidth]{math_background/calc_pics/Derivat.pdf}\end{center}
+   \includegraphics[width=0.8
+   \textwidth]{math_background/calc_pics/Derivat_all_3.pdf} \end{center}  %{math_background/calc_pics/Derivat.pdf}\end{center}
  \caption{{\bf Top)} An example function, $f(x) = x -(\nicefrac{5}{6})x^3  -
-   (\nicefrac{1}{3}) x^4$, and {\bf Bottom)} its derivative $f'(a) = 1 - 3(\nicefrac{5}{6}) x^2 -4 (\nicefrac{1}{3}) x^3$
+   (\nicefrac{1}{3}) x^4$, {\bf Middle)} its derivative $f'(x) = 1
+   - 3(\nicefrac{5}{6}) x^2 -4 (\nicefrac{1}{3}) x^3$, and {\bf Bottom}
+   its second derviative  $f''(x) =   - 2 \times 3(\nicefrac{5}{6}) x -
+   3\times 4 (\nicefrac{1}{3}) x^2$
    \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{Fig:derivative}
 \end{figure}
 To give a physical example, imagine that the derivative of position with respect to
 time gives the (instantaneous) speed of a car. Think of the top panel of Figure \ref{Fig:derivative}
 as showing a car driving up and down an
-alley, the page, with $f(x)$ giving the car's position at time $x$. The bottom panel
+alley, with $f(x)$ giving the car's position at time $x$. The bottom panel
 shows the car's speed, with the sign (i.e. $+$ or $-$) of the derivative giving the direction of
 movement. Moving from left along the $x$ (time) axis, in time period A our car is moving up the alley (page), the speed is
 positive (i.e. $f'(a)>0$). In the time period B, the car is reversing down the alley, its speed is negative ($f'(a)<0$ ).  
@@ -90,11 +96,11 @@ $f$, denoted by $f''(a)$ or $\frac{d^2f(a)}{d^2x}$.
 The second
 derivative measures the rate at which the first derivative is changing
 i.e. the concavity/convexity of the function. See Figure \ref{Fig:2nd_derivative}.
- \begin{figure}
- \begin{center}
-   \includegraphics[width=0.7 \textwidth]{math_background/calc_pics/2nd_Derivat.pdf}\end{center}
- \caption{ \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{Fig:2nd_derivative}
- \end{figure}
+% \begin{figure}
+ %\begin{center}
+  % \includegraphics[width=0.7 \textwidth]{math_background/calc_pics/2nd_Derivat.pdf}\end{center}
+ %\caption{ \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{Fig:2nd_derivative}
+ %\end{figure}
 In our physical example, the second derivative with respect to time is
 the (instantaneous) acceleration of the car, as it is the rate of
 change in the speed of the car (signed by
@@ -117,14 +123,14 @@ complicated, nonlinear functions by linear functions (this is called a first-ord
  \begin{center}
    \includegraphics[width=\textwidth]{math_background/calc_pics/Taylor_1.pdf}\end{center}
  \caption{Our function from the top panel of Figure
-   \ref{Fig:derivative} approximated by first-order taylor
+   \ref{Fig:derivative} approximated by first-order Taylor
    approximations (red lines) at a variety of points $a$ (solid
-   dots). Note how the approximation breaks down away from the dot, I
+   dots). Note how the approximation breaks down away from the dot; we
    stop plotting the approximation a little away from the dot for easy
    of presentation. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{FigTaylor_1}
 \end{marginfigure}
 Returning to our car example, this corresponds to trying to guess the
-position of the car
+past or future position of the car
 extrapolating from its current location and speed. We'll do well when
 the car is traveling at a relatively constant speed, i.e. isn't
 accelerating or deccelerating too fast. 
@@ -135,7 +141,7 @@ throughout the notes are
 \exp(x)&\approx &1+x \mbox{ for $x$ near $0$}  \label{eqn:Taylor_exp}\\
 (1-x)^k &\approx & 1-k\,x \mbox{ for $x$ near $0$}
 \end{eqnarray}
- we'll also use the Taylor approximation given by eqn
+where $\exp$ is (natural) exponential function. We'll also use the Taylor approximation given by eqn
  \eqref{eqn:Taylor_exp} as a trick to write
 \begin{eqnarray}
      (1+x)^L \approx  \exp\left( L x\right)  \mbox{ for $x$ near $0$,} \label{eqn:Taylor_geo} 
@@ -146,15 +152,17 @@ which allows
  \begin{eqnarray}
    \prod_{i=1}^L (1+x_i) \approx  \exp\left( \sum_{i=1}^L x_i\right)
                                    \mbox{if all $x_i$ are near $0$,} \label{eqn:Taylor_prod} 
- \end{eqnarray}  
-which is useful as it allows us move from a product to thinking about
+ \end{eqnarray}
+Where $\prod_{i=1}^L$ is the product of elements running from $i=1$ to $L$ and
+$\sum_{i=1}^L$ is the sum of entries from  $i=1$ to $L$. This
+approximation is useful as it allows us move from a product to thinking about
 a sum (where averages are easier to think about). 
 
  \begin{marginfigure}
  \begin{center}
    \includegraphics[width=\textwidth]{math_background/calc_pics/Taylor_2.pdf}\end{center}
  \caption{Our function from the top panel of Figure
-   \ref{Fig:derivative} approximated by second-order taylor
+   \ref{Fig:derivative} approximated by second-order Taylor
    approximations (red lines) at a variety of points $a$ (solid
    dots).  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{FigTaylor_2}
 \end{marginfigure}
@@ -181,6 +189,17 @@ One place this second order approximation is useful is for the $\log$ function a
 they represent the \emph{signed area} ``under'' the graph of $y=f(x)$
 over the interval $[a,b]$. %It's often helpful to think about an
 %integral as 
+The integral is found by taking the limit of the summed area under the curve in each bin $dx$ as the
+bin size goes to zero. An example is shown in Figure
+\ref{Fig:Integral_eg}. 
+ \begin{marginfigure}
+ \begin{center}
+   \includegraphics[width=\textwidth]{math_background/calc_pics/Integral_eg.pdf}\end{center}
+ \caption{Our function from the top panel of Figure
+   \ref{Fig:derivative}. The integral of $f(x)$ from $x=-0.5$ to $1$,
+   $\int_{-0.5}^1 f(x)\,dx$  is the signed area ``under'' our curve
+   and so is the red area minus the blue area. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Calc_background.R}}\label{Fig:Integral_eg}
+\end{marginfigure}
 
 \section{Probability}
 Evolution is fundamentally a random process. Which individuals live,
@@ -240,7 +259,7 @@ each type of egg are shown in Figure \ref{Fig:Venn_toys}.
    eggs in total, including 57 eggs with no prize that are not shown. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Math-background.R}}\label{Fig:Venn_toys}
  \end{marginfigure}
 
-\begin{question}
+\begin{question}{}
 You reach into the box and pull out one egg:\\
 {\bf i)} For each egg type (dog alone, cat alone, lizard, dog+cat, and no prize),
 what is the probability that you get an egg of that type? What do these probabilities sum to?\\
@@ -249,7 +268,7 @@ the probability of getting an egg with a dog in it {\it or} an egg without a dog
 {\bf iii)} What's the probability of getting an egg with a dog in it {\it or} an egg with a lizard. \\
 \end{question}
 These questions above illustrate the principle that if events A \& B
-are mutually exclusive then $\P(\textrm{A or B}) = \P(A) + \P(B)$,
+are mutually exclusive then $\P(\textrm{A or B}) = \P(\textrm{A}) + \P(\textrm{B})$,
 following from these $\P(\textrm{A or not A}) = \P(\textrm{A}) + \P(\textrm{not A}) =
 1$. What is the probability of getting an egg with a dog {\it or} a
 cat?  Well, for events that are not mutually exclusive we need to
@@ -258,22 +277,22 @@ discount the sum of the probabilities by their overlap, giving
 \P(\textrm{A or B}) = \P(\textrm{A}) +\P(\textrm{B}) - \P(\textrm{A \& B}).
 \end{equation}
 We call $ \P(\textrm{A \& B}) $ the joint probability of A \& B.
-\begin{question}
+\begin{question}{}
 What is the probability $\P(\textrm{dog or cat})$?
 \end{question}
 
 
-\paragraph{Conditional probability}
+\paragraph{Conditional probability.}
 We often want to know the \emph{conditional probability}, the probability of an event conditional on some
 other particular event. For example, the conditional probability of getting a cat toy
 given that I've pulled out an egg containing a dog (recall that ten of the hundred eggs contain both a dog and a cat toy.). 
 We write this as $\P(\textrm{cat} | \textrm{dog})$, where we read $|
 \textrm{dog}$ as `given dog' or `conditional on dog'.  The rule of conditional probabilities is that
 \begin{equation}
-\P(\textrm{A} | \textrm{B}) = \frac{\P(\textrm{A \& B} )}{P(\textrm{B})}  \label{eqn:cond_prob}
+\P(\textrm{A} | \textrm{B}) = \frac{\P(\textrm{A \& B} )}{\P(\textrm{B})}  \label{eqn:cond_prob}
 \end{equation}
 we can now answer
-\begin{question} \label{question:cond}
+\begin{question}{} \label{question:cond}
 What is $ \P(\textrm{cat} | \textrm{dog})$?\\
 Explain the underlying intuition of your answer? \\
 \end{question}
@@ -291,6 +310,8 @@ joint probability as
 these two ways of writing the same thing will come in useful in just a
 moment.
 
+\paragraph{The law of total
+  probability.}
 The total probability of an event can be obtained by summing over
 all of the $L$ mutually exclusive ways that A can happen
 \begin{equation}
@@ -304,7 +325,7 @@ a cat as
  \P(\textrm{cat}) = \P(\textrm{cat \& dog}) + \P(\textrm{cat \& not dog}). 
 \end{equation}
 
-\paragraph{Independence}
+\paragraph{Independence.}
 Two events are \emph{independent} of each other if
 \begin{equation}
 \P(\textrm{A \& B}) = \P(\textrm{A}) \P(\textrm{B}) \label{eqn:basic_indie}
@@ -313,11 +334,11 @@ this requirement implies independence because the conditional and
 unconditional probabilities are equal, $P(\textrm{A}) = P(\textrm{A} | \textrm{B})$, i.e. I learn
 nothing about the event $\textrm{A}$ from the event $\textrm{B}$ having occurred. 
 For example, if I draw two eggs with replacement from the box the
-probability of getting a lizard then a dog is $\P(\textrm{lizard then} \& \textrm{dog}) =
+probability of getting a lizard then a dog is $\P(\textrm{lizard then dog}) =
 \P(\textrm{lizard}) \P(\textrm{dog})$. 
 
 
-\paragraph{Bayes Rule}
+\paragraph{Bayes Rule.}
 We often want to reverse of conditional probability statements,
 i.e. turn the statement of $P(\textrm{B} | \textrm{A})$ into the statement of $P(\textrm{A} |
 \textrm{B})$. 
@@ -331,7 +352,7 @@ Rearranging eqn \eqref{eqn:two_joint_probs} we obtain
  \end{equation}
 Equation \eqref{eqn:Bayes_Rule} is also called \emph{``Bayes' Rule"} or \emph{``Bayes' Theorem,"} and it  which allows us to reverse the variable we
 condition on. 
-\begin{question}
+\begin{question}{}
 Use Bayes' rule to calculate $\P(\textrm{dog} | \textrm{cat})$ from
 the conditional probability you calculated in Question
 \ref{question:cond}.\\
@@ -395,7 +416,7 @@ than the variance is that its units are the same as $X$, e.g.  cms.
 Another important choice of $f$ is $f(x)=\log x$. Provided that $X$ is positive, $\exp(\E[\log X])$ corresponds to the  \emph{geometric mean of $X$}. Alternatively $1/\E[1/X]$ corresponds to the \emph{harmonic mean of $X$}. 
 
 
-\begin{question}
+\begin{question}{}
 Your friend offers you a wager on the outcome of one round of playing the
 fairground egg game. She'll give you: $\$1$ for a only dog, $\$2$ for
 a only cat
@@ -422,10 +443,9 @@ inches to cm (as this change just involves multipling by a number).
 
 Using our linearity of expectations, we can obtain an analogous result for the variance
 \begin{equation}
-Var[aX+bY+c]= a^2Var[X] + b^2 Var[Y] \label{eqn:general_var_decomp}
+Var[aX+bY+c]= a^2Var[X] + b^2 Var[Y]  + 2ab Cov(X,Y) \label{eqn:general_var_decomp}
 \end{equation}
-this holds if $X$ and $Y$ are independent variables, if they are not
-we need to account for their covariance. Note that the constant $c$
+we'll discuss covariances (the $Cov$ term) below. Note that the constant $c$
 has disappeared as the variance is a statement about the spread of the
 points around the mean, and so it doesn't matter how we shift the
 mean. 
@@ -467,15 +487,19 @@ Important discrete random variables include
 \begin{equation}
   p_i = \frac{n!}{i!(n-i)!} p^i (1-p)^{n-i} \qquad 0\le i \le n. \label{eqn:binomial_dist}
 \end{equation}
-For a binomial random variable, $\E[X]=np$ and
-$\sigma^2=np(1-p)$. Examples are shown in Figure \ref{Fig:binomial}, Note how the mass of the
+For a binomial random variable,
+\begin{equation}
+  \E[X]=np \textrm{, and } \sigma^2=np(1-p).
+\end{equation}
+  Examples are shown in Figure \ref{Fig:binomial}, Note how the mass of the
    distribution becomes more centered on the mean for larger sample
    sizes, as the standard deviation increases only as $\sqrt{n}$. 
 Another way that we can write that our observation $i$ is drawn from
 the binomial distribution is $i \sim
 \textrm{Binomial}(p,n)$, where $i \sim$ is read as ``$i$ is
-distributed as'' (we will use the notation as short hand for random
-variable in the notes).
+distributed as''. we will use the $\sim$ notation as short hand for
+the distribution of random
+variable in the notes.
 
 \item[Geometric] random variables count the total number of flips $X$ before seeing a heads on a coin with probability $p$ of being heads. In which case, 
 \begin{equation}
@@ -509,11 +533,12 @@ p_i = \lambda^i e^{-\lambda}/i!
  \caption{Poisson distribution with different means ($\lambda$). the
    vetical lines show the means. The lighter coloured lines show a
    binomial with $n=100$ and $p=\nicefrac{\lambda}{n}$ to illustrate
-   how well the Poisson approximates the bionomial for rare events
-   (it's hard to see them as they are close together!). 
+   how well the Poisson approximates the bionomial for rare events.
+   (It's hard to see them as they are close together!) 
    \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Math-background.R}}\label{Fig:poisson}
  \end{marginfigure}
- For a random Poisson variable $\E[X]=\lambda$.
+ For a random Poisson variable $\E[X]=\lambda$ and $\sigma^2 =
+ \lambda$. 
 
  The form of this is less intuitive than that of the
  binomial. However, the Poisson is actually a limiting case of the
@@ -535,7 +560,7 @@ p_i = \lambda^i e^{-\lambda}/i!
  &=  \lim_{n\to\infty} \frac{\lambda^i}{i!} e^{-\lambda}  \label{eqn:bionom_to_poiss}
  \end{align}
 The third line assumes that $n-i \approx n$, which holds for $n \gg
-i$, and uses our
+i$, and the forth line uses our
 exponential approximation given by eqn \eqref{eqn:Taylor_geo}. 
 }  See Figure \ref{Fig:poisson} to see how well
  they match. Therefore, the Poisson represents a limit of
@@ -583,7 +608,7 @@ for all $i$ and $j$, see also our discussion around eqn. \eqref{eqn:basic_indie}
 
 Alternatively, if $X$ and $Y$ are continuous random variables, then the joint distribution is a function of the form $p(x,y)$ which satisfies 
 \begin{equation}
-\P[a\le X\le b, c\le Y\le d]= \int_a^b \int_c^d p(x,y)\,dxdy. 
+\P[a\le X\le b, c\le Y\le d]= \int_a^b \int_c^d p(x,y)\,dx~dy. 
 \end{equation}
 where $X$ and $Y$ are said to be independent if we can write the
 joint density as a product of the probability density functions 
@@ -614,24 +639,42 @@ a once from a deck of cards and $A$ being the event of drawing an
 queen or a jack, with $a$ being any other type of card, and $B$ being that the card is
 a heart and $b$ it being any other suit. So $XY=1$ if our card is a
 Queen or Jack of Hearts, and zero otherwise. Then
-\begin{eqnarray}
-  \E[XY] - \E[X]\E[Y] &= \P(X=A,~Y=B) -  \P(X=A) \P(Y=B)
-                        & p_{AB} - p_{A} p_{B} \nonumber\\ \label{eqn:binary_covar}
- \end{eqnarray}
+\begin{align}
+  \E[XY] - \E[X]\E[Y] &= \P(X=A,~Y=B) -  \P(X=A) \P(Y=B) \nonumber\\
+                        & = p_{AB} - p_{A} p_{B} \label{eqn:binary_covar}
+ \end{align}
 where $p_{AB}$ is the frequency of $AB$, eg. the proportion of cards
 that are the Queen or Jack of hearts in our deck, and $p_{A}$ is the
-(marginal) frequency of $B$, e.g. the proportion of Heart suite cards
+(marginal) frequency of $B$, e.g. the proportion of 
 (and similarly for $p_{A}$).
 
-\begin{question}
-What is the covariance for $A$ and $B$ in our deck of cards example? 
+\begin{margintable}  %https://www.latex4technics.com/?note=msfvja
+  \begin{tabular}{m{1em}lll}
+ & &\multicolumn{2}{c}{Thing 1} \\
+\multirow{3}{*}{\rotatebox{90}{Thing 2}}   & & Absent & Present\\
+&  Absent & 20 & 1\\
+ &  Present & 1& 9    
+  \end{tabular}
+  \caption{Counts of the appearances of Thing 1 and Thing 2 over the
+    31 pages of The Cat in the Hat \citep{dr._seuss_cat_1957}. (Counts are
+  approximate and disagreements were  adjudicated by 4 year old.)} \label{table:thing1thing2}
+\end{margintable}
+
+\begin{question}{}
+What is the covariance of $A$ and $B$ in our deck of cards example? \\
+What is the covariance of the presence of Thing 1 and
+2 in The Cat in the Hat (Table \ref{table:thing1thing2})?\\
+Calculate the correlation for each of the above.
 \end{question}
+
+
+
 
 \graham{Added thing 1 and thing2 eg?}
 \paragraph{Sample Covariance and Correlation} 
 We can calculate the \emph{sample covariance} for $X$ and $Y$ of a set of observations
 of $X_1, \cdots, X_L$ and $Y_1, \cdots, Y_L$, where these observations
-are paired $(X_i,~Y_i)$ as
+are paired $(X_i,~Y_i)$ asx
 \begin{align}
  \widehat{\sigma_{XY}^2}  &= \frac{1}{L-1} \sum_{i=1}^L (X_i -
                             \bar{X}) (Y_i - \bar{Y})  %\nonumber\\
@@ -641,13 +684,13 @@ this captures the extent to which two sets of numbers covary. For
 example, the running speeds of kids in a race at age 8 and 9 positively
 covary. Example datasets are shown in Figure \ref{Fig:Covar_egs}. 
 
-    \begin{figure}
+    \begin{figure*}
  \begin{center}
-   \includegraphics[width=\textwidth]{math_background/dist_pics/Covar.pdf}\end{center}
+   \includegraphics[width=0.8\textwidth]{math_background/dist_pics/Covar.pdf}\end{center}
  \caption{Examples of datasets where pairs of variables show varying
    degrees of covariance, the sample correlation ($ \widehat{\rho_{XY}}$) is shown in the top corner.
    \gitcode{https://github.com/cooplab/popgen-notes/blob/master/math_background/Math-background.R}}\label{Fig:Covar_egs}
- \end{figure}
+ \end{figure*}
 To move covariances to a more understandable scale we can divide
 through by the product of the standard deviations
 \begin{equation}
@@ -682,7 +725,7 @@ where $a$ and $b$ are the intercept and slope of a line.
  \end{marginfigure}
 
 What
-is the best fitting line? Well one common definition of the optimal fit is
+is the best fitting line? One common definition of the optimal fit is
 the choice of $a$ and $b$ that minimize the squared error
 between the observed ($Y$) and their predicted values, i.e.
 \begin{equation}
@@ -741,13 +784,7 @@ $Y$ to $oY+p$ then
 Cov(mX+n,~oY+p) = (mo) Cov(X,Y) 
 \end{equation}
 Such linear transforms leaves our correlation unaffected, as it
-cancels out of the top and bottom of eqn \eqref{eqn:def_corr}. While
-it multiplies the linear slope by $\nicefrac{m}{o}$. Thus
-for our correlation it does not matter what units we measure $X$ and
-$Y$. While our linear slope is always in the units of
-\nicefrac{\textrm{units}(X)}{\textrm{units}(Y)}, for example
-$\nicefrac{\textrm{m}}{\textrm{s}}$ if we were predicting the
-distance (Y in meters) traveled by runners in time intervals ($Y$ seconds).
+cancels out of the top and bottom of eqn \eqref{eqn:def_corr}.
 
 \subsection*{Useful Limits.} \label{section:useful_limits}
 \paragraph{Law of Large Numbers} If $X_1,X_2,\dots$ are a sequence of independent random variables (i.e. ``the outcomes of a sequence of independent experiments) with common expectation $\mu= \E[X_i]$, then 

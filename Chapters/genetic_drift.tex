@@ -92,6 +92,7 @@ expected heterozygosity in generation $t$ is
 H_t = \left(1-\frac{1}{2N} \right)^tH_0  \label{eqn:loss_het_discrete}
 \end{equation}
 %
+
 i.e. the expected heterozygosity within our population is decaying
 geometrically with each passing generation. If we assume that $\nicefrac{1}{(2N)}
 \ll 1$ then we can approximate this geometric decay by an exponential
@@ -102,7 +103,12 @@ H_t =H_{0} e^{ - \nicefrac{t}{(2N)} }
 \end{equation}
 %
 i.e. heterozygosity decays exponentially at a rate
-$\nicefrac{1}{(2N)}$.
+$\nicefrac{1}{(2N)}$.  \marginnote{By a similar argument, in a haploid population the expected proportion of pairs of differing alleles decays as:
+\begin{equation}
+H_t = \left(1-\frac{1}{2N} \right)^tH_0  H_{0} e^{ - \nicefrac{t}{(N)} } \label{eqn:loss_het_haploid} 
+\end{equation}
+%
+}
 
 In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 independently simulated loci drifting in a population of 50 individuals. Each population was started from a frequency of $30\%$. Some drift up and some drift down, eventually being lost or fixed from the population, but, on average across simulations, the allele frequency doesn't change. We also track heterozygosity, you can see that heterozygosity sometimes goes up, and sometimes goes down, but on average we are losing heterozygosity, and this rate of loss is well predicted by eqn. \eqref{eqn:loss_het_discrete}.
 \begin{figure}
@@ -121,7 +127,7 @@ In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 inde
 \end{marginfigure}
 %JRI: lame. i'd drop pic if you can't find one of right species.
 
-\begin{question} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
+\begin{question}{} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
   estimate that the mean level of heterozygosity in this population is 0.005.
   You set yourself a goal of maintaining a level of heterozygosity of at least
   0.0049 for the next two hundred years. Assuming that the smelt have a
@@ -190,7 +196,8 @@ those 7 individuals who survived the bottleneck, diversity levels
 remain low.  \citeauthor{Wisely:02} measured heterozygosity at a number
 of microsatellites in individuals from museum collections, showing the sharp drop in diversity as population sizes crashed (see Figure \ref{fig:LossHet_ferrets}).
 
-\begin{question} \label{geo_question} In mathematical population genetics, a
+%\label{geo_question}
+\begin{question}{} \label{geoquestion} In mathematical population genetics, a
   commonly used approximation is $(1-x) \approx e^{-x}$ for $x << 1$ (formally,
   this follows from the Taylor series expansion of $\exp(-x)$, ignoring second
   order and higher terms of $x$).  This approximation is especially useful for approximating a geometric
@@ -222,10 +229,10 @@ frequency of alleles in our population over time. The mutation rate we use is ve
 We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is $(1-C)\mu$. This is the per generation rate.
 %JRI: modified here to match notation later in chapter where you use $(1-C)\mu$ as the neutral rate
 
-\begin{question}
+\begin{question}{} 
 It's worth taking a minute to get familiar with both how rare, and how common, mutation is. The per base pair mutation rate in humans is around $1.5 \times 10^{-8}$ per generation. That means, on average, we have to monitor a site for $\sim 66.6$ million transmissions from parent to child to see a mutation. Yet populations and genomes are big places, so mutations are common at these levels. \\
-{\bf A)} Your autosomal genome is $\sim 3$ billion base pairs long ($3 \times 10^9$). You have two copies, the one you received from your mum and one from your dad. What is the average (i.e. the expected) number of mutations that occurred in the transmission from your mum and your dad to you?\\
-{\bf B)} The current human population size is $\sim 7$ billion individuals. How many times, at the level of the entire human population, is a single base-pair mutated in the transmission from one generation to the next?
+{\bf A)} Your autosomal genome is $\sim$ 3 billion base pairs long ($3 \times 10^9$). You have two copies, the one you received from your mum and one from your dad. What is the average (i.e. the expected) number of mutations that occurred in the transmission from your mum and your dad to you?\\
+{\bf B)} The current human population size is $\sim$7 billion individuals. How many times, at the level of the entire human population, is a single base-pair mutated in the transmission from one generation to the next?
 \end{question}
 \paragraph{Levels of heterozygosity maintained as a balance between mutation and drift.}
 
@@ -332,7 +339,7 @@ will come up a number of times so we'll give it its own name:
 So all else being equal, species with larger population sizes should
 have proportionally higher levels of neutral polymorphism.
 
-\begin{question}
+\begin{question}{}
 The sequence-level heterozygosity in {\it Capsella grandiflora} (grand shepherd's purse) is $\sim 2\%$ per base. Assuming a mutation rate of $10^{-9} bp^{-1}$ per generation, what is your estimate of the population size of {\it C. grandiflora}?
 \end{question}
 
@@ -447,14 +454,37 @@ i.e. the rate of coalescence is the harmonic mean of the two sexes' population s
 N_e = \frac{4N_FN_M}{N_F+N_M}
 \end{equation}
 Thus if reproductive success is very skewed in one sex (e.g. $N_M \ll
-N/2$), our effective population size will be much reduced as a result. For more on how different evolutionary forces affect the rate of genetic drift, and their impact on the effective population size, see \citet{charlesworth:09}.\\
+N/2$), our autosomal effective population size will be much reduced as a result. For more on how different evolutionary forces affect the rate of genetic drift, and their impact on the effective population size, see \citet{charlesworth:09}.\\
 
-\begin{question}
-You are studying a population of 500 male and 500 female Hamadryas baboons. Assume that all of the females but only 1/10 of the males get to mate:
-{\bf A)} What is the effective population size for the autosome?\\
-{\bf B)} Do you expect the {\it ratio} of X-chromosome to autosomal diversity to be higher or lower in this species compared to a species where the sexes have more similar variance in reproductive success? Explain the intuition behind your answer.
+\begin{question}{}
+You are studying a population of 500 male and 500 female Hamadryas baboons. Assume that all of the females but only 1/10 of the males get to mate. What is the effective population size for the autosome?\\
+%{\bf B)} Do you expect the {\it ratio} of X-chromosome to autosomal diversity to be higher or lower in this species compared to a species where the sexes have more similar variance in reproductive success? Explain the intuition behind your answer.
  \end{question}
 
+ Variance in male and female reproductive success will have very different effects on chromosomes with different patterns of inheritance such as the X chromosome, mitochondria, and Y chromosome. The mitochondria (mtDNA) and Y chromosome are haploid and only inherited through the females and males respectively, so they have a haploid effective population sizes of $N_M$ and $N_F$. 
+\gc{ADD X CHROMOSOME.}
+To see the impact of differential variance in male and female reproductive success, lets look at how levels of genetic diversity over thousands of years in domestic horses. \citet{librado2017ancient} sequenced ancient DNA from 13 sacrificed stallions from an $2300$ year old Scythian burial mound in Kazakhstan. The Scythian were a nomadic people whose Russian Steppe empire stretched from the  Black Sea to the borders of China and were among the first people to master horseback warfare with both men and women riding armed with short bows. By comparing these data to modern horses, \citet{librado2017ancient} found that levels of diversity had been substantially reduced on the autosomes and greatly reduced on the Y chromosome. This constrasts with the mtDNA where levels of diversity have hardly decreased at all.  
+Much of modern horse breeding relies on a small number of stallions 
+
+%% Scythian horse  golden  https://commons.wikimedia.org/wiki/File:Szk%C3%ADta.jpg
+% Scythian comb https://www.flickr.com/photos/levanrami/47362587962
+ %https://www.cell.com/cell/pdf/S0092-8674(19)30384-8.pdf
+ \begin{figure}
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.pdf}
+\end{center}
+\caption{Levels of diversity in Scythian horses from  $2300$ year old Scythian horses and Modern horses (Nordic). The numbers next to each column given the fraction of diversity remaining in the present day, Data from \citet{librado2017ancient}. \gitcode{}. } \label{fig:Scythian_horses_pi}
+\end{figure}
+
+ \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Genetic_drift/Scythian_rider/616px-Szkíta.jpg}
+\end{center}  %https://www.historyextra.com/period/bronze-age/scythians-the-art-of-war/
+\caption{A  gold plaque showing Scythian rider found in a burial mound in eastern Crimera (c400–350 BC). \wikimedia{Photograph: V Terebenin/State Hermitage Museum}{https://commons.wikimedia.org/wiki/File:Szk\%C3\%ADta.jpg}{Inritter}{This is a faithful photographic reproduction of a two-dimensional, public domain work of art..}} \label{fig:Scythian_horse}
+\end{marginfigure}
+%xf A gold plaque depicting a Scythian rider with a spear in his right hand. Photograph: V Terebenin/State Hermitage Museum
+
+ 
 \graham{Add X chromosome Ne?}
 \section{The Coalescent and patterns of neutral diversity}
 
@@ -569,7 +599,7 @@ Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:het
 \end{marginfigure}
 
 
-\begin{question}
+\begin{question}{}
 \citet{robinson:16} found that the endangered Californian Channel Island fox on San Nicolas had very
 low levels of diversity ($\pi =0.000014 \text{bp}^{-1}$) compared to
 its close relative the California mainland gray fox ($0.0012\text{bp}^{-1}$). \\
@@ -584,7 +614,7 @@ history, also to see how ridiculously cute they are.]
 \end{question}
 
 
-\begin{question}
+\begin{question}{}
 In your own words describe why the coalescent time of a pair of lineages scales linearly with the (effective) population size.
 %The long-term $N_e$ estimated from genetic diversity within most human populations is roughly $10,000$, and the generation time of humans is $\sim$30 years. What is the average time, in years, that we have to go back to to find the most recent common ancestor for  a pair of sequences drawn from the same human population?
 \end{question}
@@ -768,7 +798,7 @@ happening here is that in large samples our lineages typically coalesce rapidly
 at the start and very soon coalesce down to a much smaller number of
 lineages.   \\
 
-\begin{question}
+\begin{question}{}
 Assume an autosomal effective population of 10,000 individuals (roughly the long-term human estimate) and a generation time of 30 years. What is the expected time to the most recent common ancestor of a sample of 20 people? What is this time for a sample of 500 people?
 \end{question}
 \paragraph{The expected total time in a genealogy and the number of
@@ -864,7 +894,7 @@ i.e. there are twice as many singletons as doubletons, three times as many
 singletons as tripletons, and so on. The other thing that will be
 helpful for us to know is that neutral alleles at intermediate frequency tend to be old, and those that are rare in the sample are young. We expect to see a lot more rare alleles in our sample than common alleles.
 
-\begin{question}
+\begin{question}{}
 There are two possible tree shapes that could relate four
 samples. Draw both of them and separately colour (or otherwise mark) the branches by where singletons, doubletons, and tripleton derived alleles could arise.
 %{\bf A)}
@@ -1026,7 +1056,7 @@ zero. One example of this skew is shown in Figure
 subsp. parviglumis}) roughly ten thousand years ago. We can see how the
  bottleneck associated with domestication has resulted in a loss of genetic diversity in maize compared to teosinte, and the polymorphism that remains is somewhat skewed towards intermediate frequencies resulting in more positive values of Tajima's D.
 
-\begin{question}
+\begin{question}{}
 \citet{voight2005interrogating} sequenced 40 autosomal regions from 15 diploid samples of Hausa people from Yaounde, Cameroon. The average length of locus they sequenced for each region was $2365$bp. They found that the average number of segregating sites per locus was $S= 11.1$ and the average $\pi = 0.0011$ per base over the loci. Is Tajima's D positive or negative? Is a demographic model with a bottleneck or growth more consistent with this result?
 \end{question}
 
