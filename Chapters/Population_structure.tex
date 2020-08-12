@@ -35,9 +35,10 @@ be close to zero, but would likely be larger if we used world-wide
 frequencies. This is because there is a somewhat lower level of
 expected heterozygosity within the UK than in the human population across the world as a whole.\\
 
-\citeauthor{Wright:43}\cite{Wright:43,Wright:49} developed a set of `F-statistics' (also called `fixation
+Building on this idea of inbreeding coefficients estimated at various
+levels, \citeauthor{Wright:43} developed a set of `F-statistics' (also called `fixation
 indices') that formalize the idea of inbreeding with respect to different
-levels of population structure. See Figure \ref{fig:FST_pig} for a schematic
+levels of population structure \citep{Wright:43,Wright:49}. See Figure \ref{fig:FST_pig} for a schematic
 diagram. Wright defined $F_{\mathrm{XY}}$ as the correlation between random
 gametes, drawn from the same level $X$, relative to level $Y$. We will return
 to why $F$-statistics are statements about correlations between alleles in just
@@ -60,7 +61,7 @@ to that found in the total population (T). } \label{fig:FST_pig}
 \fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
 \label{eqn:FIS}
 \end{equation}
-a direct analog of eqn. \ref{eqn:Fhat}. Hence, $\fis$ is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation. We could also compare the observed
+a direct analog of \eqn \ref{eqn:Fhat}. Hence, $\fis$ is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation. We could also compare the observed
 heterozygosity in individuals ($H_I$) to that expected in the total
 population, $H_T$. If the frequency of allele $A_1$ in the total
 population is $p_T$, then we can write $\fit$ as
@@ -102,9 +103,7 @@ H_T$, and so $\fst \geq 0$ and $\fis \leq \fit$. This observation that the avera
   heterozygosity of the sub-populations must be less than of equal to
   that of the total
   population is called the Wahlund effect. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
-$H_T$ with their averages across loci (as above).
-\sidenote[][-0.5cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
-
+$H_T$ with their averages across loci (as above).\sidenote[][-0.5cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
 
 
 As an example of comparing a genome-wide estimate of $F_{ST}$ to that
@@ -149,7 +148,8 @@ genotyped a SNP in each of these high-$F_{ST}$ regions. Here's their
 genotyping counts from the SNP, segregating for an allele 1 and 2, in the {\it Wnt}
 region, a key regulatory gene involved in feather development:
 \begin{center}
-\begin{tabular}{ l c c c}
+  \begin{tabular}{ l c c c}
+    & \multicolumn{3}{c}{Genotypes}\\
 Species & 11 & 12 & 22\\
 \hline
 Blue-winged & 2 & 21 & 31\\
@@ -189,12 +189,12 @@ between alleles drawn from a population (or an individual) above that expected
 by chance (i.e.\ drawing alleles sampled at random from some broader
 population). \sidenote[][-2cm]{To see why the numerator of eqn
   \eqref{eqn:Fascorr} is the covariance of a discrete
-  random variable see Appendix eqn. \eqref{eqn:binary_covar}, where we
+  random variable see Appendix \eqn \eqref{eqn:binary_covar}, where we
 imagine that the random variable is $1$ if the alleles drawn from the
 population are the same
 and $0$ if not. The denominator is the binomial variance of a sample
-of two, and so our eqn is a covariance divided by a variance and so
-interpretable as a correlation (see eqn \eqref{eqn:def_corr})}\\
+of two, and so our equation is a covariance divided by a variance and so
+interpretable as a correlation (see \eqn \eqref{eqn:def_corr})}\\
 
 We can also interpret $F$-statistics as proportions of variance explained by
 different levels of population structure. To see this, let us think about $\fst$ averaged over $K$
@@ -206,15 +206,15 @@ write
 \fst &= \frac{2 \bar{p}\bar{q} - \frac{1}{K}\sum_{i=1}^K 2p_iq_i }{2
 \bar{p}\bar{q}} = \frac{ \left(\frac{1}{K} \sum_{i=1}^K p_i^2 +
 \frac{1}{K} \sum_{i=1}^K q_i^2 \right) -  \bar{p}^2-\bar{q}^2 }{2
-       \bar{p}\bar{q}}  \label{eqn:fst_var_middle}\\
+       \bar{p}\bar{q}}  \nonumber\\
        &= \frac{\mathrm{Var}(p_1,\dots,p_K)}{\mathrm{Var}(\bar{p})},
 \label{eqn:F_as_propvar}
 \end{align}
 which shows that $\fst$ is the proportion of the variance explained by the
 subpopulation labels. \sidenote[][]{This follows because the
-  numerator, in step eqn \eqref{eqn:fst_var_middle}, 
+  numerator, in the middle step of \eqn \eqref{eqn:F_as_propvar}, 
 is the averaged squared frequency minus the squared frequency, i.e. the
-variance (see Appendix eqn \ref{eqn:sample_var}.}
+variance (see Appendix \eqn \ref{eqn:sample_var}).}
 
 \subsection{Other approaches to population structure}
 
@@ -354,7 +354,7 @@ into $K$ unknown populations. We begin by assigning our individuals at random
 to these $K$ populations.
 \begin{enumerate}
 \item Given these assignments we estimate the allele frequencies at all of our loci in each population.
-\item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by eqn. ($\ref{eqn_assignment}$).
+\item Given these allele frequencies we chose to reassign each individual to a population $k$ with a probability given by \eqn \eqref{eqn_assignment}.
 \end{enumerate}
 We iterate steps 1 and 2 for many iterations (technically, this approach is known as \emph{Gibbs Sampling}). If the data is
 sufficiently informative, the assignments and allele frequencies will
@@ -408,8 +408,10 @@ allele $A_1$ an individual carries at this SNP). We can think of this as a $N
 %JRI: here you assume reader knows SNP/locus can be used interchangeably
 
 Denoting the sample mean allele frequency at SNP $\ell$ by $p_{\ell}$, it's
-common to standardize the genotype in the following way \begin{equation}
-\frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{2 p_{\ell}(1-p_{\ell})}} \end{equation}
+common to standardize the genotype in the following way
+\begin{equation}
+  \frac{g_{i,\ell} - 2 p_{\ell}}{\sqrt{2 p_{\ell}(1-p_{\ell})}} \label{eqn:std_allele_freq}
+\end{equation}
 i.e.
 at each SNP we center the genotypes by subtracting the mean genotype
 ($2p_{\ell}$) and divide through by the square root of the expected variance assuming that
@@ -444,8 +446,9 @@ the $[i,~j]$ given by
 \frac{1 }{S-1} \sum_{\ell=1}^S \frac{(g_{i,\ell} - 2p_{\ell})(g_{j,\ell} -
   2p_{\ell})}{2 p_{\ell}(1-p_{\ell})} \label{eqn:kinship_mat}
 \end{equation}
-Note that this is the sample covariance, and is very similar to those we
-encountered in discussing $F$-statistics as correlations (equation
+Note that this is the sample covariance of our standardized allele
+frequencies (\eqn \eqref{eqn:std_allele_freq}), and is very similar to those we
+encountered in discussing $F$-statistics as correlations (\eqn
 \eqref{eqn:Fascorr}), except now we are asking about the covariance
 between two individuals above that expected if they were both drawn
 from the total sample at random (rather than the covariance of alleles
@@ -454,16 +457,16 @@ learning about the major (orthogonal) axes of the kinship matrix.
 
 
 As an example of the application of PCA, let's consider the case of the
-putative ring species in the Greenish warbler ({\it Phylloscopus
+putative ring species in the greenish warbler ({\it Phylloscopus
   trochiloides}) species complex. This set of subspecies exists in a
 ring around the edge of the Himalayan plateau. \citet{alcaide:14}
-collected $95$ Greenish warbler samples from $22$ sites around the
+collected $95$ greenish warbler samples from $22$ sites around the
 ring, and the sampling locations are shown in Figure \ref{fig:Gwarbler_geo}.
 \begin{figure}
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{figures/warbler_PCA_figs/warbler_geo_map.jpg}
 \end{center}
-    \caption[][-0cm]{The sampling locations of 22 populations of Greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
+    \caption[][-0cm]{The sampling locations of 22 populations of greenish warblers from \citet{alcaide:14}. The samples are coloured by the subspecies. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
 \label{fig:Gwarbler_geo}
 \end{figure}
 
@@ -481,7 +484,7 @@ plateau, such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
 
 
 \citet{alcaide:14} obtained sequence data for their samples at 2,334 snps. In Figure \ref{fig:warbler_heat}
-you can see the matrix of kinship coefficients, using \eqref{eqn:kinship_mat}, between all pairs of
+you can see the matrix of kinship coefficients, using \eqn \eqref{eqn:kinship_mat}, between all pairs of
 samples. You can already see a lot about population structure in this
 matrix. Note how the red and yellow samples, thought to be derived from
 the Eastern route around the Himalayas, have higher kinship with each
@@ -502,9 +505,9 @@ similarly close group in terms of their higher kinship.
   0.75 \textwidth]{figures/warbler_PCA_figs/warbler_heatmap.png}
   \end{center}
     \caption[][3cm]{The matrix of kinship coefficients calcuated for the 95
-      samples of Greenish warblers. Each cell in the matrix gives the
+      samples of greenish warblers. Each cell in the matrix gives the
       pairwise kinship coefficient calculated for a particular pair. Hotter colours indicating higher
-      kinship. The x and y labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure. The rows and columns have been
+      kinship. The $x$ and $y$ labels of individuals are the population labels from Figure \ref{fig:Gwarbler_geo}, and coloured by subspecies label as in that figure. The rows and columns have been
     organized to cluster individuals with high kinship.  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
 \label{fig:warbler_heat}
 \end{figure}
@@ -524,10 +527,10 @@ the samples plotted on the first two PCs.
       that figure. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/warblerdata/warbler_ind_PCA.R}}
 \label{fig:warbler_PCA}
 \end{figure}
-The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the hypothesis that the Greenish warblers speciated as they moved around the Himalayan
+The two major routes of expansion clearly occupy different parts of PC space. The first principal component distinguishes populations running North to South along the western route of expansion, while the second principal component distinguishes among populations running North to South along the  Eastern route of expansion. Thus genetic data supports the hypothesis that the greenish warblers speciated as they moved around the Himalayan
 plateau. However, as noted by \citet{alcaide:14}, it also suggests additional complications to the traditional view of these warblers as an unbroken ring species, a case of speciation by continuous geographic isolation. The {\it Ludlowi} subspecies shows a significant genetic break, with the southern most MN samples clustering with the {\it Trochiloides} subspecies, in both the PCA and kinship matrix (Figures \ref{fig:warbler_PCA} and \ref{fig:warbler_heat}), despite being much more geographically close to the other {\it Ludlowi} samples. This suggests that genetic isolation is not just a result of geographic distance, and other biogeographic barriers must be considered in the case of this broken ring species.
 
-Finally, while PCA is a wonderful tool for visualizing genetic data, care must be taken in its interpretation. The U-like shape in the case of the Greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations, pulling them genetically closer together and helping to form a genetic ring as well as a geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex geometric arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Inferring the geographical and population-genetic history of species requires the application of a range of tools; see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the Greenish warblers.
+Finally, while PCA is a wonderful tool for visualizing genetic data, care must be taken in its interpretation. The U-like shape in the case of the greenish warbler PC might be consistent with some low level of gene flow between the red and the blue populations, pulling them genetically closer together and helping to form a genetic ring as well as a geographic ring. However, U-like shapes are expected to appear in PCAs even if our populations are just arrayed along a line, and more complex geometric arrangements of populations in PC space can result under simple geographic models \citep{novembre:08}. Inferring the geographical and population-genetic history of species requires the application of a range of tools; see \citet{alcaide:14} and \citet{bradburd:16} for more discussion of the greenish warblers.
 
 
 %For example, it would be tempting to see the U shape in the warbler example (Figure \ref{fig:warbler_PCA}) as representing a
@@ -551,6 +554,19 @@ locus, e.g. correlations within individuals (inbreeding) or between individuals
 to which their offspring is inbred. We now turn to correlations between alleles
 at different loci.\\
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.8 \textwidth ]{figures/LD_decay/recom_cartoon.pdf}
+\end{center}
+\caption{A cartoon of the possible outcomes of meiosis. The blue and
+  red lines are two copies of a chromosome in an  individual who is
+  heterozygote for a AB and an ab haplotype. The dotted lines show a
+  possible crossover between the two chromosomes. The four possible
+  outcomes of meiosis are show below, the probablity of each is given
+  to the right (assuming
+  a recombination fraction of $c$ between the two loci).} \label{fig:recom_cartoon}
+\end{marginfigure}
+
 
 \paragraph{Recombination}
 To understand correlations between loci we need to
@@ -560,11 +576,15 @@ two haplotypes will be transmitted intact to the next generation. While if a
 recombination (i.e. an odd number of crossing over events) occurs between the
 two parental haplotypes, then $\nicefrac{1}{2}$ the time the child receives an
 $Ab$ haplotype and $\nicefrac{1}{2}$ the time the child receives an $aB$
-haplotype. Effectively, recombination breaks up the association between loci.
-We'll define the recombination fraction ($r$) to be the probability of an odd
-number of crossing over events between our loci in a single meiosis. In practice we'll often be
+haplotype. See Figure \ref{fig:recom_cartoon}. Effectively, recombination breaks up the association between loci.
+For linked markers we'll define the recombination fraction ($x$) to be the probability
+of an odd number of crossing over events between our loci in a single
+meiosis. The recombination fraction between a pair of loci can range from $0$ to
+$\nicefrac{1}{2}$, with $c=\nicefrac{1}{2}$ corresponding markers far
+enough apart on a chromosome that many recombination events occur
+between them (loci on different automosomes also have a $c=\nicefrac{1}{2}$).  In practice we'll often be
 interested in relatively short regions such that recombination is relatively
-rare, and so we might think that $r=r_{BP}L \ll \frac{1}{2}$, where $r_{BP}$ is the
+rare, and so we might think that $c=c_{BP}L \ll \frac{1}{2}$, where $c_{BP}$ is the
 average recombination rate (in Morgans) per base pair (typically $\sim 10^{-8}$ ) and L is
 the number of base pairs separating our two loci.\\
 %JRI: I think you'd be better to stick with A_1A_2 and B_1B_2 notation rather than AaBb. Ideally be consistent with this throughout the book, maybe with a sidenote the first time you do it saying something like "I use A_1A_2 but you will often see Aa. I do it this way as to avoid confusion about perceived dominance or ancestral state."
@@ -573,7 +593,7 @@ the number of base pairs separating our two loci.\\
 The (horrible) phrase linkage
 disequilibrium (LD) refers to the statistical non-independence
 (i.e. a correlation)  of
-alleles in a population at different loci. It's an awful name for a fantastically useful concept; LD is key to our understanding of diverse topics, from sexual selection and speciation to the limits of genome-wide association studies.
+alleles in a population at different loci \citep{lewontin1960evolutionary,slatkin2008linkage}. It's a fantastically useful concept; LD is key to our understanding of diverse topics, from sexual selection and speciation to the limits of genome-wide association studies.
 
 Our two biallelic loci, which segregate alleles $A/a$ and $B/b$, have allele
 frequencies of $p_A$ and $p_B$ respectively. The frequency of the two locus haplotype AB is $p_{AB}$,
@@ -581,7 +601,7 @@ and likewise for our other three combinations. If our loci were
 statistically independent then $p_{AB} = p_Ap_B$, otherwise $p_{AB} \neq p_Ap_B$
 We can define a covariance between the $A$ and $B$ alleles at our two
 loci\sidenote{Here again we are making use of a covariance of discrete
-random variables, see Appendix eqn \eqref{eqn:binary_covar}, where the
+random variables, see Appendix \eqn \eqref{eqn:binary_covar}, where the
 first variable is drawing haplotype with an $A$ at the first locus,
 and the second is drawing a B allele at the other locus.} as
 %JRI: sure, but a few lines above you define LD as a correlation so
@@ -603,19 +623,20 @@ p_{AB} = p_Ap_B+D. \label{eqn:ABviaD}
 If $D=0$ we'll say the two loci are in linkage equilibrium, while if
 $D>0$ or $D<0$ we'll say that the loci are in linkage
 disequilibrium (we'll perhaps want to test whether $D$ is
-statistically different from $0$ before making this choice). You should be careful to keep the concepts of linkage
-and linkage disequilibrium separate in your mind. Genetic linkage refers to the
+statistically different from $0$ before making this choice). Linkage
+disequilibrium is a horrible phrase, as it risks muddling the concepts
+of genetic linkage and linkage disequilibrium. Genetic linkage refers to the
 linkage of multiple loci due to the fact that they
 are transmitted through meiosis together (most often because the
 loci are on the same chromosome). Linkage disequilibrium merely refers
 to the covariance between the alleles at different loci; this may in
 part be due to the genetic linkage of these loci but does not
 necessarily imply this (e.g. genetically unlinked loci can be in LD
-due to population structure). \\i
+due to population structure). \\
 %JRI: good explanation. at beginning of section you say LD is a horrible term but don't explain. tempted to move that comment here or move this explanation there, as otherwise it seems odd and alone
 
 \begin{question}{}
-You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. The frequencies of haplotypes in each population are:
+You genotype 2 bi-allelic loci (A \& B) segregating in two mouse subspecies (1 \& 2) which mate randomly among themselves, but have not historically interbreed since they speciated. The frequencies of haplotypes in each population are:
 \begin{center}
 \begin{tabular}{|c|cccc|}
 \hline
@@ -667,8 +688,8 @@ r^2 = \frac{D^2}{p_A(1-p_A) p_B(1-p_B) }
 \end{equation}
 As $D$ is a covariance, and $p_A(1-p_A) $ is the variance of an allele
 drawn at random from locus $A$, $r^2$ is the squared correlation
-coefficient.\sidenote{See Appendix eqn \eqref{eqn:def_corr} for the
-  definition of a correlation coefficient.}  Note that this $r$ in $r^2$ is NOT the recombination
+coefficient.\sidenote{See Appendix \eqn \eqref{eqn:def_corr} for the
+  definition of a correlation coefficient.} \\ %Note that this $r$ in $r^2$ is NOT the recombination
 fraction.   \\
 
 \begin{marginfigure}
@@ -704,11 +725,11 @@ since the cross was created.
 
 
 \paragraph{The generation of LD.}
-Various population genetic forces can generate LD. Selection can generate LD by favouring particular combinations of
+Various population genetic forces can generate LD \citep{slatkin2008linkage}. Selection can generate LD by favouring particular combinations of
 alleles. Genetic drift will also generate LD, not because particular
 combinations of alleles are favoured, but simply because at random particular
 haplotypes can by chance drift up in frequency. Mixing between
-divergent populations can also generate LD, as we saw in the mouse
+divergent populations can also generate LD \citep{nei1973linkage}, as we saw in the mouse
 question above.
 %JRI: super weird not to mention mutation as generating LD
 
@@ -717,34 +738,34 @@ question above.
 We will now examine what happens to LD over the generations if, in a very large population  (i.e. no genetic drift and frequencies of our loci thus follow their expectations), we
 only allow recombination to occur. 
 To do so, consider the frequency of our $AB$ haplotype in the next generation,
-$p_{AB}^{\prime}$. We lose a fraction $r$ of our $AB$ haplotypes to
-recombination ripping our alleles apart but gain a fraction $rp_A p_B$ per generation from other
+$p_{AB}^{\prime}$. We lose a fraction $c$ of our $AB$ haplotypes to
+recombination ripping our alleles apart but gain a fraction $cp_A p_B$ per generation from other
 haplotypes recombining together to form $AB$ haplotypes. Thus in the
 next generation
 \begin{equation}
-p_{AB}^{\prime} = (1-r)p_{AB} + rp_Ap_B \label{new_hap_freq}
+p_{AB}^{\prime} = (1-c)p_{AB} + cp_Ap_B \label{new_hap_freq}
 \end{equation}
-The last term above, in eqn \ref{new_hap_freq}, is $r(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$ simplified, which is the probability of recombination in the different diploid genotypes that
+The last term above, in \eqn \ref{new_hap_freq}, is $c(p_{AB}+p_{Ab})(p_{AB}+p_{aB})$ simplified, which is the probability of recombination in the different diploid genotypes that
 could generate a $p_{AB}$ haplotype. \\
 
 We can then write the change in the frequency of the $p_{AB}$
 haplotype as
 \begin{equation}
-\Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -r p_{AB} + rp_Ap_B = - r D
+\Delta p_{AB} = p_{AB}^{\prime} -p_{AB} = -c p_{AB} + cp_Ap_B = - c D
 \end{equation}
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_time.pdf}  %https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R
 \end{center}
 \caption{The decay of LD from an initial value of $D_0=0.25$ over time
-  (Generations) for a pair of loci a recombination fraction $r$
+  (Generations) for a pair of loci a recombination fraction $c$
   apart. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}}\label{fig:LD_time}
 \end{marginfigure}
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width=\textwidth]{figures/LD_decay/LD_decay_recom.pdf}
 \end{center}
-\caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($r$) between our pair of loci. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}} \label{fig:LD_recom}
+\caption{The decay of LD from an initial value of $D_0=0.25$ due to recombination over $t$ generations, plotted across possible recombination fractions ($c$) between our pair of loci. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/LD/LD_decay.R}} \label{fig:LD_recom}
 \end{marginfigure}
 %JRI: shouldn't y-axis labels for both be \Delta D?
 So recombination will cause a decrease in the frequency of $p_{AB}$ if
@@ -755,25 +776,26 @@ population ($D<0$). Our LD in the next generation is
 D^{\prime} & = p_{AB}^{\prime} - p'_{A}p'_{B} \nonumber\\
 & = (p_{AB} + \Delta p_{AB}) - (p_{A} + \Delta p_{A})(p_{B} + \Delta p_{B}) \nonumber\\
 & = p_{AB} + \Delta p_{AB} - p_{A}p_{B} \nonumber\\
-& = (1-r) D
+& = (1-c) D
 \end{align}
 where we can cancel out $\Delta p_{A}$ and $\Delta p_{B}$ above because recombination only changes haplotype, not allele, frequencies.
 So if the level of LD in generation $0$ is $D_0$, the level $t$
 generations later ($D_t$) is
 \begin{equation}
-D_t=  (1-r)^t D_0
+D_t=  (1-c)^t D_0
 \end{equation}
 Recombination is acting to decrease LD, and it does so
-geometrically at a rate given by $(1-r)$. If $r \ll 1$ then we can
+geometrically at a rate given by $(1-c)$ \citep{weinberg1909vererbungsgesetze,jennings1917numerical}. If $c \ll 1$ then we can
 approximate this by an exponential and say that
 \begin{equation}
-D_t \approx  D_0 e^{-rt}  \label{eqn_LD_decay}
+D_t \approx  D_0 e^{-ct}  \label{eqn_LD_decay}
 \end{equation}\\
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question}
 \begin{question}{}
 You find a hybrid population between the two mouse subspecies
-described in the question above, which appears to be comprised of equal proportions of ancestry from the two subspecies.  You estimate LD between the two markers to be 0.0723. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
+described in the question above, which appears to be comprised of
+equal proportions ($50/50$) of ancestry from the two subspecies.  You estimate LD between the two markers to be $D=0.0723$. On the basis of previous work you estimate that the two loci are separated by a recombination fraction of 0.1. Assuming that this hybrid population is large and was formed by a single mixture event, can you estimate how long ago this population formed? \\
 \end{question}
 %JRI: assumes r from previous problem. would be clearer to mention this or give r. also just says "LD" but should be more specific that you mean D.
 \begin{marginfigure}[2cm]
@@ -785,19 +807,19 @@ described in the question above, which appears to be comprised of equal proporti
 
 A particularly striking example of the decay of LD generated by
 the mixing of populations is offered by the LD created by the
-interbreeding between humans and Neanderthals. Neanderthals and modern
-Humans diverged from each other likely over half a million years ago,
+interbreeding between humans and Neanderthals \citep{Sankararaman:12}. Neanderthals and modern
+humans diverged from each other likely over half a million years ago,
 allowing time for allele frequency differences to accumulate between
 the Neanderthal and modern human populations. The two populations spread back into secondary contact when
 humans moved out of Africa over the past hundred thousand years or
 so. One of the most exciting findings from the sequencing of the
 Neanderthal genome was that modern-day people with Eurasian ancestry
 carry a few percent of their genome derived from the Neanderthal
-genome, via interbreeding during this secondary contact. To date the timing of this
+genome, via interbreeding during this secondary contact \citep{green2010draft}. To date the timing of this
 interbreeding, \citet{Sankararaman:12} looked at the LD in modern
 humans between pairs of alleles found to be derived from the Neanderthal
 genome (and nearly absent from African populations).
-In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci as a function of the genetic distance ($r$) between them, from
+In Figure \ref{fig:LD_Neanderthal} we show the average LD between these loci as a function of the genetic distance ($c$) between them, from
 the work of
 \citeauthor{Sankararaman:12}.
 \begin{figure}
@@ -808,7 +830,7 @@ the work of
 \label{fig:LD_Neanderthal}
 \end{figure}
 
-Assuming a recombination rate $r$, we can fit the exponential decay of LD predicted by eqn. \eqref{eqn_LD_decay} to the data points in this figure;
+Assuming a recombination rate $r$, we can fit the exponential decay of LD predicted by \eqn \eqref{eqn_LD_decay} to the data points in this figure;
 the fit is shown as a red line. Doing this we estimate $t=1200$
 generations, or about 35 thousand years (using a human generation time of 29
 years). Thus the LD in modern Eurasians, between alleles derived from

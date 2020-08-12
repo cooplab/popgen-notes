@@ -1,6 +1,6 @@
 Equation,	ref.	;	Equation,	ref.
  Relatedness (Inbreeding) coefficient 		;	 Generalized HWE	
- $F_{ij}= 0 \times r_0 + (\nicefrac{1}{4}) r_1  + (\nicefrac{1}{2}) r_2$	,~~\eqref{eqn:coeffkinship_step}	;	$(1-F) p^2 + F p (1-F) 2pq   (1-F) q^2 + F q$	,~~\eqref{table:GeneralizedHWE}
+ $F_{ij}= 0 \times r_0 + (\nicefrac{1}{4}) r_1  + (\nicefrac{1}{2}) r_2$	,~~\eqref{eqn:coeffkinship_step}	;	$(1-F) p^2 + F p,~(1-F) 2pq,~   (1-F) q^2 + F q$	,~~\eqref{table:GeneralizedHWE}
 		;		
 Inbreeding coefficient 		;	F statistics	
  $F = \sum_{i=1}^K \frac{1}{2^{n_i}} \big( 1+ f_{A_i} \big)$	,~~\eqref{eqn:inbreeding_over_ancs}	;	$\fit =1-\frac{H_I}{H_T},~\fis =1-\frac{H_I}{H_S},~\fst =1-\frac{H_S}{H_T}$	,~~\eqref{eqn:FIS}--\eqref{eqn:FST}.
@@ -9,7 +9,7 @@ Relationship among F statistics		;	Linkage disequilibrium (LD)	~
 $(1-\fit) =(1-\fis)(1-\fst)$	,~~\eqref{eqn:F_relationships}	;	$D = p_{AB} - p_Ap_B $	,~~\eqref{eqn:LD_def}
 		;		
 Decay of LD		;	Decay of Heterozygosity	~
- $D_t=  (1-r)^t D_0$	,~~\eqref{eqn_LD_decay}	;	  $H_t = \left(1-\frac{1}{2N_e} \right)^tH_0$	,~~\eqref{eqn:loss_het_discrete}
+ $D_t=  (1-c)^t D_0$	,~~\eqref{eqn_LD_decay}	;	  $H_t = \left(1-\frac{1}{2N_e} \right)^tH_0$	,~~\eqref{eqn:loss_het_discrete}
 		;		
 Equilibrium level of neutral heterozygosity		;	Coalescent time and time to MRCA	~
   $H = \frac{4N_e\mu}{1+4N_e\mu} \approx 4N_e\mu  $,~~\eqref{eqn:hetero}	;	$\E[T_k] = \frac{2 N_e}{ {k \choose 2} },~~~~\E[T_{MRCA}] =4N_e(1-1/n) $,~\eqref{eqn:E_T_i} \eqref{TMRCA_neutral}

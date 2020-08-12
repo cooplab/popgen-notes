@@ -8,7 +8,7 @@ locus, is transmitted to the offspring.
 Genetic drift can play a role in the dynamics of all alleles in all populations, but it will play the biggest role for neutral alleles. A neutral polymorphism occurs when the segregating alleles at a polymorphic site have no discernible differences in their effect on fitness. We'll make clear what we mean by "discernible" later, but for
 the moment think of this as "no effect" on fitness.
 \paragraph{The neutral theory of molecular evolution.}
-The role of genetic drift in molecular evolution has been hotly debated since the 60s when the Neutral theory of molecular evolution was proposed \citep[see ][ for a history]{ohta1996development}\cite{kimura:68,king:69,kimura:83}.  The central premise of Neutral theory theory is that patterns of molecular polymorphism within species and substitution between species can be well understood by supposing that the vast majority of these molecular polymorphisms and substitutions were neutral alleles, whose dynamics were just subject to the vagaries of genetic drift and mutation. Early proponents of this view suggested that the vast majority of new mutations are either neutral or highly deleterious (e.g. mutations that disrupt important protein functions). This latter class of mutations are too deleterious to contribute much to common polymorphisms or substitutions between species, because they are quickly weeded out of the population by selection.
+The role of genetic drift in molecular evolution has been hotly debated since the 60s when the Neutral theory of molecular evolution was proposed \citep[see ][ for a history]{ohta1996development}\cite{kimura:68,king:69,kimura:83}.  The central premise of Neutral theory is that patterns of molecular polymorphism within species and substitution between species can be well understood by supposing that the vast majority of these molecular polymorphisms and substitutions were neutral alleles, whose dynamics were just subject to the vagaries of genetic drift and mutation. Early proponents of this view suggested that the vast majority of new mutations are either neutral or highly deleterious (e.g. mutations that disrupt important protein functions). This latter class of mutations are too deleterious to contribute much to common polymorphisms or substitutions between species, because they are quickly weeded out of the population by selection.
 
 Neutral theory can sound strange given that much of the time our first brush with evolution often focuses on adaptation and phenotypic evolution. However, proponents of this world-view didn't deny the existence of advantageous mutations, they simply thought that beneficial mutations are rare enough that their contribution to the bulk of polymorphism or divergence can be largely ignored. They also often thought that much of phenotypic evolution may well be adaptive, but again the loci responsible for these phenotypes are a small fraction of all the molecular change that occur. The neutral theory of molecular evolution was originally proposed to explain protein polymorphism. However, we can apply it more broadly to think about neutral evolution genome-wide. With that in mind, what types of molecular changes could be neutral? Perhaps:
 \begin{enumerate}
@@ -19,7 +19,7 @@ Neutral theory can sound strange given that much of the time our first brush wit
 \end{enumerate}
 There are counter examples to all of these ideas, e.g. synonymous changes can affect the translation speed and accuracy of proteins and so are subject to selection. However, the list above hopefully convinces you that the general thinking that some portion of molecular change may not be subject to selection isn't as daft as it may have initially sounded.
 
-Various features of molecular polymorphism and divergence have been viewed as consistent with the neutral theory of molecular evolution. The two we'll focus on in this chapter are the high level of molecular polymorphism in many species (see for example Figure \ref{fig:Leffer}) and the molecular clock. We'll see that various aspects of the original neutral theory have merit in describing some features and types of molecular change, but we'll also see that it is demonstrably wrong in some cases. We'll also see the primary utility of the neutral theory isn't whether it is right or wrong, but that it serves as a simple null model that can be tested and in some cases rejected, and subsequently built on. The broader debate currently in the field of molecular evolution is the balance of neutral, adaptive, and deleterious changes that drive different types of evolutionary change.
+Various features of molecular polymorphism and divergence have been viewed as consistent with the neutral theory of molecular evolution. In this chapter we'll focus on the prediction of a high level of molecular polymorphism in many species (see for example Figure \ref{fig:Leffer}). In a subsequent chapter we'll talk about the prediction of a molecular clock. We'll see that various aspects of the original neutral theory have merit in describing some features and types of molecular change, but we'll also see that it is demonstrably wrong in some cases. We'll also see the primary utility of the neutral theory isn't whether it is right or wrong, but that it serves as a simple null model that can be tested and in some cases rejected, and subsequently built on. The broader debate currently in the field of molecular evolution is the balance of neutral, adaptive, and deleterious changes that drive different types of evolutionary change.
 
 \section{Loss of heterozygosity due to drift.} \label{LossofHet}
 
@@ -461,27 +461,32 @@ You are studying a population of 500 male and 500 female Hamadryas baboons. Assu
 %{\bf B)} Do you expect the {\it ratio} of X-chromosome to autosomal diversity to be higher or lower in this species compared to a species where the sexes have more similar variance in reproductive success? Explain the intuition behind your answer.
  \end{question}
 
- Variance in male and female reproductive success will have very different effects on chromosomes with different patterns of inheritance such as the X chromosome, mitochondria, and Y chromosome. The mitochondria (mtDNA) and Y chromosome are haploid and only inherited through the females and males respectively, so they have a haploid effective population sizes of $N_M$ and $N_F$. 
-\gc{ADD X CHROMOSOME.}
-To see the impact of differential variance in male and female reproductive success, lets look at how levels of genetic diversity over thousands of years in domestic horses. \citet{librado2017ancient} sequenced ancient DNA from 13 sacrificed stallions from an $2300$ year old Scythian burial mound in Kazakhstan. The Scythian were a nomadic people whose Russian Steppe empire stretched from the  Black Sea to the borders of China and were among the first people to master horseback warfare with both men and women riding armed with short bows. By comparing these data to modern horses, \citet{librado2017ancient} found that levels of diversity had been substantially reduced on the autosomes and greatly reduced on the Y chromosome. This constrasts with the mtDNA where levels of diversity have hardly decreased at all.  
-Much of modern horse breeding relies on a small number of stallions 
-
-%% Scythian horse  golden  https://commons.wikimedia.org/wiki/File:Szk%C3%ADta.jpg
-% Scythian comb https://www.flickr.com/photos/levanrami/47362587962
- %https://www.cell.com/cell/pdf/S0092-8674(19)30384-8.pdf
- \begin{figure}
+ Variance in male and female reproductive success can have very different effects on chromosomes with differing modes of inheritance such as the X chromosome, mitochondria, and Y chromosome. The mitochondria (mtDNA) and Y chromosome are haploid and only inherited through the females and males respectively, so they have a haploid effective population sizes of $N_M$ and $N_F$.    \begin{figure}
 \begin{center}
 \includegraphics[width= 0.75 \textwidth]{Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.pdf}
 \end{center}
-\caption{Levels of diversity in Scythian horses from  $2300$ year old Scythian horses and Modern horses (Nordic). The numbers next to each column given the fraction of diversity remaining in the present day, Data from \citet{librado2017ancient}. \gitcode{}. } \label{fig:Scythian_horses_pi}
-\end{figure}
-
+\caption{Levels of genome-wide diversity in Scythian horses from  $2300$ year old Scythian horses and Modern horses (Nordic). The numbers next to each column given the fraction of diversity remaining in the present day, Data from \citet{librado2017ancient}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.r}. } \label{fig:Scythian_horses_pi}
+\end{figure}  To see the impact of differential variance in male and female reproductive success, lets look at how levels of genetic diversity over thousands of years in domestic horses. \citet{librado2017ancient} sequenced ancient DNA from 13 sacrificed stallions from an $2300$ year old Scythian burial mound in Kazakhstan. The Scythian were a nomadic people whose Russian Steppe empire stretched from the  Black Sea to the borders of China and were among the first people to master horseback warfare with both men and women riding armed with short bows. 
  \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Genetic_drift/Scythian_rider/616px-Szkíta.jpg}
 \end{center}  %https://www.historyextra.com/period/bronze-age/scythians-the-art-of-war/
 \caption{A  gold plaque showing Scythian rider found in a burial mound in eastern Crimera (c400–350 BC). \wikimedia{Photograph: V Terebenin/State Hermitage Museum}{https://commons.wikimedia.org/wiki/File:Szk\%C3\%ADta.jpg}{Inritter}{This is a faithful photographic reproduction of a two-dimensional, public domain work of art..}} \label{fig:Scythian_horse}
 \end{marginfigure}
+By comparing these data to modern horses, \citet{librado2017ancient} found that levels of diversity had been substantially reduced on the autosomes and greatly reduced on the Y chromosome. This constrasts with the mtDNA where levels of diversity have decreased only slightly. This pattern likely reflects the fact that much of modern horse breeding relies on a breeding a small number of stallions to a large number of mares.
+
+ \begin{question}{}
+   Using the data on the reduction in horse genetic diversity in Figure \ref{fig:Scythian_horses_pi}:\\
+   {\bf A) } Estimate the effective number of stallions and mares contributing to the horse population using the mtDNA and Y chromosome data.
+   {B)} Predict what the reduction in diversity over the $2300$ years should be on the autosomes using these numbers?\\
+   Assume a horse generation time of $8$ years. Assume no new mutations during this time interval.
+ \end{question}
+
+%% Scythian horse  golden  https://commons.wikimedia.org/wiki/File:Szk%C3%ADta.jpg
+% Scythian comb https://www.flickr.com/photos/levanrami/47362587962
+ %https://www.cell.com/cell/pdf/S0092-8674(19)30384-8.pdf
+
+
 %xf A gold plaque depicting a Scythian rider with a spear in his right hand. Photograph: V Terebenin/State Hermitage Museum
 
  
@@ -1062,3 +1067,10 @@ subsp. parviglumis}) roughly ten thousand years ago. We can see how the
 
 
 \graham{Change this over to data from https://www.nature.com/articles/s41559-018-0496-4 Figure 1 for farmers and hunter-gatherers?}
+
+
+\ChapterSummary{
+\item blah
+  \item blah
+}
+

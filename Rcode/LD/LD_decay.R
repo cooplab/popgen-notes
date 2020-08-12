@@ -15,7 +15,7 @@ Dt<- D0 *(1-r[i])^t
 lines(t,Dt,col=cols[i],lwd=3)
 })
 
- legend(x="topright",lty=1,col=cols,legend=paste("r =",r),cex=1.4,lwd=3)
+ legend(x="topright",lty=1,col=cols,legend=paste("c =",r),cex=1.4,lwd=3)
  
  dev.copy2pdf(file="figures/LD_decay/LD_decay_time.pdf")
  
@@ -24,7 +24,7 @@ lines(t,Dt,col=cols[i],lwd=3)
  D0<-0.25
 my.r<-0:50/100
 
-plot(x=range(r),y=c(0,0.25),type="n",ylab="D",xlab="Recombination fraction (r)",cex.lab=1.4,cex.axis=1.2)
+plot(x=range(r),y=c(0,0.25),type="n",ylab="D",xlab="Recombination fraction (c)",cex.lab=1.4,cex.axis=1.2)
 
 ts<-c(5,10,100)
 
@@ -34,7 +34,7 @@ Dt<- D0 *(1-my.r)^ts[i]
 lines(my.r,Dt,col=cols[i],lwd=3)
 })
 
- legend(x="topright",lty=1,col=cols,legend=paste("r =",r),cex=1.4,lwd=3)
+ legend(x="topright",lty=1,col=cols,legend=paste("t =",r),cex=1.4,lwd=3)
  
  
  

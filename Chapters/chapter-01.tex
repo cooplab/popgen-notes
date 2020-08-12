@@ -28,7 +28,8 @@ as a segregating site).
 \end{center}
 \caption{ {\it Drosophila melanogaster} holds a special place in the
   history of genetics and population genetics. From Morgan's fly room discovering the principals of genetics to Dobzhansky's early work
-  on natural genetic variation.  \BHLNC{Contributions to the genetics of Drosophila melanogaster
+  on natural genetic variation.  \BHLNC{Contributions to the genetics
+    of {\it Drosophila melanogaster}
     (1919). Morgan T.H., Bridges C.B., Sturtevant A. H.}{https://www.biodiversitylibrary.org/page/805594\#page/147/mode/1up}{MBLWHOI Library} } \label{fig:dros}
 \end{marginfigure}
 
@@ -59,11 +60,13 @@ suggesting that the $T$ allele arose via a $C \rightarrow T$ mutation.
 % For example, at a particular nucleotide site in the genome, a population may segregate for A-T and G-C base pairs (note that due to the complementary nature of DNA, it will suffice to say the site segregates for A and G variants).
 
 \begin{table*}
-  \tiny
-\setlength{\tabcolsep}{.45\tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
+  \begin{center}
+  \small
+\setlength{\tabcolsep}{.55 \tabcolsep}   % https://tex.stackexchange.com/questions/307770/centered-tabular-column-with-narrow-columns
  %\csvreader[tabular=c]{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}
 \csvautobooktabular{Journal_figs/alleles_genotypes/ADH_MK/ADH.csv}  % can control this more https://mirror.hmc.edu/ctan/macros/latex/contrib/csvsimple/csvsimple.pdf
-  \caption{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.
+\end{center}
+\caption[][1cm]{Variable sites in exons 2 and 3 of the ADH gene in {\it Drosophila} \citet{mcdonald:91}.
 The first column (pos.) gives the position in the gene; exon 2 begins at
 position $778$ and we've truncated the dataset at site $1175$.
 The second column gives the consensus nucleotide (con.), i.e. the most
@@ -131,7 +134,7 @@ to be a per site (or per base) measure. For example, our ADH sequence covers $39
 that are polymorphic (segregating) in our sample. One issue is that
 the number of segregating sites will grow as we sequence more
 individuals (unlike $\pi$). Later in the course, we'll talk about how to standardize the
-number of segregating sites for the number of individuals sequenced (see eqn \eqref{watterson_theta}).
+number of segregating sites for the number of individuals sequenced (see \eqn \eqref{watterson_theta}).
 
 \paragraph{The frequency spectrum.}
 We also often want to compile information about the frequency of
@@ -227,9 +230,17 @@ $p^2$ & $2pq$ & $q^2$ \\
 \end{tabular}
 \end{center}
 %\caption{\textbf{Hardy Weinberg}} \label{table:HWE}
-%\end{table}
-Note that we only need to assume random mating with respect to our focal allele in order for these expected frequencies to hold in the zygotes forming the next generation. Evolutionary forces, such as selection, change allele frequencies within generations, but do not change this expectation for new zygotes, as long as $p$ is the frequency of the $A_1$ allele in the population at the time when gametes fuse.
-%\erin{I wasn't sure what contrast you were getting at here, so may not be a good edit}
+% \end{table}
+i.e. their Hardy-Weinberg expectations \citep{hardy1908mendelian,weinberg1908ber}.
+Note that we only need to assume random mating with respect to our
+focal allele in order for these expected frequencies to hold in the
+zygotes forming the next generation. Evolutionary forces, such as
+selection, change allele frequencies within generations, but do not
+change this expectation for new zygotes, as long as $p$ is the
+frequency of the $A_1$ allele in the population at the time when
+gametes fuse. We only need the assumptions of no migration, selection,
+and mutation in order for these Hardy-Weinberg expectations of
+genotypes to represent a long term equilibrium.
 
 \begin{marginfigure}    %%%New Kermode_bear
                         %%%https://twitter.com/BioDivLibrary/status/1191354772034592774/photo/3
@@ -254,7 +265,7 @@ black bear (\textit{Ursus americanus kermodei}, Kermode's bear). Many members of
 black bear subspecies are white; they're sometimes called spirit bears. These
 bears aren't hybrids with polar bears, nor are they albinos. They are
 homozygotes for a recessive change at the MC1R gene. Individuals who
-are $GG$ at this SNP are white while $AA$ and $AG$ individuals are black.
+are $GG$ at this SNP are white, while $AA$ and $AG$ individuals are black.
 
 Below are the genotype counts for the MC1R polymorphism in a
 sample of bears from British Columbia's island populations from \citet{RITLAND:01}.
@@ -282,9 +293,9 @@ populations. This is because individuals don't mate at random, but they
 do mate at random with respect to their genotype at most of the loci
 in the genome.
 
-\begin{figure}[!h]
+\begin{figure*}[!h]
 \begin{center}
-\includegraphics[width= \textwidth]{figures/CEU_YRI_separately_HWE.png}
+\includegraphics[width= 0.75 \textwidth]{figures/CEU_YRI_separately_HWE.png}
 \end{center}
 \caption{Demonstrating Hardy--Weinberg proportions using 10,000 SNPs
   from the HapMap European (CEU)  and African (YRI) populations. Within
@@ -296,7 +307,7 @@ in the genome.
   post on figure \href{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}{here}. } \label{fig:HWE_CEU_YRI}  %See \href{blog
                                 %post}{http://gcbias.org/2011/10/13/population-genetics-course-resources-Hardy--Weinberg-eq/}
                                 %here on this plot.  https://github.com/cooplab/popgen-notes/blob/master/Rcode/HWE_exercise/HWE_HAPMAP.R
-\end{figure}
+\end{figure*}
 
 \begin{question}{}
 You are investigating a locus with three alleles, A, B, and C, with
@@ -414,8 +425,8 @@ and population structure, in the next few chapters.
 \begin{center}  
   \includegraphics[width = \textwidth]{Journal_figs/alleles_genotypes/Heliconius_Merrill_assort_mating/labeled_trimmed_Heliconius_Merrill_assort_mating}
 \end{center}
-\caption{ Wing pattern phenotypes of top, H. cydno chioneus (left),
-  H. melpomene rosina (right), their nonmimetic first-generation
+\caption{ Wing pattern phenotypes of top, {\it H. cydno chioneus} (left),
+  {\it H. melpomene rosina} (right), their nonmimetic first-generation
   hybrid (center); and bottom, their sympatric comimics H. sapho sapho
   (left) and H. erato demophoon (right).  Figure and caption modified from \citet{merrill2019genetic},
   \PLOSccBY. }\label{fig:Heliconius_Merrill_assort}  
@@ -425,14 +436,14 @@ excess of homozygotes. Heliconius butterflies are famous for their
 mimicry, where poisonous pairs of
 distantly related species mimic each others' bright colour patterns
 and so share the benefits of being avoided by visual predators
-(Müllerian mimics). H. melpomene rosina and H. cydno chioneus are
+(Müllerian mimics). {\it H. melpomene rosina} and {\it H. cydno chioneus} are
 closely related species that co-occur in central Panama, but mimic
 different other co-occuring species (Figure \ref{fig:Heliconius_Merrill_assort} ). These differences in colouration pattern
-are due to a few large effect loci. The two species can hybridize and
-produce viable F1 hybrids. These F1 hybrids are heterozygote at the
-colour loci and their intermediate appearance means that they're poor
+are due to a few loci with large phenotypic effects. The two species can hybridize and
+produce viable F1 hybrids. These F1 hybrids are heterozygotes at the
+colour loci, and their intermediate appearance means that they're poor
 mimics and so are quickly eaten by predators. However, these heterzygote
-(F1) hybrids are very rare in nature $< \nicefrac{1}{1000}$ as the parental species show
+(F1) hybrids are very rare in nature $< \nicefrac{1}{1000}$, as the parental species show
 strong positive assortatively mating based on colour pattern, based on
 genetic differences in mate preference \citet{merrill2019genetic}. 
 
@@ -457,14 +468,14 @@ Disassortative mating, mating of unlike individuals, can lead to
 an excess of heterozygotes and a deficit of homozygotes.
 One example of very strong disassortative mating is offered by
 white-throated sparrows ({\it Zonotrichia albicollis}). 
-In white-throated sparrows there is a white-striped and a tan-striped
+In white-throated sparrows, there is a white-striped and a tan-striped
 morph, with female and male white-striped morphs have a much brighter white stripe
 and throat. There is very strong disassortative mating in this system, with 1099
 out of 1116 nesting pairs consisting of one tan- and one white-striped
 morph and only 17 of these
 nesting pairs being different morphs \citep{tuttle2016divergence}. The
 difference between these morphs has a simple inheritance pattern, with
-white being due to a single dominant allele (called 2m) and tan a recessive allele called
+white being due to a single dominant allele (called 2m) and tan colour from a recessive allele called
 2. Thus strong disassortative mating has a strong effect on the
 genotype frequencies:  \\
 %% OA photo https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3485354/figure/pone-0048705-g001/
@@ -485,9 +496,9 @@ despite the 2m allele being common in the population \citep[data from
   \includegraphics[width = \textwidth]{illustration_images/alleles_genotypes/Sparassis_crispa/Sparassis_crispa_cauliflower_mushroom}
 \end{center}
 \caption{Cauliflower mushrooms ({\it Sparassis crispa}) parasitize tree roots and form these
-  amazing, edible fruiting bodies,which can weigh in at up to 30lb and
-  apparently tastes like noodles. In a collection of 18 fruiting
-  bodies from a {\it Sparassis} population, all individuals were heterozygote for mating type and 17 different mating types were genetically
+  amazing, edible fruiting bodies, which can weigh in at up to 30lb and
+  apparently taste like noodles. In a collection of 18 fruiting
+  bodies from a {\it Sparassis} population, all individuals were heterozygotes for mating type and 17 different mating types were genetically
 identified \citep{james2015mushrooms,martin1978decay}. \BHLNC{Atlas champignons comestibles et v{\'e}n{\'e}neux (1891
   ). Dufour, L}{https://www.biodiversitylibrary.org/page/3270858\#page/225/mode/1up}{New
   York Botanical Garden}}\label{fig:cauliflower_mushroom}   % des
@@ -549,7 +560,7 @@ configurations of IBD. \\
 \marginnote{Here we'll focus on IBD of outbred individuals. Dealing
   with sharing between inbred individuals requires $6$ more  identity-by-descent
 $r$ coefficients, which honestly makes my head spin.}
-One summary of how related two individuals are is the probability that our pair
+One summary of how related two individuals (let's call them $i$ and $j$) are is the probability that our pair
 of individuals share 0, 1, or 2 alleles identical by descent (see Figure
 \ref{fig:IBD_0_1_2}). We denote these  identity-by-descent probabilities by $r_0$, $r_1$, and $r_2$
 respectively. See Table \ref{table:IBDprobs} for some examples. We can also
@@ -559,18 +570,18 @@ full-sibs share zero alleles identical by descent.\\
 
 
 One summary of relatedness that will be important is the probability that two
-alleles ($I$ \& $J$) picked at random, one from each of the two different individuals $i$
+alleles (I \& J) picked at random, one from each of the two different individuals $i$
 and $j$, are identical by descent ($P(\text{I\&J IBD})$). We call this quantity the \emph{coefficient
 of kinship} of individuals $i$ and $j$, and denote it by $F_{ij}$. It is
 calculated as
 %JRI: you come back to inbreeding later, but perhaps worth mentioning here that you are only considering outbred Individuals
 
 \begin{align}
-  F_{ij} = & P(\text{I\&J IBD} )\\
-  =& P(\text{I\&J IBD} |~ \text{i\&j  0 IBD}) P(\text{i\&j  0 IBD})  \nonumber\\
-  & + P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})
-    P(\text{i\&j  1 IBD})  \nonumber\\
-  &+ P(\text{I\&J IBD} |~ \text{i\&j  2 IBD}) P(\text{i\&j  2 IBD}) \label{eqn:coeffkinship_step}\\
+  F_{ij} = & \P(\text{I\&J IBD} )\\
+  =& \P(\text{I\&J IBD} |~ \text{i\&j  0 IBD}) \P(\text{i\&j  0 IBD})  \nonumber\\
+  & + \P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})
+    \P(\text{i\&j  1 IBD})  \nonumber\\
+  &+ \P(\text{I\&J IBD} |~ \text{i\&j  2 IBD}) \P(\text{i\&j  2 IBD}) \label{eqn:coeffkinship_step}\\
    =   &   0 \times r_0 + \frac{1}{4} r_1  + \frac{1}{2} r_2.
 \label{eqn:coeffkinship}
 \end{align}
@@ -583,10 +594,10 @@ calculated as
   shared ancestor). } \label{fig:IBD_0_1_2}
 \end{marginfigure}
 
-In the above step, eqn\eqref{eqn:coeffkinship_step}, we're summing the
+In the above step, \eqn \eqref{eqn:coeffkinship_step}, we're summing the
 conditional probability of alleles $I$ \& $J$ being IBD over whether our individuals $i$ \& $j$ share $0$, $1$,
 or $2$ alleles IBD, an example of using the Law of Total Probability (see Appendix
-eqn \eqref{eqn:law_tot_prob}).  We've then, in eqn \ref{eqn:coeffkinship}, used the fact that we can
+\eqn \eqref{eqn:law_tot_prob}).  We've then, in \eqn \ref{eqn:coeffkinship}, used the fact that we can
 calculate our condition probabilities of  I \& J being IBD using the
 rules of Mendelian transmision. Consider the probability $
 P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})$, i.e. that our
@@ -602,7 +613,7 @@ inbreeding and in the context of phenotypic resemblance between relatives.\\
 \begin{center}
 \begin{tabular}{ l c c c c}
 \hline
-Relationship (i,j)$^{*}$ & $P(\text{i\&j  0 IBD}) $ & $P(\text{i\&j  1 IBD}) $ & $P(\text{i\&j  2 IBD}) $ & $P(\text{I\&J IBD} )$\\
+Relationship (i,j)$^{*}$ & $\P(\text{i\&j  0 IBD}) $ & $\P(\text{i\&j  1 IBD}) $ & $P(\text{i\&j  2 IBD}) $ & $\P(\text{I\&J IBD} )$\\
   \hline
   Relationship (i,j)$^{*}$ & $r_0$ & $r_1$ & $r_2$ & $F_{ij}$\\
     \hline
@@ -613,7 +624,7 @@ $1^{st}$ cousins & \nicefrac{3}{4} & \nicefrac{1}{4} & 0 & \nicefrac{1}{16}\\
 \hline
 \end{tabular}
 \end{center}
-\caption{Probability that two individuals of a given relationship share 0, 1, or 2 alleles
+\caption{Probability that two individuals ($i$ and $j$) of a given relationship share 0, 1, or 2 alleles
 identical by descent on the autosomes. $^{*}$Assuming that our
 individuals are outbred and that this the only close relationship the pair shares. } % doesn't this implicitly assume an infinite population?
 \label{table:IBDprobs}
@@ -625,7 +636,7 @@ parent but not the other).
 \end{question}
 
 \begin{question}{}
-  Explain in words why $ P(\text{I\&J IBD} |~ \text{i\&j  2 IBD}) = \nicefrac{1}{2}$.
+  Explain in words why $ \P(\text{I\&J IBD} |~ \text{i\&j  2 IBD}) = \nicefrac{1}{2}$.
 \end{question}
 
 %Question 5. Consider a biallelic locus where allele 1 is at fre- quency p, and two individuals who have IBD allele sharing probabili- ties r0, r1, r2.
@@ -639,37 +650,37 @@ at frequency $p$, and two individuals who have IBD allele sharing
 probabilities $r_0$, $r_1$, $r_2$. What is the overall probability that these
 two individuals are both homozygous for allele 1? Well that's
 \begin{align}
-  P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) P(\text{0 alleles IBD})  \nonumber\\
-  & + P(A_1 A_1 | \text{1 allele IBD}) P(\text{1 allele IBD})  \nonumber\\
-  &+ P(A_1 A_1 | \text{2 alleles IBD}) P(\text{2 alleles IBD})
+  \P(A_1 A_1) = & \P(A_1 A_1 | \text{0 alleles IBD}) \P(\text{0 alleles IBD})  \nonumber\\
+  & + \P(A_1 A_1 | \text{1 allele IBD}) \P(\text{1 allele IBD})  \nonumber\\
+  &+ \P(A_1 A_1 | \text{2 alleles IBD}) \P(\text{2 alleles IBD})
 \end{align}
 Or, in our $r_0$, $r_1$, $r_2$ notation:
 \begin{align}
-  P(A_1 A_1) = & P(A_1 A_1 | \text{0 alleles IBD}) r_0  \nonumber\\
-  & + P(A_1 A_1 |
+  \P(A_1 A_1) = & \P(A_1 A_1 | \text{0 alleles IBD}) r_0  \nonumber\\
+  & + \P(A_1 A_1 |
   \text{1 alleles IBD}) r_1  \nonumber\\
-  & + P(A_1 A_1 | \text{2 alleles IBD}) r_2 \label{eqn:initial_relly_IBD_calc}
+  & + \P(A_1 A_1 | \text{2 alleles IBD}) r_2 \label{eqn:initial_relly_IBD_calc}
 \end{align}
 If our pair of relatives share $0$ alleles IBD, then the probability that
-they are both homozygous is $P(A_1 A_1 |
+they are both homozygous is $\P(A_1 A_1 |
 \text{0 alleles IBD}) =p^2 \times p^2$, as all four alleles
 represent independent draws from the population. If they share $1$
 allele IBD, then the shared allele is of type $A_1$ with probability $p$, and then
 the other non-IBD allele, in both relatives, also needs
-to be $A_1$ which happens with probability $p^2$, so $P(A_1 A_1 |
+to be $A_1$ which happens with probability $p^2$, so $\P(A_1 A_1 |
 \text{1 alleles IBD})=p \times p^2$. Finally, our pair of relatives can
-share two alleles IBD, in which case $P(A_1 A_1 | \text{2 alleles IBD})
+share two alleles IBD, in which case $\P(A_1 A_1 | \text{2 alleles IBD})
 = p^2$, because if one of our individuals is homozygous for the $A_1$ allele,
-both individuals will be. Putting this all together our equation
+both individuals will be. Putting this all together our \eqn
 \eqref{eqn:initial_relly_IBD_calc} becomes
 \begin{equation}
-P(A_1 A_1) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
+\P(A_1 A_1) = p^4 r_0 + p^3 r_1 + p^2 r_2 \label{eqn:IBD_relly_calc}
 \end{equation}
 Note that for specific cases we could also calculate this by summing over all the
 possible genotypes their shared ancestor(s) had; however, that would be much more
 involved and not as general as the form we have derived here.
 
-We can write out terms like eq \eqref{eqn:IBD_relly_calc} for all of
+We can write out terms like \eqn \eqref{eqn:IBD_relly_calc} for all of
 the possible configurations of genotype
 sharing/non-sharing between a pair of individuals. Based on this we can write down the expected number of
 polymorphic sites where our individuals are observed to share 0, 1, or 2
@@ -708,7 +719,7 @@ Aguillon, see ][]{chen:16,Aguillon:17}. \citeauthor{chen:16} has collected genot
 Florida Scrub Jays at over ten thousand loci. These Jays live at the
 Archbold field site, and have been carefully monitored for many
 decades allowing the pedigree of many of the birds to be known.
-Using these data she estimates allele frequencies at each
+Using these data, she estimates allele frequencies at each
 locus. Then by equating the observed number of times that a pair of
 individuals share $0$, $1$, or $2$ alleles to the theoretical
 expectation, she estimates the probability of $r_0$, $r_1$, and
@@ -720,7 +731,7 @@ from the pedigree.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{figures/FSJ_IBD.pdf}
+\includegraphics[width= 0.75 \textwidth]{figures/FSJ_IBD.jpg}
 \end{center}
 \caption[3cm]{Estimated coefficient
 of kinship from Florida Scrub Jays. Each point is a pair of
@@ -741,13 +752,17 @@ coloured red, those that your cousins inherited are coloured blue. In the third 
 } \label{fig:first_cousin_IBD}
 \end{figure}
 We can more directly see the sharing of the genome among close
-relatives using high-density SNP genotyping arrays. In Figure \ref{fig:first_cousin_IBD} we show a simulation of you and your first cousin's genomic material that you both inherited from your shared grandmother. Colored purple are regions where you and your cousin will have matching genomic material, due to having inherited it IBD from your shared grandmother.
+relatives using high-density SNP genotyping arrays. In Figure
+\ref{fig:first_cousin_IBD} we show a simulation of first cousins'
+genomic sharin from their shared grandmother. Colored purple are
+regions where they have matching genomic material, due to having
+inherited it IBD from their shared grandmother.
 %JRI: text says ``Below'' but float ends up above
 
 
-You and your first cousin will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous for different alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks, we can hope to identify unknown relatives in genotyping datasets. In fact, companies like 23\&me and Ancestry.com use signals of IBD to help identify family ties.
+First cousins will share at least one allele of your genotype at all of the polymorphic loci in these purple regions. There's a range of methods to detect such sharing. One way is to look for unusually long stretches of the genome where two individuals are never homozygous for different alleles. By identifying pairs of individuals who share an unusually large number of such putative IBD blocks, we can hope to identify unknown relatives in genotyping datasets. In fact, companies like 23\&me and Ancestry.com use signals of IBD to help identify family ties.
 
-As another example, consider the case of third cousins. You share one of eight sets of great-great grandparents with each of your (likely many) third cousins. On average, you and each of your third cousins each inherit one-sixteenth of your genome from each of those two great-great grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin's genomes ($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins share blocks of their genome (on chromosome 16 and 2) due to their great, great grandmother is shown in Figure \ref{fig:third_cousin_IBD}.
+As another example, consider the case of third cousins. You share one of eight sets of great-great-grandparents with each of your (likely many) third cousins. On average, you and each of your third cousins each inherit one-sixteenth of your genome from each of those two great-great-grandparents. This turns out to imply that on average, a little less than one percent of your and your third cousin's genomes ($2 \times (1/16)^2 =0.78\%$) will be identical by virtue of descent from those shared ancestors. A simulated example where third cousins share blocks of their genome (on chromosome 16 and 2) due to their great-great-grandmother is shown in Figure \ref{fig:third_cousin_IBD}.
 
 \begin{figure}
 \begin{center}
@@ -757,7 +772,7 @@ As another example, consider the case of third cousins. You share one of eight s
 \end{figure}
 
 
-Note how if you compare Figure \ref{fig:third_cousin_IBD} and Figure \ref{fig:first_cousin_IBD}, individuals inherit less IBD from a shared great, great grandmother than from a shared grandmother, as they inherit from more total ancestors further back. Also notice how the sharing occurs in shorter genomic blocks, as it has passed through more generations of recombination during meiosis. These blocks are still detectable, and so third cousins can be detected using high-density genotyping chips, allowing more distant relatives to be identified than single marker methods alone. \sidenote{Indeed the suspect in case of the Golden State Killer was identified through identifying third cousins that genetically matched a DNA sample from an old crime scene (see \href{https://gcbias.org/2018/05/07/how-lucky-was-the-genetic-investigation-in-the-golden-state-killer-case/}{here} for more details).} More distant relations than third cousins, e.g. fourth cousins, start to have a significant probability of sharing none of their genome IBD. But you have many fourth cousins, so you will share some of your genome IBD with some of them; however, it gets increasingly hard to identify the degree of relatedness from genetic data the deeper in the family tree this sharing goes.
+Note how if you compare Figure \ref{fig:third_cousin_IBD} and Figure \ref{fig:first_cousin_IBD}, individuals inherit less IBD from a shared great-great-grandmother than from a shared grandmother, as they inherit from more total ancestors further back. Also notice how the sharing occurs in shorter genomic blocks, as it has passed through more generations of recombination during meiosis. These blocks are still detectable, and so third cousins can be detected using high-density genotyping chips, allowing more distant relatives to be identified than single marker methods alone. \sidenote{Indeed the suspect in case of the Golden State Killer was identified through identifying third cousins that genetically matched a DNA sample from an old crime scene (see \href{https://gcbias.org/2018/05/07/how-lucky-was-the-genetic-investigation-in-the-golden-state-killer-case/}{here} for more details).} More distant relations than third cousins, e.g. fourth cousins, start to have a significant probability of sharing none of their genome IBD. But you have many fourth cousins, so you will share some of your genome IBD with some of them; however, it gets increasingly hard to identify the degree of relatedness from genetic data the deeper in the family tree this sharing goes.
 
 \subsection{Inbreeding}
 We can define an inbred individual as an individual whose parents are
@@ -788,7 +803,7 @@ the same IBD allele via two different routes around an inbreeding loop.\\
 
 As the offspring receives a random allele from each parent ($i$ and $j$), the
 probability that those two alleles are identical by descent is equal to the
-kinship coefficient $F_{ij}$ of the two parents (Eqn.\ \ref{eqn:coeffkinship}). This follows from the fact that
+kinship coefficient $F_{ij}$ of the two parents (\eqn \ref{eqn:coeffkinship}). This follows from the fact that
 the genotype of the offspring is made by sampling an allele at random from each
 of our parents. % We will use IBD for identical by descent. \\ %% this was already defined above.
 
@@ -802,7 +817,7 @@ $(1-F) p^2 + F p$ & $(1-F) 2pq$ & $(1-F) q^2 + F q$ \\
 \hline
 \end{tabular}
 \end{center}
-\caption{\textbf{Generalized Hardy--Weinberg}} \label{table:GeneralizedHWE}
+\caption{\textbf{Generalized Hardy--Weinberg}.  Dropped the indices $i$ and $j$ for simplicity. } \label{table:GeneralizedHWE}
 \end{table}
 
 The only way the offspring can be heterozygous ($A_1 A_2$) is if their two
@@ -810,22 +825,25 @@ alleles at a locus are not IBD (otherwise they would necessarily be
 homozygous). Therefore, the probability that they are heterozygous is
 
 \begin{equation}
-(1-F) 2p q,
+\P(A_1 A_2) = \P(A_1 A_2 |\textrm{I \& J not IBD} ) \P (\textrm{I \& J not IBD} ) = 2p q (1-F_{ij}) ,
 \label{eq:hetGenHW}
 \end{equation}
 %
-where we have dropped the indices $i$ and $j$ for simplicity.  The offspring
+ The offspring
 can be homozygous for the $A_1$ allele in two different ways.  They can have
 two non-IBD alleles that are not IBD but happen to be of the allelic type
 $A_1$, or their two alleles can be IBD, such that they inherited allele $A_1$
 by two different routes from the same ancestor. Thus, the probability that an
 offspring is homozygous for $A_1$ is
 
-\begin{equation}
-(1-F) p^2 + F p.
-\end{equation}
+\begin{align}
+P(A_1 A_1) & = \P(A_1 A_1 |\textrm{I \& J not IBD} ) \P (\textrm{I\&J
+  not IBD} ) + \P(A_1 A_1 |\textrm{I\&J IBD} ) \P (\textrm{I\&J IBD}) \nonumber\\
+             &= p^2(1-F_{ij})  + pF_{ij}.
+\end{align}
 %
-Therefore, the frequencies of the three possible genotypes can be written as given in
+using the Law of Total Probability (see Appendix
+\eqn \eqref{eqn:law_tot_prob}).  Therefore, the frequencies of the three possible genotypes can be written as given in
 Table \ref{table:GeneralizedHWE}, which provides a generalization of the Hardy--Weinberg
 proportions.\\
 
@@ -870,7 +888,7 @@ i.e. the inbreeding coefficient of their child, is
 where $f_{A_i}$ is the inbreeding coefficient of the ancestor
 $A_i$. What's happening here is that we sum over all the mutually-exclusive paths in the pedigree through which B and C can share an allele IBD. With probability
 $\nicefrac{1}{2^{n_i}}$, a pair of alleles picked at random from B and C is descended from the same ancestral allele in individual
-$A_i$, in which case the alleles are IBD. \sidenote{For example, in the case of our aunt-nephew case, assuming that the aunt's two parents are their only recent shared ancestors, then $F = \nicefrac{1}{2^4}+\nicefrac{1}{2^4} = \nicefrac{1}{8}$, in agreement with the answer we would obtain from  eqn \eqref{eqn:coeffkinship}.} However, even if B inherits the maternal allele and C inherits the paternal allele of shared ancestor $A_i$, if $A_i$ was
+$A_i$, in which case the alleles are IBD. \sidenote{For example, in the case of our aunt-nephew case, assuming that the aunt's two parents are their only recent shared ancestors, then $F = \nicefrac{1}{2^4}+\nicefrac{1}{2^4} = \nicefrac{1}{8}$, in agreement with the answer we would obtain from  \eqn \eqref{eqn:coeffkinship}.} However, even if B inherits the maternal allele and C inherits the paternal allele of shared ancestor $A_i$, if $A_i$ was
 themselves inbred,  with probability $f_{A_i}$ those two
 alleles are themselves IBD. Thus a shared \textit{inbred} ancestor further increases
 the kinship of B and C.
@@ -945,7 +963,8 @@ the inbreeding coefficient as
 \hat{F} = 1-\frac{f_{12}}{2pq} = \frac{2pq - f_{12}}{2pq}.
 \label{eqn:Fhat}
 \end{equation}
-
+\marginnote{The hat on the F here denotes that this is an estimate
+  from a sample.}
 As before, $p$ is the frequency of allele $A_{1}$ in the population. This can
 be rewritten in terms of the observed heterozygosity ($H_O$) and the
 heterozygosity expected in the absence of inbreeding, $H_E=2pq$, as
@@ -972,14 +991,15 @@ If we have multiple loci, we can replace $H_O$ and $H_E$ by their means
 over loci, $\bar{H}_O$ and $\bar{H}_E$, respectively. Note that, in principle, we could also calculate $F$ for each individual locus first, and then take the average across loci. However, this procedure is more prone to introducing a bias if sample sizes vary across loci, which is not unlikely when we are dealing with real data.
 
 
-Genetic markers are commonly used to estimate inbreeding for wild and/or captive populations of conservation concern. As an example of this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), a sub-species of gray wolf. \begin{marginfigure}[-2cm]
+Genetic markers are commonly used to estimate inbreeding for wild
+and/or captive populations of conservation concern. As an example of
+this, consider the case of the Mexican wolf ({\it Canis lupus baileyi}), a sub-species of gray wolf. \begin{marginfigure}[-2cm]
 \begin{center}
   \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/grey_wolf/5988399184_0c36a8e51c_z.jpg}
 \end{center}
 \caption{Grey wolf ({\it Canis lupus}). \BHLNC{Dogs, jackals, wolves,
     and foxes: a monograph of the Canidae. 1890. y J.G. Keulemans}{https://www.biodiversitylibrary.org/page/17002968\#page/58/mode/1up}{University of Toronto - Gerstein Science Information Centre}} \label{fig:Grey_wolf}
-\end{marginfigure}
-They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five Mexican wolves in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average Mexican wolf individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the Mexican wolf is $F = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
+\end{marginfigure} They were extirpated in the wild during the mid-1900s due to hunting, and the remaining five Mexican wolves in the wild were captured to start a breeding program. \citet{vonHoldt:11} estimated the current-day, average expected heterozygosity to be $0.18$, based on allele frequencies at over forty thousand SNPs. However, the average Mexican wolf individual was only observed to be heterozygous at $12\%$ of these SNPs. Therefore, the average inbreeding coefficient for the Mexican wolf is $\hat{F} = 1 -\nicefrac{0.12}{0.18}$, i.e. $\sim 33 \%$ of a lobo's genome is homozygous due to recent inbreeding in their pedigree.
 
 %{\bf Q}\arabic{Question} \refstepcounter{Question}
 
@@ -994,7 +1014,7 @@ They were extirpated in the wild during the mid-1900s due to hunting, and the re
 As we saw above, close relatives are expected to share alleles IBD in
 large genomic blocks. Thus, when related individuals mate and transmit
 alleles to an inbred offspring, they transmit these alleles in big
-blocks through meiosis. An example, lets return to the case of our
+blocks through meiosis. As an example, let's return to the case of our
 hypothetical first cousins from Figure
 \ref{fig:IBD_cousins_chr_cartoon}. If this pair of individuals had a
 child, one possible pattern of genetic transmission is shown in Figure
@@ -1063,7 +1083,14 @@ broken down by the length of ROH segments.
 
 Dog breeds have been subject
 to intense breeding that has resulted in high levels of inbreeding. Of the population samples examined, Doberman Pinschers have the highest levels of their genome in runs of
-homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog_FOH_dist} we can see that English bulldogs have more short ROH than Doberman Pinschers, but that Doberman Pinschers have more of their genome in very large ROH ($>16 Mb$). This suggests that English bulldogs have had long history of inbreeding but that Doberman Pinschers have a lot of recent inbreeding in their history.
+homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In
+\ref{fig:dog_FOH_dist} we can see that English bulldogs have more
+short ROH than Doberman Pinschers, but that Doberman Pinschers have
+more of their genome in very large ROH ($>16 Mb$). This suggests that
+English bulldogs have had long history of inbreeding as they have many
+small blocks, but that Doberman Pinschers have a lot of recent
+inbreeding as their autozygosity is contained in long blocks
+relatively unbroken by recombination.
 
   \begin{figure}
   \begin{center}
@@ -1072,3 +1099,12 @@ homozygosity ($F_{ROH}$), somewhat higher than English bulldogs. In \ref{fig:dog
 \caption{Cumulative density of ROH length, measured in megabases (Mb) from \citet{Sams:18} for various
   dog breeds (\PLOSccBY). Note that longer lengths of ROH are on the left of the plot.} \label{fig:dog_FOH_dist}
 \end{figure}
+
+
+\begin{ChapterSummary}
+\item The relationship between allele frequencies and genotype frequencies.
+ \item how under random mating we can derive expectations of the genotype frequencies (Hardy Weinberg), and deviations away from these expectations.
+\item The sharing of alleles and genomic segments among relatives.
+\item How the inbred offspring of closely related individuals have increased homozygosity and genomic runs of homozygosity. 
+\item How inbreeding coefficients can be calculated from genetic data.
+\end{ChapterSummary}
