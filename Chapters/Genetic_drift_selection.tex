@@ -364,7 +364,8 @@ from a frequency $p$ :
 \begin{equation}
 p_F(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}} \label{eqn:prob_fixed}
 \end{equation}
-The proof of this result is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele that arrives in the population at frequency $p=1/(2N)$ has a probability of reaching fixation of
+The proof of this result is sketched out below (see Section \ref{Section:fixation_weakly_sel}). %%I think a new paragraph needed here, I got confused and thought the next equation related to the proof -- EBJ
+A new allele that arrives in the population at frequency $p=1/(2N)$ has a probability of reaching fixation of
 \begin{equation}
 p_F \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
 \end{equation}
@@ -383,7 +384,7 @@ In the case where $Ns$ is close to $1$, then
 p_F \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
 This is greater than our earlier result $p_F=s$ from the branching process
-argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. 
+argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. %Can you link to the section that does this to remind us? -- EBJ
 Why is this?  The reason why is that $p_F$ is really the probability
 of "never being lost" in an infinitely large population. So to persist
 indefinitely, the allele has to escape loss permanently, by never being
@@ -486,6 +487,7 @@ reaching $2N$ copies.
 \begin{question}
 An additive mutation arises that lowers the relative fitness of heterozygotes by $10^{-5}$. What is the probability that this mutation fixes in a diploid population with effective size of $10^4$? What is the probability it fixes in a population of effective size $10^6$? By comparing both to their neutral probability describe the intuition behind this result.
 \end{question}
+%I got turned around by whether s should be a positive or negative number in these examples. You change the equation shown above to take s as a positive number, but in figure 12.7 it's a negative number. A statement clarifying would be helpful -- EBJ
 
 \citeauthor{ohta1973slightly}
 proposed the `nearly-neutral' theory of
