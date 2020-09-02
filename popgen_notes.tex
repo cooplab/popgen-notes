@@ -35,7 +35,10 @@
 
 %\usepackage{lineno}  %%line numbering
 
-
+\usepackage{xeCJK}
+%\setCJKmainfont{MingLiU}
+%\setCJKsansfont{Microsoft JhengHei}
+%% chinese characters https://tex.stackexchange.com/questions/200449/how-to-input-traditional-chinese-in-pdflatex
 
 %\usepackage{slashbox}  %for diagonal slash table https://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells
 
@@ -110,7 +113,7 @@ title= Question~\thequestion. #1}
 \newenvironment{ChapterSummary}{%
 \begin{center} {\large {\bf Chapter
       \thechapter~summary.}} \end{center}
-We described:
+%We described:
 \begin{itemize}}{\end{itemize}}
 \tcolorboxenvironment{ChapterSummary}{ colback=blue!5!white,
 colframe=blue!75!black

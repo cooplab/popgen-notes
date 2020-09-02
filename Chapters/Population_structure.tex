@@ -61,7 +61,7 @@ to that found in the total population (T). } \label{fig:FST_pig}
 \fis = 1-\frac{H_I}{H_S}= 1-\frac{f_{12}}{2p_Sq_S},
 \label{eqn:FIS}
 \end{equation}
-a direct analog of \eqn \ref{eqn:Fhat}. Hence, $\fis$ is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation. We could also compare the observed
+a direct analog of \eqn  \ref{eqn:Fhat}. Hence, $\fis$ is the relative difference between observed and expected heterozygosity due to a deviation from random mating within the subpopulation. We could also compare the observed
 heterozygosity in individuals ($H_I$) to that expected in the total
 population, $H_T$. If the frequency of allele $A_1$ in the total
 population is $p_T$, then we can write $\fit$ as
@@ -91,20 +91,27 @@ heterozygosity from the total population to that in the subpopulation.\\
 If we want a summary of
 population structure across multiple subpopulations, we can average $H_I$
 and/or $H_S$ across populations, and use a $p_T$ calculated by
-averaging $p_S$ across subpopulations (or our samples from sub-populations). For example, the average $\fst$ across $K$ subpopulations (sampled with equal effort) is
+averaging $p_S$ across subpopulations (or our samples from sub-populations). For example, the average $\bar{\fst}$ across $K$ subpopulations (sampled with equal effort) is
 \begin{equation}
-	\fst = 1 - \frac{\bar{H}_{S}}{H_T},
+	\bar{\fst} = 1 - \frac{\bar{H}_{S}}{H_T},
 \end{equation}
 where $\bar{H}_S = \nicefrac{1}{K} \sum_{i = 1}^{K} H_{S}^{(i)}$, and
 $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$. It follows that the  average heterozygosity of the
 sub-populations $\bar{H}_S  \leq
-H_T$, and so $\fst \geq 0$ and $\fis \leq \fit$. This observation that the average
+H_T$, and so $\bar{\fst} \geq 0$ and $\bar{\fis} \leq \bar{\fit}$. This observation that the average
   heterozygosity of the sub-populations must be less than of equal to
   that of the total
-  population is called the Wahlund effect. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
+  population is called the Wahlund effect \citep{wahlund1928zusammensetzung}. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above).\sidenote[][-0.5cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
 
+
+\begin{question}{}
+In a species of lemurs, you estimate the allele frequency to be
+$20\%$. In a particular population, you estimate that the allele
+frequency is $10\%$. In this population, only $9\%$ of individuals are
+heterozygote. What is $F_{IT}$, $F_{ST}$, and $F_{IS}$ for this population?   
+\end{question} 
 
 As an example of comparing a genome-wide estimate of $F_{ST}$ to that
 at individual loci we can look at some data from blue- and
@@ -170,7 +177,7 @@ warblers compared to the combined sample.\\
 
 %JRI: reqriting Fis as covariance is not obvious. could use more explanation. same with Fst as ratio of variances. not immediately obvious how you got there or why those are (co)variances
 
-Let us now return to Wright's definition of the $F$-statistics as correlations
+Let's now return to Wright's definition of the $F$-statistics as correlations
 between random gametes, drawn from the same level $X$, relative to level $Y$.
 Without loss of generality, we may think about $X$ as individuals and $S$ as
 the subpopulation.  Rewriting $\fis$ in terms of the observed homozygote
@@ -187,7 +194,7 @@ pairs of alleles found in an individual, divided by the expected variance under
 binomial sampling. Thus, $F$-statistics can be understood as the correlation
 between alleles drawn from a population (or an individual) above that expected
 by chance (i.e.\ drawing alleles sampled at random from some broader
-population). \sidenote[][-2cm]{To see why the numerator of eqn
+population). \sidenote[][0cm]{To see why the numerator of eqn
   \eqref{eqn:Fascorr} is the covariance of a discrete
   random variable see Appendix \eqn \eqref{eqn:binary_covar}, where we
 imagine that the random variable is $1$ if the alleles drawn from the
@@ -253,7 +260,7 @@ You genotype a new individual from an unknown population at these $L$ loci. This
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is
 \begin{equation}
-  P(g_l | \textrm{pop k}) =
+  \P(g_l | \textrm{pop k}) =
   \begin{cases}
 (1-p_{k,l})^2  & g_l=0 \\
 2 p_{k,l} (1-p_{k,l}) & g_l=1\\
@@ -263,7 +270,7 @@ p_{k,l}^2  & g_l=2
 
 Assuming that the loci are independent, the probability of the individual's genotype across all S loci, conditional on the individual coming from population $k$, is
 \begin{equation}
-P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S P(g_l | \textrm{pop k}) \label{eqn_assignment}
+\P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S \P(g_l | \textrm{pop k}) \label{eqn_assignment}
 \end{equation}
 
 % TODO: deleted "new" in bayes -- this is confusing I think for students
@@ -272,20 +279,20 @@ $k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes'
 rule
 
 \begin{equation}
- P(\textrm{pop k} | \textrm{ind.})  = \frac{P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})}{P(\textrm{ind.})}
+ \P(\textrm{pop k} | \textrm{ind.})  = \frac{\P(\textrm{ind.} | \textrm{pop k}) \P(\textrm{pop k})}{\P(\textrm{ind.})}
 \end{equation}
 where
 \begin{equation}
-P(\textrm{ind.}) = \sum_{k=1}^K  P(\textrm{ind.} | \textrm{pop k}) P(\textrm{pop k})
+\P(\textrm{ind.}) = \sum_{k=1}^K  \P(\textrm{ind.} | \textrm{pop k}) \P(\textrm{pop k})
 \end{equation}
 is the normalizing constant.\sidenote{See the Appendix
-  \eqref{eqn:Bayes_Rule} for more on Bayes' Rule} We can interpret $P(\textrm{pop k})$ as the
+  \eqref{eqn:Bayes_Rule} for more on Bayes' Rule} We can interpret $\P(\textrm{pop k})$ as the
 prior probability of the individual coming from population $k$, and unless
-we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $P(\textrm{pop k})=\nicefrac{1}{K}$.
+we have some other prior knowledge we will assume that the new individual has a equal probability of coming from each population $\P(\textrm{pop k})=\nicefrac{1}{K}$.
 
 We interpret
 \begin{equation}
- P(\textrm{pop k} | \textrm{ind.})
+ \P(\textrm{pop k} | \textrm{ind.})
 \end{equation}
 as the posterior probability that our new individual comes from each of our $1,\cdots, K$ populations.
 
@@ -339,7 +346,8 @@ your plot change if our individual is heterozygous at both loci?
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/alleles_genotypes/chimp/chimp.png}
 \end{center}
-\caption{Chimpanzee. }
+\caption{Chimpanzee. \BHLCC{Archives du Mus{\'e}um d'Histoire
+    Naturelle, Paris. (tome X, 1856)}{https://www.flickr.com/photos/biodivlibrary/19930229848/in/photolist-XGMmmV-wnaCYy-wDMHFP-dpNAc7-bw9qDC-bw9orQ-bJPuCF-eV4etD-d9s1By-cbcysm-c5izpA-bvSkgm-bu7ij8-azL7vS-ayF5zC-atDTpg-atDTuz-akH6mL-ag15Rf-ag15Lb}{Natural History Museum Library, London}{2.0}}
   \label{chimp_pic}
 \end{marginfigure}
 
@@ -481,15 +489,6 @@ evolved different songs and accumulated other reproductive barriers
 from each other as they spread independently north around the
 plateau, such that {\it P. t. viridanus} (blue) and {\it P. t. plumbeitarsus}
 (red) populations presently form a stable hybrid zone.
-
-
-\citet{alcaide:14} obtained sequence data for their samples at 2,334 snps. In Figure \ref{fig:warbler_heat}
-you can see the matrix of kinship coefficients, using \eqn \eqref{eqn:kinship_mat}, between all pairs of
-samples. You can already see a lot about population structure in this
-matrix. Note how the red and yellow samples, thought to be derived from
-the Eastern route around the Himalayas, have higher kinship with each
-other, and blue and the (majority) of the green samples, from the Western route, form a
-similarly close group in terms of their higher kinship.
 \begin{marginfigure}[-5cm]
 % TODO: MISSING FIGURE
 \includegraphics[width= \textwidth]{illustration_images/alleles_genotypes/greenish_warbler/10036311396_14915d1715_z.jpg}
@@ -498,6 +497,15 @@ similarly close group in terms of their higher kinship.
     British Islands. 1885. Lilford T. L. P..}{https://www.biodiversitylibrary.org/page/34576931\#page/147/mode/1up}{American Museum of Natural History Library} (Greenish warblers are
     rare visitors to the UK.)}\label{fig:greenish_warbler}   %https://www.flickr.com/photos/biodivlibrary/10036311396/in/photolist-ghSHHE
 \end{marginfigure}
+
+\citet{alcaide:14} obtained sequence data for their samples at 2,334 snps. In Figure \ref{fig:warbler_heat}
+you can see the matrix of kinship coefficients, using \eqn \eqref{eqn:kinship_mat}, between all pairs of
+samples. You can already see a lot about population structure in this
+matrix. Note how the red and yellow samples, thought to be derived from
+the Eastern route around the Himalayas, have higher kinship with each
+other, and blue and the (majority) of the green samples, from the Western route, form a
+similarly close group in terms of their higher kinship.
+
 
 \begin{figure}
 \begin{center}
@@ -562,7 +570,7 @@ at different loci.\\
   red lines are two copies of a chromosome in an  individual who is
   heterozygote for a AB and an ab haplotype. The dotted lines show a
   possible crossover between the two chromosomes. The four possible
-  outcomes of meiosis are show below, the probablity of each is given
+  outcomes of meiosis are show below, the probability of each is given
   to the right (assuming
   a recombination fraction of $c$ between the two loci).} \label{fig:recom_cartoon}
 \end{marginfigure}
@@ -790,7 +798,7 @@ approximate this by an exponential and say that
 \begin{equation}
 D_t \approx  D_0 e^{-ct}  \label{eqn_LD_decay}
 \end{equation}\\
-
+which follows from a Taylor series expansion, see Appendix \eqn \eqref{eqn:Taylor_geo}.
 %{\bf Q}\arabic{Question} \refstepcounter{Question}
 \begin{question}{}
 You find a hybrid population between the two mouse subspecies
@@ -841,3 +849,75 @@ associations. \sidenote{The calculation done by
 account for inhomogeneity in recombination rates and arrive at a date
 of  47,334 -- 63,146 years.}
 %JRI: /marginnote with no number used well for definitions. /sidenote should be used for comments about specific parts of the text
+
+
+\begin{ChapterSummary}
+\item Individuals often mate non-randomly, e.g. by geographical
+  location, this generates population genetic structure that can be
+  thought of as a form of inbreeding. This inbreeding at a population level leads
+to a reduction in heterozygosity within sub-populations as compared to
+the total population (if allele frequencies differ
+  across populations).
+\item Wright's $F$  statistics can be used to measure the extent of
+population structure, describing the reduction in heterozygosity at
+various scales, for example the individual compared to the
+sub-population ($F_{IS}$) or the sub-population compared to the total
+population ($F_{ST}$).  We can calculate these statistics either genome-wide or at individual loci.
+\item These $F$ statistics can be understood as expressing a
+  correlation between alleles drawn from the same level of population
+  structure, or the proportion of genetic variance explained by
+  population structure.
+\item Other ways to visualize population structure include STRUCTURE-like
+  approaches, which are based on assigning
+individuals to populations based on the likelihood of their genotype
+given allele frequencies (assignment methods) and learning the
+assignment of individuals to discrete populations. Another common
+approach relies on identifying major axes of variation in relatedness via Principal components analysis.
+\item We'll often be interested in covariances and correlations among
+  alleles at different loci, linkage disequilibrium (LD).
+  \item Covariance between loci (LD) can arise between loci for a variety of
+    reasons, notably population structure and admixture as described
+    in the chapter.
+    \item The decay of LD due recombination can be modelled and
+      potentially used to date when LD was generated (e.g. via admixture). 
+\end{ChapterSummary}
+
+\begin{question}{}
+The loss of heterozygosity due to inbreeding can be partitioned across
+F statistics at multiple levels. For example we can partition the
+total inbreeding coefficient of a individuals ($F_{IT}$) compared to a population
+between $F_{IS}$ and $F_{ST}$. For the following example scenarios, do
+you expect $F_{IS}$ to be larger or smaller than $F_{ST}$? Explain your answer.\\
+{\bf A)} Charles II, where the subpopulation is Spain and the total population is Europeans.\\
+{\bf B)} Subpopulations of plants living on a moutainside, where
+pollen disperses long distances via wind, butindividuals
+self-pollinate about 50\% of the time, \\
+{\bf C)} Fish that live in lakes with very few accessible waterways between lakes, but where the fish swim freely within lakes. Each lake is a subpopulation and the entire lake basin is the total population.
+\end{question}
+
+\begin{question}{}
+In a species of beetle, the colour and shape of the wings are controlled by two distinct
+polymorphisms (with alleles big/small and red/yellow respectively). 
+In a museum collection you estimate the frequency of the four
+haplotypes to be:\\
+\begin{center}
+\begin{tabular}{cccc}
+big/red & big/yellow & small/red & small/yellow\\
+0.69 & 0.00 & 0.09 & 0.22\\
+\end{tabular}
+\end{center}
+This collection is from 60 years ago. In present day populations you
+estimate the frequencies of the haplotypes to be:\\
+\begin{center}
+\begin{tabular}{cccc}
+0.5452 & 0.1448 & 0.2348 & 0.0752\\
+\end{tabular}
+\end{center}
+{\bf A)} Assuming one generation per year, what is the recombination fraction
+between these loci?\\
+{\bf B)} Qualitatively, how would your answer change if you determined
+that crossing over only occurred in females and not in males?
+\end{question}
+
+
+

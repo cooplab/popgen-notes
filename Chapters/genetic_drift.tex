@@ -1,6 +1,8 @@
-\chapter{Genetic Drift and Neutral Diversity}
+\chapter{Genetic Drift and Neutral Diversity.}
 \label{Chapter:Drift}
-\newthought{Randomness is inherent to evolution}, from the lucky birds blown off course to colonize some new oceanic island, to which mutations arise first in the HIV strain infecting an individual taking anti-retroviral drugs. One major source of stochasticity in evolutionary biology is genetic drift.  Genetic drift occurs because more or less copies of an allele by chance can be transmitted to the next generation. This can occur because, by chance, the individuals carrying a particular allele can leave more or less offspring in the next generation. In a
+
+%https://www.biodiversitylibrary.org/item/116829#page/9/mode/1up
+\newthought{Randomness is inherent to evolution}, from the lucky birds blown off course to colonize some new oceanic island, to which mutations arise first in the HIV strain infecting an individual taking anti-retroviral drugs. One major source of stochasticity in evolutionary biology is genetic drift.  Genetic drift occurs because more or less copies of an allele by chance can be transmitted to the next generation \citep{wright1931evolution}\sidenote{\citet{fisher1923xxi} also discusses models related to genetic drift, but \citeauthor{wright1931evolution}'s treatment is more extensive and he uses the name `drift'. Both \citeauthor{wright1931evolution} and \citeauthor{fisher1923xxi} credit earlier authors \citep{gulick1873diversity,Hagedoorn} with the intuition behind the concept of genetic drift.}. This can occur because, by chance, the individuals carrying a particular allele can leave more or less offspring in the next generation. In a
 sexual population, genetic drift also occurs because Mendelian transmission
 means that only one of the two alleles in an individual, chosen at random at a
 locus, is transmitted to the offspring.
@@ -96,7 +98,7 @@ H_t = \left(1-\frac{1}{2N} \right)^tH_0  \label{eqn:loss_het_discrete}
 i.e. the expected heterozygosity within our population is decaying
 geometrically with each passing generation. If we assume that $\nicefrac{1}{(2N)}
 \ll 1$ then we can approximate this geometric decay by an exponential
-decay (see Question \ref{geo_question} below), such that
+decay (see Question \ref{geoquestion} below), such that
 %
 \begin{equation}
 H_t =H_{0} e^{ - \nicefrac{t}{(2N)} }
@@ -105,7 +107,7 @@ H_t =H_{0} e^{ - \nicefrac{t}{(2N)} }
 i.e. heterozygosity decays exponentially at a rate
 $\nicefrac{1}{(2N)}$.  \marginnote{By a similar argument, in a haploid population the expected proportion of pairs of differing alleles decays as:
 \begin{equation}
-H_t = \left(1-\frac{1}{2N} \right)^tH_0  H_{0} e^{ - \nicefrac{t}{(N)} } \label{eqn:loss_het_haploid} 
+H_t = \left(1-\frac{1}{2N} \right)^tH_0 = H_{0} e^{ - \nicefrac{t}{(N)} } \label{eqn:loss_het_haploid} 
 \end{equation}
 %
 }
@@ -127,7 +129,7 @@ In Figure \ref{fig:LossHet_WF_N50} we show trajectories through time for 40 inde
 \end{marginfigure}
 %JRI: lame. i'd drop pic if you can't find one of right species.
 
-\begin{question}{} You are in charge of maintaining a population of delta smelt in the Sacramento river delta. Using a large set of microsatellites you
+\begin{question}{} You are in charge of maintaining a population of delta smelt in the Sacramento River delta. Using a large set of microsatellites you
   estimate that the mean level of heterozygosity in this population is 0.005.
   You set yourself a goal of maintaining a level of heterozygosity of at least
   0.0049 for the next two hundred years. Assuming that the smelt have a
@@ -168,14 +170,6 @@ generation.  If you've read to here, please email Prof Coop a picture of JBS Hal
 %frequency changes later on.
 
 
-\begin{marginfigure}[6cm]
-\begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Black_footed_ferrets/Black_footed_ferret.pdf}
-\end{center}
-\caption{The black-footed ferret ({\it M. nigripes}). \BHLNC{Wild animals of North America, The National geographical
-  society, 1918.}{https://www.biodiversitylibrary.org/page/9727900\#page/179/mode/1up}{American Museum of Natural History Library}} \label{fig:black_footed_ferret}
-\end{marginfigure}
-
 \begin{figure}
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/genetic_drift/black_footed_ferrets/black_footed_ferrets_He.pdf}
@@ -185,9 +179,17 @@ generation.  If you've read to here, please email Prof Coop a picture of JBS Hal
 
 To see how a decline in population size can affect levels of
 heterozygosity, let's consider the case of black-footed ferrets ({\it Mustela nigripes}). The black-footed ferret population has declined dramatically through the twentieth century due
-to destruction of their habitat.  In 1979, when the last known black-footed ferret died in captivity, they were thought to be
+to destruction of their habitat and sylvatic plague.  In 1979, when the last known black-footed ferret died in captivity, they were thought to be
 extinct. In 1981, a very small wild population was rediscovered ($40$ individuals), but in 1985 this population
-suffered a number of disease outbreaks. All of the $18$ remaining wild individuals
+suffered a number of disease outbreaks. 
+\begin{marginfigure} %[]
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Black_footed_ferrets/Black_footed_ferret.pdf}
+\end{center}
+\caption{The black-footed ferret ({\it M. nigripes}). \BHLNC{Wild animals of North America, The National geographical
+  society, 1918.}{https://www.biodiversitylibrary.org/page/9727900\#page/179/mode/1up}{American Museum of Natural History Library}} \label{fig:black_footed_ferret}
+\end{marginfigure}
+At that point of the $18$ remaining wild individuals
 were brought into captivity, 7 of which
 reproduced. Thanks to intense captive breeding efforts and conservation work, a
 wild population of over 300 individuals has been established
@@ -200,8 +202,8 @@ of microsatellites in individuals from museum collections, showing the sharp dro
 \begin{question}{} \label{geoquestion} In mathematical population genetics, a
   commonly used approximation is $(1-x) \approx e^{-x}$ for $x << 1$ (formally,
   this follows from the Taylor series expansion of $\exp(-x)$, ignoring second
-  order and higher terms of $x$).  This approximation is especially useful for approximating a geometric
-  decay process by an exponential decay process, e.g. $(1 - x)^t \approx e^{-xt}$. Using your calculator, or R, check how good of an approximation this is compared to the exact expression for two values of x, $x = 0.1$, and $0.01$, across two different values of t, $t=5$ and $t=50$. Briefly comment on your results.
+  order and higher terms of $x$,  see Appendix \eqn \eqref{eqn:Taylor_geo}).  This approximation is especially useful for approximating a geometric
+  decay process by an exponential decay process, e.g. $(1 - x)^t \approx e^{-xt}$. Using your calculator, or R, check how well this expression approximates  the exact expression for two values of $x$, $x = 0.1$, and $0.01$, across two different values of t, $t=5$ and $t=50$. Briefly comment on your results.
 
   %Do this by plotting the geometric decay as
  % points, and the exponential decay as a curve, using different colors for each
@@ -217,7 +219,7 @@ of microsatellites in individuals from museum collections, showing the sharp dro
 
 Next we're going to consider the amount of neutral polymorphism that can be maintained in a population as a balance between genetic drift removing variation and mutation introducing new neutral variation, see Figure \ref{fig:Mut_Sel_balance} for an example. Note in our example, how no single allele is maintained at a stable equilibrium, rather an equilibrium level of polymorphism is maintained by a constantly shifting set of alleles.
 
-\begin{figure} \begin{center} \includegraphics[width= 0.8
+\begin{figure} \begin{center} \includegraphics[width=
 \textwidth]{figures/Mut_drift_balance.png} \end{center} \caption{Mutation-drift
 balance. A diploid population of 5 individuals. In the first generation
 everyone has the same allele (black). Each generation the transmitted allele
@@ -226,19 +228,19 @@ frequency of alleles in our population over time. The mutation rate we use is ve
 \end{figure}
 
 \paragraph{The neutral mutation rate.}
-We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is $(1-C)\mu$. This is the per generation rate.
+We'll first want to consider the rate at which neutral mutations arise in the population.Thinking back to our discussion of the neutral theory of molecular evolution, let's suppose that there are only two classes of mutation that can arise in our genomic region of interest: neutral mutations and highly deleterious mutations. The total mutation rate at our locus is $\mu$ per generation, i.e. per transmission from parent to child. A fraction $C$ of our mutations are new alleles that are highly deleterious and so quickly removed from the population. We'll call this $C$ parameter the constraint, and it will differ according to the genomic region we consider.  The remaining fraction $(1-C)$ are our neutral mutations, such that our neutral mutation rate is $(1-C)\mu$. This is the per generation rate. In the rest of the chapter for simplicity we'll assume that $C=0$ and use a neutral mutation rate of $\mu$. However, we'll return to this discussion of constaint when we discuss molecular divergence in a subsequent chapter.
 %JRI: modified here to match notation later in chapter where you use $(1-C)\mu$ as the neutral rate
 
 \begin{question}{} 
-It's worth taking a minute to get familiar with both how rare, and how common, mutation is. The per base pair mutation rate in humans is around $1.5 \times 10^{-8}$ per generation. That means, on average, we have to monitor a site for $\sim 66.6$ million transmissions from parent to child to see a mutation. Yet populations and genomes are big places, so mutations are common at these levels. \\
-{\bf A)} Your autosomal genome is $\sim$ 3 billion base pairs long ($3 \times 10^9$). You have two copies, the one you received from your mum and one from your dad. What is the average (i.e. the expected) number of mutations that occurred in the transmission from your mum and your dad to you?\\
+It's worth taking a minute to get familiar with both how rare, and how common, mutation is. The per base pair mutation rate in humans is around $1.5$ $\times$ $10^{-8}$ per generation. That means, on average, we have to monitor a site for $\sim 66.6$ million transmissions from parent to child to see a mutation. Yet populations and genomes are big places, so mutations are common at these levels. \\
+{\bf A)} Your autosomal genome is $\sim$ 3 billion base pairs long ($3$ $\times$ $10^9$). You have two copies, the one you received from your mum and one from your dad. What is the average (i.e. the expected) number of mutations that occurred in the transmission from your mum and your dad to you?\\
 {\bf B)} The current human population size is $\sim$7 billion individuals. How many times, at the level of the entire human population, is a single base-pair mutated in the transmission from one generation to the next?
 \end{question}
 \paragraph{Levels of heterozygosity maintained as a balance between mutation and drift.}
 
 
 Looking backwards in time from one generation to the previous generation, we are going to say that two alleles which have the same parental allele (i.e. find their common ancestor) in the preceding generation have \emph{coalesced}, and refer to this
-event as a \emph{coalescent event}.
+event as a \emph{coalescent event}. If our pairs of alleles are to be different from each other in the present day, a mutation must have occured more recently on one or other lineage before they found a common ancestor. 
 
 The probability that our pair of randomly sampled alleles have coalesced in the
 preceding generation is $\nicefrac{1}{(2N)}$, and the probability that our pair of
@@ -271,13 +273,13 @@ $t+1$ (counting backwards in time) and are identical due to no mutation to eithe
 subsequent generations is
 %
 \begin{equation}
-P(\textrm{coal. in t+1 \& no mutations}) =  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2(t+1)}
+\P(\textrm{coal. in t+1 \& no mutations}) =  \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2(t+1)}
 \end{equation}
 %
 To make this slightly easier on ourselves let's further assume that $t
 \approx t+1$ and so rewrite this as:
 \begin{equation}
-P(\textrm{coal. in t+1 \& no mutations}) \approx \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2t}
+\P(\textrm{coal. in t+1 \& no mutations}) \approx \frac{1}{2N} \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2t}
 \end{equation}
 %
 
@@ -287,10 +289,10 @@ coalesce: they could coalesce in generation $t=1, t=2, \ldots $, and so on.
 Thus, to calculate the probability that two alleles coalesce in \emph{any}
 generation before mutating, we can write:
 \begin{align}
-  P(\textrm{coal. in any generation \& no mutations}) \approx & P(\textrm{coal. in} \; t=1 \; \textrm{\& no mutations}) \; + \nonumber\\
-&  P(\textrm{coal. in} \; t=2 \; \textrm{\& no mutations}) + \ldots \nonumber\\
+  \P(\textrm{coal. in any generation \& no mutations}) \approx & \P(\textrm{coal. in} \; t=1 \; \textrm{\& no mutations}) \; + \nonumber\\
+&  \P(\textrm{coal. in} \; t=2 \; \textrm{\& no mutations}) + \ldots \nonumber\\
   %P(\textrm{coal. in} \; t=3 \; \textrm{\& no mutations})  +\ldots \nonumber\\
-  = & \sum_{t=1}^\infty P(\textrm{coal. in } \; t \; \textrm{generations \& no mutation})
+  = & \sum_{t=1}^\infty \P(\textrm{coal. in } \; t \; \textrm{generations \& no mutation})
 \end{align}
 
 an example of using the Law of Total Probability, see Appendix eqn \eqref{eqn:law_tot_prob}, combined with the fact that coalescing in a particular generation is mutually exclusive with coalescing in a different generation.
@@ -303,7 +305,7 @@ This allows us to approximate the geometric decay as an exponential decay (see A
 Then, the probability two alleles coalesce in generation $t+1$ and don't mutate
 can be written as:
 %
-\begin{align} P(\textrm{coal. in t+1 \& no mutations}) &\approx \frac{1}{2N}
+\begin{align} \P(\textrm{coal. in t+1 \& no mutations}) &\approx \frac{1}{2N}
 \left(1- \frac{1}{2N} \right)^t \left(1-\mu \right)^{2t} \\
 & \approx \frac{1}{2N} e^{-t/(2N)} e^{-2\mu t } \\
 &=\frac{1}{2N} e^{-t(2\mu+1/(2N))} \end{align}
@@ -313,9 +315,10 @@ Then we can approximate the summation by an integral, giving us:
 
 \begin{equation}
 \frac{1}{2N} \int_0^{\infty} e^{-t(2\mu+1/(2N))} dt =
-\frac{1/(2N)}{1/(2N)+2\mu} = \frac{1}{1+4N\mu}
+\frac{1/(2N)}{1/(2N)+2\mu} 
 \end{equation}
 
+\marginnote{We can use a very similar argument for a haploid population and replace $\theta=4N\mu$ with $\theta=2N \mu$. Haploids can't be heterozygous, but we interpret `heterozygosity' as the probability that two alleles paired at random in our population differ from each other.}
 The equation above gives us the probability that our two alleles coalesce at some point
 in time, and do not mutate before reaching their common
 ancestor. Equivalently, this can be thought of as the probability our two
@@ -327,24 +330,32 @@ heterozygosity in a population at equilibrium between mutation and drift:
 
 \marginnote{This result was derived by \citet{kimura1964number} and \citet{malecot:48}  \citep[see][for an English translation, the lack of earlier translation meant this result was missed]{malecot:69}. Technically we're assuming that every new mutation creates a new allele, the so-called "infinitely many alleles" model, otherwise our pair of sequences could be identical due to repeat or back mutation. See this GENETICS \href{http://genestogenomes.org/kimura-crow-infinite-alleles/}{blog post} and \citet{ewens2016motoo} for a nice discussion of the history. }
 
+
+
 \begin{equation}
-  H = \frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
+  H = \frac{2\mu}{1/(2N)+2\mu}  = \frac{4N\mu}{1+4N\mu} \label{eqn:hetero}
 \end{equation}
  The compound parameter $4N\mu$, the population-scaled mutation rate,
 will come up a number of times so we'll give it its own name:
 \begin{equation}
 \theta = 4N\mu
 \end{equation}
+What's the intuition of our \eqn   \eqref{eqn:hetero}, well the probability that any event happens in a particular generation is $\P(\textrm{mutation or coalescence}) \approx \nicefrac{1}{(2N)}+2\mu$, so conditional \sidenote{See Math Appendix \eqn \eqref{eqn:cond_prob} for more background on conditional probabilities.} on an event happening the probability that it is a mutation is $\P(\textrm{mutation} \mid \textrm{mutation or coalescence}) =  \nicefrac{2\mu}{\left(\nicefrac{1}{(2N)}+2\mu \right)}$. 
 
-So all else being equal, species with larger population sizes should
-have proportionally higher levels of neutral polymorphism.
 
-\begin{question}{}
-The sequence-level heterozygosity in {\it Capsella grandiflora} (grand shepherd's purse) is $\sim 2\%$ per base. Assuming a mutation rate of $10^{-9} bp^{-1}$ per generation, what is your estimate of the population size of {\it C. grandiflora}?
-\end{question}
+So all else being equal, species with larger population sizes should have proportionally higher levels of neutral polymorphism. Indeed, populations of animals, e.g. birds, on small islands have lower levels of diversity than closely related species on the mainland with larger ranges. More generally, we do see higher levels of heterozygosity in larger census population sizes across animals Figure \ref{fig:allozyme_N}. However, while census population sizes vary over many orders of magnitude, levels of diversity vary much less than that. So, if levels of diversity in natural populations represent a balance between genetic drift and mutation, levels of genetic drift in large populations must be a lot faster than their census population size suggests. In the next section we'll talk about some possible reasons why.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/genetic_drift/Allozyme_pop_size/bird_allozyme_pop_size.pdf}
+\end{center}
+\caption{Average basepair heterozygosity plotted against the log of range size for endemic island and mainland bird populations \citep{leroy2020endemic}.
+  Average allozyme heterozygosity plotted against the log of census population size (N) for animals. Data from \citet{soule1976allozyme,frankham1996relationship} \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Allozyme_pop_size/allozyme_pop_size.R}} \label{fig:allozyme_N}
+\end{figure}
+
 
 \subsection{The effective population size}
-\marginnote{the effective population size ($N_e$) is the population size that
+\marginnote[2cm]{The effective population size ($N_e$) is the population size that
 would result in the same rate of drift in an idealized population of constant size (following our modeling
 assumptions)
 as that observed in our true population .}
@@ -430,7 +441,7 @@ individuals. See Figure \ref{fig:LossHet_varying_RS} for a depiction of the high
 in a population where there is high variance in reproductive success.
 
 To see one example of this, consider the case where $N_F$ of  females get to reproduce and $N_M$ males get reproduce.
-While every individual has a mother an a father, not every individual gets to be a parent. In practice, in many animal species far more females get to reproduce than males, i.e. $N_M <N_F$, as a few males get many mating opportunities and many males get no/few mating opportunities \citep[see ][for a broad analysis, and note that there a certainly many exceptions to this general pattern]{janicke:16}. When our two alleles pick an ancestor, $25\%$ of the time our alleles were both in a female ancestor, in which case they are IBD with probability $1/(2N_F)$, and $25\%$ of the time they are both in a
+While every individual has a biological mother and father, not every individual gets to be a parent. In practice, in many animal species far more females get to reproduce than males, i.e. $N_M <N_F$, as a few males get many mating opportunities and many males get no/few mating opportunities \citep[see ][for a broad analysis, and note that there a certainly many exceptions to this general pattern]{janicke:16}. When our two alleles pick an ancestor, $25\%$ of the time our alleles were both in a female ancestor, in which case they are IBD with probability $1/(2N_F)$, and $25\%$ of the time they are both in a
 male ancestor, in which case they coalesce with probability
 $1/(2N_M)$.
 %JRI: this felt like it came out of nowhere. ``when our two alleles''  -- which two? from some example? ``$25\%$ of the time our alleles were both in a female ancestor'' -- this sould be explained. are you assuming 50% females and 50% males?
@@ -463,17 +474,19 @@ You are studying a population of 500 male and 500 female Hamadryas baboons. Assu
 
  Variance in male and female reproductive success can have very different effects on chromosomes with differing modes of inheritance such as the X chromosome, mitochondria, and Y chromosome. The mitochondria (mtDNA) and Y chromosome are haploid and only inherited through the females and males respectively, so they have a haploid effective population sizes of $N_M$ and $N_F$.    \begin{figure}
 \begin{center}
-\includegraphics[width= 0.75 \textwidth]{Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.pdf}
+\includegraphics[width= 0.6 \textwidth]{Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.pdf}
 \end{center}
 \caption{Levels of genome-wide diversity in Scythian horses from  $2300$ year old Scythian horses and Modern horses (Nordic). The numbers next to each column given the fraction of diversity remaining in the present day, Data from \citet{librado2017ancient}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Scythian_horses/Scythian_horses.r}. } \label{fig:Scythian_horses_pi}
-\end{figure}  To see the impact of differential variance in male and female reproductive success, lets look at how levels of genetic diversity over thousands of years in domestic horses. \citet{librado2017ancient} sequenced ancient DNA from 13 sacrificed stallions from an $2300$ year old Scythian burial mound in Kazakhstan. The Scythian were a nomadic people whose Russian Steppe empire stretched from the  Black Sea to the borders of China and were among the first people to master horseback warfare with both men and women riding armed with short bows. 
- \begin{marginfigure}
+\end{figure}  To see the impact of differential variance in male and female reproductive success, let's look at how levels of genetic diversity over thousands of years in domestic horses.
+\begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Genetic_drift/Scythian_rider/616px-Szkíta.jpg}
 \end{center}  %https://www.historyextra.com/period/bronze-age/scythians-the-art-of-war/
 \caption{A  gold plaque showing Scythian rider found in a burial mound in eastern Crimera (c400–350 BC). \wikimedia{Photograph: V Terebenin/State Hermitage Museum}{https://commons.wikimedia.org/wiki/File:Szk\%C3\%ADta.jpg}{Inritter}{This is a faithful photographic reproduction of a two-dimensional, public domain work of art..}} \label{fig:Scythian_horse}
 \end{marginfigure}
-By comparing these data to modern horses, \citet{librado2017ancient} found that levels of diversity had been substantially reduced on the autosomes and greatly reduced on the Y chromosome. This constrasts with the mtDNA where levels of diversity have decreased only slightly. This pattern likely reflects the fact that much of modern horse breeding relies on a breeding a small number of stallions to a large number of mares.
+\citet{librado2017ancient} sequenced ancient DNA from 13 sacrificed stallions from an $2300$ year old Scythian burial mound in Kazakhstan. The Scythian were a nomadic people whose Russian Steppe empire stretched from the  Black Sea to the borders of China. They were among the first people to master horseback warfare with both men and women riding armed with short bows. 
+
+By comparing these data to modern horses, \citet{librado2017ancient} found that levels of diversity had been substantially reduced on the autosomes and greatly reduced on the Y chromosome. This constrasts with the mtDNA where levels of diversity have decreased only slightly. This pattern likely reflects the fact that much of modern horse breeding relies on a breeding a small number of stallions to a large number of mares, and so the effective population size of the Y chromosome has been much smaller than the mtDNA leading to a much higher rate of loss of diversity on the Y than on other chromosomes.
 
  \begin{question}{}
    Using the data on the reduction in horse genetic diversity in Figure \ref{fig:Scythian_horses_pi}:\\
@@ -489,9 +502,25 @@ By comparing these data to modern horses, \citet{librado2017ancient} found that 
 
 %xf A gold plaque depicting a Scythian rider with a spear in his right hand. Photograph: V Terebenin/State Hermitage Museum
 
- 
-\graham{Add X chromosome Ne?}
-\section{The Coalescent and patterns of neutral diversity}
+
+
+
+\begin{question}{}
+One of the highest levels of genetic diversity is seen in the diploid split-gill fungus, {\it Schizophyllum commune}. Populations in the USA have a sequence-level heterozygosity of $0.13$ per  synonymous base \citep{baranova2015extraordinary}. \citeauthor{baranova2015extraordinary} sequenced parents and multiple offspring to estimate that $\mu= 2 \times 10^{-8} bp^{-1}$ per generation. What is your estimate of the effective population size of  {\it S. commune}?
+%https://academic.oup.com/mbe/article/32/10/2775/1212759
+%The sequence-level heterozygosity in {\it Capsella grandiflora} (grand shepherd's purse) is $\sim 2\%$ per base. Assuming a mutation rate of $10^{-9} bp^{-1}$ per generation,
+\end{question}
+ \begin{marginfigure}[-2cm]
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Genetic_drift/splitgill_mushroom/splitgill_mushrooms.png}
+\end{center}
+\caption{Split-gill fungus ({\it Schizophyllum commune}). 
+    \BHLNKC{长江三角洲及邻近地区孢子植物志 (Spore Flora of the Yangtze River Delta and Adjacent Areas) 1989. 上海自然博物馆}{https://www.biodiversitylibrary.org/item/112321\#page/142/mode/1up}{Institute of Botany, Chinese Academy of Sciences}
+  } \label{fig:splitgill}  %https://archive.org/stream/changjiangsanjia00shan/#page/124/mode/1up
+  %https://www.biodiversitylibrary.org/item/112321#page/142/mode/1up
+\end{marginfigure}
+
+ \section{The Coalescent and patterns of neutral diversity}
 
 \begin{quote}
 ``Life can only be understood backwards; but it must be lived
@@ -512,7 +541,7 @@ ancestor of a pair of sequences is a random variable. We'll also use the expecta
 ancestor of a pair of sequences. Have a look at sections \ref{Section_rv} and \ref{appendix:expectation}.}
 
 As such, it will often be helpful to consider the time to the common
-ancestor of a pair of sequences, and then think of the impact of that time to coalescence
+ancestor of a pair of sequences ($T_2$), and then think of the impact of that time to coalescence
 on patterns of diversity. See Figure \ref{fig:Coalescent_simulation}
 for an example of this.
 
@@ -526,25 +555,24 @@ for an example of this.
   of an offspring (and the allele transmitted is indicated by a light
   grey line).  We track a
   pair of alleles, chosen in the present day, back 14 generations
-  until they find a common ancestor. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Coalescent_simulation}  %https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R
+  until they find a common ancestor. Deeper in time than 14 generations those two alleles have the same ancestral lineage and completely share their history, e.g. the mutations that occur on that lineage. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Coalescent_simulation}  %https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R
 \end{figure}
 
 The probability that a pair of alleles
 have failed to coalesce in $t$ generations and then coalesce in the
 $t+1$ generation back is
 \begin{equation}
- P(T_2=t+1) = \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
+ \P(T_2=t+1) = \frac{1}{2N} \left(1- \frac{1}{2N} \right)^{t} \label{eqn:coal_time_dist}
 \end{equation}
 For example, the probability that a pair of sequences coalesce three generations back is the probability that they fail to coalesce in generation 1 and 2, which is $ \left(1- \nicefrac{1}{2N} \right) \times \left(1- \nicefrac{1}{2N} \right)$, multipled by the probability that they find a common ancestor, i.e. coalesce, in the third generation, which happens with probability $\nicefrac{1}{2N}$. 
 
-From the form of eqn \eqref{eqn:coal_time_dist} we can see that the coalescent time of our pair of alleles is a Geometrically distributed random variable,\sidenote{See Appendix eqn \eqref{eqn:geometric_def} and surrounding text for more on the Geometric distribution.} where the probability of success is $p=\nicefrac{1}{2N}$. The waiting time for a pair of lineages to coalesce is like the number of tails thrown while waiting for a head on a coin with the probability of a head is $\nicefrac{1}{2N}$, i.e. id the population is large we might be waiting for a long time for our pair to coalesce. We'll denote this geometric distribution by $T_2 \sim  \text{Geo}(1/(2N))$. 
+From the form of eqn \eqref{eqn:coal_time_dist} we can see that the coalescent time of our pair of alleles is a Geometrically distributed random variable,\sidenote{See Appendix eqn \eqref{eqn:geometric_def} and surrounding text for more on the Geometric distribution.} where the probability of success is $p=\nicefrac{1}{2N}$. The waiting time for a pair of lineages to coalesce is like the number of tails thrown while waiting for a head on a coin with the probability of a head is $\nicefrac{1}{2N}$, i.e.  if the population is large we might be waiting for a long time for our pair to coalesce. We'll denote this geometric distribution by $T_2 \sim  \text{Geo}(1/(2N))$. 
 %JRI: not clear you're consistent with capitalization of prob. distributions.
 The expected (i.e. the mean over many replicates) coalescent time of a pair of alleles is then
 \begin{equation}
 \E(T_2) = 2N
 \end{equation}
 generations. This form to the expectation follows from the fact that the mean of an geometric random variable is $\nicefrac{1}{p}$.\\
-
 
 Conditional on a pair of alleles coalescing $t$ generations ago,
 there are $2t$ generations in which a mutation could occur. See Figure \ref{fig:pair_coal_muts} for an example. If the per
@@ -555,7 +583,7 @@ $2 t\mu$ (the alleles have gone through a total of $2t$ meioses since they last 
 \begin{center}
   \includegraphics[width =
   \textwidth]{figures/Coalescent/Coal_two_lineages_muts.pdf}  \end{center}
-\caption{The ancestral lineages of a pair of sequences coalese $t$ generations in the past. There are $2t$ generations that mutations could occur in that would be differences between our sequences. Three mutations have occured in this time changing the ancestral sequence (AGTTT) to the sequences at the bottom of the picture. } \label{fig:pair_coal_muts}
+\caption{The ancestral lineages of a pair of sequences coalese $t$ generations in the past. There are $2t$ generations where mutations could arise that would lead to  differences between our pair of sequences. Three mutations have occured in this time. changing the ancestral sequence (AGTTT) to the sequences at the bottom of the picture. } \label{fig:pair_coal_muts}
 \end{marginfigure}
 So we can write the expected
 number of mutations ($S_2$) separating two alleles drawn at random from the
@@ -578,7 +606,7 @@ this makes use of the law of total expectation (see Appendix eqn \eqref{eqn:tot_
 %\end{align}
 We'll assume that mutation is rare enough that it never happens at the same basepair twice, i.e. no multiple hits, such that we get to see all of the mutation events that separate our pair
 of sequences. This is assumption that repeat mutation is vanishingly rare at a basepair is called the {\emph infinitely-many-sites} assumption,
-which should hold if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per base pair. Thus the number of
+which should hold if $N\mu_{BP} \ll 1$, where $\mu_{BP}$ is the mutation rate per basepair. Thus the number of
 mutations between a pair of sites is the observed number of
 differences between a pair of sequences. In the previous chapter we denote the observed number of pairwise differences at putatively neutral
 sites separating a pair of sequences as $\pi$ (we usually average this over a
@@ -587,11 +615,11 @@ number of pairs of sequences for a region). Therefore, under our simple, neutral
 \E(\pi) = 4 N \mu = \theta \label{eqn:pi_expectation}
 \end{equation}
 So we can get an empirical estimate of $\theta$ from
-$\pi$, let's call this $\widehat{\theta}_{\pi}$, by setting $\widehat{\theta}_{\pi}=\pi$., i.e. our observed level of pairwise genetic diversity.  If we
+$\pi$, let's call this $\widehat{\theta}_{\pi}$, by setting $\widehat{\theta}_{\pi}=\pi$, i.e. our observed level of pairwise genetic diversity.  If we
 have an independent estimate of $\mu$, then from setting $\pi =\widehat{\theta}_{\pi} = 4N\mu$ we can furthermore obtain an estimate of the population
 size $N$ that is consistent with our levels of neutral polymorphism. If we estimate the population size this way, we should call it the effective coalescent population size ($N_e$). It's best to think about $N_{e}$ estimated from neutral diversity as a long-term effective population size for the species, but there are many caveats that come along with that assumption. For example, past bottlenecks and population expansions are all subsumed into a single number and so this estimated $N_{e}$ may not be very representative of the population size at any time. That said, it's not a bad place to start when thinking about the rate of genetic drift for neutral diversity in our population over long time-periods. \sidenote[][]{Up to this point we've been describing only neutral processes, however, selection can also alter levels of polymorphism. For example, if some synonymous sites directly experience selection, then even if we use $\pi$ calculated for synonymous changes we may underestimate the coalescent effective population size. As we'll see later in the notes, selection at linked sites can also impact neutral diversity. As such, if we can, we may want to use genomic sites subject to the weakest selective constraints, and also far from gene-dense or otherwise very constrained regions of the genome, to estimate $N_e$ from $\pi$. But even then caution is warranted. }
 
-Lets take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two alleles at a locus, sampled from a population at random, are different from each other. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. On the other hand, our $\pi$ measure keeps track of the average total number of differences between our loci. As such, $\pi$ is often a more useful measure, as it records the number of differences between the sequences, not just whether they are different from each other (however, for certain types of loci, e.g. microsatellites, heterozygosity is often used as we cannot usually count up the minimum number of mutations in a sensible way). In the case where our locus is a single basepair, the two measures will usually be close to one another, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans, $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$. However, these two quantities start to differ from each other when we consider regions with higher mutation rates. For example, if we consider a 10kb region, our mutation rate will 10,000 times larger than a single base pair. For this length of sequence the probability that two randomly chosen haplotypes differ is quite different from the number of mutational differences  between them. (Try a mutation rate of $10^{-8}$ per base and a population size of $10,000$ in our calculations of $\E[\pi]$ and H to see this.)
+Let's take a moment to distinguish our expected heterozygosity (eqn. \ref{eqn:hetero}) from our expected number of pairwise differences ($\pi$). Our expected heterozygosity is the probability that two alleles at a locus, sampled from a population at random, are different from each other. If one or more mutations have occurred since a pair of alleles last shared a common ancestor, then our sequences will be different from each other. On the other hand, our $\pi$ measure keeps track of the average total number of differences between our loci. As such, $\pi$ is often a more useful measure, as it records the number of differences between the sequences, not just whether they are different from each other (however, for certain types of loci, e.g. microsatellites, heterozygosity is often used as we cannot usually count up the minimum number of mutations in a sensible way). In the case where our locus is a single basepair, the two measures will usually be close to one another, as $H \approx \theta$ for small values of $\theta$. For example, comparing two sequences at random in humans, $\pi \approx 1/1000$ per basepair, and the probability that a specific base pair differs between two sequences is $\approx 1/1000$. However, these two quantities start to differ from each other when we consider regions with higher mutation rates. For example, if we consider a 10kb region, our mutation rate will 10,000 times larger than a single base pair. For this length of sequence the probability that two randomly chosen haplotypes differ is quite different from the number of mutational differences  between them. (Try a mutation rate of $10^{-8}$ per base and a population size of $10,000$ in our calculations of $\E[\pi]$ and H to see this.)
 
 %\erin{can you give an intuitive example when per bp $\pi$ is very different from heterozygosity? Or is this distinction really just key when we're talking about larger loci?}
 
@@ -626,17 +654,17 @@ In your own words describe why the coalescent time of a pair of lineages scales 
 
 
 \paragraph{More details on the pairwise coalescent and the randomness of mutation.}
-We found that our pairwise coalescent times followed a Geometric distribution, eqn  \eqref{eqn:coal_time_dist}. However, that assumes discrete generations and we'll often was to think about populations that lack discrete generations (i.e. individuals reproducing at random times with some mean generation time). Using our exponential approximation, we can see  that is
+We found that our pairwise coalescent times followed a Geometric distribution, eqn  \eqref{eqn:coal_time_dist}. However, that assumes discrete generations, and we'll often was to think about populations that lack discrete generations (i.e. individuals reproducing at random times with some mean generation time). Using our exponential approximation, we can see  that is
 \begin{equation}
 \approx \frac{1}{2N} e^{-t/(2N)}
 \end{equation}
 and so think of  a continuous random variable, i.e. we could say that the coalescent time of a pair of sequences ($T_2$) is approximately exponentially distributed with a rate $1/(2N)$, i.e. $T_2 \sim \text{Exp}\left( 1/(2N) \right)$. Formally we can do this by taking the limit of the discrete process more carefully. See Appendix eqn \eqref{eqn:exp_rv_def} for more on exponential random variables. 
 
-We've derived the expected number of differences between a pair of sequences and talked about how variable the coalescent time is for a pair of sequences. The mutation process is also very variable; even if two sequences coalesce in the very distant past by chance, they may still be identical in the present if there was no mutation during that time.
+We've derived the expected number of differences between a pair of sequences and talked about the variability of the coalescent time for a pair of sequences. The mutation process is also very variable; even if two sequences coalesce in the very distant past by chance, they may still be identical in the present if there was no mutation during that time.
 
 Conditional on the coalescent time $t$, the probability that our pair of alleles are separated by $S_2$ mutations since they last shared a common ancestor is bionomially distributed
 \begin{equation}
-P(S_2 | T_2 = t ) = {2t \choose j} \mu^{j} (1-\mu)^{2t-j}
+\P(S_2 | T_2 = t ) = {2t \choose j} \mu^{j} (1-\mu)^{2t-j}
 \end{equation}
 i.e. mutations happen in $j$ generations and do not happen in $2t-j$
 generations (with ${2t \choose j}$ ways this combination of events can possibly
@@ -644,7 +672,7 @@ happen). See Appendix eqn \eqref{eqn:binomial_dist} for discussion of the binomi
 can approximate the probability that we have $S_2$ mutations as a
 Poisson distribution:
 \begin{equation}
-P(S_2 | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
+\P(S_2 | T_2 = t ) = \frac{ (2 \mu t )^{j} e^{-2\mu t}}{j!}
 \end{equation}
 i.e. a Poisson with mean $2\mu t $. This is an example of taking the binomial distribution to its Poisson distribution limit, see Appendix eqn \eqref{eqn:bionom_to_poiss} for more details. We'll not make much use of this result, but it is very useful in thinking about how to simulate the process of mutation.\\
 
@@ -670,7 +698,7 @@ unlikely events. \\
 \end{center}
 \caption{A simple simulation of the coalescent process for three
   lineages. We track the ancestry of
-  three modern-day alleles, the first pair (blue and purple) coalesce four generations back, after which
+  three modern-day alleles, the first pair (red and purple) coalesce four generations back, after which
   there are only two independent lineages we are tracking. This pair
   then coalesces twelve generations in the past. Note that different
   random realizations of this process will differ from each other a lot. The $T_{MRCA}$ is $T_3+T_2$. The total time in the tree is $T_{tot}=3T_3 + 2T_2= 25$ generations. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/track_alleles.R} } \label{fig:Coalescent_simulation_3}
@@ -712,7 +740,7 @@ When there are $i$ alleles, the probability that we wait until the
 $t+1$ generation before
 any pair of alleles coalesces is
 \begin{equation}
-P(T_i =t+1) = \frac{{i \choose
+\P(T_i =t+1) = \frac{{i \choose
  2}}{2N}\left( 1- \frac{{i \choose
  2}}{2N}\right)^{t} \label{eqn:T_i}
 \end{equation}
@@ -728,7 +756,7 @@ The mean waiting time till any of pair within our
 \E( T_i) = \frac{2N}{{i \choose  2}}  \label{eqn:E_T_i}
 \end{equation}
 which again follows from the mean of a geometric random variable being $\nicefrac{1}{p}$.
-\marginnote{
+\marginnote[-2cm]{
 To see the continuous time  version of this, note that \eqref{eqn:T_i} is
 \begin{equation}
 \approx  \frac{{i \choose
@@ -738,10 +766,12 @@ To see the continuous time  version of this, note that \eqref{eqn:T_i} is
 The waiting time $T_i$ to the first coalescent event in a sample
 of $i$ alleles is thus exponentially distributed with rate $\nicefrac{{i \choose
  2}}{2N}$, i.e. $T_i \sim \text{Exp}\left(\nicefrac{{i \choose
- 2}}{2N} \right)$. }
-After a pair of alleles first finds a common ancestral allele some
-number of generations back in the past, we only have to keep
-track of that common ancestral allele for the pair when looking further into the past. Thus when a pair
+   2}}{2N} \right)$. }
+
+
+After a pair of alleles first finds a common ancestral allele some number of generations back in the past, we only have to keep track of that common ancestral allele for the pair when looking further into the past. In our example coalescent genealogy for our 3 alleles, shown in Figure \ref{fig:Coalescent_simulation_3}, we start by tracking the 3 lineages, then by chance the blue and purple coalesce in the four generations back. Then we're tracking just two lineages, the red lineage and the ancestral lineage of the blue and purple alleles; then those two coalesce and we've found our most recent common ancestor of our sample. Another example with four tips is shown in Figure \ref{fig:Coal_w_muts}; we're track four lineages, then a pair coalesce, then we tracking three lineages, then a pair coalesce, then we're tracking two lineages, then this final pair coalesce and we've found the most recent common ancestor of our sample (fin, end scene).
+
+More generally, when a pair
 of alleles in our sample of $i$ alleles coalesces, we then switch to
 having to follow $i-1$ alleles back in time. Then when a pair of these $i-1$
 alleles coalesce, we then only have to follow $i-2$ alleles back. This
@@ -831,7 +861,9 @@ increasing with sample size $n$, but is doing so very slowly. %To see this
 %\begin{equation}
 %\E(T_{tot}) = \sum_{i=n-1}^1 \frac{4N}{i}
 %\end{equation}
-\marginnote{To get a better sense of how $T_{tot}$ grows with the sample size, we
+\marginnote{
+We can obtain the value of the sum $\sum_{i=n-1}^1 \nicefrac{1}{i}$ in {\tt R} using the command  {\tt sum \Big(1/\big(1:(n-1) \big) \Big) }.
+  To get a better sense of how $T_{tot}$ grows with the sample size, we
   can approximate the sum \ref{eqn:E_T_tot} by an integral, which will work for large $n$. The result is  $\int_1^{n-1} \frac{4N}{i} di
 = 4N \log(n-1)$. }
 This again follows
@@ -876,7 +908,7 @@ expect to find in our sample? For example, in Figure \ref{fig:Coal_w_muts} in ou
 tree shape (treating the tips as unlabeled, i.e.  I don't care which pair of sequences carry a doubleton, just that any two sequences carry a derived allele).} \label{fig:freq_coal}
 \end{marginfigure}
 
-To see how we could go about working this out, lets start by considering the simple coalescent tree, shown in Figure \ref{fig:freq_coal}, for sample of $3$ alleles drawn from a population. Mutations that fall on the
+To see how we could go about working this out, let's start by considering the simple coalescent tree, shown in Figure \ref{fig:freq_coal}, for sample of $3$ alleles drawn from a population. Mutations that fall on the
 branches coloured in black will be derived singletons, while mutations that
 fall along the orange branch will be doubletons in the sample. The
 total number of generations where a singleton mutation could arise is
@@ -897,7 +929,7 @@ Extending this logic to larger samples might be doable, but is tedious (I mean r
 \end{equation}
 i.e. there are twice as many singletons as doubletons, three times as many
 singletons as tripletons, and so on. The other thing that will be
-helpful for us to know is that neutral alleles at intermediate frequency tend to be old, and those that are rare in the sample are young. We expect to see a lot more rare alleles in our sample than common alleles.
+helpful for us to know is that neutral alleles at intermediate frequency tend to be old, and those that are rare in the sample are on average young. We expect to see a lot more rare alleles in our sample than common alleles.
 
 \begin{question}{}
 There are two possible tree shapes that could relate four
@@ -908,7 +940,7 @@ samples. Draw both of them and separately colour (or otherwise mark) the branche
 
 We can also ask the probability of observing a derived allele segregating at frequency $i/n$ given that the site is polymorphic in our sample of size $n$ (i.e. given that $0<i<n$ ). We can obtain this probability by dividing the expected number of sites segregating for an allele at frequency $i$ by the expected number segregating at all of the possible allele frequencies for polymorphisms in our sample
 \begin{eqnarray}
-P(i |0<i<n) &=\frac{\E(S_i)}{\sum_{j=1}^{n-1} \E(S_j)} = \frac{\nicefrac{1}{i}}{\sum_{j=1}^{n-1} \nicefrac{1}{j}}.
+\P(i |0<i<n) &=\frac{\E(S_i)}{\sum_{j=1}^{n-1} \E(S_j)} = \frac{\nicefrac{1}{i}}{\sum_{j=1}^{n-1} \nicefrac{1}{j}}.
 \end{eqnarray}
 We can interpret this probability as the fraction of polymorphic sites we expect to find at a frequency $i/n$.
 
@@ -925,14 +957,14 @@ Tajima's $D$. Tajima's $D$ is
 where the numerator is the difference between the estimate of
 $\theta$ based on pairwise differences and that based on segregating
 sites. As these two estimators both have expectation $\theta$ under
-the neutral, constant-size model, the expectation of $D$ is zero. The denominator $C$ is a positive constant; it's the square-root of an estimatorof the variance of this difference under the constant population size, neutral model. This constant was chosen for $D$ to have mean zero and variance $1$ under the null model, so we can test for  departures from this simple null model.\\
+the neutral, constant-size model, the expectation of $D$ is zero. The denominator $C$ is a positive constant; it's the square-root of an estimator of the variance of this difference under the constant population size, neutral model. This constant was chosen for $D$ to have mean zero and variance $1$ under the null model, so we can test for  departures from this simple null model.\\
 
 An excess of rare alleles compared to the constant-size, neutral
 model will result in a negative Tajima's $D$, because each
 additional rare allele increases the number of segregating sites by
 $1$, but only has a small effect on the number of pairwise differences between samples.
 In contrast, a positive Tajima's $D$ reflects an excess of intermediate frequency alleles relative to the constant-size, neutral expectation. Alleles at intermediate-frequency increase pairwise diversity
-more per segregating site than typical, thus increasing $\theta_{\pi}$ more than $\theta_{W}$.
+more per segregating site than typical, thus increasing $\theta_{\pi}$ more than $\theta_{W}$. In the next section we'll see how long-term changes in population size systematically change the site frequency spectrum and so are detectable by statistics such as Tajima's $D$. 
 
 \subsection{Demography and the coalescent}
 
@@ -951,7 +983,7 @@ size in generation $i$ is $N_i$, the probability that a pair of
 lineages coalesce is $\nicefrac{1}{(2N_i)}$; this conforms to our
 intuition that if the population size is small, the rate at which
 pairs of lineages find their common ancestor is faster. We can potentially accommodate rapid random fluctuations in population size by simply using the effective population size $N_e$ in place of $N$. However,
-longer term more systematic changes in population size will distort
+longer-term, more systematic changes in population size will distort
 the coalescent genealogies, and hence patterns of diversity, in more
 systematic ways.
 
@@ -1009,11 +1041,11 @@ blue and orange ancestral lineages in
   \includegraphics[width = \textwidth]{figures/Genetic_drift/Demography/Mimulus_coalescent_times.pdf}
 \end{center}
 \caption[][1cm]{Diversity along a region of the Mimulus genome. Black dots give $\pi$ in 1kb windows between chromosomes sampled from two individuals, the red line is a
-  moving average (data from  \citeauthor{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Mimulus_coalescent_times.R} } \label{fig:Mimulus_bottleneck}
+  moving average (data from  \citet{brandvain:14}). Pairwise coalescent times ($t$) estimated assuming $t= \nicefrac{\pi}{2 \mu} $ using $\mu_{BP}=10^{-9}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Mimulus_coalescent_times.R} } \label{fig:Mimulus_bottleneck}
 \end{figure}
 
 An example of this is shown Figure
-\ref{fig:Mimulus_bottleneck}, data from \citeauthor{brandvain:14}. {\it Mimulus nasutus} is a selfing
+\ref{fig:Mimulus_bottleneck}, data from \citet{brandvain:14}. {\it Mimulus nasutus} is a selfing
 species that arose recently from an out-crossing progenitor {\it M.
   guttatus}, and experienced a strong bottleneck. {\it M. guttatus} has very high levels of genetic diversity
 ($\pi=4\%$ at synonymous sites), but {\it M. nasutus} has lost much
@@ -1038,7 +1070,7 @@ much more deeply in the ancestral {\it M. guttatus} population.
 \begin{center}
   \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/Maize_bottleneck/Wright_Tajima_D.pdf}
 \end{center}
-\caption[][-2cm]{Data for polymorphism from Maize and Teosinite: 774
+\caption{Data for polymorphism from Maize and Teosinite: 774
   loci from \citet{Wright:05}. {\bf Left)} Genetic  diversity levels in maize and and teosinte samples at each of these loci.
 Note how diversity levels are lower in maize than teosinte, i.e. most
 points are below the red $x=y$ line. {\bf Right)} The distribution of Tajima's D in maize and teosinte, see how the maize distribution is shifted towards positive values. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/genetic_drift/Maize_bottleneck/Wright_Tajima_D.R} } \label{fig:maize_Tajimas_D}  %é
@@ -1065,12 +1097,55 @@ subsp. parviglumis}) roughly ten thousand years ago. We can see how the
 \citet{voight2005interrogating} sequenced 40 autosomal regions from 15 diploid samples of Hausa people from Yaounde, Cameroon. The average length of locus they sequenced for each region was $2365$bp. They found that the average number of segregating sites per locus was $S= 11.1$ and the average $\pi = 0.0011$ per base over the loci. Is Tajima's D positive or negative? Is a demographic model with a bottleneck or growth more consistent with this result?
 \end{question}
 
-
 \graham{Change this over to data from https://www.nature.com/articles/s41559-018-0496-4 Figure 1 for farmers and hunter-gatherers?}
 
+One application of coalescent demographic modelling is to estimate the population dynamics and epidemiology of pathogens (eg viruses) to better understand and predict the spread of infectious diseases. An early example of such use was in understanding the epidemic of Hepatitis C virus (HCV) in Egypt. Egypt had the highest HCV prevalence rate in the world, with up to 20\% people infected. It is thought this HCV epidemic resulted from the widespread use of unsterilized injection equipment in antischistosomal therapy during the 1920s to 80s. 
+\citet{pybus2003epidemiology} sequenced HCV strains collected in Eygpt in 1993. There is little to no viral recombination in these HCV genomes, and so the information about genome-wide patterns of coalescence can be summarized by a single phylogeny constructed from the sequence data.
+\begin{figure}
+ \begin{center}
+   \includegraphics[width = \textwidth]{Journal_figs/genetic_drift/HCV_egypt/hcv_egypt_e1_tree.pdf}
+ \end{center}
+ \caption{A phylogeny estimated from Egyptian Hepatitis C virus sequence data from \citet{pybus2003epidemiology}. The vertical grey line shows the 1930s. Thanks to Oli Pybus for sharing this phylogeny. Note that in practice the authors do not rely on a single estimate of the phylogeny to estimate the coalescent parameters, but rather estimate the probability of the parameters fully integrating out the uncertainty in the phylogeny given the data.} \label{fig:HCV_tree}  %é
+ \end{figure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
 
-\ChapterSummary{
-\item blah
-  \item blah
-}
+\citet{pybus2003epidemiology}  fit a simple demographic model of a period of exponential growth to these data. To do this, they asked the probability of the waiting times
+between coalescent events in the HCV phylogeny given the model parameters of population growth, and then exploring over different combinations of parameters to find those parameters that had the highest probability of giving rise to the data. The parameters that maximized the probability of the HCV data and coalescent phylogeny corresponded to a population size that expanded exponentially starting in about 1934. Thus the demographic history estimated under the coalescent is consistent with the view that the HCV epidemic began in early in the twentieth century. We can see traces of this expansion directly in the phylogeny. The vertical grey line shows the 1930s. Despite the large number of lineages sampled in the current day, there are relatively few coalescent events in the recent past because of the large effective population size. However, deeper in time than the 1930s the rate of coalescence is much higher, particularly before we get down to a small number of lineages, this suggests that the effective population size was much smaller. Coalescent-based demographic inference is now widely used in genomic epidemiology to estimate the population dynamics of pathogens.
+
+\begin{ChapterSummary}
+\item Genetic drift is the random change in allele frequencies due to alleles by chance leaving more or fewer copies of themselves to the next generation. It is directionless, with alleles equally likely to go up or down in frequency thanks to drift. Genetic drift occurs at a slower rate in larger populations as there is a greater degree of averaging in larger populations that reduces the impact of the randomness in individuals' reproduction.
+\item On average genetic drift acts to remove genetic diversity (e.g. heterozygosity) from the population. The rate at which neutral genetic diversity is lost from the population is inversely proportional the population size.
+\item A balance of mutation and genetic drift can maintain an equilibrium level of neutral genetic diversity in a population. This equilibrium level is determined by the population-scaled mutation rate ($N \mu$).
+\item In practice, genetic drift will rarely occur at the rate suggested by the census population size, e.g. due to large variance in reproductive success and short-term population size fluctuations. In many situations, we can address this by using an effective population size in place of the census population size. We can estimate this effective population size by matching our observed rate of genetic drift to that expected in an idealized population.
+\item A key insight in thinking about patterns of neutral diversity is to realize that neutral mutations do not alter the shape of the genetic tree (or genealogy) relating individuals, and so it is often helpful to think about the tree first and then think of neutral mutations scattered on top of this tree.
+ \item Coalescent theory describes the properties of these trees, and the mutational patterns generated, under a model of neutral evolution.  
+\item Long-term changes in population size alter the rate of coalescence in a predictable way that impacts patterns of variation. These patterns can be used to detect violations of a constant population model and to estimate more complex demographic models. 
+
+\end{ChapterSummary}
+
+
+\begin{question}{}
+Based on museum samples from $\sim 1800$, you estimate that the
+average heterozygosity in Northern Elephant Seals
+was $0.0304$ across many loci. Based on further samples, you estimate
+that in $1960$ this had dropped to $0.011$. Elephant Seals have a
+generation time of $8$ years. \\
+What effective population size do you estimate is consistent with this
+drop? 
+\end{question}
+
+\begin{question}{}
+{\bf A)} Why are large populations expected to harbor more neutral variation?\\
+{\bf B)} What is the effective population size? Is it usually higher or lower than the census population size?\\
+{\bf C)} Why does the effective population size differ across the autosomes, Y chromosome, and mtDNA?
+\end{question}
+
+\begin{question}{}
+You sequence a genomic region of a species of Baboon. Out of 100
+thousand basepairs, on average, 200 differ between each pair of
+sequences. Assume a per base mutation rate of $1 \times 10^{-8}$ and a
+generation time of ten years. \\
+{\bf A)} What is the effective population size of these Baboons? \\
+{\bf B)} What is the average coalescent time (in years) of a pair of
+sequences in this species?
+\end{question}
 
