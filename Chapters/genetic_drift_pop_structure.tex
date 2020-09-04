@@ -4,14 +4,17 @@
 How does genetic differentiation build up between closely related
 populations? How does migration act to reduce differentiation? These
 questions are key to understand the conditions under which populations
-can start to genetically diverge from each other To answer these
-questions we'll first consider this in the context of neutral alleles, and then return
+(and species) can start to genetically diverge from each other. To answer these
+questions, we'll first consider this in the context of neutral alleles, and then return
 to think about selection and differentiation in later chapters. 
 We've considered neutral alleles drawn from a randomly-mating population, and divergence among alleles drawn from two distantly-related populations.
 We'll now turn to consider divergence among more closely related
-populations. In thinking about the coalescent  within populations we
+populations. In thinking about the coalescent within populations we
 made the assumption that any pair of lineages is equally likely to
-coalesce with each other. However, when there is population structure this assumption is violated. \\
+coalesce with each other. However, when there is population structure
+this assumption is violated, as the parent for an allele is 
+likely to be found in the same population as it's child and so
+lineages in different populations are less likely to coalesce. \\
 
 To develop models of about population structure we'll use the
 statistic $\fst$, which we introduced in Section \ref{section:F_stats}
@@ -148,31 +151,41 @@ generation (if we go back far enough the allele eventually has to be
 descended from an allele on the mainland). The probability that a pair of alleles sampled on the
 island are descended from a shared recent common ancestral allele on the island is the
 probability that our pair of alleles coalesces before either lineage
-migrates. For example, the probability that our pair of alleles
-coalesces $t+1$ generations back on the island is
+migrates. Well our pair of lineages coalesce with probability
+$\nicefrac{1}{2N_I} $ in a given generation and, assuming that the rate of migration is not
+too high ($m \ll 1$), the probability that one or other lineage
+migrates in a given generation is $2m$. So the probability that our
+lineages coalesce before they migrate is 
 \begin{equation}
-\frac{1}{2N_I}(1-m)^{2(t+1)} \left(1-\frac{1}{2N_I} \right)^{t} \approx
-\frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
+\frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} +   2m},
 \end{equation}
-%JRI: this is a long scary-looking equation. i think it's pretty straightforward but even I was momentarily surprised by it. i think many readers will see it and tune out and not try to work through it. i suggest you keep it but spend a few sentences working through it (1-m) not migrating times prob. of coalesceing t gens, etc.
-with the approximation following from assuming that $m \ll 1$ \& $\frac{1}{(2N_I)}
-\ll 1$ (note that this is very similar to our derivation of
-heterozygosity above). The probability that our alleles coalesce before either one
-of them migrates off the island, irrespective of the time, is
-\begin{equation}
-\int_0^{\infty} \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} +
-2m\right) \right) dt = \frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} +
-    2m}.
-\end{equation}
+which follows as an exactly analogous argument to our probability that a pair of
+lineages coalesce before a mutation, \eqn \ref{eqn:coal_no_mut}, that we used in deriving the
+expected heterozygosity.  
 
-Let's assume that the mutation rate is very low such that it is very
-unlikely that the pair of alleles mutate before they coalesce on the
-island. Therefore, the only way that the alleles can be different from
-each other is if one or other of them migrates to the mainland, which
-happens with probability
-\begin{equation}
-  1 - \frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} + 2m}
-\end{equation}
+%For example, the probability that our pair of alleles
+%coalesces $t+1$ generations back on the island is
+%\begin{equation}
+%\frac{1}{2N_I}(1-m)^{2(t+1)} \left(1-\frac{1}{2N_I} \right)^{t} \approx
+%\frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} + 2m\right) \right),
+%\end{equation}
+%JRI: this is a long scary-looking equation. i think it's pretty straightforward but even I was momentarily surprised by it. i think many readers will see it and tune out and not try to work through it. i suggest you keep it but spend a few sentences working through it (1-m) not migrating times prob. of coalesceing t gens, etc.
+%with the approximation following from assuming that $m \ll 1$ \& $\frac{1}{(2N_I)}
+% \ll 1$ (note that this is very similar to our derivation of
+% heterozygosity above). The probability that our alleles coalesce before either one
+% of them migrates off the island, irrespective of the time, is
+% \begin{equation}
+% \int_0^{\infty} \frac{1}{2N_I} \exp\left( -t\left (\frac{1}{2N_I} +
+% 2m\right) \right) dt = \frac{\nicefrac{1}{(2N_I)}}{\nicefrac{1}{(2N_I)} +
+%     2m}.
+% \end{equation}
+
+% Let's assume that the mutation rate is very low such that it is very
+% unlikely that the pair of alleles mutate before they coalesce on the
+% island. Therefore, the only way that the alleles can be different from
+% each other is if one or other of them migrates to the mainland, which
+% happens with probability
+
 Conditional on one or other of our alleles migrating to the mainland, both of our alleles represent independent draws from the mainland and so differ from each other with probability $H_M$. Therefore, the level of
 heterozygosity on the island is given by
 \begin{equation}
@@ -184,19 +197,19 @@ mainland is
   F_{IM} = 1- \frac{H_I}{H_M} = \frac{\nicefrac{
       1}{(2N_I)}}{\nicefrac{1}{(2N_I)} + 2m} = \frac{ 1 }{1 + 4N_Im}. \label{eqn:FIM}
 \end{equation}
-The level of inbreeding on the island compared to the mainland will be high if the migration rate is low and the effective population size of the island is low, as allele frequencies on the island are drifting and diversity on the island is not being replenished by migration. The
-key parameter here is the number individuals on the island replaced by immigrants from the mainland each generation ($N_I m$).
+The level of inbreeding on the island compared to the mainland will be
+high if the migration rate is low and the effective population size of
+the island is low, as allele frequencies on the island are drifting
+and diversity on the island is not being replenished by migration. The
+key parameter here is the number individuals on the island replaced by
+immigrants from the mainland each generation ($N_I m$), even a few
+migrants arriving on the island a generation is enough to prevent much
+allele frequency differentiation building up.
 
 We have framed this problem as being about the reduction in genetic diversity on the island compared to the mainland. However, if we consider collecting individuals on the island and mainland in proportion to their population
 sizes, the total level of heterozygosity would be $H_T=H_M$, as samples from our mainland would greatly outnumber those from our island. Therefore, considering the island as our sub-population, we have derived another simple model of $F_{ST}$.
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/stickleback/threespine.jpg}
-\end{center}
-\caption{Three-spined stickleback ({\it Gasterosteus aculeatus}).
-  \newline \noindent \tiny{Jordan, David Starr (1907) Fishes, New York City, NY: Henry Holt and Company. Image from  \href{https://commons.wikimedia.org/wiki/File:FMIB_51889_Three-spined_Stickleback,_Gasterosteus_aculeatus_L_Woods_Hole,_Mass.jpeg}{Wikimedia Commons} Public domain.}} \label{fig:stickle}
-\end{marginfigure}
+
 
 \begin{question}{}
 You are investigating a small river population of sticklebacks, which receives infrequent migrants from a very large marine population. At a set of putatively neutral biallelic markers the freshwater population has frequencies:\\
@@ -208,10 +221,28 @@ What is your estimate of the migration rate from the marine
 populations into the river?
 \end{question}
 
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/stickleback/threespine.jpg}
+\end{center}
+\caption{Three-spined stickleback ({\it Gasterosteus aculeatus}).
+  \newline \noindent \tiny{Jordan, David Starr (1907) Fishes, New York City, NY: Henry Holt and Company. Image from  \href{https://commons.wikimedia.org/wiki/File:FMIB_51889_Three-spined_Stickleback,_Gasterosteus_aculeatus_L_Woods_Hole,_Mass.jpeg}{Wikimedia Commons} Public domain.}} \label{fig:stickle}
+\end{marginfigure}
+
 \section{Incomplete Lineage Sorting}
-Finally we turn to the interaction of the coalescent and speciation. %%this is a guess
-Because it can take a long time for a polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
-individual loci. In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
+%Finally we turn to the interaction of the coalescent and
+%speciation and population splits. %%this is a guess
+Often when we're studying multiple populations, e.g. species, we're interested in the
+underlying order in which populations split off from each other, and
+the timing of these events. In the case where populations split off
+from each other with no subsequent gene flow, we can represent this
+pattern of splitting by a population tree. Because it can take a long time for a polymorphism to drift up or down in frequency, multiple population splits may occur during the time an allele is still segregating. This can lead to incongruence between the overall population tree and the information about relationships present at
+individual loci. 
+As we have seen in the previous chapters the
+relationships between sampled alleles at a locus are represented by
+coalescent tree, sometimes call gene trees in the context of
+incomplete lineage and more generally in phylogenetics.
+In Figure \ref{fig:NoILS_poly} and \ref{fig:ILS_poly}
 we show a simulation of three populations where the bottom population splits off from the other two first, followed by the subsequent splitting of the the top and the middle populations. We start both simulations with a newly
 introduced red allele being polymorphic in the combined ancestral population. The most likely fate of this allele is that it is
 quickly lost from the population, but sometimes the allele can drift up in frequency and be polymorphic when the populations split, as the allele in our two figures has done. If the allele is lost/fixed in the descendant populations before the next population split, our allele
@@ -246,8 +277,8 @@ tracing our allelic lineages from the top and bottom populations back through ti
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ILS_coal_cartoon.pdf}
 \end{center}
-\caption{The population tree of three populations ((A, B), C) is shown
-blocked out with black shapes. Two different coalescent trees
+\caption{The population tree of three populations ((A, B), C), as the
+  white space blocked out between the black shapes. Two different coalescent trees
 relating a single allele drawn from A, B, and C are shown with thinner lines.} \label{fig:ILS_cartoon}
 \end{figure}
 
@@ -271,7 +302,7 @@ with the patterns of relatedness at a particular locus.
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Poephila_cincta_finch/Poephila_cincta_finch.png}
 \end{center}
-\caption{Banded Grass Finch ({\it P. cincta}). Illustration by
+\caption{Banded grass Finch ({\it P. cincta}). Illustration by
   Elizabeth Gould.
   \newline \noindent \tiny{Birds of Australia Gould J. 1840. CC BY 4.0 uploaded to \href{https://www.flickr.com/photos/vintage_illustration/41073432105/in/photolist-WpHYmR-WBF2Uc-Uoq2kW-QAW9bN-UL33uh-RmyMxt-PKmBjN-8xpKmQ-8xmHg2-H6mfAS-dVREvC-7Qepuh-222xkPQ-7QepzS-25zw6ak-W28Nyk-Qa6d32-ijh2uH-6V8Srd-25zw5ov-8xpKB7-nUQ33T-6V8TLy-nV88oH-25RuYmq-21TcFz1-R2Gdy4-GdWRgi-GdMmry-GdWAwD-9mjwfA-25oHWeJ-HMbQre-6CQWTH-7TjKu-e6SYV-25RuXU3-pdKtxc-9hYCzE-voj7Sj-zqSdQb-6SNmDE-a1datx-a1dasZ-PFfPXY-rR7QYw-GJ7rey-6SJmuB-7TjFh}{Flickr} by \url{rawpixel.com}.}} \label{fig:Poephila_cincta}
 \end{marginfigure}
@@ -281,16 +312,14 @@ As an empirical example of incomplete lineage sorting, let's consider the work o
 different species of Australian grass finches ({\it Poephila}): two sister species
 of long-tailed finches ({\it Poephila acuticauda} and {\it P. hecki})
 and the black-throated finch ({\it Poephila cincta}, see Figure \ref{fig:Poephila_cincta}). They collected
-sequence data for 30 genes, and constructed phylogenetic gene trees
+sequence data for 30 genes and constructed phylogenetic gene trees
 at each of these loci, resulting in 28 well-resolved gene trees.
-16 of the gene trees showed {\it
+Sixteen of the gene trees showed {\it
   P. acuticauda} and {\it P. hecki} as sisters with {\it P. cincta})
 (the tree ((A,H),C)~), while for twelve genes the gene tree was
 discordant with the population tree: for seven of their genes  {\it P. hecki}
 fell as an outgroup to the other two and at five {\it P. acuticauda} fell as an outgroup (the trees ((A,C),H) and
 ((H,C),A) respectively).
-
-
 
 
 Let's use the coalescent to understand this discordance between gene
@@ -375,3 +404,50 @@ occurred from C into B (and skewed positive if gene flow occurred from C into A)
 %% Isolation by distance
 % https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography
 %  Waldo Tobler, is "everything is related to everything else, but near things are more related than distant things."
+
+
+
+\begin{question} 
+You are studying a two species of fish (red fish \& blue fish), and
+sequencing a set of pseudogenes.  Here are some facts you've collected:
+ \begin{itemize}
+ \item A third species of fish (black fish) diverged from
+ the common ancestor of red/blue fish 3 million years ago. 
+ Assume 1 fish generation per year. Between red fish and black fish there is
+ on average 1 substitution every 100 basepairs. 
+ \item In these pseudogenes, within red fish, you estimate that heterozygosity within
+ red fish is $10^{-4}$ per basepair. 
+ \item $F_{ST}$ between red fish and blue fish is 0.1.
+ \item There has been no gene flow among any of these species after
+   they split.
+ \end{itemize}
+{\bf A)} What is the per base mutation rate?
+
+{\bf B)} What is the effective population size of red fish?\\
+
+{\bf C)} When did the red and blue fish populations split? Assume they
+have equal population sizes. 
+\end{question}
+
+
+\begin{question} 
+The African and European populations split $\sim$100 thousand years
+ago ($t_{OA}$). Neanderthals split from the modern human populations $\sim$700
+thousand years ago ($t_N$). The population ancestral to humans and
+chimps split 6.5 Million years ago ($t_C$). A population tree diagram, not to scale, is shown above. Assume a generation time of 30 years, and an
+effective population size of 10,000 in all populations. Assume, for the sake of the question, that there is no gene flow
+between populations after they split. Further, assume that lineages
+sampled from the
+Neanderthal and modern human populations will definitely coalesce with
+each other before the common ancestral population with chimp.\\
+{\bf A)} On the population tree (above) the dashed lines show an
+incomplete gene phylogeny (for a single allele drawn from each population). At a locus, the Chimp lineage has the A allele. Complete
+a gene genealogy in a way that would be consistent with Neanderthal and European lineages sharing a derived B allele, to the
+exclusion of the African lineage (ABBA). Mark the branch that a mutation from $A
+\rightarrow B$  must occur on in order to generate this pattern
+(assuming a single mutation).\\
+{\bf B)} What is the probability of observing a gene tree consistent
+with the one you drew in part A under the coalescent model? Hint:
+Remember that incomplete lineage sorting is due to failing to coalesce
+within an ancestral population. 
+\end{question}

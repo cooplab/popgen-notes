@@ -136,7 +136,7 @@ derive this result by letting $Ns \rightarrow 0$ in eqn.
 
 How long does it take on average for
 such an allele to fix within our population? In developing
-equation \eqref{TMRCA_neutral} we've seen that it takes $4N$
+equation \eqref{TMRCA_neutral} we've seen that it takes on average $4N$
 generations for a large sample of alleles to all trace their ancestry back to a
 single most recent common ancestral allele. Any single-base pair change which arose as a single mutation at a locus, and fixed in the population, must have been present in the sequence transmitted by the most recent common ancestor of the population at that locus. Thus it must take roughly $4N$ generations
 for a neutral allele present in a single copy within the population to fix.
@@ -153,7 +153,7 @@ rate at which new alleles fix in the population, so that the long-term
 substitution rate is the rate at which mutations arise that will eventually
 become fixed within our population.\\
 
-Lets assume, based on our discussion of the neutral theory of molecular evolution, that there are only two classes of mutational changes that can occur with a
+Let's assume, based on our discussion of the neutral theory of molecular evolution, that there are only two classes of mutational changes that can occur with a
 region, highly deleterious mutations and neutral mutations. A fraction $C$ of
 all mutational changes are highly deleterious, and cannot possibly contribute
 to substitution nor polymorphism.  The other $1-C$ fraction
@@ -193,7 +193,7 @@ differences separating our pair of species is simply $2\mu (1-C) T$.\\
 %JRI: this is a nice explanation that is not commonly given. Cool.
 
 \subsection{Implications for the Molecular Clock.}
-\marginnote{\begin{quote}"functionally less important molecules or parts of a molecule
+\marginnote{\begin{quote}"Functionally less important molecules or parts of a molecule
 evolve faster than more important ones." \end{quote} -- \citet{kimura1974some}}
 A number of observations follow under this model, from equation
 \eqref{eqn:moleclock}. The first is that a primary determinant of
@@ -203,8 +203,8 @@ non-coding regions often evolve more rapidly than coding regions,
 synonymous substitutions accumulate faster than nonsynonymous, and
 nonsynonymous substitutions accumulate faster in less vital proteins
 than ones that are absolutely necessary for early development. For
-example, Fibrinopeptides evolve in a less constrained manner than the
-Cytochrome c gene, see Figure \ref{fig:Dickerson_mole_clock}. Note
+example, fibrinopeptides evolve in a less constrained manner than the
+cytochrome c gene, see Figure \ref{fig:Dickerson_mole_clock}. Note
 that this constraint prediction is not a unique prediction of the neutral model, e.g. less constrained regions may also be better able to evolve adaptively. However, it is a fantastically useful general insight, e.g. it allows us to spot putatively functional non-coding regions by looking for genomic regions that have very low levels of divergence among distantly related species.
 %JRI: removed mention of pleiotropy as we don't know what it is yet and as far as I can tell there's no mention in rest of book of how pleiotropy relates to constraint
 \begin{figure}
@@ -229,7 +229,7 @@ that this constraint prediction is not a unique prediction of the neutral model,
 \label{fig:dogfish}
 \end{marginfigure}
 
-The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the Cytochrome c protein.
+The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the cytochrome c protein.
 While, humans and dogfish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
 
 In equation \eqref{eqn:moleclock}, if we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced fewer mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false: organisms with shorter generation times have somewhat higher mutation rates per year so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution.
@@ -276,8 +276,8 @@ Nachman and Crowell sequenced 12 pseudogenes in humans and chimps and found subs
 {\bf A) } What is the mutation rate per site per generation at these genes?\\
 {\bf B)} All of the pseudogenes they sequenced are on the autosomes. What
 would your prediction be for pseudogenes on the X and Y chromosomes,
-given that there are fewer rounds of replication in the female
-germline than in the male germline.
+given that few mutations occur in the female
+germline than in the male germline per generation.
 \end{question}
 
 \section{Tests of molecular evolution.}
@@ -285,9 +285,14 @@ One of the great appeals of neutral models is they offer a simple null
 for us to test real data against. 
 \subsection{Comparing the rates of non-synonymous to synonymous
 substitutions $\dNdS$}
-One common tool in molecular evolution is to compare the estimated number (or rates) of substitutions in different classes of genomic sites, for example the ratio of the number of non-synonymous to synonymous substitutions in a given gene. The simplest way to calculate $d_N$ is to
+One common tool in molecular evolution is to compare the estimated
+number (or rates) of substitutions in different classes of genomic
+sites, for example the ratio of the rates of non-synonymous ($d_N$) to
+synonymous substitutions ($d_S$) in a given gene. The simplest way to
+think about calculating $d_N$ is to
 count up the non-synonymous changes and divide by the total number of
-positions in the gene where a non-synonymous point mutation could occur. We
+positions in the gene where a non-synonymous point mutation could
+occur and then divide by time. We
 can do likewise for synonymous changes $d_S$, and then take the ratio $\dNdS$.
 \sidenote{This
 ignores the fact that some changes are more likely to occur by
@@ -298,14 +303,16 @@ that can account for these features.}
 
 For the vast majority of protein-coding genes in the genome we see that $\dNdS < 1$. This observation is consistent with the view
 that non-synonymous sites are much more constrained than synonymous sites, i.e. that most non-synonymous mutations are deleterious and quickly removed from the population. If we are willing to make the assumption that all synonymous changes are
-neutral, $d_S=2T \mu$, then we can estimate the degree of constraint on non-synonymous sites. (Note that synonymous changes can sometimes be subject to
+neutral, $d_S= \mu$, then we can estimate the degree of constraint on non-synonymous sites. (Note that synonymous changes can sometimes be subject to
 both positive and negative selection, but this neutral assumption is a useful starting place.)
 
 Assume that a fraction $C$ of non-synonymous changes are too
-deleterious to contribute to polymorphism. Then, after $T$ generations of divergence have
-elapsed between two populations, we'd expect $d_N$ neutral non-synonymous substitutions, where
+deleterious to contribute to divergence, and that there are no
+beneficial mutations. Then, %after $T$ generations of divergence have
+%elapsed between two populations, we'd
+we expected rate of neutral non-synonymous substitutions is
 \begin{equation}
-d_N = 2T (1-C) \mu
+d_N = (1-C) \mu
 \end{equation}
 Dividing by $d_S$, we find
 \begin{equation}
@@ -330,7 +337,7 @@ which serve as a clue .. for its derivation.''  -- \citet{darwin1859} pg. 455
 }  %http://darwin-online.org.uk/Variorum/1859/1859-456-dns.html
 
 While most protein genes evolve under constraint, we can find examples of
-genes that are evolving in a less constrained manner. The simplest
+genes that are evolving in a much less constrained manner. The simplest
 example of this is where the gene has lost function. Genes can lose function because of inactivating mutations that stop them being transcribed or translated into functional proteins. Such genes are called `pseudogenes'.
 %JRI: odd to define pseudogene here when you've used the term lots previously
 When a gene completely loses function there is no longer
@@ -341,14 +348,14 @@ we can still recognize a once useful word (gene) whose spelling is slowly degrad
 original meanings (functional protein coding sequences) are slowly being eroded through the accumulation of neutral substitutions.
 One nice example of a gene that has repeatedly lost function,
 i.e. become repeatedly psuedogenized, is
-the Enamlin gene from the study of \citet{Meredith:09}.
+the {\it enamlin} gene from the study of \citet{Meredith:09}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/genetic_drift/Enamelin/Enamlin.pdf}
 \end{center}
 \caption{Examples of frameshift mutations (insertions blue, deletions
-  red) and premature stop codons in Enamlin in Cetacea and
+  red) and premature stop codons in {\it enamlin} in Cetacea and
   Xenarthra. Figure from \citet{Meredith:09}, \PLOSccBY. } \label{fig:Enamlin_coding}
 \end{figure}
 
@@ -360,13 +367,15 @@ the Enamlin gene from the study of \citet{Meredith:09}.
   to the study of mammals, living and extinct. 1891. Flower W. H. and Lydekker R.}{https://archive.org/stream/chordates00rand/\#page/744/mode/1up}{University of Toronto} } \label{fig:sloth}
 \end{marginfigure}
 
-The protein Enamlin is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), Pygmy sperm whales ({\it Kogia}), and aardvark ({\it Orycteropus}) all lack  enamel on teeth.
+The protein {\it enamlin} is a key structural protein involved in the outer cap of enamel on teeth. Various mammals have secondarily evolved diets that do not require hard teeth, and so greatly reduced the selection pressure for hard enamel, or even teeth at all. For example, two-toed sloths ({\it Choloepus}), pygmy sperm whales ({\it Kogia}), and aardvark ({\it Orycteropus}) all lack  enamel on teeth.
 %JRI: i don't understand when you choose to capitalize parts of common names of species. Pygmy sperm whale but two-toed sloth. throughout chapters varies a lot
-Other mammals have lost their teeth entirely, e.g. giant anteaters ({\it Myrmecophaga}) and Baleen whales. Due to this relaxation of constraint on the phenotype, the Enamlin gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
-for examples).  \citet{Meredith:09} sequenced Enamlin across a
+Other mammals have lost their teeth entirely, e.g. giant anteaters
+({\it Myrmecophaga}) and baleen whales. Due to this relaxation of
+constraint on the phenotype, the {\it enamlin} gene has accumulated pseudogenizing substitutions such as premature stop codons and frameshift mutations (see Figure \ref{fig:Enamlin_coding}
+for examples).  \citet{Meredith:09} sequenced {\it enamlin} across a
 range of species and found that none of the species with enamel have frameshift
-mutations in Enamlin, while 17/20 of species that lack enamel or teeth have
-frameshifts in Enamlin, and all of them carry premature stop codons. 
+mutations in {\it enamlin}, while 17/20 of species that lack enamel or teeth have
+frameshifts in {\it enamlin}, and all of them carry premature stop codons. 
 %(Figure \ref{fig:Enamlin_phylo}).
 
 %\begin{figure}
@@ -381,7 +390,8 @@ frameshifts in Enamlin, and all of them carry premature stop codons.
 %\end{figure}
 %JRI: recommend removing or editing this. i had to zoom in a lot to figure out the teeth, the numbers aren't easy to read, etc.  not a helpful figure
 
- \citet{Meredith:09} found that the branches of the Enamlin phylogeny with a functional Enamlin gene %(black) 
+ \citet{Meredith:09} found that the branches of the {\it enamlin}
+ phylogeny with a functional {\it enamlin} gene %(black) 
 had an estimated $\dNdS= 0.51$, consistent with the protein
 evolving in a constrained manner. In contrast, the branches with a
 pseudogenized Enamlin % (red)
@@ -412,7 +422,7 @@ $  ratios. The oldest fossil aardvarks are {\it O. minutus} (19 mya) from the
 \caption{Aardvarks (Cape ant-eater, {\it Orycteropus afer}) \BHLNC{Cassell's natural history ( 1896 ).  Duncan, P. M.}{https://www.flickr.com/photos/internetarchivebookimages/20514695666/in/photolist-xfPbiq-xUcng7-xCyGQA-xdRRQ3-wPMGZr-tFgYfN-wPMPkT-tDahHQ-xuc4KM-xKR4u3-xUkupQ-w88zeU-xMia2r-sp4Aq5-x1wNyZ-xMi46D-tDaCr7-sJE2X4-tFB8Lc-wHWiNj-tp8AUk-tFvh4R-xu3M7w-toUVwN-wYWgVi-w34vHn-x9xAfL-wWhnso-ovvmHE-tG5AgB-xdUzWD-y82dEG-xCA7kx-xV5xWg-wYc33H-wYbFdX-wYbBMP-xUcjpL-xKQjHw-xJmBQU-xKPwEQ-xLEzv4-xu3wHJ-xLEg9V-xnA6Lr-x684wQ-wZNgpq-wYcVbh-wZtb3F-wYbJLh}{NCSU Libraries}} \label{fig:Aardvark}
 \end{marginfigure}
 \begin{question}{}
-The Enamlin gene was pseudogenized somewhere along the branch leading to
+The {\it enamlin} gene was pseudogenized somewhere along the branch leading to
 Aardvarks ({\it Orycteropus afer}), see Figure
 \ref{fig:Aardvark_pseudogene}. \citet{Meredith:09} estimated that this
 branch has a $\dNdS=0.75$\\
@@ -423,9 +433,9 @@ on this branch.\\
 with {\it Afrosoricida} (golden moles, tenrecs) and {\it Macroscelidea} (elephant
 shrews) around $\sim 75.1$ million years ago in the Cretaceous. Assume
 that for the portion of the branch while
-Enamlin was functional $\dNdS = 0.51$  and
+{\it enamlin} was functional $\dNdS = 0.51$  and
 after it was pseudogenized there was no constaint (i.e. $\dNdS = 1$). Based on the branch's average $\dNdS=0.75$, can
-you estimate the time at which Enamlin was pseudogenized? (I.e. when
+you estimate the time at which {\it enamlin} was pseudogenized? (I.e. when
 is the star in Figure \ref{fig:Aardvark_pseudogene}?)
 % https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000634#pgen.1000634.s007
 %dawn pangloin
@@ -440,12 +450,14 @@ Let's assume that a fraction $B$ of non-synonymous mutations that arise are
 beneficial such that $2 N \mu B$ beneficial mutations arise per generation. Newly arisen beneficial alleles are not destined to fix in the population, as they may be lost to genetic drift when they are rare in the population (we'll
 discuss how to calculate the fixation probability for beneficial
 alleles in Chapter \ref{Selection_Stochasticity}). A newly arisen beneficial allele reaches fixation in the population with probability $f_B$ from its initial frequency of $\nicefrac{1}{2N}$. This fixation
-probability may be much higher than that of neutral mutations, but still much less than $1$.  If $2T$ generations of divergence have
-elapsed between the two populations then a total of
+probability may be much higher than that of neutral mutations, but
+still much less than $1$. The expected total rate of non-synonymous
+substitutions is
+%If $2T$ generations of divergence have
+%elapsed between the two populations then a total of
 \begin{equation}
-dN=2T (1-C - B) \mu  + 2T \times (2 N \mu B) \times  f_B
+dN= (1-C - B) \mu  +  \times (2 N \mu B) \times  f_B.
 \end{equation}
-non-synonymous substitutions will have accumulated.
 Then
 \begin{equation}
 \dNdS = (1-C-B) +  2 N B f_B \label{eqn:dNDS_C_B}
@@ -470,7 +482,7 @@ the rapid fixation of beneficial mutations due to positive selection is outweigh
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/genetic_drift/Yang_lysozyme/Yang_lysozyme.pdf}
 \end{center}
-\caption{A phylogram for the primate lysozyme gene, data from
+\caption{A phylogram for the primate {\it lysozyme} gene, data from
   \citet{Yang:98}. For each branch, the numbers give the estimated average
 number of non-synonymous to synonymous changes in the lysozyme protein.} \label{fig:lysozyme}
 \end{figure}
@@ -491,20 +503,23 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
   Pycraft, W.P.}{https://archive.org/stream/historyofbirds00pycr/historyofbirds00pycr\#page/238/mode/1up}{ American Museum of Natural History Library}} \label{fig:hoatzin}
 \end{marginfigure}
 A classic example for looking at adaptive evolution using $\dNdS$ is the
-evolution of the lysozyme protein in primates \citep{Messier:97,Yang:98}. The lysozyme protein is
-a key component for the breakdown of bacterial walls. It shows very
+evolution of the {\it lysozyme} gene in primates \citep{Messier:97,Yang:98}. The lysozyme protein is
+a key component for the breakdown of bacterial walls. The {\it lysozyme} gene shows very
 fast protein evolution (see
 the phylogeny in Figure \ref{fig:lysozyme}), notably on the lineages leading to apes (e.g. gibbons
 and humans) and Colobines (e.g. colobus and langur monkeys). Colobines have leaf-based diets. They digest
 these leaves by bacterial fermentation in their foregut, and then use lysozymes to break down the bacteria to extract energy from the
 leaves. In Colobines, the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
-lysozyme has convergently evolved this activity via very similar amino-acid changes at 5 key residuals in cows and Hoatzins \citep[a leaf
+lysozyme protein has convergently evolved this activity via very similar amino-acid changes at 5 key residuals in cows and Hoatzins \citep[a leaf
 eating bird,][]{kornegay1994molecular}
 
-\paragraph{The Mcdonald-Kreitman test}
+\paragraph{The McSonald-Kreitman test}
 
 As noted above, a big issue with using $\dNdS$ to detect adaptation is that it is very conservative. For a more powerful test of rapid divergence, what we need to do is adjust for the level of constraint a gene experiences at non-synonymous sites. One way to do this is to use polymorphism data as an internal control. If we see little non-synonymous polymorphism at a gene, but a  lot of synonymous polymorphism, we now know that there is likely strong constraint on the gene (i.e. high $C$), thus we expect $\dNdS$ to be low. \citet{mcdonald:91} devised a simple test of the neutral theory of molecular evolution at a gene based on this intuition \citep[building on the conceptually similar HKA
-test][]{hudson1987test}. \citeauthor{mcdonald:91} took the case where we have polymorphism data at a gene for one species and divergence to a closely related species. They  partitioned polymorphism and fixed differences in their sample into
+test][]{hudson1987test}. \citeauthor{mcdonald:91} took the case where
+we have polymorphism data at a gene for one species and divergence to
+a closely related species. They  partitioned polymorphism and fixed
+differences in their sample into the number of 
 non-synonymous and synonymous changes:
 
 \begin{center}
@@ -521,17 +536,26 @@ Ratio & $P_N/P_S$ & $D_N/D_S$
 \begin{center}
 \includegraphics[width= \textwidth]{figures/Coalescent/MK_tree.pdf}
 \end{center}
-\caption{An example ogene genealogy for a set of alleles sampled within a population and a single allele sampled from a distantly-related species.} \label{fig:MK_tree}
+\caption{An example gene genealogy for a set of alleles sampled within
+  a population and a single allele sampled from a distantly-related
+  species. Here $T_{div}'$ is the total length of the dotted branch, we use 
+  a $'$ on the T to indicate that this is not simply double the divergence
+  time for the gene as the $T_{MRCA}$ for the sample has been
+  subtracted off.} \label{fig:MK_tree}
 \end{marginfigure}
 
 Under neutral theory, we expect a smaller number of non-synonymous to
 synonymous fixed differences ($D_N/D_S < 1$) and exactly the same
 expectation holds for polymorphism ($P_N/P_S$). Let's consider a gene with $L_S$ and $L_N$ sites where synonymous and non-synonymous mutations could arise respectively.
-We can think of the underlying gene genealogy at our gene, see Figure \ref{fig:MK_tree}, with the total time on the coalescent genealogy within the species as $T_{tot}$ and the total time for fixed differences between our species as $T_{div}'$. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
+We can think of the underlying gene genealogy at our gene, see Figure
+\ref{fig:MK_tree}, with the total time on the coalescent genealogy
+within the species as $T_{tot}$ and the total time for fixed
+differences between our species as $T_{div}'$, note that $T_{div}'$ is
+the total time where a an allele that would appear as a subsitution
+could arise. Then under neutrality we expect $ \mu L_N (1-C) T_{tot}$
 non-synonymous polymorphisms (i.e. our number of segregating sites), and  $ \mu L_N (1-C) T_{div}'$ non-synonymous fixed differences.
 %JRI: maybe specify derived non-syn fixed diffs? as fixed differences between species an accrue on branch leading to outgroup as well, so more time than just T_{div}
 We can then fill out the rest of our table as follows:
-
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -553,7 +577,7 @@ Therefore, we expect the ratio of non-synonymous to synonymous changes to be the
 % \end{center}
 % \caption{White admiral ({\it Limenitis arthemis}). \BHLNC{American entomology : a description of the insects of North American (1859). Say, T. }{https://www.biodiversitylibrary.org/page/9194935\#page/487/mode/1up}{Smithsonian Libraries}} \label{fig:Limenitis}
 % \end{marginfigure}
-As example of a Mcdonald-Kreitman (MK) table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L Photopigment opsin in Admiral
+As example of a Mcdonald-Kreitman (MK) table consider the work of \citet{frentiu2007adaptive} on the molecular evolution of L photopigment opsin in admiral
 ({\it Limenitis}) butterflies, responsible for colour vision in the
 long-wavelength part of the visual
 spectrum. \citeauthor{frentiu2007adaptive} found that the sensitivity
@@ -568,7 +592,8 @@ fixed differences, which break down as follows:
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Basilarchia_arthemis_archippus/Basilarchia_arthemis_archippus.png}
 \end{center}
-\caption{White admiral ({\it Limenitis arthemis}) and Viceroy ({\it Limenitis archippus}).  {\it Basilarchia} is the old genus that these two species were originally placed in. Viceroy and Monarch butterflies are M\"ullerian mimics. \BHLNC{Field book of insects (1918). Lutz, F.E. . illustrations by Edna L. Beutenm\"uller. }{https://www.flickr.com/photos/biodivlibrary/6244367298/in/photolist-avN2o3-avN1Eo-avN2gy-avN39b-avN1R9-avN2Hf-avN2CJ-avN2Um-avN1VS-avN3hU-avN2us-avN21m}{MBLWHOI Library}} \label{fig:Limenitis}
+\caption{White admiral ({\it Limenitis arthemis}) and viceroy ({\it
+    Limenitis archippus}) butterflies.  {\it Basilarchia} is the old genus that these two species were originally placed in. Viceroy and monarch butterflies are M\"ullerian mimics. \BHLNC{Field book of insects (1918). Lutz, F.E. . illustrations by Edna L. Beutenm\"uller. }{https://www.flickr.com/photos/biodivlibrary/6244367298/in/photolist-avN2o3-avN1Eo-avN2gy-avN39b-avN1R9-avN2Hf-avN2CJ-avN2Um-avN1VS-avN3hU-avN2us-avN21m}{MBLWHOI Library}} \label{fig:Limenitis}
 \end{marginfigure}
 \begin{center}
 \begin{tabular}{ccc}
@@ -584,7 +609,9 @@ compared to polymorphism (p-value of $0.006$, Fisher's exact test),
 which is consistent with the gene evolving in an adaptive manner among
 the two species. We would expect roughly only $3$ non-synonymous
 substitutions out of 16 substitutions if the gene was evolving
-neutrally ($ 16 \times \nicefrac{2}{11}$). 
+neutrally ($ 16 \times \nicefrac{2}{11}$).
+
+
 %We can then estimate the proportion of 
 
 
@@ -602,3 +629,65 @@ neutrally ($ 16 \times \nicefrac{2}{11}$).
 % \hat{\alpha} = 1 - \frac{D_S}{D_N}\frac{P_N}{P_S}
 % \end{equation}
 % To see why this is an estimate of the proportion of  Assume that there
+
+\begin{ChapterSummary}
+\item In a diploid population of size $N$, any of a set of $N$ selectively
+  equivalent (ie neutral) alleles are equally likely to be the
+  ancestor of the entire population at some future distant time point.
+  so the probability that a new mutation fixes is
+  $\nicefrac{1}{2N}$.
+  \item Under a model where a fraction $C$ of new mutations are
+    neutral and $1-C$ mutations are strongly deleterious, $2NC\mu$
+    mutations arise every generation that can possibly become
+    substitutions. So the per-generation rate of neutral substitution is $2N(1-C)\mu
+    \times \nicefrac{1}{2N} = (1-C)\mu$. This is independent of
+    population size, and just depends on levels of constraint and
+    mutation rares.
+  \item This constant rate of neutral substitution gives rise to a
+    per-generation molecular clock, which can potentially be used to
+    estimate constraint ($C$) and mutation rates.
+    \item Many summaries and tests of molecular evolution,
+      e.g. $\dNdS$, are based on comparing rates of substitution
+      between functional classes of sites. These allow differing
+      levels of constraint to be identified and signals of adaptive
+      substitution to be identified. 
+      \item Tests of molecular evolution for adaptation that also incorporate
+        both divergence and polymorphism, e.g. the  Mcdonald-Kreitman
+        test, are potentially powerful tools as polymorphism levels
+        allow a somewhat independent measure of levels of constaint.  
+      \end{ChapterSummary}
+
+
+ \begin{question}{}
+Assuming that the mutation rate is $\mu$/gamete/generation and the population size is N diploid individuals, what is the number of new mutations introduced into the population each generation?
+\end{question}
+
+
+\begin{question}{}
+What is the probability of fixation of a unique new, neutral mutation in a population of N haploid individuals?
+\end{question}
+
+\begin{question}{}
+Why is dN/dS much less than one for the majority of genes in our genome?
+\end{question}
+
+\begin{question}{}
+You sequence a gene in {\it Drosophila melanogaster} and {\it D. simulans}. You
+observe 5 non-synonymous substitutions out of 500 bases where
+non-synonymous substitutions could occur, and 15 synonymous substitutions out of 500 bases where synonymous substitutions could
+occur. What is the level of constraint at nonsynonymous sites?
+\end{question}
+
+\begin{question}{}
+Analyzing polymorphism and divergence data for a gene, you calculate the
+following McDonald-Kreitman table.
+\begin{tabular}{lll}
+ & Polymorp. & Fixed\\
+Synonymous & 40 & 80  \\
+Non0synonymous& 20 & 80\\
+\end{tabular} \\
+{\bf A)} Based on the ratio of non-synonymous to synonymous polymorphisms,
+and given the 80 synonymous substitutions, how many nonsynymous
+substitutions would you expect if this gene were evolving neutrally?\\
+{\bf B)} Is this table consistent with the gene evolving neutrally? If not what could explain the results?
+\end{question}
