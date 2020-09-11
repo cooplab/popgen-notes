@@ -5,16 +5,16 @@
 Evolution by natural selection requires:
 \begin{enumerate}
 \item Variation in a phenotype
-\item That survival is non-random with respect to this phenotypic
+\item That survival and reproduction is non-random with respect to this phenotypic
 variation.
 \item That this variation is heritable.
 \end{enumerate}
 Points 1 and 2 encapsulate our idea of Natural Selection, but evolution by natural
 selection will only occur if the 3rd condition is also
-met. \sidenote{Some people consider natural selection to only operate on heritable phenotype varation
+met.\sidenote{Some people consider natural selection to only operate on heritable phenotype varation
   and so require all three conditions to say that natural selection
-  occurs. This is mostly a semantic point, however, it is useful to be
-able to distinguish the action of selection from a possible response.} It is the
+  occurs. This is mostly a semantic point, however, the defintion here
+  is useful as we can distinguish the action of selection from a possible response.} It is the
 heritable nature of variation that couples change within a generation
 due to natural selection to change across generations (evolutionary
 change). \\
@@ -28,7 +28,8 @@ reproduction by $\mu_S$, i.e. after selection has acted, and our mean
 phenotype before selection acts by $\mu_{BS}$. This second quantity may be hard to
 measure, as obviously selection acts throughout the life-cycle, so it
 might be easier to think of this as the mean phenotype if selection
-hadn't acted. So the change in mean phenotype within a generation is $\mu_{S} - \mu_{BS}= S$.  \\
+hadn't acted. So the change in mean phenotype within a generation is
+$\mu_{S} - \mu_{BS}= S$, we'll call $S$ the selection differential. \\
 
 \begin{marginfigure}
 \begin{center}
@@ -55,7 +56,9 @@ The mean phenotype in the next generation is
 \begin{equation}
 \mu_{NG} = \E \left( \E(X_{kid} | X_{mum},X_{dad}) \right)
 \end{equation}
-where the outer expectation is over possible pairs of randomly mating individuals
+where the inner expectation is giving us the expected phenotype of the
+child given the parents, and the outer expectation is over possible
+pairings of parents formed by randomly mating individuals
 who survive to reproduce. We can use eqn. \ref{predict_kid} to obtain
 an expression for this expectation:
 \begin{equation}
@@ -79,7 +82,7 @@ an expression for this expectation:
 
 So to obtain $\mu_{NG}$ we need to compute $\E(X_{mid})$, the expected
 mid-point phenotype of pairs of individuals who survive to
-reproduce. Well this is just the expected phenotype in the individuals
+reproduce. This is just the expected phenotype in the individuals
 who survived to reproduce ($\mu_{S}$), so
 \begin{equation}
 \mu_{NG} = \mu_{BS} +
@@ -93,7 +96,8 @@ h^2 (\mu_S - \mu_{BS}) = h^2 S \label{breeders_eqn}
 So our response to selection is proportional to our selection
 differential, and the constant of proportionality is the narrow sense
 heritability. This equation is sometimes termed the Breeder's
-equation. It is a statement that the evolutionary change across
+equation.\marginnote{The earliest formulation of the Breeder's
+  equation appears as a footnote in \citet{lush1943animal}.} It is a statement that the evolutionary change across
 generations ($R$) is proportional to the change caused by directional selection
 within a generation ($S$), and that the strength of this relationship is
 determined by the narrow sense heritability ($h^2$). \\
@@ -107,12 +111,12 @@ determined by the narrow sense heritability ($h^2$). \\
 \includegraphics[width= 0.6 \textwidth]{Journal_figs/Quant_gen/Galen_flower_herit/Galen_corolla_flare.pdf} 
 \end{center}
 \caption{The relationship between maternal and offspring corolla flare (flower
-  width) in P. viscosum. From \citeauthor{galen:96}'s data the
+  width) in {\it P. viscosum}. From \citeauthor{galen:96}'s data the
   covariance of mother and child is 1.3, while the variance of the
   mother is 2.8. Data from \citet{galen:96}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Galen_flower_herit/Gallen_analysis.R}} \label{fig:Galen_corolla}  
 \end{figure}
 
-\begin{marginfigure}
+\begin{marginfigure}[-1cm]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{illustration_images/Quant_gen/Polemonium_viscosum_Galen/Polemonium_viscosum.jpg}
 \end{center}
@@ -135,7 +139,7 @@ what is the expected response in the next generation?
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Illinois_long_term_selection_corn/Illinois_LTS_breeders_eq.pdf}
 \end{center}
-\caption{{\bf Top.} Phenotypic distribution of oil content in corn in
+\caption{{\bf Top.} Phenotypic distribution of oil in corn in
   1897, and the individuals who were selected to breed for the next
   generation are marked in blue.   {\bf Bottom.} The distribution in the next generation. Data from the
   Illinois selection experiment available \href{https://www.ideals.illinois.edu/handle/2142/3525}{here}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Illinois_long_term_selection_corn/corn_LTS.R}}  \label{Fig:Illinois_LTS_breeders_eq}
@@ -170,13 +174,6 @@ for the offspring of the selected parents in the next generation
  environments currently experienced by the population. The average
  individual before selection carried 100 of these `up' alleles, while the average
  individual surviving selection carries 108 `up' alleles.
- \begin{marginfigure}[4cm]
- \begin{center}
-   \includegraphics[width = 0.7 \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
- \end{center}
- \caption{Maize ({\it Zea mays}.) \BHLNC{Prof. Dr. Thomé's Flora von
-   Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
- \end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
 
  As individuals
  faithfully transmit their alleles to the next generation the average
@@ -231,23 +228,20 @@ two secondary populations where the selection differential was reversed. In the 
 impressively linear increase in oil content, shown by red line in
 Figure \ref{Fig:Illinois_LTS_means}, but while the
 response is linear at first in the down line but they quickly reach
-very low oil content.
+very low oil content (limited by the physical boundary at 0\% oil content).
 
 %%single episide of selection in cliff swallows https://www.jstor.org/stable/2411315?mag=driving-evolution-cliff-swallows&seq=1#metadata_info_tab_contents
 % http://mooselab.cropsci.illinois.edu/longterm.html
 % https://www.ideals.illinois.edu/handle/2142/3525
-
-
  \begin{marginfigure}
  \begin{center}
- \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M_exilis_skeletal.pdf} \end{center}
- \caption{It's not just deer that evolve to be small on islands,
-  pygmy mammoths and elephants have evolved from large mainland species
-  on numerous islands. For example, the
-   California Channel Islands were home to a dwarf mammoth until about 13,000 years
-   ago. \newline \noindent \tiny{Santa
-   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth\#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.} }\label{Fig:Pygmy_mammoth}
- \end{marginfigure}
+   \includegraphics[width = 0.7 \textwidth]{illustration_images/Genetic_drift/maize/7845339168_66aa3d8ccc_z.jpg}
+ \end{center}
+ \caption{Maize ({\it Zea mays}.) \BHLNC{Prof. Dr. Thomé's Flora von
+   Deutschland. 1886. Thomé, O. W.}{https://www.biodiversitylibrary.org/page/12306602\#page/669/mode/1up}{New York Botanical Garden}} \label{fig:maize}  %é
+ \end{marginfigure}  %%possible different fig https://peerj.com/preprints/26502.pdf from Jeff's paper
+
+
 \begin{question}{} \label{question:reddeer}
 A population of red deer were trapped on Jersey (an island off of
 England) during the last inter-glacial period. From the fossil record 
@@ -266,8 +260,27 @@ selection within a generation. State your assumptions.\\
 
 {\bf C)}	Assuming we only have fossils from the founding population and the population after 6000 years, should we assume that the calculations accurately reflect what actually occurred within our population?
 \end{question}
-
-
+ \begin{marginfigure} [-3cm]
+ \begin{center}
+ \includegraphics[width=\textwidth]{illustration_images/Quant_gen/dwarf_elephant/M_exilis_skeletal.pdf} \end{center}
+ \caption{It's not just deer that evolve to be small on islands,
+  pygmy mammoths and elephants have evolved from large mainland species
+  on numerous islands. For example, the
+   California Channel Islands were home to a dwarf mammoth until about 13,000 years
+   ago. \newline \noindent \tiny{Santa
+   Rosa {\it Mammuthus exilis}. \href{https://en.wikipedia.org/wiki/Pygmy_mammoth\#/media/File:M._exilis_skeletal.png}{wikimedia}, CC BY 3.0.} }\label{Fig:Pygmy_mammoth}
+ \end{marginfigure}
+ \begin{figure}
+\begin{center}
+\includegraphics[width= 0.7 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
+\end{center}
+\caption[][3cm]{{\bf Top)} Mean body size of the medium ground-finch
+  population measured each year. The 1973 $95\%$ confidence intervals
+  are shown as horizontal bars. {\bf Bottom)} Standardized
+  selection differentials on body size. The statistical significance of
+  the selection differentials is shown, black points are $p<0.001$ and grey $p<0.05$.
+  Data from \citet{grant2002unpredictable} \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
+\end{figure}
 In wild populations, selection pressures are likely rarely sustained 
 for large numbers of generations. For example, the Grants' have
 measured phenotypic selection in Darwin's Finches over multiple
@@ -276,27 +289,8 @@ selection pressures in the Medium ground-finch ({\it Geospiza fortis})
 have reversed a number of times over the years (Figure
 \ref{fig:Darwins_Finches_unpred}). 
 \graham{change to selection diff}
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.8 \textwidth]{Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.pdf}
-\end{center}
-\caption[4cm]{{\bf Top)} Mean body size of the Medium ground-finch
-  population measured each year. The 1973 $95\%$ confidence intervals
-  are shown as horizontal bars. {\bf Bottom)} Standardized
-  selection differentials on body size. The statistical significance of
-  the selection differentials is shown, black points are $p<0.001$ and grey $p<0.05$.
-  Data from \citet{grant2002unpredictable} \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Darwins_Finches_unpred/Darwins_Finches_unpred.R}} \label{fig:Darwins_Finches_unpred}  
-\end{figure}
 
-\begin{marginfigure}[1cm]
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis.png}
-\end{center}
-\caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{The zoology of
-  the voyage of H.M.S. Beagle. Birds Part 3. (1841) Gould G. Edited by
-  Darwin, C. Illustration by Elizabeth Gould.}{https://www.flickr.com/photos/biodivlibrary/8429528265/in/album-72157632647903291/}{Natural History Museum Library, London
-}} \label{fig:Geospiza_fortis}  
-\end{marginfigure}
+
 %% Gingrich style data https://datadryad.org/resource/doi:10.5061/dryad.1tn7123?show=full
 %% https://datadryad.org/resource/doi:10.5061/dryad.7d580
 
@@ -308,25 +302,25 @@ these changes?
 
 
 To compare phenotypic changes over various time periods we need some measure of the rate of phenotypic
-change. \citep{haldane1949suggestions} proposed the rate of change from
-$X_1$ to $X_2$ in time interval $\Delta t$, measured in Millions of years, be quantified as
+change. \citet{haldane1949suggestions} proposed the rate of change from
+$X_1$ to $X_2$ in time interval $\Delta t$, measured in millions of years, be quantified as
 \begin{equation}
 \frac{\log \left(\nicefrac{X_2}{X_1} \right) }{\Delta t}  = \frac{\log
   \left(X_2 \right) -\log \left(X_1 \right)  }{\Delta t} 
 \end{equation}
-by expressing this the log of the ratio\sidenote{Note that here, as
+by expressing this the log of the ratio,\sidenote{Note that here, as
   elsewhere, $\log$ refers the natural logarithm, i.e. $\log$ base
   $e$. We'll make it clear if we using $\log$ in a different base,
-  e.g. we'll use $\log_{10}$ for $\log$ in base 10.}, we are looking at the
+  e.g. we'll use $\log_{10}$ for $\log$ in base 10.} we are looking at the
 proportional fold change, which makes sense as a
 evolutionary change of 1cm in length is more impressive if you're a
 mouse than an elephant. By putting this on a $\log$-scale we are
 looking at the fold relative
-change \citeauthor{haldane1949suggestions} called the
+change. \citeauthor{haldane1949suggestions} called the
 units of this measure {\emph`the Darwin'}, with a one Darwin change
 corresponding to a $e\approx 2.71$
-fold change in a Million years, a two Darwin change corresponding to a
-$e^2\approx  7.34$ fold change in a Million years and so on. 
+fold change in a million years, a two Darwin change corresponding to a
+$e^2\approx  7.34$ fold change in a million years and so on. 
 
 \begin{marginfigure}
   \begin{center}
@@ -348,24 +342,11 @@ change in corn oil content in the up lines in Figure \ref{Fig:Illinois_LTS_means
 change in field study data and the fossil record, a dataset
 considerably expanded by \citet{uyeda2011million}. In Figure
 \ref{fig:uyeda_gingerich} each point is an observation of phenotype
-evolution. The x-axis shows the time period in years over which the
-evolutionary change was observed, the x-axis is plotted on a
-$\log_{10}$ scale.  The y-axis shows absolute rate of phenotypic
-change, measured in Darwins, again on a $\log_{10}$, 
+evolution. The {\it x}-axis shows the time period in years over which the
+evolutionary change was observed, the {\it x}-axis is plotted on a
+$\log_{10}$ scale.  The {\it y}-axis shows absolute rate of phenotypic
+change, measured in Darwins, again on a $\log_{10}$ scale. 
 
-\begin{figure}
-  \begin{center}
-    \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Uyeda_evol_rates/Uyeda_evol_rates.pdf}
-\end{center}
-\caption[][4cm]{The absolute rate of phenotypic evolution, measured in
-  Darwins, plotted against the time interval over which the evolution
-  was observed. The green points show direct observations of
-  phenotypic change in historical and contemporary populations. The
-  orange dots give changes observed in the fossil record. The three
-  black dots left to right give examples from Dog whelks, our Red deer example, and  {\it Triceratops}. Based on an original plot by
-  \citet{gingerich1983rates} using an expanded dataset from
-  \citet{uyeda2011million}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Uyeda_evol_rates/Uyeda_evol_rates.R}} \label{fig:uyeda_gingerich}  
-\end{figure}
 Over short timescales we see incredibly rapid evolution, note the high
 rates on the left of Figure \ref{fig:uyeda_gingerich}.
 For example, the first black dot from the left is a case of evolution
@@ -377,21 +358,19 @@ in the St. Andrews, New Brunswick population had changed from 0.94mm
 to 1.44mm in just 25 years. That's a 50\% increase, and a rate of
 17060 Darwins.  \graham{is time interval wrong its 1920 to 1963 in
   Vermeij. }
-\begin{marginfigure}
+\begin{figure}
   \begin{center}
-    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Triceratops/Triceratops_phylo.png}
+    \includegraphics[width=  \textwidth]{Journal_figs/Quant_gen/Uyeda_evol_rates/Uyeda_evol_rates.pdf}
 \end{center}
-\caption{The evolution of {\it Triceratops} from {\it Protoceratops},
-  see
-  \href{https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html}{here}
-  for a fun updated view of the {\it Coronosauria} phylogeny. See
-  these
-  \href{https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html}{figures}
-  from Holtz for an updated \& fuller phylogeny. \IANC{The dinosaur book : the ruling reptiles and their
-    relatives. (1951) Colbert, E.H.}{https://www.biodiversitylibrary.org/ia/bookruli00colb\#page/86/mode/1up}{American Museum of Natural History Library}} \label{fig:Triceratops_phyl}  
-\end{marginfigure}
-%% http://marsh.dinodb.com/marsh/Marsh%201891%20-%20Restoration%20of%20Triceratops%20(and%20Brontosaurus).pdf Marsh original pic of Triceratops
-%https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html
+\caption[][4cm]{The absolute rate of phenotypic evolution, measured in
+  Darwins, plotted against the time interval over which the evolution
+  was observed. The green points show direct observations of
+  phenotypic change in historical and contemporary populations. The
+  orange dots give changes observed in the fossil record. The three
+  black dots left to right give examples from dog whelks, our red deer example, and  {\it Triceratops}. Based on an original plot by
+  \citet{gingerich1983rates} using an expanded dataset from
+  \citet{uyeda2011million}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Uyeda_evol_rates/Uyeda_evol_rates.R}} \label{fig:uyeda_gingerich}  
+\end{figure}
 
 However, when we observe phenotypic evolution over longer time periods
 it is usually much
@@ -403,10 +382,25 @@ relative of {\it Protoceratops}, which was a bit bigger than a sheep
 at $\sim$5.9 ft in about 7.5 million years
 \citep{colbert1948evolution}. However, that's only a phenotypic change
 of $0.143$ Darwins, its only a roughly four fold change in millions of
-years. These rates of change in Dinosaurs have nothing on our dog
+years. These rates of change in dinosaurs have nothing on our dog
 whelks, or many other examples of evolution on short time scales.    %https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html
 Thus evolutionary changes we can observe over short timescales 
 readily explain long term changes in quantitative phenotypes. 
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Triceratops/Triceratops_phylo.png}
+\end{center}
+\caption{The evolution of {\it Triceratops} from {\it Protoceratops};
+  see
+  \href{https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html}{here}
+  for a fun updated view of the {\it Coronosauria} phylogeny. See
+  these
+  \href{https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html}{figures}
+  from Holtz for an updated \& fuller phylogeny. \IANC{The dinosaur book : the ruling reptiles and their
+    relatives. (1951) Colbert, E.H.}{https://www.biodiversitylibrary.org/ia/bookruli00colb\#page/86/mode/1up}{American Museum of Natural History Library}} \label{fig:Triceratops_phyl}  
+\end{marginfigure}
+%% http://marsh.dinodb.com/marsh/Marsh%201891%20-%20Restoration%20of%20Triceratops%20(and%20Brontosaurus).pdf Marsh original pic of Triceratops
+%https://www.geol.umd.edu/~tholtz/G104/lectures/104margino.html
 
 
 \section{Fitness and the Breeder's Equation.}
@@ -480,9 +474,8 @@ $\nicefrac{w(X)}{\wbar} $.
   Rewriting our breeder's
 equation using this observation we see
 \begin{equation}
-R = \frac{V_A}{V}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)  
+R = \frac{V_A}{V_P}  Cov \left(X, \nicefrac{w(X)}{\wbar} \right)  
 \end{equation}
-
 we see that the response to selection is due to the fact that our
 fitness (viability) of our organisms/parents covaries with our phenotype, and
 that our child's phenotype covaries with our parent's phenotype. 
@@ -495,15 +488,15 @@ linear regression of an individual $i$'s mean-centered phenotype ($X_i$) on fitn
 \begin{equation}
 W_i \sim \beta X_i + \wbar \label{fitness_regression}
 \end{equation}  
-The best fitting slope of this regression ($\beta$), see math appendix
-around eqn \ref{eqn:def_linear_regression} for more on linear regression, lets call it the
+the best fitting slope of this regression ($\beta$), we'll call it the
 `fitness gradient', is given by
 \begin{equation}
-  \beta = Cov(X, \nicefrac{w(X)}{\wbar} )/ V  \label{beta_covar}
+  \beta = Cov(X, \nicefrac{w(X)}{\wbar} )/ V_P  \label{beta_covar}
 \end{equation}
-
-  i.e. the fitness gradient is the phenotype-fitness
- covariance divided by the phenotypic variance. Using this result we can rewrite the breeder's equation as
+i.e. the fitness gradient is the phenotype-fitness
+ covariance divided by the phenotypic variance. \sidenote{see math appendix
+around \eqn \ref{eqn:def_linear_regression} for more on linear
+regression} Using this result we can rewrite the breeder's equation as
 \begin{equation}
 R= V_A \beta \label{eqn:R_beta}
 \end{equation}
@@ -525,8 +518,8 @@ Finally how does the mean fitness of our population evolve?
 If we choose relative fitness to be our phenotype
   ($X=\nicefrac{w(X)}{\wbar}$), then the response in fitness is
 \begin{align}
-  R &= \frac{V_A}{V}  Cov \left(\nicefrac{w(X)}{\wbar} ,
-  \nicefrac{w(X)}{\wbar} \right) = \frac{V_A}{V} V \nonumber\\
+  R &= \frac{V_A}{V_P}  Cov \left(\nicefrac{w(X)}{\wbar} ,
+  \nicefrac{w(X)}{\wbar} \right) = \frac{V_A}{V_P} V_P \nonumber\\
   &=V_A
 \end{align}
 i.e. the response to selection is equal to the additive genetic
@@ -569,8 +562,8 @@ landscapes. \graham{need note about when this breaks down}
 if the phenotype is
 normally distributed, the response to
 selection ($R$) could be written in terms of the gradient (derivative) of the
-mean fitness ($\wbar$) of the population\sidenote[][-3cm]{
-  This follows from the fact that we can then move the
+mean fitness ($\wbar$) of the population\sidenote[][2cm]{
+  This follows from the fact that we can move the
   derivative inside the integral of $\wbar$, eqn \eqref{eqn:pheno_mean_fitness}, %$\nicefrac{\partial \log\wbar}{\partial \bar{x}} = \nicefrac{1}{\wbar} \nicefrac{\partial\wbar}{\partial \bar{x}}$.
 to write the new term in eqn \eqref{eqn:pheno_fitness_landscape} as 
   \begin{align}
@@ -578,7 +571,7 @@ to write the new term in eqn \eqref{eqn:pheno_fitness_landscape} as
                                                                    \frac{1}{\wbar}
                                                                    \int_{-\infty}^{\infty}w(x)
                                \frac{\partial p(x)}{\partial \bar{x}}  dx \nonumber\\
-& =\int_{-\infty}^{\infty} \frac{w(x)}{\wbar}  \frac{(x-\bar{x})}{V}  dx  \nonumber\\
+& =\int_{-\infty}^{\infty} \frac{w(x)}{\wbar}  \frac{(x-\bar{x})}{V_P}  dx  \nonumber\\
                              & = \frac{cov(w(x),x) }{var(x)} \label{eqn:proof_landscape}
 \end{align}
 which is $\beta$, so that eqns \eqref{eqn:R_beta} and
@@ -621,7 +614,7 @@ discuss the caveats of this hill-climbing interpretation below.
    fitting linear approximation to the relationship between phenotype
    and individual fitness, eqn \eqref{fitness_regression}, whose slope is
    $\beta$. The top panel shows the distribution of the phenotype
-   before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}.} \label{fig:fitness_landscape_1D_w_wbar}  
+   before and after selection. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/fitness_landscape_1D_animated.R}} \label{fig:fitness_landscape_1D_w_wbar}  
  \end{figure*}
  
 
@@ -639,7 +632,7 @@ on a local, but not global peak of fitness (see, for example Figure \ref{fig:fit
 
 % % \animategraphics[height=2.8in,autoplay,controls]{12}{/Users/gcoop/Downloads/latex_gif/animate_gall_}{0}{14}
 
-\begin{marginfigure}[3cm]
+\begin{marginfigure}[3.5cm]
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Stickleback_fossil_traj/Stickleback_fossil_traj.pdf}
 \end{center}
@@ -665,12 +658,6 @@ touching pterygiophores, the bones supporting the dorsal spines,
 through the fossil record (Figure \ref{fig:Stickleback_fossil}). Note how quickly the species evolves toward
 its new value, presumably a fitness optimum in their new environment, and the long subsequent time interval over which
 the population mean phenotype fluctuates about its new value.
-\begin{marginfigure}
- \begin{center}
- \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
- \end{center}
- \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig:Stickleback_fossil}  
-\end{marginfigure}
 
 \citet{hunt2008evolution} fitted a model of a population adapting to a
 fitness landscape, with a single peak, to these time-series data. Their fitted fitness
@@ -682,6 +669,12 @@ interpretation that there is a single stationary peak these
 fluctuations represent genetic drift randomly knocking the population
 off its optimum, with selection acting to restore
 the population towards this local optimum.
+\begin{marginfigure}
+ \begin{center}
+ \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Fossil_stickleback/journal.pbio.1001466.g003.eps}
+ \end{center}
+ \caption{Fossil stickleback. Photo by Peter J. Park from \citet{losos2013evolutionary}, \PLOSccBY.} \label{fig:Stickleback_fossil}  
+\end{marginfigure}
 
 
 \paragraph{Issues with the interpretation of fitness landscapes.}
@@ -759,8 +752,7 @@ mean curvature of the fitness surface
 see Appendix Section \ref{section:calculus} for more on 2nd derivatives.
 \graham{Need to straighten out issues with mean fitness vs fitness in
   these sections}
-}
-Values of $\gamma<0$  are consistent with stabilizing selection,
+} Values of $\gamma<0$  are consistent with stabilizing selection,
 reducing the variance. While values of $\gamma>0$ are consistent with disruptive
 selection, increasing the variance. \graham{add refs about this not being sufficient}
 
@@ -799,8 +791,8 @@ access to good prenatal care \citep{ulizzi1992natural}.  %, a large effect of wh
 \includegraphics[width= \textwidth]{illustration_images/Quant_gen/Pyrenestes_seedcracker/Pyrenestes_minor.jpg}
 \end{center}
 \caption{Lesser seedcracker {\it Pyrenestes minor} a close relative of
-  the Black-bellied seedcracker, whose beak is about the same size as
-  the smallest Black-bellied individuals. \BHLNC{The birds of Africa, comprising all the species
+  the black-bellied seedcracker, whose beak is about the same size as
+  the smallest black-bellied individuals. \BHLNC{The birds of Africa, comprising all the species
     which occur in the Ethiopian region. (1986) Sclater, W. L Plate by  H. Gr{\"o}nvold}{https://archive.org/stream/birdsofafricacom41shel/birdsofafricacom41shel\#page/n306/mode/1up}{Smithsonian Libraries} }  
 \end{marginfigure}
 In Central Africa, Black-bellied seedcrackers ({\it
@@ -837,9 +829,9 @@ $0.5$mm$^2$ in the survivors this variance increased by a factor of $2.5$ to $1.
 
 
 To illustrate how directional selection and quadratic terms play off
-during adaptation, lets consider the goldenrod gall fly ({\it Eurosta solidaginis}), aka the goldenrod
+during adaptation, let's consider the goldenrod gall fly ({\it Eurosta solidaginis}), aka the goldenrod
 ball gallmaker. See Figure \ref{gall_size_stab}. As it's wonderful name
-implies this insect lays its eggs in Goldenrod plants, and the larvae
+implies this insect lays its eggs in goldenrod plants, and the larvae
 release chemicals forcing the plant to form a gall that forms a home
 for the larvae as they develop. While this seems like a pretty sweet
 deal for the larvae, it is not without its perils. \begin{marginfigure}[2cm]
@@ -850,7 +842,7 @@ deal for the larvae, it is not without its perils. \begin{marginfigure}[2cm]
 ball gallmaker ({\it Eurosta solidaginis}) in a goldenrod plant. The
 one on the right is cut to show a partial cross-section. \BHLNC{Annual report of the New York State Museum (1917)}{https://archive.org/stream/annualreport71newy/\#page/196/mode/1upp}{The LuEsther T Mertz Library, the New York Botanical Garden} }  
 \end{marginfigure}
-When the small, ball galls fall risk of parasitism from parasitoid
+When the small, ball galls fall prey to parasitism from parasitoid
 wasps. When all the ball galls are small in the population selection drives strong positive directional selection on
 gall size, with little stabilizing selection. Notice in the left panel
 of Figure \ref{gall_size_stab} the good
@@ -876,6 +868,32 @@ bins of different sized galls.The solid line is a fitted individual fitness
   deviation of $2$mm. Data from \citet{weis1990measuring}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Weis_Gorman_gall_size_stablizing_sel/gall_size_fitness_landscape.R}} \label{gall_size_stab}
 \end{figure}
 
+\begin{ChapterSummary}
+\item Phenotypic natural selection requires variation in phenotypes impacts fitness in a non-random way. For evolution by natural selection to occur we need this phenotypic variation to be heritable.
+  \item A simple model for the response to directional selection on a phenotype is given by the breeder's equation. The expected response to selection between adjacent generations ($R$) is proportional to the response to selection within a generation, the selection differential ($S$), where the constant of proportionality is the narrow-sense heritability ($h^2$) of the trait. Thus we expect to see, and indeed do see, strong responses to selection when selection causes large changes within a generation in heritable phenotypes.  
+   \item If selection pressures and heritability remain constant we expect a linear response to selection across many generations. We can often see this in selection experiments, but in the wild selection pressures often fluctuate from generation to generation. The large changes in phenotype we see in the fossil record are easily explained by the strengths of selection we see acting over short time-scales.
+     \item There are two other common ways to write the breeder's equation. The first uses the selection gradient ($\beta$), the regression of fitness on phenotype. The second, the fitness landscape interpretation relies on writing this selection gradient as the derivative of mean fitness by phenotype. The fitness landscape form to the breeder's equation helps us to understand how and when we can expect selection to act to increase the mean fitness of the population.
+       \item We can understand other forms of selection on our phenotype that are expected to act on the phenotypic variance rather than the mean, such as disruptive and stabilizing selection, by extensions of the breeder’s equation to include terms for quadratic selection gradients. 
+
+\end{ChapterSummary}
+
+\begin{question}{}
+You are studying the rapid evolution of light organ size in fireflies
+({\it Photinus pyralis}) in response to light pollution on a prairie in Ohio.  In January of 1985, a highway was constructed through the prairie with bright streetlights.  Since fireflies use light signals to locate mates, individuals with smaller, and thus less visible, light organs were less successful at mating in these new light conditions.  You know the light organ was, on average, 4mm long prior to the construction of the highway.  In 2005, the average light organ size in this population before mating was 6mm.  If this firefly has 1 generation per year and the narrow sense heritability is 0.1, what was the mean light organ length of successfully reproducing individuals in 1985 (the first year of selection)? 
+\end{question} 
+
+%% add rabbit pi
+\begin{question}{} 
+You are a rabbit breeder, and you decide that you want rabbits with
+long fur. The phenotypic variance is $4\textrm{cm}^2$.
+The covariance of fur length between between full sibs is
+$1\textrm{cm}^2$. The mean fur length in the initial population is $3\textrm{cm}$. You
+choose to breed the top $\nicefrac{1}{3}$ of the population with the
+longest fur, and their mean fur length is $5$cm. \\
+Assuming that the covariance between sibs is due to only
+additive genetic variance, how many generations of this selection regime will
+it take for the fur length to be $10cm$ in the population? 
+\end{question}
 
 %%% selection on gall size https://sci-hub.tw/https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1558-5646.1990.tb03807.x
 % https://www.flickr.com/photos/internetarchivebookimages/18429735991/

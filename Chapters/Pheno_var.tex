@@ -1,6 +1,6 @@
 \chapter{Phenotypic Variation and the Resemblance Between Relatives.}
 
-\newthought{The distinction between genotype and phenotype} is one of the most useful ideas in Biology.\cite{Johannsen:1911} 
+\newthought{The distinction between genotype and phenotype} is one of the most useful ideas in biology.\cite{Johannsen:1911} 
 The genotype of an individual (the genome), for most purposes, is decided when
 the gametes fuse to form a zygote (individual). The phenotype of an individual represents any
 measurable aspect of an organism. \begin{marginfigure}
@@ -8,8 +8,8 @@ measurable aspect of an organism. \begin{marginfigure}
 \includegraphics[width=0.8 \textwidth]{illustration_images/Quant_gen/Aspen_budset/Aspen_leaves.pdf}
 \end{center}
 \caption{European aspen {\it P. tremula}. \BHLNC{Der baum. H. Schacht. 1860. BHL}{https://archive.org/stream/derbaum00scha/\#page/n284/mode/1up}{The Library of Congress} } \label{fig:Apsen}
-\end{marginfigure}   Your height, to the amount of
-RNA transcribed from a given gene, to what you ate last Tuesday: all
+\end{marginfigure}   Your height, the amount of
+RNA transcribed from a given gene, what you ate last Tuesday: all
 of these are phenotypes.  Nearly any phenotype we can choose to measure about an organism represents the outcome of the information encoded by their genome played out through an incredibly complicated
 developmental, physiological and/or behavioural processes that in turn interact with a myriad of environmental and
 stochastic factors. Honestly it boggles the mind how organisms work as well as they do, let alone that I managed to eat lunch last Tuesday. 
@@ -18,7 +18,7 @@ stochastic factors. Honestly it boggles the mind how organisms work as well as t
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Poplar_Aspen_budset_geno_pheno.pdf}
 \end{center}
-\caption{The effect of a flowering time gene (PtFT2) SNP on budset time in European aspen. Each dot gives the genotype-phenotype combination for
+\caption{The effect of a flowering time gene ({\it PtFT2}) SNP on budset time in European aspen. Each dot gives the genotype-phenotype combination for
   an individual. The horizontal lines give the budset mean for each
   genotype and the vertical lines show the inter-quartile range. The
   dotted line gives the linear regression of phenotype on genotype.
@@ -28,9 +28,8 @@ stochastic factors. Honestly it boggles the mind how organisms work as well as t
 There are many different ways to think about studying the path from genotype through to phenotype. The one we will take here is to think about how phenotypic variation among individuals in a population arises as a result of genetic variation in the population.  One simple way to measure this genotype-phenotype relationship is to calculate the phenotypic mean for each genotype at a locus. For example, \citet{wang:18} explored the genetic basis of budset time in European aspen  ({\it Populus tremula}); the effect
 of one specific SNP on that phenotype is shown in
 in Figure \ref{fig:Apsen_geno_pheno}. Budset timing is a key trait underlying local adaptation to varying growing season length. The associated SNP
-falls in a gene (PtFT2) that is known to play a strong role in flowering
+falls in a gene ({\it PtFT2}) that is known to play a strong role in flowering
 time regulation in other plants. 
-
 
 
 One way for us to assess the relationship between
@@ -39,25 +38,26 @@ phenotypes for our individuals on their genotypes at a particular SNP ($l$):
 \begin{equation}
 X \sim \mu + a_l G_{l}
 \end{equation}
-\marginnote{We'll encounter linear regressions at various points
+
+In the equation above, $X$ is a vector of the phenotypes of a set of individuals and $G_{l}$ is our vector of genotypes at locus $l$, with $G_{i,l}$ taking the value 0, 1, or 2 depending on whether our individual $i$ is homozygote, heterozygote, or the alternate homozygote at our locus of interest. Here $\mu$ is our phenotypic mean. The slope of this regression line ($a_l$) \marginnote{We'll encounter linear regressions at various points
   during the next few chapters, see the math appendix
 around eqn \ref{eqn:def_linear_regression} for more background
-details.} 
-In the equation above, $X$ is a vector of the phenotypes of a set of individuals and $G_{l}$ is our vector of genotypes at locus $l$, with $G_{i,l}$ taking the value 0, 1, or 2 depending on whether our individual $i$ is homozygote, heterozygote, or the alternate homozygote at our locus of interest. Here $\mu$ is our phenotypic mean. The slope of this regression line ($a_l$) has the interpretation of being the average
+details.}
+has the interpretation of being the average
 effect of substituting a copy of allele $2$ for a copy of allele
-$1$. In our Aspen example the slope is $-13.6$, i.e. swapping a single $T$ for a $G$ allele
+$1$. In our aspen example the slope is $-13.6$, i.e. swapping a single $T$ for a $G$ allele
 moves the budset forward by $13.6$ days, such that the $GG$ homozygote
 is predicted to set buds $27.2$ days earlier than the $TT$ homozygote.   
 
 
 As a measure of the significance of this genotype-phenotype relationship, we can
-calculate the p-value of our regression. To try and identify loci
+calculate the p-value of our regression. To try to identify loci
 that are associated with our trait genome-wide, we can conduct this
 regression at each SNP we genotype in the genome. One common way to display the
-results of such an analysis (called a genome-wide association study or GWAS for short) is to plot the logarithm of the p-value for each SNP along
+results of such an analysis (called a genome-wide association study or
+GWAS for short) is to plot the minus logarithm of the p-value for each SNP along
 genome (a so-called Manhattan plot). Here's one from 
-\citet{wang:18} for their Aspen budset phenotype
-
+\citet{wang:18} for their aspen budset phenotype
 
 \begin{figure}
 \begin{center}
@@ -65,14 +65,15 @@ genome (a so-called Manhattan plot). Here's one from
 \end{center}
 
 \caption{Manhattan plot of the p-value of the linear association
-  between genotype and budset in Aspen. Each dot represents the test at a single SNP,
+  between genotype and budset in aspen. Each dot represents the test at a single SNP,
   plotted at its physical coordinate in the genome. Different chromosomes
   are plotted in alternating colours. The SNPs surrounding the PtFT2
   gene are shown in red. From \citet{wang:18}, \PLOSccBY. } \label{fig:Apsen_Manhattan}
 \end{figure}
-The SNP with the most significant p-value is the PtFT2 SNP. Note
+The SNP with the most significant p-value is SNP in  {\it PtFT2}. Note
 that other SNPs in the surrounding region also light up as showing a
-significant association with budset timing. This is because loci that are in LD with a functional locus may in turn show an
+significant association with budset timing. This is because loci that
+are in linkage disequilibrium with a functional locus may in turn show an
 association, not because they directly affect the phenotype, but simply
 because the genotypes at the two loci are themselves non-randomly
 associated. Below is a zoomed in version (Figure 2 in \citet{wang:18}) with SNPs coloured by the
@@ -82,8 +83,8 @@ strength of their LD with the putatively functional SNP.
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/Wang_GWAS_poplar/Wang_Fig_zoomed_Manhattan.pdf}
 \end{center}
 \caption{The Manhattan plot zoomed in on the top-hit (red SNPs from Figure
-  \ref{fig:Apsen_Manhattan}). SNPs are now coloured by their $D\prime$
-  value with the most significant SNP. $D\prime$ is the LD
+  \ref{fig:Apsen_Manhattan}). SNPs are now coloured by their $D^{\prime}$
+  value with the most significant SNP. $D^{\prime}$ is the LD
   covariance between a pair of loci ($D$, eqn \eqref{eqn:LD_def}) normalized by
   the largest value $D$ can take given the allele frequencies. Figure from \citet{wang:18},  \PLOSccBY. } \label{fig:Apsen_zoom_Manhattan}
 \end{figure}
@@ -91,12 +92,17 @@ Note how SNPs in strong LD with the functional allele (redder
 points) have more significant p-values. 
 
 Variation in some traits seems to have a relatively simple genetic
-basis. In our Aspen example there is one clear large-effect locus,
-which explains  62\% of the variation in budset. Note that even in this case, where we have an allele with a very strong effect on a phenotype, this is not an allele {\it for} budset, nor is PtFT2 a gene {\it for} budset. \marginnote{
+basis. In our aspen example there is one clear large-effect locus,
+which explains  62\% of the variation in budset. Note that even in
+this case, where we have an allele with a very strong effect on a
+phenotype, this is not an allele {\it for} budset, nor is {\it PtFT2} a gene {\it for} budset. \marginnote{
 ``All that we mean when we speak of a gene [allele] for pink eyes is, a gene which differentiates a pink eyed fly 
 from a normal one \textemdash not a gene [allele] which produces pink eyes per se, for the character pink eyes is dependent 
 on  the action of many other genes." - \citet{sturtevant:15}
-} It is an allele that is associated with budset in the sampled environments and populations. In a different set of environments, this allele's effects may be far smaller, and a different set of alleles may contribute to phenotype variation. PtFT2, the gene our focal SNP falls close to, is just one of many genes and molecular pathways involved in budset. A mutant screen for budset may uncover many genes with larger effects; this gene is just a locus that happens to be polymorphic in this particular set of genotyped individuals. 
+} It is an allele that is associated with budset in the sampled
+environments and populations. In a different set of environments, this
+allele's effects may be far smaller, and a different set of alleles
+may contribute to phenotype variation. {\it PtFT2}, the gene our focal SNP falls close to, is just one of many genes and molecular pathways involved in budset. A mutant screen for budset may uncover many genes with larger effects; this gene is just a locus that happens to be polymorphic in this particular set of genotyped individuals. 
 
 While phenotypic variation for some phenotypes has a relatively simple genetic basis, many phenotypes are likely much more genetically complex, involving the functional effect of many alleles at hundreds or thousands of polymorphic loci. For example hundreds of small effect loci affecting human height have been mapped in European populations to date. Such genetically complex traits are called polygenic traits. 
 
@@ -104,7 +110,12 @@ In this chapter, we will use our understanding of the sharing of alleles between
 quantitative phenotypes. This will allow us to understand the contribution of genetic variation to phenotypic variation. In the next chapter, we will then use these results to understand the evolutionary change in quantitative phenotypes in response to selection. \\
 
 \subsection{A simple additive model of a trait}
-Let's imagine that the genetic component of the variation in our trait is controlled by $L$ autosomal loci that act in an additive manner. The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of allele $1$ at this locus increasing your trait value by $a_l$ above the population mean.
+Let's imagine that the genetic component of the variation in our trait
+is controlled by $L$ autosomal loci that act in an additive
+manner. \marginnote{Throughout this chapter we are following ideas
+  that were developed by \citet{Fisher:1918}\cite{Fisher:1918} and
+  numerous other researchers. See \citet{provine:01} for a history. }
+The frequency of allele $1$ at locus $l$ is $p_l$, with each copy of allele $1$ at this locus increasing your trait value by $a_l$ above the population mean.
 The phenotype of an individual, let's call her $i$, is $X_i$.
 Her genotype at SNP $l$ is
 $G_{i,l}$. Here $G_{i,l}=0,~1,$ or $2$,  representing the number of copies of allele $1$ she
@@ -150,7 +161,9 @@ the phenotype in a large sample, for increasingly large numbers of loci ($L=1,~4
 phenotype following equations \ref{pheno_geno} and \ref{pheno_geno_environ}. Specifically, we've simulated each
 individual's biallelic genotype at $L$ loci, assuming Hardy-Weinberg proportions
 and that the allele is at 50\% frequency. We assume that all of the
-alleles have equal effects and combine them additively together. We then add an environmental contribution, which is normally distributed with variance $0.05$. Note that in the left two pictures you can see peaks
+alleles have equal effects and combine them additively together. We
+then add an environmental contribution, which is normally distributed
+with mean zero and variance $0.05$. Note that in the left two pictures you can see peaks
 corresponding to different genotypes due to our low  environmental
 noise (in practice we can rarely see such peaks for real quantitative phenotypes). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/QT1.R}} \label{fig:QT1}
 \end{figure}
@@ -159,7 +172,7 @@ Note that as this is an additive model; we can decompose eqn. \ref{pheno_geno_en
 effects of the two alleles at each locus and rewrite
 it as
 \begin{equation}
-X_i = \mu + X_{iM}+X_{iP} +X_{iE}
+X_i = \mu + X_{iM}+X_{iP} +X_{iE} \label{eqn:mum_and_pop_var}
 \end{equation}
 where $X_{iM}$ and $X_{iP}$ are the contribution to the phenotype of
 the alleles that our individual received from her mother (maternal
@@ -178,9 +191,9 @@ we can offer the intuition that parents only get to pass on a single allele at e
 As we are talking about an additive genetic model, we'll talk about the additive genetic variance ($V_A$), the phenotypic variance due to the additive effects of segregating genetic variation. This is a subset of the total genetic
 variance if we allow for non-additive effects. \\
 
-The variance of our phenotype across individuals ($V$) we can write as
+The variance of our phenotype across individuals ($V_P$) we can write as
 \begin{equation}
-V = Var(X_A) + Var(X_E) = V_A+V_E
+V_P = Var(X)= Var(X_A) + Var(X_E) = V_A+V_E
 \end{equation}
 In writing the phenotypic variance as a sum of the additive and
 environmental contributions, we are assuming that there is no
@@ -191,7 +204,7 @@ between genotype and environment. \sidenote{In this section we're making use of
 
 Our additive genetic variance can be written as
 \begin{equation}
-V_A = \sum_{l=1}^L Var(G_{i,l} a_{l})
+V_A =Var(X_A)  =\sum_{l=1}^L Var(G_{i,l} a_{l})
 \end{equation}
 where $Var(G_{i,l} a_{l})$ is the contribution of locus $l$ to the additive
 variance among individuals. Assuming random mating, and that our loci are in linkage equilibrium, we can write our additive genetic variance as
@@ -205,6 +218,21 @@ two alleles per individual at each locus. \sidenote{These results follow from
 \begin{question}{}
 You have two biallelic SNPs contributing to variance in human height. At the first SNP you have an allele with an additive effect of $5$cm which is found at a frequency of $\nicefrac{1}{10,000}$. At the second SNP you have an allele with an additive effect of $-0.5$cm segregating at 50\% frequency. Which SNP contributes more to the additive genetic variance? Explain the intuition of your answer.
 \end{question}
+
+Above in \eqn \eqref{eqn:mum_and_pop_var} we decomposed the additive
+genetic component of $X_{A,i}$ as $X_{M,i} + X_{P,i}$ the additive
+contributions of the maternal and paternal derived alleles in the
+$i^{th}$ individual. Similarly we can decompose the additive genetic
+variance $V_A$ as
+\begin{align}
+  V_A&= Var(X_A) = Var(X_{M,i} ) + Var(X_{P,i} ) \\
+       Var(X_{M,i} ) & =Var(X_{M,i} ) = \nicefrac{V_{A}}{2}  \label{eqn:mat_pat_var}
+ \end{align} 
+assuming that our individuals are mating at random and that maternal
+and paternal alleles are equal in their effect in
+offspring. \sidenote{Genetic imprinting violates this
+  assumption, but is relatively rare.}
+ 
 \paragraph{An example of the additive basis of variation using polygenic scores.}
 Now we don't usually get to see the individual loci contributing to
 highly polygenic traits. Instead, we only get to see the distribution
@@ -215,7 +243,7 @@ effect sizes at each locus, each one of which is tiny, we can
 calculate the weighted sum over an individual's genotype as in
 equation \ref{pheno_geno}. This weighted sum is called the
 individual's polygenic score. To illustrate how polygenic scores work,
-we can take a set of 1700 SNPs\sidenote{each chosen as the SNP with the strongest signal of association with height in 1700 roughly independent bins spaced across the genome}. The effects of these SNPs are tiny; the median, absolute additive effect size is $0.07$cm. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individuals' polygenic scores calculated using these 1700 SNPs (simulated genotypes using the UKBB frequencies). The standard deviation of these polygenic scores $\sim 2$cm. 
+we can take a set of 1700 SNPs\sidenote{Each of these was chosen as the SNP with the strongest signal of association with height in 1700 roughly independent bins spaced across the genome.}. The effects of these SNPs are tiny; the median, absolute additive effect size is $0.07$cm. Figure \ref{fig:Biobank_height_PGS} shows the distribution of a thousand individuals' polygenic scores calculated using these 1700 SNPs (simulated genotypes using the UKBB frequencies). The standard deviation of these polygenic scores $\sim 2$cm. 
 The individuals with higher polygenic scores for height are predicted to be taller than the individuals with lower polygenic scores. 
 \begin{figure}
 \begin{center}
@@ -245,7 +273,7 @@ the trait will not change over generations. \\
 We'll call the proportion of the variance that is genetic the
 \textit{heritability}, and denote it by $h^2$. We can then write heritability as
 \begin{equation}
-h^2 = \frac{Var(X_A)}{V} = \frac{V_A}{V}
+h^2 = \frac{Var(X_A)}{V_P} = \frac{V_A}{V_P}
 \end{equation}
 Remember that we are thinking about a trait where all of the alleles act
 in a perfectly additive manner. In this case our heritability $h^2$ is
@@ -263,7 +291,7 @@ calculate the narrow sense heritability by using the resemblance between
 relatives. For example, if the phenotypic differences between individuals in our population were solely determined by environmental differences experienced by these different individuals, we
 should not expect relatives to resemble each other any more than random
 individuals drawn from the population. Now the obvious caveat here is
-that relatives also share an environment, so may resemble each other
+that relatives also share an environment, so they may resemble each other
 due to shared environmental effects. \\
 
 Note that the heritability is a property of a sample from the population in a particular set of environments at a particular time. Changes in the environment may change the phenotypic variance. Changes in the environment may also change how our genetic alleles are expressed through development and so change $V_A$. Thus estimates of heritability are not transferable across environments or populations. 
@@ -277,7 +305,8 @@ particularly twins (see Figure
 \ref{Fig:The_Cholmondeley_Ladies}). Families hold a special place in
 quantitative genetics, as remarkably we can use the
 resemblance between relatives to directly estimate the heritability
-and covariance of traits. To see this we can calculate the covariance in phenotype between two individuals
+and covariance of traits. To see this we can calculate the covariance
+in phenotype between pairs of individuals
 ($1$ and $2$) who have phenotypes $X_1$ and $X_2$
 respectively.\sidenote{We'll be dealing with covariance a lot this
   chapter, see math appendix section \ref{section:multi_RV} for more background.} To
@@ -285,21 +314,21 @@ think about imagine plotting the phenotypes of, say, sisters against
 each other. The x and y coordinates of each point will be the, say,
 heights of the pair of siblings. Do tall women tend to have tall
 sisters, do short women tend to have short sisters? How much do their
-phenotypes covary. If some of the variation in our phenotype is
+phenotypes covary? If some of the variation in our phenotype is
 genetic we expect identical twins to resemble each other more than
 full siblings, who in turn will resemble each other more than
 half-sibs and so on out (see Figure \ref{fig:Varying_rellys_phenos}). Under our simple additive model of phenotypes we
 can write the covariance as 
 \begin{equation}
 Cov(X_1,X_2) =
-Cov\left((X_{1M}+X_{1P}+X_{1E}),((X_{2M}+X_{2P}+X_{2E}) \right)
+Cov\left( X_{1M}+X_{1P}+X_{1E},~ X_{2M}+X_{2P}+X_{2E} \right)
 \end{equation}
 We can expand this out in terms of the covariance between the various
 components in these sums.\\
 
-\begin{figure}
+\begin{figure*}
  \begin{center}
- \includegraphics[width=\textwidth]{illustration_images/Quant_gen/Cholmondeley_Ladies/1024px-British_School_17th_century_-_The_Cholmondeley_Ladies_-_Google_Art_Project.jpg}
+ \includegraphics[width=0.85 \textwidth]{illustration_images/Quant_gen/Cholmondeley_Ladies/1024px-British_School_17th_century_-_The_Cholmondeley_Ladies_-_Google_Art_Project.jpg}
  \end{center}
 
   \caption{The Cholmondeley Ladies. Unknown British Painter, circa
@@ -314,15 +343,19 @@ components in these sums.\\
       \href{https://www.tate.org.uk/art/artworks/unknown-artist-britain-the-cholmondeley-ladies-t00069}{Tate}
       \textcopyright Creative Commons
       CC-BY-NC-ND (3.0 Unported)}} \label{Fig:The_Cholmondeley_Ladies}
-   \end{figure}
+   \end{figure*}
 
+   \newpage
 To make our task easier, we will make two commonly made assumptions:
 \begin{enumerate}
 \item We can ignore the covariance of the environments
 between individuals (i.e. $Cov(X_{1E},X_{2E})=0$)
 \item We can ignore the covariance
 between the environment of one individual and the
-genetic variation in another individual (i.e. $Cov(X_{1E},(X_{2M}+X_{2P}))=0$). (We can actually incorporate these effects in later if we choose too.)
+genetic variation in another individual
+(i.e. $Cov(X_{1E},(X_{2M}+X_{2P}))=0$). \sidenote{We can actually
+  incorporate these effects into the definition of additive genetic
+  variance, but here we'll choose not to for simplicity.}
 \end{enumerate}
 
 The failure of these assumptions
@@ -331,7 +364,7 @@ return to that later. Moving forward with these assumptions, we can
 simplify our original expression above and write our phenotypic covariance between our pair of individuals as
 \begin{equation}
 Cov(X_1,X_2) =
-Cov((X_{1M},X_{2M})+Cov(X_{1M},X_{2P})+Cov(X_{1P},X_{2M})
+Cov(X_{1M},X_{2M})+Cov(X_{1M},X_{2P})+Cov(X_{1P},X_{2M})
 +Cov(X_{1P},X_{2P}) \label{cov_rels_1}
 \end{equation}
 This equation is saying that, under our simple additive model, we can see the
@@ -367,13 +400,21 @@ covariance between their effects on the phenotype is zero
 (i.e. $Cov(X_{1P},X_{2M})=Cov(X_{1M},X_{2P})=0$). In that case,
 eqn. \ref{cov_rels_1} is
 \begin{equation}
-Cov(X_1,X_2) = Cov((X_{1M},X_{2M})+Cov(X_{1P},X_{2P}) = 2Var(X_{1M})
+Cov(X_1,X_2) = Cov(X_{1M},X_{2M})+Cov(X_{1P},X_{2P}) = Var(X_{1M}) +Var(X_{1P})
 = V_A
 \end{equation}
+where the middle step follows from the fact the maternal (or similarly
+the paternal) allele in
+a pair of twins is the same allele so
+$Cov(X_{1M},X_{2M})=Cov(X_{1M},X_{1M})=Var(X_{1M})$, as the
+covariance of random variable with itself is just its variance, and
+then the additive variance of the maternal allele contribution is
+$Var(X_{1M})=\nicefrac{V_A}{2}$ following from \eqn \eqref{eqn:mat_pat_var}. \\
+
 To calculate the narrow sense heritability we could then in principal divide the
 covariance of our pairs of MZ  twins (MZ$_1$ and MZ$_2$) by the trait variance to give
 \begin{equation}
-h^2 = \frac{Cov(\text{MZ}_1, \text{MZ}_2) }{V} =
+h^2 = \frac{Cov(\text{MZ}_1, \text{MZ}_2) }{V_P} =
 \rho_{\text{MZ}}
 \end{equation}
 where $\rho_{\text{MZ}}$ is the correlation of pairs of MZ twins (see
@@ -386,9 +427,9 @@ environment of the twins (i.e. $Cov(X_{1E},X_{2E})$).
  \begin{center}
  \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.pdf}
  \end{center}
- \caption{A measure of body fat in pairs of Monozygotic (MZ) and
-   Dizygotic (DZ) twins. Our sample  correlations are
-   $\hat{\rho}_{\text{MZ}}=0.72$ and $\hat{\rho}_{\text{MZ}}=0.10$. Data from \citet{faith1999evidence}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.R}}\label{fig:twins_body_fat}
+ \caption{A measure of body fat in pairs of monozygotic (MZ) and
+   dizygotic (DZ) twins. Our sample  correlations are
+   $\hat{\rho}_{\text{MZ}}=0.72$ and $\hat{\rho}_{\text{DZ}}=0.10$. Data from \citet{faith1999evidence}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/twins_body_fat/twins_body_fat.R}}\label{fig:twins_body_fat}
  \end{marginfigure}
 Moreover, it can
 be inflated by non-additive effects as identical twins don't just share alleles, they share their entire genotypes, and thus 
@@ -400,19 +441,12 @@ used based on the comparison of MZ vs twins that bypass some of these issues.\\
 %% twin bmis https://sci-hub.tw/https://pediatrics.aappublications.org/content/104/1/61.figures-only?sso=1&sso_redirect_count=1&nfstatus=401&nftoken=00000000-0000-0000-0000-000000000000&nfstatusdescription=ERROR%3a+No+local+token
 
 \paragraph{The covariance in phenotype between parent and child}
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{illustration_images/Quant_gen/song_sparrow/birdbiographies00ball_0165.jpg}
-\end{center}
-\caption{Song sparrow ({\it Melospiza melodia}). ``He is the most
-  incurable optimist of my acquaintance''.
-  \BHLNC{Bird biographies (1923). Ball, A.E. illustrations by Horsfall R.B.}{https://www.biodiversitylibrary.org/page/7282967\#page/163/mode/1up}{American Museum of Natural History Library}
-} \label{fig:song_sparrow}
-\end{marginfigure}
+
 Children resemble their biological parents because children inherit their genome from
-their parents (putting aside shared environments for the moment). If a mother and father are unrelated individuals, i.e. are two
+their parents (putting aside shared environments for the moment). If a
+mother and father are unrelated individuals, i.e. they are two
 random draws from the population, then this mother and her child share
-one allele IBD at each locus (i.e. $r_1=1$ and $r_0=r_2=0$). Lets
+one allele IBD at each locus (i.e. $r_1=1$ and $r_0=r_2=0$). Let's
 assume that our mother (ind 1) transmits her paternal allele to the child (ind 2), in which
 case $X_{P1}=X_{M2}$, and so $Cov(X_{P1},X_{M2})=Var(X_{P1})=\half
 V_A$, and all
@@ -427,35 +461,44 @@ $h^2$ by regression.\\
 We can estimate the narrow sense heritability through the regression of child's phenotype on the parental mid-point
 phenotype. The parental mid-point phenotype is simply the average of
 the mum and dad's phenotype. See Figure \ref{fig:song_sparrow_herit}
-for an example from Song sparrows. 
+for an example from song sparrows. 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.pdf}
 \end{center}
-\caption[][3cm]{Parent-midpoint offspring regression for beak depth and
+\caption{Parent-midpoint offspring regression for beak depth and
   tarsus length in song sparrows.  The phenotypes have been standardized to have mean $0$  and variance $1$. The red line shows the best fitting
   slope, whose slope is reported on the graph.  Note that \citet{smith1979heritability}
 regressed the average offspring phenotype
-for each family on parental mid-point ($X_{\textrm{avg.~kid}}\sim X_{\textrm{mid}}$), as they had multiple offspring per family. However, this doesn't change the slope of the
+for each family on parental mid-point ($X_{\textrm{avg.kid}}\sim X_{\textrm{mid}}$), as they had multiple offspring per family. However, this doesn't change the slope of the
 regression from the form given by eqn \eqref{eqn:par_off_herit}.  The grey line is the
   $x=y$ line. Data from \citet{smith1979heritability},
   \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}} \label{fig:song_sparrow_herit}
 \end{figure}
 
+
 We denote the child's phenotype by $X_{kid}$ and mid-point
 phenotype by $X_{\textrm{mid}}$, so that if we take the regression $X_{\textrm{kid}} \sim X_{\textrm{mid}}$ this
 regression has slope $\beta = Cov(X_{\textrm{kid}},X_{\textrm{mid}})/Var(X_{\textrm{mid}})$.
 The covariance of $Cov(X_{\textrm{kid}},X_{\textrm{mid}})=\half
-V_A$, and $Var(X_{\textrm{mid}}) = \half V$, as by taking the average of the
+V_A$, and $Var(X_{\textrm{mid}}) = \half V_P$, as by taking the average of the
 parents we have halved the variance, such that the slope of the
 regression is
 \begin{equation}
 \beta_{\textrm{mid}, \textrm{kid}}=
 \frac{Cov(X_{\textrm{kid}},X_{\textrm{mid}})}{Var(X_{\textrm{mid}})}=
-\frac{V_A}{V} = h^2 \label{eqn:par_off_herit}
+\frac{V_A}{V_P} = h^2 \label{eqn:par_off_herit}
 \end{equation}
-i.e. the regression of the child's phenotype on the parental midpoint
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Quant_gen/song_sparrow/birdbiographies00ball_0165.jpg}
+\end{center}
+\caption{Song sparrow ({\it Melospiza melodia}). ``He is the most
+  incurable optimist of my acquaintance''.
+  \BHLNC{Bird biographies (1923). Ball, A.E. illustrations by Horsfall R.B.}{https://www.biodiversitylibrary.org/page/7282967\#page/163/mode/1up}{American Museum of Natural History Library}
+} \label{fig:song_sparrow}
+\end{marginfigure} i.e. the regression of the child's phenotype on the parental midpoint
 phenotype is an estimate of the narrow sense
 heritability.\sidenote{See math appendix eq
   \eqref{eqn:slope_linear_reg} for more on regression slopes.} If much
@@ -490,14 +533,14 @@ effect of genetic
 differences among individuals. 
 \citet{smith1979heritability} also regressed the average offspring
 phenotype agains their fathers {\emph or} mothers against their
-offspring, giving a slope of $\beta_{\textrm{dad}, \textrm{avg. kid}}$ and
-$\beta_{\textrm{mum}, \textrm{kid}}$, and for tarsus length, for
+offspring, giving a slope of $\beta_{\textrm{dad}, \textrm{avg.kid}}$ and
+$\beta_{\textrm{mum}, \textrm{kid}}$. For tarsus length, for
 example, they found $\beta_{\textrm{dad},
-  \textrm{avg. kid}}= 0.19$ and $\beta_{\textrm{mum},
-  \textrm{avg. kid}}= 0.17$.  Following a similar argument to
+  \textrm{avg.kid}}= 0.19$ and $\beta_{\textrm{mum},
+  \textrm{avg.kid}}= 0.17$.  Following a similar argument to
 that in eqn
 \eqref{eqn:par_off_herit} we find that these slopes are $\beta_{\textrm{dad}, \textrm{kid}}=
-\nicefrac{\nicefrac{V_{A}}{2}}{V} = \nicefrac{h^2}{2}$, and the same
+\nicefrac{\nicefrac{V_{A}}{2}}{V_P} = \nicefrac{h^2}{2}$, and the same
   for mums. Thus the regression of offspring's phenotype on a
   particular parent is an estimate of half the narrow-sense
   heritability, in line with the reduced slopes found by
@@ -538,7 +581,7 @@ between biological parents and children was still high despite these
 children being raised in a different nest, but that there was no significant
 covariance between foster parents and their non-biological children
 (see Figure \ref{fig:song_sparrow_herit_foster} for beak depth). This suggests that
-family environment is not confounder in estimating the heritability in
+family environment is not confounding the estimate of heritability in
 this song sparrow sample. However, such manipulations are often
 impossible in many systems, and issues of shared environmental
 covariance due to maternal resources from egg (or seed) are still present. 
@@ -547,9 +590,10 @@ Despite its issues, this measure of heritability provides useful
 intuition and is directly relevant to our discussion of the response to selection in
 the next chapter. That's because our regression allows us to attempt to predict the phenotype of the
 child given the phenotypes of the parents; how well we can do this depends on the
-slope. See Figure \ref{fig:midpar} for examples. If the slope is close to zero then the parental phenotypes hold no
+slope. See Figure \ref{fig:midpar} for examples. If the slope is close
+to zero then the parental phenotypes hold little
 information about the phenotype of the child, while if the slope is
-close to one then the parental mid-point is a good guess at the child's
+close to one then the parental mid-point is a good predictor of the child's
 phenotype. As we will see, natural selection will only efficiently
 drive evolution if children resemble their parents.\\
 
@@ -617,8 +661,8 @@ heritability than maternal half-sibs?
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Quant_gen/red_winged_blackbirds/Red_wing_blackbirds.png}
 \end{center}
-\caption{Red-winged blackbird and Tricoloured Red-winged blackbirds
-  ({\t Agelaius phoeniceus} and {\it Agelaius tricolor}). \BHLNC{Bird-lore (1899). National Association of Audubon Societies for the Protection of Wild Birds and Animals.}{https://archive.org/stream/birdlore24nati/birdlore24nati\#page/n89/mode/1up}{American Museum of Natural History Library}}\label{fig:RW_blackbird}
+\caption{Red-winged blackbird and tricoloured blackbirds
+  ({it Agelaius phoeniceus} and {\it Agelaius tricolor}). \BHLNC{Bird-lore (1899). National Association of Audubon Societies for the Protection of Wild Birds and Animals.}{https://archive.org/stream/birdlore24nati/birdlore24nati\#page/n89/mode/1up}{American Museum of Natural History Library}}\label{fig:RW_blackbird}
 \end{marginfigure}
 
 \paragraph{Estimating additive genetic variance across a variety of
@@ -664,7 +708,7 @@ X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
 X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
 \end{eqnarray}
 As before we can talk about the total phenotypic variance ($V_1,V_2$),
-environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance for trait one and two ($V_{1,A}$, $V_{2,A}$). But now we also have to consider the 
+environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance for trait one and two ($V_{A,1}$, $V_{A,2}$). But now we also have to consider the 
 total covariance between trait one and trait two, $V_{1,2}=Cov(X_{1},X_{2})$, as well as the environmentally induced covariance ($V_{E,1,2}=Cov(X_{1,E}
 ,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
 =Cov(X_{1,A} ,X_{2,A} )$). To better understand the covariance arising due to pleiotropy, let's think about a set of $L$ SNPs contributing to our two traits. If the additive effect of an allele at the $i^{th}$ SNP is $\alpha_{i,1}$ and $\alpha_{i,2}$ on traits 1 and 2, then the additive covariance between our traits is
@@ -674,7 +718,7 @@ V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
 assuming our loci are not in linkage disequilibrium. Thus a genetic
 correlation arises due to pleiotropy, because loci that tend to affect
 trait 1 also systematically affect trait 2. For example, alleles
-associated with later Age at Menarche (AAM) in European women also
+associated with later age at menarche (AAM), age at first menstrual cycle, in European women also
 tend to be positively associated with height (see Figure
 \ref{fig:AAM_height}), thereby creating a genetic correlation between
 AAM and height. 
@@ -683,14 +727,14 @@ AAM and height.
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height.pdf}
 \end{center}
-\caption{The additive effect sizes of loci associated with female Age
-  at Menarche (AAM) and their effect size on Height in a European
+\caption{The additive effect sizes of loci associated with female age
+  at menarche (AAM) and their effect size on height in a European
   population. Data from \citet{pickrell2016detection}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height_pickrell.R}} \label{fig:AAM_height}   
 \end{marginfigure}
 
 We can `store' our variance and covariance values in matrices, a way of gathering these terms that will be useful when we discuss selection: 
 \begin{equation}
-\bf{V}= \left( \begin{array}{cc} 
+\bf{V_P}= \left( \begin{array}{cc} 
 V_{1} & V_{1,2} \\
 V_{1,2} & V_{2} \\
 \end{array} \right) \label{P_matrix}
@@ -698,8 +742,8 @@ V_{1,2} & V_{2} \\
 and
 \begin{equation}
 \bf{G}= \left( \begin{array}{cc} 
-V_{1,A} & V_{A,1,2} \\
-V_{A,1,2} & V_{2,A} \\
+V_{A,1} & V_{A,1,2} \\
+V_{A,1,2} & V_{A,2} \\
 \end{array} \right)  \label{G_matrix}
 \end{equation}
 Here we've shown the matrices for two traits, but we can generalize this to an arbitrary number of traits.
@@ -745,7 +789,7 @@ calls also have sons whose calls are more spaced apart.
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf}
 \end{center}
-\caption{Phenotypic and Genetic correlations in male grey treeforg
+\caption{Phenotypic and genetic correlations in male grey treeforg
   ({\it Hyla versicolor}) calls. On the left each male is shown as a
   dot, recording their inter-call period and the number of pulses in each call. One
   the right each dot corresponds to a father with the mean of sons
@@ -765,7 +809,9 @@ where $V_{A,1}$ and $V_{A,2}$ are the additive genetic variance for trait 1 and 
 
 Another important application of genetic covariances is in the
 study of sexually antagonistic selection and the evolution of sexual
-dimorphism, here we'll calculate the genetic covariance between male and female phenotypes. For example, below is the relationship between the forehead patch size for Pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
+dimorphism; here we'll calculate the genetic covariance between male
+and female phenotypes. For example, below is the relationship between
+the forehead patch size for pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
 
 
 
@@ -774,7 +820,7 @@ dimorphism, here we'll calculate the genetic covariance between male and female 
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
 \end{center}
 \caption{Relationship of standardized forehead patch size between
-  fathers and sons and daughters in  Pied fly-catchers. Data from
+  fathers and sons and daughters in  pied fly-catchers. Data from
   \citeauthor{potti:11}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/Potti_Canal_2011_sex_cov.R}} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
 \end{figure}
 
@@ -783,14 +829,14 @@ dimorphism, here we'll calculate the genetic covariance between male and female 
 \includegraphics[width=0.9
 \textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.png}
 \end{center}
-\caption{{\it Ficedula hypoleuca}, Pied fly-catcher.  \BHLNC{Coloured
+\caption{{\it Ficedula hypoleuca}, pied fly-catcher.  \BHLNC{Coloured
     illustrations of British birds, and their eggs (1842-1850).
 London :G.W. Nickisson. }{https://www.biodiversitylibrary.org/page/40246319\#page/335/mode/1up}{Smithsonian Libraries}} \label{fig:FlyCatcher}   %% not
                                 %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
 \end{marginfigure}
 
 \begin{question}{}
-Assume we can ignore the effect of the shared environment in our Pied fly-catcher example. \\
+Assume we can ignore the effect of the shared environment in our pied fly-catcher example. \\
 {\bf A)} What is the additive genetic covariance between male and female patch size?\\
 {\bf B)} What is the additive genetic correlation of male and female patch size? You can assume that the additive genetic variance is the same in males and females.
 \end{question}
@@ -801,7 +847,14 @@ additive fashion. However, that does not have to be the case as there may be
 non-additivity among the alleles present at a locus (\emph{dominance}) or among
 alleles at different loci (\emph{epistasis}). We can accommodate these complications
 into our models. We do this by partitioning our total genetic variance into
-independent variance components.
+independent variance components. We'll see that dominant and
+epistatically interacting loci can contribute to the additive genetic
+variance. In constructing these variance components models we'll
+assume that we know the alleles contributing to variation in our trait and their
+effects, but in reality we rarely know these. However, as we'll see we
+don't need to know these details and we can partition our variance and
+estimate additive variance and other forms of non-additive variation
+using the resemblance between various types of relatives.
 
 
 %, such that the phenotype of the genotype of the heterozyote is the
@@ -861,7 +914,7 @@ additive genetic value: & $a_{\ell,2}+ a_{\ell,2}$, & $a_{\ell,1}+a_{\ell,2}$, &
 %
 i.e. the mean phenotype of each genotypes' offspring
 averaged over all possible matings to other individuals in the
-population (assuming individuals mate at random). Theses are the
+population (assuming individuals mate at random). These are the
 additive MC genetic values (breeding values) of our genotypes. 
 Here we are simply adding up the additive contributions of the alleles present
 in each genotype and ignoring any non-additive effects of genotype.
@@ -914,7 +967,7 @@ allele in an individual has a big effect on average phenotype, as it will most
 likely move an individual from being a 22 homozygote to being a 12
 heterozygote. In contrast, when the dominant allele (1) is common in the
 population, replacing a 2 allele by a 1 allele in an individual on average has
-little phenotypic effect, leading to a weak slope bottom right Figure \ref{fig:add_dom}. This small effect is because as we are mainly turning
+little phenotypic effect, leading to a weak slope (bottom right Figure \ref{fig:add_dom}). This small effect is because as we are mainly turning
 heterozygotes into homozygotes (11), who have the same mean phenotype as each other.  \\
 
 
@@ -922,7 +975,7 @@ heterozygotes into homozygotes (11), who have the same mean phenotype as each ot
 \begin{center}
 \includegraphics[width=\textwidth]{illustration_images/Quant_gen/Salmon/6918368208_5353868a88_z.jpg}
 \end{center}
-\caption{Atlantic Salmon ({\it Salmo salar}). \BHLNC{Histoire naturelle des
+\caption{Atlantic salmon ({\it Salmo salar}). \BHLNC{Histoire naturelle des
     poissons. 1796. Bloch,
     M. E.}{https://www.biodiversitylibrary.org/page/4786765\#page/197/mode/1up}{Ernst
     Mayr Library , Museum of Comparative Zoology}} \label{fig:Salmon}
@@ -1025,6 +1078,8 @@ sampling individuals from the population). } % doesn't this implicitly assume an
 \label{table:domcovar}
 \end{table}
 
+The additive and dominance variance can be estimated by the
+resemblance among relatives. 
 When dominance is present in the loci influencing our trait ($V_D>0$), we need to modify our
 phenotype covariance among relatives to account for this
 non-additivity. Specifically, our equation for the covariance among a
@@ -1037,15 +1092,15 @@ where $r_2$ is the probability that the pair of individuals share 2
 alleles identical by descent, making the same assumptions (other than additivity) that we made in deriving
 eqn. \ref{additive_covar_general_rellys}.  In table
 \ref{table:domcovar} we show the phenotypic covariance for some common
-pairs of relatives. The regression of offspring phenotype on parental
-midpoint still has a slope $V_A/V_P$. 
+pairs of relatives. Importantly, in the presence of dominance variance, the regression of offspring phenotype on parental
+midpoint still has a slope $V_A/V_P$, as a parent and offspring share
+precisely one of their autosomal  alleles IBD but never their genotype IBD (assuming no inbreeding).
 
 Full sibs and parent-offspring have the same
 covariance if there is no dominance variance (as they have the same
 kinship coefficient $F_{1,2}$). However, when dominance
-is present ($V_D>0$), full-sibs resemble each other more than
-parent-offspring pairs. That's because parents and offspring share
-precisely one allele, while full-sibs can share both alleles (i.e. the
+effects are present ($V_D>0$), full-sibs resemble each other more than
+parent-offspring pairs. That's because full-sibs can share both alleles (i.e. the
 full genotype at a locus) identical by descent. We can attempt to
 estimate $V_D$ by comparing different sets of relationships. For
 example, non-identical twins (full sibs born at same time) 
@@ -1068,8 +1123,17 @@ alleles (not genotypes) to their offspring. This means that the short-term respo
 to selection, as described by the breeder's equation, depends only on
 $V_A$ and the additive effect of alleles. Therefore, if we can
 estimate the narrow-sense heritability we can predict the short-term response.
-However, if alleles display dominance, our value of $V_A$ will change as alleles at our loci change in frequency, e.g. as dominant alleles become common
-in the population their contribution to $V_A$ decreases. Therefore,
+
+
+While our $V_A$ predicts the short term response to selection, if
+alleles display dominance, our value of $V_A$ will change as alleles
+at our loci change in frequency. For, example as dominant alleles become common
+in the population their contribution to $V_A$ decreases, we can see
+this in Figure \ref{fig:add_dom} our rare dominant allele (bottom left)
+contributes to the additive variance far more than when it is at high
+frequency (bottom right). So if selection favours higher values of our
+trait, the response to selection will push the dominant allele to
+higher frequency decreasing $V_A$. Therefore,
 if there is dominance our value of $V_A$ will not be constant across generations.
 
 Up to this point we have only considered dominance and not epistasis. However, we can include epistasis in a similar manner (for example among pairs of loci). This gets a little
@@ -1095,11 +1159,42 @@ this be difficult in practice? Why are identical vs. non-identical
 twins better suited for this? 
 \end{question}
 \erin{I think this would be a better problem if we gave them numbers for covariances and asked them to estimate V dominance in the first part of this problem. }
+
+\begin{ChapterSummary}
+  \item A key concern of quantitative genetics is how phenotypic variation within
+    populations is  partitioned into environmental and genetic
+    components of the variance.
+  \item The additive genetic variance is
+    The proportion of phenotypic variance is the narrow sense
+    heritability $h^2 = \nicefrac{V_A}{V_P}$. These quantities are both
+    measurements of the contribution of the current standing genetic variation in a
+    particular set of environments and should not be thought of as
+    fixed quantities of the population or trait. 
+\item We can estimate the additive genetic variance and the
+  heritability by using the resemblance of relatives, if we can
+  experimentally remove or statistically partition out the effect if the shared environment among relatives. 
+  \item The genetic basis of variation in traits can genetically covary due to pleiotropy, assortative
+    mating, and linkage. We can estimate the genetic covariance
+    between traits by using the covariance in different traits among
+    relatives.
+    \item Alleles with dominance and epistatic effects can
+      and do contribute to $V_A$ to the extent to which transmitting
+      an additional copy of the allele to an offspring changes their
+      expected phenotype. These alleles and combinations of alleles also contribute to higher order
+      genetic variance components, the dominance and epistatic
+      covariance.
+      \item The magnitude of the additive, dominance, and epistatic genetic variance can
+      change as allele frequency change and recombination changes the
+      context in which alleles are expressed. 
+\end{ChapterSummary}
+  
+\begin{question}{}
+The additive genetic variance for leg length on mice is $10mm^2$. What
+is the expected covariance of mice who are first cousins?
+\end{question}
 \begin{question}{}
 Can you construct a case where $V_A=0$ and $V_D>0$? You need
 just describe it qualitatively; you don't need to work out the
 math. (tricker question). %\erin{what do you want from this? population fixed for dominant allele is what I thought of}
 \end{question}
 
-
-\newpage

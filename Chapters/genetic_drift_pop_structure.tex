@@ -380,8 +380,8 @@ discordances manifest themselves.\\
 \begin{center}
 \includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ABBA_BABA_coal.pdf}
 \end{center}
-\caption{ In both the left and and right trees ILS has occurred between our single lineages sampled from populations 1, 2, and 3. Imagine that population 4 is a somewhat distant outgroup
-such that the lineages from 1 through 3 (nearly) always coalesce with each other before any coalesce with 4. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
+\caption{ Incomplete lineage sorting between our single lineages sampled from populations 1, 2, and 3. Population 4 is a distant outgroup
+such that the lineages from 1 through 3 always coalesce with each other before any coalesce with 4. The small dash on the branch indicates the mutation A$\rightarrow$B occurring, giving rise to the
 ABBA or BABA mutational pattern shown at the bottom. } \label{fig:ABBA_BABA}
 \end{figure}
 %JRI: here and in text you refer to populations ABCD but figure is labelled ``species'' and 1234. I think ABCD for populations and AB for alleles is confusing. I don't know if you need A/B for alleles. Why not use A1A2 or just 1/2 as you have previously? sure you miss the fun mnemonic, but it's clearer for a novice reader
@@ -389,25 +389,108 @@ ABBA or BABA mutational pattern shown at the bottom. } \label{fig:ABBA_BABA}
 Take a look at Figure \ref{fig:ABBA_BABA}. In both cases the lineages from 1 and 2 fail to coalesce in
 their initial shared ancestral population, and one or the other of them
 coalesces with the lineage from 3 before they coalesce with each other. Each option is equally
-likely; therefore the mutational patterns ABBA and BABA are equally likely to occur under ILS.  \sidenote{Here we have to assume no structure in the ancestral population.}
+likely; therefore the mutational patterns ABBA and BABA are equally
+likely to occur under ILS, but differential gene flow will break the symmetry.  \sidenote{Here we have to assume no structure in the ancestral population.}
 
-However, if gene flow occurs from population 3 into population 2, in addition to ILS the lineage from 2 can more recently coalesce with the lineage from 3, and so we should see more ABBAs than BABAs. To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
+To test for this effect of gene flow, we can sample a sequence from each of our 4 populations and count up the number of sites that show the two mutational patterns consistent with the gene-tree discordance $n_{ABBA}$ and
 $n_{BABA}$ and calculate
 \begin{equation}
-\frac{n_{ABBA}-n_{BABA}}{n_{ABBA}+n_{BABA}}
+  \frac{n_{ABBA}-n_{BABA}}{n_{ABBA}+n_{BABA}} \label{eqn:ABBA_BABA}
 \end{equation}
-This statistic will have expectation zero if the gene-tree discordance is due to ILS and will be skewed negative if gene flow
-occurred from C into B (and skewed positive if gene flow occurred from C into A).
-\graham{Add ABABA BABA egs}
+This statistic will have expectation zero if the gene-tree discordance
+is due to ILS. If there is gene flow between between 2 and 3, that
+excludes 1, see Figure \ref{fig:ABBA_BABA_introgression}, there will be an excess ABBAs and so the ABBA-BABA
+statistic will be skewed positively (and conversely it'll skew negatively if gene
+flow occurred between 
+3 into 1). In practice, whether this is significantly different from
+zero is judged by constructing a  Z statistic with a standard error
+found by recalculating the statistic on computationally resampled
+dataset of large genomic windows.
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Genetic_drift/ILS/ABBA_BABA_introgression.pdf}
+\end{center}
+\caption{A similar scenerio to Figure \ref{fig:ABBA_BABA} but now gene
+  flow has occured populations 2 and 3, as depicited by the white gap
+  having opened up between 2 and 3. Under
+  this model there is an excess of ABBAs,  as they can arise both by
+  incomplete lineage sorting (left) and by the lineages moving between
+  2 and 3 by gene flow and coalescing before the ancestral 1-2-3
+  population (right). BABAs can still occur but only by incomplete
+  lineage sorting as in the right side of Figure \ref{fig:ABBA_BABA}.} \label{fig:ABBA_BABA_introgression}
+\end{figure}
+
+
+The big cats ({\it Panthera }) clade is a recent radiation, with a
+considerable amount of shared genetic variation still
+segregating across the group. \citet{figueiro2017genome} examined
+patterns of genomic divergence, incomplete lineage sorting, and gene
+flow across this clade using  ABBA-BABA tests with a Domestic cat sequence as the
+outgroup. One example, for snow leopard, tiger, and  lion is shown
+below. Snow leopards and tigers are known more closely related to each other than
+either is to lions. \citeauthor{figueiro2017genome} counted SNPs where snow leopard and lion
+sequences shared a derived allele to the exclusion of tiger (ABBA)
+and those where where the tiger and lion
+sequences shared a derived allele to the exclusion of snow leopard
+(BABA) and found:\\
+\begin{tabular}{ccccc}
+Snow leopard &Tiger &  Lion & Domestic cat & Counts \\
+A & B & B & A &   1,434,106 \\
+B & A & B & A &   1,250,134\\
+\end{tabular}\\
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Genetic_drift/Big_cat_ILS/Big_cat_ILS.pdf}
+\end{center}
+\caption{A simple schematic of the population history of snow leopard
+  ({\it Panthera uncia}), tiger ({\it Panthera tigris},
+  and lion ({\it Panthera leo}) species. The arrow shows gene flow. \BHLNC{Images cropped from: The game animals of India, Burma, Malaya, and
+    Tibet (1907). Lydekker, R}{https://www.biodiversitylibrary.org/ia/gameanimalsofind00lyde/\#page/311/mode/1up}{Smithsonian Libraries} } \label{fig:Big_cat_ILS}
+\end{marginfigure}
+The calculated ABBA-BABA
+statistic, \eqn \eqref{eqn:ABBA_BABA}, is $0.07 \pm 0.0026~s.e.$,
+which  is highly significantly different from zero.  The direction of
+this statistics with a strong excess of derived SNPs where the tiger sequence is closer to
+the lion sequence than snow leopard, is consistent with gene flow
+between tigers and lions after tigers split off from snow
+leopards (Figure \ref{fig:Big_cat_ILS}). Historically, lions had a large geographic range, and
+so this interbreeding deep in the past is plausible.
+
+
+
+%Tiger Snow leopard Lion 1,250,134 1,434,106 -0.07 -0.07 0.0026 -26.0 
+
+% Lion Jaguar Snow leopard 1,219,639 1,921,731 -0.22 -0.22 0.0043 -52.5 0
+
+%https://twitter.com/arkivist/status/1187049284992143360
 
 %% Isolation by distance
 % https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography
 %  Waldo Tobler, is "everything is related to everything else, but near things are more related than distant things."
 
+\begin{ChapterSummary}
+\item We developed simple models of neutral population structure and
+  developed expectations of allele frequency differentiation as
+  measured by $\fst$ under these models. 
+\item Under a simple model of  population isolation, allele frequency
+  differentiation builds up due to genetic drift in proportion to the
+  split time divided by the population size.
+  \item Only a small number of migrants between populations per generation is sufficient
+    to prevent the build up of neutral allele frequency
+    differentiation.
+  \item Incomplete lineage sorting of ancestral variation is one source of disagreement
+    between population/species-trees and gene trees. It occurs when the split times between
+    populations are in quick enough succession that lineages do not
+    have time coalese between more closely related populations. 
+    \item Gene flow can also lead to patterns similar to incomplete
+      lineage sorting. We can test between a model of incomplete
+      lineage sorting and gene flow using tests such as ABBA-BABA.
+\end{ChapterSummary}
 
 
-\begin{question} 
+\begin{question} {}
 You are studying a two species of fish (red fish \& blue fish), and
 sequencing a set of pseudogenes.  Here are some facts you've collected:
  \begin{itemize}
@@ -430,17 +513,21 @@ have equal population sizes.
 \end{question}
 
 
-\begin{question} 
-The African and European populations split $\sim$100 thousand years
+  \begin{marginfigure}
+  \begin{center}
+    \includegraphics[width= \textwidth]{figures/Genetic_drift/ILS/ABBA_chimp_out.pdf}
+  \end{center}
+  \caption{ A simple population tree diagram, not to scale, of human
+    populations and Neanderthals. Assume, for the sake of the question, that there is no gene flow
+between populations after they split. Assume that the African and European populations split $\sim$100 thousand years
 ago ($t_{OA}$). Neanderthals split from the modern human populations $\sim$700
 thousand years ago ($t_N$). The population ancestral to humans and
-chimps split 6.5 Million years ago ($t_C$). A population tree diagram, not to scale, is shown above. Assume a generation time of 30 years, and an
-effective population size of 10,000 in all populations. Assume, for the sake of the question, that there is no gene flow
-between populations after they split. Further, assume that lineages
-sampled from the
-Neanderthal and modern human populations will definitely coalesce with
-each other before the common ancestral population with chimp.\\
-{\bf A)} On the population tree (above) the dashed lines show an
+chimps split 6.5 Million years ago ($t_C$).} \label{fig:ABBA_Neanderthal}
+\end{marginfigure}
+  
+\begin{question}{}
+With reference to the population tree shown in Figure \ref{fig:ABBA_Neanderthal}:
+{\bf A)} On the population tree the dashed lines show an
 incomplete gene phylogeny (for a single allele drawn from each population). At a locus, the Chimp lineage has the A allele. Complete
 a gene genealogy in a way that would be consistent with Neanderthal and European lineages sharing a derived B allele, to the
 exclusion of the African lineage (ABBA). Mark the branch that a mutation from $A
@@ -449,5 +536,13 @@ exclusion of the African lineage (ABBA). Mark the branch that a mutation from $A
 {\bf B)} What is the probability of observing a gene tree consistent
 with the one you drew in part A under the coalescent model? Hint:
 Remember that incomplete lineage sorting is due to failing to coalesce
-within an ancestral population. 
+within an ancestral population. \\
+Assume a generation time of 30 years, and an
+effective population size of 10,000 in all populations. Further, assume that lineages
+sampled from the
+Neanderthal and modern human populations will definitely coalesce with
+each other before the common ancestral population with chimp.
 \end{question}
+
+
+%%D stats question in goose https://avianhybrids.wordpress.com/2019/11/09/d-statistics-for-dummies-a-simple-test-for-introgression/

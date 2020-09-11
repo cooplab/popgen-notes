@@ -221,6 +221,11 @@ that this constraint prediction is not a unique prediction of the neutral model,
 \caption{Eastern diamondback rattlesnake ({\it Crotalus adamanteus}). \BHLCC{North American herpetology. Holbrook, J. E. }{https://www.biodiversitylibrary.org/page/35765722\#page/120/mode/1up}{Smithsonian Libraries}{2.0} } \label{fig:rattlesnake}
 \end{marginfigure}
 
+
+
+The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the cytochrome c protein.
+While, humans and dogfish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
+
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/Genetic_drift/dogfish/dogfish.jpg}
@@ -228,9 +233,6 @@ that this constraint prediction is not a unique prediction of the neutral model,
 \caption{Spiny dogfish ({\it Squalus acanthias}). \newline \noindent \tiny{ \href{http://digitalcollections.nypl.org/items/510d47da-6930-a3d9-e040-e00a18064a99}{Rare Book Division, The New York Public Library. ``Squalus Acanthias, The Picked- Dog'' The New York Public Library Digital Collections. 1785. Public domain.}}}
 \label{fig:dogfish}
 \end{marginfigure}
-
-The second important insight, and critical for the development of the neutral theory, is that equation \eqref{eqn:moleclock} is seemingly consistent with \citet{zuckerkandl1965evolutionary}'s hypothesis of a surprisingly constant, protein molecular clock. The protein molecular clock is the observation that for some proteins there's a linear relationship between the number of non-synonymous (NS) substitutions and the time species last shared a common ancestor in the fossil record. \citet{dickerson1971structure} provided an for early example of this observation (Figure \ref{fig:Dickerson_mole_clock}), by comparing various organisms whose molecular sequences were available to him. For example, he found that humans and rattlesnakes, who last share a common ancestor in the fossil record around 300 million years, are separated by roughly $15$ NS substitutions per $100$ sites in the cytochrome c protein.
-While, humans and dogfish, which diverged around 400 million years, are separated by $19$ NS substitutions per $100$ sites in this gene. \\ \graham{add dog fish pic? https://www.flickr.com/photos/biodivlibrary/sets/72157645618396122/ Added molecular clock question}
 
 In equation \eqref{eqn:moleclock}, if we double the amount of time separating a pair of species $T$, we double the number of substitutions predicted. Note that for this to be true $T$ must be measured in generations. To explain a protein molecular clock between species that clearly differed dramatically in generation time it was hypothesized that the mutation rate actually scaled with generation time, i.e. short-lived organisms introduced fewer mutations per generation, e.g. as they had fewer rounds of mitosis. This generation-time assumption meant that the mutation rate per year could be constant, such that $\mu T$ would be a constant for pairs of species that had diverged for similar geological times, which are measured in years, even if the organisms differed in generation time. This assumption would allow neutral theory to be consistent with a protein molecular clock measured in years. We now know that this critical generation time assumption is false: organisms with shorter generation times have somewhat higher mutation rates per year so a strict neutral model is inconsistent with the protein molecular clock. We'll return to these ideas when we discuss the fate of very weakly selected mutations in Chapter \ref{Selection_Stochasticity} and \citet{ohta1973slightly}'s Nearly Neutral theory. If you are still reading this send Graham a picture of Tomoko Ohta receiving the Crafoord Prize, an analog of the Nobel prize for biology, for her contributions to molecular evolution.
 %JRI: one to many cute send the prof a photo for a single chapter
@@ -456,7 +458,7 @@ substitutions is
 %If $2T$ generations of divergence have
 %elapsed between the two populations then a total of
 \begin{equation}
-dN= (1-C - B) \mu  +  \times (2 N \mu B) \times  f_B.
+dN= (1-C - B) \mu  +   (2 N \mu B) \times  f_B.
 \end{equation}
 Then
 \begin{equation}
@@ -495,13 +497,7 @@ number of non-synonymous to synonymous changes in the lysozyme protein.} \label{
   A.E. 1893.}{https://archive.org/stream/brehmstierlebena001breh/\#page/125/mode/1up}{University of Illinois Urbana-Champaign}} \label{fig:Colobus}
 \end{marginfigure}
 
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=0.8  \textwidth]{illustration_images/Genetic_drift/Hoatzin/14747388314_85798ba97e_z.jpg}
-\end{center}
-\caption{ (Hoatzin ({\it Opisthocomus hoazin}). A leaf-eating bird. \BHLNC{A history of birds (1910)
-  Pycraft, W.P.}{https://archive.org/stream/historyofbirds00pycr/historyofbirds00pycr\#page/238/mode/1up}{ American Museum of Natural History Library}} \label{fig:hoatzin}
-\end{marginfigure}
+
 A classic example for looking at adaptive evolution using $\dNdS$ is the
 evolution of the {\it lysozyme} gene in primates \citep{Messier:97,Yang:98}. The lysozyme protein is
 a key component for the breakdown of bacterial walls. The {\it lysozyme} gene shows very
@@ -512,8 +508,14 @@ these leaves by bacterial fermentation in their foregut, and then use lysozymes 
 leaves. In Colobines, the lysozyme protein has evolved to work well in the high-PH environment of the stomach. Remarkably, the Colobine
 lysozyme protein has convergently evolved this activity via very similar amino-acid changes at 5 key residuals in cows and Hoatzins \citep[a leaf
 eating bird,][]{kornegay1994molecular}
-
-\paragraph{The McSonald-Kreitman test}
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width=0.8  \textwidth]{illustration_images/Genetic_drift/Hoatzin/14747388314_85798ba97e_z.jpg}
+\end{center}
+\caption{ (Hoatzin ({\it Opisthocomus hoazin}). A leaf-eating bird. \BHLNC{A history of birds (1910)
+  Pycraft, W.P.}{https://archive.org/stream/historyofbirds00pycr/historyofbirds00pycr\#page/238/mode/1up}{ American Museum of Natural History Library}} \label{fig:hoatzin}
+\end{marginfigure}
+\paragraph{The McDonald-Kreitman test}
 
 As noted above, a big issue with using $\dNdS$ to detect adaptation is that it is very conservative. For a more powerful test of rapid divergence, what we need to do is adjust for the level of constraint a gene experiences at non-synonymous sites. One way to do this is to use polymorphism data as an internal control. If we see little non-synonymous polymorphism at a gene, but a  lot of synonymous polymorphism, we now know that there is likely strong constraint on the gene (i.e. high $C$), thus we expect $\dNdS$ to be low. \citet{mcdonald:91} devised a simple test of the neutral theory of molecular evolution at a gene based on this intuition \citep[building on the conceptually similar HKA
 test][]{hudson1987test}. \citeauthor{mcdonald:91} took the case where
@@ -611,7 +613,6 @@ the two species. We would expect roughly only $3$ non-synonymous
 substitutions out of 16 substitutions if the gene was evolving
 neutrally ($ 16 \times \nicefrac{2}{11}$).
 
-
 %We can then estimate the proportion of 
 
 
@@ -630,11 +631,12 @@ neutrally ($ 16 \times \nicefrac{2}{11}$).
 % \end{equation}
 % To see why this is an estimate of the proportion of  Assume that there
 
+\newpage
 \begin{ChapterSummary}
-\item In a diploid population of size $N$, any of a set of $N$ selectively
+\item In a diploid population of size $N$, any of a set of $2N$ selectively
   equivalent (ie neutral) alleles are equally likely to be the
   ancestor of the entire population at some future distant time point.
-  so the probability that a new mutation fixes is
+  Therefore, the probability that a new mutation fixes is
   $\nicefrac{1}{2N}$.
   \item Under a model where a fraction $C$ of new mutations are
     neutral and $1-C$ mutations are strongly deleterious, $2NC\mu$

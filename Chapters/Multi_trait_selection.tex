@@ -31,21 +31,32 @@ We can also write this equivalently in matrix form, for an arbitrary
 number of traits. Writing our change in the mean of our multiple phenotypes within a generation as the vector $\bf{S}$ and our response across multiple generations as
 the vector $\bf{R}$. These two quantities are related by 
 \begin{equation}
-\bf{R} = \bf{G} \bf{V}^{-1} \bf{S} = \bf{G} \boldsymbol{ \beta} \label{eqn:MV_breeders_eqn}
+\bf{R} = \bf{G} \bf{V_P}^{-1} \bf{S} = \bf{G} \boldsymbol{ \beta} \label{eqn:MV_breeders_eqn}
 \end{equation}
- where $\bf{V}$ and $\bf{G}$ are our matrices of the
+ where $\bf{V_P}$ and $\bf{G}$ are our matrices of the
  variance-covariance of phenotypes and additive genetic values
  (eqn. \eqref{G_matrix} \eqref{P_matrix}) and
  $\boldsymbol{\beta}$ is a vector of selection gradients (i.e. the
  change within a generation as a fraction of the total phenotypic
- variance). Note that $\boldsymbol{\beta} = \bf{V}^{-1} \bf{S} $, such
+ variance). Note that $\boldsymbol{\beta} = \bf{V_P}^{-1} \bf{S} $, such
  that each $\beta$ represents the selection gradient on a trait
- accounting for it's phenotypic covariances with other traits. 
+ accounting for its phenotypic covariances with other traits. 
 
 %\gc{Need to add example of using this.}
 
 % Finches https://www.jstor.org/stable/pdf/2410334.pdf?refreqid=excelsior%3A17ac61589f5347fdae6d84ea6bff7288
 
+%https://en.wikipedia.org/wiki/File:Darwin\%27s_finches_by_Gould.jpg
+%illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis_head.png
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.7 \textwidth]{illustration_images/Quant_gen/Darwins_Finch/Geospiza_fortis_head.png}
+\end{center}
+\caption{Medium ground-finch ({\it Geospiza fortis}). \BHLNC{Journal
+    of researches into the geology and natural history of the various
+    countries visited by H.M.S. Beagle (1845). Darwin, C.}{https://www.biodiversitylibrary.org/page/2010582\#page/393/mode/1up}{MBLWHOI Library}} \label{fig:Geospiza_fortis_head}  
+\end{marginfigure}
  An example of the outcome of selection on multiple phenotypes
  consider the bout of selection measured by
  \citet{grant1995predicting}  in medium ground Darwin's
@@ -61,56 +72,41 @@ the vector $\bf{R}$. These two quantities are related by
 Bill Length & 10.63 &  0.54  & -0.144  & 10.95 \\
   Bill Depth & 9.21 & 0.36 & 0.528  &  9.70 
  \end{tabular}
- \caption[][2cm]{Trait means and selection differentials and gradients from an
+ \caption[][3cm]{Trait means and selection differentials and gradients from an
    episode of selection in {\it Geospiza fortis}. Numbers from table
    2 \& 3 of \citet{grant1995predicting}.}
- \end{table}
- Accounting for the phenotypic covariances among the traits ($\bf{V}^{-1}$), they found that both
+\end{table}
+
+ 
+ Accounting for the phenotypic covariances among the traits ($\bf{V_P}^{-1}$), they found that both
  weight and bill depth showed direct directional selection towards larger
  values (positive $\beta$s). However, bill length showed weak
  selection towards shorter beaks (negative $\beta$), reflecting the fact that bill length shows positive phenotypic correlation with
  bill depth and weight, and most of the direct selection was on weight
  and bill depth dragging bill length along. Looking at the next
- generation all three traits have all significantly increased. Thus
+ generation all three traits have all significantly increased due to
+ the strong positive genetic correlations amongst the traits (Table \ref{table:geospiza_fortis_Vg}). Thus
  despite selection posssibly favouring shorter bill lengths, and
- certainly not favouring long bills, bill length increased in the next
+ certainly not favouring long bills, bill length increased in the next 
  generation due to its positive genetic covariance with two traits
  that selection was acting to increase. 
 
-
+ \begin{margintable}
+   \begin{tabular}{cccc}\\
+      & Wt         & BL & BD \\     
+    Wt &  0.85  &    &         \\
+     BL &  +0.95  & 0.67    &  \\ 
+     BD &  +0.87 &  +0.9         &  0.81  
+  \end{tabular}
+ \caption{{\it Geospiza fortis} Heritabilities (diagonal) and genetic
+   correlations (off-diagonals)  for weight (Wt), bill length (BL),
+   and bill depth (BD)  \citep[numbers from][]{boag1983heritability}} \label{table:geospiza_fortis_Vg}
+\end{margintable}    
  %% quotes about tradeoffs
-
-\begin{question}{}
-You collect observations of red deer within a generation, recording an
-individual's number of offspring and phenotypes for a number of traits which are known to
-have additive genetic variation. Using your data, you construct the plots shown in
-Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
-questions by choosing one of the bold options. Briefly justify each of your answers with reference to the breeder's
-equation and multi-trait breeder's equation. \\
-{\bf A)}	Looking just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-
-{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-
-{\bf C)}	Looking at figures \ref{fig:red_deer_Q} A, B, and C, in what direction do you expect male antler size to evolve? \\
-{\bf Insufficient information, increase, decrease.}\\
-\end{question}
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
-\end{center}
-\caption{ Observations of red deer within a generation; recording an
-individual's number of offspring and phenotypes (simulated data), which are known to
-have additive genetic variation. The figures left to right are
-A-C. (Data are simulated. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Red_deer_MV_selection.R}) } \label{fig:red_deer_Q}
-\end{figure}
 
 
 As an example of correlated responses to selection, consider the  \citet{wilkinson:93} selection experiment on Stalk-eyed
- flies ({\it Cyrtodiopsis  dalmanni}). Stalk-eyed flies have evolved amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
+ flies ({\it Cyrtodiopsis  dalmanni}). stalk-eyed flies have evolved amazingly long eye-stalks. In the lab, \citeauthor{wilkinson:93} established six populations of
  wild-caught flies and selected up and down on males eye-stalk to body
  size ratio for 10 generations (left plot in Figure
  \ref{fig:Stalk_eyed_response}). Despite the fact that he did not
@@ -122,7 +118,7 @@ As an example of correlated responses to selection, consider the  \citet{wilkins
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/stalk_eyed_flies/stalk_eyed_flies_response.pdf}
 \end{center}
-\caption[][-2cm]{ \citeauthor{wilkinson:93} selected two populations of flies for
+\caption[][0cm]{ \citeauthor{wilkinson:93} selected two populations of flies for
  increased eye-stalk to body length ratio in males (mean shown as
  up triangles), and two for a
  decreased ratio (down triangles), by taking the top 10 males with the highest (lowest)
@@ -135,7 +131,7 @@ As an example of correlated responses to selection, consider the  \citet{wilkins
 \begin{center}
 \includegraphics[width=0.9 \textwidth]{illustration_images/Quant_gen/Stalk_eyed_flies/WulpPlateVIIIjpg.jpg}
 \end{center}
-\caption{Stalk-eyed Flies ({\it Diopsidae}).  \BHLNC{Diptera. van der Wulp. 1898.}{https://www.biodiversitylibrary.org/item/39414\#page/631/mode/1up}{Smithsonian Libraries}} \label{fig:Stalk_eyed_flies}  
+\caption{Stalk-eyed flies ({\it Diopsidae}).  \BHLNC{Diptera. van der Wulp. 1898.}{https://www.biodiversitylibrary.org/item/39414\#page/631/mode/1up}{Smithsonian Libraries}} \label{fig:Stalk_eyed_flies}  
 \end{marginfigure}
 \begin{question}{}
 
@@ -159,7 +155,7 @@ estimate the male-female genetic correlation of the eye-stalk ratio?
 \begin{center} 
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Garter_snakes_Brodie/Garter_snakes_Brodie.pdf}
 \end{center}
-\caption{ {\bf Left)} The garter snake fitness surface estimated by \citet{brodie1992correlational}
+\caption{ {\bf Left)} The garter snake individual fitness surface estimated by \citet{brodie1992correlational}
  lighter colours indicate higher
  relative fitness. {\bf Middle)} The phenotypes of all of the snakes released
    by Brodie, each dot is an individual. {\bf Right)} The phenotypes
@@ -185,14 +181,25 @@ w_i \sim \beta_1 x_{1,i} + \nicefrac{1}{2} \gamma_1 x_{1,i}^2 + \beta_2 x_{2,i} 
 where $\beta_1$ and $\gamma_1$ are the directional and quadratic
 selection gradients for trait one, and similarly for trait two \citep{lande1983measurement}. The
 covariance selection gradient between traits is given by
-$\gamma_{1,2}$ . This technique for measuring multivariate selection is
+$\gamma_{1,2}$. This technique for measuring multivariate selection is
 sometimes called `Lande-Arnold regression'.
 
 \citet{brodie1992correlational}'s work provides a nice example of
 selection on multiple predation-avoidance traits in northwestern garter snakes
 ({\it Thamnophis ordinoides}). \citeauthor{brodie1992correlational} released hundreds of snakes born in
 the lab into the wild, and then performed mark-recapture observations
-to monitor their fate.
+to monitor their fate. Before releasing them he measured how stripy
+they were, and their behavioural tendency to reversals of direction
+during simulated flight from a predator. His quadratic fitness surface is shown in Figure
+\ref{fig:Garter_snakes_Brodie}, based on fitting the
+regression given by eqn \eqref{fitness_regression_MV} to juvenile
+survival. He found that neither single trait directional or quadratic
+gradients were significant, i.e. there was no apparent selection on one 
+trait ignoring the other. However, there was a significant negative
+covariance selection ($\gamma_{1,2}<0$). The individuals with the highest chance of survival are
+{\it either} highly striped and perform few reversals (top left
+corner), {\it or} have little striping but reverse course frequently
+(bottom right corner). 
 \begin{marginfigure}
 \begin{center} 
 \includegraphics[width= 0.75\textwidth]{illustration_images/Quant_gen/Garter_snake/Eutaenia_cooperi.jpg}
@@ -205,29 +212,19 @@ to monitor their fate.
   G. }{https://commons.wikimedia.org/wiki/File:The_natural_history_of_Washington_territory,_with_much_relating_to_Minnesota,_Nebraska,_Kansas,_Oregon,_and_California,_between_the_thirty-sixth_and_forty-ninth_parallels_of_latitude,_being_those_(14574590600).jpg}{Smithsonian
   Libraries} } \label{fig:Garter_snake}
 %, between the thirty-sixth and forty-ninth parallels of latitude, being those parts of the final reports on the survey of the Northern Pacific railroad route, containing the climate and physical geography, with full catalogues and descriptions of the plants and animals collected from 185 to 1857
-\end{marginfigure}  Before releasing them he measured how stripy
-they were, and their behavioural tendency to reversals of direction
-during simulated flight from a predator. His quadratic fitness surface is shown in Figure
-\ref{fig:Garter_snakes_Brodie}, based on fitting the
-regression given by eqn \eqref{fitness_regression_MV} to juvenile
-survival. He found that neither single trait directional or quadratic
-gradients were significant, i.e. there was no apparent selection on one 
-trait ignoring the other. However, there was a significant negative
-covariance ($\gamma_{1,2}<0$). The individuals with the highest chance of survival are
-{\it either} highly striped and perform few reversals (top left
-corner), {\it or} have little striping but reverse course frequently
-(bottom right corner). 
-
+\end{marginfigure} 
 %\gc{Add section of multivariate fitness landscapes}
 
 %Drosophila life history chapter
 %https://www.genetics.org/content/214/1/3
 
-
+\paragraph{Multivariate fitness landscapes. }
 In the last chapter we saw that we can often think of our population moving across a mean fitness landscape. Selection on a single trait corresponding to our population taking steps that climb the nearest fitness peak. Similarly our multi-trait response to selection (often) can be thought of as our population climbing a mean fitness landscape (see Figure \ref{fig:MV_fitness_landscape}). However, the path our population takes now depends crucially on genetic correlations.
 
 Previously we saw that our single trait selection gradient can be
-writen as $\beta= \nicefrac{1}{\wbar} \nicefrac{\partial \wbar}{\partial \bar{x}} $ (if XXX). This holds for each of our traits and so we can rewrite our two trait breeders' equation (eqn \eqref{eqn:2D_breeders_eqn}) as
+writen as $\beta= \nicefrac{1}{\wbar} \nicefrac{\partial
+  \wbar}{\partial \bar{x}} $ (if fitness is frequency independent,
+\eqn \eqref{eqn:proof_landscape}). This holds for each of our traits and so we can rewrite our two-trait breeders' equation (eqn \eqref{eqn:2D_breeders_eqn}) as
 \begin{eqnarray}
 R_1 & = \frac{V_{A,1}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_1}} + \frac{ V_{A,1,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_2}}  \nonumber \\
 R_2 & = \frac{V_{A,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_2}}   +  \frac{ V_{A,1,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_1}}\label{eqn:2D_fitness_breeders_eqn}
@@ -248,7 +245,7 @@ R_2 & = \frac{V_{A,2}}{\wbar}  \frac{\partial \wbar}{\partial \bar{x_2}}   +  \f
 \end{figure*}
 
 If there is no additive genetic correlation between the traits ($
-V_{A,1,2}=0$, left panel of Figure \ref{fig:MV_fitness_landscape} )
+V_{A,1,2}=0$, left panel of Figure \ref{fig:MV_fitness_landscape} ),
 then our population is just evolving towards its local fitness peak.
 It does so like an overly enthusiastic hill climber walking up the
 nearest hill it finds, barely moving at all on the flat parts, but
@@ -275,8 +272,22 @@ In some cases the population can even evolve to an entirely different
 peak due to genetic correlations (compare path D in left and
 right panels). 
 
-
-
+More generally, we can extend this to an arbitrary number of phenotype
+writin the fitness landscape Breeder's equation, in matrix notation, as 
+\begin{equation}
+{\bf R}  = \frac{1}{\bar{w}} {\bf G} \nabla \bar{w} ({\bar{x}})
+\end{equation} 
+where $\nabla$ is the vector gradient operator, taking the
+derivative by the vector of mean phenotypes, such that
+$\nabla \bar{w} =
+\left( \nicefrac{\partial \bar{w}}{\partial \bar{x}_1},~
+  \nicefrac{\partial \bar{w}}{\partial \bar{x}_2},~\cdots
+\right)$. Thus the short-term evolutionary response of population to
+selection is to shift its mean phenotypes ($R$) in a direct that
+locally increases the mean fitness of the population
+($\nabla_{\bar{x}} \bar{w}$) but this fitness hill climbing of our
+population is moderated by the genetic covariances amongst our traits
+(${\bf G}$).
 
 Ideas about adaptive fitness landscapes are key to understanding the role of ecology in speciation. Species can be kept distinct in the face of interbreeding if hybrids between the species are poorly adapted to either niche of the parental species (a so called extrinsic postzygotic barrier to successful hybridization). From a fitness landscape perspective this corresponds to species occupying different fitness peaks, such that the hybrids between the two populations, who will be intermediate in phenotype, so fall in the valley between the peaks, i.e. have low fitness. 
 
@@ -292,314 +303,6 @@ The multivariate breeders equation has a lot of different uses in
 understanding the response of multiple traits to selection. It also
 offers strong insights into the mechanistic underpinnings of kin selection and sexual selection. We'll discuss these next.
 
-\subsection{Hamilton's Rule and the evolution of altruistic and
-  selfish behaviours}
-\begin{quotation}
-``~`The only reason for making a buzzing-noise that I know of is
-because you're a bee.' Then [Pooh] thought another long time, and
-said: `The only reason for being a bee that I know of is to make
-honey...And the only reason for making honey is so as I can eat it.'~''
---Winnie-the-Pooh, \citet{milne}.  
-\end{quotation}
-
-%https://www.flickr.com/photos/bibliodyssey/albums/72157610318114895
-
-%“If it could be proved that any part of the structure of any one species had been formed for the exclusive good of another species, it would annihilate my theory, for such could not have been produced through natural selection.”
-
-%% https://commons.wikimedia.org/wiki/File:1911_Britannica_-_Bee_-_Apis_mellifica.png
-%%bear with bee hive https://www.flickr.com/photos/internetarchivebookimages/20323812950/
-
-One of the seismic shifts caused by Darwin's work was the realisation that organisms don't exist for the benefit of other
-individuals or other species. 
-Bees didn't evolve to pollinate flowers, any more than they 
-evolved to make honey for bears. If we can say that there
-is a `reason' why an organism exist it is only to leave offspring to the
-next generation.  Pooh can be forgiven for straying from Darwinian thought, as he exists
-for the benefit of Christopher Robin and other childrens' bedtime
-stories. 
-
-However, there's a wrinkle to this Darwinian view. Worker bees don't make honey
-to benefit their offspring, they are sterile and are working
-for the benefit of the Queen bee and her offspring. 
-\marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
-Individuals frequently behave in ways that sacrifice their own fitness for the
-benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. 
-His intuition was that while an individual is losing out of some reproductive output, the alleles underlying an altruistic behaviour can still spread in the population if this cost is outweighed by benefits gained 
-through the transmission of these alleles through a related individual. Note that this means that the
-allele is not acting in an self-sacrificing manner, even though individuals may as a result. 
-
-Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
-individual $i$ being paired with an individual $j$.  
-Imagine that individuals have two possible phenotypes $X=1$ or $0$,
-corresponding to providing or withholding some small act of `altruism'
-(we could just as easily flip these labels and call them an unselfish
-act and a selfish act respectively). 
-Our pairs of individuals interacting could, for example, be siblings sharing a
-nest. The altruistic trait could be as simple as growing at a slightly slower rate so as to reducing sibling-competition for food from
-parents, or more complicated acts of altruism such as children foregoing their own reproduction so as to help their parents raise their siblings.
-
-Providing the altruistic act has a cost $C$ to the fitness of our individual and failing to provide this act has no cost. Receiving this altruistic act confers a fitness benefit $B$ over individuals who did not receive this act. \citeauthor{hamilton1964genetical}'s rule states that such a trait will spread through the population if 
-\begin{equation}
- 2F B > C 
-\end{equation}
-where $F$ is the average kinship coefficient between the interacting
-individuals ($i$ and $j$). In the usual formulation of Hamilton's Rule our $2F$ is replaced by the `Coefficient of relationship', which is the
-  proportion of alleles shared between the individuals. Here we use
-  two times the kinship coefficient to keep things inline with our 
-  notation for these chapters. Note that if our individuals are themselves inbred we need
-to do a little more careful to reconcile these two measures.
-So the altruistic behaviour will spread even if it is costly to the individual if its cost is paid off by the benefit to sufficiently related individuals. 
-
-As one example of kin-selection consider \citet{krakauer2005kin}'s work on
-co-operative courtship in wild turkeys ({\it Meleagris
-  gallopavo}). Male turkeys often form display
-partnerships, with a subordinate male helping a dominant male with
-displaying to females and defending the females from other groups of males. \begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Turkey/turkey.jpg}
-\end{center}
-\caption{Turkey  ({\it Meleagris
-  gallopavo}). \BHLNC{Bilder-atlas zur Wissenschaftlich-populären
-Naturgeschichte der Vögel in ihren sämmtlichen Hauptformen (1864). Wien,K.K. Hof}{https://www.biodiversitylibrary.org/page/33050564\#page/199/mode/1up}{Smithsonian Libraries} } \label{fig:turkey}
-\end{marginfigure}  These pairs are often full brothers ($F=0.25$),
-with the subordinate male often being the younger of the two. The
-subordinate male often loses out on mating opportunities over their
-entire lifetime by acting as a wingman for their older 
-brothers. \citet{krakauer2005kin} estimated that dominant males gained
-an extra $6.1$ offspring when they display with a partner than males
-who display alone. While the subordinate males lose out on fathering $0.9$
-offspring compared to solitary males. Thus the costs of helping by
-subordinate males is more than compensated by the fitness gains of
-their brothers ( $ (2 \times 0.25)  \times 6.1 > 0.9$), and so the
-evolution of this  altruistic  helping in co-operative courtship is potentially well explained by kin-selection \citep[see ][for more analysis]{akccay2016}.
-\begin{question}{}
-How would this answer be changed if the male Turkey partnerships were only
-$\nicefrac{1}{2}$ sibs, or first cousins?
-\end{question}
-
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/Response_to_sel/Hamiltons_rule_B_C.pdf}
-\end{center}
-\caption{{\bf Top)} The fitness of individual $i$ as a function of
-  their behavioural phenotype, where altruistic/non-altruistic
-  behavioural phenotypes are encoded as $1$ and $0$ respectively. The
-  direct fitness cost of behaving altruistically is $C$. {\bf Bottom)}
-  The fitness of our focal individual $i$ as a function of the
-  behavioural phenotype of their interacting partner ($j$). Our focal
-  individual gets an increase $B$ in fitness if their partner behaves
-  altruistically. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/Hamilton_rule_B_C.R}} \label{fig:Hamilton_B_C}
-\end{marginfigure}
-
-
-Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
-intuition by deriving a simple version of Hamilton's Rule by thinking
-about the phenotypes of an individual's kin as genetically correlated
-phenotypes. To sketch a proof of this result, let's assume that our focal $i$ individual's fitness can be written as 
-\begin{equation}
-W(i,j)= W_0 + W_i +W_j
-\end{equation}
-where $W_i$ is the contribution of the fitness of the individual $i$ due
-to their own phenotype, and $W_j$ is the contribution to our
-individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. $j$'s phenotype).
-With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:Hamilton_B_C}. 
-
-Following our multivariate breeder's equation, we can write the expected change of our behavioural phenotype as 
-\begin{equation}
-R = \beta_i V_A + \beta_j V_{A,i,j},
-\end{equation}
-Our altruistic phenotype is increasing in the population if $R>0$, i.e. if 
-\begin{equation}
-  \beta_i V_A + \beta_j V_{A,i,j}  > 0 \end{equation}
-\marginnote{ Here we've following a simplified version of
-  \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original papers did this in a population genetics framework).} The slope $\beta_i$ of the regression of our focal individual's
-behavioural phenotype on fitness is proportional to $-C$. The slope
-$\beta_j$ of the regression of our interacting partner's phenotype on
-our focal individual's fitness is proportional to $B$ (with the same
-constant of proportionality). Therefore, our altruistic phenotype is increasing in the population if
-\begin{eqnarray}
-  \beta_i V_A + \beta_j V_{A,i,j} & > 0  \nonumber  \\
- B \frac{V_{A,i,j}}{V_A} & >  C  \label{eqn:Covar_Hamilton}
-\end{eqnarray}
-So what's the average genetic covariance between
-individual $i$ and $j$'s altruistic phenotype? Well it's the same
-behavioural phenotype in both individuals, so the phenotypes are
-genetically correlated if our individuals are related to each
-other. The covariance of the same phenotype between two individuals is
-just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So
-our altruistic phenotype is increasing in the population if
-
-
-
-\begin{eqnarray}
-   & B\frac{2 F_{i,j} V_A}{V_A} &> C \nonumber  \\
-  2 F_{i,j} B & > C \label{eqn:Hamiltons_rule}
-\end{eqnarray}
-Seen from this perspective, \citeauthor{hamilton1964genetical}'s rule
-is simply a statement that altruistic behaviours can spread via
-kin-selection, if the average cost to an individual of displaying an
-altruistic phenotype, i.e. carrying altruistic alleles, is paid back through the average benefit of interacting with altruistic relatives (kin).
-
-%  1791 book on Hymenoptera https://twitter.com/BioDivLibrary/status/1174773646113562624
-\begin{figure}
-\begin{center}
-\includegraphics[width= 0.75 \textwidth]{illustration_images/Quant_gen/Hymenoptera/Hymenoptera.jpg}
-\end{center}
-\caption{A selection of the huge diversity of  Hymenoptera. \BHLNC{Naturgeschichte, Klassification und Nomenclatur der
-    Insekten vom Bienen, Wespen und Ameisen. Christ, JL}{https://www.biodiversitylibrary.org/item/165219?\#page/6/mode/1up}{University of Illinois Urbana Champaign} } \label{Hymenoptera}
-\end{figure}
-
- \begin{marginfigure}
-\begin{center}
-\includegraphics[width= 0.7 \textwidth]{illustration_images/Quant_gen/honey_ant/honey_ant.png}
-\end{center}
-\caption{Australian Honey-pot Ant ({\it Camponotus inflatus}). Honey ants are gorged with
-  honeydew collected by their nest mates, till they swell to the size
-  of grapes, and are used as a food storage
-  device.  \BHLNC{Ants,
-  bees, and wasps; a record of observations on the habits of the
-  social Hymenoptera (1897) Lubbock, J.}{https://www.biodiversitylibrary.org/page/9657360\#page/485/mode/1up}{Smithsonian Libraries}  } \label{fig:honey_ant}
-\end{marginfigure} 
-Under the kin-selection, relatedness and the breeding structure of the populations are
-hypothesized to be a key factor in determining the evolution of altruistic behaviours. 
-One most impressive example of the evolution of altruism is the
-repeated evolution of eusociality, where sterile castes have evolved
-to help to rear their siblings rather than their own offspring. Eusociality has evolved at least eight independent times in
- Hymenoptera ( bees, wasps, and ants). There's huge variation in
- mating systems in Hymenoptera from high levels of multiple mating to monandry. \citet{hughes2008ancestral} conducted a
-comparative phylogenetic analysis of mating system across hundreds of Hymenoptera species. They found that each of the eight of
-eusocial clades had monandry, females mating with a single male, as an ancestral
-state. Thus, eusociality initially evolved in populations where
-relatedness was maximized among siblings.
-
-%Once eusociality evolved,
-%the females in some eusocial species have evolved to mate multiple
-%times but this only occurs in species where non-reproductive females
-%can not regain fertility, i.e. 
-
-%\erin{this phrasing is a little misleading because it's 'paid back' to the allele, but not to the individual. I'd suggest something like 'if the fitness cost of altruism to an allele is paid back on average through the benefits of interacting with altruistic relatives (kin).
-
-
-% Special eg on kinship, good for other egs https://www.cell.com/current-biology/issue?pii=S0960-9822(18)X0012-8
-
-%% reciprocal altuisim Quller
-%% https://www.pnas.org/content/pnas/108/Supplement_2/10792.full.pdf
-% http://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1000&context=sysc_fac
-
-% https://sci-hub.se/https://www.nature.com/articles/318366a0
-%% https://archive.org/stream/allaboutanimalsf00newy/allaboutanimalsf00newy#page/53/mode/1up
-
-% http://darwin-online.org.uk/content/frameset?pageseq=23&itemID=F8.2&viewtype=side
-
-
-%%  Beaver https://twitter.com/EponymousBreeze/status/1226934486090145799/photo/1
-\paragraph{Other forms of altruism}
-Kin-selection can favour altruism because individuals carrying
-altruistic alleles interact with other \emph{ related} individuals who tend to display altruistic phenotypes and so gain an advantage. However, there are other ways that altruistic behaviours can spread than just through the interactions with kin.
-
-There's an inherent problem with co-operation among non-relatives. Cheaters often win.  To see the quandary of co-operation lets consider the classic prisoner's dilemma. Imagine that two members of a gang are caught by the police, there's not enough evidence to get them on the main charge but they will be convicted of a lesser charge. They face a year in prison each on the lesser charge. The police offer each prisoner a deal, testify against your codefendant and we'll drop all charges against you, your codefendant will get three years.  If they both choose to sell out they'll each get two years. The best-combined outcome for the defendants is to co-operate with each other and keep silent, they'll each serve a year. However, the defendants can not confer, and each has no way to know if the other has squealed and ratted him out. The rational choice in this one-off interaction is to sell out your fellow prisoner. There are many situations like this where an interaction between individuals has the best outcome if they work together. However, as individuals could cheat on the interaction, the rational outcome may be to not co-operate. To place this in an evolutionary setting, we could imagine that the fitness of organisms in a population depended on their strategies in a one-off prisoner's dilemma game, e.g. pairing individuals at random. In such settings, a cheating individual would have higher fitness than an altruist, and so the population would evolve to all cheat.  Yet cooperation between non-relatives has evolved many times. 
-
-%% %for diagonal slash table https://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells
-\begin{table}
-\begin{tabular}{l|*{2}{c}}\hline
-  & Silent (Co-operates) & Confesses (Cheats)\\ \hline
-Silent (Co-operates)  & 1,~1 & 3,~0 \\  %& \backslashbox{1}{1} & \backslashbox{3}{0} \\
-Confesses (Cheats) & 0,~3 & 2,~2\\      %\backslashbox{0}{3} & \backslashbox{2}{2} \\
-\end{tabular}
-\caption{The prisoner's  dilemma. Rows prisoner 1's choice, columns prisoner 2's choice. each cell gives time served by prisoner 1 and 2.}
-\end{table}
-
-The key factor leading to non-cooperative behaviour in this prisoner's
-dilemma was the one-off nature of the interaction. The optimum
-strategy changes when our partners face this situation together
-multiple times, e.g. if our gang members being hauled in regularly
-over the years in their lives in crime. Intuitively, if one of our
-prisoners knows that her fellow gang member didn't betray her last
-time then you might expect that she would be more inclined to trust
-them and not betray them this time. This setup is called the iterative
-prisoner dilemma, with our prisoners facing the `game' with the costs
-and benefits repeatedly with knowledge of how the other player behaved
-on previous rounds of the game.  in this iterated setting, a simple
-`tit-for-tat'  strategy is possible \citep{axelrod1981evolution}. Players following this strategy
-starts the game by cooperating, and then copy the other prisoner's
-strategy from the last move (if the other prisoner cooperated last time
-they cooperate this time, and similarly for cheating). Imagine again
-our population of organisms that are now randomly paired to play
-iterated games for their fitness. If many individuals in the
-population play a tit-for-tat strategy, a cheating individual in this
-population has lower fitness than a tit-for-tat
-individual. Individuals playing a tit-for-tat strategy do not
-cooperate with cheaters, and so pay little relative cost for
-interacting with these individuals, but they gain the benefits of
-cooperation with other altruistic individuals. Thus `reciprocal
-altruism', where individuals provide costly aid to individuals they
-expect will reciprocate at some future date, can evolve \citep{trivers1971evolution}. Note that there's nothing truly altruistic about reciprocal
-altruism, the interacting individuals are simply acting to increase their direct
-fitness across their lifetimes and as such the interaction is mutually beneficial. Thus some
-prefer the name `reciprocity' rather than `reciprocal altruism'.
-
-We can use our Hamilton's rule framework to understand the evolution
-of reciprocal altruism in more detail \citep{queller2011expanded}. The
-only requirements for Hamilton's rule to predict the spread of an
-altruistic behaviour is that
-\begin{eqnarray}
- B \frac{V_{A,i,j}}{V_A} & >  C  \nonumber \\
- B \frac{Cov(X_i,X_j)}{V_A} & >  C  
-\end{eqnarray}
-As in eqn. \eqref{eqn:Covar_Hamilton} where now we've written out
-$V_{A,i,j}$ as a covariance between the behavioural phenotype of our
-focal individual $i$ and the interacting individuals $j$.
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/vampire_bat/Vampire_bat_rotated.png}
-\end{center}
-\caption{common vampire bat ({\it Desmodus rotundus}). This \href{https://www.biodiversitylibrary.org/page/40299740\#page/274/mode/1up}{one} was
-  caught on Darwin's horse during his travels in Chile. \BHLNC{The zoology of the voyage of H.M.S. Beagle ... during
-    the years 1832-1836 (1838). Owen R, Darwin,C}{https://www.biodiversitylibrary.org/page/40299839\#page/372/mode/1up}{Natural History Museum Library, London} } \label{fig:vampire_bat}  
-\end{marginfigure}
-
-So we need a sufficiently positive level of covariance between the
-altruistic behaviour of individual $i$ and that of the interacting
-individuals to outweigh the costs, i.e. altruists interact
-sufficiently often with altruists to allow altruistic individuals who are paying costs to on average
-receive the fitness benefits from other individuals.  Under kin-selection models, this positive covariance comes from the positive
-genetic covariance interacting with family members. However, this positive covariance can also arise
-if altruists display context-dependent strategies, such as tit-for-tat, where they are only
-altruistic towards individuals who haven't cheated them recently in the
-past \citep{queller2011expanded}. 
-
-We find altruism in some seemingly strange places. Vampire bats ({\it Desmodontinae}), as their name suggests, feed only on the blood of other animals. 
-However, blood is not quite the superfood that Dracula would have you
-believe. Blood is mostly water. Flying is incredibly energetic, and
-so the bats have to consume half their body weight in blood a night and
-will quickly die if they go without a meal. It is often hard to find
-enough blood a night, and so who miss out on feeding only survive by
-other bats sharing their blood meals. Vampire bats do share their
-meals with their kin, but also with unrelated individuals. As
-predicted by reciprocal altruism they tend to share with individuals
-who have previously shared foods with them, thus the food sharing can be
-seen as an adaptive behaviour \cite{wilkinson1984reciprocal,carter2013food}.  
-
-
-
-% https://www.biodiversitylibrary.org/page/40299839?utm_source=Twitter&utm_medium=social%20media&utm_campaign=Bat%20Week&utm_content=NHM%20London#page/373/mode/1up caught on Darwin's horse
-% https://books.google.com/books?id=QiYTCgAAQBAJ&pg=RA1-PA2&lpg=RA1-PA2&dq=vampire+bat+Horse+darwin&source=bl&ots=rtqY4WgFoa&sig=ACfU3U3gwoxqkPp3syYUKqWo8Cv2r4jfOA&hl=en&sa=X&ved=2ahUKEwiZv5-lrdDoAhWPs54KHf8DD4oQ6AEwGHoECAwQKQ#v=onepage&q=vampire%20bat%20Horse%20darwin&f=false
-% https://commons.wikimedia.org/wiki/File:FMIB_47241_Vampire_Bat_(Desmodus_d%27orbignyi)_Caught_on_Back_of_Darwin%27s_Horse,_near_Coquimbo.jpeg
-
-
-%ncbi.nlm.nih.gov/pmc/articles/PMC3574350/
-% https://s3.amazonaws.com/academia.edu.documents/31158927/Wilkinson84.pdf?response-content-disposition=inline%3B%20filename%3DReciprocal_food_sharing_in_the_vampire_b.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWOWYYGZ2Y53UL3A%2F20191104%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191104T203417Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3ce7b468da6f6db9bd8b272eb208635e297c4601999f3d2436554eaa9d0a9eca
-
-
-
-%%% Cleaner fish
-%% https://www.flickr.com/photos/biodivlibrary/7044673785/in/photolist-Kzvtcm-KvrHAP-Kzwng1-KzvWcU-w3ZipX-x8gRz2-bJvN5R-wXDjvj-u4L29W-whbRHV-x7J95K
-
-% Green beards
-% https://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2009.00842.x
-% https://www.nature.com/articles/29064
 
 \subsection{Sexual selection and the evolution of mate preference by indirect benefits. }
 
@@ -632,7 +335,7 @@ flashing lures.
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/Quant_gen/glow_worm_flashes/glow_worm_flashes.pdf}
 \end{center}
-\caption{Female Glow worms who have the largest, and therefore
+\caption{Female glow worms who have the largest, and therefore
   brightest, lanterns have the highest fecundity. Data from
   \citet{hopkins2015m}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/glow_worm_flashes/glow_worm_flashes.R} } \label{fig:glow_worms_lantern}
 \end{marginfigure}
@@ -778,3 +481,366 @@ because individuals find them beautiful and are attracted to them.
 
 
 % potential guppy image https://www.google.com/imgres?imgurl=https%3A%2F%2Fc1.staticflickr.com%2F1%2F457%2F20360503816_a88cdcd96d_b.jpg&imgrefurl=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Finternetarchivebookimages%2F20360503816&docid=jtYRcc7UmAvIeM&tbnid=DBAauK0xAgK4mM%3A&vet=10ahUKEwirkrKWy8rcAhWTAHwKHfVdCmUQMwg2KAEwAQ..i&w=1024&h=840&itg=1&client=firefox-b-1-ab&bih=681&biw=1280&q=Lebistes%20reticulatus&ved=0ahUKEwirkrKWy8rcAhWTAHwKHfVdCmUQMwg2KAEwAQ&iact=mrc&uact=8
+
+
+\subsection{Hamilton's Rule and the evolution of altruistic and
+  selfish behaviours}
+\begin{quotation}
+``~`The only reason for making a buzzing-noise that I know of is
+because you're a bee.' Then [Pooh] thought another long time, and
+said: `The only reason for being a bee that I know of is to make
+honey...And the only reason for making honey is so as I can eat it.'~''
+--Winnie-the-Pooh, \citet{milne}.  
+\end{quotation}
+
+%https://www.flickr.com/photos/bibliodyssey/albums/72157610318114895
+
+%“If it could be proved that any part of the structure of any one species had been formed for the exclusive good of another species, it would annihilate my theory, for such could not have been produced through natural selection.”
+
+%% https://commons.wikimedia.org/wiki/File:1911_Britannica_-_Bee_-_Apis_mellifica.png
+%%bear with bee hive https://www.flickr.com/photos/internetarchivebookimages/20323812950/
+
+One of the seismic shifts caused by Darwin's work was the realisation that organisms don't exist for the benefit of other
+individuals or other species. 
+Bees didn't evolve to pollinate flowers, any more than they 
+evolved to make honey for bears. If we can say that there
+is a `reason' why an organism exist it is only to leave offspring to the
+next generation.  Pooh can be forgiven for straying from Darwinian thought, as he exists
+for the benefit of Christopher Robin and other childrens' bedtime
+stories. 
+
+However, there's a wrinkle to this Darwinian view. Worker bees don't make honey
+to benefit their offspring, they are sterile and are working
+for the benefit of the Queen bee and her offspring. 
+\marginnote{\citet{smith1964kin} coined the name kin selection to describe Hamilton's approach to this problem. It's also sometimes called the inclusive fitness approach, as we need to include not just one individual's fitness but the weighted sum of all the fitness of all their relatives. }
+Individuals frequently behave in ways that sacrifice their own fitness for the
+benefit of others. That selection favours such apparent acts of altruism is puzzling at first sight. \citet{hamilton1964genetical,hamilton1964genetical2} supplied the first general evolutionary explanation of such altruism. 
+His intuition was that while an individual is losing out of some reproductive output, the alleles underlying an altruistic behaviour can still spread in the population if this cost is outweighed by benefits gained 
+through the transmission of these alleles through a related individual. Note that this means that the
+allele is not acting in an self-sacrificing manner, even though individuals may as a result. 
+
+Altruism reflects social interactions. So as a simple model let's imagine that individuals interact in pairs, with our focal
+individual $i$ being paired with an individual $j$.  
+Imagine that individuals have two possible phenotypes $X=1$ or $0$,
+corresponding to providing or withholding some small act of `altruism'
+(we could just as easily flip these labels and call them an unselfish
+act and a selfish act respectively). 
+Our pairs of individuals interacting could, for example, be siblings sharing a
+nest. The altruistic trait could be as simple as growing at a slightly slower rate so as to reducing sibling-competition for food from
+parents, or more complicated acts of altruism such as children foregoing their own reproduction so as to help their parents raise their siblings.
+
+Providing the altruistic act has a cost $C$ to the fitness of our individual and failing to provide this act has no cost. Receiving this altruistic act confers a fitness benefit $B$ over individuals who did not receive this act. \citeauthor{hamilton1964genetical}'s rule states that such a trait will spread through the population if 
+\begin{equation}
+ 2F B > C 
+\end{equation}
+where $F$ is the average kinship coefficient between the interacting
+individuals ($i$ and $j$). In the usual formulation of Hamilton's Rule our $2F$ is replaced by the `Coefficient of relationship', which is the
+  proportion of alleles shared between the individuals. Here we use
+  two times the kinship coefficient to keep things inline with our 
+  notation for these chapters. Note that if our individuals are themselves inbred we need
+to do a little more careful to reconcile these two measures.
+So the altruistic behaviour will spread even if it is costly to the individual if its cost is paid off by the benefit to sufficiently related individuals. 
+
+As one example of kin-selection consider \citet{krakauer2005kin}'s work on
+co-operative courtship in wild turkeys ({\it Meleagris
+  gallopavo}). Male turkeys often form display
+partnerships, with a subordinate male helping a dominant male with
+displaying to females and defending the females from other groups of males. \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Turkey/turkey.jpg}
+\end{center}
+\caption{Turkey  ({\it Meleagris
+  gallopavo}). \BHLNC{Bilder-atlas zur Wissenschaftlich-populären
+Naturgeschichte der Vögel in ihren sämmtlichen Hauptformen (1864). Wien,K.K. Hof}{https://www.biodiversitylibrary.org/page/33050564\#page/199/mode/1up}{Smithsonian Libraries} } \label{fig:turkey}
+\end{marginfigure}  These pairs are often full brothers ($F=0.25$),
+with the subordinate male often being the younger of the two. The
+subordinate male often loses out on mating opportunities over their
+entire lifetime by acting as a wingman for their older 
+brothers. \citet{krakauer2005kin} estimated that dominant males gained
+an extra $6.1$ offspring when they display with a partner than males
+who display alone. Rhe subordinate males lose out on fathering $0.9$
+offspring compared to solitary males. Thus the costs of helping by
+subordinate males is more than compensated by the fitness gains of
+their brothers ($(2 \times 0.25)  \times 6.1 > 0.9$), and so the
+evolution of this  altruistic  helping in co-operative courtship is potentially well explained by kin-selection \citep[see ][for more analysis]{akccay2016}.
+\begin{question}{}
+How would this answer be changed if the male Turkey partnerships were only
+$\nicefrac{1}{2}$ sibs, or first cousins?
+\end{question}
+
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Response_to_sel/Hamiltons_rule_B_C.pdf}
+\end{center}
+\caption{{\bf Top)} The fitness of individual $i$ as a function of
+  their behavioural phenotype, where altruistic/non-altruistic
+  behavioural phenotypes are encoded as $1$ and $0$ respectively. The
+  direct fitness cost of behaving altruistically is $C$. {\bf Bottom)}
+  The fitness of our focal individual $i$ as a function of the
+  behavioural phenotype of their interacting partner ($j$). Our focal
+  individual gets an increase $B$ in fitness if their partner behaves
+  altruistically. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Quant_gen/Hamilton_rule_B_C.R}} \label{fig:Hamilton_B_C}
+\end{marginfigure}
+
+
+Where does this result come from? Well, we can use our quantitative genetics framework to gain some 
+intuition by deriving a simple version of Hamilton's Rule by thinking
+about the phenotypes of an individual's kin as genetically correlated
+phenotypes. To sketch a proof of this result, let's assume that our focal $i$ individual's fitness can be written as 
+\begin{equation}
+W(i,j)= W_0 + W_i +W_j
+\end{equation}
+where $W_i$ is the contribution of the fitness of the individual $i$ due
+to their own phenotype, and $W_j$ is the contribution to our
+individual $i$'s fitness due to the interacting individual $j$'s behaviour (i.e. $j$'s phenotype).
+With the benefit $B$ and cost $C$, our $W(i,j)$ are depicted in Figure \ref{fig:Hamilton_B_C}. 
+
+Following our multivariate breeder's equation, we can write the expected change of our behavioural phenotype as 
+\begin{equation}
+R = \beta_i V_A + \beta_j V_{A,i,j},
+\end{equation}
+Our altruistic phenotype is increasing in the population if $R>0$, i.e. if 
+\begin{equation}
+  \beta_i V_A + \beta_j V_{A,i,j}  > 0 \end{equation}
+\marginnote{ Here we've following a simplified version of
+  \citet{queller1992quantitative}'s treatment, to re-derive Hamilton's rule in a quantitative genetics framework (Hamilton's original papers did this in a population genetics framework).} The slope $\beta_i$ of the regression of our focal individual's
+behavioural phenotype on fitness is proportional to $-C$. The slope
+$\beta_j$ of the regression of our interacting partner's phenotype on
+our focal individual's fitness is proportional to $B$ (with the same
+constant of proportionality). Therefore, our altruistic phenotype is increasing in the population if
+\begin{eqnarray}
+  \beta_i V_A + \beta_j V_{A,i,j} & > 0  \nonumber  \\
+ B \frac{V_{A,i,j}}{V_A} & >  C  \label{eqn:Covar_Hamilton}
+\end{eqnarray}
+So what's the average genetic covariance between
+individual $i$ and $j$'s altruistic phenotype? It's the same
+behavioural phenotype in both individuals, so the phenotypes are
+genetically correlated if our individuals are related to each
+other. The covariance of the same phenotype between two individuals is
+just $2 F_{i,j} V_A$ (see \eqref{additive_covar_general_rellys}). So
+our altruistic phenotype is increasing in the population if
+\begin{align}
+   B\frac{2 F_{i,j} V_A}{V_A} &> C \nonumber  \\
+  2 F_{i,j} B & > C \label{eqn:Hamiltons_rule}
+\end{align}
+Seen from this perspective, \citeauthor{hamilton1964genetical}'s rule
+is simply a statement that altruistic behaviours can spread via
+kin-selection, if the average cost to an individual of displaying an
+altruistic phenotype, i.e. carrying altruistic alleles, is paid back through the average benefit of interacting with altruistic relatives (kin).
+
+ \begin{marginfigure}
+\begin{center}
+\includegraphics[width= 0.7 \textwidth]{illustration_images/Quant_gen/honey_ant/honey_ant.png}
+\end{center}
+\caption{Australian honey-pot Ant ({\it Camponotus inflatus}). Honey-pot ants are gorged with
+  honeydew collected by their nest mates, till they swell to the size
+  of grapes, and are used as a food storage
+  device.  \BHLNC{Ants,
+  bees, and wasps; a record of observations on the habits of the
+  social Hymenoptera (1897) Lubbock, J.}{https://www.biodiversitylibrary.org/page/9657360\#page/485/mode/1up}{Smithsonian Libraries}  } \label{fig:honey_ant}
+\end{marginfigure} 
+%
+Under the kin-selection, relatedness and the breeding structure of the populations are
+hypothesized to be a key factor in determining the evolution of altruistic behaviours. 
+One most impressive example of the evolution of altruism is the
+repeated evolution of eusociality, where sterile castes have evolved
+to help to rear their siblings rather than their own offspring. Eusociality has evolved at least eight independent times in
+ Hymenoptera (bees, wasps, and ants). There's huge variation in
+ mating systems in Hymenoptera from high levels of multiple mating to monandry. \citet{hughes2008ancestral} conducted a
+comparative phylogenetic analysis of mating system across hundreds of Hymenoptera species. They found that each of the eight of
+eusocial clades had monandry, females mating with a single male, as an ancestral
+state. Thus, eusociality initially evolved in populations where
+relatedness was maximized among siblings.
+%  1791 book on Hymenoptera https://twitter.com/BioDivLibrary/status/1174773646113562624
+\begin{figure}
+\begin{center}
+\includegraphics[width= 0.75 \textwidth]{illustration_images/Quant_gen/Hymenoptera/Hymenoptera.jpg}
+\end{center}
+\caption{A selection of the huge diversity of  Hymenoptera. \BHLNC{Naturgeschichte, Klassification und Nomenclatur der
+    Insekten vom Bienen, Wespen und Ameisen. Christ, JL}{https://www.biodiversitylibrary.org/item/165219?\#page/6/mode/1up}{University of Illinois Urbana Champaign} } \label{Hymenoptera}
+\end{figure}
+
+%Once eusociality evolved,
+%the females in some eusocial species have evolved to mate multiple
+%times but this only occurs in species where non-reproductive females
+%can not regain fertility, i.e. 
+
+%\erin{this phrasing is a little misleading because it's 'paid back' to the allele, but not to the individual. I'd suggest something like 'if the fitness cost of altruism to an allele is paid back on average through the benefits of interacting with altruistic relatives (kin).
+
+
+% Special eg on kinship, good for other egs https://www.cell.com/current-biology/issue?pii=S0960-9822(18)X0012-8
+
+%% reciprocal altuisim Quller
+%% https://www.pnas.org/content/pnas/108/Supplement_2/10792.full.pdf
+% http://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1000&context=sysc_fac
+
+% https://sci-hub.se/https://www.nature.com/articles/318366a0
+%% https://archive.org/stream/allaboutanimalsf00newy/allaboutanimalsf00newy#page/53/mode/1up
+
+% http://darwin-online.org.uk/content/frameset?pageseq=23&itemID=F8.2&viewtype=side
+
+
+%%  Beaver https://twitter.com/EponymousBreeze/status/1226934486090145799/photo/1
+\paragraph{Other forms of altruism}
+Kin-selection can favour altruism because individuals carrying
+altruistic alleles interact with other \emph{ related} individuals who tend to display altruistic phenotypes and so gain an advantage. However, there are other ways that altruistic behaviours can spread than just through the interactions with kin.
+
+There's an inherent problem with co-operation among
+non-relatives. Cheaters often win.  To see the quandary of
+co-operation lets consider the classic prisoner's dilemma. Imagine
+that two criminals are caught by the police, there's not enough
+evidence to get them on the main charge but they will be convicted of
+a lesser charge. The prisoners don't know each other well, they've
+never worked together before. They face a year in prison each on the lesser charge. The police offer each prisoner a deal, testify against your codefendant and we'll drop all charges against you, your codefendant will get three years.  If they both choose to sell out they'll each get two years. The best-combined outcome for the defendants is to co-operate with each other and keep silent, they'll each serve a year. However, the defendants can not confer, and each has no way to know if the other has squealed and ratted him out. The rational choice in this one-off interaction is to sell out your fellow prisoner. There are many situations like this where an interaction between individuals has the best outcome if they work together. However, as individuals could cheat on the interaction, the rational outcome may be to not co-operate. To place this in an evolutionary setting, we could imagine that the fitness of organisms in a population depended on their strategies in a one-off prisoner's dilemma game, e.g. pairing individuals at random. In such settings, a cheating individual would have higher fitness than an altruist, and so the population would evolve to all cheat.  Yet cooperation between non-relatives has evolved many times. 
+
+%% %for diagonal slash table https://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells
+\begin{table}
+\begin{tabular}{l|*{2}{c}}\hline
+  & Silent (Co-operates) & Confesses (Cheats)\\ \hline
+Silent (Co-operates)  & 1,~1 & 3,~0 \\  %& \backslashbox{1}{1} & \backslashbox{3}{0} \\
+Confesses (Cheats) & 0,~3 & 2,~2\\      %\backslashbox{0}{3} & \backslashbox{2}{2} \\
+\end{tabular}
+\caption{The prisoner's  dilemma. Rows prisoner 1's choice, columns prisoner 2's choice. each cell gives time served by prisoner 1 and 2.}
+\end{table}
+
+The key factor leading to non-cooperative behaviour in this prisoner's
+dilemma was the one-off nature of the interaction. The optimum
+strategy changes when our partners face this situation together
+multiple times, e.g. if our gang members being hauled in regularly
+over the years in their lives in crime. Intuitively, if one of our
+prisoners knows that her fellow gang member didn't betray her last
+time then you might expect that she would be more inclined to trust
+them and not betray them this time. This setup is called the iterative
+prisoner dilemma, with our prisoners facing the `game' with the costs
+and benefits repeatedly with knowledge of how the other player behaved
+on previous rounds of the game.  in this iterated setting, a simple
+`tit-for-tat'  strategy is possible \citep{axelrod1981evolution}. Players following this strategy
+starts the game by cooperating, and then copy the other prisoner's
+strategy from the last move (if the other prisoner cooperated last time
+they cooperate this time, and similarly for cheating). Imagine again
+our population of organisms that are now randomly paired to play
+iterated games for their fitness. If many individuals in the
+population play a tit-for-tat strategy, a cheating individual in this
+population has lower fitness than a tit-for-tat
+individual. Individuals playing a tit-for-tat strategy do not
+cooperate with cheaters, and so pay little relative cost for
+interacting with these individuals, but they gain the benefits of
+cooperation with other altruistic individuals. Thus `reciprocal
+altruism', where individuals provide costly aid to individuals they
+expect will reciprocate at some future date, can evolve \citep{trivers1971evolution}. Note that there's nothing truly altruistic about reciprocal
+altruism, the interacting individuals are simply acting to increase their direct
+fitness across their lifetimes and as such the interaction is mutually beneficial. Thus some
+prefer the name `reciprocity' rather than `reciprocal altruism'.
+
+We can use our Hamilton's rule framework to understand the evolution
+of reciprocal altruism in more detail \citep{queller2011expanded}. The
+only requirements for Hamilton's rule to predict the spread of an
+altruistic behaviour is that
+\begin{eqnarray}
+ B \frac{Cov(X_i,X_j)}{V_A} & >  C  
+\end{eqnarray}
+this is the same as eqn. \eqref{eqn:Covar_Hamilton} where now we've written out
+$V_{A,i,j}$ as a covariance between the behavioural phenotype of our
+focal individual $i$ and the interacting individuals $j$.
+
+\begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/Quant_gen/vampire_bat/Vampire_bat_rotated.png}
+\end{center}
+\caption{common vampire bat ({\it Desmodus rotundus}). This \href{https://www.biodiversitylibrary.org/page/40299740\#page/274/mode/1up}{one} was
+  caught on Darwin's horse during his travels in Chile. \BHLNC{The zoology of the voyage of H.M.S. Beagle ... during
+    the years 1832-1836 (1838). Owen R, Darwin,C}{https://www.biodiversitylibrary.org/page/40299839\#page/372/mode/1up}{Natural History Museum Library, London} } \label{fig:vampire_bat}  
+\end{marginfigure}
+
+So we need a sufficiently positive level of covariance between the
+altruistic behaviour of individual $i$ and that of the interacting
+individuals to outweigh the costs, i.e. altruists interact
+sufficiently often with altruists to allow altruistic individuals who are paying costs to on average
+receive the fitness benefits from other individuals.  Under kin-selection models, this positive covariance comes from the positive
+genetic covariance interacting with family members. However, this positive covariance can also arise
+if altruists display context-dependent strategies, such as tit-for-tat, where they are only
+altruistic towards individuals who haven't cheated them recently in the
+past \citep{queller2011expanded}. Note that we're really stretching
+our use of the multivariate breeder's equation here, these covariances
+now aren't really genetic covariances. These covariances aren't
+between traits in the same individual, or between related individuals,
+they are trait covariances by individuals interacting with similarly
+co-operative individuals. These interacting individuals don't even
+have to be same species here, as these models can be used to
+understand the evolution of inter-species mutualisms.
+
+We find altruism in some seemingly strange places. Vampire bats ({\it Desmodontinae}), as their name suggests, feed only on the blood of other animals. 
+However, blood is not quite the superfood that Dracula would have you
+believe. Blood is mostly water. Flying is incredibly energetic, and
+so the bats have to consume half their body weight in blood a night and
+will quickly die if they go without a meal. It is often hard to find
+enough blood in a night, and so who miss out on feeding only survive by
+other bats sharing their blood meals. Vampire bats do share their
+meals with their kin, but also with unrelated individuals. As
+predicted by reciprocal altruism they tend to share with individuals
+who have previously shared foods with them, thus the food sharing can be
+seen as an adaptive behaviour \citep{wilkinson1984reciprocal,carter2013food}.  
+
+% https://www.biodiversitylibrary.org/page/40299839?utm_source=Twitter&utm_medium=social%20media&utm_campaign=Bat%20Week&utm_content=NHM%20London#page/373/mode/1up caught on Darwin's horse
+% https://books.google.com/books?id=QiYTCgAAQBAJ&pg=RA1-PA2&lpg=RA1-PA2&dq=vampire+bat+Horse+darwin&source=bl&ots=rtqY4WgFoa&sig=ACfU3U3gwoxqkPp3syYUKqWo8Cv2r4jfOA&hl=en&sa=X&ved=2ahUKEwiZv5-lrdDoAhWPs54KHf8DD4oQ6AEwGHoECAwQKQ#v=onepage&q=vampire%20bat%20Horse%20darwin&f=false
+% https://commons.wikimedia.org/wiki/File:FMIB_47241_Vampire_Bat_(Desmodus_d%27orbignyi)_Caught_on_Back_of_Darwin%27s_Horse,_near_Coquimbo.jpeg
+
+
+%ncbi.nlm.nih.gov/pmc/articles/PMC3574350/
+% https://s3.amazonaws.com/academia.edu.documents/31158927/Wilkinson84.pdf?response-content-disposition=inline%3B%20filename%3DReciprocal_food_sharing_in_the_vampire_b.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWOWYYGZ2Y53UL3A%2F20191104%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191104T203417Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3ce7b468da6f6db9bd8b272eb208635e297c4601999f3d2436554eaa9d0a9eca
+
+\begin{ChapterSummary}
+\item Natural selection rarely acts on one trait in isolation, rather
+selection often acts on many traits at once. Thus
+the short-term response of selection on a trait also reflects
+selection on other partially genetically correlated traits. Many evolutionary
+tradeoffs, among different aspects of fitness, can be thought of in
+these terms.
+\item The between generation response of multiple traits to selection can be understood and predicted by the multi-variate (multiple traits) breeder's equation. The response of a trait ($R_1$) depends on
+  the additive genetic variance for that trait and direct selection
+  gradient on the trait ($V_{A,1} \beta_1$), this direct response is
+  modified by indirect selection on the trait(s) ($2$) that genetically
+  covary ($V_{A,12} \beta_2$).
+\item We can estimate the linear, directional selection gradients
+  ($\beta$s) by the multivariate linear regression of fitness on phenotypes. We can incorporate stabilizing-, disprutive-, and covarying-selection among traits by including quadratic terms for the phenotypes into this regression.
+ \item We can interpret the multivariate breeder's equation in terms of a fitness landscape approach, and see that natural selection can drive our population towards local peaks of mean fitness. However,  the path it takes is biased to line up better with the genetic correlations among traits, which can in some cases slow the response of our population to selection.
+ \item The multivariate breeder's equation is applied in many places in evolutionary theory. For example, the evolution of indirect selection for mate preference is an application, as the genetic correlation established by assortative mating between preference traits and display traits is key to understanding why mate preference can respond to indirect selection. We also saw how kin selection models can be developed to understand altruism and Hamilton’s rule using the multivariate breeder's equation by seeing relatives as having genetically covarying fitnesses.
+   
+ \end{ChapterSummary}
+
+\begin{question}{}
+You collect observations of red deer within a generation, recording an
+individual's number of offspring and phenotypes for a number of traits which are known to
+have additive genetic variation. Using your data, you construct the plots shown in
+Figure \ref{fig:red_deer_Q} (standardizing the phenotypes). Answer the following
+questions by choosing one of the bold options. Briefly justify each of your answers with reference to the breeder's
+equation and multi-trait breeder's equation. \\
+{\bf A)}	Looking just at figure \ref{fig:red_deer_Q} A, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf B)}	Looking just at figures \ref{fig:red_deer_Q} B and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+
+{\bf C)}	Looking at figures \ref{fig:red_deer_Q} A, B, and C, in what direction do you expect male antler size to evolve? \\
+{\bf Insufficient information, increase, decrease.}\\
+\end{question}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{figures/Red_deer_selection.pdf}
+\end{center}
+\caption{ Observations of red deer within a generation; recording an
+individual's number of offspring and phenotypes (simulated data), which are known to
+have additive genetic variation. The figures left to right are
+A-C. (Data are simulated. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Red_deer_MV_selection.R}) } \label{fig:red_deer_Q}
+\end{figure}
+
+
+%%% Cleaner fish
+%% https://www.flickr.com/photos/biodivlibrary/7044673785/in/photolist-Kzvtcm-KvrHAP-Kzwng1-KzvWcU-w3ZipX-x8gRz2-bJvN5R-wXDjvj-u4L29W-whbRHV-x7J95K
+
+% Green beards
+% https://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2009.00842.x
+% https://www.nature.com/articles/29064
