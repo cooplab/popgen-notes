@@ -885,12 +885,12 @@ We can think about the average
 phenotype of an individual who received an allele 1 from their parent as the average of the MC phenotype for heterozgotes and 11 homozygotes, weighted by the probability that
 the individual has these genotypes, i.e. the probability they receive an additional allele $1$ or an allele $2$ from their other parent:
 \begin{equation} 
-  a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1},
+  a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1}, \label{eqn:add_effect1}
 \end{equation}
 Similarly, if your parent transmitted an 2 allele to you, your average
 MC phenotype would be
 \begin{equation}
-  ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} 
+  ~~ a_{\ell, 2} = p\overline{X}'_{\ell,1}  + q\overline{X}'_{\ell,0} \label{eqn:add_effect2}
 \end{equation}
 
 %the marginal value for allele 1, $a_{\ell, 1}$,  follows from the fact that (assuming HW) an allele 1 will be
@@ -1014,7 +1014,7 @@ additive breeding values at locus $\ell$, assuming HW proportions, is
 V_{A, \ell} &= p^2 (2a_{\ell,2})^2 + 2pq (a_{\ell,1}+a_{\ell,1})^2 + q^2
 (2a_{\ell,0})^2 \nonumber \\
 & = 2(p a_{\ell, 1}^2 + q a_{\ell, 2}^2 ) \nonumber \\
-& = 2pq \alpha_{\ell}^2
+& = 2pq \alpha_{\ell}^2 \label{eqn:additive_var_additive_effect}
 \end{align}
 The total additive variance for the whole genotype can
 be found by summing the individual additive genetic variances over loci

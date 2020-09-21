@@ -42,7 +42,7 @@ To take a first stab at this problem, let's think of a very large
 haploid population in which a single individual starts with the selected allele, and ask
 about the probability of eventual loss of our selected allele starting
 from this single copy. To derive this probability of loss ($p_L$), we'll make use of a
-simple argument \citep[derived from branching processes][]{fisher1923xxi,haldane1927mathematical}. Our selected
+simple argument \citep[derived using branching processes by][]{fisher1923xxi,haldane1927mathematical}. Our selected
 allele will be eventually lost from the population if every individual
 with the allele fails to leave descendants.
 \begin{figure*}
@@ -155,7 +155,7 @@ outbred population). \\
 \caption{ 
 {\bf Map of G6PD-deficiency allele frequencies across Asia.} 
 The pie chart shows the frequency of G6PD-deficiency alleles. 
-The size of the pie chart indicates the number of G6PD-deficient individuals sampled.
+The size of the pie chart indicates the number of {\it G6PD}-deficient individuals sampled.
 Countries with endemic malaria are colored yellow. 
 Figure from \citet{Howes-g6pd-variants}, \PLOSccBY.
 %\url{http://www.malariajournal.com/content/12/1/418}. 
@@ -167,7 +167,7 @@ Over roughly the past ten thousand years, adaptive alleles conferring resistance
 and spread through human populations in areas where malaria is endemic
 \citep{Kwiatkowski:05}. One particularly impressive case of convergent evolution in response to
 selection pressures imposed by malaria are the numerous changes
-throughout the G6PD gene,
+throughout the {\it G6PD} gene,
 which include at least 15 common variants in Central and Eastern Asia alone that lower the activity of the
 enzyme \citep{Howes-g6pd-variants}. 
 These alleles are now found at a combined frequency of around 8\% frequency in malaria endemic areas,
@@ -175,12 +175,12 @@ rarely exceeding 20\% \citep{Howes-g6pd-preval}. Whether these variants {\it all
 but a number of these alleles have demonstrated effects against
 malaria and are thought to have a selective advantage to heterozygotes $sh > 5\%$ where malaria is endemic \citep{Ruwende-g6pd,tishkoff-g6pd,Louicharoen-g6pd}. 
 
-With a 5\% advantage in heterozygotes, a G6PD allele present as a
+With a 5\% advantage in heterozygotes, a {\it G6PD} allele present as a
 single copy would only have a 10\% probability of
 fixing in the population. If that's so, how come malaria adaptation has
-repeatedly occurred via changes at G6PD? Well, maybe adaptation didn't
+repeatedly occurred via changes at {\it G6PD}? Well, maybe adaptation didn't
 start from a single copy of the selected allele. How many copies of
-the G6PD-deficiency alleles do we expect were segregating in the population before
+the {\it G6PD}-deficiency alleles do we expect were segregating in the population before
 selection pressures changed? 
 \begin{marginfigure}
 \begin{center}
@@ -194,7 +194,7 @@ Century. Woodner Collection, National Gallery of Art. Public Domain, \href{https
 \end{center}
 \end{marginfigure}
 
-In the absence of malaria, these G6PD alleles are deleterious with
+In the absence of malaria, these {\it G6PD} alleles are deleterious with
 carriers suffering from G6PD deficiency,
 leading to hemolytic anemia when individuals are exposed to a variety of different compounds, notably those present in fava beans.
 There's upward of one hundred bases where G6PD-deficiency alleles can arise, so assuming a mutation rate of $\approx 10^{-8}$ per base pair per
@@ -212,10 +212,11 @@ allele present in the population when selection pressures shifted at the introdu
 chance that one of these newly adaptive alleles is lost
 is $90\%$ but the chance that they're all lost is $<(0.9)^{40}\approx 0.02$, i.e. there would have been a
 greater than $98\%$ chance that adaptation would occur via one or more
-alleles at G6PD. How many alleles would escape drift? Well with $40 - 400$
+alleles at {\it G6PD}. How many alleles would escape drift? Well with $40 - 400$
 copies of the allele pre-malaria, and each of them having a $10\%$
-probability of escaping drift, we expect between $4$ and $40$ G6PD
-alleles to escape drift and contribute to adaptation. We see $15$ common G6PD
+probability of escaping drift, we expect between $4$ and $40$ {\it G6PD}
+alleles to escape drift and contribute to adaptation. We see $15$
+common {\it G6PD}
 alleles in Eurasia, so our simple model of adaptation from
 mutation-selection balance seems reasonable.  
 
@@ -229,7 +230,7 @@ mutation-selection balance seems reasonable.
   licensed under CC BY 2.0. Haldane, Public Domain \href{https://en.wikipedia.org/wiki/J._B._S._Haldane\#/media/File:J._B._S._Haldane.jpg}{wikimedia}.} \label{fig:haldanes_sieve}
 \end{marginfigure}
 
-\begin{question}
+\begin{question}{}
 `Haldane's sieve' is the name for the idea that the mutations that contribute to adaptation are likely to be dominant or at least co-dominant. \\
 {\bf A)} Briefly explain this argument with a verbal model relating to the
 results we've developed in the last two chapters. \\
@@ -237,7 +238,7 @@ results we've developed in the last two chapters. \\
 {\bf C)} Haldane's sieve is likely to be less important in inbred,
 e.g. selfing, populations. Why is this? \\
 
-\end{question}
+\end{question}{}
  \begin{marginfigure}
  \begin{center}
  \includegraphics[width=0.7 \textwidth]{illustration_images/Genetic_drift_selection/Isopod_Asellidae/20406697312_1a9aa75024_z.jpg}
@@ -245,20 +246,6 @@ e.g. selfing, populations. Why is this? \\
  \caption{cress bug ({\it Asellus aquaticus}) in the isopod family
    {\it Asellidae}. \BHLNC{Brehms Tierleben. Allgemeine kunde des Tierreichs (1911).  Brehm A.E.}{https://www.flickr.com/photos/internetarchivebookimages/20406697312/}{Smithsonian Libraries}} \label{fig: asellid_isopod}
  \end{marginfigure}
-\begin{question}
-Melanic squirrels suffer a higher rate of predation (due to hawks) than normally pigmented squirrels. Melanism is due to a dominant, autosomal mutation. The frequency of melanic squirrels at birth is $4 \times 10^{-5}$.\\
-
-{\bf A)} If the mutation rate to new melanic alleles is $10^{-6}$, assuming the melanic allele is at mutation-selection equilibrium, what
-is the reduction in fitness of the heterozygote? \\ 
-Suddenly levels of pollution increase dramatically in our population,
-and predation by hawks now offers an equal (and opposite) advantage to
-the dark individuals as it once offered to the normally pigmented
-individuals. \\
-{\bf B)} What is the probability that a single copy of this allele
-(present just once in the population) is lost?\\ 
-{\bf C)}  If the population size of our squirrels is a million
-individuals, and is at mutation-selection balance, what is the probability that the population adapts from one or more allele(s) from the standing pool of melanic alleles?  
-\end{question}
 
 
 \section{The interaction between genetic drift and weak selection.}
@@ -337,14 +324,13 @@ so we arrive at our answer. Assuming that $s \ll 1$, $p^{\prime}
 \approx p$, then in practice we can use
 \begin{equation}
 \textrm{Var} (\Delta p)  =\textrm{Var} (p^{\prime} - p) \approx \nicefrac{p(1-p)}{2N}. \nonumber
-\end{equation} }
-where the previous allele frequency $p$ drops out because it is a constant and the variance in our new allele frequency follows from the fact that we
+\end{equation} } where the previous allele frequency $p$ drops out because it is a constant and the variance in our new allele frequency follows from the fact that we
 are binomially sampling $2N$ new alleles from a frequency $p^{\prime}$ to form the next
 generation. 
 
 To get our first look at the relative effects of selection vs. drift we
 can simply look at when our change in allele frequency caused by
-selection within a generate is reasonably faithfully passed down through the generations. In particular, if our expected change in allele frequency is much greater than the variance around this change, genetic drift will play little role in the fate of our selected allele (once the allele is not at low copy number within the population). When does selection dominant genetic drift? This will happen if $\E(\Delta p) \gg Var(\Delta p)$, i.e. when $|Ns| \gg 1$. Conversely, any hope of our selected allele following its deterministic path will be quickly undone if our change in allele frequencies due to selection is
+selection within a generation is reasonably faithfully passed down through the generations. In particular, if our expected change in allele frequency is much greater than the variance around this change, genetic drift will play little role in the fate of our selected allele (once the allele is not at low copy number within the population). When does selection dominant genetic drift? This will happen if $\E(\Delta p) \gg Var(\Delta p)$, i.e. when $|Ns| \gg 1$. Conversely, any hope of our selected allele following its deterministic path will be quickly undone if our change in allele frequencies due to selection is
 much less than the variance induced by drift. So if the absolute value of our population-size-scaled selection coefficient $| Ns| \ll 1$, then drift will dominate the fate of our allele. \\
 \begin{figure}
 \begin{center}
@@ -354,11 +340,11 @@ much less than the variance induced by drift. So if the absolute value of our po
   selection coefficient $s$ ($h=1/2$) in a diploid population of effective
   size $N_e$. The dashed line gives the infinite population
   solution. The dots give the solution for $s \rightarrow 0$, i.e. the
-  neutral case, where the probability of fixation is $1/(2N_e)$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion}
+  neutral case, where the probability of fixation is $\nicefrac{1}{2N_e}$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion}
 \end{figure}
 
 To make further progress on understanding the fate of alleles with
-selection coefficients of the order $1/N$ requires more careful
+selection coefficients of the order $\nicefrac{1}{N}$ requires more careful
 modeling. However, under our diploid model, with an additive selection coefficient $s$, we can obtain the probability that allele $1$ fixes within the population, starting
 from a frequency $p$ :
 \begin{equation}
@@ -366,9 +352,9 @@ p_F(p) = \frac{1-e^{-2Ns p }}{1-e^{-2Ns}} \label{eqn:prob_fixed}
 \end{equation}
 The proof of this result is sketched out below (see Section \ref{Section:fixation_weakly_sel}). A new allele that arrives in the population at frequency $p=1/(2N)$ has a probability of reaching fixation of
 \begin{equation}
-p_F \left(\frac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
+p_F \left(\nicefrac{1}{2N} \right) = \frac{1-e^{-s }}{1-e^{-2Ns}} \label{eqn:new_mut_prob_fixed}
 \end{equation}
-If $s \ll1$ but $Ns \gg 1$ then $p_F(\frac{1}{2N}) \approx s$, which
+If $s \ll1$ but $Ns \gg 1$ then $p_F(\nicefrac{1}{2N}) \approx s$, which
 nicely gives
 us back the result that we obtained above for an allele under strong selection
 (eqn. \eqref{eqn:diploid_escape}). Our probability of fixation
@@ -376,21 +362,25 @@ us back the result that we obtained above for an allele under strong selection
 and $N$ in Figure \ref{fig:prob_fix_diffusion}. To recover our neutral
 result, we can take the
 limit $s \rightarrow 0$ to obtain our neutral fixation
-probability, $\nicefrac{1}{(2N)}$. \\
+probability, $\nicefrac{1}{2N}$. \\
 
 In the case where $Ns$ is close to $1$, then
 \begin{equation}
-p_F \left( \frac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
+p_F \left( \nicefrac{1}{2N} \right) \approx \frac{s}{1-e^{-2Ns}} \label{eqn:escape_from_intro}
 \end{equation}
 This is greater than our earlier result $p_F=s$ from the branching process
 argument (using our additive model of $h=1/2$), increasingly so for smaller $N$. 
-Why is this?  The reason why is that $p_F$ is really the probability
-of "never being lost" in an infinitely large population. So to persist
-indefinitely, the allele has to escape loss permanently, by never being
-absorbed by the zero state. When the population size is finite, to fix
-we only need to reach a size $2N$ individuals. Weakly beneficial
-mutations ($Ns \sim 1$) are slightly more likely to fix than the s
-probability, as they only have to reach $2N$ to never be lost.
+Why is this? Well in a smaller population a new mutation starts at a
+higher frequency ($\nicefrac{1}{2N}$) than in a larger population,
+this gives an initial boost to the selected allele in smaller populations.
+
+% The reason why is that $p_F$ is really the probability
+% of "never being lost" in an infinitely large population. So to persist
+% indefinitely, the allele has to escape loss permanently, by never being
+% absorbed by the zero state. When the population size is finite, to fix
+% we only need to reach a size $2N$ individuals. Weakly beneficial
+% mutations ($Ns \sim 1$) are slightly more likely to fix than the s
+% probability, as they only have to reach $2N$ to never be lost.
 
 \begin{figure}
 \begin{center}
@@ -398,10 +388,10 @@ probability, as they only have to reach $2N$ to never be lost.
 \end{center}
 \caption{The probability of the fixation of a new mutation with
   selection coefficient $s$ relative to the neutral fixation
-  probability ($\nicefrac{1}{2N_e}$) as a function of the effective
-  size $N_e$. The selection coefficient is shown next to the
+  probability ($\nicefrac{1}{2N}$) as a function of the effective
+  size $N$. The selection coefficient is shown next to the
   line. Note how quickly the probabilities move away from the
-  neutral expectation as $N_es$ moves passed $1$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion_2}
+  neutral expectation as $Ns$ moves passed $1$. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/prob_fix_diffusion.R}} \label{fig:prob_fix_diffusion_2}
 \end{figure}
 
 
@@ -409,8 +399,8 @@ If, for selection to operate on an allele, we need the selection coefficient to 
 $|Ns|\gg 1$, then that holds if $|s|\gg \nicefrac{1}{N}$. 
 Well, effective population sizes are often reasonably large, on the
 order of hundreds of thousands or millions of individuals, thus selection
-coefficients on the order of $10^{-5}$ to $10^{-6}$ can be effectively selected upon, i.e. selection
-equivalent to individuals have incredibly slight advantages in terms
+coefficients on the order of $10^{-5}$ to $10^{-6}$ can be effectively
+selected upon, these represent incredibly slight (dis)advantages in terms
 of the number of offspring they leave to the next generation (see
 Figure \ref{fig:prob_fix_diffusion_2}). 
 While we are incapable of detecting measuring all but the large fitness effect sizes,  
@@ -426,7 +416,7 @@ time periods, natural selection can potentially finely tune various aspects of a
   different codons for Leucine. Data from \href{https://www.genscript.com/tools/codon-frequency-table}{Genscript}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/Codon_bias_Drosophila/codon_bias.R}} \label{fig:Leucine}
 \end{marginfigure}
 As one example of this fine-tuning, consider how carefully crafted and optimized the sequence of codons is for translation. Due to the degeneracy of the protein code, multiple codons code for the same
-amino-acid. For example, there are six different codons that can code
+aminoacid. For example, there are six different codons that can code
 leucine. While these synonymous codons are equivalent at the protein
 level, cells do differ in the number of tRNA molecules that bind
 these codons and so the efficacy and accuracy with which proteins can be formed through
@@ -438,13 +428,13 @@ matter?
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/drift_selection/Codon_bias_Drosophila/Drosophila_codon_bias_expression.pdf}
 \end{center}
-\caption{A measure of unequal codon frequencies (F) plotted in bins of
-    of gene expression (E) for genes across the {\it Drosophila
+\caption{A measure of unequal codon frequencies plotted in bins 
+    of gene expression for genes across the {\it Drosophila
       melanogaster} genome. Data from
   \citet{hey2002interactions}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/Codon_bias_Drosophila/codon_bias.R}} \label{fig:gene_expression_codon_bias}
 \end{marginfigure}
 In many organisms there is a strong bias in the codons to encode
-particular amino-acids, see Figure \ref{fig:Leucine}, with the most
+particular aminoacids, see Figure \ref{fig:Leucine}, with the most
 abundant codon matching the most abundant tRNA in cells. This 'codon bias' likely reflects the combined action of weak selection and
 mutational pressure, pushing the codon composition of the genome and tRNA abundances towards an adaptive compromise. These selection
 pressures have acted over long time periods, as codon usage patterns
@@ -483,13 +473,13 @@ reaching $2N$ copies.
 %\erin{the next sentence wasn't easily interpretable. I changed it but am not sure if the meaning you wanted is there} This \ec{additional non-zero probability of fixation in a finite population is captured by the denominator of the diffusion model above for deleterious alleles with absolute values of selection
 %coefficients where} $|Ns| \sim 1$.
 
-\begin{question}
+\begin{question}{}
 An additive mutation arises that lowers the relative fitness of heterozygotes by $10^{-5}$. What is the probability that this mutation fixes in a diploid population with effective size of $10^4$? What is the probability it fixes in a population of effective size $10^6$? By comparing both to their neutral probability describe the intuition behind this result.
 \end{question}
 
 \citeauthor{ohta1973slightly}
 proposed the `nearly-neutral' theory of
-molecular evolution in a series of papers\cite{ohta1972population,ohta1973slightly,ohta1987very}. She suggested that a reasonable fraction of newly
+molecular evolution in a series of papers\citet{ohta1972population,ohta1973slightly,ohta1987very}. She suggested that a reasonable fraction of newly
 arising functional mutations may have very weak selection
 coefficients, such that species with smaller effective population sizes may
 have higher rates of fixation of these very weakly deleterious
@@ -508,15 +498,15 @@ deleterious mutations.
 \begin{center}
 \includegraphics[width=0.8 \textwidth]{Journal_figs/drift_selection/Galtier_dNdS/Galtier_dNdS.pdf}
 \end{center}
-\caption{Data from 44 metazoan species from Cuttlefish to Sifakas. Each dot represents the
-  average of over many genes plotting $\dNdS$ against synonymous
+\caption{Data from 44 metazoan species from cuttlefish to sifakas. Each dot represents the
+  average over many genes plotting $\dNdS$ against synonymous
   diversity ($\pi_S$). Data from \citet{galtier2016adaptive}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/drift_selection/Galtier_dNdS/Galtier_dNdS.R} } \label{Galtier_dNdS}
 \end{figure}
 
 \begin{marginfigure}
 \begin{center}\includegraphics[width= \textwidth]{illustration_images/Genetic_drift_selection/Cuttlefish/Cuttlefish.jpg}
 \end{center}
-\caption{Common Cuttlefish ({\it Sepia officinalis}). \BHLCC{Cefalopodi viventi nel Golfo di Napoli
+\caption{Common cuttlefish ({\it Sepia officinalis}). \BHLCC{Cefalopodi viventi nel Golfo di Napoli
     (1896). Jatta G. }{https://www.flickr.com/photos/biodivlibrary/6105705787}{Smithsonian Libraries}{2.0} } \label{Cuttlefish}
 \end{marginfigure}
 
@@ -524,7 +514,7 @@ deleterious mutations.
 \begin{marginfigure}
 \begin{center}\includegraphics[width= \textwidth]{illustration_images/Genetic_drift_selection/Coquerels_sifaka/Coquerels_sifaka.jpg}
 \end{center}
-\caption{Coquerel's Sifaka ({\it Propithecus coquereli}). \BHLCC{A
+\caption{Coquerel's sifaka ({\it Propithecus coquereli}). \BHLCC{A
     hand-book to the primates (1894). Forbes, H. O.}{https://www.flickr.com/photos/biodivlibrary/6029124104}{Smithsonian Libraries}{2.0} } \label{Sifakas}
 \end{marginfigure}
 
@@ -545,9 +535,17 @@ with small effective population sizes, such as humans, may be mildly deleterious
 %Kolmogorov backward eqn. 1931
 %Kimura, M. 1962 On the Probability of Fixation of Mutant Genes in a
 %Population. for abitrary dominance in diffusion.
+\erin{I assume this is all using selection 1, 1+s/2 and 1+s, but you
+  haven't explicitly specified your parameters for this case
+  here. This result seems general to weakly beneficial or deleterious
+  alleles but not clear that we're back to thinking about positively
+  selected allele having benefit s and deleterious allele having a
+  negative s}
 
-What is the probability a weakly beneficial or deleterious additive allele fixes in our population? \erin{I assume this is all using selection 1, 1+s/2 and 1+s, but you haven't explicitly specified your parameters for this case here. This result seems general to weakly beneficial or deleterious alleles but not clear that we're back to thinking about positively selected allele having benefit s and deleterious allele having a negative s} We'll let $P(\Delta p)$ be the probability that our allele frequency
-shifts by $\Delta p$ in the next generation. Using this, we can write our probability $p_F(p)$ in terms of the probability of
+What is the probability a weakly beneficial or deleterious additive allele fixes in our population? We'll let $P(\Delta p)$ be the probability that our allele frequency
+shifts by $\Delta p$ in the next generation. Using this, and following
+the diffusion argument of \citet{kimura1962probability}, we can write
+our fixation probability $p_F(p)$ in terms of the probability of
 achieving fixation averaged over the frequency in the next generation
 \begin{equation}
 p_F(p)  = \int p_F(p+\Delta p) P(\Delta p) d(\Delta p) \label{eqn:prob_fix_diff_step1}
@@ -587,3 +585,35 @@ This proof can be extended
 to alleles with arbitrary dominance, however, this does not lead to a
 analytically tractable expression so we do not pursue this here. 
 
+\begin{ChapterSummary}
+\item Even strongly advantagous alleles can be lost when they are rare in the population. In a haploid population the probability that a strongly advantagous allele escapes loss starting from a single copy is $p_F=2s$. In a diploid population this probability is $p_F=2hs$, where $hs$ is the relative fitness advantage to heterozygotes. Strongly deleterious alleles can not fix in large populations. 
+  \item Alleles are strongly selected when their absolute population-scaled selection coefficient is $|Ns| \gg 1$. Alleles are effectively neutral when $|Ns| \ll 1$. Alleles that are weakly selected when their $|Ns|$ is on order $1$.
+  \item The dynamics of weakly selected alleles are subject to selection and genetic drift throughout their time in the population, and their fixation probabillity ($p_F$) depends on $N$ and $s$.
+  \item Very weakly selected alleles can be efficiently selected on in large populations. Thus levels of evolutionary constraint may be stronger in species with large long-term population sizes.
+ \end{ChapterSummary} 
+\begin{question}{}
+Melanic squirrels suffer a higher rate of predation (due to hawks)
+than the normally grey pigmented squirrels. Melanism is due to a dominant, autosomal mutation. The frequency of melanic squirrels at birth is $4 \times 10^{-5}$.\\
+
+{\bf A)} If the mutation rate to new melanic alleles is $10^{-6}$, assuming the melanic allele is at mutation-selection equilibrium, what
+is the reduction in fitness of the heterozygote? \\ 
+Suddenly levels of pollution increase dramatically in our population,
+and predation by hawks now offers an equal (and opposite) advantage to
+the dark individuals as it once offered to the normally pigmented
+individuals. \\
+{\bf B)} What is the probability that a single copy of this allele
+(present just once in the population) is lost?\\ 
+{\bf C)}  If the population size of our squirrels is a million
+individuals, and is at mutation-selection balance, what is the probability that the population adapts from one or more allele(s) from the standing pool of melanic alleles?  
+\end{question}
+
+\begin{question}{}
+You find that pairwise genetic diversity in humans is $0.0005$/bp and
+in cockroaches it is $0.01$/bp. Assume that in both species the mutation rates is about $\mu = 2
+  \times 10^{-8}$ /bp/generation in both species. Suppose you introduce a deleterious mutation
+  in each population with a selective coefficient of $s=10^{-6}$. Calculate the
+  probability of this allele fixing in humans and cockroaches, given the allele
+  starts off in one copy (at frequency $\nicefrac{1}{2N}$). Compare
+  your answer to the neutral probability of the mutant allele eaching
+  fixation in both cases. 
+  \end{question}

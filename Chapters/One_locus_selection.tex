@@ -168,195 +168,7 @@ In our example of the evolution of drug resistance, the drug-resistant SHIV viru
 %What is the selection coefficient associated with the resistance to antibiotics?
 %\end{question}
 
-\paragraph{Haploid model with fluctuating selection}
-Selection pressures may change while a polymorphism persists in the population due to environmental changes. 
-We can use our haploid model to consider this case where the fitnesses depend on time \citep{Dempster:55}, and
-say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
-generation $t$. The frequency of allele $A_1$ in generation $t+1$ is
-\begin{equation}
-p_{t+1} = \frac{w_{1,t}}{\wbar_t} p_t,
-\end{equation}
-which simply follows from eqn.\ \eqref{eq:recHaplMod2}.
-The ratio of the frequency of allele $A_1$ to that of allele $A_2$ in generation $t+1$ is
-\begin{equation}
-\frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}.
-\end{equation}
-Therefore, if we think of the two alleles starting in generation $1$ at
-frequencies $p_1$ and $q_1$, then $\tau$ generations later,
-\begin{equation}
-\frac{p_{\tau}}{q_{\tau}} = \left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{1}}{q_{1}}.
-\end{equation}
-\\
 
-The question of which allele is increasing or decreasing in frequency comes down
-to whether $\left(\prod_{i=1}^{\tau} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
-$>1$ or $<1$. As it is a little hard to think about this ratio, we can
-instead take the $\tau^{\mathrm{th}}$ root of it and consider
-\begin{equation}
-\sqrt[\tau]{\left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}}{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{2,i}}}.
-\end{equation}
-The term
-\begin{equation}
-  \sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}  \label{hap_geo_fitness}
-\end{equation}
-\begin{margintable}
-  \begin{tabular}{lcc}
-    & $A_1$  & $A_2$\\
-    \hline
-    Dry & 2 & 1.57 \\
-    Wet &  1.16 & 1.57   \\
-    \hline
-    Arithmetic Mean & 1.58  & 1.57  \\
-    Geometric Mean & 1.52 & 1.57 
-  \end{tabular}
-  \caption{Fitnesses of two alleles in wet and dry years. Means calculated assuming
-    equal chances of wet and dry years. The geometric mean is
-    calculated as
-    $\sqrt{w_{\textrm{wet}}w_{\textrm{dry}}}$. Example numbers
-    taken from \citet{seger1987oxford}.} \label{Table:Geom_fitness}
-\end{margintable}
-
-is the geometric mean fitness of allele
- $A_1$ over the $\tau$ generations past generation $t$. Therefore, allele $A_1$ will only increase
-in frequency if it has a higher geometric mean fitness than allele $A_2$
-(at least in our simple deterministic model). This implies that an allele with higher
-geometric mean fitness can even invade and spread to fixation if its
-(arithmetic) mean fitness is lower than the dominant type.  To see
-this consider two alleles that experience the fitnesses given in Table
-\ref{Table:Geom_fitness}. The allele $A_1$ does much better in
-dry years, but suffers in wet years; while the $A_2$ is generalist and
-is not affected by the variable environment. If there is an equal
-chance of a year being wet or dry, the $A_1$ allele has
-higher (arithmetic) mean fitness, but it will be replaced by the $A_2$
-allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fig:haploid_geo}). \\
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/Haploid_geom_traj.pdf}
-\end{center}
-\caption{An example frequency trajectory of the $A_1$ allele under
-  variable environments (using the fitnesses from Table
-  \ref{Table:Geom_fitness}). Wet years (generations) are shown in red, dry
-  years in white. The environment flips at random each year.  Note how the $A_1$ allele increases in frequency in
-  the dry years as it has higher fitness, and yet the $A_2$ allele
-  still wins out. 
-  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Geometric_mean_fitness.R}} \label{fig:haploid_geo}
-\end{figure}
-
-\paragraph{Evolution of bet hedging}
-
-%birds nest https://www.biodiversitylibrary.org/ia/Illustrationsne1Jone#page/11/mode/1up
-%% great tit nest https://archive.org/stream/britainsbirdsthe00thom/britainsbirdsthe00thom#page/n536/mode/1up
-%% blue tit nest https://www.flickr.com/photos/biodivlibrary/6025489801/
-
-%https://twitter.com/rlmcelreath/status/1129013411344453632
-Don't put your eggs in one basket, it makes a lot of sense to spread
-your bets. Financial advisors often advise you to diversify your
-portfolio, rather than placing all your investments in one stock. Even
-if that stock looks very strong, you can come a cropper that
-$\nicefrac{1}{20}$ times some particular part of the market
-crashes. Likewise, evolution can result in risk averse
-strategies. Some species of bird lay multiple nests of eggs; some
-plants don't put all of their energy into seeds that will germinate next year. It can
-even make sense to hedge your bets even if that comes at an average
-cost \citep{seger1987oxford}.
-
-To see this lets think more about geometric fitness. We can write the
-relative fitness of an allele in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
-write your geometric fitness as
-\begin{equation}
- \bar{g}= \sqrt[\tau]{\prod_{i=1}^{\tau-1} 1+s_i}  \label{hap_geo_fitness_bh}
-  \end{equation}
-when we think about products it's often natural to take the $\log$ to
-turn it into a sum
-\begin{align}
- \log \big( \bar{g} \big) =& \frac{1}{\tau} \sum_{i=1}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
-  = & \E \bigg[ \log \big( 1+s_i \big) \bigg]
-\end{align}
-equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i \big) \approx s_i -
-\nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and
-higher\sidenote{Here we're using a 2nd order Taylor approximation, see
-  math appendix eqn \eqref{eqn:Taylor_log_2nd}. } then this is
-\begin{align}
-  \log \big( \bar{g}  \big) \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg]  \nonumber\\
-  =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
-\end{align}
-\graham{issue with $\E^2(s)$ here}
-So genotypes with high arithmetic mean fitness can be selected against,
-i.e. have low geometric mean fitness against, if their fitness has too
-high a variance across generations \citep{gillespie1973natural,gillespie1977natural}. See our example
-above,  Table \ref{Table:Geom_fitness} and Figure \ref{fig:haploid_geo}).
-
-  \begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/woolly_plantain/20771670485_fb7e476748_b.jpg}
-\end{center}
-\caption{Woolly plantain ({\it Plantago patagonica}). One of the
-  desert annuals shown to have a bet-hedging germination strategy by
-  \citet{gremer2014bet}. \BHLNC{An illustrated flora of the northern
-    United States, Canada and the British possessions, from
-    Newfoundland to the parallel of the southern boundary of Virginia,
-    and from the Atlantic Ocean westward to the 102d meridian (1913)  Britton, N.L.}{https://www.flickr.com/photos/internetarchivebookimages/20771670485/}{Cornell University Library}} \label{fig:Woolly_plantain}
-\end{marginfigure}
-
-A classic example of bet-hedging is in delayed seed germination in
-plants \citep{cohen1966optimizing}. In variable environments, such as
-deserts, it may make sense to spread your bets over years by having
-only a proportion of your seeds germinate in the first year. However,
-delaying germination can come at a cost due to seed
-mortality. \citet{gremer2014bet}, using data from a long-term study
-various species of Sonoran Desert winter showed that annual plants
-were indeed pursuing adaptive bet-hedging strategies.
-The plant species with the highest variation in among-year yield had
-the lowest germination fraction per year.  Further,
-\citeauthor{gremer2014bet} showed through modeling life that by having
-per-year germination proportions $<1$ all of the species were
-achieving higher geometric fitness at the expense of arithmetic
-fitness in the variable desert environment. See Figure
-\ref{fig:desert_bet_hedging} for an example of bet hedging in Woolly plantain.
-
-  \begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Gremer_hedging_example/Gremer_hedging_example.pdf}
-\end{center}
-\caption{  {\it Plantago patagonica}'s arithmetic fitness is an
-  increasing function of the proportion of seeds germinating, due to
-  seeds not surviving a germination delay. However, the standard
-  deviation of fitness also increases with this proportion as they are
-  more likely to have all of their seeds germinate in a bad year. Thus
-  {\it Plantago patagonica}  can achieve higher geometric fitness by
-  only having a proportion of their seeds germinate. Thanks to Jenny
-  Gremer for sharing these data from \citet{gremer2014bet}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Gremer_hedging_example/Gremer_bet_hedging.R} } \label{fig:desert_bet_hedging}
-\end{figure}
-
-
-%% Gremer seed germination https://onlinelibrary.wiley.com/doi/full/10.1111/ele.12241
-
-%Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
-Delayed reproduction is also a common example of bet-hedging in
-micro-organisms. For example, the Chicken Pox virus, varicella zoster
-virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, residing inactive in neurons in
-the spinal cord, only to emerge 5-40 years later to cause the disease
-shingles. It is hypothesized that the virus actively suppresses itself
-as a strategy to allow it to emerge at a later time point as insurance
-against there being no further susceptible hosts at the time of its
-first infection \citep{stumpf2002herpes}. 
-
-% https://eebweb.arizona.edu/faculty/venable/pdfs/Gremer&Venable2014.pdf
-%experimental evolution of bet-hedging http://www.indiana.edu/~curtweb/L567/readings/bet%20hedging%20evolution.pdf
-
-\graham{NOTE about how haploid model can be useful for thinking about
-  ESS }
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
-\end{center}
-\caption{Frequency of the Lactase persistence allele in ancient and
-  modern samples form Central Europe. Data compiled by
-  \citet{marciniak2017} from various sources. Thanks to Stephanie
-  Marciniak for sharing these data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Lactase_example/Lactase_plots.R}} \label{fig:LCT_freqs}
-\end{figure}
 
 \subsection{Diploid model}
 
@@ -368,22 +180,38 @@ first infection \citep{stumpf2002herpes}.
   were domesticated from. \IANC{Dictionnaire des sciences naturelles. 1816 Cuvier,
   F.G. }{https://www.flickr.com/photos/internetarchivebookimages/20713828960/in/photolist-owtfpr-owkoQN-obMTQg-owc9mc-rgpdRz-otq59G-oeZFD1-ottAnF-otuXhK-odKHJY-oqYxSb-oviGuD-ytox4c-owa3cJ-yc73Ji-wtrahu-ouf1fo-wXHoQ6-t97h27-owfa8h-xisfNf-waBt8s-x8859A-xwY4eG-wpCm8P-oev6vL-oy1AhH-tNJj8g-xGgALJ-x2kj8g-xDphGC-oxvRgt-x8eFQp-xypMG5-wKqr2k-xnCp1u-xpC2zS-wt5Lpp-xUjHhG-wGJBAQ-wv5dnr-xqLVc3-wPhru1}{NCSU Libraries}} \label{fig:auroch}
 \end{marginfigure}
+We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, let's consider the evolution of lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
+This continued expression of lactase allows adults to break down lactose, the main carbohydrate in milk, and so benefit nutritionally from milk-drinking. This seems to have offered a strong fitness benefit to individuals in pastoral populations. 
 
-We will now move on to a diploid model of a single locus with two segregating alleles. As an example of the change in the frequency of an allele driven by selection, lets consider the evolution of Lactase persistence. A number of different human populations that historically have raised cattle have convergently evolved to maintain the expression of the protein Lactase into adulthood (in most mammals the protein is switched off after childhood), with different lactase-persistence mutations having arisen and spread in different pastoral human populations. 
-This continued expression of Lactase allows adults to break down Lactose, the main carbohydrate in milk, and so benefit nutritionally from milk-drinking. This seems to have offered a strong fitness benefit to individuals in pastoral populations. 
 
-With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a Lactase persistence allele in ancient Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
+With the advent of techniques to sequence ancient human DNA, researchers can now potentially track the frequency of selected mutations over thousands of years. The frequency of a lactase persistence allele in ancient Central European populations is shown in Figure \ref{fig:LCT_freqs}. The allele is absent more than 5,000 years ago, but now found at frequency of upward of $70\%$ in many European populations. 
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Rcode/Lactase_example/Lactase_freq_time.pdf}
+\end{center}
+\caption{Frequency of the lactase persistence allele in ancient and
+  modern samples form Central Europe. Data compiled by
+  \citet{marciniak2017} from various sources. Thanks to Stephanie
+  Marciniak for sharing these data. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Lactase_example/Lactase_plots.R}} \label{fig:LCT_freqs}
+\end{figure}
 
 We will assume that the difference in fitness between the three
 genotypes comes from differences in viability, i.e.\ differential
 survival of individuals from the formation of zygotes to reproduction.  
 We denote the absolute fitnesses of genotypes $A_1A_1$, $A_1A_2$, and $A_2A_2$ by $W_{11}$, $W_{12}$, and $W_{22}$. Specifically, $W_{ij}$ is the probability that a zygote of genotype $A_iA_j$ survives to reproduction.
-Assuming that individuals mate at random, the number of zygotes that are of the three genotypes and form generation $t$ are
+Assuming that individuals mate at random, the number of zygotes that
+are of the three genotypes in generation $t$ are
 \begin{equation}
 Np_t^2, ~~~  N2p_tq_t, ~~~ Nq_t^2.
 \end{equation}
-
+\marginnote{These diploid models of selection were first laid out in
+  \citet{fisher1923xxi}, \citet{haldane1924}, and
+  \citet{wright1931evolution}. \citet{haldane1924} marked the
+  start of a series of ten papers, over ten years, where Haldane worked through the
+  implications and applications of these models. 
+}
 The mean fitness of the population of zygotes is then
 \begin{equation}
 	\Wbar_t = W_{11} p_t^2+W_{12} 2p_tq_t  +  W_{22} q_t^2.
@@ -463,7 +291,7 @@ look at some data from sticklebacks.
 \begin{center}
 \includegraphics[width= 1.2 \textwidth]{illustration_images/single_locus_selection/Stickleback/Gasterosteus_aculeatus_1879.jpg}
 \end{center}
-\caption{Freshwater threespine Stickleback ({\it
+\caption{Freshwater threespine stickleback ({\it
     G. aculeatus}). \BHLNC{British fresh-water fishes. Houghton W
     1879.}{https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus_1879.jpg}{Ernst
     Mayr Library, Harvard.}} \label{fig:stickleback}
@@ -478,7 +306,7 @@ Ectodysplasin gene (EDA).  This allele is found as a standing variant at very lo
 a population of marine individuals carrying both the low- (L) and
 completely- plated (C) alleles. They introduced the offspring of this
 cross into four freshwater ponds and monitored genotype frequencies
-\sidenote{The actual dynamics observed by \citeauthor{Barrett:08} are more complicated as in the very young fish selection reverses direction.}
+\sidenote{The actual dynamics observed by \citeauthor{Barrett:08} are more complicated, as in the very young fish selection reverses direction.}
 over their life courses: 
 \begin{center}
 \begin{tabular}{lccc}
@@ -497,15 +325,12 @@ the heterozygote in this case (doing this cancels through
 $\Wbar$). The relative fitness of the $CC$ is $\sim 1/5$ of the
 heterozygote. Note that this calculation does not rely on the genotype frequencies being at their HWE in the juveniles.
 
-\begin{question}
+\begin{question}{}
 {\bf A)} What is the frequency of the low-plated EDA allele ($L$) at the start of the stickleback experiment? \\
 {\bf B)} What is the frequency in the adults? \\
-{\bf C)} Also calculate the frequency in adults using the relative
-fitnesses. 
+{\bf C)} Calculate the frequency in adults, this time by using the
+relative fitnesses. 
 \end{question}
-
-
-
 
 The change in frequency from generation $t$ to $t+1$ is
 \begin{equation}
@@ -516,13 +341,16 @@ To simplify this equation, we will first define two variables $\wbar_1$ and $\wb
 	\wbar_1 & = w_{11} p_t + w_{12} q_t, \\
 	\wbar_2 & =  w_{12} p_t+ w_{22} q_t.
 \end{eqnarray}
-\graham{Comment that these are the additive effects of our alleles}
 These are called the marginal fitnesses of allele $A_1$
 and $A_2$, respectively. They are so called as $\wbar_1$ is the
 average fitness of an allele $A_1$, i.e.\ the fitness of $A_1$ in a
 homozygote weighted by the probability it is in a homozygote ($p_t$)
 plus the fitness of $A_1$ in a
-heterozygote weighted by the probability it is in a heterozygote ($q_t$).
+heterozygote weighted by the probability it is in a heterozygote
+($q_t$). \sidenote{The marginal fitnesses are also the phenotypic additive effects
+  of our two alleles on fitness, defined in \eqn
+\eqref{eqn:add_effect1} and \eqref{eqn:add_effect1}}. 
+
 We further note that the mean relative fitness can be expressed in terms of the marginal fitnesses as
 \begin{equation}
 	\label{eq:meanFitInTermsOfMargFit}
@@ -536,7 +364,11 @@ We can then rewrite eqn.\ \eqref{deltap_dip1} using $\wbar_1$ and $\wbar_2$ as
 	\label{deltap_dip2}
 \end{equation}
 The sign of $\Delta p_t$, i.e. whether allele $A_1$ increases of decreases
-in frequency, depends only on the sign of $(\wbar_1-\wbar_2)$.
+in frequency, depends only on the sign of
+$(\wbar_1-\wbar_2)$. \sidenote{This difference between our marginal
+  fitnesses is the difference between the additive effects of the two
+  alleles, thus it is also the regression slope ($\alpha_{\ell}$) of the fitness (phenotype) on
+  additive genotype ($0$, $1$, $2$) see discussion around \eqn \eqref{eqn:additive_var_additive_effect}.}
 The frequency of $A_1$ will keep increasing over the generations so
 long as its marginal fitness is higher than that of $A_2$,
 i.e.\ $\wbar_1 > \wbar_2$, while if $\wbar_1 < \wbar_2$, the
@@ -574,7 +406,7 @@ selection as moving populations up local fitness peaks, as we
 encountered in Section \ref{section:pheno_fitness_landscapes} in
 discussing phenotypic fitness peaks. Again this view of selection as
 maximizing mean fitness only holds true
-if the genotypic fitnesses are frequency independent, later in this
+if the genotypic fitnesses are frequency independent; later in this
 chapter we'll discuss some important cases where that doesn't hold. \\
 
 %\begin{question}
@@ -582,7 +414,7 @@ chapter we'll discuss some important cases where that doesn't hold. \\
 %equivalent. (Trickier question.)\\
 %\end{question}
 
-\begin{question}
+\begin{question}{}
 For many generations you have been studying an annual wildflower that has two color morphs, orange and white. You have discovered that a single bi-allelic locus controls flower color, with the white allele being recessive. The pollinator of these plants is an almost blind bat, so individuals are pollinated at random with respect to flower color. Your population census of 200 individuals showed that the population consisted of 168 orange-flowered individuals, and 32 white-flowered individuals.\\
 Heavy February rainfall creates optimal growing conditions for an
 exotic herbivorous beetle with a preference for orange-flowered
@@ -647,9 +479,6 @@ where
 \wbar = 1-2p_tq_t sh-q_t^2s.
 \end{equation}\\
 
-\begin{question}
-Throughout the Californian foothills are old copper and gold-mines, which have dumped out soils that are polluted with heavy metals. While these toxic mine tailing are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these harsh soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings and found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\%$ of the copper-tolerant seedlings survived to flower.\\
-
 \begin{marginfigure}
 \begin{center}
 \includegraphics[width = 1.2 \textwidth]{illustration_images/single_locus_selection/Copperopolis/KeystoneCopperMineCopperopolisCalaverasCounty.jpg}
@@ -660,11 +489,14 @@ Throughout the Californian foothills are old copper and gold-mines, which have d
 Source Library of Congress, Public Domain. }}
   \label{fig:Copperopolis}
 \end{marginfigure}
+\begin{question}{}
+Throughout the Californian foothills are old copper and gold-mines, which have dumped out soils that are polluted with heavy metals. While these toxic mine tailings are often depauperate of plants,  {\it Mimulus guttatus} and a number of other plant species have managed to adapt to these harsh soils. \citet{wright2015adaptation} have mapped one of the major loci contributing to the adaptation to soils at two mines near Copperopolis, CA. \citeauthor{wright2015adaptation} planted homozygote seedlings out in the mine tailings and found that only $10\%$ of the homozygotes for the non-copper-tolerant allele survived to flower, while $40\%$ of the copper-tolerant seedlings survived to flower.\\
+
 
 {\bf A)} What is the selection coefficient acting against the non-copper-tolerant allele on the mine tailing?\\
 {\bf B)} The copper-tolerant allele is fairly dominant in its action on fitness. If we assume that $h=0.1$, what percentage of heterozygotes should survive to flower?
 \end{question}
-\begin{question}
+\begin{question}{}
 Comparing the red ($h=0$) and black ($h=0.5$) trajectories in Figure \ref{fig:diploid_traj}, provide an explanation for why $A_1$ increases faster initially if $h=0$, but then approaches fixation more slowly compared to the case of $h=0.5$.
 \end{question}
 
@@ -702,7 +534,7 @@ result of this price difference, silver foxes were hunted more
 intensely and declined as a proportion of the population in Eastern Canada, see Figure
 \ref{fig:Fox_morph_freqs}, as documented by \citeauthor{elton:42},
 from $16\%$ to $5\%$ from 1834 to 1937.
-\citeauthor{haldane:42} reanalyzed these data and showed that they
+\citet{haldane:42} reanalyzed these data and showed that they
 were consistent with recessive selection acting against the silver
 morph alone. 
 Note how the heterozygotes (cross) decline somewhat as a
@@ -722,14 +554,21 @@ A special case is when $h = 0.5$. This case is the case of no dominance, as the 
 	\Delta p_t = \frac{1}{2}\frac{s}{\wbar}p_tq_t .
 	\label{deltap_add}
 \end{equation}
-
-
 If selection is very weak, i.e.\ $s \ll 1$, the denominator ($\wbar$) is close to $1$ and we have
 \begin{equation}
 	\Delta p_t = \frac{1}{2} s p_t q_t .
 	\label{deltap_add_simpl}
 \end{equation}
-It is instructive to compare eqn.\ \eqref{deltap_add_simpl} to the respective expression under the haploid model. To this purpose, start from the generic term for $\Delta p_t$ under the haploid model in eqn.\ \eqref{eq:deltap_haploid} and set $w_1 = 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that eqn.\ \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t q_t$. Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
+It is useful to compare \eqn \eqref{deltap_add_simpl} to our haploid
+model for $\Delta p_t$, \eqn \eqref{eq:deltap_haploid}, setting $w_1
+= 1$ and $w_2 = 1-s$. Again, assume that $s$ is small, so that our
+haploid \eqn \eqref{eq:deltap_haploid} becomes $\Delta p_t = s p_t
+q_t$, which differs from our diploid model only by a factor of two.
+Under our additive diploid model, for weak selection, the selection against each
+allele is equal to s/2 so this is equivalent to the haploid case where
+we replace $s$ by $\nicefrac{s}{2}$.
+
+%Hence, if $s$ is small, the diploid model of directional selection without dominance is identical to the haploid model, up to a factor of $1/2$. That factor is due to the choice of the parametrisation; we could have set $w_{11} = 1$, $w_{12} = 1-s$, and $w_{22} = 1-2s$ in our diploid model instead, in which case the agreement with the haploid model would be perfect.\\
 
 From this analogy, we can borrow some insight we gained from the
 haploid model. Specifically, the trajectory of the frequency of allele
@@ -758,11 +597,15 @@ by a factor of 2 due to the choice of parametrization
     estuaries. Nelson D M and Pattillo M E}{https://www.flickr.com/photos/internetarchivebookimages/20974603315/in/photolist-xXsjPD-xXtgv2-xXtH6R-xXqWDP-wLTvyb-vNtwuV-w5YUE8-x3LoqL-w6oGAu-v8XTGY-xeLtHH-x55G1H-x3LEab-xqMKAg-wjksEw-x2brmo-w5hbhG-x2xSUG-wLUKE7-wLTSzb-yiwYWH-vNn18J-w5m7Hh-wLFFPg-w5Zyip-x547wa-wxjgKE-owf2BN-tryPJL-xERrRA-xfpKrJ-x4sNs6-x1sk9W-xec1S6-xEP4rE-x36kBN-waaBtg-wLf5jY-x29N9E-xB1126-tFDcgi-xjju3s-w6Fm6M-w3D8Ej-xzFCbj-xEZcSX-wLkVzJ-xrV46d-xJwuXV-x4tZjV}{MBLWHOI Library} } \label{fig:killifish}
 \end{marginfigure}
 
-\begin{question}
+\begin{question}{} 
 Gulf killifish ({\it Fundulus grandis}) have rapidly adapted to the
 very high pollution levels in the Houston shipping canal since the
 1950s. One of the ways that they've adapted is through the deletion of
-their aryl hydrocarbon receptor (AHR) gene. \citet{oziolor2019adaptive} estimated that individuals who were homozygote for the intact AHR gene had a relative fitness of 20\% of that of homozygotes for the deletion. Assuming an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, starting as a single copy in this population?
+their aryl hydrocarbon receptor (AHR)
+gene. \citet{oziolor2019adaptive} estimated that individuals who were
+homozygous for the intact AHR gene had a relative fitness of 20\% of
+that of homozygotes for the deletion. Assuming an additive selection
+model, and an effective population size of 200 thousand individuals, how long would it take for the deletion to reach fixation, starting as a single copy in this population?
 \end{question}
 %% Can you specify that h=0.5 here? -- EBJ
 
@@ -861,8 +704,7 @@ frequency. Fitnesses as in Figure \ref{fig:het_advant_traj}. Note how the freque
 equilibrium frequency ($p_e$) and negative above. {\bf Bottom)} Mean
 fitness ($\bar{w}$) as a function of the allele frequency. The red line shows
 the equilibrium frequency ($p_e$). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_advant_dp_wbar}
-\end{marginfigure}
-for the equilibrium frequency of interest. This is also the frequency
+\end{marginfigure} for the equilibrium frequency of interest. This is also the frequency
 of $A_1$ at which the mean fitness of the population is maximized. The
 highest possible fitness of the population would be achieved if every
 individual was a heterozygote. However, Mendelian segregation of alleles in the
@@ -891,10 +733,10 @@ a horn-size polymorphism found in Soay sheep, a population of feral sheep on the
 (about 40 miles off the coast of Scotland).  The horns of the soay sheep resemble
 those of the wild Mouflon sheep, and the male Soay sheep use their horns to defend females during
 the rut. \citet{johnston2013life} found a large-effect locus,  at the
-RXFP2 gene, that controls much of the genetic variation for horn size. Two
-alleles Ho$^p$ and Ho$^+$ segregate at this locus. The Ho$^+$ allele is associated with
-growing larger horns, while the Ho$^p$ allele is associated with smaller
-horns, with a reasonable proportion of Ho$^p$ homozygotes developing no
+{\it RXFP2} gene, that controls much of the genetic variation for horn size. Two
+alleles {\it Ho$^p$} and {\it Ho$^+$} segregate at this locus. The Ho$^+$ allele is associated with
+growing larger horns, while the {\it Ho$^p$} allele is associated with smaller
+horns, with a reasonable proportion of {\it Ho$^p$} homozygotes developing no
 horns at all. \citet{johnston2013life} found that the Ho locus had substantial
 effects on male, but not female, fitness (see Figure
 \ref{fig:Soay_fitness}). \begin{marginfigure}
@@ -903,14 +745,14 @@ effects on male, but not female, fitness (see Figure
 \end{center}
 \caption{Mouflon ({\it Ovis orientalis orientalis}). \BHLNC{Animate
   creation. (1898). Wood, J. G.}{https://www.flickr.com/photos/internetarchivebookimages/18195657882/in/photolist-oeVkzm-oeVyZM-owqffV-otpyr4-abvEzA-osMSNY-vdEfRm-odZgfB-ot1epP-xvDeKd-yb3aL3-xRUfo4-owdr4T-wJhfme-xj57bn-xAzfXc-xiEcGn-sMnpMH-xP6U3J-w6Wm26-xuMUdr-tHTvam-w6aexB-oubB13-wYKiWR-xnrRBv-xptbR9-wYeGR2-xBHTk1-xvoaiK-xdb5i7-xst4MC-w3QTNe-x9SM4R-xnwGwR-xGd6Qk-xyfL9Q-w3QtPx-wYeJqe}{Smithsonian Libraries} } \label{fig:Mouflon}
-\end{marginfigure} The Ho$^p$ allele has a mostly recessive effect on
-male fecundity, with the Ho$^p$ homozygotes having lower yearly reproductive
+\end{marginfigure} The {\it Ho$^p$} allele has a mostly recessive effect on
+male fecundity, with the {\it Ho$^p$} homozygotes having lower yearly reproductive
 success presumably due to the fact that they perform poorly in male-male
 competition (left plot Figure \ref{fig:Soay_fitness}). Conversely, the
-Ho$^{+}$ has a mostly recessive effect on viability, with Ho$^{+}$ homozygotes having lower
+{\it Ho$^{+}$} has a mostly recessive effect on viability, with {\it Ho$^{+}$} homozygotes having lower
 yearly survival  (middle plot Figure \ref{fig:Soay_fitness}), likely because they spend little time feeding during the rut and so lose substantial body weight. Thus both of the
 homozygotes suffer from trade-offs between viability and
-fecundity. As a result, the Ho$^p$Ho$^+$ heterozygotes have the highest
+fecundity. As a result, the {\it Ho$^p$Ho$^+$} heterozygotes have the highest
 fitness  (right plot Figure \ref{fig:Soay_fitness}).  The allele is
 thus balanced at intermediate frequency ($~50\%$) in the population due to 
 this trade off between fitness at different life history stages.
@@ -918,29 +760,30 @@ this trade off between fitness at different life history stages.
 \marginnote{The fitnesses here are chosen to roughly match those of
   the real Soay sheep example, as a full model would
   require us to more carefully model the life-histories of the sheep. }
-\begin{question}
+\begin{question}{}
 Assume that the frequency of the Ho$^P$ allele is 10\%, that there are 1000 males at birth, and that individual adults mate at random.\\
 {\bf A)} What is the expected number of males with each of the three genotypes in the population at birth? \\
 
 {\bf B)} Assume that a typical male individual of each genotypes has the following probability of surviving to adulthood:\\
 \begin{tabular}{ccc}
-Ho$^+$ Ho$^+$ & Ho$^+$ Ho$^p$ & Ho$^p$ Ho$^p$ \\
+{\it Ho$^+$ Ho$^+$} & {\it  Ho$^+$ Ho$^p$} & Ho$^p$ {\it Ho$^p$} \\
 0.5 & 0.8 & 0.8
 \end{tabular}
+Making the assumptions from above,  how many males of each genotype
+survive to reproduce?\\
+{\bf C)} Of the males who survive to reproduce, let's say that males
+with the {\it Ho+Ho+}  and {\it  Ho+Ho$^p$}  genotype have on average 2.5 offspring, while {\it Ho$^p$Ho$^p$} males have on average 1 offspring. Taking into account both survival and reproduction, how many offspring do you expect each of the three genotypes to contribute to the total population in the next generation? \\
 
-Making the assumptions from above,  how many males of each genotype survive to reproduce? 
-{\bf C)} Of the males who survive to reproduce, let's say that males with the Ho+Ho+  and Ho+Ho$^p$  genotype have on average 2.5 offspring, while Ho$^p$Ho$^p$ males have on average 1 offspring. Taking into account both survival and reproduction, how many offspring do you expect each of the three genotypes to contribute to the total population in the next generation? \\
-
-{\bf D)} What is the frequency of the Ho+ allele in the sperm that will form this next generation?  \\
-{\bf E )} How would your answers to B-D change if the Ho$^p$ allele was at 90\% frequency? \\
+{\bf D)} What is the frequency of the {\it Ho+ allele} in the sperm that will form this next generation?  \\
+{\bf E )} How would your answers to B-D change if the {\it Ho$^p$ allele} was at 90\% frequency? \\
 \end{question}
 
 \begin{figure}
 \begin{center}
   \includegraphics[width = \textwidth]{figures/additive_effect_OverDom.pdf}
 \end{center}
-\caption{The deviation of the fitness of each genotype away from the mean population
-  fitness (0) is shown as black dots. The area of each circle is proportion to the fraction of
+\caption{The deviations of the fitness of each genotype away from the mean population
+  fitness (0) are shown as black dots. The area of each circle is proportion to the fraction of
 the population in each genotypic class ($p^2$, $2pq$, and $q^2$). The
 additive genetic fitness of each genotype is shown as
  a red dot. The linear regression between fitness and additive
@@ -957,7 +800,16 @@ So what's happening here in our heterozygote advantage model is that the margina
 frequency of the $A_1$ allele is below the equilibrium frequency. If the frequency of $A_1$ is above the equilibrium frequency, then
 the marginal fitness of allele $A_2$ is higher than the marginal fitness of allele $A_1$ ($\bar{w}_1 < \bar{w}_2 $) and the regression of fitness on the number of copies of allele $A_1$ that individuals carry is negative. In both cases there is additive genetic variance for fitness ($V_A > 0$) and the population has a directional response. Only when the population is at its equilibrium frequency, i.e. when $\bar{w}_1 =
 \bar{w}_2$, is there no additive genetic variance  ($V_A = 0$), as the linear regression of fitness on genotype is zero. 
-
+\begin{marginfigure}[-0.5cm]
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Pseudacraea_eurytus/Pseudacraea_eurytus.JPG}
+\end{center}
+\caption{In {\it Pseudacraea eurytus} there are two homozygotes morphs that mimic
+ a different blue and orange butterfly; the heterozygote fails to mimic
+either successfully and so suffers a high rate of predation
+\citep{owen1972polymorphic}. \BHLNC{Illustrations of new species of
+exotic butterflies (1868) Hewitson.}{https://commons.wikimedia.org/wiki/File:Pseudacraea_eurytus.JPG}{Smithsonian Libraries}} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
+\end{marginfigure}
 
 
 %%add Drosophila underdom. selection experiement http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
@@ -972,21 +824,11 @@ homozygotes. Underdominance can be parametrized as follows: \\
 	relative fitness (specific)  & $1+s_1$ & $1$ & $1+s_2$ \\
 \end{tabular}\\
 \end{center}
-\begin{marginfigure}[1.5cm]
-\begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Pseudacraea_eurytus/Pseudacraea_eurytus.JPG}
-\end{center}
-\caption{In {\it Pseudacraea eurytus} there are two homozygotes morphs that mimic
- a different blue and orange butterfly; the heterozygote fails to mimic
-either successfully and so suffers a high rate of predation
-\citep{owen1972polymorphic}. \BHLNC{Illustrations of new species of
-exotic butterflies (1868) Hewitson.}{https://commons.wikimedia.org/wiki/File:Pseudacraea_eurytus.JPG}{Smithsonian Libraries}} \label{fig:underdom_buttfly}  % https://books.google.com/books?id=4XSmCwAAQBAJ&pg=PA399&lpg=PA399&dq=pseudacraea+eurytus+heterozygotes&source=bl&ots=Dw6f7Wl6rO&sig=oT6VYvO80LEh9dbYKgri-X9OHHQ&hl=en&sa=X&ved=2ahUKEwinoYnWxtXeAhVnw1QKHRj6CzMQ6AEwDXoECAUQAQ#v=onepage&q=pseudacraea%20eurytus%20heterozygotes&f=false
-\end{marginfigure}
 
 
 Underdominance also permits three equilibria: $p=0$, $p=1$, and a
 polymorphic equilibrium $p=p_U$. However, now only the first two equilibria are stable, while the polymorphic
-equilibrium is unstable. If $p<p_U$, then $\Delta p_t $ is negative %emjo: should it be p_e instead of p_u?
+equilibrium ($p_ux$) is unstable. If $p<p_U$, then $\Delta p_t $ is negative %emjo: should it be p_e instead of p_u?
 and allele $A_1$ will be lost, while if $p>p_U$, allele
 $A_1$ will become fixed.\\
 
@@ -1013,11 +855,327 @@ equilibrium frequency ($p_e$) and positive above. {\bf Right)} Mean
 fitness ($\bar{w}$) as a function of the allele frequency. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_disadvant_dp_wbar}
 \end{figure*}
 
-\begin{question}
-You are studying the polymorphism that affects flight speed in butterflies. The polymorphism does not appear to affect fecundity.  Homozygotes for the B allele are slow in flight and so only 40\% of them survive to have offspring. Heterozygotes for the polymorphism (Bb) fly quickly and have a 70\% probability of surviving to reproduce. The homozygotes for the alternative allele (bb) fly very quickly indeed, but often die of exhaustion, with only 10\% of them making it to reproduction.  \\
-{\bf A)} What is the equilibrium frequency of the B allele?\\
-{\bf B)} Calculate the marginal absolute fitnesses of the B and the b allele at the equilibrium frequency. 
-\end{question}
+
+\paragraph{Negative frequency-dependent selection.}
+In the models and examples above, heterozygote advantage maintains multiple alleles in the population because the common allele has a disadvantage compared to the
+other rarer allele. In the case of heterozygote advantage, the
+relative fitnesses of our three genotypes are not a function of the
+other genotypes present in the population. However, there's a broader set of models where the relative fitness of a genotype depends on the
+genotypic composition of the population; this broad family of models
+is called frequency-dependent selection. Negative frequency-dependent selection, where the fitness of an allele
+(or phenotype) decreases as it becomes more common in the population, can act to maintain genetic and phenotypic diversity within populations. While cases of long-term heterozygote advantage may be somewhat rare in nature, negative frequency-dependent selection is likely a common form of
+balancing selection.
+
+One common mechanism that may create negative frequency-dependent
+selection is the interaction between individuals within or among
+species. For example, negative frequency-dependent dynamics can
+arise in predator-prey or pathogen-host dynamics, where
+alleles conferring common phenotypes are at a disadvantage because 
+predators or pathogens learn or evolve to counter the phenotypic effects of
+common alleles.
+
+As one example of negative frequency-dependent selection, consider the two flower colour morphs in the
+deceptive elderflower orchid ({\it Dactylorhiza
+  sambucina}). Throughout Europe, there are populations of these orchids polymorphic for 
+yellow- and purple-flowered individuals, with the
+yellow flower corresponding to a recessive allele. Neither of
+these morphs provide any nectar or pollen reward to their bumblebee
+pollinators. \begin{marginfigure}
+\begin{center}
+  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Elderflower_orchid/albumdesorchid1899corr_0209.jpg}
+\end{center}
+\caption{Elderflower orchid ({\it Dactylorhiza
+  sambucina}). \BHLNC{Abbildungen der in Deutschland und den angrenzenden
+gebieten vorkommenden grundformen der orchideenarten (1904). Müller, W.}{https://www.biodiversitylibrary.org/page/15349868\#page/126/mode/1up}{New York Botanical Garden} } \label{fig:ElderflowerOrchid}  %Illustrations of the basic forms of orchid species found in Germany and neighboring areas
+\end{marginfigure} Thus these plants are typically pollinated by newly emerged
+bumblebees who are learning about which plants offer food rewards,
+with the bees alternating to try a different coloured flower if they
+find no food associated with a particular flower-colour morph \citep{smithson1997negative}. 
+\citet{gigord2001negative} explored whether this behaviour by bees
+could result in negative frequency-dependent selection; out in the field, the researchers set up
+experimental orchid plots in which they varied
+the frequency of the two colour morphs. Figure \ref{fig:Elderflower_orchids_fitness} shows their measurements of the relative
+male and female reproductive success of the yellow morph across these experimental plots. When the yellow morph is rare, it has
+higher reproductive success than the purple morph, as it receives a
+disproportionate number of visits from bumblebees that are dissatisfied
+with the purple flowers. This situation is reversed when the yellow
+morph becomes common in the population; now the purple morph
+outperforms the yellow morph. Therefore, both colour morphs are
+maintained in this population, and presumably Europe-wide, due to this negative frequency-dependent
+selection. %The yellow morph is found at $\sim 69\%$ in the region of
+%France where this experiment was conducted, consistent with the frequency at which the two
+%morphs are predicted to have equal fitness.
+% \graham{check
+ % recessive?} %http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids_fitness.pdf}
+\end{center}
+\caption[][0cm]{{\bf Left)} Measures of the relative male- and female- reproductive success of the yellow elderflower orchid morph
+  as a function of the yellow morph in experimental plots. {\bf
+    Right)} Two allele frequency trajectories of the Yellow allele
+  subject to negative frequency scheme given in the left plot
+  (for an initial frequency of $0.01$ and $0.99$, solid and dotted
+  line respectively). 
+  Male
+  reproductive success is measured in terms of the \% of pollinia
+  removed from a plant, and female reproductive success is measured in terms of the
+  \% of stigmas receiving pollinia on a plant. These measures are made
+relative by dividing the reproductive success of the yellow morph by the
+mean of the yellow and purple morphs. Pollinia are the pollen masses of
+orchids, and other plants, where individual pollinium are transferred
+as a single unit by pollinators. Data from
+\citet{gigord2001negative}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids.R}} \label{fig:Elderflower_orchids_fitness}  
+\end{figure}
+
+%The Independents are very aggressive toward each other, but tolerate
+%the submissive Satellite males as females are attracted to leks where multiple males display.
+
+Negative frequency-dependent selection can also maintain different 
+breeding strategies due to interactions amongst individuals within a population. One
+dramatic example of this occurs in ruffs ({\it Philomachus pugnax}), a
+marsh-wading sandpiper that summers in Northern Eurasia. The males of this species
+lek, with the males gathering on open ground to display and attract females. There are three different male morphs differing in their breeding
+strategy. The large majority of males are `Independent', with black or
+chestnut ruff plumage, and try to defend and display on small territories. `Satellite' males, with white ruff plumage, make
+up $\sim 16\%$ of males and do not defend territories, but rather join
+in displays with Independent males and opportunistically mate with
+females visiting the lek. Finally, the rare `Faeder' morph was only discovered
+in 2006 \citep{jukema2006permanent} and makes up less than 1\% of males. These Faeder males are female mimics who hang
+around the territories of Independents and try to 'sneak' in matings with females. Faedar males have plumage closely resembling
+that of females and a smaller body size than other males, but with larger testicles (presumably to
+take advantage of rare mating opportunities).
+\begin{figure}
+\begin{center}   %% pic of a single ruff https://www.biodiversitylibrary.org/page/58888512#page/291/mode/1up
+  \includegraphics[width = 0.8 \textwidth]{illustration_images/single_locus_selection/Ruffs/Philomachus_pugnax_naumann.jpg}
+\end{center}
+\caption{Lekking ruffs ({\it Philomachus pugnax}). Three Independent males, one Satellite male, and one female
+(or Faeder male?). {\newline \noindent  \tiny{ Painting by Johann
+    Friedrich Naumann (1780–1857). Public Domain,
+    \href{https://en.wikipedia.org/wiki/Ruff\#/media/File:Philomachus_pugnax_naumann.jpg}{wikimedia}.}}}\label{fig:Ruff}  
+\end{figure}
+
+All three of the ruff morphs, with their complex behavioural and morpological differences,
+are controlled by three alleles at a single autosomal locus, with the
+Satellite and Faeder alleles being genetically dominant over the high frequency
+Independent allele. The genetic variation for these three morphs is potentially maintained by
+negative frequency-dependent selection, as all three male strategies
+are likely at an advantage when they are rare in the population. For
+example, while the Satellites mostly lose out on mating opportunities
+to Independents, they may have longer life-spans and so may have equal
+life-time reproductive success \citep{widemo1998alternative}. However, Satellite and Faeder males
+are totally reliant on the lekking Independent males, and so both of
+these alternative strategies cannot become overly common in the
+population. The locus controlling these differences has been mapped,
+and the underlying alleles have persisted for roughly four million years
+\citep{kupper2016supergene,lamichhaney2016structural}. While this mating system is
+bizarre, the frequency dependent dynamics mean that it has been around
+longer than we've been using stone tools. \\ 
+
+While these examples may seem somewhat involved, they must be simple
+compared to the complex dynamics that maintain the hundreds of alleles
+present at the genes in the major histocompatibility complex (MHC). MHC
+genes are key to the coordination of the vertebrate immune
+system in response to pathogens, and are likely caught in an endless arms
+race with pathogens adapting to common MHC alleles, allowing rare MHC
+alleles to be favoured. Balancing selection at the MHC locus has maintained
+some polymorphisms for tens of millions of years, such that some of
+your MHC alleles may be genetically more closely related to MHC alleles in other primates than they are to alleles in your
+close human friends. 
+
+
+\section{Fluctuating selection pressures}
+Selection pressures are rarely constant through time due to
+environmental change.  As selection pressures on a polymorphism change
+the frequency of the allele can fluctuate along with them. This can have important implications for which
+alleles can survive and spread. We'll see that when selection
+fluctuates that the success of alleles and genotypes can often be summarized
+by their ``geometric mean fitness' and so alleles and genotypes
+that bet-hedge in their strategies can win out in long-term competitions
+between individuals in fluctuating environments.
+
+\paragraph{Haploid model with fluctuating selection}
+
+We can use our haploid model to consider this case where the fitnesses depend on time \citep{Dempster:55}, and
+say that $w_{1,t}$ and $w_{2,t}$ are the fitnesses of the two types in
+generation $t$. The frequency of allele $A_1$ in generation $t+1$ is
+\begin{equation}
+p_{t+1} = \frac{w_{1,t}}{\wbar_t} p_t,
+\end{equation}
+which simply follows from eqn.\ \eqref{eq:recHaplMod2}.
+The ratio of the frequency of allele $A_1$ to that of allele $A_2$ in generation $t+1$ is
+\begin{equation}
+\frac{p_{t+1}}{q_{t+1}} = \frac{w_{1,t}}{w_{2,t}}  \frac{p_{t}}{q_{t}}.
+\end{equation}
+Therefore, if we think of the two alleles starting in generation $1$ at
+frequencies $p_1$ and $q_1$, then $\tau$ generations later,
+\begin{equation}
+\frac{p_{\tau}}{q_{\tau}} = \left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right) \frac{p_{1}}{q_{1}}.
+\end{equation}
+\\
+
+The question of which allele is increasing or decreasing in frequency comes down
+to whether $\left(\prod_{i=1}^{\tau} \nicefrac{w_{1,i}}{w_{2,i}}  \right)$ is
+$>1$ or $<1$. As it is a little hard to think about this ratio, we can
+instead take the $\tau^{\mathrm{th}}$ root of it and consider
+\begin{equation}
+\sqrt[\tau]{\left(\prod_{i=1}^{\tau} \frac{w_{1,i}}{w_{2,i}}  \right)} = \frac{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}}{\sqrt[\tau]{\prod_{i=1}^{\tau}w_{2,i}}}.
+\end{equation}
+The term
+\begin{equation}
+  \sqrt[\tau]{\prod_{i=1}^{\tau}w_{1,i}}  \label{hap_geo_fitness}
+\end{equation}
+\begin{margintable}
+  \begin{tabular}{lcc}
+    & $A_1$  & $A_2$\\
+    \hline
+    Dry & 2 & 1.57 \\
+    Wet &  1.16 & 1.57   \\
+    \hline
+    Arithmetic Mean & 1.58  & 1.57  \\
+    Geometric Mean & 1.52 & 1.57 
+  \end{tabular}
+  \caption{Fitnesses of two alleles in wet and dry years. Means calculated assuming
+    equal chances of wet and dry years. The geometric mean is
+    calculated as
+    $\sqrt{w_{\textrm{wet}}w_{\textrm{dry}}}$. Example numbers
+    taken from \citet{seger1987oxford}.} \label{Table:Geom_fitness}
+\end{margintable}
+
+is the geometric mean fitness of allele
+ $A_1$ over the $\tau$ generations past generation $t$. Therefore, allele $A_1$ will only increase
+in frequency if it has a higher geometric mean fitness than allele $A_2$
+(at least in our simple deterministic model). This implies that an allele with higher
+geometric mean fitness can even invade and spread to fixation if its
+(arithmetic) mean fitness is lower than the dominant type.  To see
+this consider two alleles that experience the fitnesses given in Table
+\ref{Table:Geom_fitness}. The allele $A_1$ does much better in
+dry years, but suffers in wet years; while the $A_2$ is generalist and
+is not affected by the variable environment. If there is an equal
+chance of a year being wet or dry, the $A_1$ allele has
+higher (arithmetic) mean fitness, but it will be replaced by the $A_2$
+allele as the $A_2$ allele has higher geometric mean fitness (See Figure \ref{fig:haploid_geo}). \\
+
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/Haploid_geom_traj.pdf}
+\end{center}
+\caption{An example frequency trajectory of the $A_1$ allele under
+  variable environments (using the fitnesses from Table
+  \ref{Table:Geom_fitness}). Wet years (generations) are shown in red, dry
+  years in white. The environment flips at random each year.  Note how the $A_1$ allele increases in frequency in
+  the dry years as it has higher fitness, and yet the $A_2$ allele
+  still wins out. 
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/Geometric_mean_fitness.R}} \label{fig:haploid_geo}
+\end{figure}
+
+\paragraph{Evolution of bet hedging}
+
+%birds nest https://www.biodiversitylibrary.org/ia/Illustrationsne1Jone#page/11/mode/1up
+%% great tit nest https://archive.org/stream/britainsbirdsthe00thom/britainsbirdsthe00thom#page/n536/mode/1up
+%% blue tit nest https://www.flickr.com/photos/biodivlibrary/6025489801/
+
+%https://twitter.com/rlmcelreath/status/1129013411344453632
+Don't put your eggs in one basket, it makes a lot of sense to spread
+your bets. Financial advisors often advise you to diversify your
+portfolio, rather than placing all your investments in one stock. Even
+if that stock looks very strong, you can come a cropper that
+$\nicefrac{1}{20}$ times some particular part of the market
+crashes. Likewise, evolution can result in risk averse
+strategies. Some species of bird lay multiple nests of eggs; some
+plants don't put all of their energy into seeds that will germinate next year. It can
+even make sense to hedge your bets even if that comes at an average
+cost \citep{seger1987oxford}.
+
+To see this let's think more about geometric fitness. We can write the
+relative fitness of an allele in a given generation $i$ as $w_{i}= 1+s_i$, such that we can
+write your geometric fitness as
+\begin{equation}
+ \bar{g}= \sqrt[\tau]{\prod_{i=1}^{\tau-1} 1+s_i}  \label{hap_geo_fitness_bh}
+  \end{equation}
+when we think about products it's often natural to take the $\log$ to
+turn it into a sum
+\begin{align}
+ \log \big( \bar{g} \big) =& \frac{1}{\tau} \sum_{i=1}^{\tau-1} \log \big(1+s_i \big) \nonumber\\
+  = & \E \bigg[ \log \big( 1+s_i \big) \bigg]
+\end{align}
+equating the mean and the expectation. Assuming that $s_i$ is small $\log(1+s_i \big) \approx s_i -
+\nicefrac{s_i^2}{2}$, ignoring terms $s_i^3$ and
+higher\sidenote{Here we're using a 2nd order Taylor approximation, see
+  math appendix eqn \eqref{eqn:Taylor_log_2nd}. } then this is
+\begin{align}
+  \log \big( \bar{g}  \big) \approx & \E\bigg[  s_i -\nicefrac{s_i^2}{2}  \bigg]  \nonumber\\
+  =  & \E \bigg[  s_i \bigg]  - \textrm{var}(s_i)/2 \nonumber\\
+\end{align}
+where $\textrm{var}(s_i)$ is the variance of the selection coefficient
+over generations.
+\graham{issue with $\E^2(s)$ here}
+So genotypes with high arithmetic mean fitness can be selected against,
+i.e. have low geometric mean fitness against, if their fitness has too
+high a variance across generations \citep{gillespie1973natural,gillespie1977natural}. See our example
+above,  Table \ref{Table:Geom_fitness} and Figure \ref{fig:haploid_geo}).
+
+  \begin{marginfigure}
+\begin{center}
+\includegraphics[width= \textwidth]{illustration_images/single_locus_selection/woolly_plantain/20771670485_fb7e476748_b.jpg}
+\end{center}
+\caption{Woolly plantain ({\it Plantago patagonica}). One of the
+  desert annuals shown to have a bet-hedging germination strategy by
+  \citet{gremer2014bet}. \BHLNC{An illustrated flora of the northern
+    United States, Canada and the British possessions, from
+    Newfoundland to the parallel of the southern boundary of Virginia,
+    and from the Atlantic Ocean westward to the 102d meridian (1913)  Britton, N.L.}{https://www.flickr.com/photos/internetarchivebookimages/20771670485/}{Cornell University Library}} \label{fig:Woolly_plantain}
+\end{marginfigure}
+
+A classic example of bet-hedging is in delayed seed germination in
+plants \citep{cohen1966optimizing}. In variable environments, such as
+deserts, it may make sense to spread your bets over years by having
+only a proportion of your seeds germinate in the first year. However,
+delaying germination can come at a cost due to seed
+mortality. \citet{gremer2014bet}, using data from a long-term study
+various species of Sonoran Desert winter showed that annual plants
+were indeed pursuing adaptive bet-hedging strategies.
+The plant species with the highest variation in among-year yield had
+the lowest germination fraction per year.  Further,
+\citeauthor{gremer2014bet} showed through modeling life that by having
+per-year germination proportions $<1$ all of the species were
+achieving higher geometric fitness at the expense of arithmetic
+fitness in the variable desert environment. See Figure
+\ref{fig:desert_bet_hedging} for an example of bet hedging in woolly plantain.
+
+  \begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Gremer_hedging_example/Gremer_hedging_example.pdf}
+\end{center}
+\caption{  {\it Plantago patagonica}'s arithmetic fitness is an
+  increasing function of the proportion of seeds germinating, due to
+  seeds not surviving a germination delay. However, the standard
+  deviation of fitness also increases with this proportion as they are
+  more likely to have all of their seeds germinate in a bad year. Thus
+  {\it Plantago patagonica}  can achieve higher geometric fitness by
+  only having a proportion of their seeds germinate. Thanks to Jenny
+  Gremer for sharing these data from \citet{gremer2014bet}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Gremer_hedging_example/Gremer_bet_hedging.R} } \label{fig:desert_bet_hedging}
+\end{figure}
+
+
+%% Gremer seed germination https://onlinelibrary.wiley.com/doi/full/10.1111/ele.12241
+
+%Chicken pox https://www.pnas.org/content/pnas/99/23/15234.full.pdf
+Delayed reproduction is also a common example of bet-hedging in
+micro-organisms. For example, the Chicken Pox virus, varicella zoster
+virus, has a very long latent phase. After it causes chicken pox it enters a latent phase, residing inactive in neurons in
+the spinal cord, only to emerge 5-40 years later to cause the disease
+shingles. It is hypothesized that the virus actively suppresses itself
+as a strategy to allow it to emerge at a later time point as insurance
+against there being no further susceptible hosts at the time of its
+first infection \citep{stumpf2002herpes}. 
+
+% https://eebweb.arizona.edu/faculty/venable/pdfs/Gremer&Venable2014.pdf
+%experimental evolution of bet-hedging http://www.indiana.edu/~curtweb/L567/readings/bet%20hedging%20evolution.pdf
+
+\graham{NOTE about how haploid model can be useful for thinking about
+  ESS }
 
 
 \paragraph{Diploid fluctuating fitness}
@@ -1036,7 +1194,7 @@ selection (left side of \ref{fig:Droso_fluct}). If you're still
 reading these notes send Prof. Coop a picture of Dobzhansky;
 Dobzhansky was one of the most important evolutionary geneticists of
 the past century and spent a bunch of time at UC Davis in his later years. Our second example is an insertion-deletion polymorphism in
-the Insulin-like Receptor gene in {\it Drosophila melanogaster}. \citet{paaby:14} tracked the
+the {\it Insulin-like Recepto}r gene in {\it Drosophila melanogaster}. \citet{paaby:14} tracked the
 frequency of this allele over time and found it oscillated with the
 seasons (right side of \ref{fig:Droso_fluct}). She and her coauthors
 also determined that these alleles had large effects on traits such as
@@ -1046,13 +1204,15 @@ developmental time and fecundity, which could mediate the maintenance of this po
 \begin{center}
 \includegraphics[width=\textwidth]{Journal_figs/single_locus_selection/temporal_Droso_freq/temporal_Droso_freq.pdf}
 \end{center}
-\caption{{\bf Left)} Seasonal variation in the frequency of the `Standard' inversion allele in
+\caption{{\bf Left)} Seasonal variation in the mean frequency of the `Standard' inversion allele in
   {\it Drosophila pseudoobscura} for three populations from Mount San
   Jacinto, CA. These frequencies are an average
   over four years. Data from \citet{wright:46}. {\bf Right)} The
-  frequency of an allele at the Insulin-like Receptor gene over three
-  years in {\it Drosophila melanogaster} samples from an Orchard in
-  Pennsylvania. Data from \citet{paaby:14}. \gitcode{https://github.com/cooplab/popgen-notes/tree/master/Journal_figs/single_locus_selection/temporal_Droso_freq}} \label{fig:Droso_fluct} 
+  frequency of an allele at the {\it Insulin-like Receptor} gene over three
+  years in {\it Drosophila melanogaster} samples from an orchard in
+  Pennsylvania. Data from \citet{paaby:14}. Note the difference in
+  {\it x}
+  axes here. \gitcode{https://github.com/cooplab/popgen-notes/tree/master/Journal_figs/single_locus_selection/temporal_Droso_freq}} \label{fig:Droso_fluct} 
 \end{figure}
 
 To explore temporal fluctuations in fitness, we'll need to
@@ -1140,7 +1300,7 @@ arithmetic mean & 5.05 & 5.0 & 4.95\\
 {%\bf B)} If the probabilities of wet and dry environments were equal,
 %(i.e. 0.5) how would your conclusion change?\\
 %(HINT:
-\marginnote{This example is loosely based on the work of
+\marginnote[-2cm]{This example is loosely based on the work of
   \citet{schemske2001perspective} on {\it Linanthus parryae}, a desert
   annual, endemic to California. There
   are blue- and a white-flowered colour morphs polymorphic many populations,
@@ -1181,139 +1341,8 @@ and the higher geometric mean fitness of the heterozygotes.
 
 
 
-\paragraph{Negative frequency-dependent selection.}
-In the models and examples above, heterozygote advantage maintains multiple alleles in the population because the common allele has a disadvantage compared to the
-other rarer allele. In the case of heterozygote advantage, the
-relative fitnesses of our three genotypes are not a function of the
-other genotypes present in the population. However, there's a broader set of models where the relative fitness of a genotype depends on the
-genotypic composition of the population; this broad family of models
-is called frequency-dependent selection. Negative frequency-dependent selection, where the fitness of an allele
-(or phenotype) decreases as it becomes more common in the population, can act to maintain genetic and phenotypic diversity within populations. While cases of long-term heterozygote advantage may be somewhat rare in nature, negative frequency-dependent selection is likely a common form of
-balancing selection.
-
-One common mechanism that may create negative frequency-dependent
-selection is the interaction between individuals within or among
-species. For example, negative frequency-dependent dynamics can
-arise in predator-prey or pathogen-host dynamics, where
-alleles conferring common phenotypes are at a disadvantage because 
-predators or pathogens learn or evolve to counter the phenotypic effects of
-common alleles.
-
-\begin{marginfigure}
-\begin{center}
-  \includegraphics[width = \textwidth]{illustration_images/single_locus_selection/Elderflower_orchid/albumdesorchid1899corr_0209.jpg}
-\end{center}
-\caption{Elderflower orchid ({\it Dactylorhiza
-  sambucina}). \BHLNC{Abbildungen der in Deutschland und den angrenzenden
-gebieten vorkommenden grundformen der orchideenarten (1904). Müller, W.}{https://www.biodiversitylibrary.org/page/15349868\#page/126/mode/1up}{New York Botanical Garden} } \label{fig:ElderflowerOrchid}  %Illustrations of the basic forms of orchid species found in Germany and neighboring areas
-\end{marginfigure}
-As one example of negative frequency-dependent selection, consider the two flower colour morphs in the
-deceptive Elderflower orchid ({\it Dactylorhiza
-  sambucina}). Throughout Europe, there are populations of these orchids polymorphic for 
-yellow- and purple-flowered individuals, with the
-yellow flower corresponding to a recessive allele. Neither of
-these morphs provide any nectar or pollen reward to their bumblebee
-pollinators. 
-Thus these plants are typically pollinated by newly emerged
-bumblebees who are learning about which plants offer food rewards,
-with the bees alternating to try a different coloured flower if they
-find no food associated with a particular flower-colour morph \citep{smithson1997negative}. 
-\citet{gigord2001negative} explored whether this behaviour by bees
-could result in negative frequency-dependent selection; out in the field, the researchers set up
-experimental orchid plots in which they varied
-the frequency of the two colour morphs. Figure \ref{fig:Elderflower_orchids_fitness} shows their measurements of the relative
-male and female reproductive success of the yellow morph across these experimental plots. When the yellow morph is rare, it has
-higher reproductive success than the purple morph, as it receives a
-disproportionate number of visits from bumblebees that are dissatisfied
-with the purple flowers. This situation is reversed when the yellow
-morph becomes common in the population; now the purple morph
-outperforms the yellow morph. Therefore, both colour morphs are
-maintained in this population, and presumably Europe-wide, due to this negative frequency-dependent
-selection. %The yellow morph is found at $\sim 69\%$ in the region of
-%France where this experiment was conducted, consistent with the frequency at which the two
-%morphs are predicted to have equal fitness.
-% \graham{check
- % recessive?} %http://courses.biology.utah.edu/seger/3410_spr_09/feb_4_2pp.pdf
-
-\begin{figure}
-\begin{center}
-  \includegraphics[width = \textwidth]{Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids_fitness.pdf}
-\end{center}
-\caption[][0cm]{{\bf Left)} Measures of the relative male- and female- reproductive success of the yellow Elderflower orchid morph
-  as a function of the yellow morph in experimental plots. {\bf
-    Right)} Two allele frequency trajectories of the Yellow allele
-  subject to negative frequency scheme given in the left plot
-  (for an initial frequency of $0.01$ and $0.99$, solid and dotted
-  line respectively). Note that the yellow 
-  Male
-  reproductive success is measured in terms of the \% of pollinia
-  removed front a plant and female reproductive success is measured in terms of the
-  \% of stigmas receiving pollinia on a plant. These measures are made
-relative by dividing the reproductive success of the yellow morph by the
-mean of the yellow and purple morphs. Pollinia are the pollen masses of
-orchids, and other plants, where individual pollinium are transferred
-as a single unit by pollinators. Data from
-\citet{gigord2001negative}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/single_locus_selection/Elderflower_orchid/Elderflower_orchids.R}} \label{fig:Elderflower_orchids_fitness}  
-\end{figure}
-
-%The Independents are very aggressive toward each other, but tolerate
-%the submissive Satellite males as females are attracted to leks where multiple males display.
-
-Negative frequency-dependent selection can also maintain different 
-breeding strategies due to interactions amongst individuals within a population. One
-dramatic example of this occurs in ruffs ({\it Philomachus pugnax}), a
-marsh-wading sandpiper that summers in Northern Eurasia. The males of this species
-lek, with the males gathering on open ground to display and attract females. There are three different male morphs differing in their breeding
-strategy. The large majority of males are `Independent', with black or
-chestnut ruff plumage, and try to defend and display on small territories. `Satellite' males, with white ruff plumage, make
-up $\sim 16\%$ of males and do not defend territories, but rather join
-in displays with Independent males and opportunistically mate with
-females visiting the lek. Finally, the rare `Faeder' morph was only discovered
-in 2006 \citep{jukema2006permanent} and makes up less than 1\% of males. These Faeder males are female mimics who hang
-around the territories of Independents and try to 'sneak' in matings with females. Faedar males have plumage closely resembling
-that of females and a smaller body size than other males, but with larger testicles (presumably to
-take advantage of rare mating opportunities). All three of these
-morphs, with their complex behavioural and morpological differences,
-are controlled by three alleles at a single autosomal locus, with the
-Satellite and Faeder alleles being genetically dominant over the high frequency
-Independent allele.
-\begin{figure}
-\begin{center}   %% pic of a single ruff https://www.biodiversitylibrary.org/page/58888512#page/291/mode/1up
-  \includegraphics[width = 0.8 \textwidth]{illustration_images/single_locus_selection/Ruffs/Philomachus_pugnax_naumann.jpg}
-\end{center}
-\caption{Lekking Ruffs ({\it Philomachus pugnax}). Three Independent males, one Satellite male, and one female
-(or Faeder male?). {\newline \noindent  \tiny{ Painting by Johann
-    Friedrich Naumann (1780–1857). Public Domain,
-    \href{https://en.wikipedia.org/wiki/Ruff\#/media/File:Philomachus_pugnax_naumann.jpg}{wikimedia}.}}}\label{fig:Ruff}  
-\end{figure}
-The genetic variation for these three morphs is potentially maintained by
-negative frequency-dependent selection, as all three male strategies
-are likely at an advantage when they are rare in the population. For
-example, while the Satellites mostly lose out on mating opportunities
-to Independents, they may have longer life-spans and so may have equal
-life-time reproductive success \citep{widemo1998alternative}. However, Satellite and Faeder males
-are totally reliant on the lekking Independent males, and so both of
-these alternative strategies cannot become overly common in the
-population. The locus controlling these differences has been mapped,
-and the underlying alleles have persisted for roughly four million years
-\citep{kupper2016supergene,lamichhaney2016structural}. While this mating system is
-bizarre, the frequency dependent dynamics mean that it has been around
-longer than we've been using stone tools. \\ 
-
-While these examples may seem somewhat involved, they must be simple
-compared to the complex dynamics that maintain the hundreds of alleles
-present at the genes in the Major histocompatibility complex (MHC). MHC
-genes are key to the coordination of the vertebrate immune
-system in response to pathogens, and are likely caught in an endless arms
-race with pathogens adapting to common MHC alleles, allowing rare MHC
-alleles to be favoured. Balancing selection at the MHC locus has maintained
-some polymorphisms for tens of millions of years, such that some of
-your MHC alleles may be genetically more closely related to MHC alleles in other primates than they are to alleles in your
-close human friends. 
-
-
 \section{Sex ratios, sex ratio distorters, and other selfish
-  elements. }
+  elements. } \label{section:sex_ratios}
 
 We have seen that when selection acts on phenotypes and genotypes in a
 frequency-independent manner it can act to
@@ -1367,8 +1396,10 @@ often close to 50/50?
 Imagine if the population sex ratio was strongly skewed towards females. A rare autosomal allele that caused a mother to produced sons would have high fitness, as the mother's sons would have high reproductive success in this population of most females. Thus our initially rare allele would increase in frequency.
 Conversely if the sex ratio was strongly skewed towards males, a rare autosomal allele that causes a mother to produce daughters would spread.
 So selection on autosomal alleles favours the production of the rare
-sex, a form of negative frequency dependence, and this pushes the sex ratio away from being too skewed. Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
-The 50/50 sex ratio is an example of an Evolutionary stable strategy
+sex, a form of negative frequency dependence, and this pushes the sex
+ratio away from being too skewed (see Figure \ref{fig:sex_ratio} for
+an empirical example). Only the 50/50 sex ratio is evolutionarily stable as there is no rarer sex, and so no (autosomal) sex-ratio-altering mutation can invade a population with a 50/50.
+The 50/50 sex ratio is an example of an Evolutionary Stable Strategy
 (ESS), described in more detail in Section
 \ref{ESS_sex_Ratio}. \marginnote{``An ESS is a strategy such that, if
   all the members of a population adopt it, then no mutant strategy
@@ -1392,34 +1423,21 @@ species of fig wasp, which form a tight pollination symbiosis with many species 
 fig. Wasp females enter the inverted fig flower structure (top right
 Figure \ref{fig:fig}) pollinating the flowers. \begin{marginfigure}
   \begin{center}
-    \includegraphics[width=
-    \textwidth]{illustration_images/single_locus_selection/Fig_wasp/cropped_fig.png}  %https://www.flickr.com/photos/biodivlibrary/8050635507
+    \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Fig_wasp/1280px-A_descriptive_catalogue_of_fruit_and_forest_trees_vines_and_shrubs_choice_palms_and_roses.jpg}
 \end{center}  % https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
-\caption{ % alt image https://www.flickr.com/photos/vintage_illustration/41974094471
-Common Fig ({\it Ficus carica}). Despite urban legends the crunch in
-figs isn't dead wasps, edible figs are dioecious and female wasps
-can't lay in the female flowers that form the fruit we eat. 
-\BHLNC{Plantae selectae quarum imagines ad exemplaria naturalia Londini, in hortis curiosorum nutrita (1750) Trew, C.J.}{https://www.flickr.com/photos/biodivlibrary/8050635507}{Missouri Botanical Garden}} \label{fig:fig}
-\end{marginfigure}
- They lay their eggs in some of the
+\caption{
+Life stages of fig wasp ({\it Blastophaga psenes}, synonym {\it Blastophaga
+    grossorum}); the primary pollinator of the common fig {\it Ficus carica}.
+\BHLNC{A descriptive catalogue of fruit and forest trees, vines and
+  shrubs, choice palms and roses (1903) by Fancher Creek
+  Nurseries}{https://www.biodiversitylibrary.org/item/164893\#page/33/mode/1up}{National Agricultural Library, USDA}} \label{fig:fig_wasp}
+\end{marginfigure} They lay their eggs in some of the
 flowers, which form galls in response.  The young, wingless, male
 wasps emerge from their galls first (Figure \ref{fig:fig_wasp}f) but
 they never leave the fig. Their only role in this is
 to fertilize the female wasps (Figure \ref{fig:fig_wasp}d) in the fig and then die. The female
 offspring (Figure \ref{fig:fig_wasp}a \& e) emerge in the fig just as the male fig flowers
 are emerging. The female wasps burrow out and and take the fig pollen with them as they fly off.
-
-\begin{marginfigure}
-  \begin{center}
-    \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Fig_wasp/1280px-A_descriptive_catalogue_of_fruit_and_forest_trees_vines_and_shrubs_choice_palms_and_roses.jpg}
-\end{center}  % https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
-\caption{
-Life stages of Fig wasp ({\it Blastophaga psenes}, synonym {\it Blastophaga
-    grossorum}); the primary pollinator of the common fig {\it Ficus carica}.
-\BHLNC{A descriptive catalogue of fruit and forest trees, vines and
-  shrubs, choice palms and roses (1903) by Fancher Creek
-  Nurseries}{https://www.biodiversitylibrary.org/item/164893\#page/33/mode/1up}{National Agricultural Library, USDA}} \label{fig:fig_wasp}
-\end{marginfigure}
 
 Female wasps have control over the sex of their offspring but what is their optimal strategy? Females have
 this degree of control as sex determination in wasps is haplo-diploid, with fertilized eggs
@@ -1430,23 +1448,24 @@ will mate with her daughters and then die. Thus a lone female can maximize
 her contribution to the next generation by having many daughters, and
 just enough sons to fertilize them. And that's exactly what female
 wasps do, in many species of fig wasp $95\%$ of individuals born are
-female. 
+female.
+
+\begin{marginfigure}
+  \begin{center}
+    \includegraphics[width=
+    \textwidth]{illustration_images/single_locus_selection/Fig_wasp/cropped_fig.png}  %https://www.flickr.com/photos/biodivlibrary/8050635507
+\end{center}  % https://commons.wikimedia.org/wiki/File:A_descriptive_catalogue_of_fruit_and_forest_trees,_vines_and_shrubs,_choice_palms_and_roses_(1903)_(20257437763).jpg
+\caption{ % alt image https://www.flickr.com/photos/vintage_illustration/41974094471
+Common fig ({\it Ficus carica}). Despite urban legends the crunch in
+figs isn't dead wasps, edible figs are dioecious and female wasps
+can't lay in the female flowers that form the fruit we eat. 
+\BHLNC{Plantae selectae quarum imagines ad exemplaria naturalia Londini, in hortis curiosorum nutrita (1750) Trew, C.J.}{https://www.flickr.com/photos/biodivlibrary/8050635507}{Missouri Botanical Garden}} \label{fig:fig}
+\end{marginfigure}
 %Figs and fig wasps have an amazing mut
 
 %fig wasps https://science.sciencemag.org/content/228/4701/896
 % parasitic wasps https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1558-5646.1983.tb05520.x
 
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{figures/sex_ratio_distortor.pdf}
-
-\end{center}
-\caption[][3cm]{The increase in frequency of a sex-ratio distorting X allele in the population of
-  X chromosomes (solid line) and the frequency of males in the
-  population. Males carrying the selfish X allele have $99\%$
-  daughters, and the selfish X allele reduces the viability of the
-  carries by $20\%$ in a dominant manner. The model set up as in \citet{edwards1961population}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/sex_ratio_distortor.R}} \label{fig:selfish_X_freqs}
-\end{figure}
 
 \subsection{Selfish genetic elements and selection below the level of
   the individual.}
@@ -1461,6 +1480,17 @@ them. They're included in this chapter in part because much of their biology can
 be understood from the perspective of the ideas developed here. But the main reason for talking about them is that they're an
 amazing slice of biology. %There's something deeply satisfying about
 %the idea that 
+\begin{figure}
+\begin{center}
+\includegraphics[width= \textwidth]{figures/sex_ratio_distortor.pdf}
+
+\end{center}
+\caption[][3cm]{The increase in frequency of a sex-ratio distorting X allele in the population of
+  X chromosomes (solid line) and the frequency of males in the
+  population. Males carrying the selfish X allele have $99\%$
+  daughters, and the selfish X allele reduces the viability of the
+  carries by $20\%$ in a dominant manner. The model set up as in \citet{edwards1961population}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/sex_ratio_distortor.R}} \label{fig:selfish_X_freqs}
+\end{figure}
 
 
 \paragraph{Selfish sex chromosomes and sex ratio distortion}
@@ -1475,7 +1505,7 @@ during gametogenesis that kills Y-bearing sperm. This would cause much
 of the ejaculate of the males carrying this mutation to be X-bearing sperm, and so these males would have mostly
 daughters. Such an allele would potentially spread in the population
 as it is over transmitted through males, even if it somewhat reduces
-the fitness of the individuals who carry it. The spread of this allele would strongly
+the fitness of the individuals who carry it \citep{hamilton1967extraordinary}. The spread of this allele would strongly
 bias the population sex ratio towards females. Such `selfish' X
 alleles turn out to be relatively common, and they can often
 substantially low the fitness of the bearer. They do not spread because they are good for the individual but rather because
@@ -1501,7 +1531,7 @@ few miles down the road from Davis). In crosses males carrying the selfish X
 chromosome have  $>80\%$ daughters. The gene
 responsible, {\it Dox} ({\it Distorter on the X}), is a gene
 duplicated by transposition and produces a transcript which targets a region
-on the $Y$ chromosome preventing the Y-bearing sperm from developing
+on the Y chromosome preventing the Y-bearing sperm from developing
 \citet[see Figure \ref{fig:winters_sperm} from][]{tao2007sexII}. 
 
 %https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050292#pbio-0050292-g005
@@ -1511,22 +1541,21 @@ on the $Y$ chromosome preventing the Y-bearing sperm from developing
 \begin{center}
 \includegraphics[width= \textwidth]{Journal_figs/single_locus_selection/Winters_sex_ratio_drive/Ferree_Barbash_dox_cartoon.png}
 \end{center}
-\caption{Mechanistic and Evolutionary Model for sex-ratio Distortion
-{\bf Left)} The X-linked Dox gene evolved to target the Y chromosome, blocking
+\caption{Mechanistic and evolutionary model for sex-ratio distortion
+{\bf Left)} The X-linked {\it Dox} gene evolved to target the Y chromosome, blocking
 Y-bearing sperm from developing and so favouring its own
-transmission. {\bf Right)} Subsequently Dox was retrotransposed to an
-autosome forming the Nmy gene. Nmy was subsequently rearranged by a
+transmission. {\bf Right)} Subsequently {\it Dox} was retrotransposed to an
+autosome forming the {\it Nmy} gene. {\it Nmy} was subsequently rearranged by a
 a small duplication, and now blocks the action of dox by the formation
 of a hairpin small interfering RNA. Figure from
-\citet{ferree2007distorted}, \PLOSccBY. See \citet
-{lin2018hprna} for an update on the fascinating biology and further
+\citet{ferree2007distorted}, \PLOSccBY. See \citet{lin2018hprna} for an update on the fascinating biology and further
 loci uncovered in this system.} \label{fig:dox_cartoon}
 \end{figure}
 
 The spread of such selfish sex chromosomes, distorting the sex ratio
 strongly away from 50/50, can have profound effects for population
 growth rates.\sidenote{Indeed people have long discussed using
-selfish Y chromosomes, driving an over production of sons, for population control of malaria-spreading
+selfish Y chromosomes, driving an overproduction of sons, for population control of malaria-spreading
 mosquitos. Natural selfish systems on the Y appear rare, likely
 because of its low gene content.} However, the other sex chromosome and autosomes are not helpless
 against the spread of selfish sex chromosome elements. In the case of
@@ -1539,10 +1568,9 @@ autosomal allele has spread through the population that suppresses the
 selfish X chromosome, restoring the 50/50 sex ratio. Now the sex ratio
 distorter can only be found by crosses to naive populations, where the
 supressor has not spread yet. The autosomal supressor gene turns out to be
-a duplicate of the selfish dox gene,{\it NMY} ({\it Not Much Yang}), that moved to the
+a duplicate of the selfish dox gene, {\it NMY} ({\it Not Much Yang}), that moved to the
 autosome through retrotransposition and now blocks the action of dox
-through RNA-interference degradation of the dox transcript \citep[
-][, see Figure \ref{fig:dox_cartoon}]{tao2007sex}.
+through RNA-interference degradation of the dox transcript \citep[][ see Figure \ref{fig:dox_cartoon}]{tao2007sex}.
 %https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004822
 
 \graham{Mention Y chromosome fighting back mouse eg?}
@@ -1561,10 +1589,10 @@ through RNA-interference degradation of the dox transcript \citep[
 
 Chromosomes transmitted maternally, i.e. only through mothers, also have divergent
 interests from the individual. Many plants are hermaphrodites producing
-both pollen and seeds. But from the perspective of the Mitochondria in
-an individual, pollen is a waste of energy as the Mitochondria won't
+both pollen and seeds. But from the perspective of the mitochondria in
+an individual, pollen is a waste of energy as the mitochondria won't
 be transmitted through it. Thus a mutation that arises on the
-Mitochondria abolishing male sexual function (pollen) and shunting energy into
+mitochondria abolishing male sexual function (pollen) and shunting energy into
 other processes can spread. 
 The self spread of a Cytoplasmic Male
 Sterility (CMS) allele creates a population
@@ -1577,7 +1605,7 @@ population to hermaphroditism.   \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Silene_vulgaris/20184393949_9e22db5ff4_k.jpg}
 \end{center}
-\caption{Bladder Campion  ({\it Silene vulgaris}), on left, has both 
+\caption{Bladder campion  ({\it Silene vulgaris}), on left, has both 
 hermaphrodite and female plants due to CMS and nuclear
 restorer polymorphisms \citep{charlesworth1998male}. ({\it
     S. nutans} on right) \BHLNC{Billeder af nordens flora
@@ -1593,8 +1621,8 @@ The maternal transmission of mtDNA also causes genetic conflicts in organisms
 with separate sexes. Males are an evolutionary dead end as far as
 mitochondria are concerned, and so mitochondrial mutations that lower a male's
 fitness are not removed from the population of mitochondria. Thus the
-Mitochondria genome may be a hotspot of alleles that are deleterious in males
-\citep[an effect termed the ``Mother's curse''][]{}.
+mitochondria genome may be a hotspot of alleles that are deleterious in males
+\citep[an effect termed the ``Mother's curse''][]{cosmides1981cytoplasmic,frank1996mitochondria}.
  \begin{figure}
 \begin{center}
   \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/fille_du_roi/fille_du_roi.png}
@@ -1620,7 +1648,8 @@ rapidly from a relatively small number of founders, leading to the
 prevalence of some disease mutations due to the founder effect. Thanks to the detailed
 genealogical records kept by French Canadians since the founding of
 Quebec, we know that nearly all the Qu{\'e}b{\'e}cois LHON alleles are
-descended from the mitochondria of a single woman, one of the {\it fille du roi}, who arrived in Quebec City
+descended from the mitochondria of a single woman, one of the {\it
+  fille du roi} (Figure \ref{fig:fille_du_roi}), who arrived in Quebec City
 in 1669 \citep{laberge2005fille}.  Using the genealogy, \citet{milot2017mother} tracked all
 of her mitochondrial descendents, individuals whose mothers were in her
 matrilineal line, and so identified all the individuals in the
@@ -1630,23 +1659,18 @@ carried or didn't carry the mutation. In contrast, the fitness of male carriers 
 This mitochondria mutation has increased in frequency slightly over the past 290
 years, despite its strong effects in males, due to the fact that its effects have no consequence for female fitness.
 
-\begin{question}
+\begin{question}{}
 The frequency of the LHON allele was roughly $\nicefrac{1}{2000}$ in
 1669. If females suffered the same ill consequences as males what
-would be the frequency today? [assume there are $\sim$29 years a generation]
+would be the frequency today? (Assume there are $\sim$29 years a generation.)
 \end{question}
 
-\begin{question}
-Kin selection has been proposed as a way that the male deleterious
-mitochondrial mutations could be removed from the
-population. Can you explain this idea?
-\end{question}  
 
   \begin{marginfigure}
 \begin{center}
 \includegraphics[width= \textwidth]{illustration_images/single_locus_selection/Hypolimnas_bolina/Hypolimnas_bolina.png}
 \end{center}
-\caption{male Eggspot butterfly ({\it Hypolimnas bolina}). \BHLNC{P. Cramer's Uitlandsche kapellen (1780)}{https://www.biodiversitylibrary.org/title/43777\#page/292/mode/1up}{Smithsonian Libraries} } \label{fig:Hypolimnas_bolina}
+\caption{Male eggspot butterfly ({\it Hypolimnas bolina}). \BHLNC{P. Cramer's Uitlandsche kapellen (1780)}{https://www.biodiversitylibrary.org/title/43777\#page/292/mode/1up}{Smithsonian Libraries} } \label{fig:Hypolimnas_bolina}
 \end{marginfigure}  % https://commons.wikimedia.org/wiki/File:Cramer%26Stoll-uitlandsche_kapellen_vol._1-_plate_065.jpg
 
 It's not just chromosomes that get in on the act of the battle
@@ -1678,7 +1702,7 @@ to a child, therefore there can be competition to be in gamete transmitted to th
 \end{center}
 \caption{
 Pictures of {\it P. anserina} asci from various crosses. The arrow in the
-SxT picture shows a rare  ascus carrying all four products of
+{\it SxT} picture shows a rare  ascus carrying all four products of
 meiosis. Figure from \citet{grognet2014genes}, \PLOSccBY. 
  } \label{fig:spore_killer}
 \end{figure}
@@ -1686,13 +1710,14 @@ meiosis. Figure from \citet{grognet2014genes}, \PLOSccBY.
 
 The four products of meiosis in the fungus {\it Podospora anserina}
 are arrayed in the ascus\sidenote{from the Greek word askos meaning wineskin.}
-of the spores for the next generation. There is a polymorphism S/T at
-the Spok gene in this species. In
-spores from SxS and TxT individuals all four products are
+of the spores for the next generation. There is a polymorphism {\it S/T} at
+the {\it Spok} gene in this species. In
+spores from {\it S $\times$ S} and {\it T $\times$ T} individuals all four products are
 present. However, only two out of four spores are present in the
-$\sim 90\%$ of asci from SxT individuals \citep{grognet2014genes}. The T allele is releasing
-a toxin that poisons off the S carrying spores. The jury is still out
-on whether the T allele spread due to the advantage created by
+$\sim 90\%$ of asci from {\it S $\times$ T} individuals
+\citep{grognet2014genes}. The {\it T} allele is releasing
+a toxin that poisons off the {\it S} carrying spores. The jury is still out
+on whether the {\it T} allele spread due to the advantage created by
 sabotaging its rival product of meiosis \citep{sweigart2019making}. However, in other systems it
 is clear that alleles have spread due to their selfish actions. 
 
@@ -1715,15 +1740,15 @@ animals and plants how male and female gametogenesis offer different
 opportunities for selfish alleles (Figure \ref{fig:gametogenesis_male_female}). Just as how selfish X chromosome systems can spread by
 targeting sperm that carry the Y chromosome, selfish autosomal alleles
 can spread by targeting sperm carrying the other chromosome in
-heterozygotes. Both the Drosophila Segregation Distortion allele and
-the mouse T-allele are selfish autosomal systems that
+heterozygotes. Both the Drosophila {\it Segregation Distortion} allele and
+the mouse {\it T}-allele are selfish autosomal systems that
 game transmission in heterozygotes by killing off sperm that don't carry the allele in heterozygotes.
 
 %Spok asci killer system https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004387
 
 In females meiosis there is a unique opportunity for cheating. In male
 meiosis all four products of meiosis become gametes. 
-However, only 1 of the four products of female meiosis becomes the egg, the other 3 products
+However, only one of the four products of female meiosis becomes the egg, the other three products
 are fated to become the polar bodies. Thus alleles can cheat in female meiosis by preferentially getting
 transmitted into the egg rather than the polar body. If an allele on
 a red chromosome (in top panel of Figure \ref{fig:gametogenesis_male_female}) can manipulate any asymmetry of meioses so that it can be
@@ -1748,9 +1773,10 @@ equilibrium.
 \end{marginfigure} 
 
 
-To see how such drivers can spread through the population lets
+To see how such drivers can spread through the population, let's
 consider the case of a population where an allele drives in both male
-and female gametogenesis. (Most selfish alleles will be sex-specific,
+and female gametogenesis. (Many known selfish alleles are sex-specific
+in their action,
 but that makes the math a little more tricky.)
 Imagine a randomly-mating population of hermaphrodites. In this
 population, a derived allele (D) segregates that distorts transmission
@@ -1774,13 +1800,7 @@ sufficient in homozygotes. This is akin to the case of heterozygote
 advantage, but now our allele offers no advantage to heterozygote but
 has a self advantage in heterozygotes.
 
-\begin{question} (Tricker question)
-  With reference to of our autosomal driver from equation
-  \ref{eq:auto_driver}.\\
-  {\bf A)}	Imagine the cost of the driver were additive, i.e.  $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the
-driver invade the population? Can a polymorphic equilibrium be maintained?\\
-{\bf B)}	Imagine the allele is completely recessive, i.e. $w_{dd}=w_{Dd}=1$. What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
-\end{question}
+
 
 Many of the known autosomal drive systems are polymorphic in
 populations, unable to reach fixation in the population due to their
@@ -1794,7 +1814,13 @@ fixation.
 % sperm and egg production https://www.biodiversitylibrary.org/ia/cu31924001006851#page/60/mode/1up
 % https://archive.org/stream/embryologyofinse00joha/#page/4/mode/1up
 % BEST ONE https://archive.org/stream/biologystoryofli00hunt/#page/429/mode/1up
-
+\begin{question}{ (Trickier question)}
+  With reference to of our autosomal driver from equation
+  \ref{eq:auto_driver}.\\
+  {\bf A)}	Imagine the cost of the driver were additive, i.e.  $w_{dd}=1$, $w_{Dd}=1-e$, $w_{DD}=1-2e$. Under what conditions can the
+driver invade the population? Can a polymorphic equilibrium be maintained?\\
+{\bf B)}	Imagine the allele is completely recessive, i.e. $w_{dd}=w_{Dd}=1$. What conditions do you need for a polymorphic equilibrium to be maintained? What is the equilibrium frequency of this balanced polymorphism?\\
+\end{question}
 \subsection{Appendix: ESS for the sex ratio} \label{ESS_sex_Ratio}
 Let $R$ be the resources available to an individuals and $C_{\mars}$ and $C_{\venus}$ be the cost of
 producing a son and daughter respectively. If our focal mother directs
@@ -1828,3 +1854,35 @@ setting $s^* = s=s_p$ and rearranging
 \end{equation}
 which is satisfied when $s^* = \nicefrac{1}{2}$, i.e. devoting equal resources to male and female offspring is the ESS, which corresponds to a 50/50 sex ratio if male and female offspring are equally costly. 
 
+\newpage
+\begin{ChapterSummary}
+
+ \item Genotypes rise or fall in frequency across a  generation in proportion to their fitness divided by the mean fitness of the population. We can then calculate the allele frequency change that this change in genotype frequencies implies.
+ \item The marginal fitness of an allele is the weighted average of its fitness across the genotypes it occurs in. The allele with the highest marginal fitness increases in frequency due to selection.
+  \item Under models of frequency-independent selection, selection acting a single locus is expected to act to locally maximize the mean fitness of the population. 
+  \item Under diploid directional selection, dominance is a key parameter in understanding the rate of spread of alleles. Beneficial dominant alleles are quick to spread but slow to fix, while beneficial recessive alleles are slow to spread but fix faster if they manage to spread.
+  \item Under haploid models of selection, with a constant environment, a beneficial allele sweeps logistically through the population and we can calculate the time it takes to transition from one frequency to another. These results also hold approximately for diploid models of additive selection. 
+   \item Sustained, directional selection will remove variation from a population. However, selection can in some cases maintain polymorphism, for example under models of heterozygote advantage and negative-frequency- dependent selection.
+    \item When selection pressures fluctuate over time, the geometric mean fitness of alleles and genotypes can give a better indication of their long term fitness than their arithmetic mean
+ fitness. This means that selection can favour alleles and genotypes that bet-hedge, i.e. reduce the variance in their fitness at the expense of their arithmetic mean fitness.
+      \item When fitnesses are frequency-dependent, e.g. because the fitness of a strategy depends on the frequency of other strategies pursued by others in the population, selection can drive the mean fitness of the population down. One example of this is the Fisherian selection argument for a 50/50 sex ratio. 
+     \item Selection can operate below the level of the individual, with alleles that favour their own selfish transmission at the expense of individual-level fitness. This can lead to bouts of genetic conflict, where modifiers are selected to suppress these selfish alleles. 
+
+\end{ChapterSummary}
+  
+\begin{question}{}
+You are studying the polymorphism that affects flight speed in butterflies. The polymorphism does not appear to affect fecundity.  Homozygotes for the B allele are slow in flight and so only 40\% of them survive to have offspring. Heterozygotes for the polymorphism (Bb) fly quickly and have a 70\% probability of surviving to reproduce. The homozygotes for the alternative allele (bb) fly very quickly indeed, but often die of exhaustion, with only 10\% of them making it to reproduction.  \\
+{\bf A)} What is the equilibrium frequency of the B allele?\\
+{\bf B)} Calculate the marginal absolute fitnesses of the B and the b allele at the equilibrium frequency. 
+\end{question}
+
+
+\begin{question}{}
+An autosomal pesticide resistance allele is at 50\% frequency in a species of flies.  We stop using the pesticide, and within 20 years the frequency of the allele is 5\% in the new-born flies. There are two fly generations per year. Assuming that the allele affects fitness in an additive fashion, estimate the selection coefficient acting against homozygotes for the resistance allele.
+\end{question}
+
+\begin{question}{}
+Kin selection has been proposed as a way that the male deleterious
+mitochondrial mutations could be removed from the
+population, solving the mother's curse. Can you explain this idea?
+\end{question}  
