@@ -636,7 +636,21 @@ Note that these explanations are not mutually exclusive. Each
 explanation will explain some proportion of the variation, and these
 proportions will differ over species and classes of polymorphism. A
 central challenge in population genomics is how we can do this in a
-systematic way. 
+systematic way.
+\begin{marginfigure}[-3cm]
+\begin{center}
+  \includegraphics[width = \textwidth]{figures/het_advant_traj.pdf}
+\end{center}
+\caption{Two allele frequency trajectories of the $A_1$ allele subject to
+  heterzygote advantage ($w_{11}=0.9$, $w_{12}=1$, and $w22=0.85$). In
+one simulation the allele is started from being rare in the population
+($p=\nicefrac{1}{1000}$, solid line) and increases in frequency/ In
+the other simulation the allele is almost
+fixed ($p=\nicefrac{999}{1000}$, dashed line). In both cases the
+frequency moves toward the equilibrium frequency. The red line shows
+the equilibrium frequency ($p_e$). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_advant_traj}
+\end{marginfigure}
+
 
 \subsection{Heterozygote advantage}
 One form of balancing selection occurs when the heterozygotes are fitter than either
@@ -656,21 +670,6 @@ relative fitnesses we have divided
 absolute fitness by the heterozygote fitness. We could use the
 same parameterization as in the model of directional selection, but
 the reparameterization we have chosen here makes the math easier.\\
-
-
-\begin{marginfigure}
-\begin{center}
-  \includegraphics[width = \textwidth]{figures/het_advant_traj.pdf}
-\end{center}
-\caption{Two allele frequency trajectories of the $A_1$ allele subject to
-  heterzygote advantage ($w_{11}=0.9$, $w_{12}=1$, and $w22=0.85$). In
-one simulation the allele is started from being rare in the population
-($p=\nicefrac{1}{1000}$, solid line) and increases in frequency/ In
-the other simulation the allele is almost
-fixed ($p=\nicefrac{999}{1000}$, dashed line). In both cases the
-frequency moves toward the equilibrium frequency. The red line shows
-the equilibrium frequency ($p_e$). \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Rcode/diploid_sel_het_advantage.R}} \label{fig:het_advant_traj}
-\end{marginfigure}
 
 
 In this case, when allele $A_1$ is rare, it is often found in a
