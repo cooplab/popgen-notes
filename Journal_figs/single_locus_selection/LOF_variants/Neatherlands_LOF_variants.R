@@ -5,7 +5,7 @@ library(HistogramTools)
 
 LOF<-read.csv("~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/single_locus_selection/LOF_variants/Neatherlands_LOF_variants.csv")
 layout(1)
-layout(t(1:2))
+#layout(t(1:2))
 plot(PreBinnedHistogram(breaks=LOF$breaks,counts=LOF$counts[-nrow(LOF)]),freq=TRUE,xlab="# LOF alleles",ylab="Number of Individuals",main="",axes=FALSE,cex.lab=1.4)
 axis(2)
 axis(side=1,at=(12:17)*10)
@@ -28,6 +28,6 @@ LOF.fitness<-(1-10^(-2))^LOF$breaks[-nrow(LOF)]
 
 #Dropped this second graph
 #plot(LOF$breaks[-nrow(LOF)],LOF.fitness/mean.fitness,type="b",xlab="# LOF alleles",cex.lab=1.2,ylab="Relative Fitness")
-abline(h=1,col="red")
+#abline(h=1,col="red")
 
 dev.copy2pdf(file="~/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/single_locus_selection/LOF_variants/Neatherlands_LOF_variants.pdf")

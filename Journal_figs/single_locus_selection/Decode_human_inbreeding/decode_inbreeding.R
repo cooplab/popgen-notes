@@ -5,7 +5,7 @@ par(mar=c(4.5,4.5,2,1))
 layout(1)
 plot(decode.inbreeding$child_lifespan,
      ylim=range(decode.inbreeding),
-     pch=19,cex=2,cex.lab=1.5, xlab="Relatedness (Cousins)",ylab="Std. offspring lifespan",axes=FALSE)
+     pch=19,cex=2,cex.lab=1.5, xlab="Relatedness of parents (Cousins)",ylab="Std. offspring lifespan",axes=FALSE)
 
 segments(x0=1:7,x1=1:7,y0=decode.inbreeding$lower_CI,y1=decode.inbreeding$upper_CI,lwd=3)
 

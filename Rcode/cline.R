@@ -23,11 +23,11 @@ fig.direct="~/Dropbox/Courses/Popgen_teaching_Notes/figures/"
 x=-100:100
 plot(x,1-A(sigma,sel[1],x),type="l",col="black",lwd=2,xlab="Position x, km",ylab="Frequency of allele 2, q(x)",cex.axis=1.5,cex.lab=1.5)
 abline(v=0,col="lightgrey",lwd=2)
-lines(x,1-A(sigma,sel[2],x),col="red",lwd=2)
-lines(x,1-A(sigma,sel[3],x),col="blue",lwd=2)
+lines(x,1-A(sigma,sel[2],x),col="blue",lwd=2)
+lines(x,1-A(sigma,sel[3],x),col="red",lwd=2)
 legend("topright",legend=paste("s = ",sel),lty=1,lwd=2,col=c("black","blue","red"),cex=1.5)
 text(c(-50,50),c(0.5,0.5),c("Allele 2 favoured","Allele 2 disfavoured"),cex=1)
-dev.copy2eps(file=paste(fig.direct,"equilib_cline.eps",sep=""))
+dev.copy2pdf(file=paste(fig.direct,"equilib_cline.pdf",sep=""))
 
 plot(x,1-A(sigma,sel[2],x),type="l",col="red",lwd=2,xlab="Position x, km",ylab="Frequency of allele 2, q(x)")
 abline(a=0.5,b=-1.7*sigma/sqrt(sel[2]))
