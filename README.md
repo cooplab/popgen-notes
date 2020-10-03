@@ -1,6 +1,6 @@
 # Population Genetics Notes
 
-A pdf of the notes can be downloaded from the [second release (v1.1)](https://github.com/cooplab/popgen-notes/releases). Please use that as a stable release. If you want to use a beta version, which will be more up to date but subject to change use the [release_popgen_notes.pdf](https://github.com/cooplab/popgen-notes/blob/master/release_popgen_notes.pdf).
+A pdf of the notes can be downloaded from the [third release (v1.2)](https://github.com/cooplab/popgen-notes/releases). Please use that as a stable release. If you want to use a beta version, which will be more up to date but subject to change use the [release_popgen_notes.pdf](https://github.com/cooplab/popgen-notes/blob/master/release_popgen_notes.pdf).
 
 If you use these notes and find them helpful please consider taking a moment to fill out this [questionnaire](https://docs.google.com/forms/d/e/1FAIpQLSfKOrWLsOa5Ao9JgosXPhdLEpvewxi86Y_9Jt_Vnibn0lELng/viewform?usp=sf_link). I'm collecting this information in case it is useful in supporting future development of the notes.  
 
@@ -10,7 +10,7 @@ Theses notes and the latex code are released under the Creative Commons Attribut
 There are still many typos in these notes, but I hope to fix them over time, and feel free to contact me or make a pull request to the git. 
 
 This book was developed from my set of notes for the [Population Biology graduate group](http://www-eve.ucdavis.edu/eve/pbg/) core class (PBGG) and Undergraduate Population and Quantitative Genetics class (EVE102) at UC Davis. Thanks to the many
-  students who've read these notes and suggested improvements. Thanks to Simon Aeschbacher, Vince Buffalo, and Erin Calfee who read
+  students who've read these notes and suggested improvements. Thanks to Simon Aeschbacher, Vince Buffalo, Erin Calfee, and Michael Whitlock who read
  and extensively edited earlier drafts of these notes. To illustrate these notes I've used old scientific and natural history illustrations, in part
  because they are out of copyright but mainly because they bring me joy. Many of the old images come from
 [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/) a consortium of natural history institutions that are
