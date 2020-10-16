@@ -579,7 +579,7 @@ full-sibs share zero alleles identical by descent.\\
 
 One summary of relatedness that will be important is the probability that two
 alleles (I \& J) picked at random, one from each of the two different individuals $i$
-and $j$, are identical by descent ($P(\text{I\&J IBD})$). We call this quantity the \emph{coefficient
+and $j$, are identical by descent ($\P(\text{I\&J IBD})$). We call this quantity the \emph{coefficient
 of kinship} of individuals $i$ and $j$, and denote it by $F_{ij}$. It is
 calculated as
 %JRI: you come back to inbreeding later, but perhaps worth mentioning here that you are only considering outbred Individuals
@@ -601,7 +601,7 @@ or $2$ alleles IBD, an example of using the Law of Total Probability (see Append
 \eqn \eqref{eqn:law_tot_prob}).  We've then, in \eqn \ref{eqn:coeffkinship}, used the fact that we can
 calculate our condition probabilities of  I \& J being IBD using the
 rules of Mendelian transmision. Consider the probability $
-P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})$, i.e. that our
+\P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})$, i.e. that our
 pair of alleles ($I$ \& $J$) drawn from individuals $i$ and $j$ are IBD given that
 $i$ and $j$ share one allele IBD, this is a $\nicefrac{1}{4}$ as we need to
 draw the allele that is IBD from both $i$ and $j$, i.e. drawing both black
@@ -840,7 +840,7 @@ by two different routes from the same ancestor. Thus, the probability that an
 offspring is homozygous for $A_1$ is
 
 \begin{align}
-P(A_1 A_1) & = \P(A_1 A_1 |\textrm{I \& J not IBD} ) \P (\textrm{I\&J
+\P(A_1 A_1) & = \P(A_1 A_1 |\textrm{I \& J not IBD} ) \P (\textrm{I\&J
   not IBD} ) + \P(A_1 A_1 |\textrm{I\&J IBD} ) \P (\textrm{I\&J IBD}) \nonumber\\
              &= p^2(1-F_{ij})  + pF_{ij}.
 \end{align}
