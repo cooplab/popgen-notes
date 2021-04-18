@@ -1,6 +1,6 @@
 # Population Genetics Notes
 
-A pdf of the notes can be downloaded from the [third release (v1.2)](https://github.com/cooplab/popgen-notes/releases). Please use that as a stable release. If you want to use a beta version, which will be more up to date but subject to change use the [release_popgen_notes.pdf](https://github.com/cooplab/popgen-notes/blob/master/release_popgen_notes.pdf).
+A pdf of the notes can be downloaded from the [third release (v1.2)](https://github.com/cooplab/popgen-notes/releases). Please use that as a stable release. If you want to use a beta version, which will be more up to date but subject to change use the [release_popgen_notes.pdf](https://github.com/cooplab/popgen-notes/blob/master/release_popgen_notes.pdf). Some interactive versions of the graphs in the book using R (R shinys) are available [here](https://github.com/cooplab/Popgen_teaching_code/)
 
 <img src="https://github.com/cooplab/popgen-notes/blob/master/readme_images/pic3.png" width="400" align="right"/>
 
