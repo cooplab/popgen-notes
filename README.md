@@ -19,6 +19,8 @@ This book was developed from my set of notes for the [Population Biology graduat
  because they are out of copyright but mainly because they bring me joy. Many of the old images come from
 [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/) a consortium of natural history institutions that are
  digitizing their collections and make them freely available online. 
+ 
+ 
  <img src="https://github.com/cooplab/popgen-notes/blob/master/readme_images/book_pic1.png" width="400" align="right"/>
 
  If you enjoy the images consider donating to the
