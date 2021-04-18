@@ -8,7 +8,7 @@ This is the  latex source, images, and R code for the Population Genetics & Quan
 
 Theses notes and the latex code are released under the Creative Commons Attribution 3.0 Unported License. So if you do reuse or repurpose them you don’t need my permission, you just need to acknowledge where you got them from. The R code associated with these notes are released under the MIT license. 
 There are still many typos in these notes, but I hope to fix them over time, and feel free to contact me or make a pull request to the git. 
-![Example book page 1](https://github.com/cooplab/popgen-notes/blob/master/readme_images/book_pic1.png | width=250)
+<img src="https://github.com/cooplab/popgen-notes/blob/master/readme_images/book_pic1.png" width="200" />
 
 This book was developed from my set of notes for the [Population Biology graduate group](http://www-eve.ucdavis.edu/eve/pbg/) core class (PBGG) and Undergraduate Population and Quantitative Genetics class (EVE102) at UC Davis. Thanks to the many
   students who've read these notes and suggested improvements. Thanks to Simon Aeschbacher, Vince Buffalo, Erin Calfee, and Michael Whitlock who read
