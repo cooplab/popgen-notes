@@ -100,7 +100,7 @@ $H_{S}^{(i)} = 2 p_{i} q_{i}$ is the expected heterozygosity in subpopulation
 $i$. It follows that the  average heterozygosity of the
 sub-populations $\bar{H}_S  \leq
 H_T$, and so $\bar{\fst} \geq 0$ and $\bar{\fis} \leq \bar{\fit}$. This observation that the average
-  heterozygosity of the sub-populations must be less than of equal to
+  heterozygosity of the sub-populations must be less than or equal to
   that of the total
   population is called the Wahlund effect \citep{wahlund1928zusammensetzung}. Furthermore, if we have multiple sites, we can replace $H_I$, $H_S$, and
 $H_T$ with their averages across loci (as above).\sidenote[][-0.5cm]{Averaging heterozygosity across loci first, then calculating $\fst$, rather than calculating $\fst$ for each locus individually and then taking the average, has better statistical properties as statistical noise in the denominator is averaged out. }
@@ -179,7 +179,7 @@ warblers compared to the combined sample.\\
 
 Let's now return to Wright's definition of the $F$-statistics as correlations
 between random gametes, drawn from the same level $X$, relative to level $Y$.
-Without loss of generality, we may think about $X$ as individuals and $S$ as
+Without loss of generality, we may think about $X$ as individuals and $Y$ as
 the subpopulation.  Rewriting $\fis$ in terms of the observed homozygote
 frequencies ($f_{11}$, $f_{22}$) and expected homozygosities ($p_{S}^2$,
 $q_{S}^2$) we find
@@ -188,7 +188,7 @@ $q_{S}^2$) we find
 p_S^2 - q_S^2}{2p_Sq_S},
 \label{eqn:Fascorr}
 \end{equation}
-using the fact that $p^2+2pq+q^2=1$, and $f_{12} = 1 - f_{11} - f_{12}$. The
+using the fact that $p^2+2pq+q^2=1$, and $f_{12} = 1 - f_{11} - f_{22}$. The
 form of eqn.\ (\ref{eqn:Fascorr}) reveals that $\fis$ is the covariance between
 pairs of alleles found in an individual, divided by the expected variance under
 binomial sampling. Thus, $F$-statistics can be understood as the correlation
@@ -255,7 +255,7 @@ allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by
 $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
 p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on.
 
-You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
+You genotype a new individual from an unknown population at these $S$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
 %JRI: is this formally the definition of a set? should if be $g_l={0,1,2}$ ?
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is
@@ -275,7 +275,7 @@ Assuming that the loci are independent, the probability of the individual's geno
 
 % TODO: deleted "new" in bayes -- this is confusing I think for students
 We wish to know the probability that this new individual comes from population
-$k$, i.e. $P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes'
+$k$, i.e. $\P(\textrm{pop k} | \textrm{ind.})$. We can obtain this through Bayes'
 rule
 
 \begin{equation}
@@ -585,7 +585,7 @@ recombination (i.e. an odd number of crossing over events) occurs between the
 two parental haplotypes, then $\nicefrac{1}{2}$ the time the child receives an
 $Ab$ haplotype and $\nicefrac{1}{2}$ the time the child receives an $aB$
 haplotype. See Figure \ref{fig:recom_cartoon}. Effectively, recombination breaks up the association between loci.
-For linked markers we'll define the recombination fraction ($x$) to be the probability
+For linked markers we'll define the recombination fraction ($c$) to be the probability
 of an odd number of crossing over events between our loci in a single
 meiosis. The recombination fraction between a pair of loci can range from $0$ to
 $\nicefrac{1}{2}$, with $c=\nicefrac{1}{2}$ corresponding markers far
