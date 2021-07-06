@@ -226,7 +226,7 @@ $i^{th}$ individual. Similarly we can decompose the additive genetic
 variance $V_A$ as
 \begin{align}
   V_A&= Var(X_A) = Var(X_{M,i} ) + Var(X_{P,i} ) \\
-       Var(X_{M,i} ) & =Var(X_{M,i} ) = \nicefrac{V_{A}}{2}  \label{eqn:mat_pat_var}
+       Var(X_{M,i} ) & =Var(X_{P,i} ) = \nicefrac{V_{A}}{2}  \label{eqn:mat_pat_var}
  \end{align} 
 assuming that our individuals are mating at random and that maternal
 and paternal alleles are equal in their effect in
@@ -531,14 +531,14 @@ $30\%$ of the variance in tarsus length is atttributal to the additive
 effect of genetic
 differences among individuals. 
 \citet{smith1979heritability} also regressed the average offspring
-phenotype agains their fathers {\emph or} mothers against their
-offspring, giving a slope of $\beta_{\textrm{dad}, \textrm{avg.kid}}$ and
-$\beta_{\textrm{mum}, \textrm{kid}}$. For tarsus length, for
+phenotype against their fathers {\emph or} mothers,
+giving a slope of $\beta_{\textrm{dad}, \textrm{avg.kid}}$ and
+$\beta_{\textrm{mum}, \textrm{avg.kid}}$. For tarsus length, for
 example, they found $\beta_{\textrm{dad},
   \textrm{avg.kid}}= 0.19$ and $\beta_{\textrm{mum},
   \textrm{avg.kid}}= 0.17$.  Following a similar argument to
 that in eqn
-\eqref{eqn:par_off_herit} we find that these slopes are $\beta_{\textrm{dad}, \textrm{kid}}=
+\eqref{eqn:par_off_herit} we find that these slopes are $\beta_{\textrm{dad}, \textrm{avg.kid}}=
 \nicefrac{\nicefrac{V_{A}}{2}}{V_P} = \nicefrac{h^2}{2}$, and the same
   for mums. Thus the regression of offspring's phenotype on a
   particular parent is an estimate of half the narrow-sense
@@ -596,7 +596,7 @@ close to one then the parental mid-point is a good predictor of the child's
 phenotype. As we will see, natural selection will only efficiently
 drive evolution if children resemble their parents.\\
 
-Thinking abour our prediction of child's phenotpye more formally, the expected phenotype of the child given the parental
+Thinking about our prediction of child's phenotpye more formally, the expected phenotype of the child given the parental
 phenotypes is
 \begin{equation}
 \E(X_{kid} | X_{mum},X_{dad}) = \mu +
@@ -617,7 +617,7 @@ narrow sense heritability. \\
 \paragraph{The covariance between general pairs of relatives under an
 additive model}
 
-The above examples above make clear that to understand the covariance between
+The above examples make clear that to understand the covariance between
 phenotypes of relatives, we simply need to think about the alleles they
 share IBD. Consider a pair of relatives ($1$ and $2$) with a probability $r_0$,
 $r_1$, and $r_2$ of sharing zero, one, or two alleles IBD
@@ -683,7 +683,7 @@ also add fixed effects into this model to account for generation
 effects, additional mixed effects could also be included to account
 for shared environments between particular individuals (e.g. a shared nest).
 This approach is sometimes called the ``animal model'', and is widely
-used to in modern quantitative gentics to estimate genetic variances and heritabilities. 
+used to in modern quantitative genetics to estimate genetic variances and heritabilities. 
 
 
 %% plot of covariance of human traits for different relationships https://www.nature.com/articles/s41539-017-0005-6/figures/1
@@ -709,7 +709,7 @@ As before we can talk about the total phenotypic variance ($V_1,V_2$),
 environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance for trait one and two ($V_{A,1}$, $V_{A,2}$). But now we also have to consider the 
 total covariance between trait one and trait two, $V_{1,2}=Cov(X_{1},X_{2})$, as well as the environmentally induced covariance ($V_{E,1,2}=Cov(X_{1,E}
 ,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
-=Cov(X_{1,A} ,X_{2,A} )$). To better understand the covariance arising due to pleiotropy, let's think about a set of $L$ SNPs contributing to our two traits. If the additive effect of an allele at the $i^{th}$ SNP is $\alpha_{i,1}$ and $\alpha_{i,2}$ on traits 1 and 2, then the additive covariance between our traits is
+=Cov(X_{1,A} ,X_{2,A} )$). To better understand the covariance arising due to pleiotropy, let's think about a set of $L$ SNPs contributing to our two traits. If the additive effects of an allele at the $i^{th}$ SNP are $\alpha_{i,1}$ and $\alpha_{i,2}$ on traits 1 and 2, then the additive covariance between our traits is
 \begin{equation}
 V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
 \end{equation}
@@ -774,8 +774,8 @@ call. Indeed \citet{welch2014multivariate} found
 in lab-reared male frogs that the pulse number and the time period between
 calls were positively correlated, left side of Figure \ref{fig:Frog_genetic_corr}, i.e. individuals were investing
 their energy in making either few highly pulsed calls or many calls
-with few pulses. This phenotypic covariance reflects underlying a
-genetic covariance between theses two frog call
+with few pulses. This phenotypic covariance reflects underlying
+genetic covariance between these two frog call
 characteristics (right side  Figure \ref{fig:Frog_genetic_corr}). Fathers whose sons have calls with highly pulsed
 calls also have sons whose calls are more spaced apart.
 
@@ -880,7 +880,7 @@ likewise for the other genotypes.
 
 We can think about the average
 (marginal) MC
-phenotype of an individual who received an allele 1 from their parent as the average of the MC phenotype for heterozgotes and 11 homozygotes, weighted by the probability that
+phenotype of an individual who received an allele 1 from their parent as the average of the MC phenotype for heterozygotes and 11 homozygotes, weighted by the probability that
 the individual has these genotypes, i.e. the probability they receive an additional allele $1$ or an allele $2$ from their other parent:
 \begin{equation} 
   a_{\ell, 1} = p\overline{X}'_{\ell,2}  + q\overline{X}'_{\ell,1}, \label{eqn:add_effect1}
@@ -926,7 +926,7 @@ in each genotype and ignoring any non-additive effects of genotype.
 {\bf Top Row:} Additive relationship between genotype and phenotype. 
 {\bf Bottom Row:} Allele 1 is dominant over allele 2, such that the
 heterozygote has the same phenotype as the $11$ genotype. 
-The area of each circle is proportion to the fraction of
+The area of each circle is proportional to the fraction of
 the population in each genotypic class ($p^2$, $2pq$, and $q^2$). 
 One the left column $p=0.1$ and the right column is $p=0.9$.
 The additive genetic values of the genotypes are shown as
@@ -980,7 +980,7 @@ heterozygotes into homozygotes (11), who have the same mean phenotype as each ot
 \end{marginfigure}
 
 
-As as an example of how dominance and population allele frequencies
+As an example of how dominance and population allele frequencies
 can change the additive effect of an allele, let's consider the
 genetics of the age of sexual maturity in Atlantic Salmon. A single
 allele of large effect segregates in Atlantic Salmon that influences
@@ -1169,22 +1169,22 @@ twins better suited for this?
     measurements of the contribution of the current standing genetic variation in a
     particular set of environments and should not be thought of as
     fixed quantities of the population or trait. 
-\item We can estimate the additive genetic variance and the
-  heritability by using the resemblance of relatives, if we can
-  experimentally remove or statistically partition out the effect if the shared environment among relatives. 
+  \item We can estimate the additive genetic variance and the
+    heritability by using the resemblance of relatives, if we can
+    experimentally remove or statistically partition out the effect of the shared environment among relatives. 
   \item The genetic basis of variation in traits can genetically covary due to pleiotropy, assortative
     mating, and linkage. We can estimate the genetic covariance
     between traits by using the covariance in different traits among
     relatives.
-    \item Alleles with dominance and epistatic effects can
-      and do contribute to $V_A$ to the extent to which transmitting
-      an additional copy of the allele to an offspring changes their
-      expected phenotype. These alleles and combinations of alleles also contribute to higher order
-      genetic variance components, the dominance and epistatic
-      covariance.
-      \item The magnitude of the additive, dominance, and epistatic genetic variance can
-      change as allele frequency change and recombination changes the
-      context in which alleles are expressed. 
+  \item Alleles with dominance and epistatic effects can
+    and do contribute to $V_A$ to the extent to which transmitting
+    an additional copy of the allele to an offspring changes their
+    expected phenotype. These alleles and combinations of alleles also contribute to higher order
+    genetic variance components, the dominance and epistatic
+    covariance.
+  \item The magnitude of the additive, dominance, and epistatic genetic variance can
+    change as allele frequency change and recombination changes the
+    context in which alleles are expressed. 
 \end{ChapterSummary}
   
 \begin{question}{}
