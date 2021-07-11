@@ -253,9 +253,9 @@ clustering algorithms such as STRUCTURE and ADMIXTURE do. \cite{pritchard:00,ale
 We have genotype data from unlinked $S$ biallelic loci for $K$ populations. The
 allele frequency of allele $A_1$ at locus $l$ in population $k$ is denoted by
 $p_{k,l}$, so that the allele frequencies in population 1 are $p_{1,1},\cdots
-p_{1,L}$ and population 2 are $p_{2,1},\cdots p_{2,L}$ and so on.
+p_{1,S}$ and population 2 are $p_{2,1},\cdots p_{2,S}$ and so on.
 
-You genotype a new individual from an unknown population at these $L$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
+You genotype a new individual from an unknown population at these $S$ loci. This individual's genotype at locus $l$ is $g_l$, where $g_l$ denotes the number of copies of allele $A_1$ this individual carries at this locus ($g_l=0,1,2$).
 %JRI: is this formally the definition of a set? should if be $g_l={0,1,2}$ ?
 
 The probability of this individual's genotype at locus $l$ conditional on coming from population $k$, i.e. their alleles being a random HW draw from population $k$, is
@@ -268,7 +268,7 @@ p_{k,l}^2  & g_l=2
 \end{cases}
 \end{equation}
 
-Assuming that the loci are independent, the probability of the individual's genotype across all S loci, conditional on the individual coming from population $k$, is
+Assuming that the loci are independent, the probability of the individual's genotype across all $S$ loci, conditional on the individual coming from population $k$, is
 \begin{equation}
 \P(\textrm{ind.} | \textrm{pop k})  = \prod_{l=1}^S \P(g_l | \textrm{pop k}) \label{eqn_assignment}
 \end{equation}
