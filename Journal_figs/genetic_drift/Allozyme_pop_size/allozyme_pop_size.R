@@ -9,7 +9,7 @@ birds.1<-read.csv("/Users/gcoop/Dropbox/Courses/Popgen_teaching_Notes/Journal_fi
 my.pch<-c(19,22)
 names(my.pch)<-c("M","I")
 plot(log10(birds.1$range_size),birds.1$piS,cex.axis=1.5,cex.lab=1.8,pch=my.pch[birds.1$Island_mainland],cex=2,lwd=2,xlab="log10 Range size",ylab="H")
-legend(x="topleft",pch=my.pch,legend=c("Mainland","Island"),cex=2)
+legend(x="topleft",pch=my.pch,legend=c("Island","Mainland"),cex=2)
 
 Allozyme<-read.csv("/Users/gcoop/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/genetic_drift/Allozyme_pop_size/allozyme_pop_size.csv")
 plot(Allozyme,pch=19,xlab="log N","H",cex.axis=1.5,cex.lab=1.8,cex=2,col=adjustcolor("black",0.7))
