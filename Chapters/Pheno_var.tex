@@ -590,7 +590,7 @@ available can in turn provide their offspring better nutrition, while
 mothers born in poor territories will be able to provide less
 nutrition to their offspring.  This covariance in environment will
 increase the covariance in traits among relatives, e.g. weight between
-mother bird and child, and falsely bias our estimates upward if we
+mother bird and child, and falsely bias our estimates of heritability upward if we
 fail to account for the shared environment. (Technically what is
 happening here is that the shared environment causes
 $Cov(X_{1E},X_{2E})>0$ violating the assumption we made in deriving
@@ -631,8 +631,9 @@ this song sparrow sample.
   hyenas. The left panel shows 13 pairs of biological mothers and
   their daughters. In the middle panel there are 13 pairs of adopted
   daughters and their biological mothers. In the right panel the 13
-  adopted daughters are shown paired with their adopted mothers  The red line shows the best fitting
-  slope, whose slope is reported on the graph. The slope is not significant. The grey line is the
+  adopted daughters are shown paired with their adopted mothers. The red line shows the best fitting
+  slope, whose slope is reported on the graph. The slope of the middle
+  plot not significantly different from zero (p=$0.7$). The grey line is the
   $x=y$ line. Data from \citet{east2009maternal},
   \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/hyena_mat_effects/hyena_mat_effects.pdf}} \label{fig: hyena_mat_effects}
 \end{figure*}
@@ -645,25 +646,39 @@ aspects of their lives. Daughters usually achieve similar rank to
 their mothers, i.e. mother and daughter ranks are highly
 correlated (Left panel, Figure \ref{fig: hyena_mat_effects}). This could suggest that social rank has a high 
 heritability, as could be the case if rank is determined by body size and body size
-has a high additive genetic variance. Alternatively, social rank could
-partially determined by a shared environment between mother and daughter, with daughter's
-learning her mother's social connections. To test between these ideas,
-\citet{east2009maternal} made use rare cases of natural adoption, when a
+has a high additive genetic variance. \begin{marginfigure}[4.5cm]
+\begin{center}
+\includegraphics[width=\textwidth]{illustration_images/Quant_gen/Hyena/Hyena.png}
+\end{center}
+\caption{Spotted hyenas ({\it Crocuta crocuta}). See the
+  \href{https://hyena-project.com/}{hyena-project} for the long
+  term study that enabled this work and \citet{ilany2021rank} for more
+  on the social inheritance of rank.
+  \BHLNC{The wonders of the animal kingdom (1830). Huish, R. }{https://www.biodiversitylibrary.org/page/40407344\#page/36/mode/1up}{Smithsonian Libraries}
+} \label{fig:spotted_hyena}
+\end{marginfigure}  Alternatively, social rank could be 
+partially determined by daughters sharing their social rank with their
+mothers through gaining access to their mother's social connections. To test between these ideas,
+\citet{east2009maternal} made use natural cases of adoption, when a
 female takes unrelated pups into her
 family. \citeauthor{east2009maternal} found that in such cases the
 daughter's rank was uncorrelated with her biological mother's rank
 (middle panel, Figure \ref{fig: hyena_mat_effects}) but strongly correlated with the adopted mother's
 rank (right panel, Figure \ref{fig: hyena_mat_effects}).  Thus the resemblance between mother and child
-for non-adopted hyenas seems to be almost entirely due to a
-non-genetic inheritance of social rank.   
+for non-adopted hyenas seems to be almost entirely due to the
+non-genetic inheritance of social rank through the shared environment
+of daughters with their mothers (biological or adopted).   
 
 % https://www.science.org/doi/10.1126/science.abc1966
 % https://www.flickr.com/photos/biodivlibrary/8073861679/
 
 
-However, such manipulations are often
+However, such manipulations or common gardens are often
 impossible in many systems, and issues of shared environmental
-covariance due to maternal resources from egg (or seed) are still present. 
+covariance due to maternal resources from egg (or seed) can still
+present in measures of heritability from parents and child. Thus
+researchers often make use of a variety of different biological
+relationships to estimate heritability. 
 
 
 

@@ -82,36 +82,74 @@ plot.lm.two.locus<-function(a,p1,p2,dom.arrows=FALSE){
 	genos.1<-rbinom(10000,2,p1)  #generate some inds for regression etc
 	genos.2<-rbinom(10000,2,p2)  #generate some inds for regression etc
 
-	#names(a)<-c(0,1,2)
-	#phenos<-a[as.character(genos)]
+	tmp.a<-a
+	
+	rownames(a)<-c(0,1,2)
+	colnames(a)<-c(0,1,2)
+	
+	phenos<-sapply(1:10000,function(ind){a[genos.1[ind]+1,genos.2[ind]+1]})
+	#recover()
 	pop.mean<-0  #mean(a[as.character(genos)])	
 	
 	#symbols(x=0:2,y=a-sum(a*HWE),circles=HWE,ylim=range(a-sum(a*HWE)))
-	plot(y=range(a)*c(.5,1.5)-pop.mean,x=c(-0.5,2.5),type="n",axes=FALSE)
+	plot(y=range(a)-pop.mean,x=c(-0.5,2.5),type="n",axes=FALSE) #*c(.5,1.5)
 	box()
 	axis(2)
 	axis(1,at=c(0,1,2))
 	my.col<-c("red","purple","blue")
 	sapply(1:3,function(i){
-		symbols(x=0:2,y=a[i,]-pop.mean,circles=3*sqrt(HWE.1[i]*HWE.2)/(2*pi),bg=adjustcolor(my.col[i],0.3),add=TRUE,inches=FALSE)  
+		symbols(x=0:2,y=a[i,]-pop.mean,
+		        circles=3*sqrt(HWE.1[i]*HWE.2)/(2*pi),bg=adjustcolor(my.col[i],0.3),add=TRUE,inches=FALSE)  
 		points(x=0:2,y=a[i,]-pop.mean,pch=19,cex=1)
 		#ylim=range(a)*c(.2,1.8),xlim=c(-1,3)
 	})
 
 
-	abline(lm((phenos-pop.mean)~genos),col="red",lwd=3)
-	slope<-lm((phenos-pop.mean)~genos)$coeff
+	abline(lm((phenos-pop.mean)~genos.2),col="red",lwd=3)
+	slope<-lm((phenos-pop.mean)~genos.2)$coeff
 	z_bars<- a -pop.mean
+	#recover()
 }
 
 }
+
+
+a<-0.2
+b<-0.2
+Iab<-0.15
+two.locus<-matrix(NA,nrow=3,ncol=3,dimname=list(c("BB","Bb","bb"),c("AA","Aa","aa")))
+two.locus["BB",]<-c(-b-a+Iab,-b,-b+a)
+two.locus["Bb",]<-c(-a,0,a)
+two.locus["bb",]<-c(b-a,b,b+a-Iab)
+
+plot(c(0,1,2),two.locus["BB",],ylim=range(two.locus),col="blue",pch=19,type="b")
+points(c(0,1,2),two.locus["Bb",],col="purple",pch=19,type="b")
+points(c(0,1,2),two.locus["bb",],col="red",pch=19,type="b")
 
 
 
 ##https://www.nature.com/articles/ncomms10460/figures/4
 # Jess Hayward
-MC5R    RSP02    avg_phenotype_shedding aa    aa    0.778 aa    ad    0.834337349 aa    dd    0.146464646 ad    aa    0.274358974 ad    ad    0.243902439 ad    dd    0.013888889 dd    aa    0.238312429 dd    ad    0.095794393 dd    dd    0.006003431
-FGF5    RSPO2    avg_pheno_furlength aa    aa    1.503340757 aa    ad    1.419847328 aa    dd    3.104972376 ad    aa    2.152542373 ad    ad    2.138686131 ad    dd    3.427272727 dd    aa    3.279623477 dd    ad    3.169811321 dd    dd    4.708333333
+MC5R    RSP02    avg_phenotype_shedding
+aa    aa    0.778
+aa    ad    0.834337349
+aa    dd    0.146464646
+ad    aa    0.274358974
+ad    ad    0.243902439
+ad    dd    0.013888889
+dd    aa    0.238312429
+dd    ad    0.095794393
+dd    dd    0.006003431
+FGF5    RSPO2    avg_pheno_furlength
+aa    aa    1.503340757
+aa    ad    1.419847328
+aa    dd    3.104972376
+ad    aa    2.152542373
+ad    ad    2.138686131
+ad    dd    3.427272727
+dd    aa    3.279623477
+dd    ad    3.169811321
+dd    dd    4.708333333
 MC5R    FGF5    avg_pheno_furlength
 aa    aa    3.178571429
 aa    ad    2.709039548

@@ -600,8 +600,7 @@ conditional probability of alleles $I$ \& $J$ being IBD over whether our individ
 or $2$ alleles IBD, an example of using the Law of Total Probability (see Appendix
 \eqn \eqref{eqn:law_tot_prob}).  We've then, in \eqn \ref{eqn:coeffkinship}, used the fact that we can
 calculate our condition probabilities of  I \& J being IBD using the
-rules of Mendelian transmision. Consider the probability $
-P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})$, i.e. that our
+rules of Mendelian transmision. Consider the probability $\P(\text{I\&J IBD} |~ \text{i\&j  1 IBD})$, i.e. that our
 pair of alleles ($I$ \& $J$) drawn from individuals $i$ and $j$ are IBD given that
 $i$ and $j$ share one allele IBD, this is a $\nicefrac{1}{4}$ as we need to
 draw the allele that is IBD from both $i$ and $j$, i.e. drawing both black
@@ -785,11 +784,12 @@ from some reference population.  \\
 
 \begin{marginfigure}
 \begin{center}
-\includegraphics[width= \textwidth]{figures/Child_first_cousins_Homozy_BD.pdf}
+\includegraphics[width= \textwidth]{figures/Child_first_cousins_Homozy_BD_new}
 \end{center}
 \caption{Alleles being transmitted through an inbred pedigree. The two sisters (mum and aunt) share two alleles identical by descent (IBD). The cousins share one
-  allele IBD. The offspring of first cousins is homozygous by
-  descent at this locus.} \label{fig:IBD_cousins_cartoon}
+pink  allele IBD. The offspring of first cousins is homozygous by
+  descent at this locus for the pink allele. You can simulate more
+  examples for yourself \href{https://cooplab.shinyapps.io/Shiny_pedigree_sims/}{here}.} \label{fig:IBD_cousins_cartoon}
 \end{marginfigure}
 \graham{Change this to have squares and circles}
 When two related individuals produce an offspring, that individual can

@@ -3,7 +3,7 @@
 hyena<-read.csv("/Users/gcoop/Dropbox/Courses/Popgen_teaching_Notes/Journal_figs/Quant_gen/hyena_mat_effects/hyena_fig1.csv")
 
 layout(t(1:3))
-par(mar=c(4,4.2,1,1))
+par(mar=c(4,4.5,1,1))
 tmp<-hyena[hyena$setup=="nonadopted_kid_genetic_mum",]
 plot(tmp$mum,tmp$kid,xlim=c(-1,1),ylim=c(-1,1),pch=19,cex=2,
      xlab="Biological mother's rank",ylab="Child's rank",cex.lab=2,asp=1)
