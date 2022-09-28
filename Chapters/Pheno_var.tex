@@ -365,7 +365,7 @@ simplify our original expression above and write our phenotypic covariance betwe
 \begin{equation}
 Cov(X_1,X_2) =
 Cov(X_{1M},X_{2M})+Cov(X_{1M},X_{2P})+Cov(X_{1P},X_{2M})
-+Cov(X_{1P},X_{2P}) \label{cov_rels_1}
++Cov(X_{1P},X_{2P}) \label{cov_rels_1} 
 \end{equation}
 This equation is saying that, under our simple additive model, we can see the
 covariance in phenotypes between individuals as the covariance between
@@ -551,41 +551,11 @@ that in eqn
   dimorphism (we'll explore this in a later section). 
 
 
- \begin{marginfigure}
-\begin{center}
-\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit_foster.pdf}
-\end{center}
-\caption{Foster Parent-midpoint offspring regression for beak depth and
-  tarsus length in song sparrows. The red line shows the best fitting
-  slope, whose slope is reported on the graph. The slope is not significant. The grey line is the
-  $x=y$ line. Data from \citet{smith1980experimental},
-  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}} \label{fig:song_sparrow_herit_foster}
-\end{marginfigure}
-
 
 Estimating heritability by these various parent-offspring regression have the issue of not controlling for
 environmental correlations between parent and offspring, which can
 inflate our estimates of heritability (as we will mistake
-environmentally mediated resemblance for genetics). Raising the
-organisms in the lab could remove much of the potential for shared
-environment between parent and offspring, but it also removes much of the
-environmental variation and we (as evolutionary geneticists) are usually not primarily interested in knowing
-the heritability in the lab bur rather in the field. In some organisms,
-notably plants, we can begin to sidestep these issues by raising offspring
-in a common set of randomized field conditions (a so called ``common
-garden''). Another option is cross-foster animals, for example
-\citet{smith1980experimental} returned to the song sparrow population
-and swapped eggs between parents nests. They found that the covariance
-between biological parents and children was still high despite these
-children being raised in a different nest, but that there was no significant
-covariance between foster parents and their non-biological children
-(see Figure \ref{fig:song_sparrow_herit_foster} for beak depth). This suggests that
-family environment is not confounding the estimate of heritability in
-this song sparrow sample. However, such manipulations are often
-impossible in many systems, and issues of shared environmental
-covariance due to maternal resources from egg (or seed) are still present. 
-
-Despite its issues, this measure of heritability provides useful
+environmentally mediated resemblance for genetics). Despite its issues, this measure of heritability provides useful
 intuition and is directly relevant to our discussion of the response to selection in
 the next chapter. That's because our regression allows us to attempt to predict the phenotype of the
 child given the phenotypes of the parents; how well we can do this depends on the
@@ -611,6 +581,89 @@ narrow sense heritability. \\
 %Briefly explain what Galton meant by 'regression towards
 %mediocrity', and why he observed this pattern in light of Mendelian inheritance.
 %\end{question}
+
+\paragraph{The confounding effect of the shared environment.}
+Children resemble their biological parents both because they share alleles but
+also because they can share environments. For example, mother
+birds who are lucky enough to live in a territory with good nutrition
+available can in turn provide their offspring better nutrition, while
+mothers born in poor territories will be able to provide less
+nutrition to their offspring.  This covariance in environment will
+increase the covariance in traits among relatives, e.g. weight between
+mother bird and child, and falsely bias our estimates upward if we
+fail to account for the shared environment. (Technically what is
+happening here is that the shared environment causes
+$Cov(X_{1E},X_{2E})>0$ violating the assumption we made in deriving
+eqn \eqref{cov_rels_1}.)
+
+ \begin{marginfigure}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit_foster.pdf}
+\end{center}
+\caption{Foster Parent-midpoint offspring regression for beak depth and
+  tarsus length in song sparrows. The red line shows the best fitting
+  slope, whose slope is reported on the graph. The slope is not significant. The grey line is the
+  $x=y$ line. Data from \citet{smith1980experimental},
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/song_sparrow_herit/song_sparrow_herit.R}} \label{fig:song_sparrow_herit_foster}
+\end{marginfigure}
+
+Raising the organisms in the lab could remove much of the potential for shared
+environment between parent and offspring, but it also removes much of the
+environmental variation and we (as evolutionary geneticists) are usually not primarily interested in knowing
+the heritability in the lab bur rather in the field. In some organisms,
+notably plants, we can begin to sidestep these issues by raising offspring
+in a common set of randomized field conditions (a so called ``common
+garden''). Another option is cross-foster animals, for example
+\citet{smith1980experimental} returned to the song sparrow population
+and swapped eggs between parents nests. They found that the covariance
+between biological parents and children was still high despite these
+children being raised in a different nest, but that there was no significant
+covariance between foster parents and their non-biological children
+(see Figure \ref{fig:song_sparrow_herit_foster} for beak depth). This suggests that
+family environment is not confounding the estimate of heritability in
+this song sparrow sample.
+
+ \begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{Journal_figs/Quant_gen/hyena_mat_effects/hyena_mat_effects.pdf}
+\end{center}
+\caption{Mother-daughter regression for standardized social rank in spotted
+  hyenas. The left panel shows 13 pairs of biological mothers and
+  their daughters. In the middle panel there are 13 pairs of adopted
+  daughters and their biological mothers. In the right panel the 13
+  adopted daughters are shown paired with their adopted mothers  The red line shows the best fitting
+  slope, whose slope is reported on the graph. The slope is not significant. The grey line is the
+  $x=y$ line. Data from \citet{east2009maternal},
+  \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/hyena_mat_effects/hyena_mat_effects.pdf}} \label{fig: hyena_mat_effects}
+\end{figure*}
+
+
+Spotted hyenas ({\it Crocuta crocuta}) live in female dominated groups
+(`clans') that are highly social, with some clans having over a
+hundred members. The social rank of a hyena determines many
+aspects of their lives. Daughters usually achieve similar rank to
+their mothers, i.e. mother and daughter ranks are highly
+correlated (Left panel, Figure \ref{fig: hyena_mat_effects}). This could suggest that social rank has a high 
+heritability, as could be the case if rank is determined by body size and body size
+has a high additive genetic variance. Alternatively, social rank could
+partially determined by a shared environment between mother and daughter, with daughter's
+learning her mother's social connections. To test between these ideas,
+\citet{east2009maternal} made use rare cases of natural adoption, when a
+female takes unrelated pups into her
+family. \citeauthor{east2009maternal} found that in such cases the
+daughter's rank was uncorrelated with her biological mother's rank
+(middle panel, Figure \ref{fig: hyena_mat_effects}) but strongly correlated with the adopted mother's
+rank (right panel, Figure \ref{fig: hyena_mat_effects}).  Thus the resemblance between mother and child
+for non-adopted hyenas seems to be almost entirely due to a
+non-genetic inheritance of social rank.   
+
+% https://www.science.org/doi/10.1126/science.abc1966
+% https://www.flickr.com/photos/biodivlibrary/8073861679/
+
+
+However, such manipulations are often
+impossible in many systems, and issues of shared environmental
+covariance due to maternal resources from egg (or seed) are still present. 
 
 
 
@@ -687,157 +740,6 @@ used to in modern quantitative genetics to estimate genetic variances and herita
 
 
 %% plot of covariance of human traits for different relationships https://www.nature.com/articles/s41539-017-0005-6/figures/1
-
-\section{Multiple traits}
-Traits often covary with each other, both due to environmentally
-induced effects (e.g. due to the effects of diet on multiple traits)
-and due to the expression of underlying genetic covariance between
-traits. Genetic covariance, in turn, can reflect pleiotropy, a
-mechanistic effect of an allele on multiple traits (e.g. variants that
-affect skin pigmentation often affect hair color), the genetic
-linkage of loci independently affecting multiple traits, or the
-effects of assortative mating. 
-
-Consider two traits $X_{1,i}$ and $X_{2,i}$ in an individual $i$. These traits could be,
-say, the individual's leg length and nose length. As before, we can write
-these as 
-\begin{eqnarray}
-X_{1,i} &= \mu_1+ X_{1,A,i} + X_{1,E,i}  \nonumber \\
-X_{2,i} &= \mu_2 +X_{2,A,i} + X_{2,E,i} \nonumber \\
-\end{eqnarray}
-As before we can talk about the total phenotypic variance ($V_1,V_2$),
-environmental variance  ($V_{1,E}$ and $V_{2,E}$), and the additive genetic variance for trait one and two ($V_{A,1}$, $V_{A,2}$). But now we also have to consider the 
-total covariance between trait one and trait two, $V_{1,2}=Cov(X_{1},X_{2})$, as well as the environmentally induced covariance ($V_{E,1,2}=Cov(X_{1,E}
-,X_{2,E} )$) and the additive genetic covariance ($V_{A,1,2}
-=Cov(X_{1,A} ,X_{2,A} )$). To better understand the covariance arising due to pleiotropy, let's think about a set of $L$ SNPs contributing to our two traits. If the additive effects of an allele at the $i^{th}$ SNP are $\alpha_{i,1}$ and $\alpha_{i,2}$ on traits 1 and 2, then the additive covariance between our traits is
-\begin{equation}
-V_{A,1,2} = \sum_{i=1}^L 2\alpha_{i,1}\alpha_{i,2} p_i(1-p_i)
-\end{equation}
-assuming our loci are not in linkage disequilibrium. Thus a genetic
-correlation arises due to pleiotropy, because loci that tend to affect
-trait 1 also systematically affect trait 2. For example, alleles
-associated with later age at menarche (AAM), age at first menstrual cycle, in European women also
-tend to be positively associated with height (see Figure
-\ref{fig:AAM_height}), thereby creating a genetic correlation between
-AAM and height. 
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height.pdf}
-\end{center}
-\caption{The additive effect sizes of loci associated with female age
-  at menarche (AAM) and their effect size on height in a European
-  population. Data from \citet{pickrell2016detection}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pickrell_pleiotropy/AAM_height_pickrell.R}} \label{fig:AAM_height}   
-\end{marginfigure}
-
-We can `store' our variance and covariance values in matrices, a way of gathering these terms that will be useful when we discuss selection: 
-\begin{equation}
-\bf{V_P}= \left( \begin{array}{cc} 
-V_{1} & V_{1,2} \\
-V_{1,2} & V_{2} \\
-\end{array} \right) \label{P_matrix}
-\end{equation}
-and
-\begin{equation}
-\bf{G}= \left( \begin{array}{cc} 
-V_{A,1} & V_{A,1,2} \\
-V_{A,1,2} & V_{A,2} \\
-\end{array} \right)  \label{G_matrix}
-\end{equation}
-Here we've shown the matrices for two traits, but we can generalize this to an arbitrary number of traits.
-
-We can estimate these quantities, in a similar way as before, by
-studying the covariance in different traits between relatives: 
-\begin{equation}
-Cov(X_{1,i},X_{2,j}) = 2 F_{i,j} V_{A,1,2} \label{eqn:genetic_covar_rellys}
-\end{equation}
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width= \textwidth]{illustration_images/Quant_gen/Hyla_versicolor/Hyla_versicolor.jpg}
-\end{center}
-\caption{Grey treefrog
-  ({\it Hyla versicolor})
-  \wikimedia{Historia Natural, tomo V ``Reptiles y peces'' (1874) Juan Vilanova y Piera,  p. 156. 
-  }{https://commons.wikimedia.org/wiki/Category:Hyla_arboricola\#/media/File:Hyla_arboricola_and_Hyla_versicolor.jpg}{Dorieo}{Cropped. Public
-  Domain}} \label{fig:Hyla_versicolor}   
-\end{marginfigure}  %% right book ref https://books.google.com/books?id=f6lrVNHsNUcC&pg=PP7&lpg=PP7&dq=Juan+Vilanova+y+Piera+y+otros,+Historia+Natural,+tomo+V+%22Reptiles+y+peces%22&source=bl&ots=QzpSB7umN_&sig=ACfU3U3cE95FUKtWlt_PpgE-wCTmwHSMnw&hl=en&sa=X&ved=2ahUKEwiw392pq_LmAhXDqp4KHRrNDLgQ6AEwDXoECAoQBA#v=onepage&q=Juan%20Vilanova%20y%20Piera%20y%20otros%2C%20Historia%20Natural%2C%20tomo%20V%20%22Reptiles%20y%20peces%22&f=false
-An example of phenotype and genetic covariance are shown on the left
-and right of Figure \ref{fig:Frog_genetic_corr} respectively. Gray
-treefrogs ({\it Hyla versicolor}) chorus to attract mates. Their call
-is made up of a trill, a note rapidly pulsed a number of times, that
-is then repeated after some
-period. Female frogs prefer males who make a lot of calls and where each
-of those calls have a large number
-of pulses. However, doing both is be very energetic, and so
-there is potentially a tradeoff between these two aspects of a male frog's
-call. Indeed \citet{welch2014multivariate} found
-in lab-reared male frogs that the pulse number and the time period between
-calls were positively correlated, left side of Figure \ref{fig:Frog_genetic_corr}, i.e. individuals were investing
-their energy in making either few highly pulsed calls or many calls
-with few pulses. This phenotypic covariance reflects underlying
-genetic covariance between these two frog call
-characteristics (right side  Figure \ref{fig:Frog_genetic_corr}). Fathers whose sons have calls with highly pulsed
-calls also have sons whose calls are more spaced apart.
-
-%% Hyla
-%https://www.flickr.com/photos/internetarchivebookimages/18193065982/in/photolist-tHEdFq-w6oVxt-w7uzuh-wYEMiJ-wM1ydg-tDzszv-wM68MH-w7zib5-x4zbJZ-x3NmSS-toJn5T-ymBaUK-x2gbjQ-tHGbU5-w7zFrh-wDq3dw-wpp5b5-x3GxoJ-xieMpX-x52jC8-x3JEB7-x2b6Bo-w7tkef-wLSL61-toKL3z-w7Ekq4-tFd8h6-vdPjbF-x4sbkM-wLSNwy-wM1vjR-truv4Z-w7CJTR-w7Bk7p-xjs4Gw-tHH1k7-xCgp7d-wLTGnA-xAeJRf-sJnrKP-tFB9xC-wLuk1W-w7tDKd-x15TQs-wLWVow-toz9Lb-xBEY7g-xhGSS2-x15Vsq-x56QhF
-%% https://www.flickr.com/photos/internetarchivebookimages/20225306138/in/photolist-tJ4Rn4-xu7KMN-x4sHmz-x29vVY-xgVebh-wLukBA-xx36Hr-uyhbMs-wLYycD-x1cYNP-wkFrYW-wLSya7-wEMZoc-wLsZrX-x16hfW-x3cPhW-xDWcZt-xmB6i6-wvustq-xqaxeV-xoyLPh-x79DmT-x79CR4-wrM4wH-x72MZu-wYAHWG-xfDTP6-xfDTkv-xfDSSX-wXogss-xeYxDi-x8acmV-wb8XiL-wQEAzM-x5QBpL-wb8Gsd-wQwQbj-x71pJS-wQacmE-x6X6Si-wPeYSN-x4w3xq-wJ7vQC-w4EZxA-otAReB-oeFYJM-ovuHRw-otT3ar-otAQJZ-otAQmV
-% https://upload.wikimedia.org/wikipedia/commons/c/c8/Hyla_arboricola_and_Hyla_versicolor.jpg
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_sibling_means.pdf}
-\end{center}
-\caption{Phenotypic and genetic correlations in male grey treeforg
-  ({\it Hyla versicolor}) calls. On the left each male is shown as a
-  dot, recording their inter-call period and the number of pulses in each call. One
-  the right each dot corresponds to a father with the mean of sons
-  for both phenotypes. Data from \citet{welch2014multivariate} downloaded from
-\href{https://datadryad.org/stash/dataset/doi:10.5061/dryad.40sj6}{dryad}, \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/Frog_calls_Hyla_versicolor/Frog_calls_Hyla_versicolor.R}} \label{fig:Frog_genetic_corr}  
-\end{figure}
-% https://commons.wikimedia.org/wiki/File:Hyla_arboricola_and_Hyla_versicolor.jpg
-
-
-One useful summary of a genetic covariance is the genetic correlation between two phenotypes
-\begin{equation}
-r_g = \frac{V_{A,1,2}}{\sqrt{V_{A,1}V_{A,2}}}
-\end{equation}
-where $V_{A,1}$ and $V_{A,2}$ are the additive genetic variance for trait 1 and 2 respectively. Here, $r_g$ tells us to what extent the additive genetic variance in two traits is correlated.   
-
-
-
-Another important application of genetic covariances is in the
-study of sexually antagonistic selection and the evolution of sexual
-dimorphism; here we'll calculate the genetic covariance between male
-and female phenotypes. For example, below is the relationship between
-the forehead patch size for pied fly-catcher fathers and their sons and daughters. The phenotype has been standardized to have mean $0$  and variance $1$ in each group. The phenotypic covariance of the sample of fathers and sons is $0.35$, while the phenotypic covariance of fathers and daughter is $0.23$. 
-
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[width= \textwidth]{Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/FlyCatcher_genetic_corr.pdf}
-\end{center}
-\caption{Relationship of standardized forehead patch size between
-  fathers and sons and daughters in  pied fly-catchers. Data from
-  \citeauthor{potti:11}. \gitcode{https://github.com/cooplab/popgen-notes/blob/master/Journal_figs/Quant_gen/pied_fly_catcher_sex_genetic_corr/Potti_Canal_2011_sex_cov.R}} \label{fig:FlyCatcher_genetic_corr}   %\cite{potti:11} 
-\end{figure}
-
-\begin{marginfigure}
-\begin{center}
-\includegraphics[width=0.9
-\textwidth]{illustration_images/Quant_gen/pied_fly_catcher/pied_fly_catcher.png}
-\end{center}
-\caption{{\it Ficedula hypoleuca}, pied fly-catcher.  \BHLNC{Coloured
-    illustrations of British birds, and their eggs (1842-1850).
-London :G.W. Nickisson. }{https://www.biodiversitylibrary.org/page/40246319\#page/335/mode/1up}{Smithsonian Libraries}} \label{fig:FlyCatcher}   %% not
-                                %% sure if it's a female or juv. https://www.biodiversitylibrary.org/page/40246319#page/334/mode/1up
-\end{marginfigure}
-
-\begin{question}{}
-Assume we can ignore the effect of the shared environment in our pied fly-catcher example. \\
-{\bf A)} What is the additive genetic covariance between male and female patch size?\\
-{\bf B)} What is the additive genetic correlation of male and female patch size? You can assume that the additive genetic variance is the same in males and females.
-\end{question}
 \subsection{Non-additive variation.}
 \label{section:nonAddVar}
 Up to now we've assumed that our alleles contribute to our phenotype in an
