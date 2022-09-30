@@ -4,6 +4,8 @@
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\half}{\tfrac{1}{2}}
 
+\usepackage[authoryear]{natbib}
+\bibliographystyle{genetics}
 \newcommand{\wbar}{\overline{w}}
 % New commands added by Simon:
 \newcommand{\eqn}{eqn}
@@ -15,6 +17,30 @@
 \newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
 
 \newcommand{\nicefrac}[2]{\frac{#1}{#2}}
+
+\newcounter{question}[chapter]  %[section]   %%modified from https://www.sharelatex.com/learn/Counters
+
+%https://tex.stackexchange.com/questions/428652/newenvironment-for-tcolorbox-and-lstlisting
+
+%mybox
+%\newtcolorbox[use counter=question]{question}[1]{colback=red!5!white,
+%colframe=red!75!black,fonttitle=\bfseries, 
+%title= Question~\thequestion. #1}
+
+\newenvironment{question}
+{{\bf Question}}
+ %   {\begin{center}
+ %   Question~ \thequestion. \\
+
+   % \begin{tabular}{|p{0.9\textwidth}|}
+  %  \hline\\
+  %  }
+  %  { 
+   % \\\\\hline
+   % \end{tabular} 
+  %  \end{center}
+  {  }
+
 
 
 \title{Population and\newline Quantitative \newline Genetics}
@@ -40,5 +66,6 @@
 \include{Chapters/genetic_drift}
 \include{Chapters/Pheno_var}
 \include{Chapters/Response_to_sel}
+
 
 \bibliography{popgen_notes}
